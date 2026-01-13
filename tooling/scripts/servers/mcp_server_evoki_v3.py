@@ -104,14 +104,15 @@ def init_persistent_db():
     db.commit()
     
     # Insert default values if not exist
+    faiss_base = PROJECT_ROOT / "tooling" / "data" / "faiss_indices"
     defaults = {
-        "downloads_path": "C:\\Users\\nicom\\Downloads",
-        "evoki_version": "V2.0",
+        "downloads_path": str(Path.home() / "Downloads"),
+        "evoki_version": "V3.0",
         "regelwerk_version": "V12",
         "project_name": "Evoki DeepEarth",
-        "chatverlauf_faiss_index": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.faiss",
-        "chatverlauf_metadata": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.metadata.json",
-        "chatverlauf_sqlite": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.db"
+        "chatverlauf_faiss_index": str(faiss_base / "chatverlauf_final_20251020plus_dedup_sorted.faiss"),
+        "chatverlauf_metadata": str(faiss_base / "chatverlauf_final_20251020plus_dedup_sorted.metadata.json"),
+        "chatverlauf_sqlite": str(faiss_base / "chatverlauf_final_20251020plus_dedup_sorted.db"),
     }
     
     for key, value in defaults.items():
