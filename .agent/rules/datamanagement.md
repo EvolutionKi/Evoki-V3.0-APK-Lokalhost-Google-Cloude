@@ -1,4 +1,4 @@
----
+﻿---
 trigger: always_on
 ---
 
@@ -12,24 +12,24 @@ Jedes Verzeichnis darf NUR eines enthalten:
 
 Ausnahmen:
 - Root-Level: `README.md`, `ARCHITECTURE.txt`, `.geminiignore`
-- Python-Projekt-Root (`app/temple/`): `main.py`, `pyproject.toml`, `requirements.txt`
+- Tooling Python-Root (`tooling/scripts/`): `__init__.py`, `main.py`, `pyproject.toml`, `requirements.txt`
 
 Regel: Trennung von App-Code und Tools
-Niemals:** Tool-Scripts in `app/` ablegen (außer sie sind Teil der Core-API)
+Niemals:** Tool-Scripts in `app/` ablegen (auÃŸer sie sind Teil der Core-API)
 
 Automatische Durchsetzung
 
-Der Agent MUSS bei jedem Datei-Schreibvorgang prüfen:
+Der Agent MUSS bei jedem Datei-Schreibvorgang prÃ¼fen:
 1. Zielverzeichnis existiert bereits?
-2. Enthält es nur Dateien ODER nur Ordner?
+2. EnthÃ¤lt es nur Dateien ODER nur Ordner?
 3. Passt der neue Inhalt zum Typ?
-4. Gehört die Datei zu `app/` (Core) oder `tooling/` (Tools)?
+4. GehÃ¶rt die Datei zu `app/` (Core) oder `tooling/` (Tools)?
 
-Bei Verstoß: Korrekten Ordner erstellen und dort ablegen.
+Bei VerstoÃŸ: Korrekten Ordner erstellen und dort ablegen.
 
 Regel 4: copilot-instructions.md aktuell halten
 
-Pflicht:** Bei jeder strukturellen Änderung MUSS `.github/copilot-instructions.md` aktualisiert werden.
+Pflicht:** Bei jeder strukturellen Ã„nderung MUSS `.github/copilot-instructions.md` aktualisiert werden.
 
-Nicht löschen, nur aktualisieren!**
+Nicht lÃ¶schen, nur aktualisieren!**
 
