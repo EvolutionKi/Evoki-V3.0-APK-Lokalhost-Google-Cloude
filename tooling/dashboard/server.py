@@ -53,12 +53,12 @@ class statusHandler(http.server.SimpleHTTPRequestHandler):
             
             # ENV Setup for UTF-8
             env = os.environ.copy()
-            env["PYTHONPATH"] = os.path.join(PROJECT_ROOT, "app")
+            env["PYTHONPATH"] = os.path.join(PROJECT_ROOT, "tooling/scripts")
             env["PYTHONIOENCODING"] = "utf-8"  # FORCE UTF-8 OUTPUT
             
             cmd = [
                 sys.executable,
-                os.path.join(PROJECT_ROOT, "app/temple/automation/search_chatverlauf.py"),
+                os.path.join(PROJECT_ROOT, "tooling/scripts/automation/search_chatverlauf.py"),
                 "--query", query,
                 "--top-k", "5",
                 "--include-text"

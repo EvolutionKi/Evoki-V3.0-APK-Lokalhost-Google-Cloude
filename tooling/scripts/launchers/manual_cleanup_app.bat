@@ -1,6 +1,7 @@
 @echo off
 echo ==========================================
 echo   EVOKI V3.0 CLEANUP SCRIPT (FORCE)
+echo   [LEGACY REMOVAL TOOL - app/temple refs are intentional]
 echo ==========================================
 echo.
 echo Dieses Script beendet ALLE Python Prozesse und loescht app/temple.
