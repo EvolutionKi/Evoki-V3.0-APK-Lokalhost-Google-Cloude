@@ -257,3 +257,47 @@
 {"timestamp": "2026-01-13T19:49:01.833500+00:00", "result": "SUCCESS"}
 {"timestamp": "2026-01-13T19:49:01.838202+00:00", "result": "SUCCESS"}
 {"timestamp": "2026-01-13T19:49:01.845422+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:10:32.553422+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:10:32.553904+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:10:32.554378+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:10:32.754411+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:10:32.754930+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:10:32.755826+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:10:33.054682+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:10:33.072965+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:10:33.076816+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:12:54.489936+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:12:54.490684+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:12:54.490737+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:12:54.690750+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:12:54.691798+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:12:54.691858+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:12:55.023668+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:12:55.042802+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:12:55.043085+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:13:35.984828+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:13:35.985263+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:13:35.985552+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:13:36.185686+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:13:36.186723+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:13:36.186784+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:13:36.568858+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Error saving history: [WinError 5] Zugriff verweigert: 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\tmpoa295pd7.tmp' -> 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\status_window_history.json'\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T20:13:36.606981+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:13:36.636455+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:17:40.032722+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:17:40.033805+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:17:40.233583+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:17:40.234075+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:17:40.234601+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:17:40.518727+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:17:40.526210+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:17:40.527518+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Error saving history: [WinError 5] Zugriff verweigert: 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\tmp89run8hv.tmp' -> 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\status_window_history.json'\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T20:18:21.529985+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:18:21.530161+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:18:21.530956+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:18:21.731066+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:18:21.731073+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:18:21.731711+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:18:22.019130+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:18:22.024024+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:18:22.024316+00:00", "result": "SUCCESS"}
