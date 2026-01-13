@@ -88,8 +88,31 @@ def main():
                 print(f"   Expected: {prev_hash}")
                 print(f"   Got:      {claimed_prev}")
                 sys.exit(1)
+
+        # Check hash integrity (recompute)
+        for i, entry in enumerate(entries):
+            ts = entry.get("timestamp")
+            salt = entry.get("salt")
+            wh = entry.get("window_hash")
+            sw = entry.get("status_window", {}) or {}
+            algo = entry.get("hash_algo") or "sha256(canonical_without_window_hash|timestamp|salt)"
+
+            if not ts or not salt or not wh:
+                print(f"❌ Missing hash material at entry {i} (timestamp/salt/window_hash)")
+                sys.exit(1)
+
+            sw_for_hash = dict(sw)
+            if "without_window_hash" in algo:
+                sw_for_hash.pop("window_hash", None)
+
+            expected = manager._compute_hash(sw_for_hash, ts, salt)
+            if expected != wh:
+                print(f"❌ Hash mismatch at entry {i}!")
+                print(f"   Expected: {expected}")
+                print(f"   Stored:   {wh}")
+                sys.exit(1)
         
-        print(f"✅ Chain integrity verified ({len(entries)} entries)")
+        print(f"✅ Chain + Hash integrity verified ({len(entries)} entries)")
         sys.exit(0)
 
 

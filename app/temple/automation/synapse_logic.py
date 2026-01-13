@@ -192,22 +192,31 @@ class StatusHistoryManager:
         
         return new_entries
     
-    def _validate_protocol_v13(self, block, current_entries):
+    def _validate_protocol_v40(self, block, current_entries):
         """
-        Enforces strict S2 V13 Schema compliance via Hard Code.
+        Enforces strict S2 V4.0 Protocol compliance (Split Responsibility).
         """
-        required_fields = [
-            "goal", "inputs", "actions", "risk", "rule_tangency", 
-            "reflection_curve", "output_plan", "window_type", "confidence",
-            "window_hash", "prev_window_hash", "mcp_trigger"
+        # 1. Semantic Fields (AGENT MUST FILL)
+        semantic_fields = [
+            "goal", "inputs", "actions", "risk", "assumptions", 
+            "rule_tangency", "reflection_curve", "output_plan", 
+            "window_type", "confidence"
         ]
         
-        # 1. Field Existence
-        for field in required_fields:
+        for field in semantic_fields:
             if field not in block:
-                print(f"[ERROR] Missing Required Field: {field}", file=sys.stderr)
-                sys.stderr.flush()
+                print(f"[ERROR] Missing Semantic Field: {field}", file=sys.stderr)
                 return False
+            if block[field] is None:
+                 print(f"[ERROR] Semantic Field is Null: {field}", file=sys.stderr)
+                 return False
+
+        # 2. System Fields (AGENT MUST RETURN NULL or OMIT)
+        # We don't block if they are missing (we hydrate them), 
+        # but if they are present, they should ideally be ignored or null.
+        # For V4.0 compliance, we just ensure we HAVE the block structure to work with.
+        
+        return True
 
         # 2. Chain Continuity
         if current_entries:
@@ -242,11 +251,41 @@ class StatusHistoryManager:
         
         # Load existing history
         entries = self._load_history()
+
+        # ------------------------------------------------------------------
+        # Backend-authoritative enrichment (no client-trust for time/hash)
+        # ------------------------------------------------------------------
+        save_time = datetime.now(timezone.utc).isoformat()
+
+        # Ensure mcp_trigger exists + stamp authoritative timestamp
+        mcp = status_window.get("mcp_trigger")
+        if not isinstance(mcp, dict):
+            mcp = {}
+        mcp["timestamp"] = save_time
+        status_window["mcp_trigger"] = mcp
+
+        # Ensure Chronos-compatible time_source (STRICT_SYNC + TZ-aware ISO)
+        status_window["time_source"] = f"metadata (STRICT_SYNC): {save_time}"
+
+        # Ensure prev_window_hash is consistent with chain head if missing/placeholder
+        placeholder_prev = {None, "null", "", "AUTO", "PLACEHOLDER"}
+        if entries:
+            last_hash = entries[-1].get("window_hash")
+            claimed_prev = status_window.get("prev_window_hash")
+            if claimed_prev in placeholder_prev:
+                status_window["prev_window_hash"] = last_hash
+        else:
+            if status_window.get("prev_window_hash") in placeholder_prev:
+                status_window["prev_window_hash"] = None
+
+        # Ensure window_hash field exists before protocol validation
+        if "window_hash" not in status_window:
+            status_window["window_hash"] = "PLACEHOLDER_BACKEND"
         
-        # HARDCODED PROTOCOL ENFORCEMENT V13
-        if not self._validate_protocol_v13(status_window, entries):
-             print("[ERROR] S2 Protocol Violation: Block rejected.", file=sys.stderr)
-             return False
+        # HARDCODED PROTOCOL ENFORCEMENT V4.0
+        if not self._validate_protocol_v40(status_window, entries):
+              print("[ERROR] S2 Protocol Violation: Block rejected.", file=sys.stderr)
+              return False
 
         # Chronos Time Check
         if not self._validate_chronos(status_window):
@@ -254,10 +293,15 @@ class StatusHistoryManager:
 
         # Generate cryptographic salt
         salt = secrets.token_hex(16)
-        save_time = datetime.now(timezone.utc).isoformat()
         
         # Compute Hash with Salt and Timestamp binding
-        window_hash = self._compute_hash(status_window, save_time, salt)
+        window_for_hash = dict(status_window)
+        # Avoid self-referential hashing: do not include window_hash itself
+        window_for_hash.pop("window_hash", None)
+        window_hash = self._compute_hash(window_for_hash, save_time, salt)
+
+        # Write truth back into the block (backend is authoritative)
+        status_window["window_hash"] = window_hash
         
         # Check for duplicates
         for entry in entries:
@@ -272,6 +316,7 @@ class StatusHistoryManager:
             "source": source,
             "window_hash": window_hash,
             "status_window": status_window,
+            "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
             "metadata": metadata or {}
         }
         

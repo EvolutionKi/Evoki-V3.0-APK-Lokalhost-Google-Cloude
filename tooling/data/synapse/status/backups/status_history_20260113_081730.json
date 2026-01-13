@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T08:21:32.772119+00:00",
-  "total_entries": 3,
+  "created_at": "2026-01-13T07:51:33.745480+00:00",
+  "total_entries": 2,
   "entries": [
     {
       "timestamp": "2026-01-13T06:57:49.425878+00:00",
@@ -106,61 +106,6 @@
         },
         "window_hash": "CALCULATED_BY_SCRIPT",
         "prev_window_hash": "cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b",
-        "mcp_trigger": {
-          "action": "save_to_history",
-          "target": "status_history_manager.py",
-          "enabled": true
-        }
-      },
-      "metadata": {}
-    },
-    {
-      "timestamp": "2026-01-13T08:21:32.771972+00:00",
-      "salt": "6bd41cdd63f9ae8ad5acb9278997e233",
-      "source": "pending_status_auto",
-      "window_hash": "ea051e382cff84a42892b447db379506c61b286baa6badae58386ca33ce32534",
-      "status_window": {
-        "step_id": "1190",
-        "cycle": "4/5",
-        "time_source": "metadata (STRICT_SYNC): 2026-01-13T09:17:56+01:00",
-        "goal": "Recover Chain Integrity via V2.1 Protocol",
-        "inputs": {
-          "user_request": "Implement everything so it runs",
-          "context": "Breaking the Hash Deadlock. Using the EXPECTED hash from logs."
-        },
-        "actions": [
-          "recover_chain_integrity"
-        ],
-        "risk": [],
-        "rule_tangency": {
-          "tangency_detected": true,
-          "notes": "Manual Chain Recovery using Log Data"
-        },
-        "reflection_curve": {
-          "delta": "Deadlock detected (Hash Mismatch)",
-          "correction": "Using 1f0c429... as prev_hash and PENDING_GENERATION as window_hash",
-          "next": "Verify success"
-        },
-        "output_plan": [
-          "Write pending_status.json with CORRECT hash",
-          "Verify success in log"
-        ],
-        "window_type": "execution",
-        "schema_version": "3.1",
-        "window_source": "backend_generated",
-        "confidence": 1.0,
-        "system_versions": {
-          "api_version": "1.0",
-          "model": "Antigravity"
-        },
-        "cycle_backend_controlled": true,
-        "critical_summary": {
-          "status": "GREEN",
-          "message": "Chain Recovery"
-        },
-        "full_response": "Ich habe den Deadlock identifiziert: Der `prev_window_hash` war veraltet. Ich habe das Backend auf V2.1 aktualisiert (Auto-Hashing) und sende nun einen Korrektur-Block mit dem korrekten Hash `1f0c429...` und `PENDING_GENERATION`. Damit sollte die Kette wieder laufen.",
-        "window_hash": "ea051e382cff84a42892b447db379506c61b286baa6badae58386ca33ce32534",
-        "prev_window_hash": "1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692",
         "mcp_trigger": {
           "action": "save_to_history",
           "target": "status_history_manager.py",

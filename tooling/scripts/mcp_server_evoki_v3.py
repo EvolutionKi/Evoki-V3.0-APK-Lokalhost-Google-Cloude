@@ -29,6 +29,7 @@ MCP Config (.agent/mcp_config.json):
 import asyncio
 import json
 import sqlite3
+import os
 import sys
 from pathlib import Path
 from typing import Any
@@ -44,12 +45,14 @@ except ImportError:
     print("Install with: pip install mcp")
     exit(1)
 
-# Add project root to path for backend imports
-if str(Path(__file__).parent.parent) not in sys.path:
-    sys.path.append(str(Path(__file__).parent.parent))
+# Ensure repo/app is importable (temple.* lives under /app)
+REPO_ROOT = Path(__file__).resolve().parents[2]
+APP_DIR = REPO_ROOT / "app"
+if str(APP_DIR) not in sys.path:
+    sys.path.insert(0, str(APP_DIR))
 
 try:
-    from backend.core.synapse_logic import StatusHistoryManager
+    from temple.automation.synapse_logic import StatusHistoryManager
 except ImportError as e:
     print(f"[WARN] Could not import Synapse Core Logic: {e}", file=sys.stderr)
     StatusHistoryManager = None
@@ -60,7 +63,7 @@ DATA_DIR = BASE_DIR / "data"
 REGELWERK_PATH = DATA_DIR / "prompts" / "EVOKI_SYSTEM_PROMPT_GEMINI_V12.txt"
 BACKEND_STATE_PATH = DATA_DIR / "backend_state.json"
 PERSISTENT_DB_PATH = DATA_DIR / "persistent_context.db"
-PENDING_STATUS_PATH = DATA_DIR / "synapse" / "pending_status.json"
+PENDING_STATUS_PATH = DATA_DIR / "synapse" / "status" / "pending_status.json"
 
 # Initialize MCP server
 server = Server("synapse-context")
@@ -525,8 +528,10 @@ async def main():
     # Initialize database
     init_persistent_db()
     
-    # Start background monitor
-    monitor_task = asyncio.create_task(monitor_pending_status())
+    # Start background monitor (DISABLED BY DEFAULT to avoid double-writes with external watcher)
+    monitor_task = None
+    if os.environ.get("EVOKI_ENABLE_PENDING_MONITOR") == "1":
+        monitor_task = asyncio.create_task(monitor_pending_status())
     
     # Run server
     try:
@@ -537,12 +542,13 @@ async def main():
                 server.create_initialization_options()
             )
     finally:
-        # Cancel monitor on shutdown
-        monitor_task.cancel()
-        try:
-            await monitor_task
-        except asyncio.CancelledError:
-            pass
+        # Cancel monitor on shutdown (if enabled)
+        if monitor_task:
+            monitor_task.cancel()
+            try:
+                await monitor_task
+            except asyncio.CancelledError:
+                pass
 
 
 if __name__ == "__main__":
