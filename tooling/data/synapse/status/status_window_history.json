@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T20:23:35.820808+00:00",
-  "total_entries": 145,
+  "created_at": "2026-01-13T23:24:53.618748+00:00",
+  "total_entries": 146,
   "entries": [
     {
       "timestamp": "2026-01-13T10:15:07.379671+00:00",
@@ -9042,6 +9042,68 @@
           "enabled": true,
           "timestamp": "2026-01-13T20:23:35.820531+00:00"
         }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 146,
+      "timestamp": "2026-01-13T23:24:53.618545+00:00",
+      "salt": "8a5fd4b4ddf06089c246e79009a546f3",
+      "source": "pipeline_test",
+      "window_hash": "a4e9e92aaee441440d9a7d7faa85f7aca47e06c515bf025ee97738a76ae6105d",
+      "status_window": {
+        "schema_version": "3.2",
+        "window_source": "pipeline_test",
+        "cycle_backend_controlled": true,
+        "step_id": "test_002453",
+        "cycle": "1/1",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T23:24:53.618545+00:00",
+        "prev_window_hash": "b1275dc995c5d84b0fcc2828d83c521ae2e303b4d44d2ee7917c206c8b1a02b7",
+        "window_hash": "a4e9e92aaee441440d9a7d7faa85f7aca47e06c515bf025ee97738a76ae6105d",
+        "mcp_trigger": {
+          "timestamp": "2026-01-13T23:24:53.618545+00:00"
+        },
+        "goal": "Pipeline-Test: Verifiziere Stand 0 Funktionalität",
+        "inputs": {
+          "raw_user_request": "Test der Status Window Pipeline nach Stand 0 Migration",
+          "user_messages": [
+            "Pipeline-Test ausgeführt"
+          ],
+          "system_events": [
+            "test_pipeline.py invoked"
+          ],
+          "context": {
+            "trigger": "test_pipeline.py",
+            "repo_root": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude"
+          }
+        },
+        "actions": [
+          "create_test_status",
+          "write_pending",
+          "add_to_history",
+          "verify_chain"
+        ],
+        "risk": [],
+        "assumptions": [
+          "Watcher ist nicht aktiv - manueller Add"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Pipeline-Test"
+        },
+        "reflection_curve": {
+          "delta": "Stand 0 Migration abgeschlossen",
+          "correction": "Keine - Test",
+          "next": "Verify Chain Integrity"
+        },
+        "output_plan": [
+          "Verify chain",
+          "Show last entry"
+        ],
+        "window_type": "verification",
+        "confidence": 0.95,
+        "critical_summary": "Pipeline-Test nach Stand 0 Migration"
       },
       "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
       "metadata": {}
