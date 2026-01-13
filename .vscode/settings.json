@@ -1,1 +1,315 @@
-{}
+{
+    "chat.tools.terminal.autoApprove": {
+        "python": true,
+        "pip": true,
+        "pytest": true,
+        "git": true,
+        "npm": true,
+        "node": true,
+        "npx": true,
+        "powershell": true,
+        "cmd": true,
+        "cd": true,
+        "dir": true,
+        "ls": true,
+        "cat": true,
+        "pwd": true,
+        "echo": true,
+        "type": true,
+        "kill": true,
+        "ps": true,
+        "netstat": true,
+        "curl": true,
+        "tasklist": true,
+        "wmic": true,
+        "find": true,
+        "findstr": true,
+        "grep": true,
+        "Get-Content": true,
+        "Get-ChildItem": true,
+        "Get-Item": true,
+        "Get-Location": true,
+        "Get-Process": true,
+        "Get-Service": true,
+        "Select-Object": true,
+        "Where-Object": true,
+        "Measure-Object": true,
+        "Format-Table": true,
+        "Format-List": true,
+        "Format-Wide": true,
+        "Get-Date": true,
+        "Get-Host": true,
+        "Write-Output": true,
+        "Write-Host": true,
+        "Test-Path": true,
+        "Select-String": true,
+        "Get-Command": true,
+        "Set-Content": true,
+        "New-Item": true,
+        "Remove-Item": true,
+        "Copy-Item": true,
+        "Move-Item": true,
+        "Start-Process": true,
+        "Stop-Process": true,
+        "Start-Job": true,
+        "Out-Null": true,
+        "Tee-Object": true,
+        "Group-Object": true,
+        "ForEach-Object": true,
+        "ConvertFrom-Json": true,
+        "ConvertTo-Json": true,
+        "Out-String": true,
+        "import": true,
+        "with": true,
+        "jupyter": true,
+        "tar": true,
+        "Start-Sleep": true,
+        "FOR": true,
+        "$shortcut": true,
+        "&": true,
+        "/^python validate_metrics_consistency\\.py 2>&1 \\| Select-Object -First 100$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd c:\\\\evoki\\\\backend; cmd /c \"npm run build\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd c:\\\\evoki\\\\backend; cmd /c \"npm start\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd \"c:\\\\evoki\\\\EVOKI DeepEarth Instanzen\\\\Trialog\\\\RESCUE \\(Code Historikerin\\)\"; python vectorize_rescue_genesis\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"C:\\\\evoki\\\\scripts\\\\rescue_genesis_trajectory_vectorizer\\.py\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"C:\\\\evoki\\\\scripts\\\\brain_trajectory_vectorizer\\.py\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"C:\\\\evoki\\\\scripts\\\\brain_atomic_vectorizer\\.py\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"C:\\\\evoki\\\\scripts\\\\brain_causal_trajectory_vectorizer\\.py\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"C:\\\\evoki\\\\scripts\\\\xray_route_mapper\\.py\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"C:\\\\evoki\\\\scripts\\\\xray_route_mapper\\.py\" > \"C:\\\\evoki\\\\scripts\\\\xray_output\\.txt\" 2>&1; Get-Content \"C:\\\\evoki\\\\scripts\\\\xray_output\\.txt\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd C:\\\\evoki\\\\scripts; python xray_route_mapper\\.py 2>&1 \\| Tee-Object -FilePath xray_log\\.txt$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd C:\\\\evoki\\\\backend\\\\src\\\\services; python vectorRegsIntegration\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd C:\\\\evoki\\\\backend\\\\src\\\\services; python vectorRegsService\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python C:\\\\evoki\\\\backend\\\\src\\\\services\\\\test_vectorregs_search\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python C:\\\\evoki\\\\backend\\\\src\\\\services\\\\test_vectorregs_search\\.py 2>&1$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python C:\\\\evoki\\\\backend\\\\src\\\\services\\\\analyze_seed_metrics\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python C:\\\\evoki\\\\backend\\\\METRIK_ANALYSE\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd C:\\\\evoki\\\\backend; python search_vectorregs\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python C:\\\\evoki\\\\backend\\\\search_vectorregs\\.py 2>&1$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"C:\\\\evoki\\\\evoki_enginepy V71 Metakognitive Synthese\\.txt\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"C:\\\\evoki\\\\evoki_enginepy V71 Metakognitive Synthese\\.txt\" 2>&1 \\| Select-Object -Last 30$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"C:\\\\evoki\\\\evoki_enginepy V71 Metakognitive Synthese\\.txt\" 2>&1 \\| Select-Object -Last 20$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"C:\\\\evoki\\\\evoki_enginepy V71 Metakognitive Synthese\\.txt\" 2>&1 \\| Select-Object -Last 15$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"C:\\\\evoki\\\\backend\\\\evoki_engine\\.py\" 2>&1 \\| Select-Object -Last 5$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"C:\\\\evoki\\\\backend\\\\evoki_engine\\.py\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd C:\\\\evoki\\\\backend; python evoki_launcher\\.py --help$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd C:\\\\evoki\\\\backend; python evoki_launcher\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd C:\\\\evoki\\\\backend; python evoki_launcher\\.py 2>&1 \\| Select-Object -Last 30$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd C:\\\\evoki\\\\backend; \\$env:PYTHONIOENCODING='utf-8'; python evoki_launcher\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd C:\\\\evoki\\\\backend; python analyze_vectorregs\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python analyze_integrated_sources\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python json_to_vectorregs\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd \"C:\\\\evoki\\\\backend\\\\Master Massenexport Extraktor\"; python html_stream_parser\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python txt_to_vectorregs\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python batch_vectorizer_parallel\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python scripts/count_pairs\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python compare_v12_registries\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python build_v12_registry_and_anchor\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python build_v12_2_complete\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python build_v12_2_complete_FIXED\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python compare_evoki_vs_monolith\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python c:\\\\evoki\\\\generate_analysis_charts\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd 'c:\\\\evoki\\\\Anfang des Neuen\\\\evoki_pipeline'; python quick_simulation\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd 'c:\\\\evoki\\\\Anfang des Neuen\\\\evoki_pipeline'; python quick_visualizations\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd 'c:\\\\evoki\\\\Anfang des Neuen\\\\evoki_pipeline'; python minimal_visualizations\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"Anfang des Neuen\\\\evoki_pipeline\\\\embedding_pipeline_v3_production\\.py\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"c:\\\\evoki\\\\Anfang des Neuen\\\\evoki_pipeline\\\\embedding_pipeline_v3_production\\.py\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"c:\\\\evoki\\\\Anfang des Neuen\\\\evoki_pipeline\\\\embedding_pipeline_v3_live\\.py\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"c:\\\\evoki\\\\Anfang des Neuen\\\\evoki_pipeline\\\\monitor_pipeline\\.py\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"c:\\\\evoki\\\\Anfang des Neuen\\\\evoki_pipeline\\\\enrichment_pipeline_bert_v2\\.py\" 2>&1$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python \"c:\\\\evoki\\\\Anfang des Neuen\\\\evoki_pipeline\\\\monitor_enrichment\\.py\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python check_12db_configuration\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python -m pip install jupyter notebook$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^python -m notebook EVOKI_Bat_Versions_Analysis\\.ipynb$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^node backend_server_enhanced\\.js$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^node backend_server_enhanced\\.js 2>&1 \\| head -50$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^Get-Command python -ErrorAction SilentlyContinue \\| Select-Object -ExpandProperty Source$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^node backend_server_enhanced\\.js 2>&1 \\| Select-Object -First 50$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cmd /c \"cd C:\\\\evoki && start cmd /k npm run dev\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd \"C:\\\\Evoki V2\\.0\\\\evoki-app\"; python -m venv \\.venv$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd python/tools; \\.\\.\\\\\\.\\.\\\\\\.\\.\\\\\\.venv\\\\Scripts\\\\python\\.exe create_synapse_kb\\.py$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

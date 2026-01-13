@@ -54,33 +54,52 @@ class PendingStatusWatcher(FileSystemEventHandler):
         print(f"   Manager:  {self.HISTORY_MANAGER}")
         print(f"   Log:      {self.LOG_FILE}")
     
-    def on_modified(self, event: FileModifiedEvent):
+    def on_modified(self, event):
         """Handle file modification events"""
+        self._process_change(event)
+
+    def on_created(self, event):
+        """Handle file creation events (atomic write first step)"""
+        self._process_change(event)
+
+    def on_moved(self, event):
+        """Handle file move events (atomic write final step)"""
+        # For move events, dest_path is the file we care about
+        if not event.is_directory and Path(event.dest_path).name == "pending_status.json":
+            self._handle_file_logic(Path(event.dest_path))
+
+    def _process_change(self, event):
+        """Unified event processor"""
         if event.is_directory:
             return
         
         file_path = Path(event.src_path)
-        
-        # Only process pending_status.json
         if file_path.name != "pending_status.json":
             return
-        
+            
+        self._handle_file_logic(file_path)
+
+    def _handle_file_logic(self, file_path: Path):
+        """Core logic for file change handling"""
         # Check if file actually changed (avoid duplicate events)
         try:
             current_mtime = file_path.stat().st_mtime
+            # Note: For atomic writes (moves), mtime might be preserved or updated. 
+            # We trust the event trigger mostly, but debouncing is good.
             if current_mtime == self.last_mtime:
                 return  # No actual change
             self.last_mtime = current_mtime
-        except:
+        except Exception:
             return
         
         self._log({
             "timestamp": datetime.now(timezone.utc).isoformat(),
-            "event": "file_modified",
+            "event": "file_updated",
             "file": str(file_path)
         })
         
-        # Wait for file to be fully written
+        # Wait for file to be fully written (if necessary)
+        # With atomic writes this is less critical but keeping for safety
         time.sleep(0.2)
         
         # Trigger auto-save

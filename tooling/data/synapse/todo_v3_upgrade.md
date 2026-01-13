@@ -13,6 +13,11 @@
 - [x] Update Backend Logic for V4.0 Compliance (`synapse_logic.py`)
 - [x] Verify V4.0 Chain Integrity
 - [x] Update History Manager CLI (`status_history_manager.py`)
+- [x] **Enforce Deterministic V4.0 State in Repo**
+  - [x] Hardened Writer (Atomic)
+  - [x] Hardened MCP (Monitor Gating)
+  - [x] Hardened Logic (Backend-Auth Hashing)
+  - [x] Hardened Verify (Recompute Check)
 
 ## In Progress
 - [ ] Clean up redundant log files

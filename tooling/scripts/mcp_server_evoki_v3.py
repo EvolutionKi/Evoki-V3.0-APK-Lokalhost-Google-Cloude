@@ -31,7 +31,6 @@ import json
 import sqlite3
 import os
 import sys
-import sys
 from pathlib import Path
 from typing import Any
 
@@ -47,8 +46,9 @@ except ImportError:
     exit(1)
 
 # Ensure repo/app is importable (temple.* lives under /app)
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+PROJECT_ROOT = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
 APP_DIR = PROJECT_ROOT / "app"
+
 if str(APP_DIR) not in sys.path:
     sys.path.insert(0, str(APP_DIR))
 
@@ -57,6 +57,18 @@ try:
 except ImportError as e:
     print(f"[WARN] Could not import Synapse Core Logic: {e}", file=sys.stderr)
     StatusHistoryManager = None
+
+try:
+    from temple.automation.search_chatverlauf import (
+        SearchChatverlaufConfig,
+        SearchChatverlaufError,
+        search_chatverlauf as _search_chatverlauf,
+    )
+except ImportError as e:
+    print(f"[WARN] Could not import chatverlauf search lib: {e}", file=sys.stderr)
+    SearchChatverlaufConfig = None
+    SearchChatverlaufError = Exception
+    _search_chatverlauf = None
 
 # Paths
 BASE_DIR = Path(__file__).parent.parent
@@ -343,7 +355,15 @@ async def list_tools() -> list[types.Tool]:
                 "properties": {
                     "query": {"type": "string"},
                     "top_k": {"type": "integer", "default": 5},
-                    "include_text": {"type": "boolean", "default": false}
+                    "include_text": {"type": "boolean", "default": False},
+                    "vector_backend": {"type": "string", "enum": ["faiss", "numpy"], "default": "faiss"},
+                    "embedding_backend": {
+                        "type": "string",
+                        "enum": ["sentence_transformers", "hash"],
+                        "default": "sentence_transformers"
+                    },
+                    "embedding_model": {"type": "string", "default": "all-MiniLM-L6-v2"},
+                    "embedding_dim": {"type": "integer", "default": 384}
                 },
                 "required": ["query"]
             },
@@ -388,55 +408,46 @@ async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
         top_k = int(arguments.get("top_k") or 5)
         include_text = bool(arguments.get("include_text") or False)
 
-        index_path = DATA_DIR / "faiss_indices" / "chatverlauf_final_20251020plus_dedup_sorted.faiss"
-        meta_path = DATA_DIR / "faiss_indices" / "chatverlauf_final_20251020plus_dedup_sorted.metadata.json"
-        db_path = DATA_DIR / "faiss_indices" / "chatverlauf_final_20251020plus_dedup_sorted.db"
+        if not _search_chatverlauf or not SearchChatverlaufConfig:
+            return [types.TextContent(type="text", text="Error: chatverlauf search lib not available on server.")]
 
-        if not index_path.exists() or not meta_path.exists():
-            return [types.TextContent(type="text", text="Error: chatverlauf index or metadata not found.")]
+        # Prefer persistent context defaults (kept in DB)
+        ctx = load_persistent_context()
+        default_index = DATA_DIR / "faiss_indices" / "chatverlauf_final_20251020plus_dedup_sorted.faiss"
+        default_meta = DATA_DIR / "faiss_indices" / "chatverlauf_final_20251020plus_dedup_sorted.metadata.json"
+        default_db = DATA_DIR / "faiss_indices" / "chatverlauf_final_20251020plus_dedup_sorted.db"
+
+        index_path = Path(ctx.get("chatverlauf_faiss_index") or default_index)
+        meta_path = Path(ctx.get("chatverlauf_metadata") or default_meta)
+        db_path = Path(ctx.get("chatverlauf_sqlite") or default_db)
+
+        vector_backend = (arguments.get("vector_backend") or "faiss").strip()
+        embedding_backend = (arguments.get("embedding_backend") or "sentence_transformers").strip()
+        embedding_model = (arguments.get("embedding_model") or "all-MiniLM-L6-v2").strip()
+        embedding_dim = int(arguments.get("embedding_dim") or 384)
+
+        cfg = SearchChatverlaufConfig(
+            index_path=index_path,
+            meta_path=meta_path,
+            db_path=db_path,
+            vector_backend=vector_backend,
+            embedding_backend=embedding_backend,
+            embedding_model=embedding_model,
+            embedding_dim=embedding_dim,
+        )
 
         try:
-            import faiss
-            import numpy as np
-            from sentence_transformers import SentenceTransformer
+            results = _search_chatverlauf(
+                query=query,
+                top_k=top_k,
+                include_text=include_text,
+                config=cfg,
+            )
+            return [types.TextContent(type="text", text=json.dumps(results, ensure_ascii=False, indent=2))]
+        except SearchChatverlaufError as e:
+            return [types.TextContent(type="text", text=f"Retrieval Error: {e}")]
         except Exception as e:
-            return [types.TextContent(type="text", text=f"Error: missing deps ({e}).")]
-
-        meta = json.loads(meta_path.read_text(encoding="utf-8", errors="replace")).get("chunks", [])
-        index = faiss.read_index(str(index_path))
-        model = SentenceTransformer("all-MiniLM-L6-v2")
-        qvec = model.encode([query], convert_to_numpy=True, normalize_embeddings=True)[0].astype(np.float32)
-        distances, indices = index.search(qvec.reshape(1, -1), top_k)
-
-        results = []
-        conn = None
-        if include_text and db_path.exists():
-            conn = sqlite3.connect(str(db_path))
-        try:
-            for idx, dist in zip(indices[0], distances[0]):
-                if idx < 0 or idx >= len(meta):
-                    continue
-                chunk = meta[idx]
-                item = {
-                    "chunk_id": chunk.get("chunk_id"),
-                    "start": chunk.get("start"),
-                    "end": chunk.get("end"),
-                    "score": float(dist),
-                    "preview": chunk.get("preview", "")
-                }
-                if conn:
-                    row = conn.execute(
-                        "SELECT text FROM chunks WHERE chunk_id = ?",
-                        (chunk.get("chunk_id"),),
-                    ).fetchone()
-                    if row:
-                        item["text"] = row[0]
-                results.append(item)
-        finally:
-            if conn:
-                conn.close()
-
-        return [types.TextContent(type="text", text=json.dumps(results, ensure_ascii=False, indent=2))]
+            return [types.TextContent(type="text", text=f"Retrieval Crash: {e}")]
 
     raise ValueError(f"Unknown tool: {name}")
 
