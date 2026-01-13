@@ -1,0 +1,79 @@
+EVOKI V3.0 - Architecture Map
+=============================
+Current Strategy: "App (V4 Core) vs. Tooling (V3 Dev)" Separation
+Updated: 2026-01-13
+Status: BEING
+
+ROOT/
+├─ README.md                     # Entry Point & Documentation Link
+├─ ARCHITECTURE.txt              # THIS FILE - Always Current Map
+│
+├─ app/                          # [V4 CORE] - The Future Artifact ("Das Wesen")
+│  │                             # Will survive migration to V4 (Cloud/APK)
+│  │
+│  ├─ temple/                    # [SPIRIT] -> Future Cloud API
+│  │  ├─ main.py                 # FastAPI Entry Point
+│  │  ├─ requirements.txt
+│  │  ├─ pyproject.toml
+│  │  ├─ core/
+│  │  │  ├─ config.py
+│  │  │  ├─ logging.py
+│  │  │  └─ soul_physics.py      # SoulPhysics (Andromatik Heart)
+│  │  ├─ models/
+│  │  │  └─ trialog.py           # Pydantic Models
+│  │  ├─ routes/
+│  │  │  ├─ health.py
+│  │  │  ├─ integrity.py
+│  │  │  └─ trialog.py
+│  │  ├─ trinity_engine/         # [ENGINE]
+│  │  │  ├─ core/
+│  │  │  │  └─ engine.py
+│  │  │  ├─ vector_search/
+│  │  │  │  └─ service.py
+│  │  │  ├─ metrics_calculator/
+│  │  │  │  └─ service.py
+│  │  │  └─ integrity_check/
+│  │  │     ├─ report.py
+│  │  │     └─ silent_integrity.py
+│  │  └─ automation/             # [AUTO] (Currently here, may move to tooling if pure dev)
+│  │     ├─ synapse_logic.py
+│  │     ├─ pending_status_watcher.py
+│  │     ├─ status_history_manager.py
+│  │     └─ write_pending_status.py
+│  │
+│  ├─ interface/                 # [BODY] -> Future APK
+│  │  ├─ package.json
+│  │  ├─ vite.config.ts
+│  │  ├─ src/
+│  │  │  ├─ App.tsx
+│  │  │  ├─ main.tsx
+│  │  │  └─ components/
+│  │  │     └─ TrialogPanel.tsx
+│  │
+│  └─ deep_earth/                # [MEMORY] -> Future Cloud DB
+│     ├─ schemas/
+│     └─ layers/                 # 12-Layer System
+│        ├─ 01_surface/
+│        └─ ...
+│        └─ 12_abyss/
+│
+└─ tooling/                      # [V3 DEV] - The Scaffold ("Das Gerüst")
+   │                             # Necessary for V3 dev, stays local in V4
+   │
+   ├─ scripts/                   # Automation & Helpers
+   │  ├─ mcp_server_evoki_v3.py  # MCP Server for Context
+   │  ├─ mcp_trigger_save.py     # MCP Trigger
+   │  └─ get_status_block.py     # Status Logic
+   │
+   ├─ data/                      # Local Runtime Data
+   │  ├─ synapse/
+   │  │  └─ status/              # Status History Logs
+   │  └─ faiss_indices/          # Migrated FAISS Data
+   │
+   ├─ config/                    # Local Configs
+   │  └─ mcp.json                # MCP Configuration
+   │
+   └─ docs/                      # Documentation
+      ├─ MANIFESTO.md
+      ├─ GENESIS_ANCHOR_V3.md
+      └─ deep_earth_genesis_anchor.md
