@@ -1,0 +1,56 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "🚀 Build Chatverlauf Index (FAISS + SQLite)",
+            "type": "shell",
+            "command": "python \"C:\\Evoki V2.0\\evoki-app\\python\\tools\\build_chatverlauf_faiss.py\"",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "🔍 Query Chatverlauf",
+            "type": "shell",
+            "command": "python \"C:\\Evoki V2.0\\evoki-app\\python\\tools\\query_chatverlauf.py\"",
+            "args": [
+                "--query",
+                "${input:queryText}",
+                "--index",
+                "C:\\Evoki V2.0\\evoki-app\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.faiss",
+                "--meta",
+                "C:\\Evoki V2.0\\evoki-app\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.metadata.json",
+                "--db",
+                "C:\\Evoki V2.0\\evoki-app\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.db",
+                "--top-k",
+                "10"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "⚡ Start Synapse MCP Server",
+            "type": "shell",
+            "command": "python \"C:\\Evoki V2.0\\evoki-app\\scripts\\mcp_server_synapse.py\"",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "^.*$",
+                    "file": 1,
+                    "location": 2,
+                    "message": 3
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Starting Synapse MCP Server",
+                    "endsPattern": "Server ready"
+                }
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "queryText",
+            "type": "promptString",
+            "description": "Was möchtest du im Chatverlauf suchen?"
+        }
+    ]
+}
