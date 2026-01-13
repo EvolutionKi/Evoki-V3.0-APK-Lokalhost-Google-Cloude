@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T13:19:21.527861+00:00",
-  "total_entries": 81,
+  "created_at": "2026-01-13T13:48:35.426435+00:00",
+  "total_entries": 90,
   "entries": [
     {
       "timestamp": "2026-01-13T10:15:07.379671+00:00",
@@ -5058,6 +5058,575 @@
           "target": "status_history_manager.py",
           "enabled": true,
           "timestamp": "2026-01-13T13:19:21.527673+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 82,
+      "timestamp": "2026-01-13T13:19:55.425053+00:00",
+      "salt": "faa4a75e208b8c4a63a185422109bad3",
+      "source": "pending_status_auto",
+      "window_hash": "2b6c5b5d89a6e81bb549a41a9a5884155c14f55c39cf435a0d46b2e1a57d1bb7",
+      "status_window": {
+        "step_id": "manual_1768310395",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:19:55.425053+00:00",
+        "goal": "Tool Verification Test",
+        "inputs": {
+          "raw_user_request": "Auto-Test via Antigravity"
+        },
+        "actions": [
+          "Manuelles Status-Update via CLI",
+          "Warten auf Watcher-Persistenz"
+        ],
+        "risk": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Manuelles Tooling"
+        },
+        "reflection_curve": {
+          "delta": "Manueller Trigger ausgelöst",
+          "correction": "None",
+          "next": "Verifikation durchführen"
+        },
+        "output_plan": [
+          "Persistenz bestätigen"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Manuell generiert"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "CLI Execution"
+        },
+        "window_hash": "2b6c5b5d89a6e81bb549a41a9a5884155c14f55c39cf435a0d46b2e1a57d1bb7",
+        "prev_window_hash": "e102792ff4d43ce0bcf2ab5bbc52aea27a0bc589cc9f2f8769685252de69dc46",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:19:55.425053+00:00"
+        },
+        "assumptions": []
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 83,
+      "timestamp": "2026-01-13T13:21:10.802679+00:00",
+      "salt": "2ab744e6074ea4206a3931835562fbf1",
+      "source": "pending_status_auto",
+      "window_hash": "243cbccc7f0946888614d949c9b2bc0b6ca9ff92e1b525ce495683453e0e2dd0",
+      "status_window": {
+        "step_id": "manual_1768310470",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:21:10.802679+00:00",
+        "goal": "Tool Verification Test 2",
+        "inputs": {
+          "raw_user_request": "Auto-Test via Antigravity (Retry)"
+        },
+        "actions": [
+          "Manuelles Status-Update via CLI",
+          "Warten auf Watcher-Persistenz"
+        ],
+        "risk": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Manuelles Tooling"
+        },
+        "reflection_curve": {
+          "delta": "Manueller Trigger ausgelöst",
+          "correction": "None",
+          "next": "Verifikation durchführen"
+        },
+        "output_plan": [
+          "Persistenz bestätigen"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Manuell generiert"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "CLI Execution"
+        },
+        "window_hash": "243cbccc7f0946888614d949c9b2bc0b6ca9ff92e1b525ce495683453e0e2dd0",
+        "prev_window_hash": "2b6c5b5d89a6e81bb549a41a9a5884155c14f55c39cf435a0d46b2e1a57d1bb7",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:21:10.802679+00:00"
+        },
+        "assumptions": []
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 84,
+      "timestamp": "2026-01-13T13:32:06.945655+00:00",
+      "salt": "869e8d066a3c0e6b59cfaaa18c456fa5",
+      "source": "pending_status_auto",
+      "window_hash": "43b5ae3a6192e8c7fb545cd9d914dc7ea4b91476ff9141e6b2c343023f3e12c3",
+      "status_window": {
+        "step_id": "108",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:32:06.945655+00:00",
+        "goal": "Dashboard V2: Integration von Neural Retrieval (FAISS)",
+        "inputs": {
+          "raw_user_request": "jop"
+        },
+        "actions": [
+          "Stop Command Server (Dashboard V1)",
+          "Update server.py (Add /api/search subprocess)",
+          "Update index.html (Add Search UI)",
+          "Restart Server (Dashboard V2)"
+        ],
+        "risk": [
+          "Server neustart erforderlich -> kurze Downtime im Dashboard"
+        ],
+        "assumptions": [
+          "User möchte aktive Suche im UI sehen",
+          "search_chatverlauf.py ist funktional (bewiesen in Step 96)"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Erweiterung des Toolings um Retrieval-Interface"
+        },
+        "reflection_curve": {
+          "delta": "Dashboard V1 war nur Read-Only History.",
+          "correction": "Dashboard V2 wird interaktiv (Suche).",
+          "next": "Code patchen und Server neu starten."
+        },
+        "output_plan": [
+          "server.py patchen",
+          "index.html patchen",
+          "Server neustarten"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Upgrade auf V2"
+        },
+        "project_awareness": {
+          "active_files": [
+            "server.py",
+            "index.html"
+          ],
+          "context": "Dashboard Upgrade"
+        },
+        "window_hash": "43b5ae3a6192e8c7fb545cd9d914dc7ea4b91476ff9141e6b2c343023f3e12c3",
+        "prev_window_hash": "243cbccc7f0946888614d949c9b2bc0b6ca9ff92e1b525ce495683453e0e2dd0",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:32:06.945655+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 85,
+      "timestamp": "2026-01-13T13:35:08.932721+00:00",
+      "salt": "e5f4982ae4c37a3677490b214b9374ba",
+      "source": "pending_status_auto",
+      "window_hash": "a93f5311d9e948de2812d4945f34af0b769e7415054d14463f9fe950529a19cd",
+      "status_window": {
+        "step_id": "manual_1768311308",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:35:08.932721+00:00",
+        "goal": "Final System Health Verification",
+        "inputs": {
+          "raw_user_request": "stelle sicher dass alles läuft"
+        },
+        "actions": [
+          "Manuelles Status-Update via CLI",
+          "Warten auf Watcher-Persistenz"
+        ],
+        "risk": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Manuelles Tooling"
+        },
+        "reflection_curve": {
+          "delta": "Manueller Trigger ausgelöst",
+          "correction": "None",
+          "next": "Verifikation durchführen"
+        },
+        "output_plan": [
+          "Persistenz bestätigen"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Manuell generiert"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "CLI Execution"
+        },
+        "window_hash": "a93f5311d9e948de2812d4945f34af0b769e7415054d14463f9fe950529a19cd",
+        "prev_window_hash": "43b5ae3a6192e8c7fb545cd9d914dc7ea4b91476ff9141e6b2c343023f3e12c3",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:35:08.932721+00:00"
+        },
+        "assumptions": []
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 86,
+      "timestamp": "2026-01-13T13:36:15.211575+00:00",
+      "salt": "c00ff965f16558b0bd518e949e38bd06",
+      "source": "pending_status_auto",
+      "window_hash": "9c07a8134fd5e2fcee82dde2c1d5b1891547eea812f8ff7be1efdd107a74572d",
+      "status_window": {
+        "step_id": "126",
+        "cycle": "3/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:36:15.211575+00:00",
+        "goal": "Bestätigung des System-Status (Green Status)",
+        "inputs": {
+          "raw_user_request": "stelle sicher dass alles läuft"
+        },
+        "actions": [
+          "Check: Watcher (Success, Entry 85)",
+          "Check: Dashboard Server (Running)",
+          "Check: Chain Integrity (Verified via Tool)"
+        ],
+        "risk": [],
+        "assumptions": [
+          "Alle Hintergrunddienste sind stabil"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "System Health Verification abgeschlossen"
+        },
+        "reflection_curve": {
+          "delta": "Health Check angefordert.",
+          "correction": "Alle Lichter auf Grün.",
+          "next": "Warten auf neue Aufgaben."
+        },
+        "output_plan": [
+          "Bestätigung ausgeben",
+          "Link zum Dashboard bereitstellen"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "ALL SYSTEMS GO"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "System Check"
+        },
+        "window_hash": "9c07a8134fd5e2fcee82dde2c1d5b1891547eea812f8ff7be1efdd107a74572d",
+        "prev_window_hash": "a93f5311d9e948de2812d4945f34af0b769e7415054d14463f9fe950529a19cd",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:36:15.211575+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 87,
+      "timestamp": "2026-01-13T13:37:03.636955+00:00",
+      "salt": "def50afd44b481e126b71a91f9ba0063",
+      "source": "pending_status_auto",
+      "window_hash": "518a96aa06a5059a19bbbbb1e2097a63598faf37c6d72f6bfff0ec6a49118667",
+      "status_window": {
+        "step_id": "129",
+        "cycle": "4/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:37:03.636955+00:00",
+        "goal": "Implementierung Hybrid-Suche (FAISS + Live History) im Dashboard",
+        "inputs": {
+          "raw_user_request": "aber hier fehlen ja noch die history faissess"
+        },
+        "actions": [
+          "Analyse: FAISS Index ist statisch (alt), History ist live (neu). Lücke erkannt.",
+          "Plan: server.py erweitern, um Live-History in die Suche einzubeziehen (Hybrid Search)."
+        ],
+        "risk": [
+          "Performance bei großer History JSON (aber bei <1MB okay)"
+        ],
+        "assumptions": [
+          "User möchte, dass ALLES durchsuchbar ist (altes Wissen + neuer Status)"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Erweiterung der Retrieval-Logik"
+        },
+        "reflection_curve": {
+          "delta": "Suche fand bisher nur alte Chat-Logs (FAISS).",
+          "correction": "Server-seitige Aggregation von FAISS-Ergebnissen und Live-History-Matches.",
+          "next": "server.py patchen."
+        },
+        "output_plan": [
+          "server.py patchen (Hybrid Logic)",
+          "Neu starten"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Hybrid Search Integration"
+        },
+        "project_awareness": {
+          "active_files": [
+            "server.py"
+          ],
+          "context": "Hybrid Retrieval"
+        },
+        "window_hash": "518a96aa06a5059a19bbbbb1e2097a63598faf37c6d72f6bfff0ec6a49118667",
+        "prev_window_hash": "9c07a8134fd5e2fcee82dde2c1d5b1891547eea812f8ff7be1efdd107a74572d",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:37:03.636955+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 88,
+      "timestamp": "2026-01-13T13:40:43.113508+00:00",
+      "salt": "a7dbd6a6c5bf57dd2f5a8c499d7c3937",
+      "source": "pending_status_auto",
+      "window_hash": "df385175c8a9e9d7c138851ba6c273863b023c887cd5f982d5522ceb3fa8dadf",
+      "status_window": {
+        "step_id": "140",
+        "cycle": "5/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:40:43.113508+00:00",
+        "goal": "Manuelle Verifikation der FAISS-Suche und Dashboard-Debugging",
+        "inputs": {
+          "raw_user_request": "ich bin sicher das läuft nicht such du ma manuell danach nexus kernel",
+          "screenshot_context": "Dashboard zeigt No memories found"
+        },
+        "actions": [
+          "CLI-Suche nach Nexus Kernel ausgeführt (Beweislast)",
+          "Server-Code Analyse (Warum keine Ergebnisse im UI?)"
+        ],
+        "risk": [
+          "FAISS Index könnte korrupt sein (unwahrscheinlich, da Step 96 lief)",
+          "Server Environment (PYTHONPATH) wird vielleicht nicht korrekt an Subprocess vererbt"
+        ],
+        "assumptions": [
+          "Der Begriff existiert in der DB (Step 96 hat Results angedeutet)",
+          "Dashboard schluckt Fehler"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Fehlersuche im Tooling"
+        },
+        "reflection_curve": {
+          "delta": "Dashboard Suche liefert leer zurück.",
+          "correction": "Manuelle CLI Suche als Fallback, dann Fix im Server.",
+          "next": "Suche starten."
+        },
+        "output_plan": [
+          "Manuelle Ergebnisse präsentieren",
+          "Server fixen"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "YELLOW",
+          "notes": "Dashboard Search Malfunction"
+        },
+        "project_awareness": {
+          "active_files": [
+            "server.py"
+          ],
+          "context": "Debugging Search"
+        },
+        "window_hash": "df385175c8a9e9d7c138851ba6c273863b023c887cd5f982d5522ceb3fa8dadf",
+        "prev_window_hash": "518a96aa06a5059a19bbbbb1e2097a63598faf37c6d72f6bfff0ec6a49118667",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:40:43.113508+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 89,
+      "timestamp": "2026-01-13T13:46:42.261767+00:00",
+      "salt": "979d07e3e1903f3ff3e92527383e39b7",
+      "source": "pending_status_auto",
+      "window_hash": "9c20ff5000a83f0ef3b863f91c69e53b0b348d59544eb3cbd64cc4b785fa8e48",
+      "status_window": {
+        "step_id": "157",
+        "cycle": "5/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:46:42.261767+00:00",
+        "goal": "Fix des Encoding-Fehlers im Dashboard-Server",
+        "inputs": {
+          "raw_user_request": "ok",
+          "technical_context": "UnicodeDecodeError/Encoding Issue observed in logs"
+        },
+        "actions": [
+          "server.py patchen: PYTHONIOENCODING=utf-8 setzen",
+          "Fehler-Reporting im UI verbessern"
+        ],
+        "risk": [
+          "Server-Neustart nötig"
+        ],
+        "assumptions": [
+          "PYTHONIOENCODING behebt das Windows-Console-Encoding Problem"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Bugfix infrastructure"
+        },
+        "reflection_curve": {
+          "delta": "Suche schlägt fehl wegen Encoding.",
+          "correction": "Environment Variable erzwingt UTF-8.",
+          "next": "Patch & Restart."
+        },
+        "output_plan": [
+          "server.py schreiben",
+          "Server neu starten",
+          "Verifikation"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Fixing Search"
+        },
+        "project_awareness": {
+          "active_files": [
+            "server.py"
+          ],
+          "context": "Encoding Fix"
+        },
+        "window_hash": "9c20ff5000a83f0ef3b863f91c69e53b0b348d59544eb3cbd64cc4b785fa8e48",
+        "prev_window_hash": "df385175c8a9e9d7c138851ba6c273863b023c887cd5f982d5522ceb3fa8dadf",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:46:42.261767+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 90,
+      "timestamp": "2026-01-13T13:48:35.426267+00:00",
+      "salt": "15e1849d6e27ff12ee8a760ca014e432",
+      "source": "pending_status_auto",
+      "window_hash": "b01437a065fcf55eedd78869690efaad25b084a5ebe67722d8959ebbfb208f84",
+      "status_window": {
+        "step_id": "176",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:48:35.426267+00:00",
+        "goal": "Verifikation der Dashboard-Suche durch Selbst-Test",
+        "inputs": {
+          "raw_user_request": "such du mal"
+        },
+        "actions": [
+          "Python-Skript ausführen, das localhost:8000/api/search abfragt",
+          "Ergebnisse anzeigen"
+        ],
+        "risk": [
+          "Keine (Read-Only Operation)"
+        ],
+        "assumptions": [
+          "Server läuft und Encoding-Fix greift"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Beweisführung der Funktionalität"
+        },
+        "reflection_curve": {
+          "delta": "User möchte Beweis, dass Suche geht.",
+          "correction": "Ich frage meine eigene API ab.",
+          "next": "Query ausführen."
+        },
+        "output_plan": [
+          "API Resultat anzeigen",
+          "Inhalt analysieren (was ist der Nexus Kernel?)"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Self-Query Verification"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "Search Verification"
+        },
+        "window_hash": "b01437a065fcf55eedd78869690efaad25b084a5ebe67722d8959ebbfb208f84",
+        "prev_window_hash": "9c20ff5000a83f0ef3b863f91c69e53b0b348d59544eb3cbd64cc4b785fa8e48",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:48:35.426267+00:00"
         }
       },
       "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
