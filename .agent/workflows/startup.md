@@ -65,11 +65,29 @@ python app/temple/automation/status_history_manager.py stats
 
 ---
 
+## Schritt 6: Letzten Eintrag lesen (Lernkurve)
+
+**KRITISCH:** Lese den letzten History-Eintrag um die Lernkurve zu verstehen.
+
+```bash
+python -c "import json; h=json.load(open(r'tooling/data/synapse/status/status_window_history.json','r',encoding='utf-8')); e=h['entries'][-1]['status_window']; print(f\"LETZTER EINTRAG:\\n  step_id: {e.get('step_id')}\\n  goal: {e.get('goal')}\\n  delta: {e.get('reflection_curve',{}).get('delta')}\\n  correction: {e.get('reflection_curve',{}).get('correction')}\\n  next: {e.get('reflection_curve',{}).get('next')}\")"
+```
+
+**Warum:** Die `reflection_curve` des letzten Eintrags zeigt:
+- **delta** → Was war der Stand beim letzten Mal?
+- **correction** → Was wurde korrigiert?
+- **next** → Was sollte als nächstes passieren?
+
+Diese Informationen MÜSSEN in die eigene Selbstreflexion einfließen.
+
+---
+
 ## ✅ Startup Complete
 
 Wenn alle Schritte erfolgreich sind:
 - Chain ist intakt
 - Watcher funktioniert
 - Persistenz aktiv
+- **Lernkurve der vorherigen Session verstanden**
 
 **System bereit für Arbeit.**

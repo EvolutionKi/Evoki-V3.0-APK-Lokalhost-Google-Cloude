@@ -6,6 +6,23 @@ willkommen bei **EVOKI V3.0 — The Resonance Engine**. Das hier ist kein Standa
 
 ---
 
+## 🚨 KRITISCHE WARNUNG — LIES ZUERST 🚨
+
+**Bevor du IRGENDWELCHEN Code änderst, lies:**  
+→ **`tooling/docs/CRITICAL_DO_NOT_MODIFY.md`**
+
+Diese Datei listet alle **gesperrten Systemdateien** auf, die du **NIEMALS** ändern darfst:
+- `app/temple/automation/*` — Chain-Logik
+- `tooling/scripts/*` — Automatisierungs-Tools
+- `.agent/workflows/*` — Agent Workflows
+- `tooling/docs/PROTOCOL_*.md` — Protokolle
+
+**Bei Verstoß:** Das gesamte System kann brechen. Chain-Integrität verloren. Memory korrupt.
+
+**Regel:** Wenn du App-Code schreibst (`app/temple/core/`, `app/temple/routes/`, `app/interface/`), sind diese Dateien TABU.
+
+---
+
 ## 🧬 Was ist EVOKI V3.0?
 
 **EVOKI V3.0** ist eine Resonance Engine — ein System, das:
@@ -375,4 +392,4 @@ Regeln für neue Dateien:
 
 ---
 
-*Zuletzt aktualisiert: 2026-01-13 13:59 UTC*
+*Zuletzt aktualisiert: 2026-01-13 16:12 UTC*

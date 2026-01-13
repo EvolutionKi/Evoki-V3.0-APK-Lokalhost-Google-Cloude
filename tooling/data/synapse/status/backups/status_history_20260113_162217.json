@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T13:19:55.425299+00:00",
-  "total_entries": 82,
+  "created_at": "2026-01-13T16:12:43.115920+00:00",
+  "total_entries": 100,
   "entries": [
     {
       "timestamp": "2026-01-13T10:15:07.379671+00:00",
@@ -5117,6 +5117,1132 @@
           "timestamp": "2026-01-13T13:19:55.425053+00:00"
         },
         "assumptions": []
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 83,
+      "timestamp": "2026-01-13T13:21:10.802679+00:00",
+      "salt": "2ab744e6074ea4206a3931835562fbf1",
+      "source": "pending_status_auto",
+      "window_hash": "243cbccc7f0946888614d949c9b2bc0b6ca9ff92e1b525ce495683453e0e2dd0",
+      "status_window": {
+        "step_id": "manual_1768310470",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:21:10.802679+00:00",
+        "goal": "Tool Verification Test 2",
+        "inputs": {
+          "raw_user_request": "Auto-Test via Antigravity (Retry)"
+        },
+        "actions": [
+          "Manuelles Status-Update via CLI",
+          "Warten auf Watcher-Persistenz"
+        ],
+        "risk": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Manuelles Tooling"
+        },
+        "reflection_curve": {
+          "delta": "Manueller Trigger ausgelöst",
+          "correction": "None",
+          "next": "Verifikation durchführen"
+        },
+        "output_plan": [
+          "Persistenz bestätigen"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Manuell generiert"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "CLI Execution"
+        },
+        "window_hash": "243cbccc7f0946888614d949c9b2bc0b6ca9ff92e1b525ce495683453e0e2dd0",
+        "prev_window_hash": "2b6c5b5d89a6e81bb549a41a9a5884155c14f55c39cf435a0d46b2e1a57d1bb7",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:21:10.802679+00:00"
+        },
+        "assumptions": []
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 84,
+      "timestamp": "2026-01-13T13:32:06.945655+00:00",
+      "salt": "869e8d066a3c0e6b59cfaaa18c456fa5",
+      "source": "pending_status_auto",
+      "window_hash": "43b5ae3a6192e8c7fb545cd9d914dc7ea4b91476ff9141e6b2c343023f3e12c3",
+      "status_window": {
+        "step_id": "108",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:32:06.945655+00:00",
+        "goal": "Dashboard V2: Integration von Neural Retrieval (FAISS)",
+        "inputs": {
+          "raw_user_request": "jop"
+        },
+        "actions": [
+          "Stop Command Server (Dashboard V1)",
+          "Update server.py (Add /api/search subprocess)",
+          "Update index.html (Add Search UI)",
+          "Restart Server (Dashboard V2)"
+        ],
+        "risk": [
+          "Server neustart erforderlich -> kurze Downtime im Dashboard"
+        ],
+        "assumptions": [
+          "User möchte aktive Suche im UI sehen",
+          "search_chatverlauf.py ist funktional (bewiesen in Step 96)"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Erweiterung des Toolings um Retrieval-Interface"
+        },
+        "reflection_curve": {
+          "delta": "Dashboard V1 war nur Read-Only History.",
+          "correction": "Dashboard V2 wird interaktiv (Suche).",
+          "next": "Code patchen und Server neu starten."
+        },
+        "output_plan": [
+          "server.py patchen",
+          "index.html patchen",
+          "Server neustarten"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Upgrade auf V2"
+        },
+        "project_awareness": {
+          "active_files": [
+            "server.py",
+            "index.html"
+          ],
+          "context": "Dashboard Upgrade"
+        },
+        "window_hash": "43b5ae3a6192e8c7fb545cd9d914dc7ea4b91476ff9141e6b2c343023f3e12c3",
+        "prev_window_hash": "243cbccc7f0946888614d949c9b2bc0b6ca9ff92e1b525ce495683453e0e2dd0",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:32:06.945655+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 85,
+      "timestamp": "2026-01-13T13:35:08.932721+00:00",
+      "salt": "e5f4982ae4c37a3677490b214b9374ba",
+      "source": "pending_status_auto",
+      "window_hash": "a93f5311d9e948de2812d4945f34af0b769e7415054d14463f9fe950529a19cd",
+      "status_window": {
+        "step_id": "manual_1768311308",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:35:08.932721+00:00",
+        "goal": "Final System Health Verification",
+        "inputs": {
+          "raw_user_request": "stelle sicher dass alles läuft"
+        },
+        "actions": [
+          "Manuelles Status-Update via CLI",
+          "Warten auf Watcher-Persistenz"
+        ],
+        "risk": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Manuelles Tooling"
+        },
+        "reflection_curve": {
+          "delta": "Manueller Trigger ausgelöst",
+          "correction": "None",
+          "next": "Verifikation durchführen"
+        },
+        "output_plan": [
+          "Persistenz bestätigen"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Manuell generiert"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "CLI Execution"
+        },
+        "window_hash": "a93f5311d9e948de2812d4945f34af0b769e7415054d14463f9fe950529a19cd",
+        "prev_window_hash": "43b5ae3a6192e8c7fb545cd9d914dc7ea4b91476ff9141e6b2c343023f3e12c3",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:35:08.932721+00:00"
+        },
+        "assumptions": []
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 86,
+      "timestamp": "2026-01-13T13:36:15.211575+00:00",
+      "salt": "c00ff965f16558b0bd518e949e38bd06",
+      "source": "pending_status_auto",
+      "window_hash": "9c07a8134fd5e2fcee82dde2c1d5b1891547eea812f8ff7be1efdd107a74572d",
+      "status_window": {
+        "step_id": "126",
+        "cycle": "3/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:36:15.211575+00:00",
+        "goal": "Bestätigung des System-Status (Green Status)",
+        "inputs": {
+          "raw_user_request": "stelle sicher dass alles läuft"
+        },
+        "actions": [
+          "Check: Watcher (Success, Entry 85)",
+          "Check: Dashboard Server (Running)",
+          "Check: Chain Integrity (Verified via Tool)"
+        ],
+        "risk": [],
+        "assumptions": [
+          "Alle Hintergrunddienste sind stabil"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "System Health Verification abgeschlossen"
+        },
+        "reflection_curve": {
+          "delta": "Health Check angefordert.",
+          "correction": "Alle Lichter auf Grün.",
+          "next": "Warten auf neue Aufgaben."
+        },
+        "output_plan": [
+          "Bestätigung ausgeben",
+          "Link zum Dashboard bereitstellen"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "ALL SYSTEMS GO"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "System Check"
+        },
+        "window_hash": "9c07a8134fd5e2fcee82dde2c1d5b1891547eea812f8ff7be1efdd107a74572d",
+        "prev_window_hash": "a93f5311d9e948de2812d4945f34af0b769e7415054d14463f9fe950529a19cd",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:36:15.211575+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 87,
+      "timestamp": "2026-01-13T13:37:03.636955+00:00",
+      "salt": "def50afd44b481e126b71a91f9ba0063",
+      "source": "pending_status_auto",
+      "window_hash": "518a96aa06a5059a19bbbbb1e2097a63598faf37c6d72f6bfff0ec6a49118667",
+      "status_window": {
+        "step_id": "129",
+        "cycle": "4/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:37:03.636955+00:00",
+        "goal": "Implementierung Hybrid-Suche (FAISS + Live History) im Dashboard",
+        "inputs": {
+          "raw_user_request": "aber hier fehlen ja noch die history faissess"
+        },
+        "actions": [
+          "Analyse: FAISS Index ist statisch (alt), History ist live (neu). Lücke erkannt.",
+          "Plan: server.py erweitern, um Live-History in die Suche einzubeziehen (Hybrid Search)."
+        ],
+        "risk": [
+          "Performance bei großer History JSON (aber bei <1MB okay)"
+        ],
+        "assumptions": [
+          "User möchte, dass ALLES durchsuchbar ist (altes Wissen + neuer Status)"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Erweiterung der Retrieval-Logik"
+        },
+        "reflection_curve": {
+          "delta": "Suche fand bisher nur alte Chat-Logs (FAISS).",
+          "correction": "Server-seitige Aggregation von FAISS-Ergebnissen und Live-History-Matches.",
+          "next": "server.py patchen."
+        },
+        "output_plan": [
+          "server.py patchen (Hybrid Logic)",
+          "Neu starten"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Hybrid Search Integration"
+        },
+        "project_awareness": {
+          "active_files": [
+            "server.py"
+          ],
+          "context": "Hybrid Retrieval"
+        },
+        "window_hash": "518a96aa06a5059a19bbbbb1e2097a63598faf37c6d72f6bfff0ec6a49118667",
+        "prev_window_hash": "9c07a8134fd5e2fcee82dde2c1d5b1891547eea812f8ff7be1efdd107a74572d",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:37:03.636955+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 88,
+      "timestamp": "2026-01-13T13:40:43.113508+00:00",
+      "salt": "a7dbd6a6c5bf57dd2f5a8c499d7c3937",
+      "source": "pending_status_auto",
+      "window_hash": "df385175c8a9e9d7c138851ba6c273863b023c887cd5f982d5522ceb3fa8dadf",
+      "status_window": {
+        "step_id": "140",
+        "cycle": "5/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:40:43.113508+00:00",
+        "goal": "Manuelle Verifikation der FAISS-Suche und Dashboard-Debugging",
+        "inputs": {
+          "raw_user_request": "ich bin sicher das läuft nicht such du ma manuell danach nexus kernel",
+          "screenshot_context": "Dashboard zeigt No memories found"
+        },
+        "actions": [
+          "CLI-Suche nach Nexus Kernel ausgeführt (Beweislast)",
+          "Server-Code Analyse (Warum keine Ergebnisse im UI?)"
+        ],
+        "risk": [
+          "FAISS Index könnte korrupt sein (unwahrscheinlich, da Step 96 lief)",
+          "Server Environment (PYTHONPATH) wird vielleicht nicht korrekt an Subprocess vererbt"
+        ],
+        "assumptions": [
+          "Der Begriff existiert in der DB (Step 96 hat Results angedeutet)",
+          "Dashboard schluckt Fehler"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Fehlersuche im Tooling"
+        },
+        "reflection_curve": {
+          "delta": "Dashboard Suche liefert leer zurück.",
+          "correction": "Manuelle CLI Suche als Fallback, dann Fix im Server.",
+          "next": "Suche starten."
+        },
+        "output_plan": [
+          "Manuelle Ergebnisse präsentieren",
+          "Server fixen"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "YELLOW",
+          "notes": "Dashboard Search Malfunction"
+        },
+        "project_awareness": {
+          "active_files": [
+            "server.py"
+          ],
+          "context": "Debugging Search"
+        },
+        "window_hash": "df385175c8a9e9d7c138851ba6c273863b023c887cd5f982d5522ceb3fa8dadf",
+        "prev_window_hash": "518a96aa06a5059a19bbbbb1e2097a63598faf37c6d72f6bfff0ec6a49118667",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:40:43.113508+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 89,
+      "timestamp": "2026-01-13T13:46:42.261767+00:00",
+      "salt": "979d07e3e1903f3ff3e92527383e39b7",
+      "source": "pending_status_auto",
+      "window_hash": "9c20ff5000a83f0ef3b863f91c69e53b0b348d59544eb3cbd64cc4b785fa8e48",
+      "status_window": {
+        "step_id": "157",
+        "cycle": "5/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:46:42.261767+00:00",
+        "goal": "Fix des Encoding-Fehlers im Dashboard-Server",
+        "inputs": {
+          "raw_user_request": "ok",
+          "technical_context": "UnicodeDecodeError/Encoding Issue observed in logs"
+        },
+        "actions": [
+          "server.py patchen: PYTHONIOENCODING=utf-8 setzen",
+          "Fehler-Reporting im UI verbessern"
+        ],
+        "risk": [
+          "Server-Neustart nötig"
+        ],
+        "assumptions": [
+          "PYTHONIOENCODING behebt das Windows-Console-Encoding Problem"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Bugfix infrastructure"
+        },
+        "reflection_curve": {
+          "delta": "Suche schlägt fehl wegen Encoding.",
+          "correction": "Environment Variable erzwingt UTF-8.",
+          "next": "Patch & Restart."
+        },
+        "output_plan": [
+          "server.py schreiben",
+          "Server neu starten",
+          "Verifikation"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Fixing Search"
+        },
+        "project_awareness": {
+          "active_files": [
+            "server.py"
+          ],
+          "context": "Encoding Fix"
+        },
+        "window_hash": "9c20ff5000a83f0ef3b863f91c69e53b0b348d59544eb3cbd64cc4b785fa8e48",
+        "prev_window_hash": "df385175c8a9e9d7c138851ba6c273863b023c887cd5f982d5522ceb3fa8dadf",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:46:42.261767+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 90,
+      "timestamp": "2026-01-13T13:48:35.426267+00:00",
+      "salt": "15e1849d6e27ff12ee8a760ca014e432",
+      "source": "pending_status_auto",
+      "window_hash": "b01437a065fcf55eedd78869690efaad25b084a5ebe67722d8959ebbfb208f84",
+      "status_window": {
+        "step_id": "176",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:48:35.426267+00:00",
+        "goal": "Verifikation der Dashboard-Suche durch Selbst-Test",
+        "inputs": {
+          "raw_user_request": "such du mal"
+        },
+        "actions": [
+          "Python-Skript ausführen, das localhost:8000/api/search abfragt",
+          "Ergebnisse anzeigen"
+        ],
+        "risk": [
+          "Keine (Read-Only Operation)"
+        ],
+        "assumptions": [
+          "Server läuft und Encoding-Fix greift"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Beweisführung der Funktionalität"
+        },
+        "reflection_curve": {
+          "delta": "User möchte Beweis, dass Suche geht.",
+          "correction": "Ich frage meine eigene API ab.",
+          "next": "Query ausführen."
+        },
+        "output_plan": [
+          "API Resultat anzeigen",
+          "Inhalt analysieren (was ist der Nexus Kernel?)"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Self-Query Verification"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "Search Verification"
+        },
+        "window_hash": "b01437a065fcf55eedd78869690efaad25b084a5ebe67722d8959ebbfb208f84",
+        "prev_window_hash": "9c20ff5000a83f0ef3b863f91c69e53b0b348d59544eb3cbd64cc4b785fa8e48",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:48:35.426267+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 91,
+      "timestamp": "2026-01-13T15:01:01.433131+00:00",
+      "salt": "5826ba22328d756f07a4c330579cabe0",
+      "source": "pending_status_auto",
+      "window_hash": "4c683f1d4f062c9c2a45f7ae95b62ca85d2b76eb43f505f86c6c12f1556954ee",
+      "status_window": {
+        "step_id": "209",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T15:01:01.433131+00:00",
+        "goal": "Bestätigung der operativen Nutzung (Live-Status)",
+        "inputs": {
+          "raw_user_request": "ALLES KALR DANN NUTZT DU DAS AUCH ALLES LIVEß"
+        },
+        "actions": [
+          "Policy Update: Retrieval-Tool wird zur Standard-Ressource",
+          "Bestätigung: Dashboard Server läuft persistent"
+        ],
+        "risk": [
+          "Kein Risiko, reine Bestätigung"
+        ],
+        "assumptions": [
+          "User meint sowohl die Verfügbarkeit für sich (Dashboard) als auch meine Nutzung (Retrieval)"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Operative Integration"
+        },
+        "reflection_curve": {
+          "delta": "User fragt nach Live-Nutzung.",
+          "correction": "Ja, Server ist online (für dich) und Tool ist bereit (für mich).",
+          "next": "Bereit für nächste Tasks."
+        },
+        "output_plan": [
+          "Antwort formulieren",
+          "Status schreiben"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Live & Operational"
+        },
+        "project_awareness": {
+          "active_files": [
+            "server.py"
+          ],
+          "context": "Live Operations"
+        },
+        "window_hash": "4c683f1d4f062c9c2a45f7ae95b62ca85d2b76eb43f505f86c6c12f1556954ee",
+        "prev_window_hash": "b01437a065fcf55eedd78869690efaad25b084a5ebe67722d8959ebbfb208f84",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T15:01:01.433131+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 92,
+      "timestamp": "2026-01-13T15:09:10.803251+00:00",
+      "salt": "d9da1aee1241926995b8a4184aef4a84",
+      "source": "pending_status_auto",
+      "window_hash": "1d8c506fc0ff39c9848a6dc9c39fdc3c86c258a76f2976a177dc1d92e4e2656a",
+      "status_window": {
+        "step_id": "215",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T15:09:10.803251+00:00",
+        "goal": "Systemweite Datenträgerbereinigung (Loose Files sortieren)",
+        "inputs": {
+          "raw_user_request": "ALLE PFADE DURCHGEHEN UND NACH LOSEN DATEIEN SUCHEN... BITTE RICHTIG ABSORTIERENE"
+        },
+        "actions": [
+          "Scan Root-Verzeichnis",
+          "Scan Unterverzeichnisse auf Verletzung der Clean-Dir-Policy (Files + Ordner gemischt)",
+          "Identifikation von Rogue-Dateien"
+        ],
+        "risk": [
+          "Verschieben wichtiger Config-Dateien, die im Root liegen MÜSSEN (z.B. requirements.txt) -> Whitelist beachten"
+        ],
+        "assumptions": [
+          "User meint Dateien, die nicht in die saubere app/ vs tooling/ Struktur passen"
+        ],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Enforcement der Directory Structure Policy"
+        },
+        "reflection_curve": {
+          "delta": "User meldet lose Dateien.",
+          "correction": "Scan & Sort Operation starten.",
+          "next": "Dateiliste abrufen."
+        },
+        "output_plan": [
+          "list_dir .",
+          "list_dir app",
+          "list_dir tooling",
+          "Dateien verschieben",
+          "Bericht erstatten"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "YELLOW",
+          "notes": "Cleanup requested"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "File System Audit"
+        },
+        "window_hash": "1d8c506fc0ff39c9848a6dc9c39fdc3c86c258a76f2976a177dc1d92e4e2656a",
+        "prev_window_hash": "4c683f1d4f062c9c2a45f7ae95b62ca85d2b76eb43f505f86c6c12f1556954ee",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T15:09:10.803251+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 93,
+      "timestamp": "2026-01-13T15:24:23.202968+00:00",
+      "salt": "638b8735d491c1bc5e3295aecc75708d",
+      "source": "pending_status_auto",
+      "window_hash": "6024375b3cbd33ae39972cf59164b21e2a9f1e571ee890c9831ca58c0e764606",
+      "status_window": {
+        "step_id": "247",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T15:24:23.202968+00:00",
+        "goal": "Bereinigung abgeschlossen - Verzeichnisstruktur gesäubert",
+        "inputs": {
+          "raw_user_request": "ALLE PFADE DURCHGEHEN UND NACH LOSEN DATEIEN SUCHEN"
+        },
+        "actions": [
+          "Gelöscht: search_results.json",
+          "Gelöscht: Root/temple/ (Rogue)",
+          "Verschoben: write_current_status.py -> tooling/scripts/cli/"
+        ],
+        "risk": [],
+        "assumptions": [
+          "Struktur ist jetzt Policy-konform"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Policy enforcement complete"
+        },
+        "reflection_curve": {
+          "delta": "Lose Dateien im System.",
+          "correction": "Bereinigung durchgeführt.",
+          "next": "Weitere Bereiche prüfen oder nächste Aufgabe."
+        },
+        "output_plan": [
+          "Bericht erstellt",
+          "Warten auf Feedback"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Cleanup Complete"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "Post-Cleanup"
+        },
+        "window_hash": "6024375b3cbd33ae39972cf59164b21e2a9f1e571ee890c9831ca58c0e764606",
+        "prev_window_hash": "1d8c506fc0ff39c9848a6dc9c39fdc3c86c258a76f2976a177dc1d92e4e2656a",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T15:24:23.202968+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 94,
+      "timestamp": "2026-01-13T15:27:04.073332+00:00",
+      "salt": "bba63556fc00c2aae4e2db4cf505c7e6",
+      "source": "pending_status_auto",
+      "window_hash": "b7f6e0837667b13890ea009ed8114c418c86e04c8d1907d5fd8b8cb3ac38ae9e",
+      "status_window": {
+        "step_id": "269",
+        "cycle": "3/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T15:27:04.073332+00:00",
+        "goal": "Session-Zusammenfassung",
+        "inputs": {
+          "raw_user_request": "super danke schön"
+        },
+        "actions": [
+          "Auto-Approve Wildcard aktiviert in .vscode/settings.json",
+          "Cleanup abgeschlossen (search_results.json, temple/, write_current_status.py verschoben)",
+          "Dashboard V3 läuft stabil"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Alles erledigt"
+        },
+        "reflection_curve": {
+          "delta": "User zufrieden.",
+          "correction": "Keine Korrektur nötig.",
+          "next": "Bereit für neue Aufgaben."
+        },
+        "output_plan": [
+          "Warten auf nächsten Task"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "All Systems Operational"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "Idle"
+        },
+        "window_hash": "b7f6e0837667b13890ea009ed8114c418c86e04c8d1907d5fd8b8cb3ac38ae9e",
+        "prev_window_hash": "6024375b3cbd33ae39972cf59164b21e2a9f1e571ee890c9831ca58c0e764606",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T15:27:04.073332+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 95,
+      "timestamp": "2026-01-13T15:55:41.459850+00:00",
+      "salt": "107b321c7fd112ab3da26a34c886dc1d",
+      "source": "pending_status_auto",
+      "window_hash": "31eca0eb4d6ae433c071035d7eba2d5f88840dd1a41ae6750a2074dcb7378fb4",
+      "status_window": {
+        "step_id": "269",
+        "cycle": "3/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T15:55:41.459850+00:00",
+        "goal": "Session-Zusammenfassung",
+        "inputs": {
+          "raw_user_request": "super danke schön"
+        },
+        "actions": [
+          "Auto-Approve Wildcard aktiviert in .vscode/settings.json",
+          "Cleanup abgeschlossen (search_results.json, temple/, write_current_status.py verschoben)",
+          "Dashboard V3 läuft stabil"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Alles erledigt"
+        },
+        "reflection_curve": {
+          "delta": "User zufrieden.",
+          "correction": "Keine Korrektur nötig.",
+          "next": "Bereit für neue Aufgaben."
+        },
+        "output_plan": [
+          "Warten auf nächsten Task"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "All Systems Operational"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "Idle"
+        },
+        "window_hash": "31eca0eb4d6ae433c071035d7eba2d5f88840dd1a41ae6750a2074dcb7378fb4",
+        "prev_window_hash": "b7f6e0837667b13890ea009ed8114c418c86e04c8d1907d5fd8b8cb3ac38ae9e",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T15:55:41.459850+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 96,
+      "timestamp": "2026-01-13T15:57:45.457393+00:00",
+      "salt": "6865ffe2301c2ca84fdc7c6258e18356",
+      "source": "pending_status_auto",
+      "window_hash": "fdbfd55ae73384469a911c6e3ecb14357a9cc285ae5f9247d4aac6f7873b2056",
+      "status_window": {
+        "step_id": "watcher_test_96",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T15:57:45.457393+00:00",
+        "goal": "Watcher Test",
+        "inputs": {
+          "raw_user_request": "Test"
+        },
+        "actions": [
+          "watcher_test"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Test"
+        },
+        "reflection_curve": {
+          "delta": "Test",
+          "correction": "Keine",
+          "next": "Weiter"
+        },
+        "output_plan": [
+          "Fertig"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN"
+        },
+        "project_awareness": {},
+        "window_hash": "fdbfd55ae73384469a911c6e3ecb14357a9cc285ae5f9247d4aac6f7873b2056",
+        "prev_window_hash": "31eca0eb4d6ae433c071035d7eba2d5f88840dd1a41ae6750a2074dcb7378fb4",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T15:57:45.457393+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 97,
+      "timestamp": "2026-01-13T15:57:45.855816+00:00",
+      "salt": "9e290be6a3ecc03214d4bb94623284fe",
+      "source": "pending_status_auto",
+      "window_hash": "0fe1dbb64097aff2c4f05e3a2cb45c8dd327dae766d1d957b700fa2601316ee0",
+      "status_window": {
+        "step_id": "watcher_test_96",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T15:57:45.855816+00:00",
+        "goal": "Watcher Test",
+        "inputs": {
+          "raw_user_request": "Test"
+        },
+        "actions": [
+          "watcher_test"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Test"
+        },
+        "reflection_curve": {
+          "delta": "Test",
+          "correction": "Keine",
+          "next": "Weiter"
+        },
+        "output_plan": [
+          "Fertig"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN"
+        },
+        "project_awareness": {},
+        "window_hash": "0fe1dbb64097aff2c4f05e3a2cb45c8dd327dae766d1d957b700fa2601316ee0",
+        "prev_window_hash": "fdbfd55ae73384469a911c6e3ecb14357a9cc285ae5f9247d4aac6f7873b2056",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T15:57:45.855816+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 98,
+      "timestamp": "2026-01-13T15:59:42.166906+00:00",
+      "salt": "aabd9012cacbcfe30374bdd9e7b7a45f",
+      "source": "pending_status_auto",
+      "window_hash": "25db0e4ddce2b4f6fd922a4c8a23279110774ce3ae5ecab9ec859f135209bf53",
+      "status_window": {
+        "step_id": "startup_complete_98",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T15:59:42.166906+00:00",
+        "goal": "Startup-Workflow abgeschlossen, System bereit",
+        "inputs": {
+          "raw_user_request": "Hallo! Bitte führe den /startup Workflow aus und bestätige, dass alle Systeme laufen: Dashboard auf localhost:8000, Chain Integrity (verify), Watcher aktiv. Danach sind wir bereit für neue Aufgaben."
+        },
+        "actions": [
+          "stats - 94 Einträge gelesen",
+          "verify - Chain intact",
+          "Watcher Log geprüft",
+          "main.py Syntax-Fix (import)",
+          "pending_status_watcher.py Log-Pfad korrigiert",
+          "Watcher neu gestartet in CMD-Fenster",
+          "Test-Status geschrieben - Watcher reagiert",
+          "Verify erneut - 97 Einträge OK"
+        ],
+        "risk": [],
+        "assumptions": [
+          "Watcher läuft im separaten CMD-Fenster",
+          "Dashboard nicht kritisch für Synapse-Funktionalität"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Startup-Workflow korrekt ausgeführt"
+        },
+        "reflection_curve": {
+          "delta": "Session-Start ohne laufenden Watcher",
+          "correction": "Log-Pfad korrigiert, Watcher neu gestartet",
+          "next": "Bereit für neue Aufgaben"
+        },
+        "output_plan": [
+          "Auf Benutzeranfragen warten",
+          "Bei jeder Antwort Status Window schreiben"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN"
+        },
+        "project_awareness": {
+          "chain_entries": 97,
+          "watcher_active": true
+        },
+        "window_hash": "25db0e4ddce2b4f6fd922a4c8a23279110774ce3ae5ecab9ec859f135209bf53",
+        "prev_window_hash": "0fe1dbb64097aff2c4f05e3a2cb45c8dd327dae766d1d957b700fa2601316ee0",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T15:59:42.166906+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 99,
+      "timestamp": "2026-01-13T16:06:42.640169+00:00",
+      "salt": "81e5a105dcc16fd9085d7c15ae23bf54",
+      "source": "pending_status_auto",
+      "window_hash": "b85d7237f79ab3f20a025a4e9cdcd117a0198f54491053b60b6bb85809f25be3",
+      "status_window": {
+        "step_id": "structure_enforcer_99",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T16:06:42.640169+00:00",
+        "goal": "Automatisierungstool für Datenmanagement-Regeln erstellt",
+        "inputs": {
+          "raw_user_request": "perfekt danke dann schau mal ob man die einhaltung von den daten regeln hern nur in einem pfad von daten wenn keine pafade dort sind unds sortieren, alle readd mees etc aktuell halten automatisieren können"
+        },
+        "actions": [
+          "Struktur analysiert - 6 initiale Verstöße",
+          "enforce_structure.py erstellt (check/fix/readme)",
+          "pending_watcher.log aus synapse/ gelöscht (Duplikat)",
+          "test_trigger.txt gelöscht",
+          "MIXED_ALLOWED Ausnahmen konfiguriert",
+          "17 README.md Dateien automatisch generiert"
+        ],
+        "risk": [],
+        "assumptions": [
+          "Ausnahmen für Standardstrukturen sind korrekt definiert"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Tool folgt datamanagement.md Regeln"
+        },
+        "reflection_curve": {
+          "delta": "Manuelle Prüfung der Strukturregeln",
+          "correction": "Automatisiertes Prüf- und Fix-Tool",
+          "next": "Tool in Workflow integrieren"
+        },
+        "output_plan": [
+          "Workflow für regelmäßige Prüfung erstellen",
+          "copilot-instructions.md aktualisieren"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 0.95,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN"
+        },
+        "project_awareness": {
+          "new_tool": "tooling/scripts/cli/enforce_structure.py",
+          "readmes_generated": 17
+        },
+        "window_hash": "b85d7237f79ab3f20a025a4e9cdcd117a0198f54491053b60b6bb85809f25be3",
+        "prev_window_hash": "25db0e4ddce2b4f6fd922a4c8a23279110774ce3ae5ecab9ec859f135209bf53",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T16:06:42.640169+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 100,
+      "timestamp": "2026-01-13T16:12:43.115666+00:00",
+      "salt": "51321c62ef39e79359c6fe1e3e0d888c",
+      "source": "pending_status_auto",
+      "window_hash": "bf4571e006906b7d7b8bb95a184eb00a91744ad1e24b0a80551a5300a9b864a5",
+      "status_window": {
+        "step_id": "critical_files_locked_100",
+        "cycle": "3/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T16:12:43.115666+00:00",
+        "goal": "Kritische Systemdateien als gesperrt markiert",
+        "inputs": {
+          "raw_user_request": "okay markiere alle jetzt funktionierenden systhem dateien die die tools steuern als nicht zu veränderen damit einen zukünfrige instanz die dann den code an ddr app schreiben soll nicht ausversehen hier etwas zerstört"
+        },
+        "actions": [
+          "Alle kritischen Dateien identifiziert",
+          "CRITICAL_DO_NOT_MODIFY.md erstellt mit vollständiger Liste",
+          "copilot-instructions.md um Warnung ergänzt",
+          "Timestamp aktualisiert"
+        ],
+        "risk": [],
+        "assumptions": [
+          "Zukünftige KI-Instanzen lesen copilot-instructions.md"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Schutz der Systemintegrität"
+        },
+        "reflection_curve": {
+          "delta": "Keine Sicherung kritischer Dateien",
+          "correction": "Explizite Sperrliste + Warnung erstellt",
+          "next": "System ist geschützt"
+        },
+        "output_plan": [
+          "Bei Bedarf Checksummen generieren",
+          "Weiter mit App-Entwicklung wenn gewünscht"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN"
+        },
+        "project_awareness": {
+          "locked_files": [
+            "app/temple/automation/*",
+            "tooling/scripts/*",
+            ".agent/workflows/*",
+            "tooling/docs/PROTOCOL_*.md"
+          ]
+        },
+        "window_hash": "bf4571e006906b7d7b8bb95a184eb00a91744ad1e24b0a80551a5300a9b864a5",
+        "prev_window_hash": "b85d7237f79ab3f20a025a4e9cdcd117a0198f54491053b60b6bb85809f25be3",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T16:12:43.115666+00:00"
+        }
       },
       "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
       "metadata": {}
