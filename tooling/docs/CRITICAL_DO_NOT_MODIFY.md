@@ -11,7 +11,7 @@
 Diese Dateien steuern die automatische Logging-Pipeline, Chain-Integrität und System-Automatisierung.
 **JEDE ÄNDERUNG kann das gesamte Evoki-System zerstören.**
 
-Wenn du Code an der **App** (`app/temple/`, `app/interface/`) schreiben sollst:  
+Wenn du Code an der **App** (`app/interface/`) oder **Tooling** (`tooling/scripts/`) schreiben sollst:  
 → Diese Dateien sind **TABU**  
 → Ändere sie **NIEMALS** ohne explizite Benutzeranforderung  
 → Bei Fragen: **FRAG DEN BENUTZER**

@@ -53,19 +53,19 @@ if str(APP_DIR) not in sys.path:
     sys.path.insert(0, str(APP_DIR))
 
 try:
-    from temple.automation.synapse_logic import StatusHistoryManager
-except ImportError as e:
-    print(f"[WARN] Could not import Synapse Core Logic: {e}", file=sys.stderr)
-    StatusHistoryManager = None
-
-try:
-    from temple.automation.search_chatverlauf import (
+    # Dynamic path for automation modules
+    automation_dir = Path(__file__).resolve().parent.parent / "automation"
+    if automation_dir.exists() and str(automation_dir) not in sys.path:
+        sys.path.append(str(automation_dir))
+    from synapse_logic import StatusHistoryManager
+    from search_chatverlauf import (
         SearchChatverlaufConfig,
         SearchChatverlaufError,
         search_chatverlauf as _search_chatverlauf,
     )
 except ImportError as e:
-    print(f"[WARN] Could not import chatverlauf search lib: {e}", file=sys.stderr)
+    print(f"[WARN] Could not import automation modules: {e}", file=sys.stderr)
+    StatusHistoryManager = None
     SearchChatverlaufConfig = None
     SearchChatverlaufError = Exception
     _search_chatverlauf = None

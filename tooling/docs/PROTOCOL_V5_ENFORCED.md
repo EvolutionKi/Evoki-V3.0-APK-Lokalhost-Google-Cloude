@@ -274,14 +274,14 @@ Nach `cycle = "5/5"`:
 ### E2: Persistence Health Check
 Vor dem ersten Write einer Session:
 ```bash
-python app/temple/automation/status_history_manager.py stats
+python tooling/scripts/automation/status_history_manager.py stats
 ```
 Bestaetigt: Watcher aktiv, History lesbar.
 
 ### E3: Chain Repair
 Bei Chain-Break:
 1. `python tooling/scripts/repair_chain.py`
-2. `python app/temple/automation/status_history_manager.py verify`
+2. `python tooling/scripts/automation/status_history_manager.py verify`
 3. Ohne erfolgreiche Verify → BLOCKING
 
 ---
@@ -321,7 +321,7 @@ Bei Chain-Break:
 | Pending Status | `tooling/data/synapse/status/pending_status.json` |
 | History | `tooling/data/synapse/status/status_window_history.json` |
 | Watcher Log | `tooling/data/synapse/logs/pending_watcher.log` |
-| Manager CLI | `app/temple/automation/status_history_manager.py` |
+| Manager CLI | `tooling/scripts/automation/status_history_manager.py` |
 | Chat Display | `tooling/scripts/ui/chat_display_template.py` |
 | Chain Repair | `tooling/scripts/cli/repair_chain.py` |
 | MCP Server | `tooling/scripts/servers/mcp_server_evoki_v3.py` |
@@ -333,14 +333,14 @@ Bei Chain-Break:
 
 ## Taeglich
 ```bash
-python app/temple/automation/status_history_manager.py verify
+python tooling/scripts/automation/status_history_manager.py verify
 ```
 Muss ausgeben: `Chain + Hash integrity verified (N entries)`
 
 ## Bei Problemen
 ```bash
 # 1. Stats pruefen
-python app/temple/automation/status_history_manager.py stats
+python tooling/scripts/automation/status_history_manager.py stats
 
 # 2. Watcher-Log pruefen
 Get-Content tooling/data/synapse/logs/pending_watcher.log -Tail 20
