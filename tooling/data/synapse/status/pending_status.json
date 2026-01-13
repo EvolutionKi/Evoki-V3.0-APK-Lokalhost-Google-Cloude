@@ -1,35 +1,31 @@
 {
-    "step_id": "unlock_readonly_144",
-    "cycle": "2/5",
+    "step_id": "fix_imports_docs_145",
+    "cycle": "3/5",
     "time_source": "metadata (STRICT_SYNC): AUTO",
-    "goal": "Entfernen der Readguard-Sperren für Schreibzugriff",
+    "goal": "Reparatur der Test-Imports nach Migration & Doku Anpassung",
     "inputs": {
-        "raw_user_request": "WEIL DU DIE AUF READ ONLY GESETZT HAST"
+        "raw_user_request": "Restliche Tasks (Doku Pfad Backup, Tests Fix)"
     },
     "actions": [
-        "Unlock: attrib -r tooling/scripts/daemons/pending_status_watcher.py",
-        "Unlock: attrib -r tooling/scripts/automation/synapse_logic.py",
-        "Rewrite: Watcher (mit korrektem tooling Pfad)",
-        "Cleanup: Remove old app structure"
+        "Rewrite: tooling/tests/test_determinism_gate.py (New imports)",
+        "Update: tooling/data/synapse/README.md (Backup path info)"
     ],
-    "risk": [
-        "Schutzmechanismus wird entfernt -> User muss informiert sein (ist er)"
-    ],
+    "risk": [],
     "assumptions": [
-        "Windows Attribute blockieren Python write"
+        "Migration ist abgeschlossen, Pfade sind stabil"
     ],
     "rule_tangency": {
         "tangency_detected": false,
-        "notes": "Access Control"
+        "notes": "Code Maintenance"
     },
     "reflection_curve": {
-        "delta": "Write-Failures wegen Read-Only Attribut",
-        "correction": "Attrib Clear before Write",
-        "next": "Run attrib command"
+        "delta": "Tests haben verwaiste Importe",
+        "correction": "Update sys.path in tests",
+        "next": "Fix Test & Readme"
     },
     "output_plan": [
-        "Attrib -r",
-        "Rewrite Watcher"
+        "Fix test_determinism_gate.py",
+        "Fix synapse/README.md"
     ],
     "window_type": "execution",
     "schema_version": "3.2",
@@ -39,10 +35,10 @@
     "cycle_backend_controlled": true,
     "critical_summary": {
         "status": "GREEN",
-        "notes": "Unlocking Files"
+        "notes": "Final Migrations"
     },
     "project_awareness": {
-        "fs": "REMOVING READ-ONLY"
+        "testing": "FIXING IMPORTS"
     },
     "window_hash": "PLACEHOLDER_BACKEND",
     "prev_window_hash": "AUTO",
