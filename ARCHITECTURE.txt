@@ -1,51 +1,199 @@
-EVOKI V3.0 - Architecture Map
-=============================
-Current Strategy: "App (Production) vs. Tooling (Automation)" Separation
-Updated: 2026-01-13 (Phase 3)
-Status: V5 STRICT / V5.1 REFACTORED
+EVOKI V3.0 - Architecture Map (Auto-Generated)
+==============================================
+Generated: 2026-01-13 22:03
+Strategy: Strict Separation (App vs Tooling)
+Status: LIVE REFLECTION
 
 ROOT/
-├─ README.md                     # Entry Point
-├─ ARCHITECTURE.txt              # THIS FILE - Truth Source
-│
-├─ app/                          # [PRODUCTION ARTIFACTS]
-│  │                             # State & Interface (The "Body")
-│  │
-│  ├─ interface/                 # [FRONTEND] React + Vite
-│  │  ├─ src/
-│  │  ├─ public/
-│  │  └─ package.json
-│  │
-│  └─ deep_earth/                # [MEMORY] 12-Layer System
-│     ├─ schemas/
-│     └─ layers/                 # SQLite Databases (01-12)
-│
-└─ tooling/                      # [AUTOMATION ENGINE]
-   │                             # Logic, Scripts, Data (The "Spirit")
-   │
-   ├─ data/                      # [RUNTIME STATE]
-   │  ├─ synapse/                # Status Windows (JSON) & Logs
-   │  ├─ db/                     # Vector Indices & Context DBs
-   │  └─ faiss_indices/          # Migrated FAISS Data
-   │
-   ├─ docs/                      # [KNOWLEDGE BASE]
-   │  ├─ knowledge/              # External APIs
-   │  └─ *.md                    # Protocols
-   │
-   ├─ scripts/                   # [LOGIC KERNEL]
-   │  ├─ automation/             # Core Logic (Synapse, History, Write)
-   │  ├─ cli/                    # Admin Tools (Verify, Repair, Audit)
-   │  ├─ daemons/                # Background Watchers
-   │  ├─ launchers/              # Startup Scripts (.bat)
-   │  ├─ servers/                # MCP Server Implementation
-   │  ├─ helpers/                # Utilities
-   │  └─ ui/                     # Terminal UI Components
-   │
-   └─ tests/                     # [TEST SUITE]
-      └─ test_*.py               # Pytest (Isoliert)
+├─ .agent
+│  ├─ rules
+│  │  └─ datamanagement.md
+│  └─ workflows
+│     ├─ evoki_repair.md
+│     ├─ evoki_verify.md
+│     ├─ quiz.md
+│     └─ startup.md
+├─ .github
+│  ├─ workflows
+│  │  ├─ main.yml
+│  │  └─ retrieval-gate.yml
+│  └─ copilot-instructions.md
+├─ app  # [PRODUCTION] State & Interface
+│  ├─ deep_earth  # [MEMORY] SQLite Layers
+│  │  ├─ layers
+│  │  │  ├─ 01_surface
+│  │  │  │  ├─ layer.db
+│  │  │  │  └─ README.md
+│  │  │  ├─ 02_shallow
+│  │  │  │  ├─ layer.db
+│  │  │  │  └─ README.md
+│  │  │  ├─ 03_sediment
+│  │  │  │  ├─ layer.db
+│  │  │  │  └─ README.md
+│  │  │  ├─ 04_bedrock
+│  │  │  │  ├─ layer.db
+│  │  │  │  └─ README.md
+│  │  │  ├─ 05_fault
+│  │  │  │  ├─ layer.db
+│  │  │  │  └─ README.md
+│  │  │  ├─ 06_mantle
+│  │  │  │  ├─ layer.db
+│  │  │  │  └─ README.md
+│  │  │  ├─ 07_magma
+│  │  │  │  ├─ layer.db
+│  │  │  │  └─ README.md
+│  │  │  ├─ 08_trench
+│  │  │  │  ├─ layer.db
+│  │  │  │  └─ README.md
+│  │  │  ├─ 09_pressure
+│  │  │  │  ├─ layer.db
+│  │  │  │  └─ README.md
+│  │  │  ├─ 10_crystal
+│  │  │  │  ├─ layer.db
+│  │  │  │  └─ README.md
+│  │  │  ├─ 11_glacier
+│  │  │  │  ├─ layer.db
+│  │  │  │  └─ README.md
+│  │  │  ├─ 12_abyss
+│  │  │  │  ├─ layer.db
+│  │  │  │  └─ README.md
+│  │  │  └─ README.md
+│  │  ├─ schemas
+│  │  │  ├─ README.md
+│  │  │  └─ vector_schema.sql
+│  │  └─ README.md
+│  └─ interface  # [FRONTEND] React + Vite
+│     ├─ public
+│     │  ├─ README.md
+│     │  └─ vite.svg
+│     ├─ src
+│     │  ├─ assets
+│     │  │  ├─ react.svg
+│     │  │  └─ README.md
+│     │  ├─ components
+│     │  │  ├─ README.md
+│     │  │  └─ TrialogPanel.tsx
+│     │  ├─ App.css
+│     │  ├─ App.tsx
+│     │  ├─ index.css
+│     │  ├─ main.tsx
+│     │  └─ README.md
+│     ├─ .gitignore
+│     ├─ eslint.config.js
+│     ├─ index.html
+│     ├─ package.json
+│     ├─ README.md
+│     ├─ tsconfig.app.json
+│     ├─ tsconfig.json
+│     ├─ tsconfig.node.json
+│     └─ vite.config.ts
+├─ tooling  # [AUTOMATION] Logic & Dev Tools
+│  ├─ config
+│  │  ├─ mcp.json
+│  │  └─ README.md
+│  ├─ dashboard
+│  │  ├─ templates
+│  │  │  ├─ index.html
+│  │  │  └─ README.md
+│  │  ├─ README.md
+│  │  └─ server.py
+│  ├─ data  # [STATE] Runtime Data
+│  │  ├─ db
+│  │  │  ├─ persistent_context.db
+│  │  │  └─ README.md
+│  │  ├─ faiss_indices
+│  │  │  ├─ chatverlauf_final_20251020plus_dedup_sorted.db
+│  │  │  ├─ chatverlauf_final_20251020plus_dedup_sorted.faiss
+│  │  │  ├─ chatverlauf_final_20251020plus_dedup_sorted.metadata.json
+│  │  │  └─ README.md
+│  │  ├─ synapse  # Status Windows & Logs
+│  │  │  ├─ backups
+│  │  │  ├─ logs
+│  │  │  │  ├─ compliance_enforcer.log
+│  │  │  │  ├─ pending_watcher.log
+│  │  │  │  └─ README.md
+│  │  │  ├─ status
+│  │  │  │  ├─ backups
+│  │  │  │  │  ├─ README.md
+│  │  │  │  │  ├─ status_history_20260113_194901.json
+│  │  │  │  │  ├─ status_history_20260113_201032.json
+│  │  │  │  │  ├─ status_history_20260113_201254.json
+│  │  │  │  │  ├─ status_history_20260113_201336.json
+│  │  │  │  │  ├─ status_history_20260113_201740.json
+│  │  │  │  │  ├─ status_history_20260113_201821.json
+│  │  │  │  │  ├─ status_history_20260113_202051.json
+│  │  │  │  │  ├─ status_history_20260113_202142.json
+│  │  │  │  │  ├─ status_history_20260113_202251.json
+│  │  │  │  │  ├─ status_history_20260113_202335.json
+│  │  │  │  │  └─ status_window_history_legacy_v3.json
+│  │  │  │  ├─ pending_status.json
+│  │  │  │  ├─ README.md
+│  │  │  │  └─ status_window_history.json
+│  │  │  ├─ decrypted_history.json
+│  │  │  └─ README.md
+│  │  └─ README.md
+│  ├─ docs  # [KNOWLEDGE] Documentation
+│  │  ├─ knowledge
+│  │  │  ├─ GITHUB_MODELS_FREE_TIER.md
+│  │  │  ├─ GITHUB_TRIAL_STRATEGY.md
+│  │  │  ├─ GOOGLE_TRIAL_STRATEGY.md
+│  │  │  └─ README.md
+│  │  ├─ CRITICAL_DO_NOT_MODIFY.md
+│  │  ├─ deep_earth_genesis_anchor.md
+│  │  ├─ DIRECTORY_STRUCTURE_POLICY.md
+│  │  ├─ ETHICAL_AGREEMENT.md
+│  │  ├─ ETHICAL_DISCLOSURE_V3.md
+│  │  ├─ GEMINI_V13_UPDATE.md
+│  │  ├─ GENESIS_ANCHOR_V3.md
+│  │  ├─ MANIFESTO.md
+│  │  ├─ PROTOCOL_V5_ENFORCED.md
+│  │  └─ README.md
+│  ├─ scripts  # [LOGIC] Automation Kernel
+│  │  ├─ automation  # Core Logic (Synapse Chain)
+│  │  │  ├─ pending_status_watcher.py.DISABLED
+│  │  │  ├─ README.md
+│  │  │  ├─ search_chatverlauf.py
+│  │  │  ├─ status_history_manager.py
+│  │  │  ├─ synapse_logic.py
+│  │  │  └─ write_pending_status.py
+│  │  ├─ cli  # Admin Tools
+│  │  │  ├─ compliance_watcher.py
+│  │  │  ├─ enforce_structure.py
+│  │  │  ├─ prompt_compliance_checker.py
+│  │  │  ├─ README.md
+│  │  │  ├─ repair_chain.py
+│  │  │  └─ write_current_status.py
+│  │  ├─ daemons  # Background Watchers
+│  │  │  ├─ compliance_enforcer.py
+│  │  │  ├─ context_watcher.py
+│  │  │  ├─ pending_status_watcher.py
+│  │  │  └─ README.md
+│  │  ├─ helpers
+│  │  │  ├─ generate_architecture_map.py
+│  │  │  ├─ get_status_block.py
+│  │  │  ├─ mcp_trigger_save.py
+│  │  │  ├─ README.md
+│  │  │  ├─ smoke_test_writer.ps1
+│  │  │  └─ write_pending_status.py
+│  │  ├─ launchers
+│  │  │  ├─ manual_cleanup_app.bat
+│  │  │  ├─ README.md
+│  │  │  └─ START_ALL_WATCHERS.bat
+│  │  ├─ servers  # MCP Servers
+│  │  │  ├─ mcp_server_evoki_v3.py
+│  │  │  └─ README.md
+│  │  ├─ ui
+│  │  │  ├─ chat_display_template.py
+│  │  │  └─ README.md
+│  │  └─ README.md
+│  └─ tests  # [TESTS] Pytest Suite
+│     ├─ README.md
+│     ├─ test_determinism_gate.py
+│     └─ test_search_chatverlauf.py
+├─ .geminiignore
+├─ ARCHITECTURE.txt  # THIS FILE
+└─ README.md
 
-[CHANGE LOG]
-- Deleted: app/temple (Backend Logic migrated to tooling/scripts)
-- Moved: Automation -> tooling/scripts/automation
-- Moved: Watchers -> tooling/scripts/daemons
-- Created: .bat Launchers in tooling/scripts/launchers
+[NOTE]
+This file is automatically generated by tooling/scripts/helpers/generate_architecture_map.py
+Do not edit manually. Run the script instead.

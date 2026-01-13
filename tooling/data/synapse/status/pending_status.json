@@ -1,29 +1,29 @@
 {
-    "step_id": "update_dir_policy_177",
-    "cycle": "3/5",
+    "step_id": "run_arch_gen_179",
+    "cycle": "5/5",
     "time_source": "metadata (STRICT_SYNC): AUTO",
-    "goal": "Update der Directory Policy auf V5.1",
+    "goal": "Generierung der ARCHITECTURE.txt",
     "inputs": {
-        "raw_user_request": "Update architecture files"
+        "raw_user_request": "Execute generator"
     },
     "actions": [
-        "Rewrite: tooling/docs/DIRECTORY_STRUCTURE_POLICY.md"
+        "Run: generate_architecture_map.py"
     ],
     "risk": [],
     "assumptions": [
-        "Syncing documentation"
+        "Script works"
     ],
     "rule_tangency": {
         "tangency_detected": false,
-        "notes": "Documentation"
+        "notes": "Automation"
     },
     "reflection_curve": {
-        "delta": "Policy references old paths",
-        "correction": "Update Policy",
-        "next": "Write File"
+        "delta": "Map needs refresh",
+        "correction": "Run Auto-Gen",
+        "next": "Verify"
     },
     "output_plan": [
-        "Update Policy"
+        "Generate Map"
     ],
     "window_type": "execution",
     "schema_version": "3.2",
@@ -33,10 +33,10 @@
     "cycle_backend_controlled": true,
     "critical_summary": {
         "status": "GREEN",
-        "notes": "Syncing Directory Policy"
+        "notes": "Mapping Reality"
     },
     "project_awareness": {
-        "status": "UPDATING POLICY"
+        "status": "GENERATING MAP"
     },
     "window_hash": "PLACEHOLDER_BACKEND",
     "prev_window_hash": "AUTO",
