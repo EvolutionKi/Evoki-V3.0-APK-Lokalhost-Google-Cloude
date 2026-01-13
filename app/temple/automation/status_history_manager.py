@@ -74,7 +74,23 @@ def main():
             sys.exit(0)
         
         print(f"🔍 Verifying {len(entries)} entries...")
-        
+
+        # 0) Hash recomputation check (deterministic verification)
+        for i, entry in enumerate(entries):
+            ts = entry.get("timestamp")
+            salt = entry.get("salt")
+            wh = entry.get("window_hash")
+            sw = entry.get("status_window", {})
+            if not ts or not salt or not wh:
+                print(f"❌ Missing fields at entry {i} (timestamp/salt/window_hash)", file=sys.stderr)
+                sys.exit(1)
+            recomputed = manager._compute_hash(sw, ts, salt)
+            if recomputed != wh:
+                print(f"❌ Hash mismatch at entry {i}!", file=sys.stderr)
+                print(f"   Expected: {wh}", file=sys.stderr)
+                print(f"   Got:      {recomputed}", file=sys.stderr)
+                sys.exit(1)
+
         # Check chain integrity
         for i in range(1, len(entries)):
             prev_entry = entries[i-1]

@@ -12,44 +12,31 @@ import sys
 import os
 import tempfile
 from pathlib import Path
-from datetime import datetime, timezone
 
+REPO_ROOT = Path(__file__).resolve().parents[3]
+PENDING_PATH = REPO_ROOT / "tooling" / "data" / "synapse" / "status" / "pending_status.json"
 
-def write_pending_status(status_window: dict):
-    """Write Status Window to pending_status.json"""
-    # V3.0 Optimized Path
-    v3_root = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
-    pending_path = v3_root / "tooling" / "data" / "synapse" / "status" / "pending_status.json"
-    
-    # Ensure directory exists
-    pending_path.parent.mkdir(parents=True, exist_ok=True)
-
-    # Minimal shape so MCP monitor can react (it checks presence of mcp_trigger)
-    if "mcp_trigger" not in status_window or not isinstance(status_window.get("mcp_trigger"), dict):
-        status_window["mcp_trigger"] = {"timestamp": "PLACEHOLDER"}
-
-    # Atomic write: tmp file in same dir + replace
+def _atomic_write_json(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     tmp_path = None
     try:
-        with tempfile.NamedTemporaryFile(
-            mode="w",
-            encoding="utf-8",
-            dir=str(pending_path.parent),
-            delete=False,
-            suffix=".tmp",
-        ) as tmp:
-            json.dump(status_window, tmp, indent=4, ensure_ascii=False)
+        with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=str(path.parent), delete=False, suffix=".tmp") as tmp:
+            json.dump(payload, tmp, indent=2, ensure_ascii=False)
             tmp.flush()
             os.fsync(tmp.fileno())
             tmp_path = Path(tmp.name)
-
-        tmp_path.replace(pending_path)
+        tmp_path.replace(path)  # atomic rename on same filesystem
     finally:
-        if tmp_path and tmp_path.exists():
+        if tmp_path and tmp_path.exists() and tmp_path != path:
             try:
                 tmp_path.unlink()
             except Exception:
                 pass
+
+def write_pending_status(status_window: dict):
+    """Write Status Window to pending_status.json"""
+    # Writer darf NICHT “Wahrheit” erzeugen (kein Timestamp/Hash faken).
+    _atomic_write_json(PENDING_PATH, status_window)
     
     print(f"✅ Status Window written to pending_status.json", file=sys.stderr)
 
@@ -60,5 +47,15 @@ if __name__ == "__main__":
         status_window = json.loads(sys.argv[1])
         write_pending_status(status_window)
     else:
-        print("Usage: python write_pending_status.py '<status_window_json>'", file=sys.stderr)
-        sys.exit(1)
+        # Read from stdin if no argument provided (robustness)
+        try:
+            input_data = sys.stdin.read()
+            if input_data:
+                status_window = json.loads(input_data)
+                write_pending_status(status_window)
+            else:
+                print("Usage: python write_pending_status.py '<status_window_json>'", file=sys.stderr)
+                sys.exit(1)
+        except Exception as e:
+            print(f"Error reading input: {e}", file=sys.stderr)
+            sys.exit(1)

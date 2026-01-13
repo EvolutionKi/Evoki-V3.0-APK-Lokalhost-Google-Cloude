@@ -31,6 +31,7 @@ import json
 import sqlite3
 import os
 import sys
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -46,8 +47,8 @@ except ImportError:
     exit(1)
 
 # Ensure repo/app is importable (temple.* lives under /app)
-REPO_ROOT = Path(__file__).resolve().parents[2]
-APP_DIR = REPO_ROOT / "app"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+APP_DIR = PROJECT_ROOT / "app"
 if str(APP_DIR) not in sys.path:
     sys.path.insert(0, str(APP_DIR))
 
@@ -528,10 +529,13 @@ async def main():
     # Initialize database
     init_persistent_db()
     
-    # Start background monitor (DISABLED BY DEFAULT to avoid double-writes with external watcher)
+    # Start background monitor
+    enable_monitor = os.getenv("EVOKI_ENABLE_PENDING_MONITOR", "0").strip() in ("1", "true", "TRUE", "yes", "YES")
     monitor_task = None
-    if os.environ.get("EVOKI_ENABLE_PENDING_MONITOR") == "1":
+    if enable_monitor:
         monitor_task = asyncio.create_task(monitor_pending_status())
+    else:
+        print("ℹ️ pending_status monitor DISABLED (set EVOKI_ENABLE_PENDING_MONITOR=1 to enable)", file=sys.stderr)
     
     # Run server
     try:

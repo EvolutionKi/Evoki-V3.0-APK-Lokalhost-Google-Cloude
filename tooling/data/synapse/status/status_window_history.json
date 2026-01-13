@@ -1,172 +1,418 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T08:21:32.772119+00:00",
-  "total_entries": 3,
+  "created_at": "2026-01-13T09:06:30.022768+00:00",
+  "total_entries": 7,
   "entries": [
     {
-      "timestamp": "2026-01-13T06:57:49.425878+00:00",
-      "salt": "ebaa8ba5e2b4830b8706ba9d1124ea5b",
-      "source": "test_v3",
-      "window_hash": "cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b",
+      "timestamp": "2026-01-13T08:50:31.544493+00:00",
+      "salt": "b8624b0f42fb28f745f04c3e09ed1f3c",
+      "source": "test_cli_genesis",
+      "window_hash": "941483a21feddb16c6e295f45c8f600e594352f14d6c35ab8463b1cef9abba62",
       "status_window": {
-        "step_id": "test_v3_pipeline",
-        "cycle": "1/5",
-        "time_source": "metadata (STRICT_SYNC): 2026-01-13T08:00:00+01:00",
-        "goal": "Test the V3 auto-logging pipeline",
+        "schema_version": "4.0",
+        "window_source": "backend_generated",
+        "cycle_backend_controlled": true,
+        "step_id": null,
+        "cycle": null,
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T08:50:31.544493+00:00",
+        "goal": "Apply Critical Patches",
         "inputs": {
-          "test_type": "initial_functionality_test"
+          "user_messages": [
+            "Apply diffs for MCP, Writer, Synapse Logic"
+          ],
+          "context": {
+            "summary": "Fixing MCP imports, atomic writes, and implementing backend-authoritative hashing.",
+            "state_vector": "Patching"
+          }
         },
         "actions": [
-          "Created test Status Window",
-          "Will trigger auto-save via file write"
+          "patch_mcp_server",
+          "patch_pending_writer",
+          "patch_synapse_logic",
+          "patch_history_manager"
         ],
         "risk": [],
+        "assumptions": [],
         "rule_tangency": {
           "tangency_detected": false,
-          "notes": "Testing new V3 pipeline"
+          "checked_rules": [
+            "S2",
+            "Rule40"
+          ],
+          "notes": "System Hardening"
         },
         "reflection_curve": {
-          "delta": "Pipeline ported successfully",
-          "correction": "None",
-          "next": "Verify watcher detects this file"
+          "delta": "User provided critical fixes",
+          "correction": "Applying patches immediately",
+          "next": "Verify Integrity"
         },
         "output_plan": [
-          "Test manual save",
-          "Test watcher detection"
-        ],
-        "window_type": "verification",
-        "schema_version": "3.0",
-        "window_source": "backend_generated",
-        "confidence": 1.0,
-        "system_versions": {
-          "api_version": "1.0",
-          "model": "Antigravity"
-        },
-        "cycle_backend_controlled": true,
-        "critical_summary": {
-          "status": "GREEN",
-          "message": "V3 Pipeline Test"
-        },
-        "window_hash": "CALCULATED_BY_SCRIPT",
-        "prev_window_hash": "null",
-        "mcp_trigger": {
-          "action": "save_to_history",
-          "target": "status_history_manager.py",
-          "enabled": true
-        }
-      },
-      "metadata": {}
-    },
-    {
-      "timestamp": "2026-01-13T07:51:33.744906+00:00",
-      "salt": "896659fecb6e6c6a435975e0a4daf3fd",
-      "source": "pending_status_auto",
-      "window_hash": "1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692",
-      "status_window": {
-        "step_id": "929",
-        "cycle": "2/5",
-        "time_source": "metadata (STRICT_SYNC): 2026-01-13T08:50:33+01:00",
-        "goal": "Verify MCP connection and auto-logging chain integrity after reload",
-        "inputs": {
-          "user_request": "System check after reload",
-          "context": "User reloaded VS Code. MCP server should be active with new paths. Watcher needs restart check."
-        },
-        "actions": [
-          "check_mcp_connection",
-          "restart_watcher",
-          "test_faiss_search"
-        ],
-        "risk": [],
-        "rule_tangency": {
-          "tangency_detected": false,
-          "notes": "Ensuring chain continuity (S2) and tool availability (MCP)"
-        },
-        "reflection_curve": {
-          "delta": "MCP connection expected to succeed now",
-          "correction": "None",
-          "next": "Full functionality confirmation"
-        },
-        "output_plan": [
-          "List MCP resources",
-          "Search FAISS for 'Antigravity'",
-          "Confirm full readiness"
-        ],
-        "window_type": "verification",
-        "schema_version": "3.0",
-        "window_source": "backend_generated",
-        "confidence": 1.0,
-        "system_versions": {
-          "api_version": "1.0",
-          "model": "Antigravity"
-        },
-        "cycle_backend_controlled": true,
-        "critical_summary": {
-          "status": "GREEN",
-          "message": "Verifying Reload State"
-        },
-        "window_hash": "CALCULATED_BY_SCRIPT",
-        "prev_window_hash": "cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b",
-        "mcp_trigger": {
-          "action": "save_to_history",
-          "target": "status_history_manager.py",
-          "enabled": true
-        }
-      },
-      "metadata": {}
-    },
-    {
-      "timestamp": "2026-01-13T08:21:32.771972+00:00",
-      "salt": "6bd41cdd63f9ae8ad5acb9278997e233",
-      "source": "pending_status_auto",
-      "window_hash": "ea051e382cff84a42892b447db379506c61b286baa6badae58386ca33ce32534",
-      "status_window": {
-        "step_id": "1190",
-        "cycle": "4/5",
-        "time_source": "metadata (STRICT_SYNC): 2026-01-13T09:17:56+01:00",
-        "goal": "Recover Chain Integrity via V2.1 Protocol",
-        "inputs": {
-          "user_request": "Implement everything so it runs",
-          "context": "Breaking the Hash Deadlock. Using the EXPECTED hash from logs."
-        },
-        "actions": [
-          "recover_chain_integrity"
-        ],
-        "risk": [],
-        "rule_tangency": {
-          "tangency_detected": true,
-          "notes": "Manual Chain Recovery using Log Data"
-        },
-        "reflection_curve": {
-          "delta": "Deadlock detected (Hash Mismatch)",
-          "correction": "Using 1f0c429... as prev_hash and PENDING_GENERATION as window_hash",
-          "next": "Verify success"
-        },
-        "output_plan": [
-          "Write pending_status.json with CORRECT hash",
-          "Verify success in log"
+          "Patch mcp_server_evoki_v3.py",
+          "Patch write_pending_status.py",
+          "Patch synapse_logic.py",
+          "Patch status_history_manager.py"
         ],
         "window_type": "execution",
-        "schema_version": "3.1",
-        "window_source": "backend_generated",
         "confidence": 1.0,
-        "system_versions": {
-          "api_version": "1.0",
-          "model": "Antigravity"
-        },
-        "cycle_backend_controlled": true,
-        "critical_summary": {
-          "status": "GREEN",
-          "message": "Chain Recovery"
-        },
-        "full_response": "Ich habe den Deadlock identifiziert: Der `prev_window_hash` war veraltet. Ich habe das Backend auf V2.1 aktualisiert (Auto-Hashing) und sende nun einen Korrektur-Block mit dem korrekten Hash `1f0c429...` und `PENDING_GENERATION`. Damit sollte die Kette wieder laufen.",
-        "window_hash": "ea051e382cff84a42892b447db379506c61b286baa6badae58386ca33ce32534",
-        "prev_window_hash": "1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692",
+        "system_versions": null,
+        "critical_summary": null,
+        "project_awareness": null,
+        "window_hash": "941483a21feddb16c6e295f45c8f600e594352f14d6c35ab8463b1cef9abba62",
+        "prev_window_hash": null,
         "mcp_trigger": {
-          "action": "save_to_history",
-          "target": "status_history_manager.py",
-          "enabled": true
+          "timestamp": "2026-01-13T08:50:31.544493+00:00"
         }
       },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-01-13T08:51:02.819129+00:00",
+      "salt": "866bd9ec6da796189a83a84c5db4f84f",
+      "source": "pending_status_auto",
+      "window_hash": "94eefde753d64519f6dbc03ece0bbc5cb1f11c0d2080e30bd8d530a757eb33f1",
+      "status_window": {
+        "schema_version": "4.0",
+        "window_source": "backend_generated",
+        "cycle_backend_controlled": true,
+        "step_id": null,
+        "cycle": null,
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T08:51:02.819129+00:00",
+        "goal": "Verify V4.0 System Stability",
+        "inputs": {
+          "user_messages": [
+            "System Green Verification"
+          ],
+          "context": {
+            "summary": "History Reset, Chain Verified, Protocol V4.0 Active",
+            "state_vector": "Stable"
+          }
+        },
+        "actions": [
+          "Report Success"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "checked_rules": [
+            "S2",
+            "Rule40"
+          ],
+          "notes": "System Green"
+        },
+        "reflection_curve": {
+          "delta": "Chain Verified",
+          "correction": "None",
+          "next": "Await User"
+        },
+        "output_plan": [
+          "Wait for user"
+        ],
+        "window_type": "verification",
+        "confidence": 1.0,
+        "system_versions": null,
+        "critical_summary": null,
+        "project_awareness": null,
+        "window_hash": "94eefde753d64519f6dbc03ece0bbc5cb1f11c0d2080e30bd8d530a757eb33f1",
+        "prev_window_hash": "941483a21feddb16c6e295f45c8f600e594352f14d6c35ab8463b1cef9abba62",
+        "mcp_trigger": {
+          "timestamp": "2026-01-13T08:51:02.819129+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-01-13T08:59:13.171556+00:00",
+      "salt": "ca6d1dc378e9d96ef7bf1ac56aa9ae70",
+      "source": "pending_status_auto",
+      "window_hash": "74e4bcfb360e5cdf05c8eba64079d2e8bb0627c41a65b360c4ab6fd5e8b8adf5",
+      "status_window": {
+        "schema_version": "4.0",
+        "window_source": "backend_generated",
+        "cycle_backend_controlled": true,
+        "step_id": null,
+        "cycle": null,
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T08:59:13.171556+00:00",
+        "goal": "Finalize MCP & Auto-Save",
+        "inputs": {
+          "user_messages": [
+            "Fix MCP paths",
+            "Avoid double auto-save"
+          ],
+          "context": {
+            "summary": "Applying user-provided patches for MCP Server and resolving auto-save conflict.",
+            "state_vector": "Patching"
+          }
+        },
+        "actions": [
+          "patch_mcp_server",
+          "disable_mcp_monitor",
+          "verify_single_trigger"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "checked_rules": [
+            "S2",
+            "Rule40"
+          ],
+          "notes": "System Optimization"
+        },
+        "reflection_curve": {
+          "delta": "User identified conflict",
+          "correction": "Consolidating on Watcher-based auto-save",
+          "next": "Patch MCP Server"
+        },
+        "output_plan": [
+          "Patch mcp_server_evoki_v3.py (Imports & Paths)",
+          "Disable MCP Monitor (comment out/flag)",
+          "Verify"
+        ],
+        "window_type": "execution",
+        "confidence": 1.0,
+        "system_versions": null,
+        "critical_summary": null,
+        "project_awareness": null,
+        "window_hash": "74e4bcfb360e5cdf05c8eba64079d2e8bb0627c41a65b360c4ab6fd5e8b8adf5",
+        "prev_window_hash": "94eefde753d64519f6dbc03ece0bbc5cb1f11c0d2080e30bd8d530a757eb33f1",
+        "mcp_trigger": {
+          "timestamp": "2026-01-13T08:59:13.171556+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-01-13T09:01:03.324215+00:00",
+      "salt": "ec91677090188e8a9ddbb32dd238abf7",
+      "source": "pending_status_auto",
+      "window_hash": "75d00f70631d6d04fc5d7a8b188b5da787ab4632bbec1f5afafd259d2967d645",
+      "status_window": {
+        "schema_version": "4.0",
+        "window_source": "backend_generated",
+        "cycle_backend_controlled": true,
+        "step_id": null,
+        "cycle": null,
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T09:01:03.324215+00:00",
+        "goal": "Finalize V4.0 System State",
+        "inputs": {
+          "user_messages": [
+            "Confirm Fixes"
+          ],
+          "context": {
+            "summary": "Full System Verification: MCP Imports OK, Paths OK, Monitor Disabled, Chain Verified.",
+            "state_vector": "Green"
+          }
+        },
+        "actions": [
+          "Report Completion"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "checked_rules": [
+            "S2",
+            "Rule40"
+          ],
+          "notes": "System Green"
+        },
+        "reflection_curve": {
+          "delta": "All systems nominal",
+          "correction": "None",
+          "next": "Await User"
+        },
+        "output_plan": [
+          "Wait for user"
+        ],
+        "window_type": "verification",
+        "confidence": 1.0,
+        "system_versions": null,
+        "critical_summary": null,
+        "project_awareness": null,
+        "window_hash": "75d00f70631d6d04fc5d7a8b188b5da787ab4632bbec1f5afafd259d2967d645",
+        "prev_window_hash": "74e4bcfb360e5cdf05c8eba64079d2e8bb0627c41a65b360c4ab6fd5e8b8adf5",
+        "mcp_trigger": {
+          "timestamp": "2026-01-13T09:01:03.324215+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-01-13T09:03:39.012110+00:00",
+      "salt": "5515fb7fb4de1a021a8ddb4b3260bd67",
+      "source": "pending_status_auto",
+      "window_hash": "575717d3f1f14da91db0f12bc8ee5e719a5d3c28bb22ed298614b5757c3d4c2a",
+      "status_window": {
+        "schema_version": "4.0",
+        "window_source": "backend_generated",
+        "cycle_backend_controlled": true,
+        "step_id": null,
+        "cycle": null,
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T09:03:39.012110+00:00",
+        "goal": "Confirm System Consistency",
+        "inputs": {
+          "user_messages": [
+            "ist es jetzt nach deiner logig konsistent?"
+          ],
+          "context": {
+            "summary": "Confirming logical, physical, and mathematical consistency of the V4.0 System.",
+            "state_vector": "Consistent"
+          }
+        },
+        "actions": [
+          "Start Response",
+          "Explain Consistency",
+          "Trigger Persistence"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "checked_rules": [
+            "S2",
+            "Rule40"
+          ],
+          "notes": "Validation Complete"
+        },
+        "reflection_curve": {
+          "delta": "System verified",
+          "correction": "None",
+          "next": "Await User Commands"
+        },
+        "output_plan": [
+          "Wait for user"
+        ],
+        "window_type": "verification",
+        "confidence": 1.0,
+        "system_versions": null,
+        "critical_summary": null,
+        "project_awareness": null,
+        "window_hash": "575717d3f1f14da91db0f12bc8ee5e719a5d3c28bb22ed298614b5757c3d4c2a",
+        "prev_window_hash": "75d00f70631d6d04fc5d7a8b188b5da787ab4632bbec1f5afafd259d2967d645",
+        "mcp_trigger": {
+          "timestamp": "2026-01-13T09:03:39.012110+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-01-13T09:03:57.580129+00:00",
+      "salt": "ed146ffff7d417740ed90680565ea406",
+      "source": "pending_status_auto",
+      "window_hash": "df63e59548d6a0fbb7f98b732668b7dbe31973c4908b68c8cc37a357b9d88982",
+      "status_window": {
+        "schema_version": "4.0",
+        "window_source": "backend_generated",
+        "cycle_backend_controlled": true,
+        "step_id": null,
+        "cycle": null,
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T09:03:57.580129+00:00",
+        "goal": "Confirm System Consistency",
+        "inputs": {
+          "user_messages": [
+            "ist es jetzt nach deiner logig konsistent?"
+          ],
+          "context": {
+            "summary": "Confirming logical, physical, and mathematical consistency of the V4.0 System.",
+            "state_vector": "Consistent"
+          }
+        },
+        "actions": [
+          "Trigger Persistence"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "checked_rules": [
+            "S2",
+            "Rule40"
+          ],
+          "notes": "Validation Complete"
+        },
+        "reflection_curve": {
+          "delta": "System verified",
+          "correction": "None",
+          "next": "Await User Commands"
+        },
+        "output_plan": [
+          "Wait for user"
+        ],
+        "window_type": "verification",
+        "confidence": 1.0,
+        "system_versions": null,
+        "critical_summary": null,
+        "project_awareness": null,
+        "window_hash": "df63e59548d6a0fbb7f98b732668b7dbe31973c4908b68c8cc37a357b9d88982",
+        "prev_window_hash": "575717d3f1f14da91db0f12bc8ee5e719a5d3c28bb22ed298614b5757c3d4c2a",
+        "mcp_trigger": {
+          "timestamp": "2026-01-13T09:03:57.580129+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "timestamp": "2026-01-13T09:06:30.022620+00:00",
+      "salt": "2765e7547f9ed239361e1b130ebcc028",
+      "source": "pending_status_auto",
+      "window_hash": "b5733639962b63785f5f3330442dae406d495252a8b5e0e83c351ae6810c65c6",
+      "status_window": {
+        "schema_version": "4.0",
+        "window_source": "backend_generated",
+        "cycle_backend_controlled": true,
+        "step_id": null,
+        "cycle": null,
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T09:06:30.022620+00:00",
+        "goal": "Enforce Repo Consistency",
+        "inputs": {
+          "user_messages": [
+            "Commit Changes"
+          ],
+          "context": {
+            "summary": "Repository is now legally bound to V4.0 Protocol.",
+            "state_vector": "Committed"
+          }
+        },
+        "actions": [
+          "Trigger AutoSave"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "checked_rules": [
+            "S2",
+            "Rule40"
+          ],
+          "notes": "Repo Consistent"
+        },
+        "reflection_curve": {
+          "delta": "Code committed",
+          "correction": "None",
+          "next": "Await User"
+        },
+        "output_plan": [
+          "Wait for user"
+        ],
+        "window_type": "verification",
+        "confidence": 1.0,
+        "system_versions": null,
+        "critical_summary": null,
+        "project_awareness": null,
+        "window_hash": "b5733639962b63785f5f3330442dae406d495252a8b5e0e83c351ae6810c65c6",
+        "prev_window_hash": "df63e59548d6a0fbb7f98b732668b7dbe31973c4908b68c8cc37a357b9d88982",
+        "mcp_trigger": {
+          "timestamp": "2026-01-13T09:06:30.022620+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
       "metadata": {}
     }
   ]

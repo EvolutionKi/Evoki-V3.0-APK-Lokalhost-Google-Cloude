@@ -33,9 +33,9 @@ class StatusHistoryManager:
     
     def _compute_hash(self, status_window: Dict[str, Any], timestamp: str, salt: str) -> str:
         """Compute SHA-256 hash with Timestamp and Salt binding"""
-        # Use stable JSON serialization
-        canonical = json.dumps(status_window, sort_keys=True, separators=(',', ':'))
-        # Bind: Content + EXACT Timestamp + Random Salt
+        sw = dict(status_window)
+        sw.pop("window_hash", None)  # avoid circular/self-reference
+        canonical = json.dumps(sw, sort_keys=True, separators=(',', ':'), ensure_ascii=False)
         payload = f"{canonical}|{timestamp}|{salt}"
         return hashlib.sha256(payload.encode('utf-8')).hexdigest()
 
@@ -295,12 +295,8 @@ class StatusHistoryManager:
         salt = secrets.token_hex(16)
         
         # Compute Hash with Salt and Timestamp binding
-        window_for_hash = dict(status_window)
-        # Avoid self-referential hashing: do not include window_hash itself
-        window_for_hash.pop("window_hash", None)
-        window_hash = self._compute_hash(window_for_hash, save_time, salt)
-
-        # Write truth back into the block (backend is authoritative)
+        window_hash = self._compute_hash(status_window, save_time, salt)
+        # Make the stored status_window self-describing
         status_window["window_hash"] = window_hash
         
         # Check for duplicates
