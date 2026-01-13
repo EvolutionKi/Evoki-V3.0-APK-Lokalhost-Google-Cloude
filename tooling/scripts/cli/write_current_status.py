@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+from datetime import datetime, timezone
 import time
 import argparse
 import tempfile
@@ -91,7 +92,7 @@ def write_pending_status(args):
     status_content = {
         "step_id": f"manual_{int(time.time())}",
         "cycle": "1/5",
-        "time_source": "...: AUTO",  # V5 Compliant Placeholder
+        "time_source": f"metadata (STRICT_SYNC): {datetime.now(timezone.utc).isoformat()}",
         "goal": args.goal,
         "inputs": {
             "raw_user_request": args.input

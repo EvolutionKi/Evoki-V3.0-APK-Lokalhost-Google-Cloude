@@ -58,6 +58,10 @@ def load_status_history():
         sw = entry.get("status_window", {})
         inputs = sw.get("inputs", {})
         raw_request = inputs.get("raw_user_request", "")
+        if not raw_request:
+            messages = inputs.get("user_messages", [])
+            if isinstance(messages, list):
+                raw_request = " ".join(messages)
         
         if raw_request:
             logged_requests.append({
