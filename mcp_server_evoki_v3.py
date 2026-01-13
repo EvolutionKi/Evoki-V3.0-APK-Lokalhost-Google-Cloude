@@ -88,9 +88,9 @@ def init_persistent_db():
         "evoki_version": "V2.0",
         "regelwerk_version": "V12",
         "project_name": "Evoki DeepEarth",
-        "chatverlauf_faiss_index": "C:\\Evoki V2.0\\evoki-app\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.faiss",
-        "chatverlauf_metadata": "C:\\Evoki V2.0\\evoki-app\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.metadata.json",
-        "chatverlauf_sqlite": "C:\\Evoki V2.0\\evoki-app\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.db"
+        "chatverlauf_faiss_index": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.faiss",
+        "chatverlauf_metadata": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.metadata.json",
+        "chatverlauf_sqlite": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.db"
     }
     
     for key, value in defaults.items():
@@ -140,7 +140,7 @@ def load_persistent_context() -> dict:
 def load_project_awareness() -> dict:
     """Load project awareness data"""
     return {
-        "project_name": "Evoki V2.0 DeepEarth",
+        "project_name": "EVOKI V3.0 - The Resonance Engine",
         "architecture": {
             "trinity_engine": ["Planner", "Executor", "Reflection"],
             "databases": [
@@ -288,7 +288,7 @@ async def list_resources() -> list[types.Resource]:
         types.Resource(
             uri="synapse://project_awareness",
             name="Project Awareness",
-            description="Evoki V2.0 architecture, components, vision",
+            description="EVOKI V3.0 architecture, Trinity Engine, Deep Earth layers",
             mimeType="application/json"
         ),
         types.Resource(

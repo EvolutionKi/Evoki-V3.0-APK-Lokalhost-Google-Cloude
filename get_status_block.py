@@ -20,8 +20,8 @@ except ImportError as e:
     print(json.dumps({"error": f"Import failed: {e}"}))
     sys.exit(1)
 
-OUTPUT_FILE = r"C:\Evoki V2.0\evoki-app\data\synapse\current_status.json"
-CONTEXT_FILE = r"C:\Evoki V2.0\evoki-app\data\synapse\status_context.json"
+OUTPUT_FILE = r"C:\Evoki V3.0 APK-Lokalhost-Google Cloude\data\synapse\current_status.json"
+CONTEXT_FILE = r"C:\Evoki V3.0 APK-Lokalhost-Google Cloude\data\synapse\status_context.json"
 
 def load_context():
     """Load context (goals, etc.) from a persistent file or args."""
@@ -56,7 +56,7 @@ def generate_project_awareness():
     import random
     
     # Load quiz database from all category files
-    quiz_dir = Path("C:/Evoki V2.0/evoki-app/data/synapse/quiz")
+    quiz_dir = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude/data/synapse/quiz")
     quiz_question = None
     
     if quiz_dir.exists() and quiz_dir.is_dir():
@@ -73,7 +73,7 @@ def generate_project_awareness():
                 quiz_question = random.choice(all_questions)
         except Exception as e:
             # Fallback: try old single-file location
-            old_quiz_file = Path("C:/Evoki V2.0/evoki-app/data/synapse/knowledge_quiz.json")
+            old_quiz_file = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude/data/synapse/knowledge_quiz.json")
             if old_quiz_file.exists():
                 try:
                     with open(old_quiz_file, 'r', encoding='utf-8') as f:
@@ -85,10 +85,10 @@ def generate_project_awareness():
     
     # Check if project files exist and are accessible (proxy for context)
     project_markers = {
-        "README.md": os.path.exists("C:\\Evoki V2.0\\evoki-app\\README.md"),
-        "Trinity Backend": os.path.exists("C:\\Evoki V2.0\\evoki-app\\backend\\core\\TrinityEngine.js"),
-        "FAISS Data": os.path.exists("C:\\Evoki V2.0\\evoki-app\\python\\data\\faiss_indices"),
-        "Synapse Deep Understanding": os.path.exists("C:\\Evoki V2.0\\evoki-app\\SYNAPSE_EVOKI_DEEP_UNDERSTANDING.md")
+        "README.md": os.path.exists("C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\README.md"),
+        "Trinity Engine": os.path.exists("C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\temple\\trinity_engine"),
+        "Deep Earth Layers": os.path.exists("C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\deep_earth\\layers"),
+        "Genesis Anchor": os.path.exists("C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\GENESIS_ANCHOR_V3.md")
     }
     
     # Simple heuristic: If we can access core files, we have context
