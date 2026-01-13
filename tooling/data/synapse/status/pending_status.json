@@ -1,31 +1,33 @@
 {
-    "step_id": "fix_imports_docs_145",
-    "cycle": "3/5",
+    "step_id": "finalize_cleanup_148",
+    "cycle": "1/5",
     "time_source": "metadata (STRICT_SYNC): AUTO",
-    "goal": "Reparatur der Test-Imports nach Migration & Doku Anpassung",
+    "goal": "Abschluss der Migration & Bereitstellung Cleanup Script",
     "inputs": {
-        "raw_user_request": "Restliche Tasks (Doku Pfad Backup, Tests Fix)"
+        "raw_user_request": "Clean app folder fully"
     },
     "actions": [
-        "Rewrite: tooling/tests/test_determinism_gate.py (New imports)",
-        "Update: tooling/data/synapse/README.md (Backup path info)"
+        "Create: tooling/scripts/manual_cleanup_app.bat (User Helper)",
+        "Status: Yellow (Waiting for Watcher Restart)"
     ],
-    "risk": [],
+    "risk": [
+        "Windows File Locks verhindern automatische Löschung"
+    ],
     "assumptions": [
-        "Migration ist abgeschlossen, Pfade sind stabil"
+        "User muss Prozess manuell stoppen"
     ],
     "rule_tangency": {
         "tangency_detected": false,
-        "notes": "Code Maintenance"
+        "notes": "Process Management"
     },
     "reflection_curve": {
-        "delta": "Tests haben verwaiste Importe",
-        "correction": "Update sys.path in tests",
-        "next": "Fix Test & Readme"
+        "delta": "Watcher Process locks app/temple",
+        "correction": "Provide manual cleanup script",
+        "next": "User Action Required"
     },
     "output_plan": [
-        "Fix test_determinism_gate.py",
-        "Fix synapse/README.md"
+        "Write cleanup script",
+        "Inform User"
     ],
     "window_type": "execution",
     "schema_version": "3.2",
@@ -34,11 +36,11 @@
     "system_versions": {},
     "cycle_backend_controlled": true,
     "critical_summary": {
-        "status": "GREEN",
-        "notes": "Final Migrations"
+        "status": "YELLOW",
+        "notes": "Watcher Restart Needed to Clean app/"
     },
     "project_awareness": {
-        "testing": "FIXING IMPORTS"
+        "cleanup": "PENDING USER RESTART"
     },
     "window_hash": "PLACEHOLDER_BACKEND",
     "prev_window_hash": "AUTO",

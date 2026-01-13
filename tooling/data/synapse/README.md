@@ -6,7 +6,6 @@
 
 ## Unterordner
 
-- 📁 `backups/`
 - 📁 `logs/`
 - 📁 `status/`
-
+  - 📁 `backups/` (Status History Backups)
