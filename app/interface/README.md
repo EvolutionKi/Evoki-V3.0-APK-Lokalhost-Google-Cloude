@@ -1,22 +1,26 @@
 # interface
 
-**Pfad:** `app\interface`
+**Kontext:** `app\interface`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Unterordner
+## 📂 Unterverzeichnisse
 
-- 📁 `public/`
-- 📁 `src/`
+| Ordner | Beschreibung |
+|--------|--------------|
+| **public/** | - |
+| **src/** | - |
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `.gitignore`
-- 📄 `eslint.config.js`
-- 📄 `index.html`
-- 📄 `package.json`
-- 📄 `tsconfig.app.json`
-- 📄 `tsconfig.json`
-- 📄 `tsconfig.node.json`
-- 📄 `vite.config.ts`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **.gitignore** | *(Keine Dokumentation)* | - |
+| **eslint.config.js** | *(Keine Dokumentation)* | - |
+| **index.html** | *(Keine Dokumentation)* | - |
+| **package.json** | *(Keine Dokumentation)* | - |
+| **tsconfig.app.json** | *(Keine Dokumentation)* | - |
+| **tsconfig.json** | *(Keine Dokumentation)* | - |
+| **tsconfig.node.json** | *(Keine Dokumentation)* | - |
+| **vite.config.ts** | *(Keine Dokumentation)* | - |
 

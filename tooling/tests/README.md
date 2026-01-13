@@ -1,11 +1,13 @@
 # tests
 
-**Pfad:** `tooling\tests`
+**Kontext:** `tooling\tests`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `test_determinism_gate.py`
-- 📄 `test_search_chatverlauf.py`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **test_determinism_gate.py** | *(Keine Dokumentation)* | __future__, automation, pytest, synapse_logic |
+| **test_search_chatverlauf.py** | *(Keine Dokumentation)* | numpy, pytest, sqlite3, temple |
 

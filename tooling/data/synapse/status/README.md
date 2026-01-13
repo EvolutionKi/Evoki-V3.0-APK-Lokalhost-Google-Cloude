@@ -1,15 +1,19 @@
 # status
 
-**Pfad:** `tooling\data\synapse\status`
+**Kontext:** `tooling\data\synapse\status`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Unterordner
+## 📂 Unterverzeichnisse
 
-- 📁 `backups/`
+| Ordner | Beschreibung |
+|--------|--------------|
+| **backups/** | - |
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `pending_status.json`
-- 📄 `status_window_history.json`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **pending_status.json** | *(Keine Dokumentation)* | - |
+| **status_window_history.json** | *(Keine Dokumentation)* | - |
 

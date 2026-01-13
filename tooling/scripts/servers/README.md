@@ -1,10 +1,12 @@
 # servers
 
-**Pfad:** `tooling\scripts\servers`
+**Kontext:** `tooling\scripts\servers`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `mcp_server_evoki_v3.py`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **mcp_server_evoki_v3.py** | MCP Server for Synapse Auto-Context Loading | asyncio, mcp, sqlite3, temple |
 

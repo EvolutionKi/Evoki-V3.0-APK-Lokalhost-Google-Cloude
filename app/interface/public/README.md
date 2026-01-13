@@ -1,10 +1,12 @@
 # public
 
-**Pfad:** `app\interface\public`
+**Kontext:** `app\interface\public`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `vite.svg`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **vite.svg** | *(Keine Dokumentation)* | - |
 

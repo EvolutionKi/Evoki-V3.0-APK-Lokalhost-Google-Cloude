@@ -8,7 +8,7 @@
 
 **Ausnahmen (erlaubt):**
 - Root-Level: `README.md`, `ARCHITECTURE.txt`, `.geminiignore`
-- Python-Projekt-Root (`app/temple/`): `main.py`, `pyproject.toml`, `requirements.txt`
+- Whitelisted Folders (siehe `tooling/scripts/cli/enforce_structure.py`)
 
 ---
 
@@ -16,51 +16,37 @@
 
 | Bereich | Pfad | Inhalt |
 |---------|------|--------|
-| **App/Backend** | `app/` | Core-Logik, API-Routes, Models |
-| **Tooling** | `tooling/` | Scripts, Daemons, CLI, UI-Helpers |
+| **App** | `app/` | Production Artifacts (State/UI/Memory) |
+| **Tooling** | `tooling/` | Development Logic, Automation, Scripts |
 
-**Niemals:** Tool-Scripts in `app/` ablegen (außer sie sind Teil der Core-API)
+**Niemals:** Tool-Scripts in `app/` ablegen.
 
 ---
 
-## Aktuelle Struktur (V5.0)
+## Aktuelle Struktur (V5.1)
 
 ```
 app/
-├── temple/
-│   ├── automation/       # Core-Logik (importierbar)
-│   │   ├── synapse_logic.py         # StatusHistoryManager class
-│   │   ├── status_history_manager.py # CLI interface
-│   │   └── search_chatverlauf.py    # Retrieval library
-│   ├── core/             # Backend-Module
-│   ├── models/           # Datenmodelle
-│   ├── routes/           # API-Endpoints
-│   └── tests/            # Unit-Tests
+├── interface/            # Frontend (React/Vite)
+└── deep_earth/           # Memory (SQLite Layers)
 
 tooling/
-├── config/               # Konfigurationsdateien
-├── data/
-│   ├── db/               # Datenbanken (*.db)
-│   ├── faiss_indices/    # Vektor-Indices
-│   └── synapse/
-│       ├── backups/      # History-Backups
-│       ├── logs/         # Log-Dateien (*.log)
-│       └── status/       # Status-JSONs
-├── docs/                 # Dokumentation (*.md)
-└── scripts/
-    ├── cli/              # CLI-Tools
-    │   └── repair_chain.py
-    ├── daemons/          # Hintergrund-Prozesse
-    │   └── pending_status_watcher.py
-    ├── helpers/          # Hilfsskripte
-    │   ├── get_status_block.py
-    │   ├── mcp_trigger_save.py
-    │   ├── smoke_test_writer.ps1
-    │   └── write_pending_status.py
-    ├── servers/          # Server-Prozesse
-    │   └── mcp_server_evoki_v3.py
-    └── ui/               # UI-Templates
-        └── chat_display_template.py
+├── data/                 # Runtime State
+│   ├── synapse/          # Status/Logs
+│   └── db/               # Context DBs
+│
+├── docs/                 # Documentation
+│   └── knowledge/
+│
+├── scripts/              # Logic Engine
+│   ├── automation/       # Core Logic (Synapse Chain)
+│   ├── cli/              # Admin Tools
+│   ├── daemons/          # Watchers
+│   ├── helpers/          # Utilities
+│   ├── launchers/        # .bat Files
+│   └── servers/          # MCP Server
+│
+└── tests/                # Pytest Suite
 ```
 
 ---
@@ -75,21 +61,16 @@ tooling/
 | `*.md` (Docs) | `tooling/docs/` |
 | CLI-Scripts | `tooling/scripts/cli/` |
 | Daemons | `tooling/scripts/daemons/` |
-| Helper-Scripts | `tooling/scripts/helpers/` |
-| Server-Scripts | `tooling/scripts/servers/` |
+| Launchers | `tooling/scripts/launchers/` |
+| Core-Logik | `tooling/scripts/automation/` |
 | UI-Templates | `tooling/scripts/ui/` |
 
 ---
 
 ## Automatische Durchsetzung
 
-Der Agent MUSS bei jedem Datei-Schreibvorgang prüfen:
-1. Zielverzeichnis existiert bereits?
-2. Enthält es nur Dateien ODER nur Ordner?
-3. Passt der neue Inhalt zum Typ?
-4. Gehört die Datei zu `app/` (Core) oder `tooling/` (Tools)?
-
-Bei Verstoß: Korrekten Ordner erstellen und dort ablegen.
+Verwende das Tool `enforce_structure.py` zur Prüfung:
+`python tooling/scripts/cli/enforce_structure.py check`
 
 ---
 
@@ -97,15 +78,5 @@ Bei Verstoß: Korrekten Ordner erstellen und dort ablegen.
 
 **Pflicht:** Bei jeder strukturellen Änderung MUSS `.github/copilot-instructions.md` aktualisiert werden.
 
-**Was aktualisiert werden muss:**
-- Verzeichnisstruktur (wenn Ordner erstellt/gelöscht/verschoben)
-- Dateipfade (wenn Scripts verschoben werden)
-- Befehle (wenn CLI-Pfade sich ändern)
-- Dependencies (wenn neue hinzukommen)
-
-**Nicht löschen, nur aktualisieren!**
-
----
-
-**Version:** 2.0  
-**Datum:** 2026-01-13
+**Version:** 3.0 (V5.1 Refactor)
+**Datum:** 2026-01-13 (Phase 3)

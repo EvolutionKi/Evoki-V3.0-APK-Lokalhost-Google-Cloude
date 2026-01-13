@@ -1,10 +1,12 @@
 # ui
 
-**Pfad:** `tooling\scripts\ui`
+**Kontext:** `tooling\scripts\ui`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `chat_display_template.py`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **chat_display_template.py** | *(Keine Dokumentation)* | textwrap |
 

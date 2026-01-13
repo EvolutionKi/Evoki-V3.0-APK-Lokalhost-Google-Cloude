@@ -1,31 +1,29 @@
 {
-    "step_id": "final_commit_169",
-    "cycle": "1/5",
+    "step_id": "update_dir_policy_177",
+    "cycle": "3/5",
     "time_source": "metadata (STRICT_SYNC): AUTO",
-    "goal": "Sicherung des Bereinigten Zustands (Git Commit)",
+    "goal": "Update der Directory Policy auf V5.1",
     "inputs": {
-        "raw_user_request": "Cleanup successfully verified"
+        "raw_user_request": "Update architecture files"
     },
     "actions": [
-        "Git: add .",
-        "Git: commit -m 'chore: final structure cleanup & verification'",
-        "Git: push"
+        "Rewrite: tooling/docs/DIRECTORY_STRUCTURE_POLICY.md"
     ],
     "risk": [],
     "assumptions": [
-        "Clean state worth saving"
+        "Syncing documentation"
     ],
     "rule_tangency": {
         "tangency_detected": false,
-        "notes": "Version Control"
+        "notes": "Documentation"
     },
     "reflection_curve": {
-        "delta": "System verified & cleaned",
-        "correction": "Persist to remote",
-        "next": "Push"
+        "delta": "Policy references old paths",
+        "correction": "Update Policy",
+        "next": "Write File"
     },
     "output_plan": [
-        "Commit & Push"
+        "Update Policy"
     ],
     "window_type": "execution",
     "schema_version": "3.2",
@@ -35,10 +33,10 @@
     "cycle_backend_controlled": true,
     "critical_summary": {
         "status": "GREEN",
-        "notes": "Saving Clean State"
+        "notes": "Syncing Directory Policy"
     },
     "project_awareness": {
-        "status": "COMMITTING"
+        "status": "UPDATING POLICY"
     },
     "window_hash": "PLACEHOLDER_BACKEND",
     "prev_window_hash": "AUTO",

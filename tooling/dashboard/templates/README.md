@@ -1,10 +1,12 @@
 # templates
 
-**Pfad:** `tooling\dashboard\templates`
+**Kontext:** `tooling\dashboard\templates`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `index.html`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **index.html** | *(Keine Dokumentation)* | - |
 

@@ -1,14 +1,18 @@
 # dashboard
 
-**Pfad:** `tooling\dashboard`
+**Kontext:** `tooling\dashboard`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Unterordner
+## 📂 Unterverzeichnisse
 
-- 📁 `templates/`
+| Ordner | Beschreibung |
+|--------|--------------|
+| **templates/** | - |
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `server.py`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **server.py** | *(Keine Dokumentation)* | http, socketserver, urllib |
 

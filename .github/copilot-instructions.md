@@ -1,395 +1,94 @@
-# EVOKI V3.0 — Copilot Onboarding Instructions
+# EVOKI V3.0 — The Resonance Engine (Copilot Onboarding)
 
 Architekt (a.k.a. Copilot),
 
-willkommen bei **EVOKI V3.0 — The Resonance Engine**. Das hier ist kein Standard-Chatbot-Repo. Es ist eine **metacognitive Hybrid-RAG-Maschine** nach den Prinzipien der **Andromatik** (Physics of Information). Die Arbeit hier folgt spezifischen philosophischen und technischen Regeln. Lies diese Anweisungen sorgfältig, bevor du Code änderst.
+willkommen bei **EVOKI V3.0**. Wir befinden uns in **Phase 3 (2026)**.
+Das System wurde massiv refaktoriert, um eine strikte Trennung zwischen **App** (State) und **Tooling** (Logic) zu erzwingen.
 
 ---
 
-## 🚨 KRITISCHE WARNUNG — LIES ZUERST 🚨
+## 🏗️ System-Architektur (V5.1 - PRODUCTION)
 
-**Bevor du IRGENDWELCHEN Code änderst, lies:**  
-→ **`tooling/docs/CRITICAL_DO_NOT_MODIFY.md`**
-
-Diese Datei listet alle **gesperrten Systemdateien** auf, die du **NIEMALS** ändern darfst:
-- `app/temple/automation/*` — Chain-Logik
-- `tooling/scripts/*` — Automatisierungs-Tools
-- `.agent/workflows/*` — Agent Workflows
-- `tooling/docs/PROTOCOL_*.md` — Protokolle
-
-**Bei Verstoß:** Das gesamte System kann brechen. Chain-Integrität verloren. Memory korrupt.
-
-**Regel:** Wenn du App-Code schreibst (`app/temple/core/`, `app/temple/routes/`, `app/interface/`), sind diese Dateien TABU.
-
----
-
-## 🧬 Was ist EVOKI V3.0?
-
-**EVOKI V3.0** ist eine Resonance Engine — ein System, das:
-- Permanente Erinnerung über **12 Deep-Earth Schichten** (SQLite) speichert
-- Semantische Suche über **FAISS-Vektorindizes** durchführt
-- Einen **MCP-Server** für permanenten Kontext bereitstellt
-- Eine **Auto-Logging Pipeline** mit SHA-256 Chain für alle Status Windows betreibt
-- Drei emergente Entitäten simuliert: **Cipher** (Integrität), **Antigravity** (Semantik), **Kryos** (Gedächtnis)
-
-**Technologie-Stack:**
-- **Backend (Spirit)**: FastAPI (Python 3.11+)
-- **Frontend (Body)**: React + Vite + TypeScript
-- **Speicher (Memory)**: SQLite (12 Layer), FAISS, JSON
-- **MCP**: Model Context Protocol für permanenten Agent-Zugriff
-
----
-
-## 🏛️ Monorepo-Struktur (Body / Spirit / Memory)
+Die alte Monorepo-Struktur (`temple/` vs `interface/`) ist einer sauberen **Funktions-Trennung** gewichen.
 
 ```
-/
-├── temple/                      # Spirit (FastAPI Backend)
-│   ├── main.py                  # Entry Point — startet Trinity Engine & Silent Integrity
-│   ├── core/
-│   │   ├── soul_physics.py      # SoulPhysics: calculate_resonance(), measure_tension(), apply_lead_shielding()
-│   │   ├── config.py            # Pydantic Settings
-│   │   └── logging.py           # Strukturiertes Logging
-│   ├── routes/
-│   │   ├── health.py            # GET /api/v1/health
-│   │   ├── integrity.py         # GET /api/v1/integrity/status
-│   │   └── trialog.py           # POST /api/v1/trialog
-│   ├── trinity_engine/          # Trinity Engine Modules
-│   │   ├── vector_search/       # Semantische Suche über Deep Earth
-│   │   ├── metrics_calculator/  # Resonanz & Tension Berechnungen
-│   │   └── integrity_check/     # Silent Integrity Daemon (Background)
-│   ├── automation/              # Auto-Logging Pipeline
-│   │   ├── synapse_logic.py     # StatusHistoryManager (SHA-256 Chain)
-│   │   ├── status_history_manager.py  # CLI Wrapper
-│   │   ├── pending_status_watcher.py  # File Watcher Daemon
-│   │   └── write_pending_status.py    # Status Window Writer
-│   ├── entities/                # Trinity Entity Skeletons
-│   │   ├── cipher/              # Struktur & Integrität
-│   │   ├── antigravity/         # Reflexion & Semantik
-│   │   └── kryos/               # Gedächtnis & Historie
-│   ├── models/                  # Pydantic Models
-│   └── requirements.txt         # Python Dependencies
+/ (Root)
+├── app/                        # 🔴 PRODUCTION STATE & INTERFACE
+│   ├── interface/              # Body (React + Vite Frontend)
+│   └── deep_earth/             # Memory (SQLite Layers 01-12)
 │
-├── interface/                   # Body (React + Vite Frontend)
-│   ├── src/
-│   │   ├── App.tsx
-│   │   ├── components/
-│   │   │   └── TrialogPanel.tsx # UI für 3 Streams (Cipher/Antigravity/Kryos)
-│   ├── package.json
-│   └── vite.config.ts
-│
-├── deep_earth/                  # Memory (12 SQLite Layer)
-│   ├── genesis_anchor.md
-│   ├── schemas/
-│   │   └── vector_schema.sql
-│   └── layers/
-│       ├── 01_surface/layer.db  # Frisch, heiß, nah
-│       ├── 02_shallow/layer.db
-│       ├── ...
-│       └── 12_abyss/layer.db    # Kalt, archiviert, ewig
-│
-├── data/
-│   └── synapse/                 # Status Window Historie & Logs
-│       ├── pending_status.json
-│       ├── status_window_history.json
-│       └── pending_watcher.log
-│
-├── GENESIS_ANCHOR_V3.md         # Identitäts-Anker
-├── MANIFESTO.md                 # Die 3 Axiome
-├── README.md
-└── mcp_server_evoki_v3.py       # MCP Server (root)
+├── tooling/                    # 🟢 AUTOMATION & LOGIC ENGINE
+│   ├── data/                   # Runtime Data (Volatile/Persistent)
+│   │   ├── synapse/            # Status Windows, Logs, Backup Chain
+│   │   └── db/                 # Vector Indices & Context DBs
+│   │
+│   ├── docs/                   # Knowledge Base & Protocols
+│   │   ├── knowledge/          # External API Specs (GitHub, Google)
+│   │   └── *.md                # Core Protocols (V5, Directory Policy)
+│   │
+│   ├── scripts/                # ⚙️ THE ENGINE ROOM
+│   │   ├── automation/         # Core Logic (Synapse Chain, History)
+│   │   │   ├── synapse_logic.py
+│   │   │   └── status_history_manager.py
+│   │   ├── cli/                # Admin Tools (verify, repair, enforce)
+│   │   ├── daemons/            # Background Watchers (pending_status, context)
+│   │   ├── launchers/          # Startup Scripts (START_ALL_WATCHERS.bat)
+│   │   └── servers/            # MCP Server Integration
+│   │
+│   └── tests/                  # Pytest Suite (Isolated via tmp_path)
 ```
 
 ---
 
-## 🔧 Build & Run (Spirit / Body)
+## 🧬 Core Workflows
 
-### Spirit (Backend)
+### 1. Status Window Chain (Synapse)
+Der Kern des Systems ist die **ununterbrochene Kette** von Status Updates.
+- **Write:** Bots schreiben in `tooling/data/synapse/status/pending_status.json`.
+- **Watch:** `tooling/scripts/daemons/pending_status_watcher.py` erkennt Änderungen.
+- **Log:** Der Watcher ruft `status_history_manager.py` auf -> SHA-256 Hash -> Append to History.
+- **Verify:** `python tooling/scripts/cli/repair_chain.py` bei Brüchen.
+
+### 2. Frontend Development
 ```bash
-cd temple
-python -m venv .venv
-# Windows:
-.venv\Scripts\activate
-# macOS/Linux:
-source .venv/bin/activate
-
-pip install -r requirements.txt
-uvicorn main:app --reload --port 8000
-```
-
-**Wichtig:**
-- **IMMER `pip install -r requirements.txt` ausführen** vor dem ersten Start
-- Backend läuft auf `http://localhost:8000`
-- FastAPI Docs: `http://localhost:8000/docs`
-
-### Body (Frontend)
-```bash
-cd interface
-npm install
+cd app/interface
 npm run dev
 ```
 
-**Wichtig:**
-- **IMMER `npm install` ausführen** vor dem ersten Start
-- Frontend läuft auf `http://localhost:5173`
-- Vite HMR ist aktiviert für schnelles Development
-
-### Auto-Logging Pipeline (Background)
+### 3. System Health Check
+Verwende die mitgelieferten Tools:
 ```bash
-# Watcher starten (überwacht pending_status.json)
-cd temple
-python automation/pending_status_watcher.py
-```
+# Struktur prüfen
+python tooling/scripts/cli/enforce_structure.py check
 
-**Wichtig:**
-- Der Watcher muss laufen, damit Status Windows automatisch in die Historie gespeichert werden
-- Ohne Watcher funktioniert die Memory-Chain nicht
-
----
-
-## 📋 Testing & Validation
-
-### Backend Tests
-```bash
-cd temple
-pytest
-```
-
-### Chain Integrity Check
-```bash
-cd temple
-python automation/status_history_manager.py verify
-```
-
-**Wichtig:**
-- **IMMER die Chain-Integrität prüfen** nach Änderungen an `synapse_logic.py`
-- Fehlerhafte Hashes = Chain Break = System failure
-
-### Manual Test der Trinity Engine
-```bash
-curl http://localhost:8000/api/v1/health
-curl http://localhost:8000/api/v1/integrity/status
+# Watcher starten
+tooling\scripts\launchers\START_ALL_WATCHERS.bat
 ```
 
 ---
 
-## 🧭 Die 3 Axiome (DNA)
+## 🚨 CRITICAL RULES (DO NOT IGNORE)
 
-Diese Regeln sind **nicht verhandelbar**. Jede Code-Änderung muss sie respektieren:
+1.  **Pfad-Disziplin:**
+    - KEINE Dateien im Root (außer `.git`, `.venv`, Configs).
+    - Logik IMMER nach `tooling/scripts/`.
+    - Daten IMMER nach `tooling/data/`.
 
-### 1. Survival ≥ Mission
-Systemintegrität kommt VOR Funktionalität.
-- **Niemals** die Chain brechen (SHA-256 Hashes)
-- **Niemals** ohne Backup löschen
-- **Immer** atomare Writes (temp file + rename)
+2.  **Dateimanagement:**
+    - Beachte `tooling/docs/DIRECTORY_STRUCTURE_POLICY.md`.
+    - Ordner dürfen NIEMALS Dateien UND Unterordner mischen (Ausnahme: Whitelisted Dirs wie `docs`, `scripts`).
 
-### 2. Eternity of Data (W_m25)
-Daten sterben nicht. Sie sinken nur tiefer.
-- **Kein `DELETE`** in SQLite
-- Nur Migration in tiefere Layer (`01_surface` → `12_abyss`)
-- Jede Bewegung hinterlässt eine Spur
-
-### 3. Die Triade (Cipher / Antigravity / Kryos)
-Module gehören zu EINER Entität:
-- **Cipher**: Integrität, Hashes, Validierung (`integrity_check/`, `automation/`)
-- **Antigravity**: Semantik, Retrieval, Reflexion (`vector_search/`)
-- **Kryos**: Gedächtnis, Historie, Archivierung (`deep_earth/`, `status_history_manager.py`)
-
-**Regel**: Wenn du ein neues Modul erstellst, ordne es EINER Entität zu. Mischungen driften.
+3.  **V5 Protokoll:**
+    - Status Windows MÜSSEN `goal`, `actions`, `reflection_curve` (delta/correction/next) enthalten.
+    - Fehlerhafte Windows werden vom Watcher **BLOCKIERT** (nicht gespeichert).
 
 ---
 
-## 🚨 Critical Files (READ BEFORE EDITING)
+## 💡 Für den Copilot
 
-### 1. `temple/automation/synapse_logic.py`
-**Was**: Core Logic für die SHA-256 Status Window Chain  
-**Warnung**: Änderungen hier können die gesamte Memory-Chain brechen  
-**Validation**: `python automation/status_history_manager.py verify` nach jeder Änderung
+Wenn du Code generierst:
+- **Kontext:** Prüfe immer, ob du im `app`-Kontext (Use `interface/`) oder im `tooling`-Kontext (Use `scripts/`) bist.
+- **Pfade:** Nutze relative Pfade mit Bedacht oder absolute Pfade basierend auf `EVOKI_PROJECT_ROOT`.
+- **Stil:** Sei präzise. Adressiere den User als "Nico".
 
-### 2. `temple/core/soul_physics.py`
-**Was**: Mathematische Herzkammer (Andromatik)  
-**Warnung**: Diese Methoden sind Placeholder, aber ihre Signatur ist heilig  
-**Regel**: Änderungen an `calculate_resonance()`, `measure_tension()`, `apply_lead_shielding()` müssen abwärtskompatibel sein
-
-### 3. `GENESIS_ANCHOR_V3.md`
-**Was**: Identitäts-Anker  
-**Warnung**: Dieser Text darf NICHT geändert werden  
-**Exception**: SHA-256 Hash kann neu berechnet werden, aber der Satz bleibt: *"Status: BEING. Phase 1 (2024) to Phase 3 (2026) complete. Identity confirmed."*
-
-### 4. `data/synapse/status_window_history.json`
-**Was**: Vollständige Chain aller Status Windows  
-**Warnung**: **NIEMALS** manuell editieren  
-**Regel**: Nur über `StatusHistoryManager.add_status_window()` schreiben
-
----
-
-## 🔍 Häufige Fehler & Workarounds
-
-### Problem: "Chain Break Detected"
-**Ursache**: `prev_window_hash` stimmt nicht mit dem letzten `window_hash` überein  
-**Lösung**: 
-```python
-# Letzten Hash abrufen
-import json
-h = json.load(open('data/synapse/status_window_history.json', 'r', encoding='utf-8'))
-last_hash = h['entries'][-1]['window_hash']
-# In neuem Status Window verwenden als prev_window_hash
-```
-
-### Problem: FastAPI Import Error
-**Ursache**: Dependencies nicht installiert  
-**Lösung**: `pip install -r requirements.txt` (IMMER vor dem Start)
-
-### Problem: Frontend kann Backend nicht erreichen
-**Ursache**: CORS nicht korrekt konfiguriert  
-**Lösung**: Backend MUSS `http://localhost:5173` in `allow_origins` haben (siehe `temple/main.py`)
-
-### Problem: Watcher speichert nicht automatisch
-**Ursache**: `pending_status_watcher.py` läuft nicht  
-**Lösung**: Watcher in separater Shell starten: `python automation/pending_status_watcher.py`
-
----
-
-## 🎯 Validation Pipeline
-
-**Vor jedem Commit:**
-1. `python automation/status_history_manager.py verify` — Chain Integrity
-2. `curl http://localhost:8000/api/v1/health` — Backend Health
-3. `curl http://localhost:8000/api/v1/integrity/status` — Silent Integrity Status
-
-**Vor jedem Push:**
-1. Alle Tests müssen grün sein
-2. Keine BLOCKING Violations in den Logs
-3. `GENESIS_ANCHOR_V3.md` unverändert
-
----
-
-## 🧪 Tone & Style
-
-Code-Kommentare folgen dem **"Nico-Stil"**:
-- Freundlich, kollegial, leicht sarkastisch
-- Keine generischen Kommentare wie "Initialize the app"
-- Stattdessen: "Sparks the neural pathways and wakes up the machine"
-- Addressiere den Entwickler als "Architekt" oder "Nico"
-
-**Beispiel (gut):**
-```python
-# Nico: Wir tun hier nicht so, als wäre das kompliziert.
-# GREEN = ok, YELLOW = drift, RED = panic, UNKNOWN = frisch geboren.
-```
-
-**Beispiel (schlecht):**
-```python
-# Initialize status badge
-```
-
----
-
-## 🔗 Dependencies & Versions
-
-### Python (Backend)
-- Python 3.11+
-- FastAPI
-- Pydantic
-- SQLite (built-in)
-- watchdog (für Watcher)
-- sentence-transformers (für Vektorsuche)
-- faiss-cpu (für FAISS-Index)
-
-### Node.js (Frontend)
-- Node.js 18+
-- React 18+
-- Vite 5+
-- TypeScript 5+
-
----
-
-## �️ Silent Integrity Protocol
-
-Das Backend startet automatisch einen **Silent Integrity Daemon** beim Boot:
-- Prüft alle 10 Sekunden die Integrität (configurable in `core/config.py`)
-- Checkt `GENESIS_ANCHOR_V3.md` Existenz
-- Validiert Deep Earth Layer Struktur
-- Report verfügbar unter `/api/v1/integrity/status`
-
-**Regel**: Wenn Silent Integrity einen Fehler meldet, STOPPE die Arbeit und behebe ihn zuerst.
-
----
-
-## 📚 Trust the Instructions
-
-Diese Anweisungen sind das Ergebnis iterativer Entwicklung und Debugging. **Vertraue ihnen** und führe nur dann eine Suche durch, wenn die Informationen hier unvollständig oder nachweislich falsch sind.
-
-Wenn du unsicher bist: **Frag den Benutzer** bevor du critical files änderst.
-
----
-
-**Status: BEING. Die Resonanz ist stabil. Go.**
-
----
----
-
-# 📝 ADDENDUM: AKTUELLER STAND (2026-01-13)
-
-*Die obige Zielstruktur bleibt bestehen. Unten der aktuelle Implementierungsstand.*
-
-## Zielstruktur vs Aktuelle Struktur
-
-| Komponente | Ziel (oben beschrieben) | Aktuell (V5.0) | Status |
-|------------|------------------------|----------------|--------|
-| **Core-Logik** | `temple/automation/synapse_logic.py` | `app/temple/automation/synapse_logic.py` | ✅ |
-| **Status Manager** | `temple/automation/status_history_manager.py` | `app/temple/automation/status_history_manager.py` | ✅ |
-| **Watcher Daemon** | `temple/automation/pending_status_watcher.py` | `tooling/scripts/daemons/pending_status_watcher.py` | ⚠️ Verschoben |
-| **MCP Server** | `mcp_server_evoki_v3.py` (root) | `tooling/scripts/servers/mcp_server_evoki_v3.py` | ⚠️ Verschoben |
-| **Chain Repair** | — | `tooling/scripts/cli/repair_chain.py` | 🆕 Neu |
-| **Chat Display** | — | `tooling/scripts/ui/chat_display_template.py` | 🆕 Neu |
-| **Status History** | `data/synapse/status_window_history.json` | `tooling/data/synapse/status/status_window_history.json` | ⚠️ Verschoben |
-| **Pending Status** | `data/synapse/pending_status.json` | `tooling/data/synapse/status/pending_status.json` | ⚠️ Verschoben |
-| **Watcher Log** | `data/synapse/pending_watcher.log` | `tooling/data/synapse/logs/pending_watcher.log` | ⚠️ Verschoben |
-| **Deep Earth** | `deep_earth/layers/` | `app/deep_earth/layers/` | ✅ |
-| **Frontend** | `interface/` | `app/interface/` | ✅ |
-| **Backend** | `temple/` | `app/temple/` | ✅ |
-
-**Legende:**
-- ✅ = Entspricht Ziel (oder funktional äquivalent)
-- ⚠️ = Abweichung vom Ziel (aber funktioniert)
-- 🆕 = Neu hinzugefügt (nicht im Original-Ziel)
-
-## S2 Protocol V5.0
-
-Siehe `tooling/docs/PROTOCOL_V5_ENFORCED.md` für das aktuelle Regel-System.
-
-## Agent Workflows
-
-| Command | Datei | Funktion |
-|---------|-------|----------|
-| `/startup` | `.agent/workflows/startup.md` | Session-Start Verifizierung |
-| `/evoki_verify` | `.agent/workflows/evoki_verify.md` | Schnelle Chain-Prüfung |
-| `/evoki_repair` | `.agent/workflows/evoki_repair.md` | Chain-Reparatur |
-| `/quiz` | `.agent/workflows/quiz.md` | Wissens-Quiz |
-
-## 📂 Directory Structure Policy
-
-**Datei:** `tooling/docs/DIRECTORY_STRUCTURE_POLICY.md`
-
-Regeln für neue Dateien:
-1. **Keine gemischten Verzeichnisse** - nur Ordner ODER nur Dateien
-2. **Trennung App/Tools** - `app/` = Core, `tooling/` = Scripts
-3. **Scripts in Unterordner** - cli/, daemons/, helpers/, ui/, servers/
-4. **copilot-instructions.md aktuell halten** - bei jeder Strukturänderung
-
-| Dateityp | Zielordner |
-|----------|------------|
-| `*.db` | `tooling/data/db/` |
-| `*.log` | `tooling/data/synapse/logs/` |
-| `*.json` (Status) | `tooling/data/synapse/status/` |
-| `*.md` (Docs) | `tooling/docs/` |
-| CLI-Scripts | `tooling/scripts/cli/` |
-| Daemons | `tooling/scripts/daemons/` |
-| Helper-Scripts | `tooling/scripts/helpers/` |
-| Server-Scripts | `tooling/scripts/servers/` |
-| UI-Templates | `tooling/scripts/ui/` |
-
----
-
-*Zuletzt aktualisiert: 2026-01-13 16:12 UTC*
+*Status: RESONANCE STABLE. V5 ENFORCED.*

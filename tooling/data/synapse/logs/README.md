@@ -1,11 +1,13 @@
 # logs
 
-**Pfad:** `tooling\data\synapse\logs`
+**Kontext:** `tooling\data\synapse\logs`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `compliance_enforcer.log`
-- 📄 `pending_watcher.log`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **compliance_enforcer.log** | *(Keine Dokumentation)* | - |
+| **pending_watcher.log** | *(Keine Dokumentation)* | - |
 

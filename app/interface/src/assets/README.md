@@ -1,10 +1,12 @@
 # assets
 
-**Pfad:** `app\interface\src\assets`
+**Kontext:** `app\interface\src\assets`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `react.svg`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **react.svg** | *(Keine Dokumentation)* | - |
 

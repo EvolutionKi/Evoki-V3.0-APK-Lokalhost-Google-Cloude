@@ -1,16 +1,20 @@
 # synapse
 
-**Pfad:** `tooling\data\synapse`
+**Kontext:** `tooling\data\synapse`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Unterordner
+## 📂 Unterverzeichnisse
 
-- 📁 `backups/`
-- 📁 `logs/`
-- 📁 `status/`
+| Ordner | Beschreibung |
+|--------|--------------|
+| **backups/** | - |
+| **logs/** | - |
+| **status/** | - |
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `decrypted_history.json`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **decrypted_history.json** | *(Keine Dokumentation)* | - |
 

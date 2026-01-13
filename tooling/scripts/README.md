@@ -1,16 +1,18 @@
 # scripts
 
-**Pfad:** `tooling\scripts`
+**Kontext:** `tooling\scripts`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Unterordner
+## 📂 Unterverzeichnisse
 
-- 📁 `automation/`
-- 📁 `cli/`
-- 📁 `daemons/`
-- 📁 `helpers/`
-- 📁 `launchers/`
-- 📁 `servers/`
-- 📁 `ui/`
+| Ordner | Beschreibung |
+|--------|--------------|
+| **automation/** | - |
+| **cli/** | - |
+| **daemons/** | - |
+| **helpers/** | - |
+| **launchers/** | - |
+| **servers/** | - |
+| **ui/** | - |
 

@@ -1,11 +1,13 @@
 # deep_earth
 
-**Pfad:** `app\deep_earth`
+**Kontext:** `app\deep_earth`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Unterordner
+## 📂 Unterverzeichnisse
 
-- 📁 `layers/`
-- 📁 `schemas/`
+| Ordner | Beschreibung |
+|--------|--------------|
+| **layers/** | - |
+| **schemas/** | - |
 

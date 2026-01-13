@@ -1,18 +1,22 @@
 # src
 
-**Pfad:** `app\interface\src`
+**Kontext:** `app\interface\src`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Unterordner
+## 📂 Unterverzeichnisse
 
-- 📁 `assets/`
-- 📁 `components/`
+| Ordner | Beschreibung |
+|--------|--------------|
+| **assets/** | - |
+| **components/** | - |
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `App.css`
-- 📄 `App.tsx`
-- 📄 `index.css`
-- 📄 `main.tsx`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **App.css** | *(Keine Dokumentation)* | - |
+| **App.tsx** | *(Keine Dokumentation)* | - |
+| **index.css** | *(Keine Dokumentation)* | - |
+| **main.tsx** | *(Keine Dokumentation)* | - |
 

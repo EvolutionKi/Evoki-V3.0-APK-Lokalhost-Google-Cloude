@@ -1,11 +1,13 @@
 # launchers
 
-**Pfad:** `tooling\scripts\launchers`
+**Kontext:** `tooling\scripts\launchers`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `START_ALL_WATCHERS.bat`
-- 📄 `manual_cleanup_app.bat`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **START_ALL_WATCHERS.bat** | *(Keine Dokumentation)* | - |
+| **manual_cleanup_app.bat** | *(Keine Dokumentation)* | - |
 

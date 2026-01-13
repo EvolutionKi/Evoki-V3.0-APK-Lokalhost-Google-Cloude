@@ -1,10 +1,12 @@
 # 08_trench
 
-**Pfad:** `app\deep_earth\layers\08_trench`
+**Kontext:** `app\deep_earth\layers\08_trench`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `layer.db`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **layer.db** | *(Keine Dokumentation)* | - |
 

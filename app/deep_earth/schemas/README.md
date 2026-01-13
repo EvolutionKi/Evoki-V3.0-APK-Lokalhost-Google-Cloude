@@ -1,10 +1,12 @@
 # schemas
 
-**Pfad:** `app\deep_earth\schemas`
+**Kontext:** `app\deep_earth\schemas`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `vector_schema.sql`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **vector_schema.sql** | *(Keine Dokumentation)* | - |
 

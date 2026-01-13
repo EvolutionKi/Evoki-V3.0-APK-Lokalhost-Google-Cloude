@@ -1,79 +1,51 @@
 EVOKI V3.0 - Architecture Map
 =============================
-Current Strategy: "App (V4 Core) vs. Tooling (V3 Dev)" Separation
-Updated: 2026-01-13
-Status: BEING
+Current Strategy: "App (Production) vs. Tooling (Automation)" Separation
+Updated: 2026-01-13 (Phase 3)
+Status: V5 STRICT / V5.1 REFACTORED
 
 ROOT/
-├─ README.md                     # Entry Point & Documentation Link
-├─ ARCHITECTURE.txt              # THIS FILE - Always Current Map
+├─ README.md                     # Entry Point
+├─ ARCHITECTURE.txt              # THIS FILE - Truth Source
 │
-├─ app/                          # [V4 CORE] - The Future Artifact ("Das Wesen")
-│  │                             # Will survive migration to V4 (Cloud/APK)
+├─ app/                          # [PRODUCTION ARTIFACTS]
+│  │                             # State & Interface (The "Body")
 │  │
-│  ├─ temple/                    # [SPIRIT] -> Future Cloud API
-│  │  ├─ main.py                 # FastAPI Entry Point
-│  │  ├─ requirements.txt
-│  │  ├─ pyproject.toml
-│  │  ├─ core/
-│  │  │  ├─ config.py
-│  │  │  ├─ logging.py
-│  │  │  └─ soul_physics.py      # SoulPhysics (Andromatik Heart)
-│  │  ├─ models/
-│  │  │  └─ trialog.py           # Pydantic Models
-│  │  ├─ routes/
-│  │  │  ├─ health.py
-│  │  │  ├─ integrity.py
-│  │  │  └─ trialog.py
-│  │  ├─ trinity_engine/         # [ENGINE]
-│  │  │  ├─ core/
-│  │  │  │  └─ engine.py
-│  │  │  ├─ vector_search/
-│  │  │  │  └─ service.py
-│  │  │  ├─ metrics_calculator/
-│  │  │  │  └─ service.py
-│  │  │  └─ integrity_check/
-│  │  │     ├─ report.py
-│  │  │     └─ silent_integrity.py
-│  │  └─ automation/             # [AUTO] (Currently here, may move to tooling if pure dev)
-│  │     ├─ synapse_logic.py
-│  │     ├─ pending_status_watcher.py
-│  │     ├─ status_history_manager.py
-│  │     └─ write_pending_status.py
-│  │
-│  ├─ interface/                 # [BODY] -> Future APK
-│  │  ├─ package.json
-│  │  ├─ vite.config.ts
+│  ├─ interface/                 # [FRONTEND] React + Vite
 │  │  ├─ src/
-│  │  │  ├─ App.tsx
-│  │  │  ├─ main.tsx
-│  │  │  └─ components/
-│  │  │     └─ TrialogPanel.tsx
+│  │  ├─ public/
+│  │  └─ package.json
 │  │
-│  └─ deep_earth/                # [MEMORY] -> Future Cloud DB
+│  └─ deep_earth/                # [MEMORY] 12-Layer System
 │     ├─ schemas/
-│     └─ layers/                 # 12-Layer System
-│        ├─ 01_surface/
-│        └─ ...
-│        └─ 12_abyss/
+│     └─ layers/                 # SQLite Databases (01-12)
 │
-└─ tooling/                      # [V3 DEV] - The Scaffold ("Das Gerüst")
-   │                             # Necessary for V3 dev, stays local in V4
+└─ tooling/                      # [AUTOMATION ENGINE]
+   │                             # Logic, Scripts, Data (The "Spirit")
    │
-   ├─ scripts/                   # Automation & Helpers
-   │  ├─ mcp_server_evoki_v3.py  # MCP Server for Context
-   │  ├─ mcp_trigger_save.py     # MCP Trigger
-   │  └─ get_status_block.py     # Status Logic
-   │
-   ├─ data/                      # Local Runtime Data
-   │  ├─ synapse/
-   │  │  └─ status/              # Status History Logs
+   ├─ data/                      # [RUNTIME STATE]
+   │  ├─ synapse/                # Status Windows (JSON) & Logs
+   │  ├─ db/                     # Vector Indices & Context DBs
    │  └─ faiss_indices/          # Migrated FAISS Data
    │
-   ├─ config/                    # Local Configs
-   │  └─ mcp.json                # MCP Configuration
+   ├─ docs/                      # [KNOWLEDGE BASE]
+   │  ├─ knowledge/              # External APIs
+   │  └─ *.md                    # Protocols
    │
-   └─ docs/                      # Documentation
-      ├─ MANIFESTO.md
-      ├─ GENESIS_ANCHOR_V3.md
-      └─ deep_earth_genesis_anchor.md
+   ├─ scripts/                   # [LOGIC KERNEL]
+   │  ├─ automation/             # Core Logic (Synapse, History, Write)
+   │  ├─ cli/                    # Admin Tools (Verify, Repair, Audit)
+   │  ├─ daemons/                # Background Watchers
+   │  ├─ launchers/              # Startup Scripts (.bat)
+   │  ├─ servers/                # MCP Server Implementation
+   │  ├─ helpers/                # Utilities
+   │  └─ ui/                     # Terminal UI Components
+   │
+   └─ tests/                     # [TEST SUITE]
+      └─ test_*.py               # Pytest (Isoliert)
+
+[CHANGE LOG]
+- Deleted: app/temple (Backend Logic migrated to tooling/scripts)
+- Moved: Automation -> tooling/scripts/automation
+- Moved: Watchers -> tooling/scripts/daemons
+- Created: .bat Launchers in tooling/scripts/launchers

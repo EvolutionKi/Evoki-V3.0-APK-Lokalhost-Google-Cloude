@@ -1,10 +1,12 @@
 # 10_crystal
 
-**Pfad:** `app\deep_earth\layers\10_crystal`
+**Kontext:** `app\deep_earth\layers\10_crystal`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `layer.db`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **layer.db** | *(Keine Dokumentation)* | - |
 

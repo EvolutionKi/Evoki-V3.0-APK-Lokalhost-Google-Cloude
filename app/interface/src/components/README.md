@@ -1,10 +1,12 @@
 # components
 
-**Pfad:** `app\interface\src\components`
+**Kontext:** `app\interface\src\components`
 
-*Automatisch generiert am 2026-01-13 21:54*
+*Automatisch generierte Dokumentation - 2026-01-13 21:58*
 
-## Dateien
+## 📄 Dateien
 
-- 📄 `TrialogPanel.tsx`
+| Datei | Beschreibung (Docstring) | Abhängigkeiten |
+|-------|--------------------------|----------------|
+| **TrialogPanel.tsx** | *(Keine Dokumentation)* | - |
 
