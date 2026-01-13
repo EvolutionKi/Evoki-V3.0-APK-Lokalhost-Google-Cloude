@@ -80,3 +80,35 @@
 {"timestamp": "2026-01-13T16:55:10.975849+00:00", "result": "SUCCESS"}
 {"timestamp": "2026-01-13T16:55:10.986419+00:00", "result": "SUCCESS"}
 {"timestamp": "2026-01-13T16:55:11.037036+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T16:57:01.305713+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T16:57:01.305924+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T16:57:01.306324+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T16:57:01.506467+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T16:57:01.507454+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T16:57:01.507461+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T16:57:01.718032+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T16:57:01.720256+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T16:57:34.901990+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T16:57:34.901861+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T16:57:35.103202+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T16:57:35.103202+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T16:57:35.328787+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T16:57:35.332890+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T16:57:35.340387+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T16:58:15.228964+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T16:58:15.229035+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T16:58:15.229283+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T16:58:15.429876+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T16:58:15.429876+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T16:58:15.662204+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T16:58:15.673257+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Error saving history: [WinError 5] Zugriff verweigert: 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\tmpjlyec_an.tmp' -> 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\status_window_history.json'\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T16:58:15.680779+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T17:02:41.608028+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T17:02:41.608058+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T17:02:41.608254+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T17:02:41.808701+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T17:02:41.809206+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T17:02:41.809204+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T17:02:42.043353+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T17:02:42.050158+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T17:02:42.051146+00:00", "result": "SUCCESS"}
