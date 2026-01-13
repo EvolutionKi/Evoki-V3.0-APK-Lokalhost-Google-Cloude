@@ -2,6 +2,8 @@
 # Dieses Template definiert das menschenlesbare Ausgabeformat für den Chat.
 # Es wird aus den Feldern von pending_status.json befüllt.
 
+import os
+
 DISPLAY_TEMPLATE = """
 ╔══════════════════════════════════════════════════════════════════╗
 ║                    🧠 SYNAPSE STATUS #{entry_index}                        ║

@@ -19,11 +19,12 @@ jobs:
       - name: Install deps
         run: |
           python -m pip install --upgrade pip
-          pip install -r app/temple/requirements.txt
+          if [ -f tooling/requirements.txt ]; then pip install -r tooling/requirements.txt; fi
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install pytest numpy
 
       - name: Run retrieval tests
         env:
-          PYTHONPATH: app
+          PYTHONPATH: tooling/scripts
         run: |
-          python -m pytest -q app/temple/tests/test_search_chatverlauf.py
+          python -m pytest -q tooling/tests/test_search_chatverlauf.py
