@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T17:02:41.991144+00:00",
-  "total_entries": 114,
+  "created_at": "2026-01-13T18:14:44.957599+00:00",
+  "total_entries": 116,
   "entries": [
     {
       "timestamp": "2026-01-13T10:15:07.379671+00:00",
@@ -7120,6 +7120,140 @@
           "target": "status_history_manager.py",
           "enabled": true,
           "timestamp": "2026-01-13T17:02:41.990889+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 115,
+      "timestamp": "2026-01-13T17:45:11.624475+00:00",
+      "salt": "8827c3390372fecd7a7dda11232b7605",
+      "source": "pending_status_auto",
+      "window_hash": "9378b38c84272cfca3a93479d155f70490f21a7bde17d114674c0340ffa29986",
+      "status_window": {
+        "step_id": "audit_response_113",
+        "cycle": "5/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T17:45:11.624475+00:00",
+        "goal": "Antwort auf System-Audit - Kritische Fehlstellen identifiziert",
+        "inputs": {
+          "raw_user_request": "Detaillierter Audit-Report mit 5 kritischen Fehlstellen: 1) Unreachable Chain-Checks, 2) V5-BLOCKING unterlaufen durch Hydration, 3) Doppel-Trigger, 4) Hardcoded Paths, 5) BOM-Encoding. Leitfrage: V5 als harte Vertragsgrenze oder pragmatisch?"
+        },
+        "actions": [
+          "Audit-Report analysiert",
+          "5 Fehlstellen priorisiert",
+          "Leitfrage: V5 HART oder PRAGMATISCH?"
+        ],
+        "risk": [
+          "Chain-Integrität wird beim Einfügen NICHT erzwungen (Blocker!)",
+          "Broken History möglich durch unreachable code",
+          "Doppeltrigger durch parallel Watcher/MCP"
+        ],
+        "assumptions": [
+          "V5-Protokoll sollte harte Vertragsgrenze sein"
+        ],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Audit zeigt: Protokoll sagt A, Code tut B"
+        },
+        "reflection_curve": {
+          "delta": "System hat kritische Lücken in der Integritätsprüfung",
+          "correction": "Validator reparieren als Priorität 0",
+          "next": "Entscheidung: V5 HART durchziehen"
+        },
+        "output_plan": [
+          "Leitfrage beantworten",
+          "Fix-Plan priorisieren",
+          "Kritische Fixes implementieren"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 0.78,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "YELLOW",
+          "notes": "Audit zeigt kritische Fehlstellen - Fixes erforderlich"
+        },
+        "project_awareness": {
+          "audit_findings": 5,
+          "priority_0_blockers": 2
+        },
+        "window_hash": "9378b38c84272cfca3a93479d155f70490f21a7bde17d114674c0340ffa29986",
+        "prev_window_hash": "5d5a749773be898754767f6ea2c354f622cf9d587c7995bd3ee0ac332cd31e42",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T17:45:11.624475+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 116,
+      "timestamp": "2026-01-13T18:14:44.957365+00:00",
+      "salt": "1ff3ce65bdbf6f206286384400af90b0",
+      "source": "pending_status_auto",
+      "window_hash": "3386d6babada8a1f65c5410eff0d37d62bea4f0c21dd5c91fc91c63f230ca920",
+      "status_window": {
+        "step_id": "fix3_implement_114",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T18:14:44.957365+00:00",
+        "goal": "Implementiere Fix 3 (Trigger-Single-Source) und Fix 5 (Encoding-Härtung)",
+        "inputs": {
+          "raw_user_request": "Fix 3 und Fix 5 implementieren nach detailliertem Plan - Trigger-Single-Source zuerst, dann Encoding utf-8-sig"
+        },
+        "actions": [
+          "Fix 3: ENV-Flag EVOKI_MCP_MONITOR_ACTIVE in Watcher",
+          "Fix 3: Health-Probe in pending_status_watcher.py",
+          "Fix 5: utf-8-sig für Reads, utf-8 für Writes",
+          "Fix 5: fsync für atomares Schreiben"
+        ],
+        "risk": [],
+        "assumptions": [
+          "Kein Doppel-Trigger nach Fix 3",
+          "Keine BOM-Fehler nach Fix 5"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Keine Konflikte mit V5-Baseline"
+        },
+        "reflection_curve": {
+          "delta": "Fix 1 & 4 abgeschlossen",
+          "correction": "Fix 3 & 5 jetzt implementieren",
+          "next": "Smoke-Test nach Implementierung"
+        },
+        "output_plan": [
+          "Fix 3 implementieren",
+          "Fix 5 implementieren",
+          "Smoke-Test"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 0.88,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Ready to implement Fix 3 & 5"
+        },
+        "project_awareness": {
+          "pending_fixes": [
+            "Fix 3",
+            "Fix 5"
+          ]
+        },
+        "window_hash": "3386d6babada8a1f65c5410eff0d37d62bea4f0c21dd5c91fc91c63f230ca920",
+        "prev_window_hash": "9378b38c84272cfca3a93479d155f70490f21a7bde17d114674c0340ffa29986",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T18:14:44.957365+00:00"
         }
       },
       "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",

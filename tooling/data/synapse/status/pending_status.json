@@ -1,48 +1,50 @@
 {
-    "step_id": "protection_112",
-    "cycle": "4/5",
+    "step_id": "fix3_implement_114",
+    "cycle": "1/5",
     "time_source": "metadata (STRICT_SYNC): AUTO",
-    "goal": "System aktualisiert und neue Dateien mit Read-Only geschützt",
+    "goal": "Implementiere Fix 3 (Trigger-Single-Source) und Fix 5 (Encoding-Härtung)",
     "inputs": {
-        "raw_user_request": "aktualisiere alle daten im systhem und schütze auch das neue systhem mit read only"
+        "raw_user_request": "Fix 3 und Fix 5 implementieren nach detailliertem Plan - Trigger-Single-Source zuerst, dann Encoding utf-8-sig"
     },
     "actions": [
-        "CRITICAL_DO_NOT_MODIFY.md aktualisiert mit neuen Dateien",
-        "context_watcher.py → Read-Only",
-        "compliance_enforcer.py → Read-Only",
-        "prompt_compliance_checker.py → Read-Only",
-        "START_ALL_WATCHERS.bat → Read-Only"
+        "Fix 3: ENV-Flag EVOKI_MCP_MONITOR_ACTIVE in Watcher",
+        "Fix 3: Health-Probe in pending_status_watcher.py",
+        "Fix 5: utf-8-sig für Reads, utf-8 für Writes",
+        "Fix 5: fsync für atomares Schreiben"
     ],
     "risk": [],
-    "assumptions": [],
+    "assumptions": [
+        "Kein Doppel-Trigger nach Fix 3",
+        "Keine BOM-Fehler nach Fix 5"
+    ],
     "rule_tangency": {
         "tangency_detected": false,
-        "notes": "Schutz der kritischen Dateien"
+        "notes": "Keine Konflikte mit V5-Baseline"
     },
     "reflection_curve": {
-        "delta": "Neue Dateien waren ungeschützt",
-        "correction": "Read-Only Attribute gesetzt",
-        "next": "System vollständig geschützt"
+        "delta": "Fix 1 & 4 abgeschlossen",
+        "correction": "Fix 3 & 5 jetzt implementieren",
+        "next": "Smoke-Test nach Implementierung"
     },
     "output_plan": [
-        "Alle kritischen Dateien sind jetzt Read-Only"
+        "Fix 3 implementieren",
+        "Fix 5 implementieren",
+        "Smoke-Test"
     ],
     "window_type": "execution",
     "schema_version": "3.2",
     "window_source": "backend_generated",
-    "confidence": 1.0,
+    "confidence": 0.88,
     "system_versions": {},
     "cycle_backend_controlled": true,
     "critical_summary": {
         "status": "GREEN",
-        "notes": "Schutz implementiert"
+        "notes": "Ready to implement Fix 3 & 5"
     },
     "project_awareness": {
-        "protected_files": [
-            "context_watcher.py",
-            "compliance_enforcer.py",
-            "prompt_compliance_checker.py",
-            "START_ALL_WATCHERS.bat"
+        "pending_fixes": [
+            "Fix 3",
+            "Fix 5"
         ]
     },
     "window_hash": "PLACEHOLDER_BACKEND",
