@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T19:46:47.462058+00:00",
-  "total_entries": 133,
+  "created_at": "2026-01-13T20:20:51.837960+00:00",
+  "total_entries": 142,
   "entries": [
     {
       "timestamp": "2026-01-13T10:15:07.379671+00:00",
@@ -8304,6 +8304,552 @@
           "target": "status_history_manager.py",
           "enabled": true,
           "timestamp": "2026-01-13T19:46:47.461846+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 134,
+      "timestamp": "2026-01-13T19:47:14.438779+00:00",
+      "salt": "9b8941c7f1ab2ab246ef6ae438bddf1e",
+      "source": "pending_status_auto",
+      "window_hash": "10bdbb8814b179ebd498fc7f91cb8a80e07f45d45582f1f1e1a27f4d4cfa45ad",
+      "status_window": {
+        "step_id": "repair_synapse_logic_132",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T19:47:14.438779+00:00",
+        "goal": "Rewrite synapse_logic.py to strict V5 compliance",
+        "inputs": {
+          "raw_user_request": "Repair critical validator bug (unreachable code), remove hydration, remove hardcoded paths"
+        },
+        "actions": [
+          "REWRITE: app/temple/automation/synapse_logic.py",
+          "IMPLEMENT: _validate_protocol_v50",
+          "ENFORCE: No Hydration, No Early Return, Strict Chain Check",
+          "DYNAMIC PATHS: os.getenv('EVOKI_PROJECT_ROOT')"
+        ],
+        "risk": [],
+        "assumptions": [
+          "User wants Blocking Behavior for invalid status windows"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Aligning code with V5 protocol docs"
+        },
+        "reflection_curve": {
+          "delta": "Code was V4 with critical bugs",
+          "correction": "Full rewrite to V5",
+          "next": "Verify pending_status_watcher.py next"
+        },
+        "output_plan": [
+          "Rewrite synapse_logic.py",
+          "Check watcher"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Code Repair"
+        },
+        "project_awareness": {
+          "synapse_logic": "UPGRADING TO V5"
+        },
+        "window_hash": "10bdbb8814b179ebd498fc7f91cb8a80e07f45d45582f1f1e1a27f4d4cfa45ad",
+        "prev_window_hash": "c63ab8cd1aa9f12f9ac0be6beceaad7352d959bb1959159d82cfa15b11833f11",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T19:47:14.438779+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 135,
+      "timestamp": "2026-01-13T19:49:01.773082+00:00",
+      "salt": "661524bf528f1874364c95fae7ac6046",
+      "source": "pending_status_auto",
+      "window_hash": "58c94ebeea801656edeb5e48d0b5d61add4db72a0e1df30a4062bdb88f13b5bc",
+      "status_window": {
+        "step_id": "repair_watcher_133",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T19:49:01.773082+00:00",
+        "goal": "Rewrite pending_status_watcher.py to remove hardcoded paths",
+        "inputs": {
+          "raw_user_request": "Remove hardcoded paths from watcher"
+        },
+        "actions": [
+          "REWRITE: tooling/scripts/daemons/pending_status_watcher.py",
+          "IMPLEMENT: os.environ.get for EVOKI_PROJECT_ROOT"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Code Repair"
+        },
+        "reflection_curve": {
+          "delta": "Watcher had hardcoded path",
+          "correction": "Dynamic Path via Env",
+          "next": "Verify GitHub CI"
+        },
+        "output_plan": [
+          "Rewrite watcher",
+          "Check main.yml again if needed"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Watcher Repair"
+        },
+        "project_awareness": {
+          "watcher": "UPGRADING TO DYNAMIC PATHS"
+        },
+        "window_hash": "58c94ebeea801656edeb5e48d0b5d61add4db72a0e1df30a4062bdb88f13b5bc",
+        "prev_window_hash": "10bdbb8814b179ebd498fc7f91cb8a80e07f45d45582f1f1e1a27f4d4cfa45ad",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T19:49:01.773082+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 136,
+      "timestamp": "2026-01-13T20:10:33.006619+00:00",
+      "salt": "05b48d1bf62696131d501b9e79418ae2",
+      "source": "pending_status_auto",
+      "window_hash": "a6fc66775d26f4f40719e8be27705178969a4ebf81de28622621241ed2ce0a68",
+      "status_window": {
+        "step_id": "knowledge_ingest_134",
+        "cycle": "3/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T20:10:33.006619+00:00",
+        "goal": "Persist GitHub Models API Knowledge",
+        "inputs": {
+          "raw_user_request": "das kannst du dir mal merken falls wir mal etwas mit api anbindung testen wollen..."
+        },
+        "actions": [
+          "Erstellen: tooling/docs/knowledge/GITHUB_MODELS_FREE_TIER.md",
+          "Kontext: Kostenlose API-Nutzung für Prototyping (DeepSeek, o1, etc.)",
+          "Nutzen: Backend-Integration Tests ohne Kosten"
+        ],
+        "risk": [],
+        "assumptions": [
+          "User plant zukünftige API-Integrationen"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Knowledge Management"
+        },
+        "reflection_curve": {
+          "delta": "Neues Wissen über GitHub Cost-Free APIs verfügbar",
+          "correction": "Persistierung in Knowledge Base",
+          "next": "Warten auf nächste Instruktion"
+        },
+        "output_plan": [
+          "Create Knowledge Doc"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Knowledge Saved"
+        },
+        "project_awareness": {
+          "knowledge": "Added GitHub Models API Reference"
+        },
+        "window_hash": "a6fc66775d26f4f40719e8be27705178969a4ebf81de28622621241ed2ce0a68",
+        "prev_window_hash": "58c94ebeea801656edeb5e48d0b5d61add4db72a0e1df30a4062bdb88f13b5bc",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T20:10:33.006619+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 137,
+      "timestamp": "2026-01-13T20:12:54.974959+00:00",
+      "salt": "0dc47a45e63048cb1bdc5f42fe5930e1",
+      "source": "pending_status_auto",
+      "window_hash": "dcbee628eec0dcdbf6662bf651baeddf74ba8b7b9eb20b9ce5d3d2c85fae8628",
+      "status_window": {
+        "step_id": "research_github_trial_135",
+        "cycle": "4/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T20:12:54.974959+00:00",
+        "goal": "Ermittle High-Value Features der GitHub Enterprise/Security Trial",
+        "inputs": {
+          "raw_user_request": "durchforste mal zufällig https://docs.github.com/de was ich alle smit dem Noch 30 Tage... nutzen kann"
+        },
+        "actions": [
+          "Search: GitHub Advanced Security Features (CodeQL, Secret Scanning)",
+          "Search: Copilot Enterprise Features (Knowledge Bases, PR Summaries)",
+          "Create: tooling/docs/knowledge/GITHUB_TRIAL_STRATEGY.md"
+        ],
+        "risk": [],
+        "assumptions": [
+          "User will Features nutzen, die Evoki V3.0 nachhaltig verbessern"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Research"
+        },
+        "reflection_curve": {
+          "delta": "User hat Enterprise Trial",
+          "correction": "Nutzung maximieren durch gezielte Feature-Aktivierung",
+          "next": "Web Search & Doc Compilation"
+        },
+        "output_plan": [
+          "Search Web",
+          "Compile Strategy Doc"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Researching Trial Features"
+        },
+        "project_awareness": {
+          "research": "GitHub Enterprise Capabilities"
+        },
+        "window_hash": "dcbee628eec0dcdbf6662bf651baeddf74ba8b7b9eb20b9ce5d3d2c85fae8628",
+        "prev_window_hash": "a6fc66775d26f4f40719e8be27705178969a4ebf81de28622621241ed2ce0a68",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T20:12:54.974959+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 138,
+      "timestamp": "2026-01-13T20:13:36.551128+00:00",
+      "salt": "3a6fc70dfcc5ca1593b36e43c46f0a40",
+      "source": "pending_status_auto",
+      "window_hash": "fb253bb9a853dc35f951a13f99087de8244d1b78017c7cd017bb823f3c560424",
+      "status_window": {
+        "step_id": "create_trial_strategy_136",
+        "cycle": "5/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T20:13:36.551128+00:00",
+        "goal": "Erstelle GitHub Trial Strategy Guide",
+        "inputs": {
+          "raw_user_request": "durchforste mal zufällig... was ich alles mit dem Noch 30 Tage... nutzen kann"
+        },
+        "actions": [
+          "Compiling: tooling/docs/knowledge/GITHUB_TRIAL_STRATEGY.md",
+          "Focus: Secret Scanning, Copilot Knowledge Bases, Environment Protection"
+        ],
+        "risk": [],
+        "assumptions": [
+          "User hat Admin-Rechte im Repo"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Documentation"
+        },
+        "reflection_curve": {
+          "delta": "Research complete",
+          "correction": "Create actionable guide",
+          "next": "User informs"
+        },
+        "output_plan": [
+          "Write Strategy Doc"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Strategy Guide"
+        },
+        "project_awareness": {
+          "knowledge": "Added Trial Strategy"
+        },
+        "window_hash": "fb253bb9a853dc35f951a13f99087de8244d1b78017c7cd017bb823f3c560424",
+        "prev_window_hash": "dcbee628eec0dcdbf6662bf651baeddf74ba8b7b9eb20b9ce5d3d2c85fae8628",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T20:13:36.551128+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 139,
+      "timestamp": "2026-01-13T20:13:36.634900+00:00",
+      "salt": "bf1095096578597fff01d60d97ed609b",
+      "source": "pending_status_auto",
+      "window_hash": "892eeaa6c6e0f808780a24b11f86bf7f5dc0e83d4946a5426df62e2272638e0e",
+      "status_window": {
+        "step_id": "create_trial_strategy_136",
+        "cycle": "5/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T20:13:36.634900+00:00",
+        "goal": "Erstelle GitHub Trial Strategy Guide",
+        "inputs": {
+          "raw_user_request": "durchforste mal zufällig... was ich alles mit dem Noch 30 Tage... nutzen kann"
+        },
+        "actions": [
+          "Compiling: tooling/docs/knowledge/GITHUB_TRIAL_STRATEGY.md",
+          "Focus: Secret Scanning, Copilot Knowledge Bases, Environment Protection"
+        ],
+        "risk": [],
+        "assumptions": [
+          "User hat Admin-Rechte im Repo"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Documentation"
+        },
+        "reflection_curve": {
+          "delta": "Research complete",
+          "correction": "Create actionable guide",
+          "next": "User informs"
+        },
+        "output_plan": [
+          "Write Strategy Doc"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Strategy Guide"
+        },
+        "project_awareness": {
+          "knowledge": "Added Trial Strategy"
+        },
+        "window_hash": "892eeaa6c6e0f808780a24b11f86bf7f5dc0e83d4946a5426df62e2272638e0e",
+        "prev_window_hash": "fb253bb9a853dc35f951a13f99087de8244d1b78017c7cd017bb823f3c560424",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T20:13:36.634900+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 140,
+      "timestamp": "2026-01-13T20:17:40.442550+00:00",
+      "salt": "1bb7e59f66a409f60be905fc11a058c8",
+      "source": "pending_status_auto",
+      "window_hash": "d75829de9f3af38e4500a6db0143ec1fa1d68ef8067e3c6da48d13b6f3cfdafc",
+      "status_window": {
+        "step_id": "research_google_subscriptions_137",
+        "cycle": "5/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T20:17:40.442550+00:00",
+        "goal": "Maximiere Nutzen aus Google Workspace Abos (AI Ultra, Chrome Ent)",
+        "inputs": {
+          "raw_user_request": "okay des weiteren schau mal was man hier noch rasu holen kann Abos..."
+        },
+        "actions": [
+          "Search: Features 'Google AI Ultra for Business' (Gemini Ultra Integration)",
+          "Search: Developer features of Chrome Enterprise Upgrade (Extension Policies)",
+          "Strategy: Integration in Evoki (Browser Security, AI Backdrop)"
+        ],
+        "risk": [],
+        "assumptions": [
+          "User hat Admin-Zugriff auf Workspace Console"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Resource Optimization"
+        },
+        "reflection_curve": {
+          "delta": "User hat starke Google Lizenzen ungenutzt",
+          "correction": "Erstelle Nutzungsstrategie",
+          "next": "Web Search & Doc Creation"
+        },
+        "output_plan": [
+          "Search Web",
+          "Create Strategy Doc"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Analyzing Google Subscriptions"
+        },
+        "project_awareness": {
+          "research": "Evaluating Google Ecosystem"
+        },
+        "window_hash": "d75829de9f3af38e4500a6db0143ec1fa1d68ef8067e3c6da48d13b6f3cfdafc",
+        "prev_window_hash": "892eeaa6c6e0f808780a24b11f86bf7f5dc0e83d4946a5426df62e2272638e0e",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T20:17:40.442550+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 141,
+      "timestamp": "2026-01-13T20:18:21.938649+00:00",
+      "salt": "95caa890d61430e53ff561236b89e865",
+      "source": "pending_status_auto",
+      "window_hash": "b9d0f9dc4629dd8d548959f9116509fc8f84a8fc6175c7ecbe57642c546ed3ba",
+      "status_window": {
+        "step_id": "create_google_strategy_138",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T20:18:21.938649+00:00",
+        "goal": "Erstelle Google Trial Strategy Guide",
+        "inputs": {
+          "raw_user_request": "Okay des weiteren schau mal was man hier noch rasu holen kann Abos..."
+        },
+        "actions": [
+          "Compile: tooling/docs/knowledge/GOOGLE_TRIAL_STRATEGY.md",
+          "Focus: Extension Security (Forcelist), AI API Access (Vertex)"
+        ],
+        "risk": [],
+        "assumptions": [
+          "User hat volle Admin-Rechte"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Documentation"
+        },
+        "reflection_curve": {
+          "delta": "Google Abos analysiert",
+          "correction": "Spezifische Strategie für Evoki ableiten",
+          "next": "Dokument erstellen"
+        },
+        "output_plan": [
+          "Write Strategy Doc"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Google Strategy"
+        },
+        "project_awareness": {
+          "knowledge": "Added Google Workspace Strategy"
+        },
+        "window_hash": "b9d0f9dc4629dd8d548959f9116509fc8f84a8fc6175c7ecbe57642c546ed3ba",
+        "prev_window_hash": "d75829de9f3af38e4500a6db0143ec1fa1d68ef8067e3c6da48d13b6f3cfdafc",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T20:18:21.938649+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 142,
+      "timestamp": "2026-01-13T20:20:51.837678+00:00",
+      "salt": "d748886ec02c0795e39b7495149287b3",
+      "source": "pending_status_auto",
+      "window_hash": "633859db60124b3a0f240b5ee7f171f6ff8e2b022db11a00ee041269aaf3de7d",
+      "status_window": {
+        "step_id": "execute_user_tasks_139",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T20:20:51.837678+00:00",
+        "goal": "Abarbeitung konkreter User-Aufgaben (Fixes 1-4)",
+        "inputs": {
+          "raw_user_request": "Vorschläge für konkrete Aufgaben: Tippfehler, Programmierfehler, Doku-Unstimmigkeit, Test verbessern"
+        },
+        "actions": [
+          "Verify: synapse_logic.py (Ist V5 Rewrite aktiv?)",
+          "Fix: tooling/data/synapse/README.md (Backup Pfad)",
+          "Search: Tests (Wo liegen die Unit Tests?)",
+          "Analyze: 'Cloude' path typo risk assessment"
+        ],
+        "risk": [
+          "Pfad-Umbenennung 'Cloude' -> 'Cloud' kann Workspace brechen (VSCode öffnet Ordner)",
+          "Tests existieren evtl. noch gar nicht im Repo"
+        ],
+        "assumptions": [
+          "User meint mit 'Vorschläge' Dinge, die ich JETZT tun soll",
+          "Der 'Programmierfehler' bezieht sich auf den Code VOR meinem letzten Rewrite (Cache Problem beim User?)"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Bugfixing"
+        },
+        "reflection_curve": {
+          "delta": "User reportet Bugs die ich dachte gefixt zu haben",
+          "correction": "Verifizierung des Dateistandes + Doku Fix",
+          "next": "List Files & Fix Doku"
+        },
+        "output_plan": [
+          "List tests/",
+          "View synapse_logic.py",
+          "Fix README.md"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 0.9,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Task Execution"
+        },
+        "project_awareness": {
+          "tasks": "Addressing findings 1-4"
+        },
+        "window_hash": "633859db60124b3a0f240b5ee7f171f6ff8e2b022db11a00ee041269aaf3de7d",
+        "prev_window_hash": "b9d0f9dc4629dd8d548959f9116509fc8f84a8fc6175c7ecbe57642c546ed3ba",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T20:20:51.837678+00:00"
         }
       },
       "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",

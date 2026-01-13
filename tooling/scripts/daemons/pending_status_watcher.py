@@ -10,7 +10,7 @@ status_history_manager.py to save to history when the file is updated.
 This completes the automatic logging pipeline:
 1. Agent writes to pending_status.json
 2. File Watcher detects change
-3. Auto-triggers: python temple/automation/status_history_manager.py add --file pending_status.json
+3. Auto-triggers: python tooling/scripts/automation/status_history_manager.py add --file pending_status.json
 4. History saved with salt and cryptographic hash
 """
 
@@ -18,6 +18,7 @@ import sys
 import time
 import json
 import subprocess
+import os
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -33,23 +34,40 @@ except ImportError:
 class PendingStatusWatcher(FileSystemEventHandler):
     """Monitors pending_status.json and auto-saves to history"""
     
-    # V3.0 Optimized Paths
-    V3_ROOT = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
-    PENDING_FILE = V3_ROOT / "tooling" / "data" / "synapse" / "status" / "pending_status.json"
-    HISTORY_MANAGER = V3_ROOT / "app" / "temple" / "automation" / "status_history_manager.py"
-    LOG_FILE = V3_ROOT / "tooling" / "data" / "synapse" / "logs" / "pending_watcher.log"
-    
     def __init__(self):
         super().__init__()
         
+        # V3.0 Optimized Paths (Dynamic with Fallback)
+        env_root = os.getenv("EVOKI_PROJECT_ROOT")
+        if env_root:
+            self.V3_ROOT = Path(env_root)
+        else:
+             cloud_path = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloud")
+             cloude_path = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
+             if cloud_path.exists():
+                 self.V3_ROOT = cloud_path
+             else:
+                 self.V3_ROOT = cloude_path
+
+        self.PENDING_FILE = self.V3_ROOT / "tooling" / "data" / "synapse" / "status" / "pending_status.json"
+        
+        # CHANGED: Now in tooling/scripts/automation
+        self.HISTORY_MANAGER = self.V3_ROOT / "tooling" / "scripts" / "automation" / "status_history_manager.py"
+        
+        self.LOG_FILE = self.V3_ROOT / "tooling" / "data" / "synapse" / "logs" / "pending_watcher.log"
+        
         # Ensure paths exist
-        self.PENDING_FILE.parent.mkdir(parents=True, exist_ok=True)
-        self.LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            self.PENDING_FILE.parent.mkdir(parents=True, exist_ok=True)
+            self.LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+        except Exception:
+            pass # Ignore perms
         
         # Track last modification time to avoid duplicate triggers
         self.last_mtime = 0
         
         print(f"🔍 Pending Status Watcher initialized (V3.0)")
+        print(f"   Root:     {self.V3_ROOT}")
         print(f"   Watching: {self.PENDING_FILE}")
         print(f"   Manager:  {self.HISTORY_MANAGER}")
         print(f"   Log:      {self.LOG_FILE}")
@@ -99,7 +117,6 @@ class PendingStatusWatcher(FileSystemEventHandler):
         })
         
         # Wait for file to be fully written (if necessary)
-        # With atomic writes this is less critical but keeping for safety
         time.sleep(0.2)
         
         # Trigger auto-save
@@ -169,6 +186,11 @@ class PendingStatusWatcher(FileSystemEventHandler):
 
 def main():
     """Start the watcher"""
+    # Health Probe for Single Source of Truth
+    if os.environ.get("EVOKI_MCP_MONITOR_ACTIVE") == "1":
+         print("MCP Monitor already active. Skipping standalone watcher to prevent loop.")
+         return
+
     watcher = PendingStatusWatcher()
     
     # Watch the directory containing pending_status.json

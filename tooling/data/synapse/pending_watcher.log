@@ -301,3 +301,51 @@
 {"timestamp": "2026-01-13T20:18:22.019130+00:00", "result": "SUCCESS"}
 {"timestamp": "2026-01-13T20:18:22.024024+00:00", "result": "SUCCESS"}
 {"timestamp": "2026-01-13T20:18:22.024316+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:20:51.391884+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:20:51.392856+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:20:51.393593+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:20:51.598251+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:20:51.598792+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:20:51.903467+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:20:51.905693+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Error saving history: [WinError 5] Zugriff verweigert: 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\tmpihw_apmb.tmp' -> 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\status_window_history.json'\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T20:20:51.912347+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:21:41.967470+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:21:41.967565+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:21:41.967539+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:21:42.168349+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:21:42.168867+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:21:42.168867+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:21:42.451108+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:21:42.456879+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:21:42.458657+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:22:51.460199+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:22:51.460639+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:22:51.461006+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:22:51.660839+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:22:51.661352+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:22:51.662373+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:22:51.966141+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:22:51.983387+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:22:51.983773+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:23:35.384704+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:23:35.585597+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:23:35.883394+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:23:35.885948+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:23:35.904032+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T20:24:38.242126+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:24:38.242280+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:24:38.443117+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:24:38.443777+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:24:38.443759+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:24:38.509944+00:00", "result": "FAIL", "error": "C:\\Python314\\python.exe: can't open file 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\app\\\\temple\\\\automation\\\\status_history_manager.py': [Errno 2] No such file or directory\n"}
+{"timestamp": "2026-01-13T20:24:38.515101+00:00", "result": "FAIL", "error": "C:\\Python314\\python.exe: can't open file 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\app\\\\temple\\\\automation\\\\status_history_manager.py': [Errno 2] No such file or directory\n"}
+{"timestamp": "2026-01-13T20:24:38.517039+00:00", "result": "FAIL", "error": "C:\\Python314\\python.exe: can't open file 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\app\\\\temple\\\\automation\\\\status_history_manager.py': [Errno 2] No such file or directory\n"}
+{"timestamp": "2026-01-13T20:25:16.526467+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:25:16.526597+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:25:16.527840+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T20:25:16.727254+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:25:16.727759+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:25:16.728789+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T20:25:16.792630+00:00", "result": "FAIL", "error": "C:\\Python314\\python.exe: can't open file 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\app\\\\temple\\\\automation\\\\status_history_manager.py': [Errno 2] No such file or directory\n"}
+{"timestamp": "2026-01-13T20:25:16.803677+00:00", "result": "FAIL", "error": "C:\\Python314\\python.exe: can't open file 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\app\\\\temple\\\\automation\\\\status_history_manager.py': [Errno 2] No such file or directory\n"}
+{"timestamp": "2026-01-13T20:25:16.805556+00:00", "result": "FAIL", "error": "C:\\Python314\\python.exe: can't open file 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\app\\\\temple\\\\automation\\\\status_history_manager.py': [Errno 2] No such file or directory\n"}
