@@ -1,5 +1,10 @@
-# Layer 08_trench
+# 08_trench
 
-SQLite DB: `layer.db`
+**Pfad:** `app\deep_earth\layers\08_trench`
 
-Keine Magie. Nur Schwerkraft.
+*Automatisch generiert am 2026-01-13 21:54*
+
+## Dateien
+
+- 📄 `layer.db`
+

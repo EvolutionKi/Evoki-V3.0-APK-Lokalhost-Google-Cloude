@@ -1,5 +1,10 @@
-# Layer 03_sediment
+# 03_sediment
 
-SQLite DB: `layer.db`
+**Pfad:** `app\deep_earth\layers\03_sediment`
 
-Keine Magie. Nur Schwerkraft.
+*Automatisch generiert am 2026-01-13 21:54*
+
+## Dateien
+
+- 📄 `layer.db`
+

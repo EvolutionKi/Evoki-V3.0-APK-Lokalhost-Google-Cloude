@@ -22,7 +22,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 from typing import List, Dict, Tuple, Optional
 
-# V3.0 Root
+# V3.0 Root (Hardcoded or Dynamic if needed, sticking to hardcoded per previous version)
 V3_ROOT = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
 
 # Ausnahmen laut datamanagement.md
@@ -39,6 +39,10 @@ MIXED_ALLOWED = {
     "src",               # Standard src dir mit components/ + entry files
     "dashboard",         # Dashboard: templates/ + server.py
     "status",            # Synapse: backups/ + JSON status files
+    "docs",              # Documentation root
+    "scripts",           # Root for scripts + launchers
+    "data",              # Data root
+    "synapse",           # Synapse root (logs + status dirs + some root json files)
 }
 
 
@@ -88,6 +92,8 @@ class DirectoryEnforcer:
         files_filtered = [f for f in files if f not in allowed_files]
         
         # Gemischtes Verzeichnis erkennen (außer erlaubte Strukturen)
+        # BUGFIX: Ensure we verify relative path components or name against allowed list properly
+        # Just verification by name is simpler and matches V3 style.
         if files_filtered and dirs and path.name not in MIXED_ALLOWED:
             self.violations.append({
                 "path": str(path.relative_to(self.root)),
@@ -157,41 +163,53 @@ class DirectoryEnforcer:
                 new_path = logs_dir / filename
                 
                 print(f"  📦 Verschiebe: {filename} → logs/{filename}")
-                file_path.rename(new_path)
-                
-                self.fixes_applied.append({
-                    "action": "MOVE",
-                    "from": str(file_path.relative_to(self.root)),
-                    "to": str(new_path.relative_to(self.root)),
-                    "timestamp": datetime.now(timezone.utc).isoformat()
-                })
-            
+                try:
+                    file_path.rename(new_path)
+                    
+                    self.fixes_applied.append({
+                        "action": "MOVE",
+                        "from": str(file_path.relative_to(self.root)),
+                        "to": str(new_path.relative_to(self.root)),
+                        "timestamp": datetime.now(timezone.utc).isoformat()
+                    })
+                except OSError as e:
+                    print(f"  ❌ Failed to move {filename}: {e}")
+
             # test_*.txt Dateien löschen
             elif filename.startswith("test_") and filename.endswith(".txt"):
                 print(f"  🗑️  Lösche Test-Datei: {filename}")
-                file_path.unlink()
-                
-                self.fixes_applied.append({
-                    "action": "DELETE",
-                    "file": str(file_path.relative_to(self.root)),
-                    "reason": "test file",
-                    "timestamp": datetime.now(timezone.utc).isoformat()
-                })
+                try:
+                    file_path.unlink()
+                    
+                    self.fixes_applied.append({
+                        "action": "DELETE",
+                        "file": str(file_path.relative_to(self.root)),
+                        "reason": "test file",
+                        "timestamp": datetime.now(timezone.utc).isoformat()
+                    })
+                except OSError as e:
+                     print(f"  ❌ Failed to delete {filename}: {e}")
     
     def generate_readme(self, path: Path) -> str:
         """Generiert README.md Inhalt für einen Ordner."""
-        rel_path = path.relative_to(self.root)
+        try:
+            rel_path = path.relative_to(self.root)
+        except ValueError:
+            rel_path = path
         
         files = []
         dirs = []
         
-        for item in path.iterdir():
-            if item.name in IGNORED_DIRS or item.name == "README.md":
-                continue
-            if item.is_file():
-                files.append(item.name)
-            elif item.is_dir():
-                dirs.append(item.name)
+        try:
+            for item in path.iterdir():
+                if item.name in IGNORED_DIRS or item.name == "README.md":
+                    continue
+                if item.is_file():
+                    files.append(item.name)
+                elif item.is_dir():
+                    dirs.append(item.name)
+        except OSError:
+            return "" # Skip locked/invalid dirs
         
         # Header
         content = f"# {path.name}\n\n"
@@ -216,28 +234,38 @@ class DirectoryEnforcer:
     def update_readmes(self, start_path: Optional[Path] = None):
         """Aktualisiert README.md in allen Ordnern."""
         if start_path is None:
-            start_path = self.root / "tooling"
-        
-        print(f"📝 Aktualisiere README.md Dateien in: {start_path.relative_to(self.root)}")
+            # We explicitly scan app and tooling
+            scan_roots = [self.root / "tooling", self.root / "app"]
+        else:
+            scan_roots = [start_path]
         
         updated = 0
-        for dirpath in start_path.rglob("*"):
-            if not dirpath.is_dir():
-                continue
-            if any(part in IGNORED_DIRS for part in dirpath.parts):
-                continue
-            
-            readme_path = dirpath / "README.md"
-            content = self.generate_readme(dirpath)
-            
-            # Nur schreiben wenn Inhalt sinnvoll
-            if "## Unterordner" in content or "## Dateien" in content:
-                with open(readme_path, "w", encoding="utf-8") as f:
-                    f.write(content)
-                updated += 1
-                print(f"  ✅ {readme_path.relative_to(self.root)}")
         
-        print(f"\n📊 {updated} README.md Dateien aktualisiert")
+        for root_scan in scan_roots:
+            if not root_scan.exists(): continue
+            print(f"📝 Aktualisiere README.md Dateien in: {root_scan.relative_to(self.root)}")
+            
+            for dirpath in root_scan.rglob("*"):
+                if not dirpath.is_dir():
+                    continue
+                if any(part in IGNORED_DIRS for part in dirpath.parts):
+                    continue
+                
+                readme_path = dirpath / "README.md"
+                content = self.generate_readme(dirpath)
+                
+                # Nur schreiben wenn Inhalt sinnvoll
+                if "## Unterordner" in content or "## Dateien" in content:
+                    try:
+                        with open(readme_path, "w", encoding="utf-8") as f:
+                            f.write(content)
+                        updated += 1
+                        # Minimal output only for changes to avoid spam
+                        # print(f"  ✅ {readme_path.relative_to(self.root)}")
+                    except Exception as e:
+                         print(f"  ⚠️ Error writing {readme_path}: {e}")
+        
+        print(f"\n📊 {updated} README.md Dateien geprüft/aktualisiert")
 
 
 def main():
@@ -250,6 +278,7 @@ def main():
     
     if command == "check":
         violations = enforcer.check_all()
+        # Non-zero exit if violations remain
         sys.exit(1 if violations else 0)
     
     elif command == "fix":

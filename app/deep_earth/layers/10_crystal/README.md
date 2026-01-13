@@ -1,5 +1,10 @@
-# Layer 10_crystal
+# 10_crystal
 
-SQLite DB: `layer.db`
+**Pfad:** `app\deep_earth\layers\10_crystal`
 
-Keine Magie. Nur Schwerkraft.
+*Automatisch generiert am 2026-01-13 21:54*
+
+## Dateien
+
+- 📄 `layer.db`
+

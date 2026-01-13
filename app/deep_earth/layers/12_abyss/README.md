@@ -1,5 +1,10 @@
-# Layer 12_abyss
+# 12_abyss
 
-SQLite DB: `layer.db`
+**Pfad:** `app\deep_earth\layers\12_abyss`
 
-Keine Magie. Nur Schwerkraft.
+*Automatisch generiert am 2026-01-13 21:54*
+
+## Dateien
+
+- 📄 `layer.db`
+

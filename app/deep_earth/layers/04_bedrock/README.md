@@ -1,5 +1,10 @@
-# Layer 04_bedrock
+# 04_bedrock
 
-SQLite DB: `layer.db`
+**Pfad:** `app\deep_earth\layers\04_bedrock`
 
-Keine Magie. Nur Schwerkraft.
+*Automatisch generiert am 2026-01-13 21:54*
+
+## Dateien
+
+- 📄 `layer.db`
+

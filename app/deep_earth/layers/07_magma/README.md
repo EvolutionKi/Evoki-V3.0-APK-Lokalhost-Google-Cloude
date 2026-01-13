@@ -1,5 +1,10 @@
-# Layer 07_magma
+# 07_magma
 
-SQLite DB: `layer.db`
+**Pfad:** `app\deep_earth\layers\07_magma`
 
-Keine Magie. Nur Schwerkraft.
+*Automatisch generiert am 2026-01-13 21:54*
+
+## Dateien
+
+- 📄 `layer.db`
+

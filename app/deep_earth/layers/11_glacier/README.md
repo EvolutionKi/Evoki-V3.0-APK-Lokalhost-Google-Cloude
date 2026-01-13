@@ -1,5 +1,10 @@
-# Layer 11_glacier
+# 11_glacier
 
-SQLite DB: `layer.db`
+**Pfad:** `app\deep_earth\layers\11_glacier`
 
-Keine Magie. Nur Schwerkraft.
+*Automatisch generiert am 2026-01-13 21:54*
+
+## Dateien
+
+- 📄 `layer.db`
+

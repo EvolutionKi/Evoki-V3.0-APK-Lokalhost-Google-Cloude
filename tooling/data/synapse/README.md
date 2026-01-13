@@ -2,10 +2,15 @@
 
 **Pfad:** `tooling\data\synapse`
 
-*Automatisch generiert am 2026-01-13 17:06*
+*Automatisch generiert am 2026-01-13 21:54*
 
 ## Unterordner
 
+- 📁 `backups/`
 - 📁 `logs/`
 - 📁 `status/`
-  - 📁 `backups/` (Status History Backups)
+
+## Dateien
+
+- 📄 `decrypted_history.json`
+
