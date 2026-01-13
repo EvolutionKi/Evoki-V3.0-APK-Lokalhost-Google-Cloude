@@ -10,7 +10,7 @@ Schnelle Verifizierung der System-Integrität.
 
 // turbo
 ```bash
-python app/temple/automation/status_history_manager.py stats
+python tooling/scripts/automation/status_history_manager.py stats
 ```
 
 ---
@@ -19,7 +19,7 @@ python app/temple/automation/status_history_manager.py stats
 
 // turbo
 ```bash
-python app/temple/automation/status_history_manager.py verify
+python tooling/scripts/automation/status_history_manager.py verify
 ```
 
 **Bei Erfolg:** `✅ Chain + Hash integrity verified (N entries)`
@@ -32,7 +32,7 @@ python app/temple/automation/status_history_manager.py verify
 
 // turbo
 ```bash
-python app/temple/automation/status_history_manager.py latest --count 1
+python tooling/scripts/automation/status_history_manager.py latest --count 1
 ```
 
 ---

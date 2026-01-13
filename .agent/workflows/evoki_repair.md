@@ -37,7 +37,7 @@ python tooling/scripts/repair_chain.py
 
 // turbo
 ```bash
-python app/temple/automation/status_history_manager.py verify
+python tooling/scripts/automation/status_history_manager.py verify
 ```
 
 **Erwartete Ausgabe:** `✅ Chain + Hash integrity verified (N entries)`
@@ -48,7 +48,7 @@ python app/temple/automation/status_history_manager.py verify
 
 // turbo
 ```bash
-python app/temple/automation/status_history_manager.py stats
+python tooling/scripts/automation/status_history_manager.py stats
 ```
 
 ---

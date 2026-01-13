@@ -24,10 +24,10 @@ Wenn du Code an der **App** (`app/temple/`, `app/interface/`) schreiben sollst:
 
 | Datei | Pfad | Funktion |
 |-------|------|----------|
-| `synapse_logic.py` | `app/temple/automation/` | Core-Logik für SHA-256 Chain |
-| `status_history_manager.py` | `app/temple/automation/` | CLI Wrapper für History |
-| `pending_status_watcher.py` | `app/temple/automation/` | File Watcher Daemon |
-| `write_pending_status.py` | `app/temple/automation/` | Status Window Writer |
+| `synapse_logic.py` | `tooling/scripts/automation/` | Core-Logik für SHA-256 Chain |
+| `status_history_manager.py` | `tooling/scripts/automation/` | CLI Wrapper für History |
+| `pending_status_watcher.py` | `tooling/scripts/daemons/` | File Watcher Daemon |
+| `write_pending_status.py` | `tooling/scripts/automation/` | Status Window Writer |
 
 **Warum kritisch:** Diese Dateien berechnen kryptografische Hashes. Eine falsche Änderung = Chain Break = Datenverlust.
 
@@ -92,12 +92,10 @@ Wenn du Code an der **App** (`app/temple/`, `app/interface/`) schreiben sollst:
 
 | Bereich | Pfad | Erlaubt |
 |---------|------|---------|
-| **App-Code** | `app/temple/core/` | ✅ Ja |
-| **App-Routen** | `app/temple/routes/` | ✅ Ja |
-| **App-Models** | `app/temple/models/` | ✅ Ja |
-| **App-Entities** | `app/temple/entities/` | ✅ Ja |
+| **Tooling Scripts** | `tooling/scripts/` | ✅ Ja |
+| **Tooling Docs** | `tooling/docs/` | ✅ Ja |
 | **Frontend** | `app/interface/src/` | ✅ Ja |
-| **Tests** | `app/temple/tests/` | ✅ Ja |
+| **Tests** | `tooling/tests/` | ✅ Ja |
 | **Deep Earth** | `app/deep_earth/` | ⚠️ Mit Vorsicht |
 
 ---
