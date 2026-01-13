@@ -13,10 +13,11 @@ echo ║           EVOKI V3.0 - COMPLETE WATCHER SUITE                     ║
 echo ╚═══════════════════════════════════════════════════════════════════╝
 echo.
 
-cd /d "c:\Evoki V3.0 APK-Lokalhost-Google Cloude"
+set "ROOT=%~dp0..\..\.."
+pushd "%ROOT%"
 
 echo [1/2] Starting Pending Status Watcher...
-start "Pending Status Watcher" cmd /k "python app\temple\automation\pending_status_watcher.py"
+start "Pending Status Watcher" cmd /k "python tooling\scripts\daemons\pending_status_watcher.py"
 
 echo [2/2] Starting Context Watcher (User-Prompt Erfassung)...
 start "Context Watcher" cmd /k "python tooling\scripts\daemons\context_watcher.py --monitor"
@@ -33,3 +34,4 @@ echo ═════════════════════════
 echo.
 
 pause
+popd

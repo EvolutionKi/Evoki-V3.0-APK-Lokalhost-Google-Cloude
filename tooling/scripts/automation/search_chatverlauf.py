@@ -12,7 +12,7 @@ Backends:
   embedding_backend: "sentence_transformers" | "hash"
 
 CLI Beispiel:
-  PYTHONPATH=app python -m temple.automation.search_chatverlauf --query "atomic write" --top-k 5 --include-text
+  python tooling/scripts/automation/search_chatverlauf.py --query "atomic write" --top-k 5 --include-text
 """
 
 from __future__ import annotations
@@ -288,7 +288,7 @@ def _default_repo_root() -> Path:
     Best-effort repo root detection when executed standalone.
     """
     here = Path(__file__).resolve()
-    # app/temple/automation/search_chatverlauf.py -> parents[3] == app, parents[4] == repo root
+    # tooling/scripts/automation/search_chatverlauf.py -> parents[3] == tooling, parents[4] == repo root
     for p in here.parents:
         if (p / "tooling").exists() and (p / "app").exists():
             return p

@@ -10,10 +10,11 @@ status_history_manager.py to save to history when the file is updated.
 This completes the automatic logging pipeline:
 1. Agent writes to pending_status.json
 2. File Watcher detects change
-3. Auto-triggers: python temple/automation/status_history_manager.py add --file pending_status.json
+3. Auto-triggers: python tooling/scripts/automation/status_history_manager.py add --file pending_status.json
 4. History saved with salt and cryptographic hash
 """
 
+import os
 import sys
 import time
 import json
@@ -33,11 +34,20 @@ except ImportError:
 class PendingStatusWatcher(FileSystemEventHandler):
     """Monitors pending_status.json and auto-saves to history"""
     
-    # V3.0 Optimized Paths
-    V3_ROOT = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
-    PENDING_FILE = V3_ROOT / "tooling" / "data" / "synapse" / "status" / "pending_status.json"
-    HISTORY_MANAGER = V3_ROOT / "app" / "temple" / "automation" / "status_history_manager.py"
-    LOG_FILE = V3_ROOT / "tooling" / "data" / "synapse" / "pending_watcher.log"
+    # V3.0 Dynamic Root Resolution
+    PROJECT_ROOT = Path(
+        os.getenv(
+            "EVOKI_PROJECT_ROOT",
+            os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")),
+        )
+    )
+    try:
+        PROJECT_ROOT = PROJECT_ROOT.resolve()
+    except Exception:
+        PROJECT_ROOT = Path(os.path.abspath(".")).resolve()
+    PENDING_FILE = PROJECT_ROOT / "tooling" / "data" / "synapse" / "status" / "pending_status.json"
+    HISTORY_MANAGER = PROJECT_ROOT / "tooling" / "scripts" / "automation" / "status_history_manager.py"
+    LOG_FILE = PROJECT_ROOT / "tooling" / "data" / "synapse" / "pending_watcher.log"
     
     def __init__(self):
         super().__init__()

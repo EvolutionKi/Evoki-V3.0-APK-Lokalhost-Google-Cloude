@@ -45,12 +45,17 @@ except ImportError:
     print("Install with: pip install mcp")
     exit(1)
 
-# Ensure repo/app is importable (temple.* lives under /app)
-PROJECT_ROOT = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
-APP_DIR = PROJECT_ROOT / "app"
-
-if str(APP_DIR) not in sys.path:
-    sys.path.insert(0, str(APP_DIR))
+# Resolve repo root dynamically (override with EVOKI_PROJECT_ROOT).
+PROJECT_ROOT = Path(
+    os.getenv(
+        "EVOKI_PROJECT_ROOT",
+        os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")),
+    )
+)
+try:
+    PROJECT_ROOT = PROJECT_ROOT.resolve()
+except Exception:
+    PROJECT_ROOT = Path(os.path.abspath(".")).resolve()
 
 try:
     # Dynamic path for automation modules

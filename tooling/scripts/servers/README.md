@@ -8,5 +8,5 @@
 
 | Datei | Beschreibung (Docstring) | Abhängigkeiten |
 |-------|--------------------------|----------------|
-| **mcp_server_evoki_v3.py** | MCP Server for Synapse Auto-Context Loading | asyncio, mcp, sqlite3, temple |
+| **mcp_server_evoki_v3.py** | MCP Server for Synapse Auto-Context Loading | asyncio, mcp, sqlite3, tooling/scripts/automation |
 
