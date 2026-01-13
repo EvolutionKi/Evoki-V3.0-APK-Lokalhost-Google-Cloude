@@ -75,7 +75,7 @@ BASE_DIR = Path(__file__).parent.parent
 DATA_DIR = BASE_DIR / "data"
 REGELWERK_PATH = DATA_DIR / "prompts" / "EVOKI_SYSTEM_PROMPT_GEMINI_V12.txt"
 BACKEND_STATE_PATH = DATA_DIR / "backend_state.json"
-PERSISTENT_DB_PATH = DATA_DIR / "persistent_context.db"
+PERSISTENT_DB_PATH = DATA_DIR / "db" / "persistent_context.db"
 PENDING_STATUS_PATH = DATA_DIR / "synapse" / "status" / "pending_status.json"
 
 # Initialize MCP server

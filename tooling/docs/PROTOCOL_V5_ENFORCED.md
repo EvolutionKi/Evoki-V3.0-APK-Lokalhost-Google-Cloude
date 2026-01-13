@@ -320,10 +320,12 @@ Bei Chain-Break:
 |-------|------|
 | Pending Status | `tooling/data/synapse/status/pending_status.json` |
 | History | `tooling/data/synapse/status/status_window_history.json` |
-| Watcher Log | `tooling/data/synapse/pending_watcher.log` |
+| Watcher Log | `tooling/data/synapse/logs/pending_watcher.log` |
 | Manager CLI | `app/temple/automation/status_history_manager.py` |
-| Chat Display | `tooling/scripts/chat_display_template.py` |
-| Chain Repair | `tooling/scripts/repair_chain.py` |
+| Chat Display | `tooling/scripts/ui/chat_display_template.py` |
+| Chain Repair | `tooling/scripts/cli/repair_chain.py` |
+| MCP Server | `tooling/scripts/servers/mcp_server_evoki_v3.py` |
+| Watcher Daemon | `tooling/scripts/daemons/pending_status_watcher.py` |
 
 ---
 
@@ -341,7 +343,7 @@ Muss ausgeben: `Chain + Hash integrity verified (N entries)`
 python app/temple/automation/status_history_manager.py stats
 
 # 2. Watcher-Log pruefen
-Get-Content tooling/data/synapse/pending_watcher.log -Tail 20
+Get-Content tooling/data/synapse/logs/pending_watcher.log -Tail 20
 
 # 3. Bei Chain-Break
 python tooling/scripts/repair_chain.py

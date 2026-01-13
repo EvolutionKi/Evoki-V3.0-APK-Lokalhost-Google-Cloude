@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T12:03:46.822191+00:00",
-  "total_entries": 56,
+  "created_at": "2026-01-13T12:40:22.179580+00:00",
+  "total_entries": 68,
   "entries": [
     {
       "timestamp": "2026-01-13T10:15:07.379671+00:00",
@@ -3491,6 +3491,736 @@
           "target": "status_history_manager.py",
           "enabled": true,
           "timestamp": "2026-01-13T12:03:46.822010+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 57,
+      "timestamp": "2026-01-13T12:05:58.418630+00:00",
+      "salt": "1aaa5ae9cf79f593abf2a2b4194df600",
+      "source": "pending_status_auto",
+      "window_hash": "75aac1611d117c0b62992e30561683fbb747e92c52b7921e533209b1155401ec",
+      "status_window": {
+        "step_id": "improve_status_display",
+        "cycle": "3/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:05:58.418630+00:00",
+        "goal": "Improve Chat Status Display",
+        "inputs": {
+          "raw_user_request": "sehr schlecht lesbar es wäre gut wenn das hinzu käme reflection_curve...",
+          "feedback": "Include full reflection_curve narrative"
+        },
+        "actions": [
+          "redesign_display_format"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Schema V3.2 + Enhanced Display"
+        },
+        "reflection_curve": {
+          "delta": "Der Benutzer kritisiert das bisherige Tabellenformat als schlecht lesbar. Die narrativen Felder (delta, correction, next) sollen vollständig und prominent angezeigt werden.",
+          "correction": "Umstellung auf ein blockbasiertes Format mit klaren Abschnitten für Header, Reflexion und Metriken. Die reflection_curve wird als zusammenhängender Text dargestellt.",
+          "next": "Demonstriere neues Format in dieser Antwort."
+        },
+        "output_plan": [
+          "Show new format"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "FORMAT IMPROVED"
+        },
+        "project_awareness": {
+          "feature": "Enhanced Display"
+        },
+        "window_hash": "75aac1611d117c0b62992e30561683fbb747e92c52b7921e533209b1155401ec",
+        "prev_window_hash": "91b94ac977c5cd6d07363963571677dbd79dda3bf8c2a54637294912be1d19aa",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:05:58.418630+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 58,
+      "timestamp": "2026-01-13T12:08:10.908913+00:00",
+      "salt": "e6e855d822a582ed25f0b15b86f534c8",
+      "source": "pending_status_auto",
+      "window_hash": "88cc04e3b60ff572fd25ed42223566542db0c0baca5b07b38c2999748fd5a9e2",
+      "status_window": {
+        "step_id": "automate_display_template",
+        "cycle": "4/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:08:10.908913+00:00",
+        "goal": "Automate Chat Display Template",
+        "inputs": {
+          "raw_user_request": "perfekt ist das soweit automatisiert dass du das leere format genausio wie das schewma von dem .py bekommst?",
+          "action": "Create chat_display_template.py"
+        },
+        "actions": [
+          "create_template_file",
+          "demonstrate"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Template erstellt"
+        },
+        "reflection_curve": {
+          "delta": "Das Display-Format war bisher manuell. Der Benutzer fragt, ob es wie das Schema automatisiert ist.",
+          "correction": "Erstellung von chat_display_template.py mit DISPLAY_TEMPLATE Konstante und format_status_display() Funktion.",
+          "next": "Template testen und in Regeln integrieren."
+        },
+        "output_plan": [
+          "Create template",
+          "Test it"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "TEMPLATE CREATED"
+        },
+        "project_awareness": {
+          "file": "chat_display_template.py"
+        },
+        "window_hash": "88cc04e3b60ff572fd25ed42223566542db0c0baca5b07b38c2999748fd5a9e2",
+        "prev_window_hash": "75aac1611d117c0b62992e30561683fbb747e92c52b7921e533209b1155401ec",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:08:10.908913+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 59,
+      "timestamp": "2026-01-13T12:10:06.558382+00:00",
+      "salt": "fd1d842e27aee4f7ae67d164c6a41dd7",
+      "source": "pending_status_auto",
+      "window_hash": "7273600564130dcabfd6fcb208877dd37d7327342dedb9758ad9ad420eab660c",
+      "status_window": {
+        "step_id": "protocol_audit_v4",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:10:06.558382+00:00",
+        "goal": "Full Protocol V4.0 Audit",
+        "inputs": {
+          "raw_user_request": "perfekt jetzt analysiere vollständig regel für regel... und nenne mir die nun überflüssigen punkte und welche die noch fehlen verbessert werden müssen",
+          "scope": "40 Rules + ACK Mechanism"
+        },
+        "actions": [
+          "analyze_rules",
+          "identify_obsolete",
+          "identify_missing",
+          "propose_improvements"
+        ],
+        "risk": [
+          "Large analysis scope"
+        ],
+        "assumptions": [
+          "User wants actionable improvements"
+        ],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Meta-Analysis of Rule System",
+          "checked_rules": [
+            "All 40"
+          ]
+        },
+        "reflection_curve": {
+          "delta": "Das Protokoll V4.0 wurde über mehrere Iterationen entwickelt. Einige Regeln sind möglicherweise redundant geworden, andere fehlen basierend auf den heutigen Erkenntnissen (BOM-Fix, entry_index, Chat-Display).",
+          "correction": "Systematische Analyse jeder Regel auf: (1) Redundanz mit anderen Regeln, (2) Implementierungsstatus im Code, (3) Fehlende Aspekte basierend auf praktischen Erfahrungen.",
+          "next": "Erstelle Audit-Report mit konkreten Empfehlungen."
+        },
+        "output_plan": [
+          "Kategorisiere alle 40 Regeln",
+          "Liste Obsolete",
+          "Liste Fehlende",
+          "Verbesserungsvorschläge"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 0.9,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "AUDIT IN PROGRESS"
+        },
+        "project_awareness": {
+          "task": "Protocol Audit"
+        },
+        "window_hash": "7273600564130dcabfd6fcb208877dd37d7327342dedb9758ad9ad420eab660c",
+        "prev_window_hash": "88cc04e3b60ff572fd25ed42223566542db0c0baca5b07b38c2999748fd5a9e2",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:10:06.558382+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 60,
+      "timestamp": "2026-01-13T12:12:14.455595+00:00",
+      "salt": "50ffd891e454c244063d63a284f1a3fd",
+      "source": "pending_status_auto",
+      "window_hash": "d2159e207f921aefcd77ad1f77f67c908be64cdfa735579f4e7d17623b708444",
+      "status_window": {
+        "step_id": "create_gemini_v5",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:12:14.455595+00:00",
+        "goal": "Create Enforced GEMINI V5.0",
+        "inputs": {
+          "raw_user_request": "ja bitte so dass du sie zwingend anwenden musst durch logickkette und Zwang aber es soll trotzdem gut lesbar bleiben und gleich die abkürzungen erklären warum sie nicht möglich sind",
+          "requirements": [
+            "Logic chains",
+            "Explain why shortcuts fail",
+            "Readable"
+          ]
+        },
+        "actions": [
+          "write_gemini_v5"
+        ],
+        "risk": [
+          "Large file write"
+        ],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Creating enforced ruleset",
+          "checked_rules": [
+            "Meta"
+          ]
+        },
+        "reflection_curve": {
+          "delta": "Das aktuelle Protokoll hat Lücken, die Abkürzungen erlauben. Der Benutzer will mathematisch erzwungene Ketten.",
+          "correction": "Jede Regel wird mit einer WARUM-Sektion versehen, die erklärt, warum Umgehung unmöglich ist. Logische Abhängigkeiten werden explizit gemacht.",
+          "next": "Schreibe GEMINI_V5_ENFORCED.md"
+        },
+        "output_plan": [
+          "Write new ruleset"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 0.95,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "WRITING V5"
+        },
+        "project_awareness": {},
+        "window_hash": "d2159e207f921aefcd77ad1f77f67c908be64cdfa735579f4e7d17623b708444",
+        "prev_window_hash": "7273600564130dcabfd6fcb208877dd37d7327342dedb9758ad9ad420eab660c",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:12:14.455595+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 61,
+      "timestamp": "2026-01-13T12:17:15.415405+00:00",
+      "salt": "3e9a9a1310326a1b3d64f26660ebe4cb",
+      "source": "pending_status_auto",
+      "window_hash": "b4724361c0b2a8e718bf8ddf6697804b51a75254b66563bd840323192dc2870f",
+      "status_window": {
+        "step_id": "protocol_v5_complete",
+        "cycle": "3/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:17:15.415405+00:00",
+        "goal": "Protocol V5.0 Delivered",
+        "inputs": {
+          "raw_user_request": "mach weiter",
+          "file_created": "tooling/docs/PROTOCOL_V5_ENFORCED.md"
+        },
+        "actions": [
+          "write_protocol_v5",
+          "notify_user"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "V5.0 Erstellt",
+          "checked_rules": [
+            "All"
+          ]
+        },
+        "reflection_curve": {
+          "delta": "Das alte Protokoll V4.0 hatte 40+ Regeln mit Redundanzen und fehlenden praktischen Erkenntnissen.",
+          "correction": "V5.0 konsolidiert auf 35 Regeln, erklaert warum Abkuerzungen nicht funktionieren, zeigt Logikketten visuell, und integriert BOM-Fix, entry_index und Chat-Display.",
+          "next": "Benutzer muss Datei manuell nach ~/.gemini/GEMINI.md kopieren oder dort verlinken."
+        },
+        "output_plan": [
+          "User kopiert Datei"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "V5.0 COMPLETE"
+        },
+        "project_awareness": {},
+        "window_hash": "b4724361c0b2a8e718bf8ddf6697804b51a75254b66563bd840323192dc2870f",
+        "prev_window_hash": "d2159e207f921aefcd77ad1f77f67c908be64cdfa735579f4e7d17623b708444",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:17:15.415405+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 62,
+      "timestamp": "2026-01-13T12:19:58.075625+00:00",
+      "salt": "576603711af6ac90a9594e803e970757",
+      "source": "pending_status_auto",
+      "window_hash": "74600735dc0e0f3f4882f267897fd94ce3b1defdade9fefbe976bddbf35c4296",
+      "status_window": {
+        "step_id": "define_workflows",
+        "cycle": "4/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:19:58.075625+00:00",
+        "goal": "Define Workflows for V5.0",
+        "inputs": {
+          "raw_user_request": "okay ist gespeichert jetzt sollten wir nch die workflow definieren",
+          "existing_workflows": [
+            "alwais",
+            "evoki_verify",
+            "startup"
+          ]
+        },
+        "actions": [
+          "list_existing",
+          "update_workflows"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Workflow Integration"
+        },
+        "reflection_curve": {
+          "delta": "V5.0 Protokoll gespeichert. Workflows muessen nun angepasst werden, um das neue Protokoll zu nutzen.",
+          "correction": "Erstelle/update Workflows fuer: Startup, Verify, Chain-Repair, Quiz.",
+          "next": "Lies vorhandene Workflows und aktualisiere sie."
+        },
+        "output_plan": [
+          "Read existing",
+          "Update/Create"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "WORKFLOWS"
+        },
+        "project_awareness": {},
+        "window_hash": "74600735dc0e0f3f4882f267897fd94ce3b1defdade9fefbe976bddbf35c4296",
+        "prev_window_hash": "b4724361c0b2a8e718bf8ddf6697804b51a75254b66563bd840323192dc2870f",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:19:58.075625+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 63,
+      "timestamp": "2026-01-13T12:21:45.362679+00:00",
+      "salt": "d31dafcf3f46dbf5d7e1900d1bb2effd",
+      "source": "pending_status_auto",
+      "window_hash": "624eeb9a95d28c71b9a328c3371e528325ac5fd8ef3fc8d8850de27da31d304e",
+      "status_window": {
+        "step_id": "workflows_complete",
+        "cycle": "5/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:21:45.362679+00:00",
+        "goal": "Workflows Created for V5.0",
+        "inputs": {
+          "raw_user_request": "okay ist gespeichert jetzt sollten wir nch die workflow definieren",
+          "workflows_created": [
+            "startup.md",
+            "evoki_verify.md",
+            "evoki_repair.md",
+            "quiz.md"
+          ]
+        },
+        "actions": [
+          "create_startup",
+          "update_verify",
+          "create_repair",
+          "create_quiz"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "4 Workflows erstellt/aktualisiert"
+        },
+        "reflection_curve": {
+          "delta": "Es gab nur einen veralteten evoki_verify Workflow. Die anderen fehlten oder waren nicht V5.0-konform.",
+          "correction": "Erstellt: /startup, /evoki_verify (aktualisiert), /evoki_repair, /quiz. Alle mit turbo-Annotationen fuer Auto-Run.",
+          "next": "User kann Workflows via /startup, /evoki_verify, /evoki_repair, /quiz aufrufen."
+        },
+        "output_plan": [
+          "User testet Workflows"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "WORKFLOWS COMPLETE"
+        },
+        "project_awareness": {},
+        "window_hash": "624eeb9a95d28c71b9a328c3371e528325ac5fd8ef3fc8d8850de27da31d304e",
+        "prev_window_hash": "74600735dc0e0f3f4882f267897fd94ce3b1defdade9fefbe976bddbf35c4296",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:21:45.362679+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 64,
+      "timestamp": "2026-01-13T12:25:41.408033+00:00",
+      "salt": "4d930ca6b2c7fed4fd5b19ac1897574e",
+      "source": "pending_status_auto",
+      "window_hash": "2fb98e59367ccedac5884b5f9d77a8d80ee08aeb6c87e92bcecdbe4e78bdeb86",
+      "status_window": {
+        "step_id": "global_workflows_synced",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:25:41.408033+00:00",
+        "goal": "Sync Workflows to Global Directory",
+        "inputs": {
+          "raw_user_request": "die müssen auch hier stehehn C:\\Users\\nicom\\.gemini\\antigravity\\global_workflows",
+          "target_dir": "C:\\Users\\nicom\\.gemini\\antigravity\\global_workflows"
+        },
+        "actions": [
+          "copy_startup",
+          "copy_alwais",
+          "copy_verify",
+          "copy_repair",
+          "copy_quiz"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "File Sync"
+        },
+        "reflection_curve": {
+          "delta": "Workflows existierten nur im Workspace (.agent/workflows), nicht global.",
+          "correction": "Alle 5 Workflows nach global_workflows kopiert: startup, alwais, evoki_verify, evoki_repair, quiz.",
+          "next": "User kann Workflows global nutzen."
+        },
+        "output_plan": [
+          "Confirm sync"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "GLOBAL SYNC DONE"
+        },
+        "project_awareness": {},
+        "window_hash": "2fb98e59367ccedac5884b5f9d77a8d80ee08aeb6c87e92bcecdbe4e78bdeb86",
+        "prev_window_hash": "624eeb9a95d28c71b9a328c3371e528325ac5fd8ef3fc8d8850de27da31d304e",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:25:41.408033+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 65,
+      "timestamp": "2026-01-13T12:31:04.530660+00:00",
+      "salt": "6fdc55fcc0af8c641202d0044ca06969",
+      "source": "pending_status_auto",
+      "window_hash": "90640421c09fb0362d7f12623c654a747a02fb00d8311b07f194af0fe0d9d873",
+      "status_window": {
+        "step_id": "cleanup_old_workflows",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:31:04.530660+00:00",
+        "goal": "Remove Old Global Workflows",
+        "inputs": {
+          "raw_user_request": "okay jetzt noch die alten workflowa sentfernene",
+          "files_to_remove": [
+            "REGELWERK_S0_S15.json",
+            "S2_ENFORCEMENT.md",
+            "startup.md.backup"
+          ]
+        },
+        "actions": [
+          "remove_old_files"
+        ],
+        "risk": [
+          "File deletion"
+        ],
+        "assumptions": [
+          "User approves deletion"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Cleanup"
+        },
+        "reflection_curve": {
+          "delta": "Global Workflows enthielten veraltete Dateien aus V4.0 und frueher.",
+          "correction": "Entferne REGELWERK_S0_S15.json, S2_ENFORCEMENT.md, startup.md.backup.",
+          "next": "Bestaetigung abwarten."
+        },
+        "output_plan": [
+          "Confirm deletion"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 0.9,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "YELLOW",
+          "notes": "AWAITING APPROVAL"
+        },
+        "project_awareness": {},
+        "window_hash": "90640421c09fb0362d7f12623c654a747a02fb00d8311b07f194af0fe0d9d873",
+        "prev_window_hash": "2fb98e59367ccedac5884b5f9d77a8d80ee08aeb6c87e92bcecdbe4e78bdeb86",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:31:04.530660+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 66,
+      "timestamp": "2026-01-13T12:36:55.878928+00:00",
+      "salt": "3ae2b021d34fd7ed75000497de1440df",
+      "source": "pending_status_auto",
+      "window_hash": "2f00add647efb69f274fb6f01d92e6c1905d554e56745e2e996cfdb55d58cf64",
+      "status_window": {
+        "step_id": "deep_system_analysis",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:36:55.878928+00:00",
+        "goal": "Deep System Analysis of Evoki V3.0",
+        "inputs": {
+          "raw_user_request": "okay jetzt nochmal ne tiefenanalyse vondem kompletten systhem Evoki V3.0 APK-Lokalhost-Google Cloude gehe den kompletten pfasd und alle unterpfade durch und schau ob das alles soweit seine richtigkeit hat und alles aktuell ist",
+          "scope": "Full directory tree analysis"
+        },
+        "actions": [
+          "list_all_dirs",
+          "analyze_structure",
+          "check_consistency"
+        ],
+        "risk": [
+          "Large scope"
+        ],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "System Audit"
+        },
+        "reflection_curve": {
+          "delta": "System wurde ueber mehrere Sessions entwickelt. Moeglicherweise existieren veraltete oder inkonsistente Dateien.",
+          "correction": "Systematische Durchsuchung aller Verzeichnisse, Pruefung auf Aktualitaet und Konsistenz.",
+          "next": "Erstelle Audit-Report."
+        },
+        "output_plan": [
+          "Explore dirs",
+          "Analyze",
+          "Report"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 0.9,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "DEEP ANALYSIS"
+        },
+        "project_awareness": {},
+        "window_hash": "2f00add647efb69f274fb6f01d92e6c1905d554e56745e2e996cfdb55d58cf64",
+        "prev_window_hash": "90640421c09fb0362d7f12623c654a747a02fb00d8311b07f194af0fe0d9d873",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:36:55.878928+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 67,
+      "timestamp": "2026-01-13T12:40:21.813996+00:00",
+      "salt": "18c0147c269280e0e8b7afcbfb4e1dfe",
+      "source": "pending_status_auto",
+      "window_hash": "9803b7f291d70dc9fe7f9b2d1da2c614e5b48dc76e7c10aeeb5460b949ebc432",
+      "status_window": {
+        "step_id": "cleanup_and_verify",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:40:21.813996+00:00",
+        "goal": "Verify and Cleanup Evoki V3.0",
+        "inputs": {
+          "raw_user_request": "nochmal alles gegenpruefen und schaun ob das draft z.b. alles eingehalten wird und dann go",
+          "verification": "All 15 required fields present and correct"
+        },
+        "actions": [
+          "verify_schema",
+          "cleanup_outdated"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Verification passed"
+        },
+        "reflection_curve": {
+          "delta": "Schema-Pruefung durchgefuehrt: pending_status.json entspricht vollstaendig V5.0 Protokoll.",
+          "correction": "Alle 15 Pflichtfelder korrekt. Cleanup von 5 veralteten Dateien wird ausgefuehrt.",
+          "next": "System ist V5.0-konform."
+        },
+        "output_plan": [
+          "Cleanup",
+          "Confirm"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "V5.0 COMPLIANT"
+        },
+        "project_awareness": {},
+        "window_hash": "9803b7f291d70dc9fe7f9b2d1da2c614e5b48dc76e7c10aeeb5460b949ebc432",
+        "prev_window_hash": "2f00add647efb69f274fb6f01d92e6c1905d554e56745e2e996cfdb55d58cf64",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:40:21.813996+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 68,
+      "timestamp": "2026-01-13T12:40:22.179422+00:00",
+      "salt": "e141577e30ff704bd2fe585a121ecfb5",
+      "source": "pending_status_auto",
+      "window_hash": "98528b1bec601ed84a310aa6b9a7b1f3afc78d0c6d6294bf98f577239b7b3913",
+      "status_window": {
+        "step_id": "cleanup_and_verify",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:40:22.179422+00:00",
+        "goal": "Verify and Cleanup Evoki V3.0",
+        "inputs": {
+          "raw_user_request": "nochmal alles gegenpruefen und schaun ob das draft z.b. alles eingehalten wird und dann go",
+          "verification": "All 15 required fields present and correct"
+        },
+        "actions": [
+          "verify_schema",
+          "cleanup_outdated"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Verification passed"
+        },
+        "reflection_curve": {
+          "delta": "Schema-Pruefung durchgefuehrt: pending_status.json entspricht vollstaendig V5.0 Protokoll.",
+          "correction": "Alle 15 Pflichtfelder korrekt. Cleanup von 5 veralteten Dateien wird ausgefuehrt.",
+          "next": "System ist V5.0-konform."
+        },
+        "output_plan": [
+          "Cleanup",
+          "Confirm"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "V5.0 COMPLIANT"
+        },
+        "project_awareness": {},
+        "window_hash": "98528b1bec601ed84a310aa6b9a7b1f3afc78d0c6d6294bf98f577239b7b3913",
+        "prev_window_hash": "9803b7f291d70dc9fe7f9b2d1da2c614e5b48dc76e7c10aeeb5460b949ebc432",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:40:22.179422+00:00"
         }
       },
       "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",

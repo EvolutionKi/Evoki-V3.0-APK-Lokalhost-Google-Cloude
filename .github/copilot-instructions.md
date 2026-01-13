@@ -287,7 +287,7 @@ Code-Kommentare folgen dem **"Nico-Stil"**:
 
 ---
 
-## 🛡️ Silent Integrity Protocol
+## �️ Silent Integrity Protocol
 
 Das Backend startet automatisch einen **Silent Integrity Daemon** beim Boot:
 - Prüft alle 10 Sekunden die Integrität (configurable in `core/config.py`)
@@ -308,3 +308,49 @@ Wenn du unsicher bist: **Frag den Benutzer** bevor du critical files änderst.
 ---
 
 **Status: BEING. Die Resonanz ist stabil. Go.**
+
+---
+---
+
+# 📝 ADDENDUM: AKTUELLER STAND (2026-01-13)
+
+*Die obige Zielstruktur bleibt bestehen. Unten der aktuelle Implementierungsstand.*
+
+## Zielstruktur vs Aktuelle Struktur
+
+| Komponente | Ziel (oben beschrieben) | Aktuell (V5.0) | Status |
+|------------|------------------------|----------------|--------|
+| **Core-Logik** | `temple/automation/synapse_logic.py` | `app/temple/automation/synapse_logic.py` | ✅ |
+| **Status Manager** | `temple/automation/status_history_manager.py` | `app/temple/automation/status_history_manager.py` | ✅ |
+| **Watcher Daemon** | `temple/automation/pending_status_watcher.py` | `tooling/scripts/daemons/pending_status_watcher.py` | ⚠️ Verschoben |
+| **MCP Server** | `mcp_server_evoki_v3.py` (root) | `tooling/scripts/servers/mcp_server_evoki_v3.py` | ⚠️ Verschoben |
+| **Chain Repair** | — | `tooling/scripts/cli/repair_chain.py` | 🆕 Neu |
+| **Chat Display** | — | `tooling/scripts/ui/chat_display_template.py` | 🆕 Neu |
+| **Status History** | `data/synapse/status_window_history.json` | `tooling/data/synapse/status/status_window_history.json` | ⚠️ Verschoben |
+| **Pending Status** | `data/synapse/pending_status.json` | `tooling/data/synapse/status/pending_status.json` | ⚠️ Verschoben |
+| **Watcher Log** | `data/synapse/pending_watcher.log` | `tooling/data/synapse/logs/pending_watcher.log` | ⚠️ Verschoben |
+| **Deep Earth** | `deep_earth/layers/` | `app/deep_earth/layers/` | ✅ |
+| **Frontend** | `interface/` | `app/interface/` | ✅ |
+| **Backend** | `temple/` | `app/temple/` | ✅ |
+
+**Legende:**
+- ✅ = Entspricht Ziel (oder funktional äquivalent)
+- ⚠️ = Abweichung vom Ziel (aber funktioniert)
+- 🆕 = Neu hinzugefügt (nicht im Original-Ziel)
+
+## S2 Protocol V5.0
+
+Siehe `tooling/docs/PROTOCOL_V5_ENFORCED.md` für das aktuelle Regel-System.
+
+## Agent Workflows
+
+| Command | Datei | Funktion |
+|---------|-------|----------|
+| `/startup` | `.agent/workflows/startup.md` | Session-Start Verifizierung |
+| `/evoki_verify` | `.agent/workflows/evoki_verify.md` | Schnelle Chain-Prüfung |
+| `/evoki_repair` | `.agent/workflows/evoki_repair.md` | Chain-Reparatur |
+| `/quiz` | `.agent/workflows/quiz.md` | Wissens-Quiz |
+
+---
+
+*Zuletzt aktualisiert: 2026-01-13 13:56 UTC*

@@ -1,0 +1,462 @@
+{"timestamp": "2026-01-13T07:49:28.902895+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:49:29.104614+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:49:29.301550+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chronos Check Failed: Timestamp too old/future (diff=307.277786s)\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T07:51:32.246565+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:51:32.492974+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:51:33.856756+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T07:54:31.110866+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:54:31.311770+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:54:31.501612+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T07:55:14.174937+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:55:14.376025+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:55:14.558393+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T07:55:46.897792+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:55:47.098725+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:55:47.294818+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T07:56:15.081005+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:56:15.282763+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:56:15.468010+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T07:56:42.094975+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:56:42.297558+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:56:42.483665+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T07:57:03.338951+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:57:03.556194+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:57:03.765567+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T07:57:32.916955+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:57:33.117582+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:57:33.287654+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T07:57:53.919008+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:57:54.119988+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:57:54.291130+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T07:58:12.080430+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:58:12.281207+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:58:12.439422+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T07:59:26.893756+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:59:27.095312+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:59:27.259166+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T07:59:46.734102+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T07:59:46.937244+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T07:59:47.112627+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:00:21.421415+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:00:21.622368+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:00:21.812696+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:01:02.105952+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:01:02.316180+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:01:02.529240+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:01:59.233967+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:01:59.434759+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:01:59.600002+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:02:36.757079+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:02:36.958046+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:02:37.148290+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:03:02.885418+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:03:03.086175+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:03:03.268506+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:03:30.886489+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:03:31.087191+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:03:31.253269+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:03:51.651486+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:03:51.852717+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:03:52.016054+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:04:37.317148+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:04:37.518001+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:04:37.718291+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:04:59.772931+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:05:00.013199+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:05:00.354324+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:05:28.032765+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:05:28.234629+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:05:28.420777+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:05:52.727548+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:05:52.928915+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:05:53.100561+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:06:15.113301+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:06:15.315182+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:06:15.489332+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:06:56.501407+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:06:56.702823+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:06:56.874240+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:06:56.874936+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:06:57.075804+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:06:57.246084+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:07:30.442229+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:07:30.643092+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:07:30.861541+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:08:07.993628+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:08:08.194888+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:08:08.382700+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:08:29.331324+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:08:29.532056+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:08:29.700164+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:08:50.153603+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:08:50.354252+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:08:50.547092+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:09:14.321981+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:09:14.522954+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:09:14.705920+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:09:42.721073+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:09:42.922378+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:09:43.109489+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:10:06.271991+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:10:06.472553+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:10:06.647761+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:10:26.546000+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:10:26.746848+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:10:26.920555+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:11:07.252001+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:11:07.456308+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:11:07.673938+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:11:53.872800+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:11:54.073674+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:11:54.243167+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:13:57.952293+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:13:58.158018+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:13:58.379763+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:14:34.500706+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:14:34.701640+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:14:34.892210+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:15:10.657656+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:15:10.865083+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:15:11.129773+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:16:14.308588+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:16:14.509209+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:16:14.809015+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:16:40.320092+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:16:40.521068+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:16:40.718038+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:17:06.849122+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:17:07.050166+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:17:07.219556+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:17:29.820851+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:17:30.021769+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:17:30.182176+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:17:50.466988+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:17:50.668066+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:17:50.827541+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:18:20.840962+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:18:21.042102+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:18:21.260818+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: 1f0c429ac94b0da562418079d9e4696893c192fdccd57d11f8c303e0e0bd3692\n      Got:                       cc1465349dd0e4d96c5fdd19bd3702523bfe0d8d63f9f39f470ebe3c298c843b\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:21:32.341806+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:21:32.542739+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:21:32.815291+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T08:24:05.685916+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:24:05.886560+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:24:06.078471+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: ea051e382cff84a42892b447db379506c61b286baa6badae58386ca33ce32534\n      Got:                       None\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:25:13.558084+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:25:13.759295+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:25:14.029194+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Chain Break Detected!\n      Expected prev_window_hash: ea051e382cff84a42892b447db379506c61b286baa6badae58386ca33ce32534\n      Got:                       None\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T08:27:13.780212+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:27:13.981490+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:27:14.213764+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\nError: name 'save_time' is not defined\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 48, in main\n    success = manager.add_status_window(status_window, source=args.source)\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\synapse_logic.py\", line 307, in add_status_window\n    \"timestamp\": save_time,\n                 ^^^^^^^^^\nNameError: name 'save"}
+{"timestamp": "2026-01-13T08:27:14.214428+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:27:14.415322+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:27:14.599514+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\nError: name 'save_time' is not defined\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 48, in main\n    success = manager.add_status_window(status_window, source=args.source)\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\synapse_logic.py\", line 307, in add_status_window\n    \"timestamp\": save_time,\n                 ^^^^^^^^^\nNameError: name 'save"}
+{"timestamp": "2026-01-13T08:46:05.239149+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:46:05.440282+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:46:05.637594+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\nError: name 'save_time' is not defined\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 48, in main\n    success = manager.add_status_window(status_window, source=args.source)\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\synapse_logic.py\", line 307, in add_status_window\n    \"timestamp\": save_time,\n                 ^^^^^^^^^\nNameError: name 'save"}
+{"timestamp": "2026-01-13T08:51:02.468856+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:51:02.670360+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:51:02.842859+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T08:59:12.829934+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T08:59:13.031033+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T08:59:13.190642+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T09:01:02.966620+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T09:01:03.167255+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T09:01:03.343114+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T09:03:38.654497+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T09:03:38.855649+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T09:03:39.035477+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T09:03:57.210130+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T09:03:57.410794+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T09:03:57.602912+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T09:06:29.621650+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T09:06:29.828504+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T09:06:30.049283+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T09:47:38.605761+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T09:47:38.806746+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T09:47:38.959750+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T09:50:50.936155+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T09:50:51.137157+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T09:50:51.138430+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T09:50:51.445899+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T09:50:51.492208+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T09:53:33.987695+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T09:53:33.987817+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T09:53:34.188371+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T09:53:34.189373+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T09:53:34.381530+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T09:53:34.383381+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T10:03:58.891898+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T10:03:59.093245+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T10:03:59.094506+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T10:03:59.287149+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T10:03:59.290595+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Error saving history: [WinError 5] Zugriff verweigert: 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\tmpwm_x5v6x.tmp' -> 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\status_window_history.json'\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T10:15:39.354450+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+
+{"timestamp": "2026-01-13T10:15:39.559399+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T10:15:39.558707+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T10:15:40.187146+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T10:15:40.668123+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T10:19:24.606113+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T10:19:24.606902+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T10:19:24.807254+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T10:19:24.807766+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T10:19:24.992192+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T10:19:24.993343+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T10:38:34.307557+00:00", "event": "file_modified", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T10:38:34.307823+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T10:38:34.508360+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T10:38:34.665912+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T10:38:34.667385+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Error saving history: [WinError 5] Zugriff verweigert: 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\tmpot3iurtm.tmp' -> 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\status_window_history.json'\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T11:04:57.885648+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:04:58.086616+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:04:58.245138+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Missing Semantic Field: assumptions\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T11:05:30.758197+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:05:30.958978+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:05:31.119193+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Missing Semantic Field: assumptions\n[ERROR] S2 Protocol Violation: Block rejected.\nDEBUG: add_status_window returned: False\n"}
+{"timestamp": "2026-01-13T11:06:06.320766+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:06:06.521688+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:06:06.676748+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:06:25.298674+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:06:25.499406+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:06:25.661400+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:06:45.808071+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:06:46.009012+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:06:46.171924+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:07:16.766254+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:07:16.967114+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:07:17.138122+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:07:42.795135+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:07:42.996508+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:07:43.157662+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:08:10.467945+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:08:10.668723+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:08:10.841694+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:09:16.369502+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:09:16.570978+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:09:16.737524+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:09:37.737979+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:09:37.938518+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:09:38.111467+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:10:03.213849+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:10:03.414637+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:10:03.581038+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:10:32.516795+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:10:32.717667+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:10:32.883278+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:10:54.627458+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:10:54.828772+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:10:54.994861+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:11:24.358144+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:11:24.558931+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:11:24.724682+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:11:43.929812+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:11:44.130764+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:11:44.295661+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:12:11.347081+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:12:11.547850+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:12:11.718731+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:15:22.239827+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:15:22.441064+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:15:22.604346+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:16:31.924977+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:16:32.126948+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:16:32.302127+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:18:09.717754+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:18:09.918879+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:18:10.158467+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:19:32.432805+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:19:32.633679+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:19:32.829314+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:19:51.314022+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:19:51.514663+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:19:51.684574+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:20:04.847057+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:20:05.047984+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:20:05.214847+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:20:35.892896+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:20:36.093722+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:20:36.255741+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:21:46.914565+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:21:47.115671+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:21:47.382827+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:22:40.015598+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:22:40.216605+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:22:40.434055+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:22:46.555386+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:22:46.755990+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:22:46.928410+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:24:20.184778+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:24:20.385692+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:24:20.558905+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:24:33.050627+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:24:33.251382+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:24:33.420507+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:26:17.381144+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:26:17.581905+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:26:17.740695+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:26:24.435448+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:26:24.636026+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:26:24.810461+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:29:13.910274+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:29:14.111784+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:29:14.310319+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:29:42.577299+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:29:42.778172+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:29:43.005606+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:30:26.081346+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:30:26.282607+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:30:26.452495+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:31:15.199019+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:31:15.400042+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:31:15.565481+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:31:22.221463+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:31:22.422751+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:31:22.587047+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:32:15.169950+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:32:15.370463+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:32:15.536036+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:33:36.926213+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:33:37.127672+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:33:37.300496+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:34:58.803719+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:34:59.005059+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:34:59.169405+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:35:54.412247+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:35:54.613286+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:35:54.795121+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:36:53.489430+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:36:53.690089+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:36:53.861134+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:37:20.488903+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:37:20.690063+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:37:20.876763+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:37:54.729430+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:37:54.930183+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:37:55.112410+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:38:21.778185+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:38:21.979674+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:38:22.193370+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:38:47.172317+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:38:47.372883+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:38:47.556959+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:39:17.725213+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:39:17.925849+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:39:18.116446+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:39:40.349515+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:39:40.550926+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:39:40.727689+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:40:06.606439+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:40:06.807457+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:40:06.985896+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:40:30.704998+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:40:30.906488+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:40:31.075243+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:42:22.610349+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:42:22.811110+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:42:22.986703+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:42:22.987241+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:42:23.188215+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:42:23.376721+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:45:14.183456+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:45:14.384649+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:45:14.547856+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:45:51.418804+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:45:51.619522+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:45:51.776839+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:46:41.246945+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:46:41.447746+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:46:41.627058+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:46:41.627587+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:46:41.828054+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:46:42.000273+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:48:05.956365+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:48:06.157248+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:48:06.311148+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:48:06.311729+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:48:06.512906+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:48:06.717893+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:49:10.268187+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:49:10.468823+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:49:10.628636+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:49:46.208716+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:49:46.409678+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:49:46.603367+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T11:50:29.703755+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:50:29.904432+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:50:30.057491+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:50:30.058000+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:50:30.258475+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:50:30.446541+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:51:13.000690+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:51:13.201464+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:51:13.377626+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:53:33.083488+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:53:33.284378+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:53:33.437976+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:53:33.438496+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:53:33.638993+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:53:33.812852+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:54:53.864994+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:54:54.065434+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:54:54.219491+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:54:54.220105+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:54:54.421096+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:54:54.651159+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:56:02.120170+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:56:02.339032+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:56:02.545333+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:56:36.260947+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:56:36.461878+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:56:36.610575+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:56:36.611071+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:56:36.811863+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:56:36.999123+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:57:05.457109+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:57:05.657850+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:57:05.807947+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T11:57:05.808476+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T11:57:06.008987+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T11:57:06.233879+00:00", "result": "FAIL", "error": "Error: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\nTraceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\app\\temple\\automation\\status_history_manager.py\", line 42, in main\n    data = json.load(f)\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 293, in load\n    return loads(fp.read(),\n        cls=cls, object_hook=object_hook,\n        parse_float=parse_float, parse_int=parse_int,\n        parse_constant=parse_constant, object_pairs_hook=ob"}
+{"timestamp": "2026-01-13T12:01:26.640696+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:01:26.842553+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:01:27.009969+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:03:46.479840+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:03:46.681069+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:03:46.848701+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:05:58.083484+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:05:58.284518+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:05:58.442688+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:08:10.146097+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:08:10.347636+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:08:11.030275+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:10:06.152984+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:10:06.353544+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:10:06.581964+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:12:14.118366+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:12:14.318974+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:12:14.480854+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:17:15.077191+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:17:15.277824+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:17:15.443365+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:19:57.741543+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:19:57.942009+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:19:58.100884+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:21:45.026162+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:21:45.226864+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:21:45.389885+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:25:41.026105+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:25:41.227345+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:25:41.435516+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:31:04.193822+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:31:04.394466+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:31:04.557301+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:36:55.538589+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:36:55.739835+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:36:55.907530+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:40:21.467202+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:40:21.668198+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:40:21.841896+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T12:40:21.842400+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T12:40:22.043092+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T12:40:22.205658+00:00", "result": "SUCCESS"}
