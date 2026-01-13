@@ -351,6 +351,28 @@ Siehe `tooling/docs/PROTOCOL_V5_ENFORCED.md` für das aktuelle Regel-System.
 | `/evoki_repair` | `.agent/workflows/evoki_repair.md` | Chain-Reparatur |
 | `/quiz` | `.agent/workflows/quiz.md` | Wissens-Quiz |
 
+## 📂 Directory Structure Policy
+
+**Datei:** `tooling/docs/DIRECTORY_STRUCTURE_POLICY.md`
+
+Regeln für neue Dateien:
+1. **Keine gemischten Verzeichnisse** - nur Ordner ODER nur Dateien
+2. **Trennung App/Tools** - `app/` = Core, `tooling/` = Scripts
+3. **Scripts in Unterordner** - cli/, daemons/, helpers/, ui/, servers/
+4. **copilot-instructions.md aktuell halten** - bei jeder Strukturänderung
+
+| Dateityp | Zielordner |
+|----------|------------|
+| `*.db` | `tooling/data/db/` |
+| `*.log` | `tooling/data/synapse/logs/` |
+| `*.json` (Status) | `tooling/data/synapse/status/` |
+| `*.md` (Docs) | `tooling/docs/` |
+| CLI-Scripts | `tooling/scripts/cli/` |
+| Daemons | `tooling/scripts/daemons/` |
+| Helper-Scripts | `tooling/scripts/helpers/` |
+| Server-Scripts | `tooling/scripts/servers/` |
+| UI-Templates | `tooling/scripts/ui/` |
+
 ---
 
-*Zuletzt aktualisiert: 2026-01-13 13:56 UTC*
+*Zuletzt aktualisiert: 2026-01-13 13:59 UTC*

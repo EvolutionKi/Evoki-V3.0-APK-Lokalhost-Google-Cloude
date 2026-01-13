@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T12:44:30.322160+00:00",
-  "total_entries": 69,
+  "created_at": "2026-01-13T13:37:03.637112+00:00",
+  "total_entries": 87,
   "entries": [
     {
       "timestamp": "2026-01-13T10:15:07.379671+00:00",
@@ -4284,6 +4284,1151 @@
           "target": "status_history_manager.py",
           "enabled": true,
           "timestamp": "2026-01-13T12:44:30.321978+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 70,
+      "timestamp": "2026-01-13T12:47:30.865505+00:00",
+      "salt": "d4dc34ba784f0b3fc853755ca55b5ef2",
+      "source": "pending_status_auto",
+      "window_hash": "8864e5ea96a3dc2af6a53ac0b3487a6a2fc58e814fd4a8271373ea72f730c636",
+      "status_window": {
+        "step_id": "plan_code_separation",
+        "cycle": "4/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:47:30.865505+00:00",
+        "goal": "Plan Code Separation (Tools vs App)",
+        "inputs": {
+          "raw_user_request": "sicherstellen dass tools skripte backend etc getrennt bleibt von app code...",
+          "analysis": "Found mixed tool/core scripts in app/temple/automation/"
+        },
+        "actions": [
+          "analyze_structure",
+          "plan_reorganization"
+        ],
+        "risk": [
+          "Import path changes may break dependencies"
+        ],
+        "assumptions": [
+          "User approves reorganization"
+        ],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Architecture Improvement"
+        },
+        "reflection_curve": {
+          "delta": "app/temple/automation/ enthaelt sowohl Core-Logik (synapse_logic.py) als auch Tool-Scripts (pending_status_watcher.py).",
+          "correction": "Vorschlag: Neue Unterordner in tooling/scripts/ (cli/, daemons/, helpers/, ui/, servers/) fuer klare Trennung.",
+          "next": "User bestaetigt, dann Verschiebung und Import-Updates."
+        },
+        "output_plan": [
+          "Wait for approval",
+          "Execute reorganization"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 0.9,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "YELLOW",
+          "notes": "AWAITING APPROVAL"
+        },
+        "project_awareness": {},
+        "window_hash": "8864e5ea96a3dc2af6a53ac0b3487a6a2fc58e814fd4a8271373ea72f730c636",
+        "prev_window_hash": "64f141ae5304a49a69156617bfa6ea33cfd84a9e0528073945ab819bcc76c754",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:47:30.865505+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 71,
+      "timestamp": "2026-01-13T12:51:27.819653+00:00",
+      "salt": "e29544123d6b46ce70aa9f9ae8458323",
+      "source": "pending_status_auto",
+      "window_hash": "b32c7601deb100c919978b61234035934b8666d4a930decfc054b10294028905",
+      "status_window": {
+        "step_id": "script_reorganization_complete",
+        "cycle": "5/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:51:27.819653+00:00",
+        "goal": "Complete Script Reorganization",
+        "inputs": {
+          "raw_user_request": "ja bitte und immer auch entsprechend pfade im skript aktuell halten falls notwendig",
+          "changes": [
+            "Created cli/, daemons/, helpers/, ui/, servers/",
+            "Moved all scripts",
+            "Updated docs"
+          ]
+        },
+        "actions": [
+          "create_dirs",
+          "move_scripts",
+          "update_docs",
+          "update_paths"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Reorganization Complete"
+        },
+        "reflection_curve": {
+          "delta": "Scripts waren gemischt in tooling/scripts/ und app/temple/automation/.",
+          "correction": "Neue Struktur: cli/, daemons/, helpers/, ui/, servers/ in tooling/scripts/. Dokumentation aktualisiert. DIRECTORY_STRUCTURE_POLICY.md V2.0 erstellt.",
+          "next": "Alte Duplikate in app/temple/automation/ entfernen (optional)."
+        },
+        "output_plan": [
+          "Verify structure",
+          "Remove duplicates if needed"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "REORGANIZED"
+        },
+        "project_awareness": {},
+        "window_hash": "b32c7601deb100c919978b61234035934b8666d4a930decfc054b10294028905",
+        "prev_window_hash": "8864e5ea96a3dc2af6a53ac0b3487a6a2fc58e814fd4a8271373ea72f730c636",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:51:27.819653+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 72,
+      "timestamp": "2026-01-13T12:53:14.850248+00:00",
+      "salt": "669326e74ab487a8bcc7db345d37c006",
+      "source": "pending_status_auto",
+      "window_hash": "1a6bdcc61f22ae863ef74ccb076a8a83cd6b71234e177ba594d222f318cdba60",
+      "status_window": {
+        "step_id": "copilot_instructions_updated",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:53:14.850248+00:00",
+        "goal": "Update copilot-instructions.md",
+        "inputs": {
+          "raw_user_request": "fuege der regel noch den 4. punkt hinzu und zwar die datei aktuell zu halten...",
+          "file": ".github/copilot-instructions.md"
+        },
+        "actions": [
+          "add_rule_4",
+          "update_copilot_instructions"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Self-referential update"
+        },
+        "reflection_curve": {
+          "delta": "copilot-instructions.md war veraltet (alte Pfade, keine V5.0 Struktur).",
+          "correction": "Regel 4 zur Policy hinzugefuegt: copilot-instructions.md aktuell halten. Datei selbst komplett aktualisiert mit neuer Struktur.",
+          "next": "System ist vollstaendig dokumentiert."
+        },
+        "output_plan": [
+          "Verify changes"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "DOCUMENTATION UPDATED"
+        },
+        "project_awareness": {},
+        "window_hash": "1a6bdcc61f22ae863ef74ccb076a8a83cd6b71234e177ba594d222f318cdba60",
+        "prev_window_hash": "b32c7601deb100c919978b61234035934b8666d4a930decfc054b10294028905",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:53:14.850248+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 73,
+      "timestamp": "2026-01-13T12:56:26.916841+00:00",
+      "salt": "781753b132427f09e96b7cc0022c49ce",
+      "source": "pending_status_auto",
+      "window_hash": "a81b8de5f04f03775c7866c0438f2386aa89befb917a2cccc129129ab48e9f9d",
+      "status_window": {
+        "step_id": "add_timestamps",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T12:56:26.916841+00:00",
+        "goal": "Add timestamps to documentation",
+        "inputs": {
+          "raw_user_request": "fuege am besten immer die uhrzeit hinzu damit es genauer wird bei solchen infos",
+          "change": "Added time to last updated field"
+        },
+        "actions": [
+          "update_timestamp"
+        ],
+        "risk": [],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Minor update"
+        },
+        "reflection_curve": {
+          "delta": "Zeitstempel enthielt nur Datum, keine Uhrzeit.",
+          "correction": "Uhrzeit hinzugefuegt: 2026-01-13 13:55 UTC",
+          "next": "Dokumentation ist praeziser."
+        },
+        "output_plan": [
+          "Done"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "TIMESTAMP ADDED"
+        },
+        "project_awareness": {},
+        "window_hash": "a81b8de5f04f03775c7866c0438f2386aa89befb917a2cccc129129ab48e9f9d",
+        "prev_window_hash": "1a6bdcc61f22ae863ef74ccb076a8a83cd6b71234e177ba594d222f318cdba60",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T12:56:26.916841+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 74,
+      "timestamp": "2026-01-13T13:06:03.349735+00:00",
+      "salt": "995563183760737ea790e6f5a691f237",
+      "source": "pending_status_auto",
+      "window_hash": "3c192f16f5b33d0ecbd380b342f88e3e42a50c8f44e3f4fcf32408f9661778f1",
+      "status_window": {
+        "step_id": "0",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:06:03.349735+00:00",
+        "goal": "Session greeting and system health verification",
+        "inputs": {
+          "raw_user_request": "hey"
+        },
+        "actions": [
+          "Executed /startup workflow",
+          "Verified persistence (73 entries)",
+          "Verified chain integrity",
+          "Confirmed watcher active",
+          "Ready for user requests"
+        ],
+        "risk": [],
+        "assumptions": [
+          "User wants to continue work on Evoki V3.0",
+          "System is healthy and operational"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Standard startup verification per V5.0 protocol"
+        },
+        "reflection_curve": {
+          "delta": "New session started with casual greeting",
+          "correction": "None - all systems operational",
+          "next": "Await user task specification"
+        },
+        "output_plan": [
+          "Display system status",
+          "Wait for user direction",
+          "Maintain V5.0 compliance"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "All systems operational - 73 entries verified"
+        },
+        "project_awareness": {
+          "active_files": [
+            "copilot-instructions.md",
+            "PROTOCOL_V5_ENFORCED.md",
+            ".geminiignore"
+          ],
+          "context": "User has protocol documentation open"
+        },
+        "window_hash": "3c192f16f5b33d0ecbd380b342f88e3e42a50c8f44e3f4fcf32408f9661778f1",
+        "prev_window_hash": "a81b8de5f04f03775c7866c0438f2386aa89befb917a2cccc129129ab48e9f9d",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:06:03.349735+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 75,
+      "timestamp": "2026-01-13T13:07:56.678588+00:00",
+      "salt": "195079cf68a31ab142bba34d278f7fc6",
+      "source": "pending_status_auto",
+      "window_hash": "3fdbde5f7a1ca7dfd30c8ba1e9f40d9e5d74315539fa8f2511424bbbbc93bd14",
+      "status_window": {
+        "step_id": "16",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:07:56.678588+00:00",
+        "goal": "Analyse der Sprachpräferenz und Identifikation fehlender Regeln",
+        "inputs": {
+          "raw_user_request": "analysiere warum du nicht auf deutsch antwortest keine regel dafür da? müssen wir das verbessern?"
+        },
+        "actions": [
+          "Kontext-Analyse durchgeführt",
+          "GEMINI.md auf Sprachregeln geprüft",
+          "PROTOCOL_V5_ENFORCED.md Sprache erkannt (Deutsch)",
+          "Workflow-Dateien geprüft (Deutsch)",
+          "Fehlende Sprachregel identifiziert"
+        ],
+        "risk": [
+          "Inkonsistente Kommunikation ohne explizite Sprachregel",
+          "User Experience leidet bei falscher Sprache"
+        ],
+        "assumptions": [
+          "User bevorzugt Deutsch als Hauptsprache",
+          "Protokoll-Dokumentation ist bewusst auf Deutsch",
+          "Fehlende Regel = Verbesserungsbedarf"
+        ],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Keine explizite Sprachregel in GEMINI.md gefunden - kritische Lücke im Regelwerk"
+        },
+        "reflection_curve": {
+          "delta": "Englische Antwort trotz deutschem Kontext (Protokoll, Workflows)",
+          "correction": "Sprachpräferenz aus Kontext ableiten - künftig Deutsch als Standard",
+          "next": "Explizite Sprachregel zu GEMINI.md hinzufügen"
+        },
+        "output_plan": [
+          "Analyse-Ergebnis präsentieren",
+          "Regelvorschlag ausarbeiten",
+          "GEMINI.md erweitern mit Sprachregel"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 0.85,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "YELLOW",
+          "notes": "Regelwerk-Lücke identifiziert - sofortige Verbesserung empfohlen"
+        },
+        "project_awareness": {
+          "active_files": [
+            "status_window_history.json"
+          ],
+          "context": "User prüft Historie, erkennt Sprachinkonsistenz"
+        },
+        "window_hash": "3fdbde5f7a1ca7dfd30c8ba1e9f40d9e5d74315539fa8f2511424bbbbc93bd14",
+        "prev_window_hash": "3c192f16f5b33d0ecbd380b342f88e3e42a50c8f44e3f4fcf32408f9661778f1",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:07:56.678588+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 76,
+      "timestamp": "2026-01-13T13:09:30.754972+00:00",
+      "salt": "c0c48ee44a4e70bf11abfef516741e16",
+      "source": "pending_status_auto",
+      "window_hash": "99319c021a530611c5c069834f039fc1194e663c6bc92384376f260e34f8c59a",
+      "status_window": {
+        "step_id": "28",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:09:30.754972+00:00",
+        "goal": "Sprach-Protokoll auf Deutsch erzwingen (Thinking & Logging)",
+        "inputs": {
+          "raw_user_request": "und die history status window datei ebenfalls komlett in deutsch"
+        },
+        "actions": [
+          "Sprach-Analyse durchgeführt",
+          "Status Window Felder auf Deutsch übersetzt",
+          "Denkprozess auf Deutsch umgestellt",
+          "Regel-Erweiterung formuliert"
+        ],
+        "risk": [
+          "Missverständnisse bei technischen Fachbegriffen (Denglisch)",
+          "Konsistenzbruch mit alten englischen Logs (akzeptabel)"
+        ],
+        "assumptions": [
+          "User möchte vollständige Immersion in Deutsch",
+          "Code bleibt technisch (Englisch), aber Metadaten/Logs werden Deutsch"
+        ],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Fehlende Sprach-Regel in GEMINI.md korrigiert"
+        },
+        "reflection_curve": {
+          "delta": "System antwortete und loggte auf Englisch (Standard-Default)",
+          "correction": "Explizite Sprach-Direktive: Deutsch ist PFLICHT für Content & Analyse",
+          "next": "Regelwerk (GEMINI.md) aktualisieren"
+        },
+        "output_plan": [
+          "Fehlende Regel bestätigen",
+          "Neue Sprach-Regel für GEMINI.md vorschlagen",
+          "Ab sofort alles auf Deutsch ausführen"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 0.95,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Sprachumstellung erfolgreich initiiert"
+        },
+        "project_awareness": {
+          "active_files": [
+            "status_window_history.json"
+          ],
+          "context": "User reviewt History und fordert Deutsch"
+        },
+        "window_hash": "99319c021a530611c5c069834f039fc1194e663c6bc92384376f260e34f8c59a",
+        "prev_window_hash": "3fdbde5f7a1ca7dfd30c8ba1e9f40d9e5d74315539fa8f2511424bbbbc93bd14",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:09:30.754972+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 77,
+      "timestamp": "2026-01-13T13:09:56.335749+00:00",
+      "salt": "f36855284a65e561bce875ad37724941",
+      "source": "pending_status_auto",
+      "window_hash": "9dbe46cd82c8beee6a1f696d787f4aac502d842b766f9c88c71369ca195d7ff7",
+      "status_window": {
+        "step_id": "31",
+        "cycle": "3/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:09:56.335749+00:00",
+        "goal": "Vollständige Umstellung auf Deutsch (Denken, Ausgabe, System-Logs)",
+        "inputs": {
+          "raw_user_request": "even think in german... und die history status window datei ebenfalls komlett in deutsch"
+        },
+        "actions": [
+          "Sprachmodus auf Deutsch gesetzt (System-weit)",
+          "Status Window V5.0 Protokoll bestätigt",
+          "Log-Einträge auf Deutsch formuliert"
+        ],
+        "risk": [
+          "Keine - entspricht expliziter User-Anforderung"
+        ],
+        "assumptions": [
+          "User möchte, dass auch technische Logs deutsch sind",
+          "Konsistenz ab Schritt 31 sichergestellt"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Befolge Protokoll V5.0 + neue Sprach-Direktive"
+        },
+        "reflection_curve": {
+          "delta": "Bisherige Logs waren teilweise englisch (System-Default).",
+          "correction": "Strikte Anwendung der deutschen Sprache in ALLEN Feldern (außer fixen System-Keys).",
+          "next": "Reaktion auf User bestätigen und weiter im Workflow."
+        },
+        "output_plan": [
+          "Sprachumstellung bestätigen",
+          "Nächste Aufgabe erwarten"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Sprache erfolgreich umgestellt"
+        },
+        "project_awareness": {
+          "active_files": [
+            "GEMINI.md",
+            "status_window_history.json"
+          ],
+          "context": "User erzwingt deutsche Sprache per Protokoll"
+        },
+        "window_hash": "9dbe46cd82c8beee6a1f696d787f4aac502d842b766f9c88c71369ca195d7ff7",
+        "prev_window_hash": "99319c021a530611c5c069834f039fc1194e663c6bc92384376f260e34f8c59a",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:09:56.335749+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 78,
+      "timestamp": "2026-01-13T13:11:23.606240+00:00",
+      "salt": "8f72196438a7a048c0a9eafddaea37af",
+      "source": "pending_status_auto",
+      "window_hash": "95afdb4926b9647c87f44700f0c5e8a251911509a058174e6744e03eea076ed9",
+      "status_window": {
+        "step_id": "35",
+        "cycle": "4/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:11:23.606240+00:00",
+        "goal": "Explizite deutsche Sprachregel in GEMINI.md integrieren",
+        "inputs": {
+          "raw_user_request": "sollte man das anpassen und um eine regel erweitern die besagt dass hjegliche ausgabe in duetsch zu erfolgen hat"
+        },
+        "actions": [
+          "Notwendigkeit der Regel bestätigt (Verhinderung von Default-Englisch)",
+          "Regeltext formuliert",
+          "Versuch des Regeleinbaus in GEMINI.md vorbereitet"
+        ],
+        "risk": [
+          "Schreibzugriff auf GEMINI.md könnte durch gitignore blockiert sein",
+          "Regel könnte mit bestehenden englischen Prompts kollidieren (unwahrscheinlich)"
+        ],
+        "assumptions": [
+          "Explizite Regel überschreibt system-immanente englische Tendenz",
+          "User hat Schreibrechte auf GEMINI.md"
+        ],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Ergänzung des Regelwerks um Sektion G (Sprache)"
+        },
+        "reflection_curve": {
+          "delta": "System agierte ohne Sprach-Zwang.",
+          "correction": "Einführung einer harten Regel: Deutsch als zwingende Standardsprache für alles außer Code.",
+          "next": "Regel in Datei schreiben oder User Text geben."
+        },
+        "output_plan": [
+          "Regel formulieren",
+          "In GEMINI.md einfügen"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Optimierung des Regelwerks"
+        },
+        "project_awareness": {
+          "active_files": [
+            "GEMINI.md"
+          ],
+          "context": "Regelwerk-Anpassung"
+        },
+        "window_hash": "95afdb4926b9647c87f44700f0c5e8a251911509a058174e6744e03eea076ed9",
+        "prev_window_hash": "9dbe46cd82c8beee6a1f696d787f4aac502d842b766f9c88c71369ca195d7ff7",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:11:23.606240+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 79,
+      "timestamp": "2026-01-13T13:15:47.613084+00:00",
+      "salt": "22ff57ea3f3d3ba2fb4f87102d346de2",
+      "source": "pending_status_auto",
+      "window_hash": "641006ce89a13e9b9e9ce453cd12a414ded321876446f55297002eb7cfe09f16",
+      "status_window": {
+        "goal": "Benutzer begrüßen und Systemstatus bestätigen",
+        "inputs": {
+          "raw_user_request": "hey"
+        },
+        "actions": [
+          "validate_system_state",
+          "create_status_window"
+        ],
+        "risk": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Routine greeting"
+        },
+        "reflection_curve": {
+          "delta": "Neuer User-Input initialisiert",
+          "correction": "System in Bereitschaft versetzt",
+          "next": "Auf Benutzer-Anweisung warten"
+        },
+        "output_plan": [
+          "Begrüßung senden",
+          "Status anzeigen"
+        ],
+        "window_type": "planner",
+        "confidence": 1.0,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "System online und bereit"
+        },
+        "system_versions": {},
+        "project_awareness": {
+          "active_files": [],
+          "context": "Initial greeting"
+        },
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "cycle_backend_controlled": true,
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:15:47.613084+00:00",
+        "window_hash": "641006ce89a13e9b9e9ce453cd12a414ded321876446f55297002eb7cfe09f16",
+        "prev_window_hash": "95afdb4926b9647c87f44700f0c5e8a251911509a058174e6744e03eea076ed9",
+        "entry_index": 0,
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:15:47.613084+00:00"
+        },
+        "assumptions": []
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 80,
+      "timestamp": "2026-01-13T13:17:01.466538+00:00",
+      "salt": "e50834953595606122e5867544341844",
+      "source": "pending_status_auto",
+      "window_hash": "d682ac4e0f75718588f0d2acc506d61c073ab0b668e702218bab62b1f48822c7",
+      "status_window": {
+        "step_id": "45",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:17:01.466538+00:00",
+        "goal": "System auf neue Sprachregeln einstellen und nächsten Task klären",
+        "inputs": {
+          "raw_user_request": "perfekt"
+        },
+        "actions": [
+          "Cycle-Reset durchgeführt (1/5)",
+          "Aktive Datei (write_current_status.py) analysiert",
+          "Sprachmodus: Deutsch verifiziert"
+        ],
+        "risk": [],
+        "assumptions": [
+          "Neue Sprachregel in GEMINI.md ist aktiv",
+          "User ist bereit für nächste Schritte"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Alles konform mit V5.0 + Sektion O1"
+        },
+        "reflection_curve": {
+          "delta": "Vorbereitung abgeschlossen, Regeln sind scharf.",
+          "correction": "Keine Korrektur nötig.",
+          "next": "Nächste Aufgabe vom User abwarten oder Datei-Check anbieten."
+        },
+        "output_plan": [
+          "Datei-Check (write_current_status.py)",
+          "Auf User-Input warten"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "System läuft stabil auf Deutsch"
+        },
+        "project_awareness": {
+          "active_files": [
+            "write_current_status.py"
+          ],
+          "context": "Warten auf Instruktionen"
+        },
+        "window_hash": "d682ac4e0f75718588f0d2acc506d61c073ab0b668e702218bab62b1f48822c7",
+        "prev_window_hash": "641006ce89a13e9b9e9ce453cd12a414ded321876446f55297002eb7cfe09f16",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:17:01.466538+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 81,
+      "timestamp": "2026-01-13T13:19:21.527673+00:00",
+      "salt": "38ab5a9edb003c85515ec8086a4775e4",
+      "source": "pending_status_auto",
+      "window_hash": "e102792ff4d43ce0bcf2ab5bbc52aea27a0bc589cc9f2f8769685252de69dc46",
+      "status_window": {
+        "step_id": "50",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:19:21.527673+00:00",
+        "goal": "Erweiterung von write_current_status.py zu CLI-Tool mit Verifikation",
+        "inputs": {
+          "raw_user_request": "mach es sicher gerne vielleicht auch mit auto check on die status fenster history geschrieben worden ist"
+        },
+        "actions": [
+          "Anforderungsanalyse: Sicherheit + CLI + History-Check",
+          "Code-Planung für write_current_status.py erstellt"
+        ],
+        "risk": [
+          "Watcher-Timing (Race Condition beim Check)",
+          "Dateischreibrechte"
+        ],
+        "assumptions": [
+          "User möchte ein robustes Tool zum manuellen Setzen von Status Windows",
+          "Verifikation ist kritisch (S2 Protocol)"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Erfüllt V5.0 Anforderungen an robusteres Tooling"
+        },
+        "reflection_curve": {
+          "delta": "Aktuelles Skript ist statischer Stub.",
+          "correction": "Refactoring zu dynamischem CLI-Tool mit argparser und nachgelagertem History-Check.",
+          "next": "Code implementieren."
+        },
+        "output_plan": [
+          "write_current_status.py umschreiben",
+          "Verifikationslogik (Polling) hinzufügen",
+          "Testlauf durchführen"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Tool-Upgrade geplant"
+        },
+        "project_awareness": {
+          "active_files": [
+            "write_current_status.py"
+          ],
+          "context": "Entwicklung CLI-Tool"
+        },
+        "window_hash": "e102792ff4d43ce0bcf2ab5bbc52aea27a0bc589cc9f2f8769685252de69dc46",
+        "prev_window_hash": "d682ac4e0f75718588f0d2acc506d61c073ab0b668e702218bab62b1f48822c7",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:19:21.527673+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 82,
+      "timestamp": "2026-01-13T13:19:55.425053+00:00",
+      "salt": "faa4a75e208b8c4a63a185422109bad3",
+      "source": "pending_status_auto",
+      "window_hash": "2b6c5b5d89a6e81bb549a41a9a5884155c14f55c39cf435a0d46b2e1a57d1bb7",
+      "status_window": {
+        "step_id": "manual_1768310395",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:19:55.425053+00:00",
+        "goal": "Tool Verification Test",
+        "inputs": {
+          "raw_user_request": "Auto-Test via Antigravity"
+        },
+        "actions": [
+          "Manuelles Status-Update via CLI",
+          "Warten auf Watcher-Persistenz"
+        ],
+        "risk": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Manuelles Tooling"
+        },
+        "reflection_curve": {
+          "delta": "Manueller Trigger ausgelöst",
+          "correction": "None",
+          "next": "Verifikation durchführen"
+        },
+        "output_plan": [
+          "Persistenz bestätigen"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Manuell generiert"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "CLI Execution"
+        },
+        "window_hash": "2b6c5b5d89a6e81bb549a41a9a5884155c14f55c39cf435a0d46b2e1a57d1bb7",
+        "prev_window_hash": "e102792ff4d43ce0bcf2ab5bbc52aea27a0bc589cc9f2f8769685252de69dc46",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:19:55.425053+00:00"
+        },
+        "assumptions": []
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 83,
+      "timestamp": "2026-01-13T13:21:10.802679+00:00",
+      "salt": "2ab744e6074ea4206a3931835562fbf1",
+      "source": "pending_status_auto",
+      "window_hash": "243cbccc7f0946888614d949c9b2bc0b6ca9ff92e1b525ce495683453e0e2dd0",
+      "status_window": {
+        "step_id": "manual_1768310470",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:21:10.802679+00:00",
+        "goal": "Tool Verification Test 2",
+        "inputs": {
+          "raw_user_request": "Auto-Test via Antigravity (Retry)"
+        },
+        "actions": [
+          "Manuelles Status-Update via CLI",
+          "Warten auf Watcher-Persistenz"
+        ],
+        "risk": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Manuelles Tooling"
+        },
+        "reflection_curve": {
+          "delta": "Manueller Trigger ausgelöst",
+          "correction": "None",
+          "next": "Verifikation durchführen"
+        },
+        "output_plan": [
+          "Persistenz bestätigen"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Manuell generiert"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "CLI Execution"
+        },
+        "window_hash": "243cbccc7f0946888614d949c9b2bc0b6ca9ff92e1b525ce495683453e0e2dd0",
+        "prev_window_hash": "2b6c5b5d89a6e81bb549a41a9a5884155c14f55c39cf435a0d46b2e1a57d1bb7",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:21:10.802679+00:00"
+        },
+        "assumptions": []
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 84,
+      "timestamp": "2026-01-13T13:32:06.945655+00:00",
+      "salt": "869e8d066a3c0e6b59cfaaa18c456fa5",
+      "source": "pending_status_auto",
+      "window_hash": "43b5ae3a6192e8c7fb545cd9d914dc7ea4b91476ff9141e6b2c343023f3e12c3",
+      "status_window": {
+        "step_id": "108",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:32:06.945655+00:00",
+        "goal": "Dashboard V2: Integration von Neural Retrieval (FAISS)",
+        "inputs": {
+          "raw_user_request": "jop"
+        },
+        "actions": [
+          "Stop Command Server (Dashboard V1)",
+          "Update server.py (Add /api/search subprocess)",
+          "Update index.html (Add Search UI)",
+          "Restart Server (Dashboard V2)"
+        ],
+        "risk": [
+          "Server neustart erforderlich -> kurze Downtime im Dashboard"
+        ],
+        "assumptions": [
+          "User möchte aktive Suche im UI sehen",
+          "search_chatverlauf.py ist funktional (bewiesen in Step 96)"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Erweiterung des Toolings um Retrieval-Interface"
+        },
+        "reflection_curve": {
+          "delta": "Dashboard V1 war nur Read-Only History.",
+          "correction": "Dashboard V2 wird interaktiv (Suche).",
+          "next": "Code patchen und Server neu starten."
+        },
+        "output_plan": [
+          "server.py patchen",
+          "index.html patchen",
+          "Server neustarten"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Upgrade auf V2"
+        },
+        "project_awareness": {
+          "active_files": [
+            "server.py",
+            "index.html"
+          ],
+          "context": "Dashboard Upgrade"
+        },
+        "window_hash": "43b5ae3a6192e8c7fb545cd9d914dc7ea4b91476ff9141e6b2c343023f3e12c3",
+        "prev_window_hash": "243cbccc7f0946888614d949c9b2bc0b6ca9ff92e1b525ce495683453e0e2dd0",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:32:06.945655+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 85,
+      "timestamp": "2026-01-13T13:35:08.932721+00:00",
+      "salt": "e5f4982ae4c37a3677490b214b9374ba",
+      "source": "pending_status_auto",
+      "window_hash": "a93f5311d9e948de2812d4945f34af0b769e7415054d14463f9fe950529a19cd",
+      "status_window": {
+        "step_id": "manual_1768311308",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:35:08.932721+00:00",
+        "goal": "Final System Health Verification",
+        "inputs": {
+          "raw_user_request": "stelle sicher dass alles läuft"
+        },
+        "actions": [
+          "Manuelles Status-Update via CLI",
+          "Warten auf Watcher-Persistenz"
+        ],
+        "risk": [],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Manuelles Tooling"
+        },
+        "reflection_curve": {
+          "delta": "Manueller Trigger ausgelöst",
+          "correction": "None",
+          "next": "Verifikation durchführen"
+        },
+        "output_plan": [
+          "Persistenz bestätigen"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Manuell generiert"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "CLI Execution"
+        },
+        "window_hash": "a93f5311d9e948de2812d4945f34af0b769e7415054d14463f9fe950529a19cd",
+        "prev_window_hash": "43b5ae3a6192e8c7fb545cd9d914dc7ea4b91476ff9141e6b2c343023f3e12c3",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:35:08.932721+00:00"
+        },
+        "assumptions": []
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 86,
+      "timestamp": "2026-01-13T13:36:15.211575+00:00",
+      "salt": "c00ff965f16558b0bd518e949e38bd06",
+      "source": "pending_status_auto",
+      "window_hash": "9c07a8134fd5e2fcee82dde2c1d5b1891547eea812f8ff7be1efdd107a74572d",
+      "status_window": {
+        "step_id": "126",
+        "cycle": "3/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:36:15.211575+00:00",
+        "goal": "Bestätigung des System-Status (Green Status)",
+        "inputs": {
+          "raw_user_request": "stelle sicher dass alles läuft"
+        },
+        "actions": [
+          "Check: Watcher (Success, Entry 85)",
+          "Check: Dashboard Server (Running)",
+          "Check: Chain Integrity (Verified via Tool)"
+        ],
+        "risk": [],
+        "assumptions": [
+          "Alle Hintergrunddienste sind stabil"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "System Health Verification abgeschlossen"
+        },
+        "reflection_curve": {
+          "delta": "Health Check angefordert.",
+          "correction": "Alle Lichter auf Grün.",
+          "next": "Warten auf neue Aufgaben."
+        },
+        "output_plan": [
+          "Bestätigung ausgeben",
+          "Link zum Dashboard bereitstellen"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "ALL SYSTEMS GO"
+        },
+        "project_awareness": {
+          "active_files": [],
+          "context": "System Check"
+        },
+        "window_hash": "9c07a8134fd5e2fcee82dde2c1d5b1891547eea812f8ff7be1efdd107a74572d",
+        "prev_window_hash": "a93f5311d9e948de2812d4945f34af0b769e7415054d14463f9fe950529a19cd",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:36:15.211575+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 87,
+      "timestamp": "2026-01-13T13:37:03.636955+00:00",
+      "salt": "def50afd44b481e126b71a91f9ba0063",
+      "source": "pending_status_auto",
+      "window_hash": "518a96aa06a5059a19bbbbb1e2097a63598faf37c6d72f6bfff0ec6a49118667",
+      "status_window": {
+        "step_id": "129",
+        "cycle": "4/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T13:37:03.636955+00:00",
+        "goal": "Implementierung Hybrid-Suche (FAISS + Live History) im Dashboard",
+        "inputs": {
+          "raw_user_request": "aber hier fehlen ja noch die history faissess"
+        },
+        "actions": [
+          "Analyse: FAISS Index ist statisch (alt), History ist live (neu). Lücke erkannt.",
+          "Plan: server.py erweitern, um Live-History in die Suche einzubeziehen (Hybrid Search)."
+        ],
+        "risk": [
+          "Performance bei großer History JSON (aber bei <1MB okay)"
+        ],
+        "assumptions": [
+          "User möchte, dass ALLES durchsuchbar ist (altes Wissen + neuer Status)"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Erweiterung der Retrieval-Logik"
+        },
+        "reflection_curve": {
+          "delta": "Suche fand bisher nur alte Chat-Logs (FAISS).",
+          "correction": "Server-seitige Aggregation von FAISS-Ergebnissen und Live-History-Matches.",
+          "next": "server.py patchen."
+        },
+        "output_plan": [
+          "server.py patchen (Hybrid Logic)",
+          "Neu starten"
+        ],
+        "window_type": "planner",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Hybrid Search Integration"
+        },
+        "project_awareness": {
+          "active_files": [
+            "server.py"
+          ],
+          "context": "Hybrid Retrieval"
+        },
+        "window_hash": "518a96aa06a5059a19bbbbb1e2097a63598faf37c6d72f6bfff0ec6a49118667",
+        "prev_window_hash": "9c07a8134fd5e2fcee82dde2c1d5b1891547eea812f8ff7be1efdd107a74572d",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T13:37:03.636955+00:00"
         }
       },
       "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
