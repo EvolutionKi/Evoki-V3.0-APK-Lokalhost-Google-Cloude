@@ -1,31 +1,29 @@
 {
-    "step_id": "repair_frontend_ci_130",
-    "cycle": "5/5",
+    "step_id": "repair_watcher_133",
+    "cycle": "2/5",
     "time_source": "metadata (STRICT_SYNC): AUTO",
-    "goal": "Fix CI Cache Error",
+    "goal": "Rewrite pending_status_watcher.py to remove hardcoded paths",
     "inputs": {
-        "raw_user_request": "System failed to resolve dependencies paths ... cache error"
+        "raw_user_request": "Remove hardcoded paths from watcher"
     },
     "actions": [
-        "Analyse: package-lock.json fehlt wahrscheinlich im Repo",
-        "Fix: Entferne Caching aus setup-node Action",
-        "Ziel: Workflow muss auch ohne existierendes Frontend robust sein"
+        "REWRITE: tooling/scripts/daemons/pending_status_watcher.py",
+        "IMPLEMENT: os.environ.get for EVOKI_PROJECT_ROOT"
     ],
     "risk": [],
-    "assumptions": [
-        "Caching ist optional"
-    ],
+    "assumptions": [],
     "rule_tangency": {
         "tangency_detected": false,
-        "notes": "CI Robustness"
+        "notes": "Code Repair"
     },
     "reflection_curve": {
-        "delta": "Caching erfordert lockfile",
-        "correction": "Disable Caching",
-        "next": "Commit & Push"
+        "delta": "Watcher had hardcoded path",
+        "correction": "Dynamic Path via Env",
+        "next": "Verify GitHub CI"
     },
     "output_plan": [
-        "Update main.yml"
+        "Rewrite watcher",
+        "Check main.yml again if needed"
     ],
     "window_type": "execution",
     "schema_version": "3.2",
@@ -35,10 +33,10 @@
     "cycle_backend_controlled": true,
     "critical_summary": {
         "status": "GREEN",
-        "notes": "CI Fix Cache"
+        "notes": "Watcher Repair"
     },
     "project_awareness": {
-        "ci": "Fixing frontend step"
+        "watcher": "UPGRADING TO DYNAMIC PATHS"
     },
     "window_hash": "PLACEHOLDER_BACKEND",
     "prev_window_hash": "AUTO",
