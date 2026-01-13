@@ -11,8 +11,13 @@ import argparse
 from pathlib import Path
 
 # Import the core logic from temple.automation
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-from temple.automation.synapse_logic import StatusHistoryManager
+# Import local sibling module
+try:
+    from synapse_logic import StatusHistoryManager
+except ImportError:
+    # Ensure current directory is in path if running from root
+    sys.path.append(str(Path(__file__).parent))
+    from synapse_logic import StatusHistoryManager
 
 
 def main():

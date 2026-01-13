@@ -23,7 +23,11 @@ from datetime import datetime, timezone
 from typing import List, Dict, Tuple, Optional, Set
 
 # V3.0 Root
-V3_ROOT = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
+# Dynamic Root Resolution (Stand 0)
+V3_ROOT = Path(os.getenv("EVOKI_PROJECT_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))).resolve()
+if not (V3_ROOT / "tooling").exists():
+    # Fallback to current dir resolution if env var is missing/wrong
+    V3_ROOT = Path(os.path.abspath(".")).resolve()
 
 ROOT_EXCEPTIONS = {"README.md", "ARCHITECTURE.txt", ".geminiignore"}
 TEMPLE_EXCEPTIONS = {"main.py", "pyproject.toml", "requirements.txt", "__init__.py"}

@@ -11,7 +11,7 @@ Prüfe, ob die Historie lesbar ist und der Watcher aktiv war.
 
 // turbo
 ```bash
-python app/temple/automation/status_history_manager.py stats
+python tooling/scripts/automation/status_history_manager.py stats
 ```
 
 **Erwartete Ausgabe:** `total_entries: N` mit aktuellem Timestamp
@@ -23,7 +23,7 @@ Prüfe die kryptografische Kette auf Brüche.
 
 // turbo
 ```bash
-python app/temple/automation/status_history_manager.py verify
+python tooling/scripts/automation/status_history_manager.py verify
 ```
 
 **Erwartete Ausgabe:** `✅ Chain + Hash integrity verified (N entries)`
@@ -58,7 +58,7 @@ python -c "import json; open(r'tooling/data/synapse/status/pending_status.json',
 
 // turbo
 ```bash
-python app/temple/automation/status_history_manager.py stats
+python tooling/scripts/automation/status_history_manager.py stats
 ```
 
 **Erwartete Ausgabe:** `total_entries` sollte um +1 gestiegen sein.

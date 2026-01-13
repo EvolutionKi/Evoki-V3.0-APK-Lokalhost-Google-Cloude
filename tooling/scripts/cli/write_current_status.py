@@ -5,10 +5,28 @@ import time
 import argparse
 import tempfile
 import hashlib
+from pathlib import Path
 
 # KONFIGURATION
-PENDING_PATH = os.path.abspath("tooling/data/synapse/status/pending_status.json")
-HISTORY_PATH = os.path.abspath("tooling/data/synapse/status/status_window_history.json")
+# Dynamic Root Resolution (Stand 0 Requirement)
+PROJECT_ROOT = os.getenv("EVOKI_PROJECT_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../..")))
+try:
+    PROJECT_ROOT = Path(PROJECT_ROOT).resolve()
+except:
+    PROJECT_ROOT = Path(os.path.abspath(".")).resolve()
+
+# Fallback check if we are too deep or wrong
+if not (PROJECT_ROOT / "tooling").exists():
+    # Last ditch: try to find up to 5 levels up
+    current = Path(__file__).resolve()
+    for _ in range(5):
+        if (current / "tooling").exists():
+            PROJECT_ROOT = current
+            break
+        current = current.parent
+
+PENDING_PATH = PROJECT_ROOT / "tooling/data/synapse/status/pending_status.json"
+HISTORY_PATH = PROJECT_ROOT / "tooling/data/synapse/status/status_window_history.json"
 TIMEOUT_SECONDS = 10
 
 def parse_arguments():
@@ -21,7 +39,7 @@ def parse_arguments():
 
 def read_last_history_entry():
     """Liest den letzten Eintrag aus der Historie sicher aus."""
-    if not os.path.exists(HISTORY_PATH):
+    if not HISTORY_PATH.exists():
         return None
     try:
         with open(HISTORY_PATH, 'r', encoding='utf-8') as f:
@@ -73,7 +91,7 @@ def write_pending_status(args):
     status_content = {
         "step_id": f"manual_{int(time.time())}",
         "cycle": "1/5",
-        "time_source": "metadata (STRICT_SYNC): AUTO",
+        "time_source": "...: AUTO",  # V5 Compliant Placeholder
         "goal": args.goal,
         "inputs": {
             "raw_user_request": args.input
@@ -118,13 +136,13 @@ def write_pending_status(args):
         }
     }
 
-    target_dir = os.path.dirname(PENDING_PATH)
-    if not os.path.exists(target_dir):
-        os.makedirs(target_dir)
+    target_dir = PENDING_PATH.parent
+    if not target_dir.exists():
+        target_dir.mkdir(parents=True)
 
     # Atomic Write (Regel B2)
     try:
-        with tempfile.NamedTemporaryFile(mode='w', delete=False, dir=target_dir, encoding='utf-8') as tmp_file:
+        with tempfile.NamedTemporaryFile(mode='w', delete=False, dir=str(target_dir), encoding='utf-8') as tmp_file:
             json.dump(status_content, tmp_file, indent=2, ensure_ascii=False)
             tmp_path = tmp_file.name
         
