@@ -2,34 +2,39 @@
 trigger: always_on
 ---
 
-Evoki V3.0 Directory Structure Policy
+---
+name: datamanagement
+description: Data management rules & directory policy (Stand 0 / V5.1)
+---
 
-Regel: Keine gemischten Verzeichnisse
+# Evoki V3.0 — Data Management
 
-Jedes Verzeichnis darf NUR eines enthalten:
-1. **Nur Unterordner** (Organisationsverzeichnis)
-2. **Nur Dateien** (Leaf-Verzeichnis)
+## Begriffe
 
-Ausnahmen:
-- Root-Level: `README.md`, `ARCHITECTURE.txt`, `.geminiignore`
-- Tooling Python-Root (`tooling/scripts/`): `__init__.py`, `main.py`, `pyproject.toml`, `requirements.txt`
+- **Repo Root (IST/ROOT)**: Projektwurzel. Primär über `EVOKI_PROJECT_ROOT`, sonst Fallback über Repo-Root-Erkennung via `Path(__file__).resolve()`/Parent-Traversal.
+- **App**: Production Artifacts (UI/State/Memory).
+- **Tooling**: Scripts, Automation, Daemons, Tests, CI.
 
-Regel: Trennung von App-Code und Tools
-Niemals:** Tool-Scripts in `app/` ablegen (auÃŸer sie sind Teil der Core-API)
+## Root-Layout (V5.1)
 
-Automatische Durchsetzung
+- **App (Production)**: `app/`
+  - `app/interface/` (Frontend)
+  - `app/deep_earth/` (Memory / SQLite Layers)
+- **Tooling (Automation Engine)**: `tooling/`
+  - **Tooling Python-Root (`tooling/scripts/`)**: `__init__.py`, `main.py`, `pyproject.toml`, `requirements.txt`
+  - **Runtime State**: `tooling/data/`
+  - **Docs**: `tooling/docs/`
 
-Der Agent MUSS bei jedem Datei-Schreibvorgang prÃ¼fen:
-1. Zielverzeichnis existiert bereits?
-2. EnthÃ¤lt es nur Dateien ODER nur Ordner?
-3. Passt der neue Inhalt zum Typ?
-4. GehÃ¶rt die Datei zu `app/` (Core) oder `tooling/` (Tools)?
+## Regeln
 
-Bei VerstoÃŸ: Korrekten Ordner erstellen und dort ablegen.
+1. **Trennung strikt**: Niemals Tool-Scripts in `app/`.
+2. **Root sauber halten**: Keine Dateien im Repo-Root außer Whitelist (z. B. `README.md`, `ARCHITECTURE.txt`).
+3. **Pfade immer dynamisch**: `EVOKI_PROJECT_ROOT` oder robuste Repo-Root-Erkennung (kein `C:\...` Hardcode).
+4. **Keine gemischten Verzeichnisse**: Keine Mischung aus Dateien + Unterordnern (außer explizit whitelisted).
+5. **Legacy verboten**: `app/temple/` gilt als entfernt/migriert; keine neuen Referenzen darauf.
 
-Regel 4: copilot-instructions.md aktuell halten
+## Stand-0 Gate (empfohlen)
 
-Pflicht:** Bei jeder strukturellen Ã„nderung MUSS `.github/copilot-instructions.md` aktualisiert werden.
-
-Nicht lÃ¶schen, nur aktualisieren!**
-
+- `python tooling/scripts/automation/status_history_manager.py verify`
+- `python tooling/scripts/cli/enforce_structure.py check`
+- `rg -n "app/temple|temple\.automation|C:/Evoki|C:\\\\Evoki|Google Cloude" .`
