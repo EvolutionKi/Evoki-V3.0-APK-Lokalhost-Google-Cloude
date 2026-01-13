@@ -38,16 +38,12 @@ class PendingStatusWatcher(FileSystemEventHandler):
         super().__init__()
         
         # V3.0 Optimized Paths (Dynamic with Fallback)
-        env_root = os.getenv("EVOKI_PROJECT_ROOT")
-        if env_root:
-            self.V3_ROOT = Path(env_root)
-        else:
-             cloud_path = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloud")
-             cloude_path = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
-             if cloud_path.exists():
-                 self.V3_ROOT = cloud_path
-             else:
-                 self.V3_ROOT = cloude_path
+        # Determine PROJECT_ROOT dynamically
+        self.V3_ROOT = Path(os.getenv("EVOKI_PROJECT_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))).resolve()
+        
+        # Fallback to current dir if env var not set or wrong (e.g., if 'tooling' doesn't exist under assumed root)
+        if not (self.V3_ROOT / "tooling").exists():
+            self.V3_ROOT = Path(os.path.abspath(".")).resolve()
 
         self.PENDING_FILE = self.V3_ROOT / "tooling" / "data" / "synapse" / "status" / "pending_status.json"
         

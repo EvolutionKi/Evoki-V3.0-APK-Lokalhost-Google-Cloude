@@ -22,5 +22,5 @@ $sw = @{
 $json = ($sw | ConvertTo-Json -Depth 10 -Compress)
 $tmp = [System.IO.Path]::GetTempFileName()
 $json | Out-File -FilePath $tmp -Encoding utf8
-Get-Content $tmp | python app/temple/automation/write_pending_status.py
+Get-Content $tmp | python tooling/scripts/automation/write_pending_status.py
 Remove-Item $tmp

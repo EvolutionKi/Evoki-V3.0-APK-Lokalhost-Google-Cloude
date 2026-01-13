@@ -10,13 +10,12 @@ import json
 import argparse
 from pathlib import Path
 
-# Import the core logic from temple.automation
 # Import local sibling module
 try:
     from synapse_logic import StatusHistoryManager
 except ImportError:
-    # Ensure current directory is in path if running from root
-    sys.path.append(str(Path(__file__).parent))
+    # If correct pythonpath is not set, try to fix it relative to this script
+    sys.path.append(str(Path(__file__).resolve().parent))
     from synapse_logic import StatusHistoryManager
 
 

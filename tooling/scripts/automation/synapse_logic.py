@@ -22,19 +22,11 @@ class StatusHistoryManager:
     
     def __init__(self, history_file: Optional[Path] = None):
         # V3.0 Optimized Paths (Dynamic Env)
-        env_root = os.getenv("EVOKI_PROJECT_ROOT")
-        if env_root:
-             self.v3_root = Path(env_root)
-        else:
-             # Fallback for local testing without env
-             # Fix for legacy Typo "Cloude" vs "Cloud"
-             cloud_path = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloud")
-             cloude_path = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
-             
-             if cloud_path.exists():
-                 self.v3_root = cloud_path
-             else:
-                 self.v3_root = cloude_path
+        self.v3_root = Path(os.getenv("EVOKI_PROJECT_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))).resolve()
+        
+        # Fallback check
+        if not (self.v3_root / "tooling").exists():
+             self.v3_root = Path(os.path.abspath(".")).resolve()
 
         self.base_dir = self.v3_root / "tooling" / "data" / "synapse" / "status"
         self.history_file = history_file or (self.base_dir / "status_window_history.json")

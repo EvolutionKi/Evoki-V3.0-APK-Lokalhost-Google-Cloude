@@ -1,10 +1,17 @@
+```python
 import json
 import sqlite3
 from pathlib import Path
 
 import pytest
 
-from temple.automation.search_chatverlauf import (
+import sys
+from pathlib import Path
+
+# Add automation dir to path
+sys.path.append(str(Path(__file__).resolve().parent.parent / "scripts" / "automation"))
+
+from search_chatverlauf import (
     SearchChatverlaufConfig,
     SearchChatverlaufError,
     hash_embed,

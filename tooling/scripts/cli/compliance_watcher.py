@@ -22,7 +22,10 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Tuple
 
 # Pfade
-V3_ROOT = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
+# Dynamic Root
+V3_ROOT = Path(os.getenv("EVOKI_PROJECT_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))).resolve()
+if not (V3_ROOT / "tooling").exists():
+    V3_ROOT = Path(os.path.abspath(".")).resolve()
 HISTORY_FILE = V3_ROOT / "tooling" / "data" / "synapse" / "status" / "status_window_history.json"
 
 

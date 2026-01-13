@@ -13,7 +13,10 @@ from pathlib import Path
 from datetime import datetime
 
 # Fallback path if env var is missing
-DEFAULT_ROOT = "C:/Evoki V3.0 APK-Lokalhost-Google Cloude"
+# Dynamic Root
+DEFAULT_ROOT = Path(os.getenv("EVOKI_PROJECT_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))).resolve()
+if not (DEFAULT_ROOT / "tooling").exists():
+    DEFAULT_ROOT = Path(os.path.abspath(".")).resolve()
 ROOT = Path(os.getenv("EVOKI_PROJECT_ROOT", DEFAULT_ROOT))
 OUTPUT_FILE = ROOT / "ARCHITECTURE.txt"
 

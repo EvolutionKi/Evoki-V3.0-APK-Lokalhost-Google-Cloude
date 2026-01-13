@@ -87,7 +87,12 @@ if __name__ == "__main__":
     import json
     from pathlib import Path
     
-    pending = Path(r"c:\Evoki V3.0 APK-Lokalhost-Google Cloude\tooling\data\synapse\status\pending_status.json")
+    # Dynamic Root
+    PROJECT_ROOT = Path(os.getenv("EVOKI_PROJECT_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../..")))).resolve()
+    if not (PROJECT_ROOT / "tooling").exists():
+        PROJECT_ROOT = Path(os.path.abspath(".")).resolve()
+
+    pending = PROJECT_ROOT / "tooling/data/synapse/status/pending_status.json"
     if pending.exists():
         status = json.loads(pending.read_text(encoding="utf-8"))
         print(format_status_display(status, 58))
