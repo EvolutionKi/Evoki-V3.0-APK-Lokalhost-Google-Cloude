@@ -35,7 +35,7 @@ class PendingStatusWatcher(FileSystemEventHandler):
     
     # V3.0 Optimized Paths
     V3_ROOT = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
-    PENDING_FILE = V3_ROOT / "data" / "synapse" / "pending_status.json"
+    PENDING_FILE = V3_ROOT / "data" / "synapse" / "status" / "pending_status.json"
     HISTORY_MANAGER = V3_ROOT / "temple" / "automation" / "status_history_manager.py"
     LOG_FILE = V3_ROOT / "data" / "synapse" / "pending_watcher.log"
     

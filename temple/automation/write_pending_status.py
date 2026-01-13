@@ -17,7 +17,7 @@ def write_pending_status(status_window: dict):
     """Write Status Window to pending_status.json"""
     # V3.0 Optimized Path
     v3_root = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
-    pending_path = v3_root / "data" / "synapse" / "pending_status.json"
+    pending_path = v3_root / "data" / "synapse" / "status" / "pending_status.json"
     
     # Ensure directory exists
     pending_path.parent.mkdir(parents=True, exist_ok=True)

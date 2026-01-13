@@ -3,7 +3,7 @@
         "synapse-context": {
             "command": "python",
             "args": [
-                "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\mcp_server_evoki_v3.py"
+                "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\scripts\\mcp_server_evoki_v3.py"
             ],
             "autoStart": true,
             "env": {
