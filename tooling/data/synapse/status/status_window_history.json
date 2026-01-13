@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T23:24:53.618748+00:00",
-  "total_entries": 146,
+  "created_at": "2026-01-13T23:46:43.501857+00:00",
+  "total_entries": 149,
   "entries": [
     {
       "timestamp": "2026-01-13T10:15:07.379671+00:00",
@@ -9104,6 +9104,193 @@
         "window_type": "verification",
         "confidence": 0.95,
         "critical_summary": "Pipeline-Test nach Stand 0 Migration"
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 147,
+      "timestamp": "2026-01-13T23:32:40.931266+00:00",
+      "salt": "c767b04aee25f2722ffb892ceb701a03",
+      "source": "pending_status_auto",
+      "window_hash": "017e3c0825f395e99327e1d544cca2628e161350cbd967d3e4892e2adc003a55",
+      "status_window": {
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "cycle_backend_controlled": true,
+        "step_id": "stand_0_bestandsaufnahme",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T23:32:40.931266+00:00",
+        "prev_window_hash": "a4e9e92aaee441440d9a7d7faa85f7aca47e06c515bf025ee97738a76ae6105d",
+        "window_hash": "017e3c0825f395e99327e1d544cca2628e161350cbd967d3e4892e2adc003a55",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T23:32:40.931266+00:00"
+        },
+        "goal": "Stand 0 Bestandsaufnahme durchführen",
+        "inputs": {
+          "raw_user_request": "HEy wilkommen im Zustand 0 wenn alles richtig gemacht wurde hast du den ausgangs zustand für unsere arbeit vor dir bitte schau mal was du alles vor dir hast (kein Code ändern!)",
+          "user_messages": [
+            "Willkommen im Zustand 0",
+            "Bestandsaufnahme ohne Code-Änderungen"
+          ],
+          "context": {
+            "watcher_status": "ACTIVE (V3.0)",
+            "last_entry_timestamp": "2026-01-13T23:24:53",
+            "state_vector": "Stand 0 Verify"
+          }
+        },
+        "actions": [
+          "list_repo_structure",
+          "view_pending_status",
+          "view_history_stats",
+          "verify_datamanagement_compliance",
+          "report_findings"
+        ],
+        "risk": [],
+        "assumptions": [
+          "User wünscht READ-ONLY Analyse",
+          "Watcher ist aktiv und funktional"
+        ],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Initial Status Window nach READ-ONLY Request. User fragte berechtigt, warum kein automatisches Write erfolgte."
+        },
+        "reflection_curve": {
+          "delta": "User fragte nach Stand 0 Bestandsaufnahme",
+          "correction": "Status Window wurde nachträglich erstellt - sollte bei jeder Antwort automatisch erfolgen. critical_summary fehlte im ersten Versuch.",
+          "next": "User-Frage beantworten: Warum kein automatisches Write?"
+        },
+        "output_plan": [
+          "Erklären: 'kein Code ändern' wurde als READ-ONLY interpretiert",
+          "Bestätigen: Watcher ist aktiv und bereit",
+          "Auf weitere Anweisungen warten"
+        ],
+        "window_type": "verification",
+        "confidence": 0.85,
+        "critical_summary": "Stand 0 Bestandsaufnahme abgeschlossen - System konform mit V5.1 Datamanagement"
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 148,
+      "timestamp": "2026-01-13T23:35:32.572049+00:00",
+      "salt": "8190553df2c032a89d6be99752734a56",
+      "source": "pending_status_auto",
+      "window_hash": "110ec07aad3f8f10ffecfc88b1613a3f2d70d8c9181d1ff51777652a0c61e75d",
+      "status_window": {
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "cycle_backend_controlled": true,
+        "step_id": "protokoll_repair_critical_summary",
+        "cycle": "1/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T23:35:32.572049+00:00",
+        "prev_window_hash": "017e3c0825f395e99327e1d544cca2628e161350cbd967d3e4892e2adc003a55",
+        "window_hash": "110ec07aad3f8f10ffecfc88b1613a3f2d70d8c9181d1ff51777652a0c61e75d",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T23:35:32.572049+00:00"
+        },
+        "goal": "Protokoll V5.0 reparieren - critical_summary als Pflichtfeld dokumentieren",
+        "inputs": {
+          "raw_user_request": "ja umbedingt bekommst du nocht sowieso die vorlage und weist was du auszufüllen hast und wa snicht?",
+          "user_messages": [
+            "User wünscht Template-Vorlage",
+            "Validator forderte critical_summary - war nicht in Doku"
+          ],
+          "context": {
+            "problem": "Diskrepanz zwischen synapse_logic.py (Zeile 232) und PROTOCOL_V5_ENFORCED.md (Regel A2)",
+            "solution": "critical_summary zu Pflichtfeldern hinzufügen + Template erstellen"
+          }
+        },
+        "actions": [
+          "create_template_file",
+          "update_protocol_v50_documentation",
+          "add_critical_summary_to_rules"
+        ],
+        "risk": [],
+        "assumptions": [
+          "User möchte klare Template-Vorlage mit Kommentaren",
+          "critical_summary sollte BLOCKING sein (wie im Code)"
+        ],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "Repariere Protokoll-Diskrepanz zwischen Code und Dokumentation"
+        },
+        "reflection_curve": {
+          "delta": "Validator forderte critical_summary - fehlte in Doku",
+          "correction": "Protokoll V5.0 aktualisiert + Template mit Anweisungen erstellt",
+          "next": "Watcher sollte jetzt erfolgreich sein"
+        },
+        "output_plan": [
+          "Template überprüfen",
+          "Nächstes Status Window mit Template-Referenz schreiben"
+        ],
+        "window_type": "execution",
+        "confidence": 0.95,
+        "critical_summary": "Protokoll V5.0 repariert - critical_summary ist jetzt dokumentiertes BLOCKING-Pflichtfeld. Template-Vorlage erstellt."
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 149,
+      "timestamp": "2026-01-13T23:46:43.501571+00:00",
+      "salt": "1b40c7d8c9a9872572d85c9c40ca728a",
+      "source": "pending_status_auto",
+      "window_hash": "dd45a0707a9062dc3ab4e69bc018381de4b8375958ed17a28f914c7d64d31e44",
+      "status_window": {
+        "step_id": "AUTO_BREACH_1768348003",
+        "cycle": "BREACH/BREACH",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T23:46:43.501571+00:00",
+        "goal": "AUTOMATISCHES BREACH WINDOW - Agent hat nicht rechtzeitig geantwortet",
+        "inputs": {
+          "raw_user_request": "ALLE_NACHRICHTEN_SORTIERT heit die datei "
+        },
+        "actions": [
+          "COMPLIANCE ENFORCER hat eingegriffen",
+          "Keine Antwort innerhalb von 60 Sekunden"
+        ],
+        "risk": [
+          "Protokollbruch durch Agent"
+        ],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "AUTOMATISCH GENERIERT wegen Protokollbruch"
+        },
+        "reflection_curve": {
+          "delta": "Agent hat Status Window nicht geschrieben",
+          "correction": "Enforcer hat automatisch BREACH-Window erstellt",
+          "next": "Agent muss Disziplin verbessern"
+        },
+        "output_plan": [
+          "Agent muss reagieren"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "COMPLIANCE_ENFORCER_AUTO",
+        "confidence": 0.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "RED",
+          "notes": "AUTOMATISCHES BREACH WINDOW"
+        },
+        "project_awareness": {},
+        "window_hash": "dd45a0707a9062dc3ab4e69bc018381de4b8375958ed17a28f914c7d64d31e44",
+        "prev_window_hash": "110ec07aad3f8f10ffecfc88b1613a3f2d70d8c9181d1ff51777652a0c61e75d",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T23:46:43.501571+00:00"
+        }
       },
       "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
       "metadata": {}

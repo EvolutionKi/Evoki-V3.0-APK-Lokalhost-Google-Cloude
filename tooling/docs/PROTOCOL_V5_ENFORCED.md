@@ -124,6 +124,7 @@ Diese Felder MUSS der Agent inhaltlich fuellen:
 | `output_plan` | array | Was kommt als naechstes? |
 | `window_type` | enum | `planner` oder `execution` oder `verification` |
 | `confidence` | float | 0.0 - 1.0 |
+| `critical_summary` | string | Kurze Zusammenfassung des Status/Ergebnis |
 
 **Fehlt eines → BLOCKING → confidence=0.0, status=RED**
 

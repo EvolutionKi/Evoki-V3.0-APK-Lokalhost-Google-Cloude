@@ -1,53 +1,47 @@
 {
-  "schema_version": "3.2",
-  "window_source": "pipeline_test",
-  "cycle_backend_controlled": true,
-  "step_id": "test_002453",
-  "cycle": "1/1",
-  "time_source": "metadata (STRICT_SYNC): 2026-01-13T23:24:53.455872+00:00",
-  "prev_window_hash": "AUTO",
-  "window_hash": "PLACEHOLDER_BACKEND",
-  "mcp_trigger": {
-    "timestamp": "2026-01-13T23:24:53.455896+00:00"
-  },
-  "goal": "Pipeline-Test: Verifiziere Stand 0 Funktionalität",
+  "step_id": "AUTO_BREACH_1768348003",
+  "cycle": "BREACH/BREACH",
+  "time_source": "metadata (STRICT_SYNC): 2026-01-14T00:46:43.153162",
+  "goal": "AUTOMATISCHES BREACH WINDOW - Agent hat nicht rechtzeitig geantwortet",
   "inputs": {
-    "raw_user_request": "Test der Status Window Pipeline nach Stand 0 Migration",
-    "user_messages": [
-      "Pipeline-Test ausgeführt"
-    ],
-    "system_events": [
-      "test_pipeline.py invoked"
-    ],
-    "context": {
-      "trigger": "test_pipeline.py",
-      "repo_root": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude"
-    }
+    "raw_user_request": "ALLE_NACHRICHTEN_SORTIERT heit die datei "
   },
   "actions": [
-    "create_test_status",
-    "write_pending",
-    "add_to_history",
-    "verify_chain"
+    "COMPLIANCE ENFORCER hat eingegriffen",
+    "Keine Antwort innerhalb von 60 Sekunden"
   ],
-  "risk": [],
-  "assumptions": [
-    "Watcher ist nicht aktiv - manueller Add"
+  "risk": [
+    "Protokollbruch durch Agent"
   ],
+  "assumptions": [],
   "rule_tangency": {
-    "tangency_detected": false,
-    "notes": "Pipeline-Test"
+    "tangency_detected": true,
+    "notes": "AUTOMATISCH GENERIERT wegen Protokollbruch"
   },
   "reflection_curve": {
-    "delta": "Stand 0 Migration abgeschlossen",
-    "correction": "Keine - Test",
-    "next": "Verify Chain Integrity"
+    "delta": "Agent hat Status Window nicht geschrieben",
+    "correction": "Enforcer hat automatisch BREACH-Window erstellt",
+    "next": "Agent muss Disziplin verbessern"
   },
   "output_plan": [
-    "Verify chain",
-    "Show last entry"
+    "Agent muss reagieren"
   ],
   "window_type": "verification",
-  "confidence": 0.95,
-  "critical_summary": "Pipeline-Test nach Stand 0 Migration"
+  "schema_version": "3.2",
+  "window_source": "COMPLIANCE_ENFORCER_AUTO",
+  "confidence": 0.0,
+  "system_versions": {},
+  "cycle_backend_controlled": true,
+  "critical_summary": {
+    "status": "RED",
+    "notes": "AUTOMATISCHES BREACH WINDOW"
+  },
+  "project_awareness": {},
+  "window_hash": "PLACEHOLDER_BACKEND",
+  "prev_window_hash": "AUTO",
+  "mcp_trigger": {
+    "action": "save_to_history",
+    "target": "status_history_manager.py",
+    "enabled": true
+  }
 }
