@@ -1,28 +1,49 @@
 ---
-description: Verify Evoki System Health and Chain Integrity
+description: Verify Evoki System Health and Chain Integrity (V5.0)
 ---
 
-# Evoki System Verification Workflow
+# 🔍 Evoki Verify Workflow (V5.0)
 
-This workflow checks the integrity of the S2 Status Chain and verifies that the automation pipeline is functioning correctly.
+Schnelle Verifizierung der System-Integrität.
 
-1. **Check MCP Server Status**
-   - Ensure the MCP server process is running.
-   - Command: `tasklist /FI "IMAGENAME eq python.exe"` (Windows)
+## Schritt 1: Stats
 
-2. **Verify Pending Status Watcher**
-   - Ensure the watcher is active.
-   - Check log: `tooling/data/synapse/pending_watcher.log`
+// turbo
+```bash
+python app/temple/automation/status_history_manager.py stats
+```
 
-3. **Verify Status Chain Integrity**
-   - Run the verification tool to check cryptographic links.
-   // turbo
-   - Command: `python "app/temple/automation/status_history_manager.py" verify`
+---
 
-4. **Check Latest Status**
-   - View the last status window to ensure correct hashing.
-   // turbo
-   - Command: `python "app/temple/automation/status_history_manager.py" latest --count 1`
+## Schritt 2: Verify Chain
 
-5. **Backup Hygiene**
-   - Clean up old backups if needed.
+// turbo
+```bash
+python app/temple/automation/status_history_manager.py verify
+```
+
+**Bei Erfolg:** `✅ Chain + Hash integrity verified (N entries)`
+
+**Bei Fehler:** Führe `/evoki_repair` aus.
+
+---
+
+## Schritt 3: Latest Entry
+
+// turbo
+```bash
+python app/temple/automation/status_history_manager.py latest --count 1
+```
+
+---
+
+## Schritt 4: Display Status
+
+// turbo
+```bash
+python tooling/scripts/chat_display_template.py
+```
+
+---
+
+## ✅ Verification Complete
