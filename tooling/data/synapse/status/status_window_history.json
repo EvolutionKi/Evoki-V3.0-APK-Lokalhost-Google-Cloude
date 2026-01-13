@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T18:14:44.957599+00:00",
-  "total_entries": 116,
+  "created_at": "2026-01-13T18:31:48.632418+00:00",
+  "total_entries": 117,
   "entries": [
     {
       "timestamp": "2026-01-13T10:15:07.379671+00:00",
@@ -7254,6 +7254,64 @@
           "target": "status_history_manager.py",
           "enabled": true,
           "timestamp": "2026-01-13T18:14:44.957365+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 117,
+      "timestamp": "2026-01-13T18:31:48.632087+00:00",
+      "salt": "ad6073e57fe3b1e7cc039b5ffda40da3",
+      "source": "pending_status_auto",
+      "window_hash": "7153c8ce4f919d3ea0d12ade025aeab80a23e00f40746de09c122a702feae0cc",
+      "status_window": {
+        "step_id": "frontend_patch_115",
+        "cycle": "2/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T18:31:48.632087+00:00",
+        "goal": "Frontend-Patch für AnalysisPanel/Chart - Daily Stats Wiring Fix",
+        "inputs": {
+          "raw_user_request": "Patch für App.tsx, AnalysisPanel.tsx, AnalysisChart.tsx - Daily-Daten werden jetzt für alle Quellen (baseline/update/comparison/merged) berechnet und als Props weitergereicht"
+        },
+        "actions": [
+          "Suche nach Frontend-Dateien im Projekt",
+          "Wende Patches an"
+        ],
+        "risk": [],
+        "assumptions": [
+          "Frontend existiert in app/interface/"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "Frontend-Änderungen außerhalb kritischer Synapse-Logik"
+        },
+        "reflection_curve": {
+          "delta": "Daily-Daten wurden nur für Update-Pipeline berechnet",
+          "correction": "Jetzt für alle Quellen + Props-Weitergabe",
+          "next": "Patches anwenden"
+        },
+        "output_plan": [
+          "Frontend-Struktur prüfen",
+          "Patches anwenden"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 0.85,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "Frontend-Patch"
+        },
+        "project_awareness": {},
+        "window_hash": "7153c8ce4f919d3ea0d12ade025aeab80a23e00f40746de09c122a702feae0cc",
+        "prev_window_hash": "3386d6babada8a1f65c5410eff0d37d62bea4f0c21dd5c91fc91c63f230ca920",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T18:31:48.632087+00:00"
         }
       },
       "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",

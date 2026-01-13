@@ -1,52 +1,43 @@
 {
-    "step_id": "fix3_implement_114",
-    "cycle": "1/5",
+    "step_id": "frontend_patch_115",
+    "cycle": "2/5",
     "time_source": "metadata (STRICT_SYNC): AUTO",
-    "goal": "Implementiere Fix 3 (Trigger-Single-Source) und Fix 5 (Encoding-Härtung)",
+    "goal": "Frontend-Patch für AnalysisPanel/Chart - Daily Stats Wiring Fix",
     "inputs": {
-        "raw_user_request": "Fix 3 und Fix 5 implementieren nach detailliertem Plan - Trigger-Single-Source zuerst, dann Encoding utf-8-sig"
+        "raw_user_request": "Patch für App.tsx, AnalysisPanel.tsx, AnalysisChart.tsx - Daily-Daten werden jetzt für alle Quellen (baseline/update/comparison/merged) berechnet und als Props weitergereicht"
     },
     "actions": [
-        "Fix 3: ENV-Flag EVOKI_MCP_MONITOR_ACTIVE in Watcher",
-        "Fix 3: Health-Probe in pending_status_watcher.py",
-        "Fix 5: utf-8-sig für Reads, utf-8 für Writes",
-        "Fix 5: fsync für atomares Schreiben"
+        "Suche nach Frontend-Dateien im Projekt",
+        "Wende Patches an"
     ],
     "risk": [],
     "assumptions": [
-        "Kein Doppel-Trigger nach Fix 3",
-        "Keine BOM-Fehler nach Fix 5"
+        "Frontend existiert in app/interface/"
     ],
     "rule_tangency": {
         "tangency_detected": false,
-        "notes": "Keine Konflikte mit V5-Baseline"
+        "notes": "Frontend-Änderungen außerhalb kritischer Synapse-Logik"
     },
     "reflection_curve": {
-        "delta": "Fix 1 & 4 abgeschlossen",
-        "correction": "Fix 3 & 5 jetzt implementieren",
-        "next": "Smoke-Test nach Implementierung"
+        "delta": "Daily-Daten wurden nur für Update-Pipeline berechnet",
+        "correction": "Jetzt für alle Quellen + Props-Weitergabe",
+        "next": "Patches anwenden"
     },
     "output_plan": [
-        "Fix 3 implementieren",
-        "Fix 5 implementieren",
-        "Smoke-Test"
+        "Frontend-Struktur prüfen",
+        "Patches anwenden"
     ],
     "window_type": "execution",
     "schema_version": "3.2",
     "window_source": "backend_generated",
-    "confidence": 0.88,
+    "confidence": 0.85,
     "system_versions": {},
     "cycle_backend_controlled": true,
     "critical_summary": {
         "status": "GREEN",
-        "notes": "Ready to implement Fix 3 & 5"
+        "notes": "Frontend-Patch"
     },
-    "project_awareness": {
-        "pending_fixes": [
-            "Fix 3",
-            "Fix 5"
-        ]
-    },
+    "project_awareness": {},
     "window_hash": "PLACEHOLDER_BACKEND",
     "prev_window_hash": "AUTO",
     "mcp_trigger": {
