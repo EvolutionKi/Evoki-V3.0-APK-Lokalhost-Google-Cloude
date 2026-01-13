@@ -22,7 +22,7 @@ class StatusHistoryManager:
     def __init__(self, history_file: Optional[Path] = None):
         # V3.0 Optimized Paths
         self.v3_root = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude")
-        self.base_dir = self.v3_root / "data" / "synapse" / "status"
+        self.base_dir = self.v3_root / "tooling" / "data" / "synapse" / "status"
         self.history_file = history_file or (self.base_dir / "status_window_history.json")
         self.backup_dir = self.base_dir / "backups"
         self.max_entries = 1000  # Rotate after 1000 entries

@@ -29,7 +29,7 @@ def trigger_mcp_update(status_file_path):
     # This could be done via HTTP, file system, or shared memory
     # For now, we'll use a simple file-based approach
     
-    mcp_state_dir = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude/data/synapse/mcp_state")
+    mcp_state_dir = Path("C:/Evoki V3.0 APK-Lokalhost-Google Cloude/tooling/data/synapse/mcp_state")
     mcp_state_dir.mkdir(parents=True, exist_ok=True)
     
     # Write latest status to MCP state

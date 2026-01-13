@@ -88,9 +88,9 @@ def init_persistent_db():
         "evoki_version": "V2.0",
         "regelwerk_version": "V12",
         "project_name": "Evoki DeepEarth",
-        "chatverlauf_faiss_index": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.faiss",
-        "chatverlauf_metadata": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.metadata.json",
-        "chatverlauf_sqlite": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.db"
+        "chatverlauf_faiss_index": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.faiss",
+        "chatverlauf_metadata": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.metadata.json",
+        "chatverlauf_sqlite": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\faiss_indices\\chatverlauf_final_20251020plus_dedup_sorted.db"
     }
     
     for key, value in defaults.items():
