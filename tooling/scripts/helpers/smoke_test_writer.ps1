@@ -1,5 +1,5 @@
 $sw = @{
-    schema_version           = "4.0"
+    schema_version           = "3.2"
     window_source            = "smoke_test"
     cycle_backend_controlled = $true
     step_id                  = "smoke_001"
@@ -8,7 +8,7 @@ $sw = @{
     prev_window_hash         = "PLACEHOLDER"
     window_hash              = "PLACEHOLDER"
     mcp_trigger              = @{ timestamp = "PLACEHOLDER" }
-    goal                     = "Smoke test: V4.0 pipeline end-to-end"
+    goal                     = "Smoke test: V5.0 pipeline end-to-end"
     inputs                   = @{ trigger = "writer_cli"; repo_head = "manual_check" }
     actions                  = @("write_pending_status", "watcher_auto_add", "verify")
     risk                     = @()
