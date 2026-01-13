@@ -1,31 +1,31 @@
 {
-    "step_id": "ci_repair_126",
-    "cycle": "1/5",
+    "step_id": "replace_ci_129",
+    "cycle": "4/5",
     "time_source": "metadata (STRICT_SYNC): AUTO",
-    "goal": "GitHub CI Determinism Gate reparieren",
+    "goal": "GitHub CI Determinism Gate durch robusten Main Workflow ersetzen",
     "inputs": {
-        "raw_user_request": "erstelle die datei damt git hub wieder läuft"
+        "raw_user_request": "ersetzte den determinism durch was neues das macht immer nloch ärger"
     },
     "actions": [
-        "Erstellt: tooling/docs/GEMINI_V13_UPDATE.md",
-        "Inhalt: Dokumentation der Härtungsmaßnahmen (V5 Enforcement)",
-        "Ziel: CI-Workflow `determinism-gate.yml` soll passieren"
+        "Löschen: .github/workflows/determinism-gate.yml",
+        "Erstellen: .github/workflows/main.yml",
+        "Fokus: Code Quality (Linting/Build) statt Doku-Check"
     ],
     "risk": [],
     "assumptions": [
-        "Datei-Existenz reicht für CI-Check"
+        "User will stabile CI ohne nervige Document-Path Checks"
     ],
     "rule_tangency": {
         "tangency_detected": false,
-        "notes": "Erfüllung von CI-Anforderungen"
+        "notes": "Reduzierung von Friction in CI"
     },
     "reflection_curve": {
-        "delta": "CI fehlgeschlagen wegen fehlender Doku",
-        "correction": "Doku erstellt",
-        "next": "User muss pushen (oder ich versuche es)"
+        "delta": "Determinism Gate zu fragil",
+        "correction": "Ersetzen durch industrie-standard Linting/Build Workflow",
+        "next": "Dateien austauschen"
     },
     "output_plan": [
-        "Git Add & Commit vorbereiten"
+        "Workflow Swap"
     ],
     "window_type": "execution",
     "schema_version": "3.2",
@@ -35,11 +35,10 @@
     "cycle_backend_controlled": true,
     "critical_summary": {
         "status": "GREEN",
-        "notes": "CI Blocker removed"
+        "notes": "Replacing CI workflow"
     },
     "project_awareness": {
-        "ci_status": "Repairing",
-        "protocol": "V5 Enforced"
+        "ci": "Upgrading to Main Workflow"
     },
     "window_hash": "PLACEHOLDER_BACKEND",
     "prev_window_hash": "AUTO",
