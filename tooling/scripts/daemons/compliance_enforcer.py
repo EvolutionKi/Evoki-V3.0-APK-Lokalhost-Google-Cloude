@@ -28,7 +28,6 @@ except ImportError:
 
 # Pfade
 V3_ROOT = Path(__file__).parent.parent.parent.parent
-DECRYPTED_HISTORY = V3_ROOT / "tooling" / "data" / "synapse" / "decrypted_history.json"
 STATUS_HISTORY = V3_ROOT / "tooling" / "data" / "synapse" / "status" / "status_window_history.json"
 PENDING_STATUS = V3_ROOT / "tooling" / "data" / "synapse" / "status" / "pending_status.json"
 ENFORCER_LOG = V3_ROOT / "tooling" / "data" / "synapse" / "compliance_enforcer.log"
@@ -53,8 +52,8 @@ class ComplianceEnforcer:
 ║   Nicht nur registrieren - DURCHSETZEN!                           ║
 ╚═══════════════════════════════════════════════════════════════════╝
 """)
-        print(f"📁 Decrypted History: {DECRYPTED_HISTORY}")
         print(f"📁 Status History: {STATUS_HISTORY}")
+        print(f"📁 Pending Status: {PENDING_STATUS}")
         print(f"⏱️  Max Response Time: {MAX_RESPONSE_TIME}s")
         print(f"🔔 Notifications: {'✅' if NOTIFICATIONS_AVAILABLE else '❌'}")
         print(f"🚨 Auto BREACH Window: {'✅' if AUTO_BREACH_WINDOW else '❌'}")
@@ -89,33 +88,45 @@ class ComplianceEnforcer:
             self.log(f"❌ Notification failed: {e}")
     
     def get_latest_prompt(self):
-        """Get the most recent user prompt from decrypted_history"""
-        if not DECRYPTED_HISTORY.exists():
+        """Get the most recent user prompt from status_window_history
+        
+        Checks BOTH inputs.raw_user_request AND inputs.user_messages
+        to catch all user prompts (per V2.0 fix)
+        """
+        if not STATUS_HISTORY.exists():
             return None, None
         
         try:
-            with open(DECRYPTED_HISTORY, 'r', encoding='utf-8') as f:
+            with open(STATUS_HISTORY, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             
-            latest_time = None
-            latest_text = None
+            entries = data.get("entries", [])
+            if not entries:
+                return None, None
             
-            for thread in data:
-                for msg in thread.get("messages", []):
-                    if msg.get("role") == "user":
-                        timestamp_str = msg.get("timestamp", "")
-                        text = msg.get("text", "")
-                        
-                        if timestamp_str and text:
-                            try:
-                                timestamp = datetime.fromisoformat(timestamp_str.replace('Z', '+00:00'))
-                                if latest_time is None or timestamp > latest_time:
-                                    latest_time = timestamp
-                                    latest_text = text
-                            except:
-                                pass
+            # Get latest entry with user input (raw_user_request OR user_messages)
+            for entry in reversed(entries):
+                sw = entry.get("status_window", {})
+                inputs = sw.get("inputs", {})
+                timestamp_str = entry.get("timestamp", "")
+                
+                # Try raw_user_request first
+                prompt = inputs.get("raw_user_request", "")
+                
+                # Fallback to user_messages if raw_user_request is empty
+                if not prompt:
+                    user_msgs = inputs.get("user_messages", [])
+                    if user_msgs and isinstance(user_msgs, list):
+                        prompt = "\n".join(str(msg) for msg in user_msgs if msg)
+                
+                if prompt and timestamp_str:
+                    try:
+                        timestamp = datetime.fromisoformat(timestamp_str.replace('Z', '+00:00'))
+                        return timestamp, prompt
+                    except:
+                        pass
             
-            return latest_time, latest_text
+            return None, None
         except:
             return None, None
     
