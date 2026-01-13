@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T19:34:37.596995+00:00",
-  "total_entries": 131,
+  "created_at": "2026-01-13T19:37:41.202080+00:00",
+  "total_entries": 132,
   "entries": [
     {
       "timestamp": "2026-01-13T10:15:07.379671+00:00",
@@ -8178,6 +8178,66 @@
           "target": "status_history_manager.py",
           "enabled": true,
           "timestamp": "2026-01-13T19:34:37.596730+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 132,
+      "timestamp": "2026-01-13T19:37:41.201826+00:00",
+      "salt": "833aae654205b80412eaf5614549e291",
+      "source": "pending_status_auto",
+      "window_hash": "21fcecb2a5362e8708bd4f34f1677bf817511174d69efd3e1b619be8c4f34221",
+      "status_window": {
+        "step_id": "repair_frontend_ci_130",
+        "cycle": "5/5",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-13T19:37:41.201826+00:00",
+        "goal": "Fix CI Cache Error",
+        "inputs": {
+          "raw_user_request": "System failed to resolve dependencies paths ... cache error"
+        },
+        "actions": [
+          "Analyse: package-lock.json fehlt wahrscheinlich im Repo",
+          "Fix: Entferne Caching aus setup-node Action",
+          "Ziel: Workflow muss auch ohne existierendes Frontend robust sein"
+        ],
+        "risk": [],
+        "assumptions": [
+          "Caching ist optional"
+        ],
+        "rule_tangency": {
+          "tangency_detected": false,
+          "notes": "CI Robustness"
+        },
+        "reflection_curve": {
+          "delta": "Caching erfordert lockfile",
+          "correction": "Disable Caching",
+          "next": "Commit & Push"
+        },
+        "output_plan": [
+          "Update main.yml"
+        ],
+        "window_type": "execution",
+        "schema_version": "3.2",
+        "window_source": "backend_generated",
+        "confidence": 1.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "GREEN",
+          "notes": "CI Fix Cache"
+        },
+        "project_awareness": {
+          "ci": "Fixing frontend step"
+        },
+        "window_hash": "21fcecb2a5362e8708bd4f34f1677bf817511174d69efd3e1b619be8c4f34221",
+        "prev_window_hash": "1587feedf6a21231259f15924960cd0161cf9f5030f120928720c034286714ce",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-13T19:37:41.201826+00:00"
         }
       },
       "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",

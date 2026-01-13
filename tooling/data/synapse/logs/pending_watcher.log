@@ -585,3 +585,7 @@
 {"timestamp": "2026-01-13T19:34:37.384800+00:00", "action": "auto_save_triggered"}
 {"timestamp": "2026-01-13T19:34:37.655826+00:00", "result": "SUCCESS"}
 {"timestamp": "2026-01-13T19:34:37.662069+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T19:37:40.786576+00:00", "event": "file_updated", "file": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\tooling\\data\\synapse\\status\\pending_status.json"}
+{"timestamp": "2026-01-13T19:37:40.987613+00:00", "action": "auto_save_triggered"}
+{"timestamp": "2026-01-13T19:37:41.259354+00:00", "result": "SUCCESS"}
+{"timestamp": "2026-01-13T19:37:41.263095+00:00", "result": "FAIL", "error": "DEBUG: Calling add_status_window...\n[ERROR] Error saving history: [WinError 5] Zugriff verweigert: 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\tmp2oexn6se.tmp' -> 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\tooling\\\\data\\\\synapse\\\\status\\\\status_window_history.json'\nDEBUG: add_status_window returned: False\n"}

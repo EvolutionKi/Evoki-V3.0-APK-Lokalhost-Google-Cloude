@@ -1,31 +1,31 @@
 {
-    "step_id": "replace_ci_129",
-    "cycle": "4/5",
+    "step_id": "repair_frontend_ci_130",
+    "cycle": "5/5",
     "time_source": "metadata (STRICT_SYNC): AUTO",
-    "goal": "GitHub CI Determinism Gate durch robusten Main Workflow ersetzen",
+    "goal": "Fix CI Cache Error",
     "inputs": {
-        "raw_user_request": "ersetzte den determinism durch was neues das macht immer nloch ärger"
+        "raw_user_request": "System failed to resolve dependencies paths ... cache error"
     },
     "actions": [
-        "Löschen: .github/workflows/determinism-gate.yml",
-        "Erstellen: .github/workflows/main.yml",
-        "Fokus: Code Quality (Linting/Build) statt Doku-Check"
+        "Analyse: package-lock.json fehlt wahrscheinlich im Repo",
+        "Fix: Entferne Caching aus setup-node Action",
+        "Ziel: Workflow muss auch ohne existierendes Frontend robust sein"
     ],
     "risk": [],
     "assumptions": [
-        "User will stabile CI ohne nervige Document-Path Checks"
+        "Caching ist optional"
     ],
     "rule_tangency": {
         "tangency_detected": false,
-        "notes": "Reduzierung von Friction in CI"
+        "notes": "CI Robustness"
     },
     "reflection_curve": {
-        "delta": "Determinism Gate zu fragil",
-        "correction": "Ersetzen durch industrie-standard Linting/Build Workflow",
-        "next": "Dateien austauschen"
+        "delta": "Caching erfordert lockfile",
+        "correction": "Disable Caching",
+        "next": "Commit & Push"
     },
     "output_plan": [
-        "Workflow Swap"
+        "Update main.yml"
     ],
     "window_type": "execution",
     "schema_version": "3.2",
@@ -35,10 +35,10 @@
     "cycle_backend_controlled": true,
     "critical_summary": {
         "status": "GREEN",
-        "notes": "Replacing CI workflow"
+        "notes": "CI Fix Cache"
     },
     "project_awareness": {
-        "ci": "Upgrading to Main Workflow"
+        "ci": "Fixing frontend step"
     },
     "window_hash": "PLACEHOLDER_BACKEND",
     "prev_window_hash": "AUTO",

@@ -50,8 +50,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: app/interface/package-lock.json
+
 
       - name: Install Frontend Dependencies
         # Only run if package.json exists to avoid workflow failure on backend-only repos
