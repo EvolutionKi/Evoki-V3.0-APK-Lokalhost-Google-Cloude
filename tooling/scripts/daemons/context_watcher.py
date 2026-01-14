@@ -26,7 +26,7 @@ class ContextWatcher:
         self.load_archive()
 
     def get_all_dbs(self):
-        """Finds all relevant state.vscdb files (Global + Workspaces)."""
+        """Finds all relevant state.vscdb files (Global + Workspaces + Gemini)."""
         paths = [
             os.path.expandvars(r"%APPDATA%\Code\User\globalStorage\state.vscdb"),
             os.path.expandvars(r"%APPDATA%\Cursor\User\globalStorage\state.vscdb"),

@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-13T23:46:43.501857+00:00",
-  "total_entries": 149,
+  "created_at": "2026-01-14T00:03:25.539181+00:00",
+  "total_entries": 150,
   "entries": [
     {
       "timestamp": "2026-01-13T10:15:07.379671+00:00",
@@ -9290,6 +9290,63 @@
           "target": "status_history_manager.py",
           "enabled": true,
           "timestamp": "2026-01-13T23:46:43.501571+00:00"
+        }
+      },
+      "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
+      "metadata": {}
+    },
+    {
+      "entry_index": 150,
+      "timestamp": "2026-01-14T00:03:25.539012+00:00",
+      "salt": "74f197e29db15753968fceb5b6c55024",
+      "source": "pending_status_auto",
+      "window_hash": "b6c69fcac9f4bab94081033f8f1fe246dda7a326d43eff5eefc61b05f89e7a69",
+      "status_window": {
+        "step_id": "AUTO_BREACH_1768349005",
+        "cycle": "BREACH/BREACH",
+        "time_source": "metadata (STRICT_SYNC): 2026-01-14T00:03:25.539012+00:00",
+        "goal": "AUTOMATISCHES BREACH WINDOW - Agent hat nicht rechtzeitig geantwortet",
+        "inputs": {
+          "raw_user_request": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download Ordner kopieren? eine Leistungsanzeige während der Vektorisierung wäre intesannt falls möglich. eine \"Bedienungsanleitung \" als Readme zu Regelwerk V11.py am besten kompletter workflow von auswahl der großen Datei Chattverlauf bis zum Kontextreichen Trialog oder Dialog Mit Evoki am ende noch die change und historie ergänzen damit das festgehalten wird und dann hast du erstmal ne pause nen kaffe und"
+        },
+        "actions": [
+          "COMPLIANCE ENFORCER hat eingegriffen",
+          "Keine Antwort innerhalb von 60 Sekunden"
+        ],
+        "risk": [
+          "Protokollbruch durch Agent"
+        ],
+        "assumptions": [],
+        "rule_tangency": {
+          "tangency_detected": true,
+          "notes": "AUTOMATISCH GENERIERT wegen Protokollbruch"
+        },
+        "reflection_curve": {
+          "delta": "Agent hat Status Window nicht geschrieben",
+          "correction": "Enforcer hat automatisch BREACH-Window erstellt",
+          "next": "Agent muss Disziplin verbessern"
+        },
+        "output_plan": [
+          "Agent muss reagieren"
+        ],
+        "window_type": "verification",
+        "schema_version": "3.2",
+        "window_source": "COMPLIANCE_ENFORCER_AUTO",
+        "confidence": 0.0,
+        "system_versions": {},
+        "cycle_backend_controlled": true,
+        "critical_summary": {
+          "status": "RED",
+          "notes": "AUTOMATISCHES BREACH WINDOW"
+        },
+        "project_awareness": {},
+        "window_hash": "b6c69fcac9f4bab94081033f8f1fe246dda7a326d43eff5eefc61b05f89e7a69",
+        "prev_window_hash": "dd45a0707a9062dc3ab4e69bc018381de4b8375958ed17a28f914c7d64d31e44",
+        "mcp_trigger": {
+          "action": "save_to_history",
+          "target": "status_history_manager.py",
+          "enabled": true,
+          "timestamp": "2026-01-14T00:03:25.539012+00:00"
         }
       },
       "hash_algo": "sha256(canonical_without_window_hash|timestamp|salt)",
