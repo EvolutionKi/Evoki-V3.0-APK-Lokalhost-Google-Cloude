@@ -1,25 +1,25 @@
-{},
-"mcpServers": {
-    "synapse-context": {
-        "command": "python",
-        "args": [
-            "tooling/scripts/servers/mcp_server_evoki_v3.py"
-        ],
-        "autoStart": true,
-        "env": {
-            "PYTHONPATH": "tooling/scripts"
-        }
-    },
-    "context-watcher": {
-        "command": "python",
-        "args": [
-            "tooling/scripts/daemons/context_watcher.py",
-            "--monitor"
-        ],
-        "autoStart": true,
-        "env": {
-            "PYTHONPATH": "tooling/scripts"
+{
+    "mcpServers": {
+        "synapse-context": {
+            "command": "python",
+            "args": [
+                "tooling/scripts/servers/mcp_server_evoki_v3.py"
+            ],
+            "autoStart": true,
+            "env": {
+                "PYTHONPATH": "tooling/scripts"
+            }
+        },
+        "context-watcher": {
+            "command": "python",
+            "args": [
+                "tooling/scripts/daemons/context_watcher.py",
+                "--monitor"
+            ],
+            "autoStart": true,
+            "env": {
+                "PYTHONPATH": "tooling/scripts"
+            }
         }
     }
-}
 }
