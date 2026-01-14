@@ -151,5 +151,14 @@
     "message": "Status Window fehlt! Noch 8s Zeit",
     "prompt": "was denn sonst damit das eendlich läuft",
     "timeSincePrompt": 51
+  },
+  {
+    "timestamp": "2026-01-14T02:02:26.204Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 62s",
+    "prompt": "was denn sonst damit das eendlich läuft",
+    "timeSincePrompt": 61,
+    "resolved": true,
+    "resolved_at": "2026-01-14T02:02:26.239Z"
   }
 ]

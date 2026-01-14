@@ -6,11 +6,13 @@ import { SynapseChatViewProvider } from './chatViewProvider';
 import { SynapseChatParticipant } from './chatParticipant';
 import { ComplianceMonitor } from './complianceMonitor';
 import { UserRulesEnforcer } from './userRulesEnforcer';
+import { AIResponseInterceptor } from './aiResponseInterceptor';
 
 const execAsync = promisify(child_process.exec);
 
 let complianceMonitor: ComplianceMonitor | null = null;
 let userRulesEnforcer: UserRulesEnforcer | null = null;
+let aiResponseInterceptor: AIResponseInterceptor | null = null;
 
 let complianceWatcher: child_process.ChildProcess | null = null;
 let healthMonitor: child_process.ChildProcess | null = null;
@@ -41,6 +43,10 @@ export function activate(context: vscode.ExtensionContext) {
     // Start UserRulesEnforcer (Output-Gate Enforcement)
     userRulesEnforcer = new UserRulesEnforcer(context);
     userRulesEnforcer.start();
+
+    // Start AI-Response-Interceptor (Prävention-Schicht)
+    aiResponseInterceptor = new AIResponseInterceptor(context);
+    console.log('✅ AI-Response-Interceptor initialized');
 
     // Status command
     let disposable = vscode.commands.registerCommand('synapse.nexus.status', () => {

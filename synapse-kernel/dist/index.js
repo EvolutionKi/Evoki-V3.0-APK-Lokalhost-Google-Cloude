@@ -43,9 +43,11 @@ const chatViewProvider_1 = require("./chatViewProvider");
 const chatParticipant_1 = require("./chatParticipant");
 const complianceMonitor_1 = require("./complianceMonitor");
 const userRulesEnforcer_1 = require("./userRulesEnforcer");
+const aiResponseInterceptor_1 = require("./aiResponseInterceptor");
 const execAsync = (0, util_1.promisify)(child_process.exec);
 let complianceMonitor = null;
 let userRulesEnforcer = null;
+let aiResponseInterceptor = null;
 let complianceWatcher = null;
 let healthMonitor = null;
 function activate(context) {
@@ -64,6 +66,9 @@ function activate(context) {
     // Start UserRulesEnforcer (Output-Gate Enforcement)
     userRulesEnforcer = new userRulesEnforcer_1.UserRulesEnforcer(context);
     userRulesEnforcer.start();
+    // Start AI-Response-Interceptor (Prävention-Schicht)
+    aiResponseInterceptor = new aiResponseInterceptor_1.AIResponseInterceptor(context);
+    console.log('✅ AI-Response-Interceptor initialized');
     // Status command
     let disposable = vscode.commands.registerCommand('synapse.nexus.status', () => {
         const watcherStatus = complianceWatcher ? '✅ Running' : '❌ Stopped';
