@@ -42,8 +42,10 @@ const util_1 = require("util");
 const chatViewProvider_1 = require("./chatViewProvider");
 const chatParticipant_1 = require("./chatParticipant");
 const complianceMonitor_1 = require("./complianceMonitor");
+const userRulesEnforcer_1 = require("./userRulesEnforcer");
 const execAsync = (0, util_1.promisify)(child_process.exec);
 let complianceMonitor = null;
+let userRulesEnforcer = null;
 let complianceWatcher = null;
 let healthMonitor = null;
 function activate(context) {
@@ -59,6 +61,9 @@ function activate(context) {
     // Start Built-in Compliance Monitor (VS Code Errors)
     complianceMonitor = new complianceMonitor_1.ComplianceMonitor(context);
     complianceMonitor.start();
+    // Start UserRulesEnforcer (Output-Gate Enforcement)
+    userRulesEnforcer = new userRulesEnforcer_1.UserRulesEnforcer(context);
+    userRulesEnforcer.start();
     // Status command
     let disposable = vscode.commands.registerCommand('synapse.nexus.status', () => {
         const watcherStatus = complianceWatcher ? '✅ Running' : '❌ Stopped';
@@ -118,6 +123,9 @@ function startGuardianMonitors(context) {
 function deactivate() {
     if (complianceMonitor) {
         complianceMonitor.stop();
+    }
+    if (userRulesEnforcer) {
+        userRulesEnforcer.stop();
     }
 }
 // ========================================

@@ -12,5 +12,144 @@
     "message": "Kein Status Window nach 2171s",
     "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
     "timeSincePrompt": 2170
+  },
+  {
+    "timestamp": "2026-01-14T00:46:04.298Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 2559s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 2558
+  },
+  {
+    "timestamp": "2026-01-14T01:09:27.551Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 3962s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 3962
+  },
+  {
+    "timestamp": "2026-01-14T01:14:56.021Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 4290s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 4290
+  },
+  {
+    "timestamp": "2026-01-14T01:15:22.688Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 4317s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 4317
+  },
+  {
+    "timestamp": "2026-01-14T01:19:41.694Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 4576s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 4576
+  },
+  {
+    "timestamp": "2026-01-14T01:24:18.091Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 4853s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 4852
+  },
+  {
+    "timestamp": "2026-01-14T01:25:30.816Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 4925s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 4925
+  },
+  {
+    "timestamp": "2026-01-14T01:36:32.786Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 5587s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 5587,
+    "resolved": true,
+    "resolved_at": "2026-01-14T01:36:32.804Z"
+  },
+  {
+    "timestamp": "2026-01-14T01:47:35.300Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 27s Zeit",
+    "prompt": "breach müsste die ganze zeit ja kommen weil du nicht speicherst",
+    "timeSincePrompt": 33
+  },
+  {
+    "timestamp": "2026-01-14T01:47:45.304Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 17s Zeit",
+    "prompt": "breach müsste die ganze zeit ja kommen weil du nicht speicherst",
+    "timeSincePrompt": 43
+  },
+  {
+    "timestamp": "2026-01-14T01:47:55.314Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 7s Zeit",
+    "prompt": "breach müsste die ganze zeit ja kommen weil du nicht speicherst",
+    "timeSincePrompt": 53
+  },
+  {
+    "timestamp": "2026-01-14T01:48:05.333Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 63s",
+    "prompt": "breach müsste die ganze zeit ja kommen weil du nicht speicherst",
+    "timeSincePrompt": 63,
+    "resolved": true,
+    "resolved_at": "2026-01-14T01:48:05.352Z"
+  },
+  {
+    "timestamp": "2026-01-14T01:56:15.690Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 29s Zeit",
+    "prompt": "ok brech ist da",
+    "timeSincePrompt": 30
+  },
+  {
+    "timestamp": "2026-01-14T01:56:25.706Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 19s Zeit",
+    "prompt": "ok brech ist da",
+    "timeSincePrompt": 40
+  },
+  {
+    "timestamp": "2026-01-14T01:56:35.706Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 9s Zeit",
+    "prompt": "ok brech ist da",
+    "timeSincePrompt": 50
+  },
+  {
+    "timestamp": "2026-01-14T01:56:45.704Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 61s",
+    "prompt": "ok brech ist da",
+    "timeSincePrompt": 60,
+    "resolved": true,
+    "resolved_at": "2026-01-14T01:56:45.718Z"
+  },
+  {
+    "timestamp": "2026-01-14T02:01:55.948Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 28s Zeit",
+    "prompt": "was denn sonst damit das eendlich läuft",
+    "timeSincePrompt": 31
+  },
+  {
+    "timestamp": "2026-01-14T02:02:05.947Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 18s Zeit",
+    "prompt": "was denn sonst damit das eendlich läuft",
+    "timeSincePrompt": 41
+  },
+  {
+    "timestamp": "2026-01-14T02:02:15.961Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 8s Zeit",
+    "prompt": "was denn sonst damit das eendlich läuft",
+    "timeSincePrompt": 51
   }
 ]

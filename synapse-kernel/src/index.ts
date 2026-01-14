@@ -5,10 +5,12 @@ import { promisify } from 'util';
 import { SynapseChatViewProvider } from './chatViewProvider';
 import { SynapseChatParticipant } from './chatParticipant';
 import { ComplianceMonitor } from './complianceMonitor';
+import { UserRulesEnforcer } from './userRulesEnforcer';
 
 const execAsync = promisify(child_process.exec);
 
 let complianceMonitor: ComplianceMonitor | null = null;
+let userRulesEnforcer: UserRulesEnforcer | null = null;
 
 let complianceWatcher: child_process.ChildProcess | null = null;
 let healthMonitor: child_process.ChildProcess | null = null;
@@ -35,6 +37,10 @@ export function activate(context: vscode.ExtensionContext) {
     // Start Built-in Compliance Monitor (VS Code Errors)
     complianceMonitor = new ComplianceMonitor(context);
     complianceMonitor.start();
+
+    // Start UserRulesEnforcer (Output-Gate Enforcement)
+    userRulesEnforcer = new UserRulesEnforcer(context);
+    userRulesEnforcer.start();
 
     // Status command
     let disposable = vscode.commands.registerCommand('synapse.nexus.status', () => {
@@ -109,6 +115,9 @@ function startGuardianMonitors(context: vscode.ExtensionContext) {
 export function deactivate() {
     if (complianceMonitor) {
         complianceMonitor.stop();
+    }
+    if (userRulesEnforcer) {
+        userRulesEnforcer.stop();
     }
 }
 
