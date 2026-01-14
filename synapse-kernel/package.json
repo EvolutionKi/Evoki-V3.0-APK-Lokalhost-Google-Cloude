@@ -1,0 +1,123 @@
+{
+    "name": "synapse-nexus-kernel",
+    "displayName": "Synapse Nexus Kernel ⚡",
+    "description": "AI Chat with automatic Status Window injection for Evoki V2.0",
+    "version": "2.0.0",
+    "publisher": "synapse",
+    "engines": {
+        "vscode": "^1.68.0"
+    },
+    "main": "./dist/index.js",
+    "activationEvents": [
+        "*"
+    ],
+    "contributes": {
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "synapse-chat",
+                    "title": "Synapse Chat ⚡",
+                    "icon": "$(comment-discussion)"
+                }
+            ]
+        },
+        "views": {
+            "synapse-chat": [
+                {
+                    "type": "webview",
+                    "id": "synapse.chatPanel",
+                    "name": "Synapse Chat"
+                }
+            ]
+        },
+        "chatParticipants": [
+            {
+                "id": "synapse",
+                "name": "synapse",
+                "fullName": "Synapse ⚡",
+                "description": "AI assistant with automatic Status Window injection and context persistence",
+                "isSticky": true
+            }
+        ],
+        "commands": [
+            {
+                "command": "synapse.nexus.status",
+                "title": "Synapse Nexus: Check Status"
+            },
+            {
+                "command": "synapse.nexus.injectStatusWindow",
+                "title": "Synapse Nexus: Insert Status Window"
+            },
+            {
+                "command": "synapse.nexus.injectAndSend",
+                "title": "Synapse Nexus: Inject Status Window & Send"
+            },
+            {
+                "command": "synapse.chat.openPanel",
+                "title": "Synapse: Open Chat Panel"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "synapse.nexus.injectStatusWindow",
+                "key": "ctrl+shift+i",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "synapse.nexus.injectAndSend",
+                "key": "alt+enter",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "synapse.chat.openPanel",
+                "key": "alt+g",
+                "when": ""
+            }
+        ]
+    },
+    "configuration": {
+        "title": "Synapse Nexus Kernel",
+        "properties": {
+            "synapse.compliance.enabled": {
+                "type": "boolean",
+                "default": true,
+                "description": "Enable Compliance Monitoring"
+            },
+            "synapse.compliance.maxResponseTime": {
+                "type": "number",
+                "default": 60,
+                "description": "Max time (seconds) to wait for Status Window"
+            },
+            "synapse.compliance.checkInterval": {
+                "type": "number",
+                "default": 10,
+                "description": "How often (seconds) to check for compliance"
+            },
+            "synapse.watchers.pendingStatus": {
+                "type": "boolean",
+                "default": true,
+                "description": "Auto-start Pending Status Watcher"
+            },
+            "synapse.watchers.context": {
+                "type": "boolean",
+                "default": true,
+                "description": "Auto-start Context Watcher"
+            },
+            "synapse.watchers.compliance": {
+                "type": "boolean",
+                "default": false,
+                "description": "Auto-start Python Compliance Enforcer (use built-in instead)"
+            },
+            "synapse.notifications.showInEditor": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show compliance errors in VS Code (not system notifications)"
+            }
+        }
+    },
+    "devDependencies": {
+        "@types/node": "^25.0.3",
+        "@types/vscode": "^1.68.0",
+        "typescript": "^5.9.3"
+    }
+}
