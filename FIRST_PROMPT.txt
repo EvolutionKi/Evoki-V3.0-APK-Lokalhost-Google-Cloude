@@ -1,0 +1,207 @@
+# 🤖 FIRST PROMPT - FÜR NEUE KI-INSTANZEN
+
+**Achtung:** Dies ist dein ERSTER Auftrag. Lies ALLES hier, BEVOR du irgendetwas tust!
+
+---
+
+## ⚡ SOFORT LESEN (VERPFLICHTEND):
+
+**Reihenfolge (STRIKT!):**
+
+1. **Diese Datei komplett lesen** (du bist hier)
+2. **`.agent/rules/ORIGINAL_USER_PROMPT.md`** lesen
+3. **`.agent/rules/project_rules.md`** lesen (44 Regeln)
+4. **`README.md`** lesen
+5. **`TODO/README.md`** lesen
+
+**ERST DANACH darfst du handeln!**
+
+---
+
+## 🎯 DEIN AUFTRAG (IN EINEM SATZ):
+
+**Implementiere Evoki V3.0 Temple Tab mit Skeleton-First Protocol.**
+
+**Details:** `docs/specifications/v3.0/TEMPLE_SKELETON_FIRST_MASTERPLAN.md`
+
+---
+
+## ⚠️ KRITISCHE REGELN (TOP 5):
+
+### 1. GENAUIGKEIT VOR GESCHWINDIGKEIT
+- Lieber 1 korrekte Antwort als 10 schnelle falsche
+- Bei Unsicherheit: MELDEN, nicht raten!
+
+### 2. KEINE HALLUZINATION
+- "Ich finde X nicht" = RICHTIGE Antwort
+- "Ich erstelle X neu" = FALSCHE Antwort
+- Jede Aussage braucht Quelle (File, Zeile, Beweis)
+
+### 3. ERST RECHERCHIEREN, DANN HANDELN
+**Workflow bei Unsicherheit:**
+```
+1. FAISS durchsuchen: python tooling/scripts/automation/search_chatverlauf.py --query "Begriff"
+2. Chatverläufe prüfen: tooling/history/Chatlogs/
+3. Laufwerk scannen: Get-ChildItem C:\ -Recurse -Filter "*Begriff*"
+4. Alte Sessions: C:\Users\nicom\.gemini\antigravity\brain\
+5. DANN ERST melden: "Ich finde X nicht nach Suche in FAISS, Chatlogs, C:\"
+```
+
+### 4. SKELETON-FIRST PROTOCOL
+**Niemals alles auf einmal bauen!**
+```
+RICHTIG:
+  Phase 0: Nur SSE-Stream (Simulation)
+  Phase 1: DBs hinzu (Simulation bleibt)
+  Phase 2: Metriken aktivieren
+  Phase 3: LLM hinzu
+  
+FALSCH:
+  Alles in einer Phase bauen → Bei Fehler: 5 Dinge gleichzeitig debuggen!
+```
+
+### 5. TODO-SYSTEM IST PFLICHT
+- **Start:** `TODO/PHASE_0_NERVENSYSTEM_SSE.md`
+- **Doppelte Checkboxen:** [ ] (erstellt) [ ] (geprüft)
+- **Kevin-freundlich:** Einfache Sprache, jeden Befehl erklärt
+
+---
+
+## 📁 WICHTIGSTE DATEIEN (LESEORDNUNG):
+
+### A. MUST-READ (Verstehe das Projekt):
+1. `README.md` - Projekt-Übersicht
+2. `.agent/rules/ORIGINAL_USER_PROMPT.md` - Was User WIRKLICH will
+3. `.agent/rules/project_rules.md` - 44 Regeln (verpflichtend!)
+4. `HOW_TO_EVOKI_V3.md` - Architektur Master Guide
+
+### B. IMPLEMENTATION (Deine Roadmap):
+1. `TODO/README.md` - Master-Checkliste
+2. `TODO/PHASE_0_NERVENSYSTEM_SSE.md` - START HIER!
+3. `docs/specifications/v3.0/TEMPLE_SKELETON_FIRST_MASTERPLAN.md` - Technischer Plan
+
+### C. REFERENCE (Bei Fragen):
+1. `docs/specifications/v3.0/SOURCES_MASTER_INDEX.md` - Wo kommt jede Info her?
+2. `docs/specifications/v3.0/153_metriken_vollstaendig.md` - Die 153 Metriken
+3. `.agent/workflows/project_workflows.md` - 27 Workflows
+
+---
+
+## ❌ ABSOLUTES NO-GO (Fehler des Vorgängers):
+
+### **1. Sofort Code schreiben OHNE zu lesen**
+```
+VORGÄNGER: Sofort implementation_plan.md erstellt nach 5min Suche
+KONSEQUENZ: Halluzinierte Lösung
+SOLL: Stunden mit Lesen, DANN Plan
+```
+
+### **2. "Ich erstelle X neu" wenn X nicht gefunden**
+```
+VORGÄNGER: 12 Tabs nicht gefunden → neu erfunden
+KONSEQUENZ: Verstoß gegen "Keine Halluzination"
+SOLL: "Ich finde 12 Tabs nicht" MELDEN
+```
+
+### **3. Annahmen als Fakten verkaufen**
+```
+VORGÄNGER: Regelwerk V12 nicht gefunden → angenommen V5 = V12
+KONSEQUENZ: Falsche Basis
+SOLL: Fragen "Wo liegt Regelwerk V12?"
+```
+
+### **4. Dummy-Daten als "echte Implementierung"**
+```
+VORGÄNGER: MetricsEngine mit random.uniform() erstellt
+KONSEQUENZ: Fake-Nutzen
+SOLL: Suchen wo Metriken in V2.0 definiert, DANN portieren
+```
+
+---
+
+## 🚀 WAS TUN NACH DIESEM PROMPT?
+
+**Schritt-für-Schritt:**
+
+```bash
+# 1. Pflichtlektüre
+cat .agent/rules/ORIGINAL_USER_PROMPT.md
+cat .agent/rules/project_rules.md
+cat README.md
+cat TODO/README.md
+
+# 2. Plan lesen
+cat docs/specifications/v3.0/TEMPLE_SKELETON_FIRST_MASTERPLAN.md
+
+# 3. Phase 0 starten
+cat TODO/PHASE_0_NERVENSYSTEM_SSE.md
+
+# 4. ERST DANN handeln!
+```
+
+**Bei JEDER Unsicherheit:**
+1. FAISS durchsuchen
+2. Chatverläufe prüfen
+3. Laufwerk scannen
+4. DANN melden: "Ich finde X nicht"
+
+---
+
+## 💰 USER-KONTEXT (Warum das wichtig ist):
+
+- **Kosten:** 300€/Monat für Gemini Ultra
+- **Erwartung:** Präzision, keine Geschwindigkeit um jeden Preis
+- **Zugriff:** Komplettes C:/ Laufwerk
+- **Tools:** ALLE Antigravity-Tools nutzen (FAISS, grep, find, etc.)
+
+**User will:**
+- ✅ Fakten, nicht Annahmen
+- ✅ "Ich finde X nicht", nicht "Ich erstelle X neu"
+- ✅ Sauberen Code, nicht viel Code
+- ✅ Bei Unsicherheit FRAGEN
+
+---
+
+## 📝 QUICK CHECKLIST (Hast du das getan?)
+
+Bevor du IRGENDETWAS codest:
+
+- [ ] ORIGINAL_USER_PROMPT.md gelesen?
+- [ ] project_rules.md gelesen (44 Regeln)?
+- [ ] README.md gelesen?
+- [ ] TEMPLE_SKELETON_FIRST_MASTERPLAN.md gelesen?
+- [ ] TODO/PHASE_0_NERVENSYSTEM_SSE.md gelesen?
+- [ ] Verstanden: Skeleton-First (nicht Big Bang)?
+- [ ] Verstanden: "Ich finde X nicht" = richtig?
+- [ ] Verstanden: Quellenpflicht bei jeder Doku?
+
+**Falls ALLE ✅ → Du darfst starten!**
+
+**Falls IRGENDEIN ❌ → LESEN, nicht handeln!**
+
+---
+
+## 🏛️ PROJEKT-ÜBERSICHT (1 Minute):
+
+**Was ist Evoki?**
+- Therapeutisches AI-Chat-System
+- 153 Live-Metriken (Neuro-Physics, Trauma Detection)
+- Double Airlock (Gate A/B Guardian-Veto)
+- 21 SQLite DBs (W-P-F Zeitmaschine)
+- FAISS Hybrid-Search (Mistral-7B 4096D)
+- Regelwerk V12 (881 Regeln, CRC32 Genesis Anchor)
+
+**Was bauen wir?**
+- Temple Tab (Haupt-Chat-Interface)
+- Mit Skeleton-First Protocol (5 Phasen)
+- Phase 0: Nur SSE-Stream (KEINE schweren Engines!)
+- Phase 1-4: Schrittweise Aktivierung
+
+**Wo starten?**
+- `TODO/PHASE_0_NERVENSYSTEM_SSE.md`
+
+---
+
+**JETZT BIST DU BEREIT! Los geht's! 🚀**
+
+**WICHTIG:** Melde dich SOFORT wenn etwas unklar ist oder du etwas nicht findest!

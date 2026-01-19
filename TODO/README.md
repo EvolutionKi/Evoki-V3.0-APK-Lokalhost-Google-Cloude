@@ -1,93 +1,95 @@
-# 📋 TODO - EVOKI V3.0 TEMPLE MVP
+# 📋 TODO - EVOKI V3.0 TEMPLE (SKELETON-FIRST)
 
 **Stand:** 2026-01-19  
-**Ziel:** Lauffähiges Temple Tab  
+**Ziel:** Temple Tab MVP mit Skeleton-First Protocol  
 **Dauer:** ~7 Tage
 
 ---
 
 ## 📊 ÜBERSICHT
 
-Dieses TODO-System führt dich Schritt-für-Schritt zur Implementierung des Evoki Temple Tabs.
+**Strategie:** Skeleton-First (Nervenbahnen → Organe → Leben)
 
 **Struktur:**
-- `MASTER_PLAN.md` → Kompletter überblick
-- `PHASE_1_BACKEND_FOUNDATION.md` → FastAPI Setup
-- `PHASE_2_21DB_SETUP.md` → Datenbanken
-- `PHASE_3_TEMPLE_ENDPOINT.md` → Haupt-Logik
-- `PHASE_4_FRONTEND_INTEGRATION.md` → React Frontend
+- `TEMPLE_SKELETON_FIRST_MASTERPLAN.md` → Vollständiger technischer Plan
+- `PHASE_0_NERVENSYSTEM_SSE.md` → SSE Stream (Simulation)
+- `PHASE_1_MEMORY_LAYER.md` → 21 DBs + FAISS
+- `PHASE_2_COGNITIVE_LAYER.md` → Metriken + Gates
+- `PHASE_3_VOICE_LAYER.md` → LLM Integration
+- `PHASE_4_UI_POLISH.md` → UI/UX
 
 ---
 
 ## ✅ PHASEN-STATUS
 
-### PHASE 1: Backend Foundation (1-2 Tage)
+### PHASE 0: Nervensystem (SSE Skeleton)
 - [ ] Vollständig abgeschlossen
 - [ ] Geprüft & getestet
 
-**Siehe:** `PHASE_1_BACKEND_FOUNDATION.md`
+**Siehe:** `PHASE_0_NERVENSYSTEM_SSE.md`
 
 ---
 
-### PHASE 2: 21-DB Setup (1 Tag)
+### PHASE 1: Gedächtnis (21 DBs + FAISS)
 - [ ] Vollständig abgeschlossen
 - [ ] Geprüft & getestet
 
-**Siehe:** `PHASE_2_21DB_SETUP.md`
+**Siehe:** `PHASE_1_MEMORY_LAYER.md`
 
 ---
 
-### PHASE 3: Temple Endpoint (2-3 Tage)
+### PHASE 2: Gewissen (Metriken + Gates)
 - [ ] Vollständig abgeschlossen
 - [ ] Geprüft & getestet
 
-**Siehe:** `PHASE_3_TEMPLE_ENDPOINT.md`
+**Siehe:** `PHASE_2_COGNITIVE_LAYER.md`
 
 ---
 
-### PHASE 4: Frontend Integration (1-2 Tage)
+### PHASE 3: Stimme (LLM)
 - [ ] Vollständig abgeschlossen
 - [ ] Geprüft & getestet
 
-**Siehe:** `PHASE_4_FRONTEND_INTEGRATION.md`
+**Siehe:** `PHASE_3_VOICE_LAYER.md`
+
+---
+
+### PHASE 4: Gesicht (UI Polish)
+- [ ] Vollständig abgeschlossen
+- [ ] Geprüft & getestet
+
+**Siehe:** `PHASE_4_UI_POLISH.md`
 
 ---
 
 ## 🎯 FINALER MVP-CHECK
 
-Wenn alle 4 Phasen abgeschlossen sind:
-
 ### End-to-End Test:
-1. [ ] Backend läuft auf Port 8000
-2. [ ] Frontend läuft auf Port 5173
-3. [ ] Nachricht senden funktioniert
-4. [ ] Antwort wird angezeigt
-5. [ ] Metriken werden berechnet
-6. [ ] Guardian-Veto bei Krise funktioniert
-7. [ ] 21 DBs existieren
+1. [ ] Backend läuft (Port 8000)
+2. [ ] Frontend läuft (Port 5173)
+3. [ ] SSE-Stream funktioniert
+4. [ ] 21 DBs existieren
+5. [ ] FAISS findet Chunks
+6. [ ] 153 Metriken werden berechnet
+7. [ ] Gates feuern (A & B)
+8. [ ] LLM antwortet (Gemini)
+9. [ ] UI zeigt alles transparent
 
-### Wenn alle 7 Checks ✅:
-- [ ] **EVOKI TEMPLE MVP FERTIG! 🎉**
+### Wenn alle 9 Checks ✅:
+- [ ] **TEMPLE TAB MVP KOMPLETT! 🎉**
 
 ---
 
-## 📝 NOTIZEN
+## 📝 WICHTIGE LINKS
 
-**Wichtige Links:**
-- Backend: http://localhost:8000
-- Frontend: http://localhost:5173
-- Health-Check: http://localhost:8000/health
-
-**Wichtige Pfade:**
-- Backend: `backend/`
-- Frontend: `app/interface/`
-- DBs: `tooling/data/db/21dbs/`
-- Regelwerk: `app/interface/public/EVOKI_REGELWERKE_GENESIS/regelwerk_v12.json`
+- **Masterplan:** `docs/specifications/v3.0/TEMPLE_SKELETON_FIRST_MASTERPLAN.md`
+- **Rules:** `.agent/rules/project_rules.md` (44 Regeln)
+- **First Prompt:** `FIRST_PROMPT.txt` (für neue KIs)
 
 ---
 
 ## 🚀 START
 
-**Beginne mit:** `PHASE_1_BACKEND_FOUNDATION.md`
+**Beginne mit:** `PHASE_0_NERVENSYSTEM_SSE.md`
 
 **Viel Erfolg! 💪**

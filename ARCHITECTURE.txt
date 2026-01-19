@@ -1,6 +1,6 @@
 EVOKI V3.0 - Architecture Map (Auto-Generated)
 ==============================================
-Generated: 2026-01-19 09:25
+Generated: 2026-01-19 09:42
 Strategy: Strict Separation (App vs Tooling)
 Status: LIVE REFLECTION
 
@@ -146,6 +146,7 @@ ROOT/
 │  │     ├─ SUMMARY.md
 │  │     ├─ task.md
 │  │     ├─ TEMPLE_MVP_PLAN.md
+│  │     ├─ TEMPLE_SKELETON_FIRST_MASTERPLAN.md
 │  │     ├─ ULTIMATE_ARCHITECTURE.md
 │  │     ├─ ULTIMATE_MASTER_PLAN_V8.md
 │  │     ├─ uploaded_image_0_1768804144371.png
@@ -170,11 +171,11 @@ ROOT/
 │  ├─ tsconfig.json
 │  └─ WHY_IN_ROOT.md
 ├─ TODO
-│  ├─ MASTER_PLAN.md
-│  ├─ PHASE_1_BACKEND_FOUNDATION.md
-│  ├─ PHASE_2_21DB_SETUP.md
-│  ├─ PHASE_3_TEMPLE_ENDPOINT.md
-│  ├─ PHASE_4_FRONTEND_INTEGRATION.md
+│  ├─ PHASE_0_NERVENSYSTEM_SSE.md
+│  ├─ PHASE_1_MEMORY_LAYER.md
+│  ├─ PHASE_2_COGNITIVE_LAYER.md
+│  ├─ PHASE_3_VOICE_LAYER.md
+│  ├─ PHASE_4_UI_POLISH.md
 │  └─ README.md
 ├─ tooling  # [AUTOMATION] Logic & Dev Tools
 │  ├─ config
@@ -381,6 +382,7 @@ ROOT/
 ├─ .geminiignore
 ├─ ARCHITECTURE.txt  # THIS FILE
 ├─ BLUEPRINT_SOVEREIGN_EXTENSION.md
+├─ FIRST_PROMPT.txt
 ├─ HOW_TO_EVOKI_V3.md
 └─ README.md
 
