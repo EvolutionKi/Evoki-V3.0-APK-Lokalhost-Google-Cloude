@@ -244,14 +244,14 @@ export default function TempleTab() {
                     WebkitTextFillColor: 'transparent',
                     fontWeight: 'bold'
                 }}>
-                    🏛️ EVOKI TEMPLE [PHASE 2]
+                    🏛️ EVOKI TEMPLE [PHASE 3]
                 </h1>
                 <p style={{
                     color: '#f80',
                     fontSize: '0.9rem',
                     fontFamily: 'monospace'
                 }}>
-                    ⚡ Phase 2: Metriken + Double Airlock Gates Active | LLM noch Mock (Phase 3!)
+                    ⚡ Phase 3: LLM ACTIVE (Gemini 2.0 Flash) + Metriken + Double Airlock Gates!
                 </p>
             </div>
 

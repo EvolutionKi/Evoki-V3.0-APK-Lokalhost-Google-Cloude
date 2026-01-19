@@ -39,16 +39,16 @@
 ---
 
 ### PHASE 2: Gewissen (Metriken + Gates)
-- [ ] Vollständig abgeschlossen
-- [ ] Geprüft & getestet
+- [x] Vollständig abgeschlossen
+- [x] Geprüft & getestet
 
 **Siehe:** `PHASE_2_COGNITIVE_LAYER.md`
 
 ---
 
 ### PHASE 3: Stimme (LLM)
-- [ ] Vollständig abgeschlossen
-- [ ] Geprüft & getestet
+- [x] Vollständig abgeschlossen
+- [x] Geprüft & getestet
 
 **Siehe:** `PHASE_3_VOICE_LAYER.md`
 

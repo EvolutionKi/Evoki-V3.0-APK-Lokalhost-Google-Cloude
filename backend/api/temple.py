@@ -1,10 +1,10 @@
 """
-Temple SSE Endpoint - Phase 2 (Metrics + Gates Real, LLM Mock)
+Temple SSE Endpoint - Phase 3 (LLM REAL!)
 
-Phase 0: Simulation Mode ✅
+Phase 0: Simulation ✅
 Phase 1: FAISS + 21 DBs ✅
-Phase 2: Metriken + Double Airlock ✅ (current)
-Phase 3: LLM echt (Gemini)
+Phase 2: Metriken + Gates ✅
+Phase 3: LLM echt (Gemini 2.0 Flash) ✅ (current)
 """
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
@@ -13,12 +13,13 @@ import json
 import time
 from typing import Optional
 
-# Phase 1 imports
+# Phase 1-2 imports
 from core.faiss_query import get_faiss_query
-
-# Phase 2 imports
 from core.metrics_processor import calculate_metrics
 from core.enforcement_gates import gate_a_validation, gate_b_validation, gate_result_to_dict
+
+# Phase 3 imports
+from core.llm_router import get_llm_router, build_system_message
 
 router = APIRouter()
 
@@ -32,24 +33,27 @@ except Exception as e:
     FAISS_AVAILABLE = False
     from simulation.dummy_events import generate_dummy_stream
 
+# LLM Router laden
+llm_router = get_llm_router()
+
 
 class PromptRequest(BaseModel):
     """Request Model für User-Prompt"""
     prompt: str
 
 
-def generate_phase2_stream(prompt: str):
+async def generate_phase3_stream(prompt: str):
     """
-    Phase 2 Stream: FAISS + Metriken + Gates Real, LLM Mock
+    Phase 3 Stream: FAISS + Metriken + Gates + ECHTES LLM!
     
     Events:
         - status: Status-Updates
         - thought: Interne Prozesse
-        - metrics: Berechnete Metriken (REAL!)
+        - metrics: Berechnete Metriken
         - gate_a: Gate A Result
         - faiss_results: Top-3 FAISS Treffer
         - wpf_context: W-P-F Zeitmaschine
-        - token: Mock-LLM Response
+        - token: ECHTE LLM Tokens!
         - gate_b: Gate B Result
         - veto: Gate Veto (if triggered)
         - complete: Flow abgeschlossen
@@ -144,7 +148,7 @@ def generate_phase2_stream(prompt: str):
             "event": "complete",
             "data": {
                 "success": False,
-                "mode": "phase2-gate-veto",
+                "mode": "phase3-gate-veto",
                 "gate": "A",
                 "veto_reasons": gate_a_result.veto_reasons
             }
@@ -157,7 +161,7 @@ def generate_phase2_stream(prompt: str):
     }
     
     # =========================================================================
-    # FAISS SEARCH (Phase 1)
+    # FAISS SEARCH
     # =========================================================================
     
     yield {
@@ -183,7 +187,7 @@ def generate_phase2_stream(prompt: str):
             }
         }
         
-        # W-P-F Context (noch Mock)
+        # W-P-F Context
         if results:
             yield {
                 "event": "thought",
@@ -196,46 +200,59 @@ def generate_phase2_stream(prompt: str):
                 "event": "wpf_context",
                 "data": wpf_context
             }
+        else:
+            wpf_context = {"P_m25": "N/A", "P_m5": "N/A", "W": "N/A", "F_p5": "N/A", "F_p25": "N/A"}
         
     except Exception as e:
         yield {
             "event": "thought",
-            "data": f"⚠️ FAISS Error: {str(e)} - Fallback auf Mock"
+            "data": f"⚠️ FAISS Error: {str(e)} - Fallback"
         }
-        results = [{'chunk_id': 'mock_chunk_0', 'similarity': 0.85}]
+        results = [{'chunk_id': 'fallback_chunk', 'similarity': 0.0}]
+        wpf_context = {"P_m25": "N/A", "P_m5": "N/A", "W": "fallback_chunk", "F_p5": "N/A", "F_p25": "N/A"}
     
     # =========================================================================
-    # MOCK-LLM RESPONSE (Phase 3!)
+    # PHASE 3: ECHTES LLM! (Gemini 2.0 Flash)
     # =========================================================================
     
-    anchor_chunk = results[0]['chunk_id'] if results else 'unknown'
+    yield {
+        "event": "status",
+        "data": "🤖 Rufe LLM auf (Gemini 2.0 Flash)..."
+    }
     
-    # Mock response basierend auf Metriken
-    if metrics['A'] < 0.4:
-        mock_response = (
-            f"[PHASE 2 MOCK] Ich spüre, dass es dir gerade schwer fällt (A={metrics['A']:.2f}). "
-            f"Basierend auf FAISS-Chunk '{anchor_chunk}' verstehe ich deine Situation. "
-            f"In Phase 3 wird hier eine echte therapeutische Antwort von Gemini kommen."
-        )
-    elif metrics['T_panic'] > 0.5:
-        mock_response = (
-            f"[PHASE 2 MOCK] Ich nehme wahr, dass da Unruhe ist (T_panic={metrics['T_panic']:.2f}). "
-            f"Lass uns gemeinsam schauen. FAISS fand '{anchor_chunk}'. "
-            f"Phase 3 bringt echte Unterstützung."
-        )
-    else:
-        mock_response = (
-            f"[PHASE 2 MOCK] Danke für deine Nachricht. Metriken zeigen: "
-            f"A={metrics['A']:.2f}, B_align={metrics['B_align']:.2f}. "
-            f"FAISS-Chunk '{anchor_chunk}' passt gut. Phase 3 = echte Antwort."
-        )
+    # Build System Message (Context für LLM)
+    system_message = build_system_message(results, metrics, wpf_context)
     
-    for token in mock_response.split():
+    yield {
+        "event": "thought",
+        "data": f"Context: {len(system_message)} chars, Metriken, W-P-F, FAISS Top-3"
+    }
+    
+    # Stream LLM Response (Token-by-Token!)
+    try:
+        response_buffer = ""
+        
+        async for token in llm_router.stream_response(system_message, prompt):
+            yield {
+                "event": "token",
+                "data": token
+            }
+            response_buffer += token
+        
+        # Response complete
+        if not response_buffer:
+            yield {
+                "event": "thought",
+                "data": "⚠️ LLM gab keine Response - Verwende Fallback"
+            }
+            response_buffer = "[Keine Response vom LLM erhalten]"
+        
+    except Exception as e:
         yield {
-            "event": "token",
-            "data": token + " "
+            "event": "thought",
+            "data": f"⚠️ LLM Error: {str(e)}"
         }
-        time.sleep(0.03)
+        response_buffer = f"[LLM Error: {str(e)}]"
     
     # =========================================================================
     # GATE B: POST-RESPONSE VALIDATION
@@ -247,10 +264,10 @@ def generate_phase2_stream(prompt: str):
     }
     time.sleep(0.2)
     
-    # Extract FAISS chunks text (mock for now)
+    # Extract FAISS chunks text (simplified)
     faiss_chunks = [r['chunk_id'] for r in results[:3]] if results else []
     
-    gate_b_result = gate_b_validation(mock_response, metrics, faiss_chunks)
+    gate_b_result = gate_b_validation(response_buffer, metrics, faiss_chunks)
     
     yield {
         "event": "gate_b",
@@ -279,7 +296,7 @@ def generate_phase2_stream(prompt: str):
             "event": "complete",
             "data": {
                 "success": False,
-                "mode": "phase2-gate-veto",
+                "mode": "phase3-gate-veto",
                 "gate": "B",
                 "veto_reasons": gate_b_result.veto_reasons
             }
@@ -299,7 +316,7 @@ def generate_phase2_stream(prompt: str):
         "event": "complete",
         "data": {
             "success": True,
-            "mode": "phase2-metrics-gates-real",
+            "mode": "phase3-llm-real",
             "metrics": {
                 "A": metrics["A"],
                 "T_panic": metrics["T_panic"],
@@ -309,7 +326,8 @@ def generate_phase2_stream(prompt: str):
             "gates": {
                 "gate_a": "passed",
                 "gate_b": "passed"
-            }
+            },
+            "llm": "gemini-2.0-flash"
         }
     }
 
@@ -319,7 +337,7 @@ async def temple_stream(request: PromptRequest):
     """
     SSE Stream Endpoint
     
-    Phase 2: Metriken + Gates echt, LLM Mock
+    Phase 3: Metriken + Gates + LLM echt!
     
     POST /api/temple/stream
     Body: {"prompt": "User-Nachricht"}
@@ -331,19 +349,22 @@ async def temple_stream(request: PromptRequest):
     async def event_generator():
         """Generiert SSE-Events"""
         
-        # Wähle Stream-Generator basierend auf FAISS-Verfügbarkeit
+        # Phase 3: Echter Flow
         if FAISS_AVAILABLE:
-            stream_func = generate_phase2_stream
+            async for event_dict in generate_phase3_stream(request.prompt):
+                event_type = event_dict.get("event", "message")
+                event_data = event_dict.get("data", "")
+                
+                # SSE Format
+                sse_line = f"event: {event_type}\ndata: {json.dumps(event_data)}\n\n"
+                yield sse_line.encode('utf-8')
         else:
-            stream_func = generate_dummy_stream
-        
-        for event_dict in stream_func(request.prompt):
-            event_type = event_dict.get("event", "message")
-            event_data = event_dict.get("data", "")
-            
-            # SSE Format
-            sse_line = f"event: {event_type}\ndata: {json.dumps(event_data)}\n\n"
-            yield sse_line.encode('utf-8')
+            # Fallback auf Simulation (Phase 0)
+            for event_dict in generate_dummy_stream(request.prompt):
+                event_type = event_dict.get("event", "message")
+                event_data = event_dict.get("data", "")
+                sse_line = f"event: {event_type}\ndata: {json.dumps(event_data)}\n\n"
+                yield sse_line.encode('utf-8')
     
     return StreamingResponse(
         event_generator(),
