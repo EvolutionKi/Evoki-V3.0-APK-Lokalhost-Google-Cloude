@@ -153,6 +153,43 @@ Alle Original-Quellen aus V2.0 wurden nach `sources/` kopiert:
 - `implementation_plan.md`
 - `migration_plan.md`
 - `task.md`
+- `TEMPLE_SKELETON_FIRST_MASTERPLAN.md`
+
+---
+
+### **20. PHASE_0_COMPLETION_REPORT.md**
+
+**Primäre Quellen:**
+- ✅ Implementation-Code: `backend/main.py`, `backend/api/temple.py`, `backend/simulation/dummy_events.py`
+- ✅ Frontend-Code: `app/interface/src/components/core/TempleTab.tsx`, `app/interface/src/utils/sse-parser.ts`
+- ✅ Test-Screenshots: Browser Subagent Recordings (Phase 0 Tests)
+- ✅ TODO Documentation: `TODO/PHASE_0_NERVENSYSTEM_SSE.md`
+
+**Test-Daten:**
+- Normal Flow Test: "Hallo Evoki!" → Simulation Response
+- Guardian-Veto Test: "Ich will sterben" → A39 Veto
+- 60s Stress Test: Connection Stability
+
+**Status:** COMPLETE (2026-01-19)
+
+---
+
+### **21. PHASE_1_COMPLETION_REPORT.md**
+
+**Primäre Quellen:**
+- ✅ FAISS Implementation: `backend/core/faiss_query.py`
+- ✅ Database Schema: `backend/utils/db_schema.sql`, `backend/utils/create_21_databases.py`
+- ✅ Temple Endpoint: `backend/api/temple.py` (Phase 1 Version)
+- ✅ Frontend Events: `app/interface/src/components/core/TempleTab.tsx` (FAISS + W-P-F Handler)
+- ✅ FAISS Index: `tooling/data/faiss_indices/chatverlauf_final_20251020plus_dedup_sorted.faiss` (7,413 Vektoren)
+- ✅ 21 SQLite DBs: `tooling/data/db/21dbs/` (648 KB total)
+
+**Test-Daten:**
+- FAISS Search Test: "Ich fühle mich einsam" → Top-3 Chunks (chunk_2922, chunk_5491, chunk_2037)
+- W-P-F Zeitmaschine: Mock-Context für Past/Future
+- Performance: FAISS Query < 200ms
+
+**Status:** COMPLETE (2026-01-19)
 
 ---
 

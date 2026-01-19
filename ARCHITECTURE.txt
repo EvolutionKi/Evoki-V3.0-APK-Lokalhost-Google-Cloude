@@ -1,6 +1,6 @@
 EVOKI V3.0 - Architecture Map (Auto-Generated)
 ==============================================
-Generated: 2026-01-19 09:42
+Generated: 2026-01-19 11:09
 Strategy: Strict Separation (App vs Tooling)
 Status: LIVE REFLECTION
 
@@ -97,6 +97,8 @@ ROOT/
 │     │  │  │  ├─ TrialogPanel.tsx
 │     │  │  │  └─ VoiceSettingsPanel.tsx
 │     │  │  └─ README.md
+│     │  ├─ utils
+│     │  │  └─ sse-parser.ts
 │     │  ├─ App.css
 │     │  ├─ App.tsx
 │     │  ├─ index.css
@@ -105,12 +107,29 @@ ROOT/
 │     ├─ .gitignore
 │     ├─ eslint.config.js
 │     ├─ index.html
+│     ├─ package-lock.json
 │     ├─ package.json
 │     ├─ README.md
 │     ├─ tsconfig.app.json
 │     ├─ tsconfig.json
 │     ├─ tsconfig.node.json
 │     └─ vite.config.ts
+├─ backend
+│  ├─ api
+│  │  ├─ __init__.py
+│  │  └─ temple.py
+│  ├─ core
+│  │  ├─ __init__.py
+│  │  └─ faiss_query.py
+│  ├─ simulation
+│  │  ├─ __init__.py
+│  │  └─ dummy_events.py
+│  ├─ utils
+│  │  ├─ __init__.py
+│  │  ├─ create_21_databases.py
+│  │  └─ db_schema.sql
+│  ├─ main.py
+│  └─ requirements.txt
 ├─ docs  # [KNOWLEDGE] Documentation
 │  ├─ specifications
 │  │  └─ v3.0
@@ -141,6 +160,8 @@ ROOT/
 │  │     ├─ INDEX.md
 │  │     ├─ MASTER_DISCOVERY_EVOKI_V3.md
 │  │     ├─ migration_plan.md
+│  │     ├─ PHASE_0_COMPLETION_REPORT.md
+│  │     ├─ PHASE_1_COMPLETION_REPORT.md
 │  │     ├─ PROZESS_DIAGRAMM_ASCII.md
 │  │     ├─ SOURCES_MASTER_INDEX.md
 │  │     ├─ SUMMARY.md
@@ -225,6 +246,25 @@ ROOT/
 │  │  │  │  └─ README.md
 │  │  │  └─ README.md
 │  │  ├─ db
+│  │  │  ├─ 21dbs
+│  │  │  │  ├─ bvec_clarity.db
+│  │  │  │  ├─ bvec_depth.db
+│  │  │  │  ├─ bvec_init.db
+│  │  │  │  ├─ bvec_life.db
+│  │  │  │  ├─ bvec_safety.db
+│  │  │  │  ├─ bvec_truth.db
+│  │  │  │  ├─ bvec_warmth.db
+│  │  │  │  ├─ composite.db
+│  │  │  │  ├─ master_timeline.db
+│  │  │  │  ├─ tempel_F_p1.db
+│  │  │  │  ├─ tempel_F_p2.db
+│  │  │  │  ├─ tempel_F_p25.db
+│  │  │  │  ├─ tempel_F_p5.db
+│  │  │  │  ├─ tempel_W.db
+│  │  │  │  ├─ tempel_W_m1.db
+│  │  │  │  ├─ tempel_W_m2.db
+│  │  │  │  ├─ tempel_W_m25.db
+│  │  │  │  └─ tempel_W_m5.db
 │  │  │  ├─ persistent_context.db
 │  │  │  └─ README.md
 │  │  ├─ faiss_indices

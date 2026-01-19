@@ -92,7 +92,43 @@ export default function TempleTab() {
                             break;
 
                         case 'metrics_preview':
+                            // Phase 1: Dummy metrics (deprecated)
                             setMetrics(event.data);
+                            break;
+
+                        case 'metrics':
+                            // Phase 2: REAL Metrics!
+                            setMetrics(event.data);
+                            break;
+
+                        case 'gate_a':
+                            // Phase 2: Gate A Result
+                            if (!event.data.passed) {
+                                const gateText = `🔴 GATE A VETO:\n` +
+                                    `Rules: ${event.data.rule_violations.join(', ')}\n` +
+                                    event.data.veto_reasons.map((r: string) => `  • ${r}`).join('\n');
+
+                                setMessages(prev => [...prev, {
+                                    role: 'system',
+                                    content: gateText,
+                                    color: '#f00'
+                                }]);
+                            }
+                            break;
+
+                        case 'gate_b':
+                            // Phase 2: Gate B Result
+                            if (!event.data.passed) {
+                                const gateText = `🟠 GATE B VETO:\n` +
+                                    `Rules: ${event.data.rule_violations.join(', ')}\n` +
+                                    event.data.veto_reasons.map((r: string) => `  • ${r}`).join('\n');
+
+                                setMessages(prev => [...prev, {
+                                    role: 'system',
+                                    content: gateText,
+                                    color: '#ff8800'
+                                }]);
+                            }
                             break;
 
                         case 'faiss_results':
@@ -133,12 +169,17 @@ export default function TempleTab() {
                             break;
 
                         case 'veto':
+                            // Phase 0/1/2: Veto handling
+                            const vetoColor = event.data.gate === 'A' ? '#f00' : '#ff8800';
+                            const vetoText = `${event.data.gate === 'A' ? '🔴' : '🟠'} ${event.data.message}\n` +
+                                (event.data.reasons ? event.data.reasons.map((r: string) => `  • ${r}`).join('\n') : '');
+
                             setMessages(prev => [...prev, {
                                 role: 'system',
-                                content: `🔴 GUARDIAN-VETO (Gate ${event.data.gate}): ${event.data.reason}`,
-                                color: 'red'
+                                content: vetoText,
+                                color: vetoColor
                             }]);
-                            setStatus('Veto aktiviert - Request gestoppt');
+                            setStatus(`Veto aktiviert (Gate ${event.data.gate})`);
                             setLoading(false);
                             break;
 
@@ -203,14 +244,14 @@ export default function TempleTab() {
                     WebkitTextFillColor: 'transparent',
                     fontWeight: 'bold'
                 }}>
-                    🏛️ EVOKI TEMPLE [PHASE 1]
+                    🏛️ EVOKI TEMPLE [PHASE 2]
                 </h1>
                 <p style={{
                     color: '#f80',
                     fontSize: '0.9rem',
                     fontFamily: 'monospace'
                 }}>
-                    ⚡ Phase 1: FAISS Active + 21 DBs | LLM noch Mock (Phase 3!)
+                    ⚡ Phase 2: Metriken + Double Airlock Gates Active | LLM noch Mock (Phase 3!)
                 </p>
             </div>
 
