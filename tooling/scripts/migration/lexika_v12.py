@@ -242,7 +242,10 @@ def compute_lexicon_score(
     use_longest_match: bool = True
 ) -> Tuple[float, List[str]]:
     """
-    Berechnet gewichteten Score mit Longest-Match-Strategie.
+    Berechnet gewichteten Score mit Word-Boundary-Matching (BUG-FIX!).
+    
+    FIX: Verwendet Regex Word-Boundaries (\b) statt .find() um False Positives
+    zu vermeiden (z.B. "ich" soll NICHT in "nicht" matchen).
     
     Args:
         text: Input-Text
@@ -265,9 +268,16 @@ def compute_lexicon_score(
     
     for term in sorted_terms:
         weight = lexicon[term]
-        pos = text_lower.find(term)
         
-        if pos != -1:
+        # BUG-FIX: Word Boundary Regex statt .find()
+        # Für Multi-Word-Phrases und Single-Words
+        pattern = r'\b' + re.escape(term) + r'\b'
+        
+        # Finde ERSTES Match (wie vorher mit .find())
+        match = re.search(pattern, text_lower)
+        
+        if match:
+            pos = match.start()
             term_positions = set(range(pos, pos + len(term)))
             
             # Überlappungs-Check
