@@ -228,62 +228,28 @@ export default function TempleTab() {
     };
 
     return (
-        <div style={{
-            padding: '20px',
-            display: 'flex',
-            flexDirection: 'column',
-            height: '100%',
-            background: 'linear-gradient(180deg, #0a0a0a 0%, #1a0a1a 100%)'
-        }}>
+        <div className="p-5 flex flex-col h-full bg-gradient-to-b from-[#0a0a0a] to-[#1a0a1a]">
             {/* HEADER */}
-            <div style={{ marginBottom: '20px' }}>
-                <h1 style={{
-                    fontSize: '2rem',
-                    background: 'linear-gradient(90deg, #0cf 0%, #f0f 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    fontWeight: 'bold'
-                }}>
+            <div className="mb-5">
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                     🏛️ EVOKI TEMPLE [PHASE 3]
                 </h1>
-                <p style={{
-                    color: '#f80',
-                    fontSize: '0.9rem',
-                    fontFamily: 'monospace'
-                }}>
+                <p className="text-orange-500 text-sm font-mono">
                     ⚡ Phase 3: LLM ACTIVE (Gemini 2.0 Flash) + Metriken + Double Airlock Gates!
                 </p>
             </div>
 
             {/* STATUS BAR */}
             {status && (
-                <div style={{
-                    padding: '12px',
-                    background: 'rgba(0, 204, 255, 0.1)',
-                    border: '1px solid rgba(0, 204, 255, 0.3)',
-                    borderRadius: '6px',
-                    marginBottom: '10px',
-                    color: '#0cf',
-                    fontFamily: 'monospace',
-                    fontSize: '0.9rem'
-                }}>
+                <div className="px-3 py-2 bg-cyan-400/10 border border-cyan-400/30 rounded-lg mb-3 text-cyan-400 font-mono text-sm">
                     {status}
                 </div>
             )}
 
             {/* METRICS PREVIEW */}
             {metrics && (
-                <div style={{
-                    padding: '10px',
-                    background: 'rgba(50, 50, 50, 0.3)',
-                    border: '1px solid #333',
-                    borderRadius: '6px',
-                    marginBottom: '10px',
-                    color: '#888',
-                    fontSize: '0.8rem',
-                    fontFamily: 'monospace'
-                }}>
-                    <strong style={{ color: '#0cf' }}>Metriken (Simulation):</strong>
+                <div className="p-3 bg-gray-800/30 border border-gray-700 rounded-lg mb-3 text-gray-400 text-xs font-mono">
+                    <strong className="text-cyan-400">Metriken (Simulation):</strong>
                     {' '}
                     A={metrics.A.toFixed(2)}
                     {' | '}
@@ -297,23 +263,10 @@ export default function TempleTab() {
                 </div>
             )}
 
-            {/* CHAT MESSAGES */}
-            <div style={{
-                flex: 1,
-                background: 'rgba(0, 0, 0, 0.5)',
-                padding: '20px',
-                marginBottom: '20px',
-                borderRadius: '8px',
-                overflowY: 'auto',
-                border: '1px solid #222'
-            }}>
+            {/* CHAT MESSAGES - V2.0 Card Style */}
+            <div className="flex-1 bg-black/50 p-5 mb-5 rounded-lg overflow-y-auto border border-gray-800">
                 {messages.length === 0 && !currentResponse && (
-                    <div style={{
-                        color: '#444',
-                        fontStyle: 'italic',
-                        textAlign: 'center',
-                        marginTop: '50px'
-                    }}>
+                    <div className="text-gray-600 italic text-center mt-12">
                         Konversation erscheint hier...
                     </div>
                 )}
@@ -321,32 +274,18 @@ export default function TempleTab() {
                 {messages.map((msg, i) => (
                     <div
                         key={i}
-                        style={{
-                            marginBottom: '15px',
-                            padding: '12px',
-                            borderRadius: '6px',
-                            background: msg.role === 'user'
-                                ? 'rgba(0, 100, 200, 0.1)'
+                        className={`mb-4 p-3 rounded-lg ${msg.role === 'user'
+                                ? 'bg-blue-500/10 border-l-4 border-blue-400'
                                 : msg.role === 'system'
-                                    ? 'rgba(200, 50, 50, 0.1)'
-                                    : 'rgba(0, 200, 100, 0.1)',
-                            borderLeft: `3px solid ${msg.role === 'user' ? '#0cf' : msg.color || '#0f0'
-                                }`
-                        }}
+                                    ? 'bg-red-500/10 border-l-4 border-red-400'
+                                    : 'bg-green-500/10 border-l-4 border-green-400'
+                            }`}
                     >
-                        <div style={{
-                            fontSize: '0.8rem',
-                            color: '#888',
-                            marginBottom: '5px',
-                            fontFamily: 'monospace'
-                        }}>
+                        <div className="text-xs text-gray-400 mb-2 font-mono">
                             {msg.role === 'user' ? '👤 User' : msg.role === 'system' ? '⚙️ System' : '🏛️ Evoki'}
                         </div>
-                        <div style={{
-                            color: msg.color || '#fff',
-                            whiteSpace: 'pre-wrap',
-                            fontFamily: 'system-ui'
-                        }}>
+                        <div className="text-white whitespace-pre-wrap"
+                            style={{ color: msg.color || '#fff' }}>
                             {msg.content}
                         </div>
                     </div>
@@ -354,31 +293,13 @@ export default function TempleTab() {
 
                 {/* CURRENT TYPING RESPONSE */}
                 {currentResponse && (
-                    <div style={{
-                        marginBottom: '15px',
-                        padding: '12px',
-                        borderRadius: '6px',
-                        background: 'rgba(0, 200, 100, 0.1)',
-                        borderLeft: '3px solid #0f0'
-                    }}>
-                        <div style={{
-                            fontSize: '0.8rem',
-                            color: '#888',
-                            marginBottom: '5px',
-                            fontFamily: 'monospace'
-                        }}>
-                            🏛️ Evoki <span style={{ color: '#0f0' }}>●</span>
+                    <div className="mb-4 p-3 rounded-lg bg-green-500/10 border-l-4 border-green-400">
+                        <div className="text-xs text-gray-400 mb-2 font-mono">
+                            🏛️ Evoki <span className="text-green-400">●</span>
                         </div>
-                        <div style={{
-                            color: '#fff',
-                            whiteSpace: 'pre-wrap',
-                            fontFamily: 'system-ui'
-                        }}>
+                        <div className="text-white whitespace-pre-wrap">
                             {currentResponse}
-                            <span style={{
-                                opacity: 0.7,
-                                animation: 'blink 1s infinite'
-                            }}>▊</span>
+                            <span className="opacity-70 animate-pulse">▊</span>
                         </div>
                     </div>
                 )}
