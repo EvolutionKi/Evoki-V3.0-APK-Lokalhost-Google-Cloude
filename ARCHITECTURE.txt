@@ -1,6 +1,6 @@
 EVOKI V3.0 - Architecture Map (Auto-Generated)
 ==============================================
-Generated: 2026-01-13 22:03
+Generated: 2026-01-19 08:41
 Strategy: Strict Separation (App vs Tooling)
 Status: LIVE REFLECTION
 
@@ -11,6 +11,7 @@ ROOT/
 │  └─ workflows
 │     ├─ evoki_repair.md
 │     ├─ evoki_verify.md
+│     ├─ planen.md
 │     ├─ quiz.md
 │     └─ startup.md
 ├─ .github
@@ -71,8 +72,26 @@ ROOT/
 │     │  │  ├─ react.svg
 │     │  │  └─ README.md
 │     │  ├─ components
-│     │  │  ├─ README.md
-│     │  │  └─ TrialogPanel.tsx
+│     │  │  ├─ core
+│     │  │  │  ├─ DeepEarthTab.tsx
+│     │  │  │  ├─ MetricsDashboard.tsx
+│     │  │  │  ├─ TempleTab.tsx
+│     │  │  │  └─ TrialogPanel.tsx
+│     │  │  ├─ v2_tabs
+│     │  │  │  ├─ AgentSelectionPanel.tsx
+│     │  │  │  ├─ Analysis.tsx
+│     │  │  │  ├─ ApiPanel.tsx
+│     │  │  │  ├─ DeepStoragePanel.tsx
+│     │  │  │  ├─ EngineConsolePanel.tsx
+│     │  │  │  ├─ ErrorLogPanel.tsx
+│     │  │  │  ├─ EvokiTempleChat.tsx
+│     │  │  │  ├─ ParameterTuningPanel.tsx
+│     │  │  │  ├─ PipelineLogPanel.tsx
+│     │  │  │  ├─ README.md
+│     │  │  │  ├─ RulePanel.tsx
+│     │  │  │  ├─ TrialogPanel.tsx
+│     │  │  │  └─ VoiceSettingsPanel.tsx
+│     │  │  └─ README.md
 │     │  ├─ App.css
 │     │  ├─ App.tsx
 │     │  ├─ index.css
@@ -87,6 +106,63 @@ ROOT/
 │     ├─ tsconfig.json
 │     ├─ tsconfig.node.json
 │     └─ vite.config.ts
+├─ docs  # [KNOWLEDGE] Documentation
+│  ├─ specifications
+│  │  └─ v3.0
+│  │     ├─ sources
+│  │     │  ├─ README.md
+│  │     │  ├─ v2_Adler_Metriken.txt
+│  │     │  ├─ v2_App.tsx
+│  │     │  ├─ v2_DualBackendBridge.js
+│  │     │  ├─ v2_GeminiContextBridge.js
+│  │     │  ├─ v2_metrics_processor.py
+│  │     │  ├─ v2_query.py
+│  │     │  ├─ v2_regelwerk_v12.json
+│  │     │  ├─ v2_server.js
+│  │     │  ├─ v2_TrinityEngine.js
+│  │     │  └─ v2_WHITEBOARD_V2.2_EXTENDED_MASTER.md
+│  │     ├─ 153_metriken_vollstaendig.md
+│  │     ├─ API_TRIGGER_LOGIC_VISUALIZED.md
+│  │     ├─ ARCH_21_DATABASES.md
+│  │     ├─ B_VEKTOR_WPF_EVALUATION.md
+│  │     ├─ backend_engines_deep_dive.md
+│  │     ├─ bestandsaufnahme_v3.md
+│  │     ├─ discovery_complete.md
+│  │     ├─ EXECUTIONER_PLAN_V3_0.md
+│  │     ├─ faiss_discovery_erkenntnisse.md
+│  │     ├─ final_discovery_report.md
+│  │     ├─ FINAL_IMPLEMENTATION_PLAN_V3_0.md
+│  │     ├─ implementation_plan.md
+│  │     ├─ INDEX.md
+│  │     ├─ MASTER_DISCOVERY_EVOKI_V3.md
+│  │     ├─ migration_plan.md
+│  │     ├─ PROZESS_DIAGRAMM_ASCII.md
+│  │     ├─ SOURCES_MASTER_INDEX.md
+│  │     ├─ SUMMARY.md
+│  │     ├─ task.md
+│  │     ├─ ULTIMATE_ARCHITECTURE.md
+│  │     ├─ ULTIMATE_MASTER_PLAN_V8.md
+│  │     ├─ uploaded_image_0_1768804144371.png
+│  │     ├─ uploaded_image_1_1768804144371.png
+│  │     ├─ uploaded_image_2_1768804144371.png
+│  │     └─ VALIDATED_MASTER_EXTRACTION.md
+│  └─ STRUCTURE_VIOLATIONS_ANALYSIS.md
+├─ synapse-kernel
+│  ├─ src
+│  │  ├─ aiResponseInterceptor.ts
+│  │  ├─ chatParticipant.ts
+│  │  ├─ chatViewProvider.ts
+│  │  ├─ complianceMonitor.ts
+│  │  ├─ index.ts
+│  │  ├─ missionControlProvider.ts
+│  │  ├─ sovereignController.ts
+│  │  ├─ stateEngine.ts
+│  │  └─ userRulesEnforcer.ts
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ synapse-nexus-kernel-2.0.0.vsix
+│  ├─ tsconfig.json
+│  └─ WHY_IN_ROOT.md
 ├─ tooling  # [AUTOMATION] Logic & Dev Tools
 │  ├─ config
 │  │  ├─ mcp.json
@@ -98,6 +174,42 @@ ROOT/
 │  │  ├─ README.md
 │  │  └─ server.py
 │  ├─ data  # [STATE] Runtime Data
+│  │  ├─ agents
+│  │  │  ├─ shared
+│  │  │  │  └─ status_windows
+│  │  │  │     ├─ backups
+│  │  │  │     │  ├─ README.md
+│  │  │  │     │  ├─ status_history_20260114_042113.json
+│  │  │  │     │  ├─ status_history_20260114_042121.json
+│  │  │  │     │  ├─ status_history_20260114_042125.json
+│  │  │  │     │  ├─ status_history_20260114_042129.json
+│  │  │  │     │  ├─ status_history_20260114_042139.json
+│  │  │  │     │  ├─ status_history_20260114_042145.json
+│  │  │  │     │  ├─ status_history_20260114_042150.json
+│  │  │  │     │  ├─ status_history_20260114_042155.json
+│  │  │  │     │  ├─ status_history_20260114_042159.json
+│  │  │  │     │  ├─ status_history_20260114_042205.json
+│  │  │  │     │  └─ status_window_history_legacy_v3.json
+│  │  │  │     ├─ pending_status.json
+│  │  │  │     ├─ README.md
+│  │  │  │     └─ status_window_history.json
+│  │  │  ├─ synapse  # Status Windows & Logs
+│  │  │  │  ├─ backups
+│  │  │  │  ├─ logs
+│  │  │  │  │  ├─ compliance_enforcer.log
+│  │  │  │  │  ├─ pending_watcher.log
+│  │  │  │  │  └─ README.md
+│  │  │  │  ├─ state
+│  │  │  │  │  ├─ events.log.jsonl
+│  │  │  │  │  ├─ history_export_v1.json
+│  │  │  │  │  ├─ README.md
+│  │  │  │  │  └─ state.snapshot.json
+│  │  │  │  ├─ compliance_enforcer.log
+│  │  │  │  ├─ compliance_errors.json
+│  │  │  │  ├─ compliance_errors_README.md
+│  │  │  │  ├─ decrypted_history.json
+│  │  │  │  └─ README.md
+│  │  │  └─ README.md
 │  │  ├─ db
 │  │  │  ├─ persistent_context.db
 │  │  │  └─ README.md
@@ -107,30 +219,6 @@ ROOT/
 │  │  │  ├─ chatverlauf_final_20251020plus_dedup_sorted.metadata.json
 │  │  │  └─ README.md
 │  │  ├─ synapse  # Status Windows & Logs
-│  │  │  ├─ backups
-│  │  │  ├─ logs
-│  │  │  │  ├─ compliance_enforcer.log
-│  │  │  │  ├─ pending_watcher.log
-│  │  │  │  └─ README.md
-│  │  │  ├─ status
-│  │  │  │  ├─ backups
-│  │  │  │  │  ├─ README.md
-│  │  │  │  │  ├─ status_history_20260113_194901.json
-│  │  │  │  │  ├─ status_history_20260113_201032.json
-│  │  │  │  │  ├─ status_history_20260113_201254.json
-│  │  │  │  │  ├─ status_history_20260113_201336.json
-│  │  │  │  │  ├─ status_history_20260113_201740.json
-│  │  │  │  │  ├─ status_history_20260113_201821.json
-│  │  │  │  │  ├─ status_history_20260113_202051.json
-│  │  │  │  │  ├─ status_history_20260113_202142.json
-│  │  │  │  │  ├─ status_history_20260113_202251.json
-│  │  │  │  │  ├─ status_history_20260113_202335.json
-│  │  │  │  │  └─ status_window_history_legacy_v3.json
-│  │  │  │  ├─ pending_status.json
-│  │  │  │  ├─ README.md
-│  │  │  │  └─ status_window_history.json
-│  │  │  ├─ decrypted_history.json
-│  │  │  └─ README.md
 │  │  └─ README.md
 │  ├─ docs  # [KNOWLEDGE] Documentation
 │  │  ├─ knowledge
@@ -147,21 +235,107 @@ ROOT/
 │  │  ├─ GENESIS_ANCHOR_V3.md
 │  │  ├─ MANIFESTO.md
 │  │  ├─ PROTOCOL_V5_ENFORCED.md
-│  │  └─ README.md
+│  │  ├─ README.md
+│  │  └─ STATUS_WINDOW_TEMPLATE.json
+│  ├─ history
+│  │  ├─ Chatlogs
+│  │  │  ├─ chat_001.json
+│  │  │  ├─ chat_002.json
+│  │  │  ├─ chat_003.json
+│  │  │  ├─ chat_004.json
+│  │  │  ├─ chat_005.json
+│  │  │  ├─ chat_006.json
+│  │  │  ├─ chat_007.json
+│  │  │  ├─ chat_008.json
+│  │  │  ├─ chat_009.json
+│  │  │  ├─ chat_history.json
+│  │  │  ├─ chat_history_json_metadata.json
+│  │  │  ├─ chat_history_reconstructed.json
+│  │  │  ├─ chatverlauf_final_20251020plus_build.txt
+│  │  │  ├─ chatverlauf_final_20251020plus_dedup_sorted.txt
+│  │  │  ├─ chatverlauf_final_20251020plus_dedup_tmp.txt
+│  │  │  ├─ chatverlauf_gesamt.txt
+│  │  │  ├─ chatverlauf_gesamt_20251020plus.txt
+│  │  │  ├─ chatverlauf_gesamt_20251020plus_dedup.txt
+│  │  │  ├─ chatverlauf_gesamt_20251020plus_dedup_ergaenzung.txt
+│  │  │  ├─ chatverlauf_gesamt_20251020plus_dedup_ergänzung.txt
+│  │  │  ├─ chatverlauf_gesamt_20251020plus_ergänzung.txt
+│  │  │  ├─ chatverlauf_gesamt_20251020plus_sorted.txt
+│  │  │  ├─ chatverlauf_gesamt_dedup.txt
+│  │  │  ├─ chatverlauf_treffer.txt
+│  │  │  ├─ chatverlauf_treffer_20251020plus.txt
+│  │  │  ├─ chatverlauf_treffer_merged_20251020plus.txt
+│  │  │  ├─ chatverlauf_treffer_merged_20251020plus_sorted.txt
+│  │  │  ├─ dialogue_history_2025-12-03_current (4).json
+│  │  │  ├─ dialogue_history_2025-12-03_current.json
+│  │  │  ├─ dialogue_history_2025-12-04_backup_2025-12-04_14-01-59.json
+│  │  │  ├─ dialogue_history_2025-12-04_current.json
+│  │  │  ├─ dialogue_history_2025-12-06_current.json
+│  │  │  ├─ evoki_messages_2025.jsonl
+│  │  │  ├─ evoki_messages_2025_gradgap_recommended.jsonl
+│  │  │  ├─ evoki_messages_2025_with_metrics.jsonl
+│  │  │  ├─ evoki_messages_2025_with_metrics_gradgap_psych.jsonl
+│  │  │  ├─ evoki_messages_2025_with_metrics_gradgap_recommended.jsonl
+│  │  │  ├─ evoki_messages_2025_with_metrics_gradgap_sensitive.jsonl
+│  │  │  ├─ evoki_messages_2025_with_metrics_gradgap_sessions.jsonl
+│  │  │  ├─ Investigating Legacy Chat Logic.md
+│  │  │  ├─ Parallel Chat Data Extraction.md
+│  │  │  ├─ Recovering Encrypted Chats.md
+│  │  │  ├─ temple_20251225_232511_full_history.jsonl
+│  │  │  ├─ temple_20251225_235232_full_history.jsonl
+│  │  │  ├─ temple_20251226_000422_full_history.jsonl
+│  │  │  ├─ temple_20251226_001116_full_history.jsonl
+│  │  │  ├─ temple_20251226_001421_full_history.jsonl
+│  │  │  ├─ temple_20251226_002654_full_history.jsonl
+│  │  │  ├─ temple_20251226_003645_full_history.jsonl
+│  │  │  ├─ temple_20251226_003723_full_history.jsonl
+│  │  │  ├─ temple_20251226_014417_full_history.jsonl
+│  │  │  ├─ temple_20251226_015115_full_history.jsonl
+│  │  │  ├─ temple_20251226_015921_full_history.jsonl
+│  │  │  ├─ temple_20251226_020931_full_history.jsonl
+│  │  │  ├─ temple_20251226_021711_full_history.jsonl
+│  │  │  ├─ temple_20251226_023128_full_history.jsonl
+│  │  │  ├─ temple_20251226_024025_full_history.jsonl
+│  │  │  ├─ trialog_history.json
+│  │  │  ├─ trialog_history_2025-11-19.json
+│  │  │  ├─ trialog_history_2025-11-19_json_metadata.json
+│  │  │  ├─ trialog_history_2025-11-27.json
+│  │  │  ├─ trialog_history_2025-11-27_json_metadata.json
+│  │  │  ├─ v2_recovered_history.json
+│  │  │  └─ v2_scavenged_history.json
+│  │  └─ Datenbanken
+│  │     ├─ antigravity_persistent_context.db
+│  │     ├─ chatverlauf_20251020plus.db
+│  │     ├─ chatverlauf_20251020plus.faiss
+│  │     ├─ evoki_kb_extended.faiss
+│  │     ├─ evoki_vectorstore_W2_384D.faiss
+│  │     ├─ parallel_chat_memory.db
+│  │     ├─ parallel_chat_memory.faiss
+│  │     ├─ persistent_context.db
+│  │     └─ synapse_knowledge_base.faiss
 │  ├─ scripts  # [LOGIC] Automation Kernel
 │  │  ├─ automation  # Core Logic (Synapse Chain)
+│  │  │  ├─ metrics_engine.py
 │  │  │  ├─ pending_status_watcher.py.DISABLED
 │  │  │  ├─ README.md
 │  │  │  ├─ search_chatverlauf.py
 │  │  │  ├─ status_history_manager.py
 │  │  │  ├─ synapse_logic.py
 │  │  │  └─ write_pending_status.py
+│  │  ├─ backend
+│  │  │  ├─ v2_reference
+│  │  │  │  ├─ DualBackendBridge.js.REFERENCE
+│  │  │  │  ├─ GeminiContextBridge.js.REFERENCE
+│  │  │  │  ├─ README.md
+│  │  │  │  └─ TrinityEngine.js.REFERENCE
+│  │  │  └─ README.md
 │  │  ├─ cli  # Admin Tools
 │  │  │  ├─ compliance_watcher.py
 │  │  │  ├─ enforce_structure.py
 │  │  │  ├─ prompt_compliance_checker.py
 │  │  │  ├─ README.md
 │  │  │  ├─ repair_chain.py
+│  │  │  ├─ test_pipeline.py
 │  │  │  └─ write_current_status.py
 │  │  ├─ daemons  # Background Watchers
 │  │  │  ├─ compliance_enforcer.py
@@ -176,7 +350,7 @@ ROOT/
 │  │  │  ├─ smoke_test_writer.ps1
 │  │  │  └─ write_pending_status.py
 │  │  ├─ launchers
-│  │  │  ├─ manual_cleanup_app.bat
+│  │  │  ├─ manual_cleanup_app.bat.DEPRECATED
 │  │  │  ├─ README.md
 │  │  │  └─ START_ALL_WATCHERS.bat
 │  │  ├─ servers  # MCP Servers
@@ -189,9 +363,12 @@ ROOT/
 │  └─ tests  # [TESTS] Pytest Suite
 │     ├─ README.md
 │     ├─ test_determinism_gate.py
-│     └─ test_search_chatverlauf.py
+│     ├─ test_search_chatverlauf.py
+│     └─ test_write_pending_status.py
 ├─ .geminiignore
 ├─ ARCHITECTURE.txt  # THIS FILE
+├─ BLUEPRINT_SOVEREIGN_EXTENSION.md
+├─ HOW_TO_EVOKI_V3.md
 └─ README.md
 
 [NOTE]

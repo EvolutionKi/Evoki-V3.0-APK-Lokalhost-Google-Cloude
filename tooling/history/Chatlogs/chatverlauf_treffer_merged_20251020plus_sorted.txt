@@ -1,0 +1,296 @@
+﻿C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767005286073_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767005308598_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767005506430_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767005518393_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767005623028_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767005642672_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767063018632_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767064059510_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767064853623_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767084649577_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767085076297_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767085141423_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767085287522_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767085544154_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767085625016_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767085838050_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767085921661_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\sse-session-1767088357677_checkpoint.json
+C:\Evoki V2.0\evoki-app\data\ingestion\trialog_history_2025-11-19.json
+C:\Evoki V2.0\evoki-app\data\metadata\frontend\components\trialog_history_2025-11-19_json_metadata.json
+C:\Evoki V2.0\evoki-app\docs\v1_reference\V1_Discoveries\Hidden_Gems\trialog_history_2025-11-19.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\components\dialog_history_trialog\trialog_history_2025-11-19.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\components\dialog_history_trialog\trialog_history_2025-11-19_json_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-11-19_part6.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-11-19_part6_json_metadata.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\trialog_history_2025-11-19.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\trialog_history_2025-11-19_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\components\dialog_history_trialog\trialog_history_2025-11-19.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\components\dialog_history_trialog\trialog_history_2025-11-19_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-11-19_part6.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-11-19_part6_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\components\dialog_history_trialog\trialog_history_2025-11-19.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\components\dialog_history_trialog\trialog_history_2025-11-19_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-11-19_part6.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-11-19_part6_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\components\dialog_history_trialog\trialog_history_2025-11-19.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\components\dialog_history_trialog\trialog_history_2025-11-19_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-11-19_part6.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-11-19_part6_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\components\dialog_history_trialog\trialog_history_2025-11-19.json
+C:\Users\nicom\Downloads\evoki-deepearth\components\dialog_history_trialog\trialog_history_2025-11-19_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-11-19_part6.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-11-19_part6_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\components\dialog_history_trialog\trialog_history_2025-11-19.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\components\dialog_history_trialog\trialog_history_2025-11-19_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-11-19_part6.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-11-19_part6_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\components\dialog_history_trialog\trialog_history_2025-11-19.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\components\dialog_history_trialog\trialog_history_2025-11-19_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-11-19_part6.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-11-19_part6_json_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-11-21_01_genesis.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-11-21_01_genesis_json_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-11-21_02_genesis.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-11-21_02_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-11-21_01_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-11-21_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-11-21_02_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-11-21_02_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-11-21_01_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-11-21_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-11-21_02_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-11-21_02_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-11-21_01_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-11-21_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-11-21_02_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-11-21_02_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-11-21_01_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-11-21_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-11-21_02_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-11-21_02_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-11-21_01_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-11-21_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-11-21_02_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-11-21_02_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-11-21_01_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-11-21_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-11-21_02_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-11-21_02_genesis_json_metadata.json
+C:\Evoki V2.0\evoki-app\data\ingestion\trialog_history_2025-11-27.json
+C:\Evoki V2.0\evoki-app\data\metadata\frontend\components\trialog_history_2025-11-27_json_metadata.json
+C:\Evoki V2.0\evoki-app\docs\v1_reference\V1_Discoveries\Hidden_Gems\trialog_history_2025-11-27.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\components\dialog_history_trialog\trialog_history_2025-11-27.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\components\dialog_history_trialog\trialog_history_2025-11-27_json_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-11-27_01_genesis.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-11-27_01_genesis_json_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-11-27_02_genesis.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-11-27_03_genesis.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-11-27_04_genesis.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-11-27_04_genesis_json_metadata.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\trialog_history_2025-11-27.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\trialog_history_2025-11-27_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\components\dialog_history_trialog\trialog_history_2025-11-27.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\components\dialog_history_trialog\trialog_history_2025-11-27_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-11-27_01_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-11-27_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-11-27_02_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-11-27_03_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-11-27_04_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-11-27_04_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\components\dialog_history_trialog\trialog_history_2025-11-27.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\components\dialog_history_trialog\trialog_history_2025-11-27_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-11-27_01_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-11-27_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-11-27_02_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-11-27_03_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-11-27_04_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-11-27_04_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\components\dialog_history_trialog\trialog_history_2025-11-27.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\components\dialog_history_trialog\trialog_history_2025-11-27_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-11-27_01_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-11-27_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-11-27_02_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-11-27_03_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-11-27_04_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-11-27_04_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\components\dialog_history_trialog\trialog_history_2025-11-27.json
+C:\Users\nicom\Downloads\evoki-deepearth\components\dialog_history_trialog\trialog_history_2025-11-27_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-11-27_01_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-11-27_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-11-27_02_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-11-27_03_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-11-27_04_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-11-27_04_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\components\dialog_history_trialog\trialog_history_2025-11-27.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\components\dialog_history_trialog\trialog_history_2025-11-27_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-11-27_01_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-11-27_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-11-27_02_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-11-27_03_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-11-27_04_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-11-27_04_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\components\dialog_history_trialog\trialog_history_2025-11-27.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\components\dialog_history_trialog\trialog_history_2025-11-27_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-11-27_01_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-11-27_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-11-27_02_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-11-27_03_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-11-27_04_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-11-27_04_genesis_json_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\dialogue_history_2025-12-03_current (4).json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-12-03_01_genesis.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\protocols\dialogues\2025-12-03_01_genesis_json_metadata.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\dialogue_history_2025-12-03_current (4).json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\dialogue_history_2025-12-03_current.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\dialogue_history_2025-12-03_current (4).json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-12-03_01_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\protocols\dialogues\2025-12-03_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\dialogue_history_2025-12-03_current (4).json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-12-03_01_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\protocols\dialogues\2025-12-03_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\dialogue_history_2025-12-03_current (4).json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-12-03_01_genesis.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\protocols\dialogues\2025-12-03_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\dialogue_history_2025-12-03_current (1).json
+C:\Users\nicom\Downloads\dialogue_history_2025-12-03_current (2).json
+C:\Users\nicom\Downloads\dialogue_history_2025-12-03_current.json
+C:\Users\nicom\Downloads\evoki-deepearth\chathistory_2025-12-03.json
+C:\Users\nicom\Downloads\evoki-deepearth\dialogue_history_2025-12-03_current (4).json
+C:\Users\nicom\Downloads\evoki-deepearth\dialogue_history_2025-12-03_current.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-12-03_01_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-12-03_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-12-03_02_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth\protocols\dialogues\2025-12-03_02_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\dialogue_history_2025-12-03_current (4).json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\dialogue_history_2025-12-03_current.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-12-03_01_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-12-03_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-12-03_02_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\protocols\dialogues\2025-12-03_02_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\dialogue_history_2025-12-03_current (4).json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\dialogue_history_2025-12-03_current.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-12-03_01_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-12-03_01_genesis_json_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-12-03_02_genesis.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\protocols\dialogues\2025-12-03_02_genesis_json_metadata.json
+C:\Evoki V2.0\evoki-app\data\rescue\rescue_genesis_full_dialogue_2025-12-04.json
+C:\Evoki V2.0\evoki-app\docs\v1_reference\V1_Discoveries\Architecture_Docs\rescue_genesis_full_dialogue_2025-12-04.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\dialogue_history_2025-12-04_backup_2025-12-04_14-01-59.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\dialogue_history_2025-12-04_current.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\rescue_genesis_full_dialogue_2025-12-04.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\dialogue_history_2025-12-06_current.json
+C:\Evoki V2.0\evoki-app\docs\v1_reference\Explorer Connection Engeneer\chatverlaeufe\Chattverlauf 27.12.2025 VS Code Teil 2.txt
+C:\Evoki V2.0\evoki-app\docs\v1_reference\Explorer Connection Engeneer\chatverlaeufe\Chattverlauf 27.12.2025 VS Code Teil 3.txt
+C:\Evoki V2.0\evoki-app\docs\v1_reference\Explorer Connection Engeneer\chatverlaeufe\Chattverlauf 27.12.2025 VS Code Teil 4.txt
+C:\Evoki V2.0\evoki-app\docs\v1_reference\Explorer Connection Engeneer\chatverlaeufe\Chattverlauf 27.12.2025 VS Code.txt
+C:\Evoki V2.0\evoki-hilfe\archive\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\temple_20251227_022144_checkpoint.json
+C:\Evoki V2.0\evoki-app\Chatttverlauf 28.12.2025.txt
+C:\Evoki V2.0\evoki-app\data\agents\Resilience_Impulse\Chattverlauf 28.12.2025 F├╝r Resilience Agend only.txt
+C:\Evoki V2.0\evoki-app\evoki-hilfe\Paralell Analye\Chatttverlauf 28.12.2025.txt
+C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\temple_20251229_100110_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\temple_20251229_101547_checkpoint.json
+C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\test_20251229_fix_checkpoint.json
+C:\Evoki V2.0\evoki-app\Chattverlauf 29.12.2025 Teil 2.txt
+C:\Evoki V2.0\evoki-app\Chattverlauf 29.12.2025.txt
+C:\Evoki V2.0\evoki-app\evoki-hilfe\Paralell Analye\Chattverlauf 29.12.2025 Teil 2.txt
+C:\Evoki V2.0\evoki-app\evoki-hilfe\Paralell Analye\Chattverlauf 29.12.2025.txt
+C:\Evoki V2.0\evoki-app\data\chat_history\daily_logs\2025-12-30.json
+C:\Evoki V2.0\evoki-app\data\chat_history\daily_logs\2026-01-10_conversation.json
+C:\Evoki V2.0\evoki-app\data\synapse\backups\status_history_20260113_033654.json
+C:\Evoki V2.0\evoki-app\data\synapse\backups\status_history_20260113_033655.json
+C:\Evoki V2.0\evoki-app\data\synapse\backups\status_history_20260113_034707.json
+C:\Evoki V2.0\evoki-app\data\synapse\backups\status_history_20260113_034709.json
+C:\Evoki V2.0\evoki-app\data\synapse\backups\status_history_20260113_034803.json
+C:\Evoki V2.0\evoki-app\data\synapse\backups\status_history_20260113_034850.json
+C:\Evoki V2.0\evoki-app\data\synapse\backups\status_history_20260113_034858.json
+C:\Evoki V2.0\evoki-app\data\synapse\backups\status_history_20260113_034859.json
+C:\Evoki V2.0\evoki-app\data\synapse\backups\status_history_20260113_035015.json
+C:\Evoki V2.0\evoki-app\data\synapse\backups\status_history_20260113_043203.json
+C:\Evoki V2.0\evoki-app\backend\backend\VectorRegs_from_TXT\03_LIVE_TEMPEL\history\test_fix_101149_checkpoint.json
+C:\Evoki V2.0\evoki-app\data\metadata\frontend\components\EvokiTempleChat_metadata.json
+C:\Evoki V2.0\evoki-app\data\metadata\frontend\utils\chatCounts_ts_metadata.json
+C:\Evoki V2.0\evoki-app\data\rescue\rescue_genesis_reconstructed_history.json
+C:\Evoki V2.0\evoki-app\data\rescue\rescue_genesis_reflected_history.json
+C:\Evoki V2.0\evoki-app\data\rescue\rescue_genesis_reflected_history_BACKUP.json
+C:\Evoki V2.0\evoki-app\data\synapse\status_window_history.json
+C:\Evoki V2.0\evoki-app\data\synapse\synapse_journal_history.json
+C:\Evoki V2.0\evoki-app\decrypted_history.json
+C:\Evoki V2.0\evoki-app\docs\v1_reference\V1_Discoveries\Architecture_Docs\rescue_genesis_reconstructed_history.json
+C:\Evoki V2.0\evoki-app\docs\v1_reference\V1_Discoveries\Architecture_Docs\rescue_genesis_reflected_history.json
+C:\Evoki V2.0\evoki-app\docs\v1_reference\V1_Discoveries\Architecture_Docs\rescue_genesis_reflected_history_BACKUP.json
+C:\Evoki V2.0\evoki-app\docs\v1_reference\V1_Discoveries\Easter_Eggs\Backups\rescue_genesis_reflected_history_BACKUP.json
+C:\Evoki V2.0\evoki-app\docs\v1_reference\V1_Discoveries\Easter_Eggs\Seeds\rescue_genesis_reconstructed_history.json
+C:\Evoki V2.0\evoki-app\docs\v1_reference\V1_Discoveries\Easter_Eggs\Seeds\rescue_genesis_reflected_history.json
+C:\Evoki V2.0\evoki-app\docs\v1_reference\V1_Discoveries\Hidden_Gems\chat_size_analysis.json
+C:\Evoki V2.0\evoki-app\docs\v1_reference\V1_Discoveries\Hidden_Gems\chat_size_analysis_detailed.json
+C:\Evoki V2.0\evoki-app\evoki-hilfe\Gatekeeper\Gatekeeper und S23 Android GPT CHAT.txt
+C:\Evoki V2.0\evoki-app\scripts\sample_chat_structure.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\components\ChatbotKnowledgeUploader_tsx_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\components\ChatbotPanel_tsx_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\components\ChatSearch_tsx_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\components\dialog_history_trialog\placeholder_txt_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Evoki_Only_Frontend\evoki-deepearth-3.65\utils\chatCounts_ts_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Frontend_ALTDATEN\components\panels_obsolete\ChatbotPanel_tsx_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Frontend_ALTDATEN\components\utilities_obsolete\ChatbotKnowledgeUploader_tsx_metadata.json
+C:\Evoki V2.0\evoki-hilfe\alte_versionen\Frontend_ALTDATEN\components\utilities_obsolete\ChatSearch_tsx_metadata.json
+C:\Evoki V2.0\evoki-hilfe\analysen_archiv\chat_size_analysis.json
+C:\Evoki V2.0\evoki-hilfe\analysen_archiv\chat_size_analysis_detailed.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_001.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_002.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_003.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_004.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_005.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_006.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_007.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_008.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_009.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_comparison_report.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_history_reconstructed.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_size_analysis.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chat_size_analysis_detailed.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\ChatbotKnowledgeUploader_tsx_metadata.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\ChatbotPanel_tsx_metadata.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\chatCounts_ts_metadata.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\ChatSearch_tsx_metadata.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\export_chats_to_folders_py_metadata.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\rescue_genesis_reconstructed_history.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\rescue_genesis_reflected_history.json
+C:\Evoki V2.0\evoki-hilfe\v1_daten\py_und_json_dateien\Json Quelldatei\rescue_genesis_reflected_history_BACKUP.json
+C:\Users\nicom\Downloads\chatverlauf_gesamt.txt
+C:\Users\nicom\Downloads\chatverlauf_gesamt_dedup.txt
+C:\Users\nicom\Downloads\chatverlauf_treffer.txt
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\components\ChatbotKnowledgeUploader_tsx_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\components\ChatbotPanel_tsx_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\components\ChatSearch_tsx_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\components\dialog_history_trialog\placeholder_txt_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (1)\utils\chatCounts_ts_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\components\ChatbotKnowledgeUploader_tsx_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\components\ChatbotPanel_tsx_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\components\ChatSearch_tsx_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\components\dialog_history_trialog\placeholder_txt_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra (2)\utils\chatCounts_ts_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\components\ChatbotKnowledgeUploader_tsx_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\components\ChatbotPanel_tsx_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\components\ChatSearch_tsx_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\components\dialog_history_trialog\placeholder_txt_metadata.json
+C:\Users\nicom\Downloads\copy-of-copy-of-evoki-deepearth-3.65-axiom-├ñra\utils\chatCounts_ts_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\backend\scripts\export_chats_to_folders_py_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\chat_history.json
+C:\Users\nicom\Downloads\evoki-deepearth\components\ChatbotKnowledgeUploader_tsx_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\components\ChatbotPanel_tsx_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\components\ChatSearch_tsx_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\components\dialog_history_trialog\placeholder_txt_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth\utils\chatCounts_ts_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\backend\scripts\export_chats_to_folders_py_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\components\ChatbotKnowledgeUploader_tsx_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\components\ChatbotPanel_tsx_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\components\ChatSearch_tsx_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\components\dialog_history_trialog\placeholder_txt_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.1.5-obsidian-├ñra\utils\chatCounts_ts_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\backend\scripts\export_chats_to_folders_py_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\components\ChatbotKnowledgeUploader_tsx_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\components\ChatbotPanel_tsx_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\components\ChatSearch_tsx_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\components\dialog_history_trialog\placeholder_txt_metadata.json
+C:\Users\nicom\Downloads\evoki-deepearth-3.9.7-axiom-├ñra (2)\utils\chatCounts_ts_metadata.json

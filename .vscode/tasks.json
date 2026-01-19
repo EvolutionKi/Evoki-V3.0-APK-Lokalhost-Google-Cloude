@@ -44,6 +44,31 @@
                     "endsPattern": "Server ready"
                 }
             }
+        },
+        {
+            "label": "npm: compile",
+            "type": "shell",
+            "command": "npm run compile",
+            "options": {
+                "cwd": "c:/Evoki V3.0 APK-Lokalhost-Google Cloude/synapse-kernel"
+            },
+            "group": "build",
+            "problemMatcher": [
+                "$tsc"
+            ]
+        },
+        {
+            "label": "npm: watch",
+            "type": "shell",
+            "command": "npm run watch",
+            "options": {
+                "cwd": "c:/Evoki V3.0 APK-Lokalhost-Google Cloude/synapse-kernel"
+            },
+            "isBackground": true,
+            "group": "build",
+            "problemMatcher": [
+                "$tsc-watch"
+            ]
         }
     ],
     "inputs": [

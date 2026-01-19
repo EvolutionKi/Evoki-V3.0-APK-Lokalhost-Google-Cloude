@@ -1,0 +1,584 @@
+[
+  {
+    "timestamp": "2026-01-14T00:39:08.754Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 2143s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 2143,
+    "resolved": true,
+    "resolved_at": "2026-01-14T04:21:20.676Z"
+  },
+  {
+    "timestamp": "2026-01-14T00:39:36.357Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 2171s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 2170,
+    "resolved": true,
+    "resolved_at": "2026-01-14T04:21:24.713Z"
+  },
+  {
+    "timestamp": "2026-01-14T00:46:04.298Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 2559s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 2558,
+    "resolved": true,
+    "resolved_at": "2026-01-14T04:21:29.466Z"
+  },
+  {
+    "timestamp": "2026-01-14T01:09:27.551Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 3962s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 3962,
+    "resolved": true,
+    "resolved_at": "2026-01-14T04:21:39.472Z"
+  },
+  {
+    "timestamp": "2026-01-14T01:14:56.021Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 4290s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 4290,
+    "resolved": true,
+    "resolved_at": "2026-01-14T04:21:44.920Z"
+  },
+  {
+    "timestamp": "2026-01-14T01:15:22.688Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 4317s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 4317,
+    "resolved": true,
+    "resolved_at": "2026-01-14T04:21:49.725Z"
+  },
+  {
+    "timestamp": "2026-01-14T01:19:41.694Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 4576s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 4576,
+    "resolved": true,
+    "resolved_at": "2026-01-14T04:21:55.220Z"
+  },
+  {
+    "timestamp": "2026-01-14T01:24:18.091Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 4853s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 4852,
+    "resolved": true,
+    "resolved_at": "2026-01-14T04:21:59.320Z"
+  },
+  {
+    "timestamp": "2026-01-14T01:25:30.816Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 4925s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 4925,
+    "resolved": true,
+    "resolved_at": "2026-01-14T04:22:05.016Z"
+  },
+  {
+    "timestamp": "2026-01-14T01:36:32.786Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 5587s",
+    "prompt": "perfekt und die aktuellen daten finde ich diret unter C/ Evoki? oder muss ich das aus dem Download O",
+    "timeSincePrompt": 5587,
+    "resolved": true,
+    "resolved_at": "2026-01-14T01:36:32.804Z"
+  },
+  {
+    "timestamp": "2026-01-14T01:47:35.300Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 27s Zeit",
+    "prompt": "breach müsste die ganze zeit ja kommen weil du nicht speicherst",
+    "timeSincePrompt": 33
+  },
+  {
+    "timestamp": "2026-01-14T01:47:45.304Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 17s Zeit",
+    "prompt": "breach müsste die ganze zeit ja kommen weil du nicht speicherst",
+    "timeSincePrompt": 43
+  },
+  {
+    "timestamp": "2026-01-14T01:47:55.314Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 7s Zeit",
+    "prompt": "breach müsste die ganze zeit ja kommen weil du nicht speicherst",
+    "timeSincePrompt": 53
+  },
+  {
+    "timestamp": "2026-01-14T01:48:05.333Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 63s",
+    "prompt": "breach müsste die ganze zeit ja kommen weil du nicht speicherst",
+    "timeSincePrompt": 63,
+    "resolved": true,
+    "resolved_at": "2026-01-14T01:48:05.352Z"
+  },
+  {
+    "timestamp": "2026-01-14T01:56:15.690Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 29s Zeit",
+    "prompt": "ok brech ist da",
+    "timeSincePrompt": 30
+  },
+  {
+    "timestamp": "2026-01-14T01:56:25.706Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 19s Zeit",
+    "prompt": "ok brech ist da",
+    "timeSincePrompt": 40
+  },
+  {
+    "timestamp": "2026-01-14T01:56:35.706Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 9s Zeit",
+    "prompt": "ok brech ist da",
+    "timeSincePrompt": 50
+  },
+  {
+    "timestamp": "2026-01-14T01:56:45.704Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 61s",
+    "prompt": "ok brech ist da",
+    "timeSincePrompt": 60,
+    "resolved": true,
+    "resolved_at": "2026-01-14T01:56:45.718Z"
+  },
+  {
+    "timestamp": "2026-01-14T02:01:55.948Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 28s Zeit",
+    "prompt": "was denn sonst damit das eendlich läuft",
+    "timeSincePrompt": 31
+  },
+  {
+    "timestamp": "2026-01-14T02:02:05.947Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 18s Zeit",
+    "prompt": "was denn sonst damit das eendlich läuft",
+    "timeSincePrompt": 41
+  },
+  {
+    "timestamp": "2026-01-14T02:02:15.961Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 8s Zeit",
+    "prompt": "was denn sonst damit das eendlich läuft",
+    "timeSincePrompt": 51
+  },
+  {
+    "timestamp": "2026-01-14T02:02:26.204Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 62s",
+    "prompt": "was denn sonst damit das eendlich läuft",
+    "timeSincePrompt": 61,
+    "resolved": true,
+    "resolved_at": "2026-01-14T02:02:26.239Z"
+  },
+  {
+    "timestamp": "2026-01-14T02:08:07.075Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 25s Zeit",
+    "prompt": "nein was du nicht sagst ..... das sag ich dir doch die ganze zeit schon",
+    "timeSincePrompt": 34
+  },
+  {
+    "timestamp": "2026-01-14T02:08:17.087Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 15s Zeit",
+    "prompt": "nein was du nicht sagst ..... das sag ich dir doch die ganze zeit schon",
+    "timeSincePrompt": 44
+  },
+  {
+    "timestamp": "2026-01-14T02:08:27.096Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 5s Zeit",
+    "prompt": "nein was du nicht sagst ..... das sag ich dir doch die ganze zeit schon",
+    "timeSincePrompt": 54
+  },
+  {
+    "timestamp": "2026-01-14T02:08:37.100Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 65s",
+    "prompt": "nein was du nicht sagst ..... das sag ich dir doch die ganze zeit schon",
+    "timeSincePrompt": 64,
+    "resolved": true,
+    "resolved_at": "2026-01-14T02:08:37.130Z"
+  },
+  {
+    "timestamp": "2026-01-14T02:09:47.145Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 21s Zeit",
+    "prompt": "wir bauen den schweißhaufen nach so wie das synapse tool baust du jetzt einen antigravety google ass",
+    "timeSincePrompt": 38
+  },
+  {
+    "timestamp": "2026-01-14T02:09:57.162Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 11s Zeit",
+    "prompt": "wir bauen den schweißhaufen nach so wie das synapse tool baust du jetzt einen antigravety google ass",
+    "timeSincePrompt": 48
+  },
+  {
+    "timestamp": "2026-01-14T02:10:37.179Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 24s Zeit",
+    "prompt": "kein terminl ich wil das 1 zu eins nachgebaut haben",
+    "timeSincePrompt": 35
+  },
+  {
+    "timestamp": "2026-01-14T02:11:17.198Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 29s Zeit",
+    "prompt": "geh mal in die antigraveti ui un d schau dir das an und bau nix um sonder neu alternativ",
+    "timeSincePrompt": 31
+  },
+  {
+    "timestamp": "2026-01-14T02:11:27.200Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 19s Zeit",
+    "prompt": "geh mal in die antigraveti ui un d schau dir das an und bau nix um sonder neu alternativ",
+    "timeSincePrompt": 41
+  },
+  {
+    "timestamp": "2026-01-14T02:11:37.224Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 9s Zeit",
+    "prompt": "geh mal in die antigraveti ui un d schau dir das an und bau nix um sonder neu alternativ",
+    "timeSincePrompt": 51
+  },
+  {
+    "timestamp": "2026-01-14T02:11:47.234Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 61s",
+    "prompt": "geh mal in die antigraveti ui un d schau dir das an und bau nix um sonder neu alternativ",
+    "timeSincePrompt": 61,
+    "resolved": true,
+    "resolved_at": "2026-01-14T02:11:47.270Z"
+  },
+  {
+    "timestamp": "2026-01-14T02:12:27.254Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 23s Zeit",
+    "prompt": "wir bauen den schweißhaufen nach so wie das synapse tool baust du jetzt einen antigravety google ass",
+    "timeSincePrompt": 36
+  },
+  {
+    "timestamp": "2026-01-14T02:12:37.261Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 13s Zeit",
+    "prompt": "wir bauen den schweißhaufen nach so wie das synapse tool baust du jetzt einen antigravety google ass",
+    "timeSincePrompt": 46
+  },
+  {
+    "timestamp": "2026-01-14T02:13:37.314Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 20s Zeit",
+    "prompt": "beim start öffnen",
+    "timeSincePrompt": 39
+  },
+  {
+    "timestamp": "2026-01-14T02:13:47.324Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 10s Zeit",
+    "prompt": "beim start öffnen",
+    "timeSincePrompt": 49
+  },
+  {
+    "timestamp": "2026-01-14T02:13:57.322Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 0s Zeit",
+    "prompt": "beim start öffnen",
+    "timeSincePrompt": 59
+  },
+  {
+    "timestamp": "2026-01-14T02:14:07.331Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 70s",
+    "prompt": "beim start öffnen",
+    "timeSincePrompt": 69,
+    "resolved": true,
+    "resolved_at": "2026-01-14T03:15:42.528Z"
+  },
+  {
+    "timestamp": "2026-01-14T02:15:37.646Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 0s Zeit",
+    "prompt": "beim start öffnen",
+    "timeSincePrompt": 59
+  },
+  {
+    "timestamp": "2026-01-14T03:30:13.010Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 4896s",
+    "prompt": "nein was du nicht sagst ..... das sag ich dir doch die ganze zeit schon",
+    "timeSincePrompt": 4895,
+    "resolved": true,
+    "resolved_at": "2026-01-14T03:30:13.026Z"
+  },
+  {
+    "timestamp": "2026-01-14T03:33:53.173Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 30s Zeit",
+    "prompt": "dukanst aber cmd starten",
+    "timeSincePrompt": 30
+  },
+  {
+    "timestamp": "2026-01-14T03:34:03.192Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 20s Zeit",
+    "prompt": "dukanst aber cmd starten",
+    "timeSincePrompt": 40
+  },
+  {
+    "timestamp": "2026-01-14T03:34:13.186Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 10s Zeit",
+    "prompt": "dukanst aber cmd starten",
+    "timeSincePrompt": 50
+  },
+  {
+    "timestamp": "2026-01-14T03:34:23.186Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 60s",
+    "prompt": "dukanst aber cmd starten",
+    "timeSincePrompt": 60,
+    "resolved": true,
+    "resolved_at": "2026-01-14T03:34:23.200Z"
+  },
+  {
+    "timestamp": "2026-01-14T03:35:23.250Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 25s Zeit",
+    "prompt": "was meinst du zu den patches...",
+    "timeSincePrompt": 35
+  },
+  {
+    "timestamp": "2026-01-14T03:35:33.274Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 14s Zeit",
+    "prompt": "was meinst du zu den patches...",
+    "timeSincePrompt": 45
+  },
+  {
+    "timestamp": "2026-01-14T03:35:43.287Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 4s Zeit",
+    "prompt": "was meinst du zu den patches...",
+    "timeSincePrompt": 55
+  },
+  {
+    "timestamp": "2026-01-14T03:36:23.312Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 26s Zeit",
+    "prompt": "du sollst suchen woi eofft ich dir schon gesagt habe das du cmd b´nutzen sollst",
+    "timeSincePrompt": 34
+  },
+  {
+    "timestamp": "2026-01-14T03:36:33.317Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 16s Zeit",
+    "prompt": "du sollst suchen woi eofft ich dir schon gesagt habe das du cmd b´nutzen sollst",
+    "timeSincePrompt": 44
+  },
+  {
+    "timestamp": "2026-01-14T03:36:43.318Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 6s Zeit",
+    "prompt": "du sollst suchen woi eofft ich dir schon gesagt habe das du cmd b´nutzen sollst",
+    "timeSincePrompt": 54
+  },
+  {
+    "timestamp": "2026-01-14T03:36:53.326Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 64s",
+    "prompt": "du sollst suchen woi eofft ich dir schon gesagt habe das du cmd b´nutzen sollst",
+    "timeSincePrompt": 64,
+    "resolved": true,
+    "resolved_at": "2026-01-14T03:36:53.366Z"
+  },
+  {
+    "timestamp": "2026-01-14T03:37:53.356Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 30s Zeit",
+    "prompt": "du sollst im downloadordner die chattverlaufs datei vob gerade eben durchsuchen...",
+    "timeSincePrompt": 30
+  },
+  {
+    "timestamp": "2026-01-14T03:38:03.359Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 20s Zeit",
+    "prompt": "du sollst im downloadordner die chattverlaufs datei vob gerade eben durchsuchen...",
+    "timeSincePrompt": 40
+  },
+  {
+    "timestamp": "2026-01-14T03:38:13.373Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 10s Zeit",
+    "prompt": "du sollst im downloadordner die chattverlaufs datei vob gerade eben durchsuchen...",
+    "timeSincePrompt": 50
+  },
+  {
+    "timestamp": "2026-01-14T03:38:23.380Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 60s",
+    "prompt": "du sollst im downloadordner die chattverlaufs datei vob gerade eben durchsuchen...",
+    "timeSincePrompt": 60,
+    "resolved": true,
+    "resolved_at": "2026-01-14T03:38:23.415Z"
+  },
+  {
+    "timestamp": "2026-01-14T03:41:43.511Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 29s Zeit",
+    "prompt": "dann such mal wie oft ich dich an read only erinnern muste",
+    "timeSincePrompt": 30
+  },
+  {
+    "timestamp": "2026-01-14T03:41:53.522Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 19s Zeit",
+    "prompt": "dann such mal wie oft ich dich an read only erinnern muste",
+    "timeSincePrompt": 40
+  },
+  {
+    "timestamp": "2026-01-14T03:42:03.537Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 9s Zeit",
+    "prompt": "dann such mal wie oft ich dich an read only erinnern muste",
+    "timeSincePrompt": 50
+  },
+  {
+    "timestamp": "2026-01-14T03:42:13.538Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 61s",
+    "prompt": "dann such mal wie oft ich dich an read only erinnern muste",
+    "timeSincePrompt": 60,
+    "resolved": true,
+    "resolved_at": "2026-01-14T03:42:13.575Z"
+  },
+  {
+    "timestamp": "2026-01-14T03:49:43.923Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 28s Zeit",
+    "prompt": "wir machen mit gar nichts weiter...",
+    "timeSincePrompt": 32
+  },
+  {
+    "timestamp": "2026-01-14T03:49:53.920Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 18s Zeit",
+    "prompt": "wir machen mit gar nichts weiter...",
+    "timeSincePrompt": 42
+  },
+  {
+    "timestamp": "2026-01-14T03:50:03.946Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 8s Zeit",
+    "prompt": "wir machen mit gar nichts weiter...",
+    "timeSincePrompt": 52
+  },
+  {
+    "timestamp": "2026-01-14T03:50:13.949Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 62s",
+    "prompt": "wir machen mit gar nichts weiter...",
+    "timeSincePrompt": 62,
+    "resolved": true,
+    "resolved_at": "2026-01-14T03:50:13.988Z"
+  },
+  {
+    "timestamp": "2026-01-14T03:52:04.006Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 26s Zeit",
+    "prompt": "neinich habe keine energie mehr für antigraveti ich geh zu dem normalen vs code zurück...",
+    "timeSincePrompt": 33
+  },
+  {
+    "timestamp": "2026-01-14T03:52:14.019Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 16s Zeit",
+    "prompt": "neinich habe keine energie mehr für antigraveti ich geh zu dem normalen vs code zurück...",
+    "timeSincePrompt": 43
+  },
+  {
+    "timestamp": "2026-01-14T03:52:24.024Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 6s Zeit",
+    "prompt": "neinich habe keine energie mehr für antigraveti ich geh zu dem normalen vs code zurück...",
+    "timeSincePrompt": 54
+  },
+  {
+    "timestamp": "2026-01-14T03:52:34.032Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 64s",
+    "prompt": "neinich habe keine energie mehr für antigraveti ich geh zu dem normalen vs code zurück...",
+    "timeSincePrompt": 64,
+    "resolved": true,
+    "resolved_at": "2026-01-14T03:52:34.046Z"
+  },
+  {
+    "timestamp": "2026-01-14T03:53:14.047Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 29s Zeit",
+    "prompt": "danke vieleicht patsch t google ja irgendwan mal selbst",
+    "timeSincePrompt": 30
+  },
+  {
+    "timestamp": "2026-01-14T03:53:24.056Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 19s Zeit",
+    "prompt": "danke vieleicht patsch t google ja irgendwan mal selbst",
+    "timeSincePrompt": 40
+  },
+  {
+    "timestamp": "2026-01-14T03:53:34.063Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 9s Zeit",
+    "prompt": "danke vieleicht patsch t google ja irgendwan mal selbst",
+    "timeSincePrompt": 50
+  },
+  {
+    "timestamp": "2026-01-14T03:54:34.117Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 29s Zeit",
+    "prompt": "(Search Result)",
+    "timeSincePrompt": 30
+  },
+  {
+    "timestamp": "2026-01-14T03:54:44.127Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 19s Zeit",
+    "prompt": "(Search Result)",
+    "timeSincePrompt": 40
+  },
+  {
+    "timestamp": "2026-01-14T03:54:54.120Z",
+    "type": "warning",
+    "message": "Status Window fehlt! Noch 9s Zeit",
+    "prompt": "(Search Result)",
+    "timeSincePrompt": 50
+  },
+  {
+    "timestamp": "2026-01-14T03:55:04.133Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 61s",
+    "prompt": "(Search Result)",
+    "timeSincePrompt": 60,
+    "resolved": true,
+    "resolved_at": "2026-01-14T03:55:04.161Z"
+  },
+  {
+    "timestamp": "2026-01-14T04:21:13.234Z",
+    "type": "breach",
+    "message": "Kein Status Window nach 1569s",
+    "prompt": "(Search Result)",
+    "timeSincePrompt": 1568,
+    "resolved": true,
+    "resolved_at": "2026-01-14T04:21:13.263Z"
+  }
+]

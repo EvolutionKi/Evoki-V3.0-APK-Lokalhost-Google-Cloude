@@ -1,190 +1,44 @@
 import * as vscode from 'vscode';
-import * as child_process from 'child_process';
 import * as path from 'path';
-import { promisify } from 'util';
-import { SynapseChatViewProvider } from './chatViewProvider';
-import { SynapseChatParticipant } from './chatParticipant';
-import { ComplianceMonitor } from './complianceMonitor';
-import { UserRulesEnforcer } from './userRulesEnforcer';
-import { AIResponseInterceptor } from './aiResponseInterceptor';
-
-const execAsync = promisify(child_process.exec);
-
-let complianceMonitor: ComplianceMonitor | null = null;
-let userRulesEnforcer: UserRulesEnforcer | null = null;
-let aiResponseInterceptor: AIResponseInterceptor | null = null;
-
-let complianceWatcher: child_process.ChildProcess | null = null;
-let healthMonitor: child_process.ChildProcess | null = null;
+import * as fs from 'fs';
+import { SovereignController } from './sovereignController';
 
 export function activate(context: vscode.ExtensionContext) {
-    console.log('⚡ Synapse Nexus Kernel V2.0 is now active!');
+    const evokiRoot = vscode.workspace.workspaceFolders?.[0].uri.fsPath || '';
+    console.log(`Kernel Activation. Root: ${evokiRoot}`);
+    vscode.window.showInformationMessage(`Sovereign Kernel Active in: ${evokiRoot || 'NONE'}`);
+    if (!evokiRoot) {
+        console.warn("No workspace folder detected. Kernel dormant.");
+        return;
+    }
 
-    // Register Chat Panel WebView
-    const chatProvider = new SynapseChatViewProvider(context.extensionUri);
-    context.subscriptions.push(
-        vscode.window.registerWebviewViewProvider(
-            SynapseChatViewProvider.viewType,
-            chatProvider
-        )
+    const controller = new SovereignController(evokiRoot);
+
+    console.log('Evoki Sovereign Kernel is now active.');
+
+    let disposable = vscode.commands.registerCommand('synapse.toggleGodMode', () => {
+        controller.toggleSovereignMode();
+    });
+
+    context.subscriptions.push(disposable);
+
+    // File Watcher für pending_status.json
+    const statusDir = path.join(evokiRoot, 'tooling', 'data', 'synapse', 'status');
+    if (!fs.existsSync(statusDir)) {
+        fs.mkdirSync(statusDir, { recursive: true });
+    }
+
+    const watcher = vscode.workspace.createFileSystemWatcher(
+        new vscode.RelativePattern(statusDir, 'pending_status.json')
     );
 
-    // Register @synapse Chat Participant
-    const chatParticipant = new SynapseChatParticipant(context);
-    context.subscriptions.push(chatParticipant.register());
+    watcher.onDidChange(() => controller.processPendingStatus());
+    watcher.onDidCreate(() => controller.processPendingStatus());
 
-    // Start Guardian Monitors (Python Watchers)
-    startGuardianMonitors(context);
+    context.subscriptions.push(watcher);
 
-    // Start Built-in Compliance Monitor (VS Code Errors)
-    complianceMonitor = new ComplianceMonitor(context);
-    complianceMonitor.start();
-
-    // Start UserRulesEnforcer (Output-Gate Enforcement)
-    userRulesEnforcer = new UserRulesEnforcer(context);
-    userRulesEnforcer.start();
-
-    // Start AI-Response-Interceptor (Prävention-Schicht)
-    aiResponseInterceptor = new AIResponseInterceptor(context);
-    console.log('✅ AI-Response-Interceptor initialized');
-
-    // Status command
-    let disposable = vscode.commands.registerCommand('synapse.nexus.status', () => {
-        const watcherStatus = complianceWatcher ? '✅ Running' : '❌ Stopped';
-        const monitorStatus = healthMonitor ? '✅ Running' : '❌ Stopped';
-
-        vscode.window.showInformationMessage(
-            `Synapse Nexus Kernel ⚡\n\n` +
-            `Compliance Watcher: ${watcherStatus}\n` +
-            `Health Monitor: ${monitorStatus}`
-        );
-    });
-
-    // Status Window Injection Command (Ctrl+Shift+I)
-    let injectCommand = vscode.commands.registerCommand('synapse.nexus.injectStatusWindow', async () => {
-        await injectStatusWindow();
-    });
-
-    // Inject AND Send Command (Alt+Enter)
-    let injectAndSendCommand = vscode.commands.registerCommand('synapse.nexus.injectAndSend', async () => {
-        await injectStatusWindowAndSend();
-    });
-
-    // Open Chat Panel Command
-    let openChatCommand = vscode.commands.registerCommand('synapse.chat.openPanel', () => {
-        vscode.commands.executeCommand('workbench.view.extension.synapse-chat');
-    });
-
-    context.subscriptions.push(disposable, injectCommand, injectAndSendCommand, openChatCommand);
+    // Initialer Check beim Start
+    controller.processPendingStatus();
 }
 
-function startGuardianMonitors(context: vscode.ExtensionContext) {
-    const evokiRoot = process.env.EVOKI_PROJECT_ROOT || 'C:\\Evoki V3.0 APK-Lokalhost-Google Cloude';
-    const daemonsPath = path.join(evokiRoot, 'tooling', 'scripts', 'daemons');
-
-    // Start all 3 watchers
-    const watchers = [
-        {
-            name: 'Pending Status Watcher',
-            script: path.join(daemonsPath, 'pending_status_watcher.py')
-        },
-        {
-            name: 'Context Watcher',
-            script: path.join(daemonsPath, 'context_watcher.py'),
-            args: ['--monitor']
-        },
-        {
-            name: 'Compliance Enforcer',
-            script: path.join(daemonsPath, 'compliance_enforcer.py')
-        }
-    ];
-
-    watchers.forEach(watcher => {
-        try {
-            const proc = child_process.spawn(
-                'python',
-                watcher.args ? [watcher.script, ...watcher.args] : [watcher.script],
-                {
-                    cwd: evokiRoot,
-                    detached: true,
-                    stdio: 'ignore'
-                }
-            );
-            proc.unref();
-            console.log(`✅ ${watcher.name} started`);
-        } catch (error) {
-            console.error(`❌ Failed to start ${watcher.name}:`, error);
-        }
-    });
-}
-
-export function deactivate() {
-    if (complianceMonitor) {
-        complianceMonitor.stop();
-    }
-    if (userRulesEnforcer) {
-        userRulesEnforcer.stop();
-    }
-}
-
-// ========================================
-// Status Window Injection Functions
-// ========================================
-
-async function getStatusWindow(): Promise<string | null> {
-    try {
-        const { stdout } = await execAsync(
-            'python "C:\\Evoki V2.0\\evoki-app\\scripts\\get_status_block.py"',
-            { timeout: 5000 }
-        );
-        return stdout.trim();
-    } catch (error) {
-        console.error('Failed to get status window:', error);
-        return null;
-    }
-}
-
-async function injectStatusWindow(): Promise<boolean> {
-    const editor = vscode.window.activeTextEditor;
-    if (!editor) {
-        vscode.window.showWarningMessage('No active editor');
-        return false;
-    }
-
-    const statusWindow = await getStatusWindow();
-    if (!statusWindow) {
-        vscode.window.showErrorMessage('Failed to generate Status Window');
-        return false;
-    }
-
-    const formattedWindow = '```json\n' + statusWindow + '\n```\n\n';
-
-    await editor.edit(editBuilder => {
-        editBuilder.insert(editor.selection.start, formattedWindow);
-    });
-
-    vscode.window.showInformationMessage('Status Window injected ⚡');
-    return true;
-}
-
-async function injectStatusWindowAndSend(): Promise<void> {
-    const success = await injectStatusWindow();
-    if (success) {
-        // Try to trigger Antigravity's send command
-        const commands = [
-            'workbench.action.chat.submit',
-            'interactive.execute'
-        ];
-
-        for (const cmd of commands) {
-            try {
-                await vscode.commands.executeCommand(cmd);
-                return;
-            } catch {
-                // Try next
-            }
-        }
-
-        vscode.window.showInformationMessage('Status Window injected - press Enter to send');
-    }
-}
+export function deactivate() {}

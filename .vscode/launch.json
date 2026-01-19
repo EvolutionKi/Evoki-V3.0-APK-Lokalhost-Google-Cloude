@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Synapse Nexus Kernel",
+            "type": "extensionHost",
+            "request": "launch",
+            "args": [
+                "--extensionDevelopmentPath=c:/Evoki V3.0 APK-Lokalhost-Google Cloude/synapse-kernel"
+            ],
+            "outFiles": [
+                "c:/Evoki V3.0 APK-Lokalhost-Google Cloude/synapse-kernel/dist/**/*.js"
+            ],
+            "preLaunchTask": "npm: compile"
+        }
+    ]
+}

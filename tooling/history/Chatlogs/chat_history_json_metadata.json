@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "file_name": "chat_history.json",
+    "file_path": "chat_history.json",
+    "current_version": "Unknown",
+    "last_modified": "Unknown",
+    "function_description": "Lokale Chat-Historie (Legacy-Format). Dient als Archiv für frühere Interaktionen.",
+    "responsible": "History"
+  },
+  "change_log": []
+}

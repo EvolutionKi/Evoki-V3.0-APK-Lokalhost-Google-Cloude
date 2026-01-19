@@ -2,7 +2,7 @@
 
 **Kontext:** `tooling\docs`
 
-*Automatisch generierte Dokumentation - 2026-01-13 21:58*
+*Automatisch generierte Dokumentation - 2026-01-19 08:17*
 
 ## 📂 Unterverzeichnisse
 
@@ -22,5 +22,6 @@
 | **GENESIS_ANCHOR_V3.md** | *(Keine Dokumentation)* | - |
 | **MANIFESTO.md** | *(Keine Dokumentation)* | - |
 | **PROTOCOL_V5_ENFORCED.md** | *(Keine Dokumentation)* | - |
+| **STATUS_WINDOW_TEMPLATE.json** | *(Keine Dokumentation)* | - |
 | **deep_earth_genesis_anchor.md** | *(Keine Dokumentation)* | - |
 

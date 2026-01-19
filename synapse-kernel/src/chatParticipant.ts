@@ -1,20 +1,19 @@
 import * as vscode from 'vscode';
-import * as child_process from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
-import { promisify } from 'util';
 
-const execAsync = promisify(child_process.exec);
+// V3.0 PATH CONFIGURATION
+const WORKSPACE_ROOT = vscode.workspace.workspaceFolders?.[0].uri.fsPath || process.cwd();
+const EVOKI_ROOT = process.env.EVOKI_PROJECT_ROOT || WORKSPACE_ROOT;
 
-const EVOKI_APP_PATH = 'C:\\Evoki V2.0\\evoki-app';
-const CHAT_HISTORY_PATH = path.join(EVOKI_APP_PATH, 'data', 'synapse', 'chat_history.json');
-const LAST_RESPONSE_PATH = path.join(EVOKI_APP_PATH, 'data', 'synapse', 'last_response.md');
+// Allow fallback to relative paths if env var is missing
+const CHAT_HISTORY_PATH = path.join(EVOKI_ROOT, 'tooling', 'data', 'synapse', 'chat_history.json');
+const PROTOCOL_PATH = path.join(EVOKI_ROOT, 'tooling', 'docs', 'PROTOCOL_V5_ENFORCED.md');
 
 interface ChatMessage {
-    role: 'user' | 'assistant' | 'system';
+    role: 'user' | 'assistant';
     content: string;
     timestamp: string;
-    statusWindow?: any;
 }
 
 interface ChatHistory {
@@ -23,285 +22,132 @@ interface ChatHistory {
     sessionCount: number;
 }
 
-/**
- * Synapse Chat Participant
- * Handles @synapse mentions in VS Code chat with auto Status Window injection
- */
 export class SynapseChatParticipant {
-    public static readonly participantId = 'synapse';
     private chatHistory: ChatHistory;
 
-    constructor(private context: vscode.ExtensionContext) {
+    constructor(context: vscode.ExtensionContext) {
         this.chatHistory = this.loadChatHistory();
-    }
 
-    public register(): vscode.Disposable {
         // Register the chat participant
-        const participant = vscode.chat.createChatParticipant(
-            SynapseChatParticipant.participantId,
-            this.handleChatRequest.bind(this)
-        );
+        const participant = vscode.chat.createChatParticipant('synapse', this.handler.bind(this));
+        participant.iconPath = vscode.Uri.file(path.join(context.extensionPath, 'resources', 'icon.png'));
+        context.subscriptions.push(participant);
 
-        participant.iconPath = vscode.Uri.file(
-            path.join(EVOKI_APP_PATH, 'assets', 'synapse-icon.png')
-        );
-
-        return participant;
+        console.log('Synapse Chat Participant V3.0 (Native) initialized');
     }
 
-    private async handleChatRequest(
+    private async handler(
         request: vscode.ChatRequest,
         context: vscode.ChatContext,
         stream: vscode.ChatResponseStream,
         token: vscode.CancellationToken
-    ): Promise<vscode.ChatResult> {
-        const userPrompt = request.prompt;
-
-        // 1. Stream initial status
-        stream.markdown('⚡ **Synapse Active**\n\n');
-
-        // 2. Generate Status Window
-        stream.progress('Generating Status Window...');
-        const statusWindow = await this.getStatusWindow();
-
-        if (statusWindow) {
-            stream.markdown('```json\n' + JSON.stringify(statusWindow, null, 2) + '\n```\n\n');
-        }
-
-        // 3. Load previous context
-        const previousContext = this.getPreviousContext(5); // Last 5 messages
-
-        // 4. Build the full prompt
-        const fullPrompt = this.buildFullPrompt(userPrompt, statusWindow, previousContext);
-
-        // 5. Call the LLM API (Claude preferred, then Gemini)
-        stream.progress('Calling AI...');
-
+    ): Promise<void> {
         try {
-            const response = await this.callLLM(fullPrompt, token);
+            const userPrompt = request.prompt;
+            stream.progress('Synapse: Syncing Protocol...');
 
-            // 6. Stream the response
-            stream.markdown(response);
+            // 1. Build Protocol Context
+            const protocolContent = this.loadProtocol();
+            const historyContext = this.chatHistory.messages.slice(-5);
 
-            // 7. Save to history
-            this.saveToHistory(userPrompt, response, statusWindow);
+            const systemPrompt = `
+SYSTEM ROLE:
+You are @synapse, the Evoki Interface.
+You are running inside VS Code via the Synapse Nexus Kernel.
 
-            // 8. Save last response
-            this.saveLastResponse(response);
+SYSTEM PROTOCOL (ENFORCED):
+${protocolContent}
 
-            return {
-                metadata: {
-                    command: 'synapse-chat',
-                    statusWindow: statusWindow
+INSTRUCTIONS:
+1. You MUST generate a valid JSON Status Window at the very beginning of your response.
+2. The Status Window must reflect the current state and goal.
+3. After the JSON block, answer the user's request using Markdown.
+
+CONTEXT:
+User Input: "${userPrompt}"
+Session History: ${historyContext.length} messages.
+            `;
+
+            // 2. Construct Messages for LM
+            const messages = [
+                vscode.LanguageModelChatMessage.User(systemPrompt),
+                ...historyContext.map(m =>
+                    m.role === 'user'
+                        ? vscode.LanguageModelChatMessage.User(m.content)
+                        : vscode.LanguageModelChatMessage.Assistant(m.content)
+                ),
+                vscode.LanguageModelChatMessage.User(userPrompt)
+            ];
+
+            // 3. Select Model (Native API)
+            let model: vscode.LanguageModelChat | undefined;
+            try {
+                // Try to find ANY chat model (GPT-4 class preferred)
+                const models = await vscode.lm.selectChatModels({ family: 'gpt-4' });
+                if (models.length > 0) model = models[0];
+                else {
+                    const allModels = await vscode.lm.selectChatModels({});
+                    if (allModels.length > 0) model = allModels[0];
                 }
-            };
+            } catch (err) {
+                console.warn('Failed to select LM model:', err);
+            }
+
+            if (!model) {
+                stream.markdown('⚠️ **Fehler:** Kein natives AI-Modell in VS Code gefunden.\n\n');
+                stream.markdown('Bitte stelle sicher, dass Copilot, Gemini Code Assist oder eine kompatible Extension installiert und aktiv ist.');
+                return;
+            }
+
+            // 4. Send Request
+            stream.progress(`Thinking with ${model.name}...`);
+            const response = await model.sendRequest(messages, {}, token);
+
+            let fullResponse = '';
+            for await (const fragment of response.text) {
+                fullResponse += fragment;
+                stream.markdown(fragment);
+            }
+
+            // 5. Save History
+            this.saveToHistory(userPrompt, fullResponse);
 
         } catch (error: any) {
-            stream.markdown(`\n\n❌ **Error:** ${error.message}\n`);
-            stream.markdown('\n*Fallback: Use regular Gemini chat with manual Status Window paste.*');
-
-            return {
-                errorDetails: {
-                    message: error.message
-                }
-            };
+            stream.markdown(`**System Error:** ${error.message}`);
+            if (error.message.includes('proposal')) {
+                stream.markdown('\n\n*Hinweis: Bitte stelle sicher, dass die VS Code Version aktuell ist und Proposed APIs erlaubt sind.*');
+            }
         }
     }
 
-    private async getStatusWindow(): Promise<any | null> {
+    private loadProtocol(): string {
         try {
-            const { stdout } = await execAsync(
-                `python "${path.join(EVOKI_APP_PATH, 'scripts', 'get_status_block.py')}"`,
-                { timeout: 5000 }
-            );
-            return JSON.parse(stdout.trim());
-        } catch (error) {
-            console.error('Failed to get status window:', error);
-            return null;
-        }
-    }
-
-    private getPreviousContext(count: number): ChatMessage[] {
-        return this.chatHistory.messages.slice(-count);
-    }
-
-    private buildFullPrompt(
-        userPrompt: string,
-        statusWindow: any | null,
-        previousContext: ChatMessage[]
-    ): string {
-        let prompt = '';
-
-        // Add system context
-        prompt += '## SYNAPSE SYSTEM CONTEXT\n\n';
-
-        // Add status window
-        if (statusWindow) {
-            prompt += '### Current Status Window\n```json\n';
-            prompt += JSON.stringify(statusWindow, null, 2);
-            prompt += '\n```\n\n';
-        }
-
-        // Add previous conversation context
-        if (previousContext.length > 0) {
-            prompt += '### Recent Conversation History\n';
-            for (const msg of previousContext) {
-                prompt += `**${msg.role}** (${msg.timestamp}):\n${msg.content}\n\n`;
+            if (fs.existsSync(PROTOCOL_PATH)) {
+                return fs.readFileSync(PROTOCOL_PATH, 'utf-8');
             }
-        }
-
-        // Add current user prompt
-        prompt += '---\n\n### Current User Request\n\n';
-        prompt += userPrompt;
-
-        return prompt;
-    }
-
-    private async callLLM(prompt: string, token: vscode.CancellationToken): Promise<string> {
-        // Try Claude first (preferred), then Gemini, then backend
-
-        // 1. Try Claude via vscode.lm API
-        if (vscode.lm) {
-            try {
-                const claudeModels = await vscode.lm.selectChatModels({
-                    vendor: 'anthropic',
-                    family: 'claude'
-                });
-
-                if (claudeModels.length > 0) {
-                    console.log('Using Claude model:', claudeModels[0].name);
-                    const model = claudeModels[0];
-                    const messages = [
-                        vscode.LanguageModelChatMessage.User(prompt)
-                    ];
-
-                    const response = await model.sendRequest(messages, {}, token);
-
-                    let fullResponse = '';
-                    for await (const chunk of response.text) {
-                        fullResponse += chunk;
-                    }
-                    return fullResponse;
-                }
-            } catch (error) {
-                console.log('Claude not available, trying Gemini...');
-            }
-
-            // 2. Try Gemini via vscode.lm API
-            try {
-                const geminiModels = await vscode.lm.selectChatModels({
-                    vendor: 'google',
-                    family: 'gemini'
-                });
-
-                if (geminiModels.length > 0) {
-                    console.log('Using Gemini model:', geminiModels[0].name);
-                    const model = geminiModels[0];
-                    const messages = [
-                        vscode.LanguageModelChatMessage.User(prompt)
-                    ];
-
-                    const response = await model.sendRequest(messages, {}, token);
-
-                    let fullResponse = '';
-                    for await (const chunk of response.text) {
-                        fullResponse += chunk;
-                    }
-                    return fullResponse;
-                }
-            } catch (error) {
-                console.log('Gemini not available via vscode.lm...');
-            }
-        }
-
-        // 3. Fallback: Try our backend API
-        try {
-            const response = await fetch('http://localhost:8000/api/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    message: prompt,
-                    history: this.chatHistory.messages.slice(-10)
-                }),
-                signal: token ? AbortSignal.timeout(60000) : undefined
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                return data.response;
-            }
-        } catch (backendError) {
-            console.log('Backend API not available...');
-        }
-
-        throw new Error('No LLM available. Please ensure Claude Code, Gemini, or backend is running.');
+        } catch (e) { /* ignore */ }
+        return 'PROTOCOL V5.0 (Fallback: File not found)';
     }
 
     private loadChatHistory(): ChatHistory {
         try {
             if (fs.existsSync(CHAT_HISTORY_PATH)) {
-                const data = fs.readFileSync(CHAT_HISTORY_PATH, 'utf-8');
-                return JSON.parse(data);
+                return JSON.parse(fs.readFileSync(CHAT_HISTORY_PATH, 'utf-8'));
             }
-        } catch (error) {
-            console.error('Failed to load chat history:', error);
-        }
-
-        return {
-            messages: [],
-            lastUpdated: new Date().toISOString(),
-            sessionCount: 0
-        };
+        } catch (e) { /* ignore */ }
+        return { messages: [], lastUpdated: new Date().toISOString(), sessionCount: 0 };
     }
 
-    private saveToHistory(userPrompt: string, response: string, statusWindow: any) {
-        const timestamp = new Date().toISOString();
+    private saveToHistory(prompt: string, response: string) {
+        this.chatHistory.messages.push({ role: 'user', content: prompt, timestamp: new Date().toISOString() });
+        this.chatHistory.messages.push({ role: 'assistant', content: response, timestamp: new Date().toISOString() });
+        // Trim
+        if (this.chatHistory.messages.length > 50) this.chatHistory.messages = this.chatHistory.messages.slice(-50);
 
-        // Add user message
-        this.chatHistory.messages.push({
-            role: 'user',
-            content: userPrompt,
-            timestamp,
-            statusWindow
-        });
-
-        // Add assistant response
-        this.chatHistory.messages.push({
-            role: 'assistant',
-            content: response,
-            timestamp
-        });
-
-        // Update metadata
-        this.chatHistory.lastUpdated = timestamp;
-        this.chatHistory.sessionCount++;
-
-        // Keep only last 100 messages to avoid huge files
-        if (this.chatHistory.messages.length > 100) {
-            this.chatHistory.messages = this.chatHistory.messages.slice(-100);
-        }
-
-        // Save to file
         try {
             const dir = path.dirname(CHAT_HISTORY_PATH);
-            if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir, { recursive: true });
-            }
+            if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
             fs.writeFileSync(CHAT_HISTORY_PATH, JSON.stringify(this.chatHistory, null, 2));
-        } catch (error) {
-            console.error('Failed to save chat history:', error);
-        }
-    }
-
-    private saveLastResponse(response: string) {
-        try {
-            const dir = path.dirname(LAST_RESPONSE_PATH);
-            if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir, { recursive: true });
-            }
-            fs.writeFileSync(LAST_RESPONSE_PATH, response);
-        } catch (error) {
-            console.error('Failed to save last response:', error);
-        }
+        } catch (e) { console.error('Save failed', e); }
     }
 }

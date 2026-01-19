@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "file_name": "trialog_history_2025-11-19.json",
+    "file_path": "components/dialog_history_trialog/trialog_history_2025-11-19.json",
+    "current_version": "Import",
+    "last_modified": "2025-11-19T13:00:00Z",
+    "function_description": "Extern importierte Trialog-Historie. Dient als Referenz und Kontext für die Analyse durch den Evoki Analysten.",
+    "responsible": "Trialog"
+  },
+  "change_log": []
+}

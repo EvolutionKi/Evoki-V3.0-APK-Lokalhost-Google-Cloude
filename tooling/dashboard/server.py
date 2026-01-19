@@ -6,10 +6,17 @@ import sys
 import subprocess
 from urllib.parse import urlparse, parse_qs
 
+# Inject Metrics Engine path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../scripts")))
+from automation.metrics_engine import MetricsEngine
+
 # KONFIG
 PORT = 8000
 HISTORY_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/synapse/status/status_window_history.json"))
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+
+# Initialize Engines
+metrics_engine = MetricsEngine(PROJECT_ROOT)
 
 class ThreadingTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     pass
@@ -160,6 +167,45 @@ class statusHandler(http.server.SimpleHTTPRequestHandler):
             except FileNotFoundError:
                 self.wfile.write(b"Template not found")
         
+        elif parsed_url.path == '/api/metrics':
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            
+            try:
+                data = metrics_engine.get_all_metrics()
+                self.wfile.write(json.dumps(data).encode('utf-8'))
+            except Exception as e:
+                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+
+        elif parsed_url.path.startswith('/api/layers/'):
+            # Extract layer name, e.g. /api/layers/01_surface
+            layer_name = parsed_url.path.split('/')[-1]
+            layer_db_path = os.path.join(PROJECT_ROOT, f"app/deep_earth/layers/{layer_name}/layer.db")
+            
+            if not os.path.exists(layer_db_path):
+                self.send_error(404, "Layer DB not found")
+                return
+
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+
+            try:
+                # Basic dump of layer DB (simulated for now as generic Key-Value or Schema)
+                # Ideally this should accept SQL queries, but for safety we just dump stats or limited rows
+                # For V3.0 Plan, we return metadata
+                self.wfile.write(json.dumps({
+                    "layer": layer_name,
+                    "status": "online",
+                    "path": layer_db_path,
+                    "size": os.path.getsize(layer_db_path)
+                }).encode('utf-8'))
+            except Exception as e:
+                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+
         else:
             self.send_error(404)
 

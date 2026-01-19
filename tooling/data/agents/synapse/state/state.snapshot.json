@@ -1,0 +1,8 @@
+{
+  "last_event_id": 13,
+  "last_synced_at": "2026-01-14T04:42:47.119Z",
+  "synapse_status": "MIGRATING",
+  "blueprint_version": "3.2",
+  "sovereign_mode": true,
+  "last_hash": "2c05213124e5d199580bdc1c3377be517239c2af9e19a8661eba4a5fb9012f1c"
+}
