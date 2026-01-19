@@ -56,11 +56,31 @@ def health():
 
 
 if __name__ == "__main__":
-    print("🏛️ EVOKI V3.0 - PHASE 0 SKELETON MODE")
-    print("=" * 50)
-    print("⚠️  SIMULATION MODE - Keine echten Engines!")
+    print("=" * 80)
+    print("🏛️ EVOKI V3.0 - STARTUP")
+    print("=" * 80)
+    
+    # INTEGRITY CHECK (V3.0)
+    print("\n🔐 Running Integrity Check...")
+    from core.genesis_anchor import validate_genesis_anchor
+    from core.enforcement_gates import set_lockdown
+    
+    integrity_result = validate_genesis_anchor(strict=True)
+    
+    if not integrity_result["valid"]:
+        print(f"\n❌ INTEGRITY BREACH DETECTED:")
+        print(f"   {integrity_result['error']}")
+        print(f"\n⚠️ SERVER STARTING IN LOCKDOWN MODE")
+        print(f"   All interactions will be blocked!")
+        
+        set_lockdown(integrity_result["error"])
+    else:
+        print(f"\n✅ Integrity Valid")
+        print(f"   Genesis: {integrity_result['calculated_genesis'][:16]}...")
+    
+    print("\n" + "=" * 80)
     print("✅ SSE-Stream: http://localhost:8000/api/temple/stream")
-    print("=" * 50)
+    print("=" * 80)
     
     uvicorn.run(
         app,
@@ -68,3 +88,4 @@ if __name__ == "__main__":
         port=8000,
         log_level="info"
     )
+

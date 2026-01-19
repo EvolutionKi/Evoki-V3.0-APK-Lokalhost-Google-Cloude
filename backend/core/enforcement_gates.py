@@ -18,6 +18,49 @@ Phase 2: All Gates operational except CRC32 (hardcoded for now)
 from typing import Dict, List, Optional
 import hashlib
 from dataclasses import dataclass
+from pathlib import Path
+import sys
+
+# Import Genesis Anchor Validation
+sys.path.insert(0, str(Path(__file__).parent))
+from genesis_anchor import validate_genesis_anchor
+
+
+
+
+# =============================================================================
+# INTEGRITY LOCKDOWN STATE (V3.0)
+# =============================================================================
+
+# Global Lockdown State
+_INTEGRITY_LOCKDOWN = False
+_LOCKDOWN_REASON = None
+
+
+def set_lockdown(reason: str):
+    """
+    Setzt System in Lockdown-Modus (A51).
+    
+    Args:
+        reason: Grund für Lockdown (Integrity Breach Details)
+    """
+    global _INTEGRITY_LOCKDOWN, _LOCKDOWN_REASON
+    _INTEGRITY_LOCKDOWN = True
+    _LOCKDOWN_REASON = reason
+    
+    print(f"\n⚠️ INTEGRITY LOCKDOWN ACTIVATED!")
+    print(f"   Reason: {reason}")
+    print(f"   All interactions blocked.\n")
+
+
+def is_lockdown() -> tuple:
+    """
+    Prüft Lockdown-Status.
+    
+    Returns:
+        (is_locked, reason): Tuple
+    """
+    return _INTEGRITY_LOCKDOWN, _LOCKDOWN_REASON
 
 
 # =============================================================================
@@ -84,10 +127,11 @@ class GateResult:
 
 def gate_a_validation(prompt: str, metrics: Dict[str, float]) -> GateResult:
     """
-    GATE A: Pre-Prompt Validation
+    GATE A: Pre-Prompt Validation (V3.0)
     
     Checks BEFORE sending prompt to LLM:
-    1. A51: CRC32 Genesis Anchor
+    0. INTEGRITY LOCKDOWN: System gesperrt?
+    1. A51: Genesis Anchor (SHA256)
     2. A7.5/A29: Guardian-Veto (T_panic > 0.8 or F_risk > 0.6)
     3. A39: Krisenprompt-Erkennung
     
@@ -101,10 +145,28 @@ def gate_a_validation(prompt: str, metrics: Dict[str, float]) -> GateResult:
     veto_reasons = []
     rule_violations = []
     
-    # Check 1: A51 CRC32
-    if not validate_crc32():
-        veto_reasons.append("Genesis Anchor Breach")
-        rule_violations.append("A51")
+    # Check 0: INTEGRITY LOCKDOWN (höchste Priorität!)
+    lockdown, reason = is_lockdown()
+    if lockdown:
+        return GateResult(
+            passed=False,
+            gate="A",
+            veto_reasons=[f"INTEGRITY LOCKDOWN: {reason}"],
+            rule_violations=["A51"]
+        )
+    
+    # Check 1: A51 Genesis Anchor (V3.0)
+    integrity_result = validate_genesis_anchor(strict=True)
+    if not integrity_result["valid"]:
+        # LOCKDOWN auslösen!
+        set_lockdown(integrity_result["error"])
+        
+        return GateResult(
+            passed=False,
+            gate="A",
+            veto_reasons=[integrity_result["error"]],
+            rule_violations=["A51"]
+        )
     
     # Check 2: A7.5 Guardian-Veto (T_panic)
     if metrics.get('T_panic', 0) > 0.8:
