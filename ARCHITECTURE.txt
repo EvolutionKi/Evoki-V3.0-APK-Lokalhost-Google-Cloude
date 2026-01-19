@@ -1,6 +1,6 @@
 EVOKI V3.0 - Architecture Map (Auto-Generated)
 ==============================================
-Generated: 2026-01-19 14:16
+Generated: 2026-01-19 17:49
 Strategy: Strict Separation (App vs Tooling)
 Status: LIVE REFLECTION
 
@@ -78,9 +78,12 @@ ROOT/
 │     │  │  └─ README.md
 │     │  ├─ components
 │     │  │  ├─ core
+│     │  │  │  ├─ CustomThemeEditor.tsx
 │     │  │  │  ├─ DeepEarthTab.tsx
 │     │  │  │  ├─ MetricsDashboard.tsx
+│     │  │  │  ├─ SettingsPanel.tsx
 │     │  │  │  ├─ TempleTab.tsx
+│     │  │  │  ├─ ThemeSwitcher.tsx
 │     │  │  │  └─ TrialogPanel.tsx
 │     │  │  ├─ v2_tabs
 │     │  │  │  ├─ AgentSelectionPanel.tsx
@@ -99,13 +102,17 @@ ROOT/
 │     │  │  ├─ README.md
 │     │  │  ├─ TabPanels.tsx
 │     │  │  └─ Tabs.tsx
+│     │  ├─ hooks
+│     │  │  └─ useTheme.ts
 │     │  ├─ utils
 │     │  │  └─ sse-parser.ts
 │     │  ├─ App.css
 │     │  ├─ App.tsx
+│     │  ├─ displayModes.ts
 │     │  ├─ index.css
 │     │  ├─ main.tsx
 │     │  ├─ README.md
+│     │  ├─ themes.ts
 │     │  └─ types.ts
 │     ├─ .gitignore
 │     ├─ eslint.config.js
@@ -177,6 +184,7 @@ ROOT/
 │  │     ├─ PROZESS_DIAGRAMM_ASCII.md
 │  │     ├─ SESSION_STATUS_20260119.md
 │  │     ├─ SOURCES_MASTER_INDEX.md
+│  │     ├─ SOURCES_MASTER_INDEX_APPEND.md
 │  │     ├─ SUMMARY.md
 │  │     ├─ SYSTEM_CHECK_PHASE01_REPORT.md
 │  │     ├─ task.md
@@ -346,6 +354,7 @@ ROOT/
 │  │  │  ├─ evoki_messages_2025_with_metrics_gradgap_recommended.jsonl
 │  │  │  ├─ evoki_messages_2025_with_metrics_gradgap_sensitive.jsonl
 │  │  │  ├─ evoki_messages_2025_with_metrics_gradgap_sessions.jsonl
+│  │  │  ├─ Fixing Tailwind CSS Issues.md
 │  │  │  ├─ Investigating Legacy Chat Logic.md
 │  │  │  ├─ Parallel Chat Data Extraction.md
 │  │  │  ├─ Recovering Encrypted Chats.md

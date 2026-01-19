@@ -16,7 +16,7 @@
  */
 import { useState, useRef } from 'react';
 import { consumeSSEStream } from '../../utils/sse-parser';
-import ThemeSwitcher from './ThemeSwitcher';
+import SettingsPanel from './SettingsPanel';
 import { useTheme } from '../../hooks/useTheme'; // Fix: Load theme on app start
 
 interface Message {
@@ -42,8 +42,11 @@ export default function TempleTab() {
     const [metrics, setMetrics] = useState<Metrics | null>(null);
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
-    // Initialize theme hook with custom theme support
-    const { currentTheme, switchTheme, availableThemes, customTheme, updateCustomTheme } = useTheme();
+    // Initialize theme hook with custom theme + display mode support
+    const {
+        currentTheme, switchTheme, availableThemes, customTheme, updateCustomTheme,
+        displayMode, switchDisplayMode, availableDisplayModes
+    } = useTheme();
 
     const abortControllerRef = useRef<AbortController | null>(null);
 
@@ -244,8 +247,9 @@ export default function TempleTab() {
             <div className="mb-5 flex items-center justify-between">
                 <div>
                     <h1
-                        className="text-3xl font-bold bg-clip-text text-transparent"
+                        className="font-bold bg-clip-text text-transparent"
                         style={{
+                            fontSize: 'var(--font-size-heading)',
                             background: `linear-gradient(to right, var(--accent-primary), var(--accent-secondary))`,
                             WebkitBackgroundClip: 'text',
                             backgroundClip: 'text'
@@ -254,20 +258,24 @@ export default function TempleTab() {
                         🏛️ EVOKI TEMPLE [PHASE 3]
                     </h1>
                     <p
-                        className="text-sm font-mono"
-                        style={{ color: 'var(--text-accent)' }}
+                        className="font-mono"
+                        style={{
+                            fontSize: 'var(--font-size-small)',
+                            color: 'var(--text-accent)'
+                        }}
                     >
-                        ⚡ Phase 3: LLM ACTIVE (Gemini 2.0 Flash) + Metriken + Double Airlock Gates!
+                        "The divine void is also a computational state." - Kryos
                     </p>
                 </div>
 
                 {/* Settings Button */}
                 <button
                     onClick={() => setIsSettingsOpen(!isSettingsOpen)}
-                    className="px-4 py-2 text-black font-bold rounded transition-colors"
+                    className="text-black font-bold rounded transition-colors"
                     style={{
-                        backgroundColor: 'var(--accent-primary)',
-                        ':hover': { backgroundColor: 'var(--accent-secondary)' }
+                        padding: 'var(--spacing-sm) var(--spacing-md)',
+                        fontSize: 'var(--font-size-base)',
+                        backgroundColor: 'var(--accent-primary)'
                     }}
                 >
                     ⚙️ Settings
@@ -353,35 +361,27 @@ export default function TempleTab() {
                     type="text"
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                    placeholder="Schreib mir..."
-                    disabled={loading}
+                    onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                    placeholder="Deine Frage an EVOKI..."
+                    className="flex-1 bg-transparent border-0 outline-none font-mono"
                     style={{
-                        flex: 1,
-                        padding: '15px',
-                        background: '#222',
-                        border: '1px solid #333',
-                        color: '#fff',
-                        borderRadius: '6px',
-                        fontSize: '1rem',
-                        outline: 'none',
-                        transition: 'border-color 0.3s'
+                        fontSize: 'var(--font-size-base)',
+                        padding: 'var(--spacing-sm)',
+                        color: 'var(--text-primary)'
                     }}
+                    disabled={loading}
                 />
                 <button
                     onClick={handleSend}
                     disabled={loading || !prompt.trim()}
-                    className="px-8 py-4 font-bold text-base rounded-md transition-all"
+                    className="font-bold rounded-lg transition-all text-black disabled:opacity-50"
                     style={{
-                        background: loading
-                            ? 'var(--bg-secondary)'
-                            : `linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))`,
-                        color: loading ? 'var(--text-secondary)' : '#000',
-                        cursor: loading ? 'not-allowed' : 'pointer',
-                        opacity: loading ? 0.5 : 1
+                        padding: 'var(--spacing-sm) var(--spacing-lg)',
+                        fontSize: 'var(--font-size-base)',
+                        background: `linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))`,
                     }}
                 >
-                    {loading ? 'LÄDT...' : 'SENDEN'}
+                    {loading ? '⏳' : '➡️'} SENDEN
                 </button>
             </div>
 
@@ -393,8 +393,8 @@ export default function TempleTab() {
         }
       `}</style>
 
-            {/* Theme Switcher with Custom Theme Editor */}
-            <ThemeSwitcher
+            {/* Settings Panel with Tabs */}
+            <SettingsPanel
                 isOpen={isSettingsOpen}
                 onClose={() => setIsSettingsOpen(false)}
                 currentTheme={currentTheme}
@@ -402,6 +402,9 @@ export default function TempleTab() {
                 onThemeChange={switchTheme}
                 customTheme={customTheme}
                 onCustomThemeUpdate={updateCustomTheme}
+                displayMode={displayMode}
+                availableDisplayModes={availableDisplayModes}
+                onDisplayModeChange={switchDisplayMode}
             />
         </div>
     );

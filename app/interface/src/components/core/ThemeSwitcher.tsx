@@ -11,6 +11,10 @@ interface ThemeSwitcherProps {
     onThemeChange: (theme: string) => void;
     customTheme: Theme;
     onCustomThemeUpdate: (theme: Theme) => void;
+    // Phase 3: Display Mode
+    displayMode: string;
+    availableDisplayModes: string[];
+    onDisplayModeChange: (mode: string) => void;
 }
 
 export default function ThemeSwitcher({
@@ -20,7 +24,10 @@ export default function ThemeSwitcher({
     availableThemes,
     onThemeChange,
     customTheme,
-    onCustomThemeUpdate
+    onCustomThemeUpdate,
+    displayMode,
+    availableDisplayModes,
+    onDisplayModeChange
 }: ThemeSwitcherProps) {
     const [isEditorOpen, setIsEditorOpen] = useState(false);
 
@@ -88,6 +95,27 @@ export default function ThemeSwitcher({
                             </span>
                             <span className="text-sm opacity-75">→</span>
                         </button>
+                    </div>
+
+                    {/* Phase 3: Display Mode Selector */}
+                    <div className="pt-4 border-t border-gray-700 mt-4">
+                        <h3 className="text-sm font-semibold text-gray-400 mb-2">Display Mode</h3>
+                        <div className="grid grid-cols-3 gap-2">
+                            {availableDisplayModes.map((mode) => (
+                                <button
+                                    key={mode}
+                                    onClick={() => onDisplayModeChange(mode)}
+                                    className={`px-3 py-2 rounded text-sm font-medium transition-colors ${displayMode === mode
+                                        ? 'bg-cyan-400 text-black'
+                                        : 'bg-gray-800 text-white hover:bg-gray-700'
+                                        }`}
+                                >
+                                    {mode === 'mobile' && '📱'}
+                                    {mode === 'tablet' && '📱💻'}
+                                    {mode === 'desktop' && '💻'}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
