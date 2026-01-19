@@ -20,14 +20,8 @@ from typing import Dict, Optional
 # GENESIS ANCHOR CONSTANTS
 # =============================================================================
 
-# Primär: SHA256 (V3.0) - Berechnet aus regelwerk_v12.json
-GENESIS_ANCHOR_SHA256 = "98f8d5131d56db7290e075df36a76f63ef2e74cf6cac70fb7cb769d2fe6d294e"
-
-# Legacy: CRC32 (V2.0) - Berechnet aus regelwerk_v12.json  
-GENESIS_ANCHOR_CRC32 = 839094334
-
-# HINWEIS: Der "combined_sha256" im regelwerk_v12.json (ada4eca...) ist ein
-# kombinierter Hash über MEHRERE Dateien, nicht nur über das Regelwerk!
+# NOTE: Anchors werden jetzt aus regelwerk_v12.json gelesen!
+# Keine hardcoded Konstanten mehr → verhindert Widersprüche
 
 # Regelwerk-Pfad (relativ zu diesem Modul)
 REGELWERK_PATH = Path(__file__).parent / "regelwerk_v12.json"
@@ -39,12 +33,13 @@ REGELWERK_PATH = Path(__file__).parent / "regelwerk_v12.json"
 
 def canonical_bytes(obj: dict) -> bytes:
     """
-    Kanonische JSON-Serialisierung für Genesis Anchor.
+    Kanonische Serialisierung für SHA256-Hashing.
     
-    WICHTIG: Konsistenz durch:
-    - sort_keys=True
-    - separators=(",", ":") - keine Whitespace-Varianz
-    - ensure_ascii=False - konsistente Unicode-Behandlung
+    HARTE REGELN:
+    1. meta.integrity Block wird ENTFERNT (verhindert Selbstbezug)
+    2. ensure_ascii=False (UTF-8)
+    3. sort_keys=True (deterministische Reihenfolge)
+    4. separators=(",", ":") (keine Spaces!)
     
     Args:
         obj: Dict zum Serialisieren
@@ -52,12 +47,21 @@ def canonical_bytes(obj: dict) -> bytes:
     Returns:
         Kanonische UTF-8 Bytes
     """
+    from copy import deepcopy
+    
+    o = deepcopy(obj)
+    
+    # KRITISCH: meta.integrity entfernen (verhindert Selbstbezug!)
+    if "meta" in o and "integrity" in o["meta"]:
+        del o["meta"]["integrity"]
+    
     s = json.dumps(
-        obj,
+        o,
         ensure_ascii=False,
         sort_keys=True,
         separators=(",", ":")  # Keine Spaces!
     )
+    
     return s.encode("utf-8")
 
 
@@ -125,9 +129,10 @@ def validate_genesis_anchor(
     strict: bool = True
 ) -> dict:
     """
-    A51: Genesis Anchor Validation.
+    A51: Genesis Anchor Validation (V3.0).
     
-    Validiert Regelwerk gegen erwartete Genesis Anchors.
+    Liest erwartete Hashes AUS regelwerk_v12.json und vergleicht
+    mit berechneten Werten (canonical_bytes entfernt meta.integrity).
     
     Args:
         regelwerk: Optional Regelwerk-Dict, sonst wird geladen
@@ -136,12 +141,9 @@ def validate_genesis_anchor(
     Returns:
         {
             "valid": bool,
-            "sha256_match": bool,
-            "crc32_match": bool,
-            "calculated_sha256": str,
-            "calculated_crc32": int,
-            "expected_sha256": str,
-            "expected_crc32": int,
+            "genesis_match": bool,
+            "expected_genesis": str,
+            "calculated_genesis": str,
             "error": Optional[str]
         }
     """
@@ -154,29 +156,40 @@ def validate_genesis_anchor(
                 "error": f"Regelwerk Load Error: {str(e)}"
             }
     
-    # Berechne Hashes
-    calc_sha256 = genesis_sha256(regelwerk)
-    calc_crc32 = genesis_crc32(regelwerk)
+    # Erwartete Hashes AUS dem Regelwerk lesen
+    integrity = regelwerk.get("meta", {}).get("integrity", {})
+    
+    expected_genesis = integrity.get("genesis_sha256")
+    expected_registry = integrity.get("registry_sha256")
+    expected_combined = integrity.get("combined_sha256")
+    
+    if not expected_genesis:
+        return {
+            "valid": False,
+            "error": "genesis_sha256 fehlt in meta.integrity!"
+        }
+    
+    # Berechne actual Hashes (canonical_bytes entfernt meta.integrity!)
+    calc_genesis = genesis_sha256(regelwerk)
     
     # Vergleiche
-    sha256_match = (calc_sha256 == GENESIS_ANCHOR_SHA256)
-    crc32_match = (calc_crc32 == GENESIS_ANCHOR_CRC32)
+    genesis_match = (calc_genesis == expected_genesis)
     
-    # Validierung
-    if strict:
-        valid = sha256_match  # SHA256 MUSS matchen
-    else:
-        valid = sha256_match or crc32_match  # Einer muss matchen
+    if strict and not genesis_match:
+        return {
+            "valid": False,
+            "genesis_match": False,
+            "expected_genesis": expected_genesis,
+            "calculated_genesis": calc_genesis,
+            "error": f"Genesis Anchor Breach: {calc_genesis} != {expected_genesis}"
+        }
     
     return {
-        "valid": valid,
-        "sha256_match": sha256_match,
-        "crc32_match": crc32_match,
-        "calculated_sha256": calc_sha256,
-        "calculated_crc32": calc_crc32,
-        "expected_sha256": GENESIS_ANCHOR_SHA256,
-        "expected_crc32": GENESIS_ANCHOR_CRC32,
-        "error": None if valid else "Genesis Anchor validation failed!"
+        "valid": True,
+        "genesis_match": genesis_match,
+        "calculated_genesis": calc_genesis,
+        "expected_genesis": expected_genesis,
+        "error": None
     }
 
 
@@ -221,19 +234,14 @@ if __name__ == "__main__":
     print("VALIDATION RESULT:")
     print("─" * 80)
     
-    print(f"\n🔐 SHA256 (V3.0 Primär):")
-    print(f"   Expected:   {result['expected_sha256']}")
-    print(f"   Calculated: {result['calculated_sha256']}")
-    print(f"   Match: {'✅ YES' if result['sha256_match'] else '❌ NO'}")
-    
-    print(f"\n🔓 CRC32 (V2.0 Legacy):")
-    print(f"   Expected:   {result['expected_crc32']}")
-    print(f"   Calculated: {result['calculated_crc32']}")
-    print(f"   Match: {'✅ YES' if result['crc32_match'] else '❌ NO'}")
+    print(f"\n🔐 Genesis SHA256 (V3.0):")
+    print(f"   Expected:   {result.get('expected_genesis', 'N/A')}")
+    print(f"   Calculated: {result.get('calculated_genesis', 'N/A')}")
+    print(f"   Match: {'✅ YES' if result.get('genesis_match') else '❌ NO'}")
     
     print(f"\n{'✅ VALID' if result['valid'] else '❌ INVALID'}: Genesis Anchor Validation")
     
-    if result['error']:
+    if result.get('error'):
         print(f"\n⚠️ ERROR: {result['error']}")
     
     print("\n" + "=" * 80)

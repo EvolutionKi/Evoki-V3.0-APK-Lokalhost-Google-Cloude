@@ -4,9 +4,14 @@
     "source": "evoki_enginepy V70 Metakognitive Synthese.txt",
     "integrity": {
       "uses_genesis_anchor": true,
-      "genesis_crc32": 3246342384,
-      "registry_crc32": 4204981505,
-      "combined_sha256": "ada4ecae8916fa7e5edd966a97b85af321b64ecfe12489fcea8c6dcef1bd4b1c"
+      "legacy": {
+        "genesis_crc32": 3246342384,
+        "registry_crc32": 4204981505
+      },
+      "genesis_sha256": "cdd461f4ec4f92ec40b5e368c5a863bc1ee4dd12258555affb39b8617194d745",
+      "registry_sha256": "TO_BE_CALCULATED",
+      "combined_sha256": "TO_BE_CALCULATED",
+      "hash_spec": "SHA256(canonical_json, utf-8, sorted_keys, separators, WITHOUT meta.integrity)"
     }
   },
   "rules": [
