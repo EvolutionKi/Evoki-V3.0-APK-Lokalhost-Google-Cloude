@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:16:22 MESZ
+Speaker: ai
+
+Okay, dann ist der "Safe Mode" vielleicht keine gute Option. Du könntest versuchen, die Blockgröße im UMC Control Panel schrittweise zu erhöhen, bis die Verzögerung geringer wird. Achte aber darauf, dass die Audioqualität dabei nicht leidet.

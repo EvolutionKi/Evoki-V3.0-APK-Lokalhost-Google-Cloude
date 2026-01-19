@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:03:10 MESZ
+Speaker: ai
+
+Ja, ich sehe die Fehlermeldung. Es scheint, als ob PowerShell den Befehl "curl" nicht kennt. Das liegt daran, dass curl unter Windows nicht standardmäßig installiert ist. Aber keine Sorge, es gibt eine einfache Lösung: Du kannst curl für Windows herunterladen und installieren. Danach sollte der Befehl funktionieren. Möchtest du, dass ich dir helfe, curl zu installieren?

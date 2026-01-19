@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:23:14 MESZ
+Speaker: ai
+
+Das ist das entscheidende Detail! Wenn die Lampe vor Kurzem auf NICHTS reagiert hat und jetzt NUR auf die alte Fernbedienung , ist die Bridge der Übeltäter, aber anders als gedacht. Die Lampe hat sich wahrscheinlich von der Bridge entkoppelt und ist in einen direkten "Touchlink"-Modus mit der alten Fernbedienung gewechselt. Die Bridge kann sie nicht steuern, weil die Lampe nicht mehr "weiß", dass sie zur Bridge gehört. Der nächste Schritt muss der Reset sein, gefolgt von der Neukopplung: Reset: Nutze die Fernbedienung (die ja jetzt funktioniert), um die Lampe zurückzusetzen: Halte An- und Aus-Taste auf der Fernbedienung gleichzeitig nahe an der Lampe für ca. 10 Sekunden gedrückt, bis die Lampe blinkt. Löschen: Lösche die Lampe aus der Hue App . Neukopplung: Starte in der Hue App die Suche nach neuen Lampen. Möchtest du, dass ich dir eine Alternative zum Reset mit der Fernbedienung suche, falls das nicht klappt?

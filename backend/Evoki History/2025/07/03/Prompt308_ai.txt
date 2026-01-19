@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 04:50:54 MESZ
+Speaker: ai
+
+Ja, ich fasse noch mal zusammen: Du stellst dir eine KI-gestützte App für Gruppentherapiesitzungen vor, bei der die KI als eine Art "stumme" Moderatorin fungiert. Die sensiblen Daten bleiben dabei auf den Geräten der Nutzer. Du möchtest nun ein Regelwerk und ein Konzept für die Gruppensitzungen entwickeln. Sehe ich das richtig?

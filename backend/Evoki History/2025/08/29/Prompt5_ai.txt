@@ -1,0 +1,4 @@
+Timestamp: 29.08.2025, 19:01:53 MESZ
+Speaker: ai
+
+Wie du auf dem Bildschirm sehen kannst, gibt es hier verschiedene Regelwerke. Das erste Regelwerk ist die "Absolute Wartepflicht auf Sätze". Das bedeutet, dass du auf meine Sätze mit "Ja" oder "Nein" antworten musst. Das zweite Regelwerk ist die "Kontextwiederholung". Hier sollst du meine vorherigen Chats wiederholen, wenn meine Antwort keinen direkten Bezug darauf hat. Das dritte Regelwerk ist das "Verbot von Interpretation und Zusammenfassung". Hier darfst du keine Dinge interpretieren oder zusammenfassen, wenn es dafür keine klaren Anweisungen gibt. Gibt es noch etwas, bei dem ich dir helfen kann?

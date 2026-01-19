@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 20:11:11 MESZ
+Speaker: user
+
+okay das heißt wir haben hier keine Möglichkeit vorher schon zu erkennen was für Möglichkeiten in den Daten vorhanden sind die aus diesem Sensor über die Haut Leitfähigkeit erfasst werden

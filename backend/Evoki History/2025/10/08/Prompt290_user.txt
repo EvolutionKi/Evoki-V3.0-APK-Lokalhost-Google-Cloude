@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 16:42:48 MESZ
+Speaker: user
+
+okay und wie ist dann der Kommunikationsweg also wie kommst du dann an diese Daten ran also du gehst über die diese bekannten API Wege aber wie machst du wie lösen wir das Programm dann das ist quasi auf deinen Anruf reagiert und nicht Samsung dran geht

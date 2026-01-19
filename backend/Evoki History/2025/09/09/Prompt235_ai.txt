@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:38:03 MESZ
+Speaker: ai
+
+Laut der Beschreibung ist die App eine Webanwendung ohne Serveranbindung. Das bedeutet, sie läuft nur im Browser und kann keine APK-Dateien erstellen, wie es in der Werbung heißt.

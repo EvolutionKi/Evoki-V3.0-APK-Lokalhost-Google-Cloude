@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 23:19:10 MESZ
+Speaker: ai
+
+Absolut, hier ist ein Prompt, der genau diese Anweisung enthält: Prompt: "Analysiere den folgenden Text und baue ihn nach den angegebenen Kriterien um. Stelle dabei sicher, dass der ursprüngliche Text und der umgebaute Text exakt die gleiche Zeichenanzahl aufweisen. Führe vor der Ausgabe eine Berechnung durch: Zähle die Zeichen des Originaltextes und die Zeichen des bearbeiteten Textes. Nur wenn beide Zeichenzahlen identisch sind, darfst du das Ergebnis ausgeben. Es darf kein Zeichen verloren gehen oder hinzugefügt werden; der Inhalt soll lediglich neu strukturiert werden."

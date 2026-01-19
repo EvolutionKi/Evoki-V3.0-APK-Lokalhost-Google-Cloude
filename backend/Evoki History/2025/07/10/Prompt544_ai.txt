@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:36:32 MESZ
+Speaker: ai
+
+Du könntest dir die "Offenen Gemma-Modelle" ansehen. Gemma ist eine Familie von hochmodernen, offenen Modellen, die von Google DeepMind entwickelt wurden. Sie sind vielleicht eine gute Alternative für deinen PLKM-Wrapper.

@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 08:54:50 MESZ
+Speaker: user
+
+Genau aber ich möchte jetzt eben nicht nur halt überprüft haben dass es ganze Dokument stimmt sondern ich möchte Frage für Frage eine Prüfsumme erstellen so dass quasi MiGeL selbst die Prüfung abprüfen kann und so feststellt okay die Frage wurde gelesen und ist auch verstanden worden und dann wird sie auch richtig beantwortet okay

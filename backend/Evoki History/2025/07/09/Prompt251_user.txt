@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 03:46:21 MESZ
+Speaker: user
+
+ja und vor allen Dingen soll überprüft werden ob diese Mieter Regeln überhaupt abgefragt worden sind bevor ein Output stattfindet weil das ist ja auch noch mal ganz wichtig

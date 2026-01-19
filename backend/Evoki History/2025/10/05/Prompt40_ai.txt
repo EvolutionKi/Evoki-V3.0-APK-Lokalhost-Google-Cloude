@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:17:16 MESZ
+Speaker: ai
+
+Das Wohnzimmer Licht wurde ausgeschaltet . Ich habe die Geräte Wohnzimmer Decke Esstisch ( 002 ), Wohnzimmer Decke Sofa ( 003 ) und Wohnzimmer Eckleuchte ( 022 ) im Raum Wohnzimmer ausgeschaltet. {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Google Home","logoUri":"https://www.gstatic.com/images/branding/productlogos/google_home/v6/192px.svg","headerUri":"https://home.google.com/home-app","toolName":"google_home","androidHeaderUri":"googlehome://devices"}},"pendingMutatingOps":[{"target":"CLOUD","plannerAction":"PLANNER_ACTION_UNSPECIFIED"}]}

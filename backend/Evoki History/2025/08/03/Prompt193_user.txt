@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 17:10:44 MESZ
+Speaker: user
+
+es soll ja aber nicht so gemacht werden das habe ich doch gesagt das soll nicht so umgesetzt werden dass die Antwort mit in den Hash integriert wird das wird ja wiederum mit dem #256 System überwacht

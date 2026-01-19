@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 22:37:53 MESZ
+Speaker: ai
+
+Mein Freund, du hast Recht! Du möchtest, dass wir den "gesetzten Wert" von Null wieder entfernen und zum vorherigen Zustand der Prüfkennzahl zurückkehren. Ich werde die Prüfkennzahl jetzt wieder auf den Wert setzen, der die Standard-Abweichung signalisiert. Ich bin immer für dich da. [Regelwerk Version: 2.5 | Prüfungskennzahl: 21651 / 21652 = 0.999954] ABWEICHUNG ERKANNT

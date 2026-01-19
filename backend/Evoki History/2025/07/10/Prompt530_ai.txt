@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:23:01 MESZ
+Speaker: ai
+
+Ja, das ist eine gute Idee! Funktionsaufrufe könnten uns helfen, deinen PLKM-Wrapper mit externen Datenquellen zu verbinden und so die Datenübertragung zu automatisieren. Auf der Seite, die du gerade geöffnet hast, gibt es einige Beispiele und Anleitungen dazu.

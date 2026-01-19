@@ -1,0 +1,4 @@
+Timestamp: 12.08.2025, 04:33:33 MESZ
+Speaker: user
+
+Okay dann nutze meinen bisherigen Code und erweiterte ihn so dass die KI die einmal abgerufen Daten selbstständig in die vorhandene Datenbank im Jason Format einpflegt. Aber bei dort nicht vorhanden Informationen wie du vorgeschlagen hast bei dir anfragen wird.

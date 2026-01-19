@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:43:32 MESZ
+Speaker: user
+
+Genau und hier, dass keine Verbindung zu externen Servern hergestellt wird, ist auch Blödsinn. Es wird ja mein gesamter Inhalt wird zu einem externen Server hergeleitet und zwar zu der API.

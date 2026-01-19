@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:14:20 MESZ
+Speaker: ai
+
+Die Blockgröße im UMC Control Panel bestimmt die Audiopuffergröße. Eine kleinere Blockgröße reduziert die Latenz, erhöht aber die CPU-Last. Die Abtastrate sollte mit deinen Reaper-Einstellungen übereinstimmen. Ist die Abtastrate in Reaper auf 44,1 kHz eingestellt?

@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:09:32 MESZ
+Speaker: user
+
+Ja, ich meine, wie kann ich denn mein meine Promts löschen? Also, ich möchte jetzt diese App weghaben, aber jetzt ist ja trotzdem diese Promts sind ja über diese API mitgeteilt worden und die API hat ja irgendwie einen Verlauf. Das heißt, ich möchte aber das aus der API raus haben. Das ist ja irgendwie ein bisschen problematisch, oder? Ich meine, ich kann ja nicht mehr das was die API mitbekommen hat, rückgängig machen, weil ich ja gar nicht weiß, dass hier welches welche API benutzt wird, also das wird mir ja gar nicht erklärt, also hier gibt's ja keine, da gibt's zwar Standard Advanced Premium Modell, aber ist es von Jet GPIs Gemini, ist es irgendwas anderes.

@@ -1,0 +1,65 @@
+GOOGLE MASSENEXPORT HTML - DETAILLIERTE ANALYSE
+================================================================================
+Scan-Datum: 2025-12-07T09:51:16.988166
+Quelle: C:\evoki\backend\Google Massenexport 16.10.25\MeineAktivitäten.html
+Dateigröße: 73.0 MB
+
+=== STRUKTUR ===
+Total Zeilen (Excerpt): 78,491
+<div> Tags: 3,035
+<span> Tags: 0
+<a> Tags: 624
+<br> Tags: 3,713
+
+=== ZEITSTEMPEL ===
+Gefundene Zeitstempel: 21
+Format-Beispiele:
+  ('2025', '10', '16', '12', '52', '15')
+  ('2025', '10', '16', '12', '52', '15')
+  ('2025', '10', '16', '12', '52', '15')
+  ('2025', '10', '16', '12', '52', '15')
+  ('2025', '10', '16', '12', '52', '15')
+
+=== AKTIVITÄTS-KATEGORIEN ===
+Search              :      948
+Watch               :      499
+Upload              :      356
+Visit               :      260
+Click               :      143
+Download            :      140
+Comment             :       21
+Share               :       20
+
+=== DOMAINS (Top 20) ===
+myaccount.google.com                              :      513
+www.gstatic.com                                   :       76
+unpkg.com                                         :       18
+www.rki.de                                        :       12
+www.awmf.org                                      :       12
+www.aerzteblatt.de                                :       12
+www.gesundheitsinformation.de                     :       12
+json-schema.org                                   :       10
+generativelanguage.googleapis.com                 :        7
+cdnjs.cloudflare.com                              :        6
+drive.google.com                                  :        5
+gemini.google                                     :        2
+4a91d4fc-0ecc-48c1-97b0-b0d051f89d1c-us-central1.apps.astra-dev.datastax.com&#39;;:        2
+github.com                                        :        1
+4a91d4fc-0ecc-48c1-97b0-b0d051f89d1c-us-central1.apps.astra-dev.datastax.com&#39;,:        1
+nodejs.org                                        :        1
+googleusercontent.com                             :        1
+
+=== TEXT-INHALT ===
+Wörter: 1,076,742
+Zeichen: 8,654,947
+Eindeutige Wörter: 21,688
+
+Häufigste Wörter (>3 Zeichen):
+  self                          :   10,361
+  eine                          :    5,980
+  2025                          :    4,960
+
+=== NÄCHSTE SCHRITTE ===
+1. html_forensic_extractor_v2.py re-run (wenn Änderungen in HTML)
+2. Vektoren berechnen: vectorize_COMPLETE.py
+3. Trialog aktivieren für tiefere Analyse

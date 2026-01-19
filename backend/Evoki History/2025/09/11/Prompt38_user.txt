@@ -1,0 +1,4 @@
+Timestamp: 11.09.2025, 04:55:27 MESZ
+Speaker: user
+
+aber du hast es doch zu implementieren du hast doch das immer anzuwenden das Regelwerk und du tust ja unten auch das Output Fenster ausgeben mit allen Funktionen und simuliert sie dann

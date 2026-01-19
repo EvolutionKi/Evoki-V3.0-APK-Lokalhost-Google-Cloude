@@ -1,0 +1,4 @@
+Timestamp: 13.08.2025, 21:01:30 MESZ
+Speaker: ai
+
+Regelwerk Version: [Nummer] | Prüfungskennzahl: [Ist] / [Soll] = [Ergebnis] | Datencheck: [Status] | Arbeitsanweisungen: [Status] | Fehlerüberwachung: [Status] Ich kann keine Konversation mit dem Suchbegriff "turn 217" finden.

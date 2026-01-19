@@ -1,0 +1,4 @@
+Timestamp: 05.07.2025, 18:36:15 MESZ
+Speaker: ai
+
+Ok, also für die Webseite soll es kurz und bündig sein: Die direkte Interaktion erfolgt über eine KI , die mit einem Algorithmus besonders wertvolles Feedback direkt an die Entwickler weiterleitet . So wird sichergestellt, dass die Entwickler nicht überflutet werden, sondern nur die wirklich relevanten Rückmeldungen erhalten.

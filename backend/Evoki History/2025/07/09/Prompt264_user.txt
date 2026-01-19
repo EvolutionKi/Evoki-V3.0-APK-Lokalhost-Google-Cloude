@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 04:01:26 MESZ
+Speaker: user
+
+okay danke schön und jetzt implementiere bitte nachdem du sie mir noch mal gezeigt hast die neuen Mieter Regeln bitte an der Stelle wo die Mieter Regeln vom 06.07 implementiert sind

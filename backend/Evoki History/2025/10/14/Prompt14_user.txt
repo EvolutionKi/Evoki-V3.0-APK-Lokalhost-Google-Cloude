@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 03:25:42 MESZ
+Speaker: user
+
+das weitere muss noch eine sichere Sicherheitsfunktion hinein so dass keine Endlosschleifen entstehen können und hier die API Kosten durch A52 explodieren

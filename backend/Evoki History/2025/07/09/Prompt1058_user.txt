@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 15:41:44 MESZ
+Speaker: user
+
+die enthält natürlich eine Versionsnummer und auch dort eben halt fortlaufendes Ding genau

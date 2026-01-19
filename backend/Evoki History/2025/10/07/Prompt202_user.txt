@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 06:31:14 MESZ
+Speaker: user
+
+ich würde gerne so lange wie es noch in der Sandbox ist noch eine Anpassung machen und zwar würde ich gerne ins Output Fenster noch eine kleine Info hinzufügen und zwar die Strahlen Intensität wird hier angegeben der Wert quasi mit der die Mutation stattfindet das ist einfach nur eine Information für mich damit ich erkenne dass es auch nicht gleiche Richtung geht

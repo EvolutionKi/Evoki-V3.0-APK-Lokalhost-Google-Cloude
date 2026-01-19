@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 05:55:58 MESZ
+Speaker: user
+
+was wir jetzt vergessen haben bei der Regel 53 das sollten wir natürlich auch noch die Wertung nehmen die wir aus unserer eigenen physics engine bekommen also hier sollten natürlich auch diese Delta Werte wäre beachtet werden also weißt du was ich meine

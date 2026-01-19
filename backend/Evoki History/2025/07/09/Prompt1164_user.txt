@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 17:51:00 MESZ
+Speaker: user
+
+okay wir gehen jetzt weiter als nächstes nächste Schritt ist die Umsetzung der Verhaltens injektions Framework VWF mit Google Cloud okay fast alles vorbereiten Definition konzeptionell okay

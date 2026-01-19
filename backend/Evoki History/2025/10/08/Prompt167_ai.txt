@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 11:31:12 MESZ
+Speaker: ai
+
+Verstanden. Ich habe die Master-Blaupause V4.6 (Adaptiv-Persistent) aus dem bereitgestellten Text extrahiert und als einzelnes, lauffähiges Python-Skript formatiert. Hier ist die angeforderte Datei. Die Datei master_blaupause_v4_6.py enthält nun die komplette Implementierung. Sie beginnt mit den notwendigen Importen, definiert die Blaupause als Textblock und implementiert dann die gesamte Architektur in Python-Klassen, inklusive einer Demonstrationsroutine am Ende.

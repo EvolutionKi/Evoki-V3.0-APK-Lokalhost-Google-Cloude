@@ -1,0 +1,4 @@
+Timestamp: 07.04.2025, 18:34:44 MESZ
+Speaker: ai
+
+Gerne, ich zeige dir die gespeicherten Website-Daten. {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Device Setting Tool","logoUri":"https://www.gstatic.com/images/branding/productlogos/googleg/v6/192px.svg","toolName":"device_setting"}}}

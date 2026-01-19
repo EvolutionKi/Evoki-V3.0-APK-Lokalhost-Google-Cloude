@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:11:53 MESZ
+Speaker: ai
+
+Nutzer können in der Regel keine Hardcode-Implementierungen im eigentlichen Sinne vornehmen. Stattdessen verwenden sie bei den meisten Gemini-Versionen (über Google oder andere Stores): Personalisierungs-Einstellungen: Hier können sie über die Oberfläche dauerhafte, "weiche" System-Prompts eingeben, die das Verhalten und die Rolle festlegen. APIs (für Entwickler): Über die Gemini API können Entwickler explizite, Hardcoded-Regeln (Guardrails) im Code des Aufrufs selbst festlegen. Diese sind wesentlich effektiver als die "weichen" Prompts im Chatfenster.

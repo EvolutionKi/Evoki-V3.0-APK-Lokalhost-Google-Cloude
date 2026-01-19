@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 22:59:00 MESZ
+Speaker: ai
+
+Ich sehe, das "UMC Control Panel" ist geöffnet. Die Latenz beträgt aktuell 13,11 bis 14,49 Millisekunden, was gut ist. Möchtest du sie noch weiter optimieren?

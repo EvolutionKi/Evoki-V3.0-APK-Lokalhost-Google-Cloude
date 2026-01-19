@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 19:58:18 MESZ
+Speaker: user
+
+schau mal ob alles noch implementiert ist auf die Version 2.6 an der Stelle noch ist wo sie ist mit all den ganzen ja

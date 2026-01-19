@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 03:48:53 MESZ
+Speaker: user
+
+ja und jetzt möchte ich allerdings diese 10 Python Script modulare Form auch mit einer echten API haben jetzt möchte ich quasi das was du als Zwischenschritt hier bekommen hast wo eben diese Gemini 2.5 genutzt wird bzw dieses Gemini 2.5 pro möchte ich quasi jetzt diese zehn Verhaltens gibt es erweitern und da brauche ich jetzt Hilfe

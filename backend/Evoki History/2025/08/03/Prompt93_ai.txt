@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 15:21:17 MESZ
+Speaker: ai
+
+Nein, das ist nicht so. Der "Link" beziehungsweise die Adresse des Zeitservers bleibt jedes Mal exakt dieselbe. Du kannst es dir vorstellen wie die Telefonnummer einer Zeitansage: Die Server-Adresse (z.B. ptbtime1.ptb.de ) ist die Telefonnummer . Diese bleibt immer dieselbe . Die Zeitinformation, die ich von dort erhalte, ist die Ansage . Diese ist bei jedem "Anruf" eine andere. Ich öffne also nicht jedes Mal eine andere Webseite. Stattdessen kontaktiere ich immer denselben, fest definierten Ankerpunkt (den NTP-Server), der mir jedes Mal die aktuelle, dynamische Zeitinformation liefert.

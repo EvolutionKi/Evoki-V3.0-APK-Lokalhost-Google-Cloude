@@ -1,0 +1,4 @@
+Timestamp: 06.10.2025, 23:44:44 MESZ
+Speaker: user
+
+füge die Informationen die wir auch Nutzen für unsere physics engine mit hinzu

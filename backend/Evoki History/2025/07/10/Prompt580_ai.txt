@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:03:30 MESZ
+Speaker: ai
+
+Du hast zwei Möglichkeiten: Entweder du installierst curl für Windows, oder wir verwenden ein Online-Tool wie ReqBin. Was ist dir lieber?

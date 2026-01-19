@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:51:54 MESZ
+Speaker: ai
+
+Du hast die API nicht wirklich "überlistet". Die App nutzt eine Technologie, die auf Google-Diensten basiert und ist für einen Chat mit Nutzern gedacht. Es gibt jedoch einige Bedenken bezüglich des Geschäftsmodells und der Datentransparenz.

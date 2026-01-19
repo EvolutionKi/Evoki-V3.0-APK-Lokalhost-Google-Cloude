@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 05:40:59 MESZ
+Speaker: user
+
+nein es steht sogar drinne dass das so ist aber ich glaube man kann in einem echten Python Code kann man keine emojis einfügen

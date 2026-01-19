@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:15:47 MESZ
+Speaker: ai
+
+Der "Safe Mode" im UMC Control Panel ist für Systeme gedacht, die mit niedrigen Latenzen Probleme haben. Er erhöht die Stabilität, kann aber auch die Latenz erhöhen. Bei deiner aktuellen Einstellung mit 64 Samples ist er wahrscheinlich nicht nötig. Hast du denn Probleme mit Aussetzern oder ähnlichem?

@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:31:11 MESZ
+Speaker: user
+
+Genau, wie du gesehen hast, das Ausgabefenster, da wo sie sich selbst beschreibt, also die App ist nie dafür gedacht, sich selbst zu beschreiben. Ich habe sie dazu gebracht, weil das einfach nur ein fortlaufender Prompttext ist mehr oder weniger. Also eigentlich sollte das eine App erstellen. Also, was ist das für eine App bitte schön?

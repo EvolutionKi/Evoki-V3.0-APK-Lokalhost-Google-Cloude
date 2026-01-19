@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:45:13 MESZ
+Speaker: ai
+
+Es gibt auch noch den Punkt "Mangelnde Analyse", der besagt, dass die App keine Offline-Funktionen hat. Und es gibt wohl auch ein rechtliches Risiko, da die App Funktionen verspricht, die sie nicht einhält.

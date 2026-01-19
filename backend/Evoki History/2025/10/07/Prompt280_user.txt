@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 08:37:23 MESZ
+Speaker: user
+
+Okay aber du hast die hard Codierung vergessen du hast den hard codierten 4.3 Regelwerk implementiert

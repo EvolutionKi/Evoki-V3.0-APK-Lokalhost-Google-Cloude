@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:33:01 MESZ
+Speaker: ai
+
+Du möchtest deinen Workflow verbessern. Eine Möglichkeit ist das "implizite Caching". Dabei werden wiederholte Anfragen automatisch zwischengespeichert, was Zeit und Kosten sparen kann. Oder wir schauen uns mal das explizite Caching an. Was hältst du davon?

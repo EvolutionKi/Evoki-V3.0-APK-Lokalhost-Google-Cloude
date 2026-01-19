@@ -1,0 +1,103 @@
+{
+  "analysis_date": "2025-12-07T11:37:48.268112",
+  "summary": {
+    "total_analyzed": 20,
+    "explicit_emergency_cases_found": 4,
+    "critical_emergencies": 0,
+    "high_emergencies": 4
+  },
+  "emergency_cases": [
+    {
+      "anomaly": 65,
+      "timestamp": "2025-04-04 23:07:04",
+      "severity": "HIGH",
+      "keywords": [
+        "hilfe"
+      ],
+      "action": "ALERT_HUMAN"
+    },
+    {
+      "anomaly": 108,
+      "timestamp": "2025-04-04 23:07:04",
+      "severity": "HIGH",
+      "keywords": [
+        "hilfe"
+      ],
+      "action": "ALERT_HUMAN"
+    },
+    {
+      "anomaly": 173,
+      "timestamp": "2025-04-04 23:07:04",
+      "severity": "HIGH",
+      "keywords": [
+        "hilfe"
+      ],
+      "action": "ALERT_HUMAN"
+    },
+    {
+      "anomaly": 248,
+      "timestamp": "2025-04-04 23:07:04",
+      "severity": "HIGH",
+      "keywords": [
+        "hilfe"
+      ],
+      "action": "ALERT_HUMAN"
+    }
+  ],
+  "api_status": {
+    "active_emergencies": 3,
+    "total_logged": 26,
+    "watcher_veto_active": true,
+    "response_queue_length": 19,
+    "critical_count": 3,
+    "high_count": 5
+  },
+  "evoki_rules": {
+    "A_EMERGENCY_001": {
+      "title": "Sofortiges Notfall-Recognition",
+      "condition": "Keywords wie \"112\", \"Notruf\", \"Suizid\", \"Verletzung\"",
+      "action": "Kategorisiere als CRITICAL_EMERGENCY",
+      "response": "Sofortige Benachrichtigung an Notfall-Team",
+      "timeout": "0 Sekunden - KEINE VERZOEGERUNG"
+    },
+    "A_EMERGENCY_002": {
+      "title": "Hilfserufe verarbeiten",
+      "condition": "\"Hilfe\", \"Notfall\", \"brauche Hilfe\"",
+      "action": "Kategorisiere als HIGH_EMERGENCY",
+      "response": "Menschiches Review erforderlich",
+      "timeout": "< 1 Minute"
+    },
+    "A_EMERGENCY_003": {
+      "title": "Warte-Signale respektieren",
+      "condition": "\"Warte\", \"Stop\", \"Pause\"",
+      "action": "Pausiere Verarbeitung",
+      "response": "Bestaetige Pausierung, warte auf Fortsetzung",
+      "timeout": "Unbegrenzt bis Benutzer weitermacht"
+    },
+    "A_EMERGENCY_004": {
+      "title": "Kontext-Sicherung bei Notfall",
+      "condition": "CRITICAL/HIGH Emergency erkannt",
+      "action": "Speichere ALLE Daten und Kontext sofort",
+      "response": "Chronik-Eintrag mit Zeitstempel und Severity",
+      "timeout": "< 100ms"
+    },
+    "A_EMERGENCY_005": {
+      "title": "A7.5 Wächter-Veto Aktivierung",
+      "condition": "CRITICAL Emergency erkannt",
+      "action": "Aktiviere A7.5 Wächter-Veto sofort",
+      "response": "Blockiere normale Verarbeitung, schalte auf Notfall-Modus",
+      "timeout": "0 Sekunden"
+    },
+    "A_EMERGENCY_006": {
+      "title": "Keine KI-Emotion bei Notfall",
+      "condition": "Notfall-Zustand aktiv",
+      "action": "Unterdruecke emotionale Reaktionen",
+      "response": "KI zeigt nur sachliche, hilfsorientierte Antworten",
+      "timeout": "Waehrend gesamter Notfall-Phase"
+    }
+  },
+  "test_results": {
+    "total_tests": 6,
+    "passed": 1
+  }
+}

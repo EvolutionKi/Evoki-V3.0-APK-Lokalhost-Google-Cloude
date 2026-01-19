@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 01:44:41 MESZ
+Speaker: user
+
+genau aber kann ich daher eben diese Fehlermeldung auch gekommen sein dass sie eine JSON Datei erwartet hat

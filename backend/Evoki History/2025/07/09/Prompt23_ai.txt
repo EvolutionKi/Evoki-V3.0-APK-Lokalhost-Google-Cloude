@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:18:01 MESZ
+Speaker: ai
+
+Ich sehe, der Safe Mode ist aktiviert. Wenn du ihn ausschaltest, könnte das die Leistung verbessern und die Latenz reduzieren. Entferne dazu das Häkchen.

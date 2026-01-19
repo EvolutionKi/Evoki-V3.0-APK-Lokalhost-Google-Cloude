@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:18:00 MESZ
+Speaker: ai
+
+Ja, du musst nur noch den Teil "GEMINI_API_KEY" im Code durch deinen API-Schlüssel ersetzen. Dein API-Schlüssel ist eine lange Reihe von Buchstaben und Zahlen. Er beginnt mit "AIzaSy..." und endet mit "...fUW00".

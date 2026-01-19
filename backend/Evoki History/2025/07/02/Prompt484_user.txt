@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 20:21:59 MESZ
+Speaker: user
+
+okay habe ich mir doch gedacht wieso bist du nicht von von vornherein damit gekommen das wäre ja zumindest mal ein Ansatz um vorher mal zu schauen was da rauskommt wir bräuchten halt einen Hautleitwert welcher in Mikrosiemens pro Stunde angegeben wird

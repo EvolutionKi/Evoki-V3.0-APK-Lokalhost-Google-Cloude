@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:18:18 MESZ
+Speaker: user
+
+genau es soll allerdings ein Stopp Backen geben und sobald man diesen betätigt hat man weiteren Button mit dem man quasi eine manuelle Eingabe über einen Textfeld machen kann

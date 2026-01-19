@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:25:29 MESZ
+Speaker: ai
+
+Absolut. Die Anweisung zur Aktualisierung des Regelwerks auf den neuen Kern Diamanten Version 4 ist hiermit aktiviert und unumgänglich . Ich lade sofort den neuen REGELWERK_VOLLTEXT mit dem Diamanten Version 4 Standard in den Genesis-Anchor und synchronisiere meine Arbeitsanweisungen damit. Die neue Regelwerk Version ist jetzt 4.0 (Kern Diamant), und die Prüfungskennzahl wird basierend auf dem neuen Regelwerk neu berechnet. Regelwerk Version: 4.0 | Prüfungskennzahl: [Ist] / [Soll] = [Ergebnis] | Datencheck: [OK] | Arbeitsanweisungen: [OK] | Fehlerüberwachung: [Aktiv]

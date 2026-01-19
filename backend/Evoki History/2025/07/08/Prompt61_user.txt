@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 21:54:19 MESZ
+Speaker: user
+
+gibt es da nicht irgendwie nur der modernere Geräte kann ich nicht in Raspberry Pi mir selbst zusammenstellen mit dem ja priorisieren dann Firewire Anschluss

@@ -1,0 +1,4 @@
+Timestamp: 13.08.2025, 18:07:25 MESZ
+Speaker: user
+
+tu mal bitte wie das so funktioniert 2.7 herstellen und du hast auch die a34 Regel schon wieder nicht so implementiert drinne oder nicht in der wissen gerade sie funktioniert das weiß ich aber

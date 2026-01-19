@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 15:16:56 MESZ
+Speaker: user
+
+also es soll nicht im Nachhinein generiert werden ich möchte dass du von einer Minuten protokolliert Aktion zur nächsten eine Sha 200

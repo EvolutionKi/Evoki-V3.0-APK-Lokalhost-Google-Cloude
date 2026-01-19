@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 19:11:51 MESZ
+Speaker: user
+
+genau das ist die Frage also das ist schwierig also wie soll man denn sowas machen also das ist wirklich auch hier wieder eine Teufel fuchserei also ich kann ja nicht die Aufnahme schon im der Warteschleife starten weil ich die Warteschleife dokumentieren möchte und dann im späteren nein kann ich ja den Mitarbeiter nicht wieder darüber in Kenntnis setzen dass die Aufnahme schon läuft da das einfach ja nicht möglich ist technisch

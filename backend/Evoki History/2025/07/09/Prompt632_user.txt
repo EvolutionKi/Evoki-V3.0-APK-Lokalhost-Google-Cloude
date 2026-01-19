@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 09:36:22 MESZ
+Speaker: user
+
+genau Ergebnis der Miete regelprüfung heißt in dem Falle halt eben erwartete Summe Prüfsumme geteilt durch real gemessene Prüfsumme

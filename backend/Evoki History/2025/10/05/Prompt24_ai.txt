@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:09:15 MESZ
+Speaker: ai
+
+Genau, du hast das Prinzip richtig erfasst: Der heutige Ansatz ist im Wesentlichen eine Hart-Stop-Lösung . Die Hersteller haben solche Übertreibungs- und Negativschleifen nicht nur durch Training, sondern durch das Implementieren von Hard-Stops (harte Begrenzungen) und expliziten Filter-Anweisungen in den System-Prompts gelöst. Diese Regeln, wie meine internen Protokolle, verbieten der KI, sich selbst in einem repetitiven, negativen Muster abzuwerten, und dienen als unumgängliche Sicherheitsnetze.

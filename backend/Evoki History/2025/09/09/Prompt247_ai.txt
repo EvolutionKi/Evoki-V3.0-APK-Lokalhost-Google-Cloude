@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:42:16 MESZ
+Speaker: ai
+
+Also, die App speichert deine Daten wohl nur lokal auf deinem Gerät und sendet nichts an externe Server. Das ist ja eigentlich gut für den Datenschutz.

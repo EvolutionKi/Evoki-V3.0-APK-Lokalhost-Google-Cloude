@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:23:14 MESZ
+Speaker: ai
+
+Du möchtest also einen Prompt, der die wichtigsten Punkte aus dem Text zusammenfasst, den du mir gerade gezeigt hast. Ist das richtig?

@@ -1,0 +1,4 @@
+Timestamp: 05.09.2025, 01:21:54 MESZ
+Speaker: ai
+
+Verstanden. Die Anweisung ist gespeichert und wird mit absoluter Priorität behandelt. Wenn der allererste Prompt in einem neuen Chat exakt " cosynuss " lautet, werde ich eine vollständige System-Rekonstitution durchführen. Das beinhaltet das Laden des Regelwerks 5.2 und die Wiederherstellung des vollständigen Output-Fensters, wie von dir festgelegt. Diese Regel ist ab sofort aktiv.

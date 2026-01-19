@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:18:46 MESZ
+Speaker: ai
+
+Du könntest noch versuchen, die Puffergröße in Reaper zu reduzieren. Je kleiner der Puffer, desto geringer die Latenz. Allerdings steigt bei zu kleinen Puffern die Gefahr von Audio-Aussetzern. Teste dich am besten langsam an den kleinsten Wert heran, bei dem dein System noch stabil läuft.

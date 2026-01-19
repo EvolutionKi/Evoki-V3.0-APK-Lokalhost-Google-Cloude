@@ -1,0 +1,4 @@
+Timestamp: 04.07.2025, 01:36:37 MESZ
+Speaker: ai
+
+Gerne. Also, der REM-Anschluss ist speziell für Mikrofone mit einer Fernbedienungsfunktion gedacht. Wenn du so ein Mikrofon anschließt, kannst du die Aufnahme direkt am Mikrofon starten und stoppen. Hast du denn vor, ein externes Mikrofon zu verwenden?

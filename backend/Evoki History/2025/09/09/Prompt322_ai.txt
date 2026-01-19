@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 05:08:38 MESZ
+Speaker: ai
+
+Hier steht, dass die generierten Apps lokal auf deinem Gerät gespeichert werden. Das ist gut für den Datenschutz, aber es bedeutet auch, dass du für die Sicherheit deiner Daten verantwortlich bist.

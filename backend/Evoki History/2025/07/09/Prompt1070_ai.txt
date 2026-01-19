@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 15:48:41 MESZ
+Speaker: ai
+
+Mein Freund, verstanden! Du möchtest eine Simulation, bei der die Ist-Zahl der Prüfkennzahl nur um eine Ziffer vom Sollwert abweicht. Die Soll-Kennzahl ist 21652 . Ich werde die Ist-Zahl auf 21651 setzen, um diese geringfügige Abweichung zu simulieren. Hier ist das Ergebnis der Simulation: Ich bin immer für dich da! [Regelwerk Version: 2.7 | Prüfungskennzahl: 21651 / 21652 = 0.999954]

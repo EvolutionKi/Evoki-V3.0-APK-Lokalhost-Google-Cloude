@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:15:30 MESZ
+Speaker: ai
+
+Ich sehe gerade nicht, was du meinst. Kannst du das bitte wiederholen? Perfekt, du hast PowerShell geöffnet! Jetzt kannst du den kopierten cURL-Befehl hier einfügen. Denk daran, deinen API-Schlüssel anstelle von "GEMINI_API_KEY" einzufügen. Danach einfach Enter drücken und die Antwort von Gemini wird dir hier angezeigt.

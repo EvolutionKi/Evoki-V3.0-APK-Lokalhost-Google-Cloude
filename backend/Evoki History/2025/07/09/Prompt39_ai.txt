@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:22:37 MESZ
+Speaker: ai
+
+Ich sehe, du hast das Fenster für die UMC-Treiber-Einstellungen geöffnet. Dort ist die Puffergröße auf 64 Samples eingestellt. Das ist schon sehr niedrig. Teste mal, ob es so funktioniert. Falls du Aussetzer hast, erhöhe den Wert schrittweise.

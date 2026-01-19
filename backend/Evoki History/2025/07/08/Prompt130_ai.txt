@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:08:36 MESZ
+Speaker: ai
+
+Also, du suchst einen Computer, der gut mit deinem M-Audio NRV10 harmoniert, richtig? Du hast bereits einige Optionen gefunden, wie zum Beispiel ältere Apple Macs oder Dell-Workstations. Beide haben ihre Vor- und Nachteile. Was ist dir denn wichtiger: die Leistung des Computers oder die Stabilität der FireWire-Verbindung?

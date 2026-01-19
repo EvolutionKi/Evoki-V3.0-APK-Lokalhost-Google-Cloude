@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 10:30:05 MESZ
+Speaker: user
+
+okay hatten wir jetzt vergessen irgendwie zu implementieren dass du eine Prüfung Kontrolle für mich erstellen sollst wo die Version immer mit ausgegeben wird bei jeder Ausgabe und diese Zahl

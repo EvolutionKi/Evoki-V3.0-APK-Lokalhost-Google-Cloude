@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 05:10:40 MESZ
+Speaker: ai
+
+Ja, ich sehe deinen Bildschirm. Hier steht, dass die App deine Prompts möglicherweise temporär für die KI-Generierung verarbeitet. Das ist ein wichtiger Unterschied zur Beschreibung im Play Store, wo es so klingt, als würde die KI alles automatisch erledigen.

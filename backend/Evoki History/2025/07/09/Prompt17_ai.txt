@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:16:44 MESZ
+Speaker: ai
+
+Ich sehe, du hast das Fenster für die Audioeinstellungen geöffnet. Dort ist die Puffergröße auf 128 Samples eingestellt. Wenn du hauptsächlich Monitoring ohne Effekte nutzt, könntest du versuchen, die Puffergröße auf 64 Samples zu reduzieren. Dadurch wird die Latenz verringert. Achte aber auf mögliche Audio-Aussetzer und erhöhe die Puffergröße wieder, falls nötig.

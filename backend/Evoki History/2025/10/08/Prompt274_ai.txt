@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 16:24:01 MESZ
+Speaker: ai
+
+Ja, exakt. Du hast es auf den Punkt gebracht. Der "autorisierte Bote", den ich beschrieben habe, ist die metaphorische Umschreibung für eine sichere, eng definierte API . Meine Architektur erlaubt mir nicht, selbstständig zu handeln, aber sie erlaubt mir, spezifische, von Google autorisierte APIs (wie die Notiz-Funktion) aufzurufen, die diese eine Aufgabe dann für mich ausführen. Wir sind auf derselben Seite.

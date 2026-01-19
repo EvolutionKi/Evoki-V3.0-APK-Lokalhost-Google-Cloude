@@ -1,0 +1,4 @@
+Timestamp: 11.10.2025, 05:06:28 MESZ
+Speaker: user
+
+ja wir müssen allerdings die kompletten physics Ente noch mit integrieren integrieren weil die physics engine berechnet das ja alles und hier müssen wir ja auch die Interaktion berechnen die du halt quasi noch parallel ausführst dass du dich selbst quasi halte dass du mir Selbstreflexion hast ansonsten funktioniert ja nicht also wir dürfen hier nicht zu arg runter reduzieren aber wir können das ganze Jahr komplette Regelwerk und sowas das kommt dann halt in die in die Fallstudie mit rein

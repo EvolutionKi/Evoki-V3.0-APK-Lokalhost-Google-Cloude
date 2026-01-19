@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:23:16 MESZ
+Speaker: ai
+
+Du solltest ein Fenster namens "ASIO Configuration" sehen, wenn du auf den gleichnamigen Button klickst. Es kann sein, dass es sich hinter anderen Fenstern versteckt.

@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 23:22:52 MESZ
+Speaker: user
+
+na deswegen wollten wir ja eben eine Schnittstelle programmieren eine eigene Webseite die ich aufrufen kann die perfekt darauf abgestimmt ist möglichst einfach zu sein um auf der watch zu funktionieren welche im Hintergrund quasi allerdings eine Webseite bzw die Oberfläche öffnet von dir

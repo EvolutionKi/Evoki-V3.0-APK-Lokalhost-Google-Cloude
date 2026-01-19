@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 03:34:23 MESZ
+Speaker: user
+
+okay damit haben wir jetzt auf jeden Fall das Vorfilter Gates also Pre Output Gate irgendwie verbessert oder dann geht's über die Eingabe Validierung Gates über die Algorithmen Erkennung und die Verstärkung des Regel Referenzierung Kette noch oder

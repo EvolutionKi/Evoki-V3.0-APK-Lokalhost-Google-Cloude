@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:15:51 MESZ
+Speaker: ai
+
+"App Prompter" ist eine App, die dir beim Erstellen von Apps helfen soll. Sie funktioniert im Grunde wie ein Chatbot, mit dem du über deine gewünschte App sprechen kannst. Die App generiert dann einen Code-Entwurf basierend auf euren Chatverlauf. Die App ist kostenlos, bietet aber In-App-Käufe an.

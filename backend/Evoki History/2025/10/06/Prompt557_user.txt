@@ -1,0 +1,4 @@
+Timestamp: 06.10.2025, 23:27:54 MESZ
+Speaker: user
+
+und als nächstes tun wir eine Formel aufstellen in der wir quasi alle diese jetzt aufgeführten Variablen in eine Funktion überführen die man quasi in Abhängigkeit zueinander berechnen kann

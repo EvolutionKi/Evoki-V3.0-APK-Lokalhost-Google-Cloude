@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 13:31:05 MESZ
+Speaker: user
+
+da steht immer noch nicht der richtige API drinne

@@ -1,0 +1,4 @@
+Timestamp: 24.09.2025, 02:30:46 MESZ
+Speaker: ai
+
+32 Geräte werden ausgeschaltet. 16 Geräte sind derzeit nicht verfügbar. {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Google Home","logoUri":"https://www.gstatic.com/images/branding/productlogos/google_home/v6/192px.svg","headerUri":"https://home.google.com/home-app","toolName":"google_home","androidHeaderUri":"googlehome://devices"}},"pendingMutatingOps":[{"target":"CLOUD","plannerAction":"PLANNER_ACTION_UNSPECIFIED"}]}

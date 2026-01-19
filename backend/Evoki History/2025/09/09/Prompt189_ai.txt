@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:19:41 MESZ
+Speaker: ai
+
+"appendChild" ist eine Funktion, die ein Element als Kind zu einem anderen hinzufügt. Es geht also nicht direkt um Kinderschutz, sondern darum, wie die Chat-Nachrichten im Fenster angezeigt werden.

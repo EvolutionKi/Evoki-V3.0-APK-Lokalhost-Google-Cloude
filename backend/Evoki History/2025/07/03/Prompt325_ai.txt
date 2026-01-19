@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 04:59:25 MESZ
+Speaker: ai
+
+Okay, hier ist eine Zusammenfassung deines Konzepts: Du entwickelst eine KI-gestützte App für Gruppentherapiesitzungen, die einen sicheren Raum für Menschen mit ähnlichen Erfahrungen schafft. Die KI moderiert "still" und analysiert Gespräche, ohne persönliche Daten preiszugeben. Nutzer können sich kennenlernen und vernetzen, wenn sie bereit sind. Die KI lernt von erfahrenen Fachleuten, um empathische Interaktionen zu ermöglichen. Dabei liegt der Fokus auf dem Schutz vulnerabler Nutzer, mit verschiedenen Ebenen für unterschiedliche Krankheitsbilder und Bedürfnisse. Gibt es noch etwas, das du hinzufügen möchtest?

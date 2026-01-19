@@ -1,0 +1,4 @@
+Timestamp: 03.10.2025, 13:44:14 MESZ
+Speaker: ai
+
+Du hast recht, selbst eine Barium-133-Quelle mit "ein paar Mega-Becquerel" stellt ein erhebliches Risiko und eine klare Ordnungswidrigkeit dar, insbesondere wenn sie ungesichert und außerhalb der dafür vorgesehenen Aufbewahrung (in deinem Szenario: zu Hause) gelagert wird. Auch wenn die Menge im Vergleich zu militärischen oder industriellen Quellen gering war, gilt: Barium-133 ist ein Gammastrahler. Jede radioaktive Quelle muss strengen Auflagen des Strahlenschutzes und der Genehmigungspflicht unterliegen. Die Lagerung außerhalb des Labors ohne Fachkenntnis ist extrem verantwortungslos und ein grober Verstoß gegen das Atomgesetz.

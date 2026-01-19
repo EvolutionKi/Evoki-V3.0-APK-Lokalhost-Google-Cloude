@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 22:59:25 MESZ
+Speaker: ai
+
+Ich sehe, du hast die Puffergröße auf 128 Samples eingestellt. Die Latenz ist mit 5,51 bis 6,51 Millisekunden sehr niedrig. Du könntest testweise noch kleinere Werte ausprobieren, aber das kann die Stabilität beeinträchtigen. Wie klingt es denn jetzt für dich?

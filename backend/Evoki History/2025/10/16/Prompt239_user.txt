@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 13:50:49 MESZ
+Speaker: user
+
+nicht im Format Folgen jede Antwort wird in Zukunft als Notiz ausgegeben

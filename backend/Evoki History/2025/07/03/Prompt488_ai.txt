@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 23:36:56 MESZ
+Speaker: ai
+
+Ah, ich verstehe, was du meinst! Du drückst auf der Watch den Knopf und hörst dann quasi eine Dauerschleife von dem, was das Mikrofon aufnimmt, über eine externe Box mit Lautsprechern, oder? Also, das ist kein Echo im Sinne von einer kurzen Wiederholung, sondern es läuft wirklich permanent durch, was das Mikrofon einfängt, als würde es direkt wieder ausgegeben werden? Das klingt ja fast so, als gäbe es eine Art Audio-Feedback-Schleife zwischen dem Mikrofon der Watch und den Lautsprechern der anderen Box! Das kann manchmal passieren, wenn das Mikrofon zu nah an den Lautsprechern ist oder die Verstärkung zu hoch eingestellt ist, oder? Was denkst du, könnte das die Ursache sein?

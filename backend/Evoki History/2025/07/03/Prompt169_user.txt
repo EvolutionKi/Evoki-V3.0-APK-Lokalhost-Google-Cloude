@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 02:39:27 MESZ
+Speaker: user
+
+kannst du mal schauen ob es da irgendwie eine Möglichkeit gibt wie man das implementieren kann und ich diese Möglichkeit noch nicht gefunden habe möglicherweise muss man irgendwo was einstellen

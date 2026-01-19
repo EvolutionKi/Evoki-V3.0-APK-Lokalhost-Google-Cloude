@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 16:15:12 MESZ
+Speaker: user
+
+genau du solltest alle Bibliotheken die wir für die beiden Skills brauchen immer laden weil ich hatte immer das Problem dass zum Beispiel im Regelwerk in dem Konglomerat 4.5 da ist ja auch eben da werden ja die error Meldung auch angezeigt dass es eben nicht geladen wird

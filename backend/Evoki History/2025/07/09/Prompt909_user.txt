@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 14:10:03 MESZ
+Speaker: user
+
+genau und dieser Sicherheit ja weiß nicht überwachungs. der prüft auch die Abfrage quasi bei jeder ja Ausgabe ob halt quasi bei jeder Ausgabe auch vorher die Versionsnummer abgefragt worden ist und auch die ja die Prüfung Kennzahl

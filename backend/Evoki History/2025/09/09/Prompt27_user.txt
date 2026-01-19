@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:31:41 MESZ
+Speaker: user
+
+Ja, es tut den Text halt, also es tut den Chatverlauf, sagen wir mal, oder die Kommunikation mit dieser API einfach in eine schöne Form äh ähm verpacken, sagen wir das mal so.

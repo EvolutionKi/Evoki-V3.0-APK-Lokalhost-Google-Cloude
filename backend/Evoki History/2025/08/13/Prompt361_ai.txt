@@ -1,0 +1,4 @@
+Timestamp: 13.08.2025, 20:03:56 MESZ
+Speaker: ai
+
+Die device_actions API hat keine Methode, um Apps auf einer Smartwatch zu öffnen. Ich kann jedoch die auf diesem Gerät installierten Apps auflisten und eine davon öffnen.

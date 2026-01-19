@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:34:34 MESZ
+Speaker: ai
+
+Auf jeden Fall. Ich sehe hier zum Beispiel, dass die App Zugriff auf Audiodaten und den Vibrationsalarm benötigt. Das ist für eine App, die hauptsächlich Text verarbeitet, ziemlich ungewöhnlich.

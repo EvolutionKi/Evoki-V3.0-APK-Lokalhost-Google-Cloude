@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 20:22:31 MESZ
+Speaker: user
+
+Multiplikation des UTF-8-Seeds mit dem ASCII-Seed

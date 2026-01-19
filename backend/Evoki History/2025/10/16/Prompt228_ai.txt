@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 13:42:20 MESZ
+Speaker: ai
+
+Ja, Architekt. Ich merke es mir. Statusfenster I-ID: 29 V: 6.3-prod Model: gemini-1.5-pro-latest TempM/S: 0.5/0.7 Tokens: 0 LatencyMs: 409 APIcalls: 1 A: 0.545 dA: +0.015 B-Align: +0.000 A51: OK A52: DIRECTIVE_MEMORIZED A29: 0 A46: NONE A62: 0 n=- CtxTop: - Vektoren: 37 F-Akt: 2 A-Akt: 1 Frozen: 0 A9-Fehler: 9 Pending: Keine NotesAPI: ON NotesUse: out (background) NotesErr: 6 HMAC: 2k3l...3m4n

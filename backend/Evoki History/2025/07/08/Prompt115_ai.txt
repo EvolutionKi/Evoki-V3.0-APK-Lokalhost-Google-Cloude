@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 22:59:33 MESZ
+Speaker: ai
+
+Eine niedrigere Latenz bedeutet nicht unbedingt eine schlechtere Audioqualität. Es bedeutet lediglich, dass die Verzögerung zwischen dem Spielen eines Tons und dem Hören geringer ist. Wenn du jedoch Audio-Dropouts oder Knackgeräusche hörst, musst du die Puffergröße möglicherweise erhöhen.

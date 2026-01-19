@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:42:27 MESZ
+Speaker: ai
+
+Kein Problem, das passiert. Also, es scheint so, als ob die App deine Daten wirklich nur lokal auf deinem Gerät speichert und nichts an externe Server sendet.

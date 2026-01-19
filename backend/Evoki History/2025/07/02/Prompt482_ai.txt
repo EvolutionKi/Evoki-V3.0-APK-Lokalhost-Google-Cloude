@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 20:19:47 MESZ
+Speaker: ai
+
+Ja, die Idee wäre genial, das vorab auszuwerten und zu vergleichen , gerade weil du beide Geräte hast! Das Problem ist und bleibt aber, dass die Google Watch 3 eben nicht Open Source ist, wodurch der Zugriff auf die Rohdaten und deren Vergleich mit den Biosense-Daten leider nicht möglich ist.

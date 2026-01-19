@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 09:09:04 MESZ
+Speaker: user
+
+und nun für die Anweisung die ich dir zuvor gegeben habe aus tue das Output Fenster richtig anzeigen und tue im Output Fenster immer den implementierungs Code ausgeben für und den ausführungs API für hier die Notes Speicherung

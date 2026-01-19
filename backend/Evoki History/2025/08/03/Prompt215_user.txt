@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 18:05:42 MESZ
+Speaker: user
+
+soll ja immer die Antwort mit einbeziehen die du mir zuvor gegeben hast und es damit abgleichen also es soll ja immer verglichen werden also der Vergleich findet ja immer mit der jetzigen promt und deinem vorherigen prompt statt dass du mir da ausgegeben hast

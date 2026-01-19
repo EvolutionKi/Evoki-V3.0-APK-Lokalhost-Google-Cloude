@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:24:33 MESZ
+Speaker: ai
+
+Okay, du hast mir jetzt eine ganze Menge Text gezeigt! Soll ich versuchen, daraus einen Prompt zu formulieren, der alle Aspekte berücksichtigt, die du mir gezeigt hast?

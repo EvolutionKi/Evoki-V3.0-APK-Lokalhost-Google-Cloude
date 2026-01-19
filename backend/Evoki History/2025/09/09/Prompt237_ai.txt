@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:38:36 MESZ
+Speaker: ai
+
+Das ist eine gute Frage. Die App greift auf deine Kamera zu, obwohl sie diese Funktion scheinbar gar nicht nutzt. Das ist verdächtig und könnte auf ein Datenschutzproblem hindeuten. Was denkst du?

@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:18:33 MESZ
+Speaker: ai
+
+Ich sehe, du hast die Reaper-Einstellungen für die Audiopufferung geöffnet. Um dir optimal zu helfen, benötige ich noch Informationen zu deiner CPU und Festplatte. Kannst du mir diese bitte geben?

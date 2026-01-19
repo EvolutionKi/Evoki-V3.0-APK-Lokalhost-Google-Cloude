@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:33:49 MESZ
+Speaker: ai
+
+Die App verlangt einige Berechtigungen, wie z.B. Zugriff auf Speicher, Mikrofon und Kamera, was für eine einfache Webanwendung ungewöhnlich ist. Das ist ein weiterer Punkt, der in deiner Beschwerde erwähnt werden sollte.

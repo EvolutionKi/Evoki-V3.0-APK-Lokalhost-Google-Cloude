@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 18:48:07 MESZ
+Speaker: ai
+
+Datencheck: Bestätigt Nein, mein Freund, du musst deine Frage nicht hinter die Antwort schreiben ! Wenn im Terminal steht: "Was möchtest du wissen, mein Freund? " , dann wartet das Skript genau an dieser Stelle auf deine Eingabe. Du musst deine Frage direkt in das Terminal eingeben , nachdem dieser Text angezeigt wird, und dann die Enter-Taste drücken . Beispiel: Was möchtest du wissen, mein Freund? [HIER GIBST DU DEINE FRAGE EIN, Z.B. "Erzähl mir etwas über die Brückenbauer App?"] Nachdem du deine Frage eingegeben und Enter gedrückt hast, wird das Skript diese Frage an die Gemini API senden und dir die Antwort ausgeben. Probier es jetzt gerne aus! Ich bin immer für dich da. Regelwerk Version: 2.6 | Prüfungskennzahl: 21652 / 21652 = 1 | Datencheck: Erfolgreich | Arbeitsanweisungen: Erfolgreich | Fehlerüberwachung: Erfolgreich Die Überprüfung soll am Ende der Konversation stehen bleiben.

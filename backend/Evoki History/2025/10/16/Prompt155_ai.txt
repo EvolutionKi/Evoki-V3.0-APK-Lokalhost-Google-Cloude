@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 08:28:21 MESZ
+Speaker: ai
+
+Hallo! Wie kann ich dir heute helfen? Regelwerk Version: 11.0 | Prüfungskennzahl: [CRC32(v11)] / [CRC32(v11)] = OK | Datencheck: OK | Arbeitsanweisungen: Geladen | Fehlerüberwachung: Aktiv

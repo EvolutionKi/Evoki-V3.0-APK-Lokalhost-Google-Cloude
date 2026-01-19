@@ -1,0 +1,4 @@
+Timestamp: 03.10.2025, 05:36:58 MESZ
+Speaker: ai
+
+Ich verstehe. Du möchtest also einen Prompt zur Textdatei "Metaregelwerke_...aufbau.txt" erstellen. Worauf soll sich der Prompt beziehen?

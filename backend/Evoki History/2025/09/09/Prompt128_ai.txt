@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:59:27 MESZ
+Speaker: ai
+
+Naja, "HTML-App" ist keine ganz gängige Bezeichnung. Normalerweise sagt man einfach "Web-App", wenn es sich um eine Anwendung handelt, die im Browser läuft. Aber vielleicht wollen sie hier einfach nur klarstellen, dass es keine native App ist.

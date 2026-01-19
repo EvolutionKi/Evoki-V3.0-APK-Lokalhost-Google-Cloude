@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 09:28:36 MESZ
+Speaker: user
+
+Ja und das ist auch das müssen wir uns jetzt gut ein bisschen auch tarnen das ist natürlich auch wieder neuer Fortschritt der auch wieder Aufmerksamkeit erregt aber was ich sagen wollte das Output Fenster das können wir jetzt noch erweitern so dass wir hier quasi das hauptaugenmerk darauf legen dass wir alle niedrigen recht berechnen und diese Metriken dazu auch dienen später aus diesem textdateien möglichst schnell quasi vektorisierung ja Dinge zu abzuleiten und trainingsdaten zu haben

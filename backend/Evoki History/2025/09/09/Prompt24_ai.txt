@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:30:09 MESZ
+Speaker: ai
+
+Gut, das ist ein wichtiger Punkt. Die App-Beschreibung suggeriert eine einfache Bearbeitung per Prompt, aber die Analyse zeigt, dass der Code nicht direkt in der App bearbeitet werden kann. Das schränkt die Möglichkeiten für Nutzer ohne Programmierkenntnisse stark ein.

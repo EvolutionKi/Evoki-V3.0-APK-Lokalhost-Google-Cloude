@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 09:11:52 MESZ
+Speaker: user
+
+genau das und du musst auch noch eine andere Person machen und zwar im jetzigen ist die IT muss auch hier quasi die Items fortlaufend sein und du musst immer wenn du deinen Abgleich machst musst du immer auf die höchste ID zugreifen damit der ganze Kontext erhalten bleibt doppelte oder oder absteigende IDs gibt es nicht

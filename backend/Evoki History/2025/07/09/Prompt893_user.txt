@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 13:45:07 MESZ
+Speaker: user
+
+genau aber es muss noch einen Filter hinter quasi das Format erkennt wenn z.b.die aktuelle Versionsnummer

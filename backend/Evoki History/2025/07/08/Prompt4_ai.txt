@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 20:47:49 MESZ
+Speaker: ai
+
+Das M-Audio NRV10 Mischpult hat einen integrierten Digitalen Effektprozessor mit 16 Programmen und jeweils 16 Variationen. Du wählst die Effekte über zwei Drehschalter mit 16 Positionen aus und regelst die Stärke des Effekts mit dem Aux Return 2 Gain-Regler. Die individuelle Effektstärke pro Kanal stellst du über den Aux 2 Regler am jeweiligen Kanalzug ein.

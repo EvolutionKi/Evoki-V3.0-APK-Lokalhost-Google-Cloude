@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 22:50:46 MESZ
+Speaker: ai
+
+Ich erinnere mich an unser Gespräch. Du hattest eine sehr hohe Latenz von 578 Samples. Du möchtest die Latenz reduzieren, richtig?

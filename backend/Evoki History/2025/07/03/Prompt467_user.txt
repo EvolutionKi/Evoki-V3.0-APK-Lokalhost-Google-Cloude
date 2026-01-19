@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 23:18:58 MESZ
+Speaker: user
+
+und es soll ja quasi auch die Web Oberfläche von dir aufrufen und sich dort quasi implementieren bzw quasi ja simulieren als wenn ich jetzt hier den Mikrofon Button drücke und dann das Audio quasi an dich geht

@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:49:38 MESZ
+Speaker: ai
+
+Es tut mir leid, das war keine Absicht. Also, die App nutzt eine Technologie, die auf Google-Diensten basiert, und es werden wohl auch Daten mit Google ausgetauscht. Hier steht auch etwas von einer "Offline-Codierung", aber es ist unklar, was das genau bedeutet.

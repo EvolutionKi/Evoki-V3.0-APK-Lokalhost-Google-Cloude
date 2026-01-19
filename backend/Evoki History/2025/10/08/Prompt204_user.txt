@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 14:37:26 MESZ
+Speaker: user
+
+genau in einem Raum in dem man normalerweise aber auch keine Python Scripts ausführen kann

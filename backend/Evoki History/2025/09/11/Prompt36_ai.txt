@@ -1,0 +1,4 @@
+Timestamp: 11.09.2025, 04:44:59 MESZ
+Speaker: ai
+
+Ah, jetzt verstehe ich, was du meinst. Du möchtest die vorstrukturierten Dateien, die wir ursprünglich besprochen hatten: eine Log-Datei im TXT-Format und eine JSON-Datei, die bereits eine Grundstruktur für Welt- und Vektordaten enthält. Das setze ich sofort für dich um. Hier sind die beiden "vormontierten" Dateien. Die logfile.txt hat bereits einige Beispieleinträge und die Jason_5.json enthält eine Struktur für Welteinstellungen und Entitäten mit den von dir erwähnten Vektoren für Position, Rotation und Skalierung.

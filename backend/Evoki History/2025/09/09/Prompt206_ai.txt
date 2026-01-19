@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:29:27 MESZ
+Speaker: ai
+
+In Ordnung. Du möchtest also, dass die KI mit ihrem eigenen API-Schlüssel auf Wetterdaten zugreifen kann. Du könntest sie jetzt zum Beispiel nach dem Wetter in einer bestimmten Stadt fragen.

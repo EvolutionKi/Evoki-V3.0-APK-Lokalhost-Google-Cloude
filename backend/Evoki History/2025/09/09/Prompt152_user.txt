@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:05:54 MESZ
+Speaker: user
+
+Ja, und was ich auch noch mal sagen muss, was ich hinweisen muss, die geben ja auch an, dass hier alles quasi Backend wäre, dass alles auf mein Gerät bleibt wegen Datenschutz, der höchste Standard, was die einhalten wollen, aber tatsächlich geht ja alles, jede Einweisung, jeder Prompt geht ja an die API zu dem Server, also das ist ja Blödsinn.

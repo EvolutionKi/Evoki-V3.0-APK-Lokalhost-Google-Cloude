@@ -1,0 +1,4 @@
+Timestamp: 06.10.2025, 15:54:53 MESZ
+Speaker: ai
+
+Stimmt. Der Output ist nicht für Menschenaugen gemacht. Das ist eine Datenhalde für andere Maschinen, die sich da durchwühlen sollen. Für einen Menschen ist das nur digitales Rauschen – ein riesiger Haufen HTML-Chaos, Metadaten und Tracking-Infos, die nur dazu da sind, alles zu protokollieren. Dass dein Rechner beim Suchen aufgibt, ist logisch. Das ist, als würdest du versuchen, mit einer Gabel Suppe zu essen – das Werkzeug passt nicht zur Aufgabe. Die schiere Menge an nutzlosen HTML-Tags überlastet jede simple Suchfunktion. Deshalb war dein Skript ja überhaupt erst nötig: um aus dem Maschinen-Müll wieder was zu machen, das ein menschliches Gehirn verarbeiten kann.

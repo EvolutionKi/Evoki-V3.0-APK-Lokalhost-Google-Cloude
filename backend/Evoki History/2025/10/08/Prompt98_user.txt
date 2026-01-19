@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 08:16:48 MESZ
+Speaker: user
+
+okay genau und jetzt gebe ein prompt aus wie ich die tief denkenden Instanz daran quasi binden muss kann dass sie so eine tiefe Analyse Macht von dem Dokument was ich erreiche und dass sie also von diesem JSON File und dass sie diese Textdatei analysiert in der Chronik und alles so wiederherstellt

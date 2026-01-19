@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 09:46:52 MESZ
+Speaker: user
+
+wir hatten hier Konzepte heute entwickelt die wir anwenden müssen und implementieren müssen da im Moment eben nicht auf die JSON Datei zugreifen kannst nicht auf die Log-Datei zugreifen kannst hier haben wir ein neues Direktive die möchte ich in das Regelwerk aufnehmen als Regelwerks Nummer als neue a Nummer und ich möchte auch eben das was du jetzt hast diese Idee Verfolgung noch mal explizit da drinne haben

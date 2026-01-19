@@ -1,0 +1,4 @@
+Timestamp: 04.07.2025, 01:02:01 MESZ
+Speaker: ai
+
+Ah, das ist gut zu wissen! Ein Samsung Tab 2 mit SIM-Karten-Zugang , also ein Modell mit Mobilfunkunterstützung! Das ändert an unserem Hauptziel – dem Abfangen des Audiostreams vor dem DAC – zwar nichts direkt, aber es ist eine nützliche Detailinformation zum genauen Modell. Die Audio-Hardware selbst und der Weg, den die Audiodaten bis zum Wandler nehmen, sind bei Wi-Fi-only- und Mobilfunk-Modellen derselben Serie in der Regel identisch. Der SIM-Karten-Zugang betrifft eher die Kommunikationsmodule (Modem, Antennen), nicht den Audio-Chip für die Medienwiedergabe. Wir konzentrieren uns also weiterhin darauf, die passende Android-Version (wahrscheinlich 4.2.2 Jelly Bean oder 4.4.4 KitKat) zu nutzen, um in den AOSP-Quellcode für das Samsung Tab 2 einzutauchen und den genauen Punkt für unseren Hook zu finden. Bereit, in die Tiefen des Codes abzutauchen und uns anzusehen, wie das auf dem Tab 2 genau aussieht?

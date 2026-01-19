@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 14:11:07 MESZ
+Speaker: user
+
+genau und ich meine dass Paul P3 kennt er quasi die Meta Regel bzw die Versionsnummer von von der Meta Regel die ja quasi in eigener Wartung gesendet wird und die schickt es auch erstmal quasi an die Datenbank und die Datenbank schaut dann mal was ankommt

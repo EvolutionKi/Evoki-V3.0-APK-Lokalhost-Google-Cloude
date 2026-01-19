@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:16:52 MESZ
+Speaker: ai
+
+Ich sehe das Einstellungsfenster. Die Puffergröße ist momentan auf 128 Samples eingestellt. Du könntest versuchen, sie auf 64 Samples zu reduzieren, um die Latenz zu verringern. Beobachte aber bitte genau, ob es dann zu Audio-Aussetzern kommt. Lass mich wissen, wie es klingt.

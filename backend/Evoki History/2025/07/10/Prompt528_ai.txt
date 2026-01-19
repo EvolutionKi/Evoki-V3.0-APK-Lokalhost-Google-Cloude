@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:22:15 MESZ
+Speaker: ai
+
+Du hast recht, es gibt möglicherweise Tools, die den Prozess der Datenübertragung automatisieren können. Ich sehe hier gerade die Option "Funktionsaufrufe", die interessant sein könnte. Dort könnten wir eventuell eine Funktion finden, die uns hilft, die Daten automatisch zu übertragen. Sollen wir uns das mal genauer ansehen?

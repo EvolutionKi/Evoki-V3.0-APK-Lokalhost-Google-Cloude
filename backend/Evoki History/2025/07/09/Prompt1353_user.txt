@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 21:57:13 MESZ
+Speaker: user
+
+9914 weiter vorher viel weiter vor weil keine Ahnung schon zwei Stunden zurückkomme mein Test gemacht da hast du den Sollwert auf Null gesetzt einfach mal zum testen was passiert wenn man auf Null setzen

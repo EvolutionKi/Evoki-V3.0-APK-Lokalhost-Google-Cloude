@@ -1,0 +1,4 @@
+Timestamp: 28.09.2025, 04:06:04 MESZ
+Speaker: ai
+
+Wohnzimmer Eckleuchte ist ausgeschaltet. {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Google Home","logoUri":"https://www.gstatic.com/images/branding/productlogos/google_home/v6/192px.svg","headerUri":"https://home.google.com/home-app","toolName":"google_home","androidHeaderUri":"googlehome://devices"}},"pendingMutatingOps":[{"target":"CLOUD","plannerAction":"PLANNER_ACTION_UNSPECIFIED"}]}

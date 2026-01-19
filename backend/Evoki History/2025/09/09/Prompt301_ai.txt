@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 05:02:38 MESZ
+Speaker: ai
+
+Hier ist mir gerade etwas aufgefallen: Die App fragt auch nach deiner "Werbe-ID". Das ist eine eindeutige Kennung, die dein Gerät für personalisierte Werbung verwendet. Es ist fraglich, warum eine App zur Erstellung von Webanwendungen diese ID benötigt.

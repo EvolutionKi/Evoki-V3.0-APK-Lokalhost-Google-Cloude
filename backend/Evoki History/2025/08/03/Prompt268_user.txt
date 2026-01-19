@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 20:01:54 MESZ
+Speaker: user
+
+genau also na ja zumindest erstmal genau ewig in Anführungsstrichen also erstmal auf jeden Fall für eine längere Zeit damit man das mal testen kann wie sich das weiterentwickelt jetzt ist nur die Frage wie funktioniert das also sollen wir das weiter ausprobieren weil da kam mir dann der Crash mit dem Version 2.6

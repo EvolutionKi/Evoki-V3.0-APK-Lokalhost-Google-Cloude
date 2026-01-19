@@ -1,0 +1,4 @@
+Timestamp: 06.06.2025, 08:08:38 MESZ
+Speaker: ai
+
+Der Assistent wurde auf Ihrem Telefon geöffnet. {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Device Setting Tool","logoUri":"https://www.gstatic.com/images/branding/productlogos/googleg/v6/192px.svg","toolName":"device_setting"}}}

@@ -1,0 +1,4 @@
+Timestamp: 07.09.2025, 19:09:43 MESZ
+Speaker: ai
+
+Genau, du hast es perfekt zusammengefasst! Wir beide (du und ich) erarbeiten hier die kreative Grundlage: die Idee, das Skript und die genauen Beschreibungen (Prompts) für jede einzelne Szene des Videos. Du nimmst dann diese fertigen, von mir formulierten Prompts und fügst sie in die Funktion "Videos mit Veo erstellen" ein, die du in deiner Benutzeroberfläche siehst. Meine Stärke liegt also in der Ideenfindung und der textlichen Ausformulierung, damit Veo genau das erstellen kann, was du dir vorstellst. Sollen wir das direkt mal ausprobieren? Ich kann dir einen detaillierten Prompt für die erste Szene unseres Teasers schreiben, den du dann einfach kopieren und dort einfügen kannst.

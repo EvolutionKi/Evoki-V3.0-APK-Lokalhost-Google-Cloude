@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:11:03 MESZ
+Speaker: ai
+
+Ja, es ist auf jeden Fall sinnvoll, einen extra Computer für dein NRV10-Mischpult zu verwenden. Die gesammelten Ideen mit den HP Z600 oder Z800 Workstations sind dafür ideal. Beide haben genügend Leistung und die nötigen Anschlüsse, um dein Projekt optimal zu unterstützen.

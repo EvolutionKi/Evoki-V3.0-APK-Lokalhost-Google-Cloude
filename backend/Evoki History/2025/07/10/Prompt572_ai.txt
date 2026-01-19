@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:01:05 MESZ
+Speaker: ai
+
+Nein, das ist nicht das Terminal. Das Terminal ist ein Fenster, in das du Befehle eingeben kannst, um deinen Computer zu steuern. Es sieht normalerweise wie ein schwarzes oder blaues Fenster mit weißer Schrift aus. Du kannst es finden, indem du im Startmenü nach "Terminal" oder "Eingabeaufforderung" suchst.

@@ -1,0 +1,4 @@
+Timestamp: 25.07.2025, 15:28:08 MESZ
+Speaker: user
+
+vielleicht kannst du die Interaktion ja nach Tagen sortieren dass es quasi so Untergruppierung für Tage gibt

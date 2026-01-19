@@ -1,0 +1,4 @@
+Timestamp: 09.10.2025, 01:12:57 MESZ
+Speaker: user
+
+ja mein gut da kann man aber was kann man daraus lernen daraus kann man lernen dass man nicht viel lernen kann also ich meine das dass ich schlussendlich nutzen möchte ist dass du das eben machst wenn ich jedesmal quasi ein Chatfenster öffne dass sich das automatisch initiiert das weiß wir jetzt gerade das Implementierung gemacht haben aber das ist halt so hochkomplex ist weil wir sandboxen der sandboxen laufen haben

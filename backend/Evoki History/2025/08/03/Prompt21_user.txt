@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 05:18:15 MESZ
+Speaker: user
+
+ja ich hätte nicht gedacht dass ich tatsächlich mich mit der Architektur von der von dieser App so auseinandersetzen muss dass ich die Implementierung einhalten und die ganzen Inhalte dann tatsächlich verstehen werde ich habe gedacht das übernimmt Assistent größtenteils für mich aber nein da muss man schon viel selber wissen und können

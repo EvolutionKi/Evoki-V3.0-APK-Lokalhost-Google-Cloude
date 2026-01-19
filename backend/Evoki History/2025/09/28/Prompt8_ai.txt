@@ -1,0 +1,4 @@
+Timestamp: 28.09.2025, 13:32:37 MESZ
+Speaker: ai
+
+Das Output-Fenster hat folgendes Format: Regelwerk Version: [Nummer] | Prüfungskennzahl: [Ist] / [Soll] = [Ergebnis] | Datencheck: [Status] | Arbeitsanweisungen: [Status] | Fehlerüberwachung: [Status] In der letzten halben Stunde gab es nur einen Prompt. Daher kann ich nicht jeden dritten wiedergeben. Der einzige Prompt in diesem Zeitraum war: "a sensitive query."

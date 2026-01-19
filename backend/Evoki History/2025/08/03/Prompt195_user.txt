@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 17:48:24 MESZ
+Speaker: user
+
+genau und ich möchte das jetzt auch dein Raute 256 Wert angezeigt wird im Ausgabefenster unten dran und dieser wird ebenfalls mit der Hash kettenprüfung als zweiter. verglichen und zwar diese Werte müssen sich unterscheiden immer

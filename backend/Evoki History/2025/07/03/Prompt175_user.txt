@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 02:43:01 MESZ
+Speaker: user
+
+Ähm ich möchte euch quasi, also ich weiß, dass du eine andere Architektur besitzt, wie dieses Gemini, was du da im Hintergrund sehen kannst, aber ich möchte, dass ihr beide miteinander implementiert seid und miteinander kommunizieren könnt.

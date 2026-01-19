@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 00:44:37 MESZ
+Speaker: user
+
+Frage bitte und Stelle sicher wie diese in einem Python Script auf render quasi bezeichnet werden müssten

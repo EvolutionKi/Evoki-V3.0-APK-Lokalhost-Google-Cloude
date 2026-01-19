@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:48:18 MESZ
+Speaker: user
+
+Export GEMINI_API_KEY=<YOUR_API_KEY_HERE>

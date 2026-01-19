@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 20:52:26 MESZ
+Speaker: ai
+
+Genau, für dein Mikrofon oder ein einzelnes Instrument wie eine Gitarre nimmst du am besten einen der Mono-Kanäle (1 bis 4) . Da hast du die volle Kontrolle!

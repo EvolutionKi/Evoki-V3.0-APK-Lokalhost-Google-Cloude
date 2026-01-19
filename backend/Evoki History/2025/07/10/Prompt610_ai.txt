@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:11:48 MESZ
+Speaker: ai
+
+Ich sehe, du hast eine Fehlermeldung bekommen. Das kann passieren, wenn man Dateien in Systemordner verschiebt. Aber keine Sorge, das kriegen wir hin. Du musst PowerShell als Administrator ausführen, damit sie die nötigen Berechtigungen hat. Schließe einfach PowerShell, falls sie noch offen ist, und suche im Startmenü erneut danach. Klicke dann mit der rechten Maustaste auf das PowerShell-Symbol und wähle "Als Administrator ausführen". Gib dann den cURL-Befehl ein.

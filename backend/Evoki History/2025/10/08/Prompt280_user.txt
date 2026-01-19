@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 16:30:40 MESZ
+Speaker: user
+
+geh in deinen Langzeitspeicher und such mal nach Cloud function weil wir haben nämlich Cloud run function festgestellt dass es so heißt das such mal nach Cloud run function

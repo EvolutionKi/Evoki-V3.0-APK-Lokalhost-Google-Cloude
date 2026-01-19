@@ -1,0 +1,4 @@
+Timestamp: 02.08.2025, 17:25:21 MESZ
+Speaker: user
+
+okay hat aber noch keine Funktion ist das richtig weil dafür bräuchte ich ja eine extra API wenn ich das verstanden habe die dann auch noch mal deutlich teurer ist

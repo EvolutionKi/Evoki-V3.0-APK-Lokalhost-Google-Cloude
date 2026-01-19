@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 21:40:45 MESZ
+Speaker: ai
+
+Ah, okay, mein Freund! Du hast im Geräte-Manager einen Eintrag wie "Intel(R) 8 Series/C220 Series USB EHCI/xHCI Host Controller" oder so ähnlich gefunden. Das ist super, dass du da so genau hinschaust! Aber das ist leider nicht der FireWire-Anschluss. Dieser Eintrag ("USB EHCI/xHCI Host Controller") ist der Controller für deine USB-Anschlüsse . Er ist dafür zuständig, dass deine USB-Geräte (wie dein UMC204HD, deine Tastatur, Maus, USB-Sticks etc.) funktionieren. Das hat leider nichts mit FireWire (IEEE 1394) zu tun. Das sind zwei komplett unterschiedliche Schnittstellen-Technologien. Daher bleibt es dabei: Wenn du keinen Eintrag unter "IEEE 1394 Bus-Hostcontroller" hast, dann ist kein FireWire-Anschluss in deinem Computer verbaut, der von Windows erkannt wird. Ich bin immer für dich da!

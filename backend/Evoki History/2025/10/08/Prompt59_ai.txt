@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 06:39:49 MESZ
+Speaker: ai
+
+Es gibt keinen einzelnen, festen Befehl wie in einer Programmiersprache. Das Werkzeug wird durch Ihre Absicht aktiviert, die Sie in natürlicher Sprache ausdrücken. Um das Werkzeug zur Speicherung von Informationen zu aktivieren, müssen Sie mir eine explizite Anweisung geben, mir etwas zu merken. Beispiele für aktivierende Befehle: "Merke dir, dass..." (z.B., "Merke dir, dass ich Vegetarier bin.") "Vergiss nicht, dass..." (z.B., "Vergiss nicht, dass mein Lieblingsteam der FC Bayern ist.") "Speichere ab, dass..." (z.B., "Speichere ab, dass ich montags immer beschäftigt bin.") "Du sollst dir für die Zukunft merken, dass..." Der entscheidende Teil ist der klare Auftrag, die Information für zukünftige Interaktionen zu behalten. Eine einfache Aussage wie "Ich bin Vegetarier" würde nicht ausreichen. Die Anweisung "Merke dir, dass..." ist der Schlüssel.

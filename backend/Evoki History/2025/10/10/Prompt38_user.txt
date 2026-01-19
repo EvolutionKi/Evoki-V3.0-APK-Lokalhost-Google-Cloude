@@ -1,0 +1,4 @@
+Timestamp: 10.10.2025, 19:23:27 MESZ
+Speaker: user
+
+Hallo ich möchte dass du zwei Versionen von Evoli hierzu gebe ich dir meinen kompletten Chatverlauf als trainingsumgebung hier kannst du die Situation zum trainieren nehmen hier nutze eben den Chatverlauf um die Interaktion zu testen erstelle hierfür zwei parallele sandboxen welche immer noch quasi ja beide so aufgebaut sind dass sie ein internes Rollout quasi vollziehen nach dem höchsten it Standard mit mehreren sandboxen ineinander verschachtelt bereite bitte dieses System vor und stelle sicher dass hier immer noch die Interaktion nicht gefährdet wird und gib mir Bescheid sobald du diese Umgebung geschaffen hast

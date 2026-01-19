@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:38:10 MESZ
+Speaker: ai
+
+Du könntest Gemma zum Beispiel nutzen, um Texte zu analysieren und wichtige Informationen für deinen PLKM-Wrapper zu extrahieren. Oder du generierst mit Gemma verschiedene Formulierungen für Suchanfragen, um die Flexibilität deines Wrappers zu erhöhen.

@@ -1,0 +1,4 @@
+Timestamp: 03.10.2025, 06:58:37 MESZ
+Speaker: user
+
+naja das ganze soll ja dann schlussendlich in ein paar Skript überführt werden wo alles das enthaltenes Wort für Wort unverändert und das muss eine Datei sein wo alles drin ist damit dieser Python Script ausgeführt wird so wie er Wort für ausgeführt werden muss und die Mathematik die sich danach daraus ergibt

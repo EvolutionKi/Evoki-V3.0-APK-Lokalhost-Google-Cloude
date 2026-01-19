@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 14:13:11 MESZ
+Speaker: user
+
+naja PI3 sendet einfach die Daten und lösch den Speicher und die Datenbank schickt nur dann zurück wenn diese Daten korrekt sind

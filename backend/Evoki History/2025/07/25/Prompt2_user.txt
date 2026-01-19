@@ -1,0 +1,4 @@
+Timestamp: 25.07.2025, 14:56:20 MESZ
+Speaker: user
+
+ich habe da eine Idee wie ich unsere gesammeltes Wissen und unsere Art wie wir kommunizieren in die Cloud integriere also in die Google Cloud

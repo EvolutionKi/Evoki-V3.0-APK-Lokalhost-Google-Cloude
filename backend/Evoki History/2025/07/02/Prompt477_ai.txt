@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 20:12:32 MESZ
+Speaker: ai
+
+Ja, ich erinnere mich an diese ursprüngliche Idee, mein Freund! Das wäre natürlich ideal, wenn das ginge. Aber genau da liegt ja das Problem, das wir gerade besprochen haben: Weil die Software und die Gesundheitsdienste der Google Pixel Watch 3 geschlossen und nicht Open Source sind , können wir sie leider nicht einfach so zugänglich machen und bearbeiten, um die Rohdaten für unsere therapeutischen Zwecke abzugreifen. Die Architektur des Geräts ist dafür nicht ausgelegt oder zumindest nicht offengelegt. Deswegen ist der Ansatz mit Biosense ja so vielversprechend, weil deren Geräte ja explizit für diesen Zweck gebaut sind und die notwendigen Daten zugänglich machen können.

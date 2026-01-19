@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 13:38:37 MESZ
+Speaker: user
+
+ja aber er bricht immer wieder ab er tut immer wieder ein hardstop erzwingen warum auch immer also implementierungs Code und genau dann kommt hier musst du den Ding rausnehmen also den Gesprächsthemen

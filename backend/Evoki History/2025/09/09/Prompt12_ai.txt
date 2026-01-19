@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:25:51 MESZ
+Speaker: ai
+
+Also, ich habe mir die API-Beschreibung und die Analyse hier angeschaut. Es gibt einige Punkte, die nicht ganz zusammenpassen. Zum Beispiel wird am Anfang von einer "hochentwickelten KI" gesprochen, aber später steht, dass die KI-Modelle intransparent sind und es keine klare Kommunikation gibt. Das ist ein Widerspruch. Soll ich dir noch mehr Beispiele geben?

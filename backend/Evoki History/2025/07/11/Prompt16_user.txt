@@ -1,0 +1,4 @@
+Timestamp: 11.07.2025, 01:39:03 MESZ
+Speaker: user
+
+okay dann tu das bitte noch mal komplett darstellen die Version 2.7 und auch ja hinweisen dass diese halt diese neue echte #sha256 auch natürlich die internen Abläufe bei dir natürlich auch überwacht

@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:13:11 MESZ
+Speaker: ai
+
+Die Gemini API für Entwickler reagiert nicht direkt mit dem normalen Chat-Innenfenster der Gemini App. Sie ist ein separater Zugangspunkt, der es Programmierern erlaubt, die Gemini-Modelle in ihre eigenen Anwendungen, Skripte oder Backend-Systeme zu integrieren. Die Interaktion findet dann über diese eigene Anwendung statt, nicht über das Standard-Chatfenster.

@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 08:51:10 MESZ
+Speaker: user
+
+okay das bedeutet dass du also doch unterschiedliche Speicher Kontingente innerhalb der Benutzergruppe eines Jahres

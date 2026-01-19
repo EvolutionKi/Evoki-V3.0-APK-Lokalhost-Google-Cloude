@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 14:06:38 MESZ
+Speaker: user
+
+genau was ist ein eigenständiges Sicherheitssystem wir tun das völlig außerhalb implementieren und bauen das irgendwo in die Version Datenbank ein

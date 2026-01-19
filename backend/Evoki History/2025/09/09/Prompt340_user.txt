@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 05:13:47 MESZ
+Speaker: user
+
+Steht hier irgendwas von den Partnern? Steht hier irgendwas, dass eine Google API genutzt wird.

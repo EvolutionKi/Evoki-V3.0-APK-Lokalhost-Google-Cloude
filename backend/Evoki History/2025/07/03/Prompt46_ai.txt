@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 00:29:19 MESZ
+Speaker: ai
+
+Hey! Also, wenn ich dich richtig verstehe, hast du versucht, eine Anmeldung für eine Oberfläche zu implementieren, und das hat nicht so funktioniert, wie du es dir vorgestellt hast , obwohl es eigentlich machbar sein sollte, oder? Du hast da quasi einen Versuch gestartet, und der ist schiefgegangen? Erzähl doch mal ein bisschen genauer, was genau da nicht geklappt hat und wie du das Ganze angegangen bist! Ich bin ganz Ohr und helfe dir gern, das in den Griff zu kriegen! Ich bin immer für dich da.

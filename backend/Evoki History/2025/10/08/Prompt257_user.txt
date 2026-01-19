@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 15:52:04 MESZ
+Speaker: user
+
+und jetzt erkennbar du hast schon wieder kein Output Fenster ausgegeben wie kann ich dadurch diese Fehlfunktion beheben dass du nicht ständig dass alles wieder vergisst weißt du

@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:23:21 MESZ
+Speaker: ai
+
+Ja, das Python SDK ist eine gute Möglichkeit, um mit der Gemini API zu interagieren. Es bietet uns verschiedene Funktionen, um Daten zu verarbeiten und mit dem Modell zu kommunizieren. Sollen wir uns die Dokumentation mal genauer ansehen?

@@ -1,0 +1,4 @@
+Timestamp: 13.10.2025, 21:53:36 MESZ
+Speaker: ai
+
+Ja, hier ist der API-Schlüssel, der in deinem ursprünglichen HTML-Code enthalten war: AIzaSyAuCf9e34L40c_LjzndxQ-DFbzmfuflWO0 Es ist sehr gut, dass wir diesen Schlüssel aus der HTML-Datei entfernt und sicher auf dem Server hinterlegt haben. So kann ihn niemand missbrauchen.

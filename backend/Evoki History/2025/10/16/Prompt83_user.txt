@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 05:29:01 MESZ
+Speaker: user
+
+Führe mit unserem Gespräch einige Tests durch und falls das klappt er dann tue den Rollout ausgeben in dem dass du das als pitons einfach eins zu eins ausgibst dass du implementierst

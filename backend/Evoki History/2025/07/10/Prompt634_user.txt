@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:16:39 MESZ
+Speaker: user
+
+Aber hier steht doch nirgends. Wo siehst du denn an dieser Stelle Gemini API, da steht Google API Key.

@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 14:37:15 MESZ
+Speaker: user
+
+du hattest doch die checkpointed alle abzuhaken sind dass selbst Überprüfung in einem so ja wie Checkpoint ist so ganz kurz gefasst

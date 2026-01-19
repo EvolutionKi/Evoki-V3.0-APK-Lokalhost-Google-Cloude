@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:19:21 MESZ
+Speaker: ai
+
+Ja, genau! Im Reiter "Audio-Device" solltest du die Einstellungen für dein Audio-Interface finden. Dort kannst du die Puffergröße anpassen.

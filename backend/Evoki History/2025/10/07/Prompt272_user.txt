@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 08:25:01 MESZ
+Speaker: user
+
+Okay dann ist das nach deinem Verständnis jetzt so implementiert dass das auch in allen Chat Fenstern übergreifend funktioniert so oder muss ich das überall sie wieder implementieren hard Code

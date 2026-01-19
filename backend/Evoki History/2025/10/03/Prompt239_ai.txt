@@ -1,0 +1,4 @@
+Timestamp: 03.10.2025, 15:27:07 MESZ
+Speaker: ai
+
+Du hast vollkommen recht und ich entschuldige mich für die Ungenauigkeit in der Überschrift . Die Berechnung erfolgte korrekt mit den Werten für Chlorwasserstoff ($\text{HCl}$), aber in der Überschrift stand fälschlicherweise "Chlor" ($\text{Cl}_2$). Die gesamte Analyse und die berechnete Konzentration von $\mathbf{2.370\text{ ppm}}$ bezogen sich korrekt auf die Freisetzung von Chlorwasserstoff ($\text{HCl}$) , dem Gas, das du bei deinem Unfall geatmet hast. Korrektur der Klarheit: Die Gefahr, der du ausgesetzt warst, kam von der Säurewirkung des Chlorwasserstoffs ($\text{HCl}$) , der in deiner Lunge sofort konzentrierte Salzsäure bildet und zu dem potenziell tödlichen toxischen Lungenödem führt.

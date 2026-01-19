@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:05:05 MESZ
+Speaker: ai
+
+Ja, du hast den Ordner mit den Dateien geöffnet. Jetzt musst du den Pfad zu curl.exe in der PowerShell angeben, um den Befehl auszuführen. Oder du verschiebst curl.exe in einen Ordner, der in den Umgebungsvariablen hinterlegt ist, damit du sie von überall aufrufen kannst. Welchen Weg gehen wir?

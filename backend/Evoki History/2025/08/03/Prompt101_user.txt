@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 15:34:56 MESZ
+Speaker: user
+
+ah man könnte zum Beispiel die Schlüsselfunktion könnte man hinten dran quasi verlangen dass er quasi erkennt dass du die aktuelle Uhrzeit mit einem erneuerten #ausgibst

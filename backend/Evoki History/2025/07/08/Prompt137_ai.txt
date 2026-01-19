@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:10:41 MESZ
+Speaker: ai
+
+Ich sehe, du hast hier einige Informationen zur SSD-Nachrüstung für die Dell Precision und HP Z/xw Workstations. Du solltest darauf achten, dass die SSD vom Mainboard erkannt wird und korrekt angesteuert wird. Außerdem ist es wichtig, dass die Workstation genügend SATA-Anschlüsse für die SSD hat. Hast du noch Fragen dazu?

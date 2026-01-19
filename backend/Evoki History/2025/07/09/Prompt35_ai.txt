@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:21:30 MESZ
+Speaker: ai
+
+Ich sehe gerade keine Häkchen. Wenn du die Option "Request Sample Rate" aktivierst, wird Reaper gezwungen, die Sample Rate deines Audio-Interfaces zu verwenden. Das kann in manchen Fällen helfen. Teste aber am besten erst mal, ob es auch ohne Häkchen funktioniert.

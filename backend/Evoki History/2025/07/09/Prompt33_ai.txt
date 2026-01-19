@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:20:53 MESZ
+Speaker: ai
+
+Nein, die Häkchen bei "Request Sample Rate" und "Request Block Size" solltest du so lassen. Sie sorgen dafür, dass Reaper die Einstellungen deines Audio-Interfaces verwendet. Teste jetzt am besten mal, ob die Latenz besser geworden ist.

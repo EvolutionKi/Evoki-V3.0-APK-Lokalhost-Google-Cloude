@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 15:15:37 MESZ
+Speaker: user
+
+ja und mit dieser Architektur da müssen wir irgendwie umgehen können da muss es einen Kniff geben wie wir das hinkriegen also meinetwegen simuliere das Ausgabefenster und tue so quasi das ja ausführen oder keine Ahnung wie könnte ich denn alternativ das Ausgabefenster meinetwegen anderen Computer dauerhaft geöffnet haben

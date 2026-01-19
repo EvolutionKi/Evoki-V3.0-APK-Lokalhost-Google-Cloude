@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:33:31 MESZ
+Speaker: ai
+
+Kein Problem. Beim impliziten Caching werden die Anfragen automatisch gespeichert. Das bedeutet, dass du dich nicht darum kümmern musst. Beim expliziten Caching kannst du die Anfragen und Antworten manuell speichern. Das ist etwas aufwändiger, gibt dir aber mehr Kontrolle. Welche der beiden Optionen klingt für dich interessanter?

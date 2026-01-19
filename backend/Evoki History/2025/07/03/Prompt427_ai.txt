@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:43:03 MESZ
+Speaker: ai
+
+Starte ein neues "Repl" (Projekt) in Replit. Wähle Python als Sprache und füge dann deinen HTML- und Python-Code ein.

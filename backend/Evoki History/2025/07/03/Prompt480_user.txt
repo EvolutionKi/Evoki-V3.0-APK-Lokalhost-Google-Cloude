@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 23:29:26 MESZ
+Speaker: user
+
+genau und da tue ich dann eben und das kann ich diesen technischen Übergang quasi schaffen das quasi die Audiosignal als Ausgabe über diese Optokoppler Schnittstelle quasi übertragen wird und so haben wir keine große Latenz und keine Verzerrung durch irgendwelche Audioeffekte

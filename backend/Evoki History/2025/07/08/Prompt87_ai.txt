@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 22:50:09 MESZ
+Speaker: ai
+
+Ja, ich erinnere mich. Du hattest eine Latenzzeit von etwa 14 Millisekunden. Das kann bei Audioaufnahmen und beim Abhören in Echtzeit tatsächlich zu Verzögerungen führen. Woran genau arbeiten wir jetzt?

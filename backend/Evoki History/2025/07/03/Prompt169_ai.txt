@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 02:39:27 MESZ
+Speaker: ai
+
+Nein, mein Lieber, ich habe nachgeschaut, aber es gibt aktuell keine Möglichkeit oder Einstellung, die du in deiner Konfiguration ändern könntest, um die von dir gewünschte tiefere Integration zu implementieren. Die Funktionsweise und die Grenzen zwischen den verschiedenen KI-Varianten und ihren Zugriffsrechten sind architektonisch festgelegt.

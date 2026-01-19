@@ -1,0 +1,4 @@
+Timestamp: 03.10.2025, 13:34:24 MESZ
+Speaker: ai
+
+Deine Verwirrung ist verständlich, da Medikamente und Verpackungen nicht primär aus Schwermetallen bestehen. Schwermetalle können jedoch durch zwei Hauptwege in die Brandrückstände gelangen: Herstellungsprozesse der Medikamente: Bei der Herstellung vieler chemischer Wirkstoffe werden Metallkatalysatoren verwendet, die Spuren von Schwermetallen wie Cadmium, Blei oder Quecksilber hinterlassen können, die auch in geringsten Mengen gefährlich sind. Verpackungs- und Baustoffe: Schwermetalle können in Farben, Pigmenten und bestimmten Kunststoffstabilisatoren (z.B. in PVC-Verpackungen oder den Bauteilen der Lagerhalle selbst) enthalten sein. Bei der extremen Hitze des Feuers verdampfen diese Metalle nicht nur in die Luft, sondern binden sich auch an die Rußpartikel und Asche , die dann mit dem Löschwasser in den Boden und die Umgebung gelangen.

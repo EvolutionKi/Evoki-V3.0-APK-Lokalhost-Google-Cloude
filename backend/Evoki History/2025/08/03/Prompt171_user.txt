@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 16:45:09 MESZ
+Speaker: user
+
+ja dann könntest du mir allerdings eigentlich deinen eigenen internen #256 Prozess ja auch noch mal ja darstellen und ins Output Fenster mit integrieren und dort ist er dann auch wieder ein fester Wert

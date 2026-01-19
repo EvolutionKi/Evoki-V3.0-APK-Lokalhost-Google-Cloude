@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:10:54 MESZ
+Speaker: ai
+
+Ja , das gibt es. Besonders Unternehmen und erfahrene Nutzer erstellen detaillierte interne Regeln für ihre KI-Instanzen, oft mit folgenden Zielen: "Custom GPTs" und Bots: Plattformen ermöglichen es Nutzern, eigene Chatbots zu erstellen und diesen spezifische Anweisungen, Persönlichkeiten und Einschränkungen zu geben. Unternehmens-Governance: Firmen definieren "Compliance Regelungen" und interne "KI-Richtlinien" (Corporate Governance), um den KI-Einsatz auf geschäftliche Zwecke zu beschränken, Datenschutz zu sichern und das Einhalten von Gesetzen zu garantieren. Personalisierung: Nutzer legen oft Rollen, Stile und Formate fest (Role Prompting), um die KI-Antworten individuell und konsistent an ihre Erwartungen anzupassen.

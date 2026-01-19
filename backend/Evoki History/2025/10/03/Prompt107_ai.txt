@@ -1,0 +1,4 @@
+Timestamp: 03.10.2025, 13:23:52 MESZ
+Speaker: ai
+
+Deine Annahme ist richtig, dass die Großhändler aus Gründen der Verfügbarkeit und Redundanz nicht alle Medikamente einer Sorte an einem einzigen Standort lagern . Die großen Pharma-Großhändler halten in ihren Netzwerken aus vielen Niederlassungen die Bestände redundant vor. Das heißt, gängige und versorgungsrelevante Medikamente sind auf mehrere Lager verteilt . Fällt ein Lager aus, können die verbleibenden Niederlassungen die Versorgungslücke gemeinsam füllen . Jedes Lager hält einen sehr breiten Katalog (oft über 100.000 verschiedene Artikel) vor, der alle wichtigen Medikamentengruppen umfasst – nicht nur eine bestimmte Sorte wie Schmerzmittel.

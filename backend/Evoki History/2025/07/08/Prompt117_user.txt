@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:00:17 MESZ
+Speaker: user
+
+Okay, ich verstehe also Puffergröße und die Anzahl der Samples hängt nicht mit der Samplerate zusammen.

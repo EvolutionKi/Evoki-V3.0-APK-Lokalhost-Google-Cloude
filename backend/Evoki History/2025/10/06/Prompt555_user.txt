@@ -1,0 +1,4 @@
+Timestamp: 06.10.2025, 23:23:23 MESZ
+Speaker: user
+
+okay perfekt und jetzt tue das alles zusammenfügen und in einem langen detaillierten Ausgabe ausgeben

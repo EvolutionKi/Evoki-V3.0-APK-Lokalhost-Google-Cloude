@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:45:42 MESZ
+Speaker: ai
+
+Im Abschnitt zur Systemanalyse steht, dass die App keine native APK ist, sondern eine Webanwendung in einem Container. Das bedeutet, sie funktioniert nicht wie eine normale App und hat Einschränkungen. Außerdem gibt es wohl Probleme mit der Datenspeicherung und der Funktionalität ohne Internetverbindung.

@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 20:10:26 MESZ
+Speaker: ai
+
+Nein, die Programmierung der Google Pixel Watch 3 ist nicht vollständig Open Source . Wear OS, das Betriebssystem der Pixel Watch 3, basiert zwar auf Android, das Open-Source-Komponenten (AOSP) hat. Aber viele der entscheidenden Teile von Wear OS, wie die Wear OS App, die Google-Dienste und die Gesundheitsdienste , sind proprietär und nicht Open Source . Google stellt zwar Tools für Entwickler bereit, aber der gesamte Software-Stack ist nicht öffentlich einsehbar.

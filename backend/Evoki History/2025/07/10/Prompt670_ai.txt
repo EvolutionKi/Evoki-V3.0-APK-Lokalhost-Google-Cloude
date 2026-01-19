@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 15:04:23 MESZ
+Speaker: ai
+
+Datencheck: Erfolgreich | Arbeitsanweisungen: Erfolgreich | Fehlerüberwachung: Erfolgreich Nein, das ist leider nicht das richtige Terminal. Du hast gerade im Marketplace nach "Bash" gesucht. Das Terminal, das wir brauchen, ist bereits in VS Code integriert. Du findest es, indem du oben in der Menüleiste auf "Terminal" klickst und dann "Neues Terminal" auswählst.

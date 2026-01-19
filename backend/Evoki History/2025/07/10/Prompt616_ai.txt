@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:13:36 MESZ
+Speaker: ai
+
+Du musst "GEMINI_API_KEY" durch deinen API-Schlüssel ersetzen. Der Schlüssel ist eine lange Zeichenfolge und sollte keine Anführungszeichen enthalten.

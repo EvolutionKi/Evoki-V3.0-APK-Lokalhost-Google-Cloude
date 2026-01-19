@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:54:29 MESZ
+Speaker: ai
+
+Nein, das stimmt nicht. Es gibt keine Informationen darüber, welche API-Modelle die App verwendet. Es ist auch nicht klar, wie die App mit Google zusammenarbeitet oder wie du deine Daten löschen lassen kannst.

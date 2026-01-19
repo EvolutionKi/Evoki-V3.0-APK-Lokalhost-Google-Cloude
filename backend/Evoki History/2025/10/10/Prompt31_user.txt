@@ -1,0 +1,4 @@
+Timestamp: 10.10.2025, 14:34:11 MESZ
+Speaker: user
+
+okay dann gib mir bitte schön eine prompt aus der eben Anweisung gibt dass ebenso auszuführen in der Sandbox mit eben dem höchsten Standard mit vielen verschiedenen sandboxen zu einem sicheren Rollout und tue es das alles parallel machen quasi mit mehreren Rollouts den Boxen welche hier die alten Versionen testen in ihrer vollumfänglichen Version Ausführung und dann hier einen Schluss Fazit ziehen

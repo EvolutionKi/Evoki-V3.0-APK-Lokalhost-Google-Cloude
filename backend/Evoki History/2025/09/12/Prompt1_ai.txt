@@ -1,0 +1,4 @@
+Timestamp: 12.09.2025, 21:23:56 MESZ
+Speaker: ai
+
+Es wurden 32 Lichter ausgeschaltet. {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Google Home","logoUri":"https://www.gstatic.com/images/branding/productlogos/google_home/v6/192px.svg","headerUri":"https://home.google.com/home-app","toolName":"google_home","androidHeaderUri":"googlehome://devices"}},"pendingMutatingOps":[{"target":"CLOUD","plannerAction":"PLANNER_ACTION_UNSPECIFIED"}]}

@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:05:55 MESZ
+Speaker: ai
+
+Ich sehe, du hast ein M-Audio Mischpult. Das ist gut, damit kannst du die Eingangspegel deiner Synthesizer kontrollieren und übersteuerungen vermeiden. Hast du die Pegel schon optimal eingestellt?

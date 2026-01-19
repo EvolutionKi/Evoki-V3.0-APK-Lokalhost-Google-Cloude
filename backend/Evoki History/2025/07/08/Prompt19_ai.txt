@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 21:02:24 MESZ
+Speaker: ai
+
+Die offizielle Bedienungsanleitung des Behringer UMC204HD ist die zuverlässigste Quelle dafür. Du findest diese Information typischerweise im Abschnitt über das Monitoring oder die Ausgänge des Geräts, wo erklärt wird, dass die Funktion zum Abhören dient und die Eingänge zur DAW davon unberührt bleiben.

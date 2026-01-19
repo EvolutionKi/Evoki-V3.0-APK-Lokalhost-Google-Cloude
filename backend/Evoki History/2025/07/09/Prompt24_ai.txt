@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:18:14 MESZ
+Speaker: ai
+
+Alles klar. Starte Reaper am besten einmal neu, damit die Änderungen wirksam werden. Wie sieht es jetzt mit der Latenz aus?

@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 12:40:27 MESZ
+Speaker: user
+
+Sparkasse mir sagen ich mal erklären wenn ich dir das irgendwie mal als Python prompt irgendwie dir ausgeben so dass ich hier quasi das irgendwie automatisiert mal machen kann auch dann mit der App zum Beispiel also dass ich das nicht App rein mache sobald die App quasi erkennt dass man aus dem Haus geht wenn ich GPS Daten ermittelt auf der

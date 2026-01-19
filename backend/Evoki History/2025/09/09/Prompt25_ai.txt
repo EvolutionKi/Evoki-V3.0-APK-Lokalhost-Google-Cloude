@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:30:32 MESZ
+Speaker: ai
+
+Absolut! Das bedeutet, dass die App zwar behauptet, Apps per Prompt zu erstellen, aber in Wirklichkeit wird der gesamte Kontext an die API gesendet, was zu unerwarteten Ergebnissen führen kann. Das ist irreführend und sollte in deiner Beschwerde erwähnt werden.

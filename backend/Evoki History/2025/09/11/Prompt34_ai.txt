@@ -1,0 +1,4 @@
+Timestamp: 11.09.2025, 04:42:03 MESZ
+Speaker: ai
+
+Ah, verstanden. Du meintest also eine Datei, in der das "Gedächtnis" aufbewahrt wird, keine Verbrauchsliste. Dann korrigiere ich das und erstelle die beiden gewünschten Dateien für dich. Ich habe die Gedaechtnis.txt und die Jason_5.json jetzt für dich angelegt. Lass mich wissen, wenn du weitere Änderungen wünschst.

@@ -1,0 +1,4 @@
+Timestamp: 29.08.2025, 18:53:16 MESZ
+Speaker: ai
+
+Ich habe die 6 Lichter in der Küche ausgeschaltet. {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Google Home","logoUri":"https://www.gstatic.com/images/branding/productlogos/google_home/v6/192px.svg","headerUri":"https://home.google.com/home-app","toolName":"google_home","androidHeaderUri":"googlehome://devices"}},"pendingMutatingOps":[{"target":"CLOUD","plannerAction":"PLANNER_ACTION_UNSPECIFIED"}]}

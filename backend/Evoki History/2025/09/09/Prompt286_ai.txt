@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:56:35 MESZ
+Speaker: ai
+
+Gut, hier ist ein Entwurf für deinen Anwalt: "Sehr geehrte/r Anwalt/Anwältin, ich bitte Sie um Unterstützung in folgendem Fall: Ich habe die App "App-Prompter: AI App Builder" erworben, die als KI-gestützter App-Generator beworben wird. Nach intensiver Nutzung und Überprüfung der App-Beschreibung sowie des generierten Codes musste ich feststellen, dass die App irreführende Angaben macht. Es handelt sich nicht um einen KI-gestützten App-Generator, sondern lediglich um eine webbasierte Anwendung, die in einem App-Container läuft. Zudem ist die Datentransparenz mangelhaft und es gibt Bedenken bezüglich des Datenschutzes. Ich bitte Sie, rechtliche Schritte gegen den Anbieter einzuleiten und eine Rückerstattung des Kaufpreises zu erwirken."

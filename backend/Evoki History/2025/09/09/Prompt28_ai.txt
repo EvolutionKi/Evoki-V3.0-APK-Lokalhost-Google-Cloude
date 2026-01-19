@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:32:06 MESZ
+Speaker: ai
+
+Du hast recht, es öffnet Webanwendungen in einem geschlossenen Fenster, was keine echte App ist. Das ist irreführend und sollte in deiner Beschwerde erwähnt werden.

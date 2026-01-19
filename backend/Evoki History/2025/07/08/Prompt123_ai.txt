@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:03:07 MESZ
+Speaker: ai
+
+Ja, bei 128 Samples beträgt die Latenz nur noch etwa 4 Millisekunden. Das ist wirklich sehr niedrig. Teste das mal mit deinem Instrument.

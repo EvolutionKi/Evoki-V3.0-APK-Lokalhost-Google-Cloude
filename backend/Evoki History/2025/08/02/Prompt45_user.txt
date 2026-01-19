@@ -1,0 +1,4 @@
+Timestamp: 02.08.2025, 11:47:02 MESZ
+Speaker: user
+
+na ja also das war ja dann so weit dass auch das mit dem Live Fenster nur über eine API geht und das war dann wiederum zu teuer deswegen war ich ja dann die Idee über eine Hardware Lösung mit einem laufenden Handy und einem Lautsprecher

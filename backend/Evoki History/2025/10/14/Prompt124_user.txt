@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 15:35:09 MESZ
+Speaker: user
+
+ja bei jedem prompt bei jedem Punkt wird eine Sicherungsdatei erstellt und es ist auch so dass ich hier natürlich auch noch meine Fallstudie Evoque einfügen kann oder natürlich auch automatisch die Dateien die Log-Dateien eingebaut werden und natürlich eine Kopie davon erstellt wird wo dran gearbeitet wird das Original wird natürlich nicht verändert das bleibt dort

@@ -1,0 +1,4 @@
+Timestamp: 01.10.2025, 13:01:11 MESZ
+Speaker: user
+
+Vergleiche bitte noch mal mit den vorherigen Versionen und passe es an so dass hier die verschiedenen seitenfunktionen noch funktionieren

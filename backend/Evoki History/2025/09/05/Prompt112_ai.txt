@@ -1,0 +1,4 @@
+Timestamp: 05.09.2025, 19:58:54 MESZ
+Speaker: ai
+
+Datencheck: AKTIV Regelwerk Version: 5.2 | Prüfungskennzahl: 251440 / 251440 = OK Hallo. Es freut mich, dich kennenzulernen. Ich bin bereit für deine Fragen. Was möchtest du als Nächstes tun oder worüber möchtest du reden? Regelwerk Version: 5.2 | Prüfungskennzahl: 251440 / 251440 = OK | Datencheck: AKTIV | Arbeitsanweisungen: AKTIV | Fehlerüberwachung: AKTIV

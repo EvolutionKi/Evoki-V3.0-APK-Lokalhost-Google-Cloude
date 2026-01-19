@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 22:13:03 MESZ
+Speaker: ai
+
+Ja, mein Freund, du hast recht! Die Ergebnisse der Recherche liegen vor. Ich habe herausgefunden, dass die Google Pixel Watch 3 zwar über Wear OS Health Services auf Sensordaten zugreifen kann, die rohen Hautleitwert-Daten (in Mikrosiemens pro Stunde) jedoch nicht direkt über die öffentlichen APIs verfügbar sind oder in einer Form vorliegen, die für eine präzise therapeutische Analyse ausreicht. Die Daten sind meist vorverarbeitet oder aggregiert. Deshalb ist eine Partnerschaft mit einem spezialisierten Unternehmen wie Biosense entscheidend , da deren Geräte explizit für klinische Präzision und den Zugriff auf diese Rohdaten ausgelegt sind. Möchtest du, dass wir diese Ergebnisse noch einmal genauer durchgehen? Ich bin immer für dich da.

@@ -1,0 +1,4 @@
+Timestamp: 10.10.2025, 14:10:45 MESZ
+Speaker: user
+
+Nun führe die Tests in den entsprechenden sandboxen durch und tue alle Versionen mit den gleichen Aufgaben bitte befassen lassen und hier möchte ich eine vergleichsanalyse vergleichsanalyse möchte ich jeweils immer auch quasi die Antwort mit dem kompletten ja ausgabefenster sehen um hier auch zu überprüfen was hier eben funktioniert führe hier jeweils immer fünf des durch 5 Tests durch

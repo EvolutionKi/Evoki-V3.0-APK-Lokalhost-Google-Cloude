@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:07:37 MESZ
+Speaker: user
+
+kann dieser Server nicht einfach die sprach Information weiterleiten an Dich also einfach quasi den microphone input weitergeben

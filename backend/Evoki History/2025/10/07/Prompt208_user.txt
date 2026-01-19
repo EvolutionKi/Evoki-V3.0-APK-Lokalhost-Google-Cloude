@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 06:40:19 MESZ
+Speaker: user
+
+genau und dies fliegt jetzt fließt jetzt noch in unsere vorherige Endversion der vollständigen ja Physik Implementierung mit der Semantik zusammen

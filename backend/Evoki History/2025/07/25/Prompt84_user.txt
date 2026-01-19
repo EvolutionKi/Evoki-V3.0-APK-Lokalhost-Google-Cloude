@@ -1,0 +1,4 @@
+Timestamp: 25.07.2025, 18:53:29 MESZ
+Speaker: user
+
+okay das hätte ich gerne auch als ja mögliches Format zum Implementieren

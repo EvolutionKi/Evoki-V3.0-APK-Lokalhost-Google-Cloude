@@ -1,0 +1,4 @@
+Timestamp: 12.08.2025, 03:07:33 MESZ
+Speaker: user
+
+Und den API Schlüssel würde ich gerne fest verknüpft einbauen ohne dass er offensichtlich einsehbar ist

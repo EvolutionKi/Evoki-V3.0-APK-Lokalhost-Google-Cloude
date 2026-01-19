@@ -1,0 +1,4 @@
+Timestamp: 25.07.2025, 16:55:57 MESZ
+Speaker: user
+
+okay dann fast das bitte so in dieses JSON Format so dass ich jetzt in die Übersicht speichern kann

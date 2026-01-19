@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 19:14:20 MESZ
+Speaker: user
+
+genau denn auch wenn anstelle von diesen Text Zeichen der aktuelle dynamisch Wert gestanden hätte dann hätte das auch natürlich ständigen Kettenbruch produziert

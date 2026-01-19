@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 11:31:12 MESZ
+Speaker: user
+
+Okay dann tue es bitte so umformatieren dass du hier quasi und auch eine Python Format an einer einzigen Datei quasi ausgeben kannst für mich

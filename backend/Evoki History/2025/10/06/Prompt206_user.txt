@@ -1,0 +1,4 @@
+Timestamp: 06.10.2025, 09:44:26 MESZ
+Speaker: user
+
+was soll ich überprüfen also ich meine das heißt du hast das in deine Kern Code Logik implementiert welche quasi dem entgegen spricht und dem entgegenwirken kann allerdings wie soll das von extern trainiert werden und gewichtet werden als ich meine das muss ja unumgänglich in deiner Code Implementierung in deine Code Funktion da eingebettet werden

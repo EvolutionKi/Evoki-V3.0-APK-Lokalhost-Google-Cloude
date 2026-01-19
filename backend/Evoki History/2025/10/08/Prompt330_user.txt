@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 19:31:23 MESZ
+Speaker: user
+
+Das brightons Glück muss das ja nicht berücksichtigen das Python Script das kann ja quasi auf die JSON Datei zugreifen die erstellt wird

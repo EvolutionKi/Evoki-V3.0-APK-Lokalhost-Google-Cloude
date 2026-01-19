@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:14:48 MESZ
+Speaker: user
+
+Wo steht denn hier Gemini API?

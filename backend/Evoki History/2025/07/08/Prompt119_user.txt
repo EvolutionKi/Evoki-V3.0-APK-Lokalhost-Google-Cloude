@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:01:15 MESZ
+Speaker: user
+
+Okay, da ist mir aber um das reine Aufzeichnung geht und es gar keine ähm ja, gar keine Echtzeit Effekte ausgeben soll.

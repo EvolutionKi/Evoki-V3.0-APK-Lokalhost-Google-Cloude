@@ -1,0 +1,4 @@
+Timestamp: 10.10.2025, 12:33:33 MESZ
+Speaker: user
+
+ich habe nichts von A44 gesagt und ich habe auch nicht gesagt dass irgendwas außer attack gesetzt werden muss und das je mehrere Protokoll solltest du auch gerade nicht verfolgen du solltest hier nur eine eine Retroperspektive machen eine Analyse es geht hier um eine forensische Analyse und eine historische Bergung der verlorenen Daten die in der Version 4.6 welche ich dir gegeben habe mit den vielen paitin Implementierung warum hier diese einzelnen Verhaltens Chris nicht mehr so umfangreiche ausgearbeitet sind

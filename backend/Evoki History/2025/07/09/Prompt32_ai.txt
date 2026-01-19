@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:20:35 MESZ
+Speaker: ai
+
+Du kannst es mit 64 versuchen. Wenn es dann ohne Aussetzer funktioniert, ist alles gut. Falls du Knackser oder andere Störungen hörst, erhöhe den Wert wieder etwas.

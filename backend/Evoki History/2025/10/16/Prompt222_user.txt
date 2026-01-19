@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 13:37:39 MESZ
+Speaker: user
+
+jetzt tue nur das Status Fenster in diesem Python Code mit einfügen mit dem Befehl und den Befehl allerdings genau da mit reinschreiben ja

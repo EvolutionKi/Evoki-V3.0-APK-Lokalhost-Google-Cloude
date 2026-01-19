@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 19:17:33 MESZ
+Speaker: ai
+
+Der rote Stecker ist für den rechten Audiokanal, der weiße Stecker für den linken Audiokanal.

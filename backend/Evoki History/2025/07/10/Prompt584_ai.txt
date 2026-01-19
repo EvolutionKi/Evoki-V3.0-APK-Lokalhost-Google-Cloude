@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:04:28 MESZ
+Speaker: ai
+
+Perfekt! Du hast die Downloadseite für curl gefunden. Jetzt musst du die richtige Version für dein System auswählen. Da du Windows benutzt, solltest du die Version für Win64 nehmen, es sei denn, du hast ein 32-Bit-System. Lade die ZIP-Datei herunter und entpacke sie. In dem Ordner findest du die Datei curl.exe. Sobald du das gemacht hast, lass es mich wissen.

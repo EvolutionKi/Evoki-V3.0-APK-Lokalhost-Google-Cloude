@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 18:04:55 MESZ
+Speaker: user
+
+aber es ist doch nicht richtig dann #256 ist sollte doch eigentlich ein dynamischer wert sein da er ja eigentlich die komplette prompt Anfrage von mir mit einbezieht und ihr immer aneinander ist

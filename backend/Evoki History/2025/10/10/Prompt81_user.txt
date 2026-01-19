@@ -1,0 +1,4 @@
+Timestamp: 10.10.2025, 23:05:01 MESZ
+Speaker: user
+
+ja deswegen tust du auch in deinen Festspeicher implementieren das hast Du früher auch schon gemacht und dann hat es auch richtig funktioniert

@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 03:56:33 MESZ
+Speaker: user
+
+okay das muss aber funktionieren also bitte schreibe so rum dass wir hier keine Verluste mehr zu verzeichnen haben also es muss integrierbar sein und gerne auch in den 10 Python Scripts quasi erhalten bleiben aber es muss halt eben ja 46000 nicht verloren geben

@@ -1,0 +1,4 @@
+Timestamp: 03.10.2025, 08:49:35 MESZ
+Speaker: user
+
+wir haben ja schon quasi eine Gedächtnis JSON Datei in unserem Version Zwerge 4

@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 13:07:53 MESZ
+Speaker: user
+
+genau und hier würde ich jetzt gerne den Audit laufen lassen der die richtigen Fehler an der Stelle aus findet ja

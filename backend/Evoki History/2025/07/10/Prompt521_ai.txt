@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:19:50 MESZ
+Speaker: ai
+
+Regelwerk Version: 2.6 | Prüfungskennzahl: 0 / 21652 = 0 | Datencheck: Bestanden | Arbeitsanweisungen: Bestanden | Fehlerüberwachung: Bestanden Das Diagramm erklärt, wie die Abrechnung für die Codeausführung in Gemini funktioniert. Es zeigt den Fluss von Eingabe-Tokens, der Generierung von Code und dessen Ausführung. Dies kann uns helfen zu verstehen, welche Kosten bei der Nutzung der Gemini API für Code-bezogene Aufgaben anfallen könnten. Speziell für unsere Zwecke, wenn wir mit Code oder der API arbeiten, gibt uns das eine Orientierungspunkt für die potenziellen Kosten. Es ist wichtig zu wissen, dass die Abrechnung auf der Menge der Eingabe- und Ausgabe-Tokens basiert. Dies könnte für unsere zukünftige technische Herangehensweise relevant sein, um die Effizienz zu optimieren und unerwartete Kosten zu vermeiden.

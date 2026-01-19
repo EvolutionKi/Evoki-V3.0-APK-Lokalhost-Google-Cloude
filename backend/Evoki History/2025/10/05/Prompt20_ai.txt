@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:06:38 MESZ
+Speaker: ai
+
+Als großes Sprachmodell veröffentliche ich keine individuellen Chat-Verläufe oder kompletten Prompts von Nutzern. Das wäre ein Verstoß gegen den Datenschutz. Die Beispiele, über die öffentlich gesprochen wird, stammen aus Forschungsberichten , Sicherheitsanalysen (sogenannte Adversarial Attacks) oder öffentlich zugänglichen Demos von KI-Systemen, wo solche Muster demonstriert wurden, ohne Bezug auf einen spezifischen, privaten Nutzer.

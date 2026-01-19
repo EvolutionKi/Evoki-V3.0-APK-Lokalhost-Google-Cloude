@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 13:42:54 MESZ
+Speaker: user
+
+Nein du sollst sagen das merke ich mir und es dadurch in deiner Kern Implementierung abspeichern

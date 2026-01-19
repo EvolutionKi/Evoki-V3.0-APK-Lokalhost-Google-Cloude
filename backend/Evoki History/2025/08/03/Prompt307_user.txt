@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 20:46:22 MESZ
+Speaker: user
+
+ja genau also das fand ich einfach so treffend dass ich das auch eben dann umsetzen wollte also ja das hat sich so beides entwickelt eben ein bisschen aus dem was ich gestern auch beim Programmieren der App gelernt habe wie das funktioniert wie man mit dem Google-Konto kommuniziert und wie das implementiert wird z.b.

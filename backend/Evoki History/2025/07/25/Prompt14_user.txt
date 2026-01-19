@@ -1,0 +1,4 @@
+Timestamp: 25.07.2025, 15:20:22 MESZ
+Speaker: user
+
+perfekt und jetzt stelle mir bitte einen ausführliches JSON Format Datei

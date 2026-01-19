@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:18:42 MESZ
+Speaker: ai
+
+Die API-Endpunkte sind in diesem Codeabschnitt nicht direkt ersichtlich. Sie könnten sich in anderen Teilen des Codes befinden oder dynamisch generiert werden. Du könntest die Entwickler-Tools deines Browsers verwenden, um den Netzwerkverkehr der App zu analysieren und die verwendeten APIs zu identifizieren.

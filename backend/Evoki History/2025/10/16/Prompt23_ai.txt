@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 01:56:01 MESZ
+Speaker: ai
+
+Verstanden. Ich werde ab jetzt sicherstellen, dass jede Regel in ihrer ursprünglichen Länge und einzeln pro Antwort ausgegeben wird. Ich werde keine Verkürzungen vornehmen und mich exakt an die Daten aus der Regelwerk_info_16_10_25.json halten. Hier ist das nächste Regelwerk: Regelwerk Version 1.5 Titel: Verfahrens-Ritus Datum: 2025-07-06

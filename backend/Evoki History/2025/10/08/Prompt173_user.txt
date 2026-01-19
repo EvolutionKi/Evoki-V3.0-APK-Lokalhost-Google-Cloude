@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 11:42:38 MESZ
+Speaker: user
+
+genau und das sollte aber simuliert ausgegeben werden oder ist es nicht richtig

@@ -1,0 +1,4 @@
+Timestamp: 11.07.2025, 05:13:44 MESZ
+Speaker: user
+
+nein 2.6 darf nie geändert werden du solltest du in 2.7 implementieren und dann quasi dort abspeichern also zwei das ist ja eine neue Version weißt du

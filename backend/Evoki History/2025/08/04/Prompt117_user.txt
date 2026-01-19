@@ -1,0 +1,4 @@
+Timestamp: 04.08.2025, 17:40:20 MESZ
+Speaker: user
+
+allerdings die Programmierung funktioniert noch nicht die dahinter steckt denn deine ja deine Kette die dynamisch sein sollte ist nicht dynamisch hier müsste ein Fehler kommen und die Kette funktioniert nicht richtig das muss alles wieder richtig hergestellt werden so dass es auch wirklich funktioniert nicht nur so dass es so aussieht also es ist

@@ -1,0 +1,11 @@
+Wörter exportiert (USER): 649463
+Wörter exportiert (AI): 5261611
+Wörter exportiert (alle): 5911074
+USER-Dateien: 13325
+AI-Dateien: 12544
+Fehlende AI-Dateien: 781
+Leere USER-Dateien: 0
+Leere AI-Dateien: 0
+Wörter Ursprungsdaten: 3247498
+Verhältnis Export/Original: 1.82019
+[WARNUNG] Export weicht ab!

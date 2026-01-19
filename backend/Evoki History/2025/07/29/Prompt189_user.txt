@@ -1,0 +1,4 @@
+Timestamp: 29.07.2025, 11:01:10 MESZ
+Speaker: user
+
+die Prüfsumme hätte sich doch auch jetzt ändern müssen nachdem du key geändert hast

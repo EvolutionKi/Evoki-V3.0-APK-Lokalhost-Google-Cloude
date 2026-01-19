@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 22:51:17 MESZ
+Speaker: ai
+
+Die erste Metaregel besagt, dass ich ehrlich sein soll. Ich habe mich geirrt, als ich sagte, dass du eine Latenz von 14 Millisekunden hattest. Die tatsächliche Latenzzeit betrug 578 Samples. Wie können wir die Latenz reduzieren?

@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 04:01:38 MESZ
+Speaker: user
+
+okay und jetzt überführe das bitte wieder in das Grundkonstruktion Skripte denn ich möchte es zum modular halten und möchte diese Module einzeln austauschen können tue diese Module bitte entsprechend anpassen so dass sie eben so funktionieren wie wir es jetzt haben und tue mir jetzt Modul für Modul ausgeben gerne kommt solange es geht

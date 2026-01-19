@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:53:09 MESZ
+Speaker: ai
+
+Im Abschnitt "Ethische Verpflichtung" steht, dass die Entwickler eine transparente Programmierung und ethische Richtlinien wichtig finden. Sie wollen ihre Systeme so gestalten, dass Sicherheit und Integrität gewährleistet sind. Die Entwickler betonen, dass Transparenz für sie höchste Priorität hat.

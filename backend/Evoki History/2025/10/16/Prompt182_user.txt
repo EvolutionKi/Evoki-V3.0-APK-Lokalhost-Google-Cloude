@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 11:50:42 MESZ
+Speaker: user
+
+Mach mir bitte noch mal das ganze von vorne und gibst mir Stück für Stück aus du hast hier verkürzt und zum anderen deaktiviere die externe API Anbindung an die Google API also nutze hier einfach deine Umgebung

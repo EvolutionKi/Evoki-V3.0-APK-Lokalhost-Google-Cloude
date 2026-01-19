@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 04:03:20 MESZ
+Speaker: user
+
+nein du sollst die Post Output Validierung sollst du bitte auch schön implementieren also so wie wir es besprochen haben wie es auch den Regeln zu entnehmen ist

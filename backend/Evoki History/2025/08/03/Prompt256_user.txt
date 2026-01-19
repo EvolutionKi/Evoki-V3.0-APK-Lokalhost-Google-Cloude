@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 19:44:57 MESZ
+Speaker: user
+
+du musst natürlich erstmal den Sollwert ausrechnen und dann den Sollwert zu berechnen also weil du musst dir erstmal das vollständig fertige Output Fenster erstellen mit dem festen Hash

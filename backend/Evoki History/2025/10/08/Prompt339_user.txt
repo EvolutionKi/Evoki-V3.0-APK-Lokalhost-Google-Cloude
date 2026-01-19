@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 19:48:25 MESZ
+Speaker: user
+
+du kannst doch nicht einfach annehmen das immer 5 MB zuwachsen das kann doch mal anders das sein

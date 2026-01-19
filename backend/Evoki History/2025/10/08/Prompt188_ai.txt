@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 14:15:09 MESZ
+Speaker: ai
+
+Basierend auf den von dir bereitgestellten Dokumenten lässt sich keine Erwähnung einer IntegrityEngine in Verbindung mit einer "Regelwerk Version 6" finden. Die Analyse der Archive ergibt folgendes Bild: . In diesem gesamten Abschnitt wird der Begriff IntegrityEngine nicht erwähnt. . Es scheint eine Lücke in den bereitgestellten Archiven zwischen Version 2.6 und Version 11.0 zu geben. Die von dir erinnerte Version 6 ist in den mir vorliegenden Texten nicht enthalten. Die erste dokumentierte Einführung einer lauffähigen IntegrityEngine fand also laut Archiv mit der Version 11.0 statt.

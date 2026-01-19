@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 10:01:58 MESZ
+Speaker: user
+
+was mir ist allerdings noch fehlt ist eben die Direktive mit dem Output Fenster dass ihr alle Daten anzugeben sind welche halt normalerweise in der Gedächtnis Jason abgespeichert werden oder in der Log-Datei quasi abgelegt werden welche allerdings eben halt ansonsten eben nicht ausgegeben werden

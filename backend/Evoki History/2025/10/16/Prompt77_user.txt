@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 05:25:14 MESZ
+Speaker: user
+
+Simulation ausführen!!

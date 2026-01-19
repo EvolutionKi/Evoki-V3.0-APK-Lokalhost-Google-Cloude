@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 07:43:22 MESZ
+Speaker: user
+
+Und warum bekomme ich denn keinen Datencheck Ausgabe?

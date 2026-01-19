@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:13:52 MESZ
+Speaker: ai
+
+Du kaufst API-Tokens und bezahlst nach Nutzung , ja. Du musst dich auf der Google AI for Developers Plattform registrieren und einen API-Key erstellen, um Gemini in deine eigenen Anwendungen zu integrieren. Es ist keine App-Store-Download-Funktion, die man freischaltet.

@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:28:25 MESZ
+Speaker: ai
+
+Nein, gib der KI auf keinen Fall deinen API-Schlüssel. Er wird benötigt, damit die KI auf die Informationen zugreifen kann, die du zuvor angefordert hast. Du solltest ihn nicht mit der KI teilen.

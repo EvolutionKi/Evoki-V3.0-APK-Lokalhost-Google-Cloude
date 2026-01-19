@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 16:00:37 MESZ
+Speaker: ai
+
+Die beste und am weitesten verbreitete App dafür ist Pydroid 3 . Es ist eine vollständige Entwicklungsumgebung, die speziell für Android entwickelt wurde. Sie enthält einen Code-Editor, den Python-Interpreter und eine Konsole, in der du die Ausgaben unseres Skripts (wie die Erfolgsmeldungen des STORAGE ADAPTER ) sehen kannst. ## Nächste Schritte Installieren: Lade Pydroid 3 aus dem Google Play Store herunter. Kopieren: Kopiere den vollständigen Python-Code, den ich dir in meiner vorherigen Antwort gegeben habe. Einfügen & Speichern: Öffne Pydroid 3, erstelle eine neue Datei, füge den Code ein und speichere ihn. Ausführen: Drücke auf den "Play"-Button in der App, um das Skript zu starten.

@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:52:31 MESZ
+Speaker: user
+
+das ganze soll auf Englisch sein und soll so verständlich sein dass die KI diese Entwickler Plattform das auch so versteht und dass wir dann dort quasi starten können mit dem mit der Eingabe unseres Front und back ends

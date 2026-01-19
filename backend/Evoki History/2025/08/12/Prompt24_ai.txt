@@ -1,0 +1,4 @@
+Timestamp: 12.08.2025, 04:40:15 MESZ
+Speaker: ai
+
+Bitte sage mir, wovon du eine Vorschau haben möchtest. Meinst du eine Vorschau auf ein bestimmtes Dokument, eine Zusammenfassung unserer bisherigen Konversation oder etwas ganz anderes? Sobald du mir mehr Kontext gibst, kann ich eine passende Vorschau für dich erstellen. Regelwerk Version: 2.6 | Prüfungskennzahl: / 21652 = | Datencheck: [OK] | Arbeitsanweisungen: [OK] | Fehlerüberwachung: [OK]

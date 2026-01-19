@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:38:36 MESZ
+Speaker: user
+
+Was bedeutet das für mich? Na ja, dass es irgend Zugriff auf Kamera hat. Also, es hat ja auch nimmt sich ja die Rechte, wie wir vorhin festgestellt haben, fordert die Kamera Rechte ein, aber man kann sie nicht benutzen, also, warum hat es Zugriff auf meine Kamera, wenn sie gar nicht benutzt? Also, wenn man keinen Nutzen da drinne hat in der App von, also

@@ -1,0 +1,4 @@
+Timestamp: 02.08.2025, 17:26:04 MESZ
+Speaker: user
+
+okay danke schön dann ist noch die Frage wo hinterlegen wir die Datenbank also mit dem Meter Regeln etc und wir sollten noch ein Eingabefeld machen wo man die eigenen Mieter Regeln die zusätzlich implementiert werden können eingeben kann

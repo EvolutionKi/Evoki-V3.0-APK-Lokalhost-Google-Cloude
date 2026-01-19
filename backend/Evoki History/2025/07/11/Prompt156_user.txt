@@ -1,0 +1,4 @@
+Timestamp: 11.07.2025, 05:08:00 MESZ
+Speaker: user
+
+muss die prüf Idee also der Hash am Anfang und am Ende nicht der gleiche sein

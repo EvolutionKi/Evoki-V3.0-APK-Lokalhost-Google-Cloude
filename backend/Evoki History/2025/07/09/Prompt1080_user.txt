@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 15:55:07 MESZ
+Speaker: user
+
+genau und jetzt wollen wir allerdings halt dass jede Abweichung von 1 halt quasi einen Fehler auslöst in beiden Funktionen implementieren in A14 und natürlich in in der externen Version 1.0

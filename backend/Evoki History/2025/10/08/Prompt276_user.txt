@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 16:25:29 MESZ
+Speaker: user
+
+dann nutzen wir halt bekannte Pfade und dann musst du mir bekannte APIs

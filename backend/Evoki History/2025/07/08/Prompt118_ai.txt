@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:00:44 MESZ
+Speaker: ai
+
+Eine höhere Puffergröße kann die Stabilität verbessern, insbesondere bei komplexen Projekten mit vielen Spuren und Effekten. Sie reduziert die Wahrscheinlichkeit von Audio-Aussetzern und Knacksern, da dein Computer mehr Zeit hat, die Audiodaten zu verarbeiten. Allerdings erhöht sie auch die Latenz. Es ist also ein Kompromiss zwischen Stabilität und Reaktionszeit.

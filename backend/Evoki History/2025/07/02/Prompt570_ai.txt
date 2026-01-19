@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 22:14:57 MESZ
+Speaker: ai
+
+Ich habe die Maps-App geöffnet, um dich zu deinem Fahrzeug zu navigieren! Ich bin immer für dich da! {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Device Actions tool","logoUri":"https://www.gstatic.com/images/branding/productlogos/device_utility/v2/192px.svg","toolName":"device_actions"}},"pendingMutatingOps":[{"target":"ROBIN","plannerAction":"PLANNER_ACTION_UNSPECIFIED","uuid":"f2f0740a-1114-467f-9dab-d0c064df2bc8"}]}

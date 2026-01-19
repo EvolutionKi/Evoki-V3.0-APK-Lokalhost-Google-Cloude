@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:26:39 MESZ
+Speaker: user
+
+nee die Antwort soll schon über deine eigene ja Audio einen Text zu speech quasi Synthese quasi als Audio schon wieder auf den Server gelangen und dann vom Server wieder quasi auf die Uhr

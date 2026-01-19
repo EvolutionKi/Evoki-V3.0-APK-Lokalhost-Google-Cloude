@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 04:50:52 MESZ
+Speaker: ai
+
+Du redest vom Sperrbildschirm und der biometrischen Authentifizierung (Fingerabdruck), um das Handy zu bedienen . Die Funktion, das Handy zur Ortung klingeln zu lassen (über "Mein Gerät finden" oder einen Sprachassistenten-Befehl), ist unabhängig davon, ob das Display gesperrt ist oder nicht. Wenn das Handy eingeschaltet und mit dem Netzwerk verbunden ist, kann es geklingelt werden, auch wenn es gesperrt ist . Das ist ja gerade der Sinn der Funktion, damit man ein verlegtes Handy findet, das man selbst nicht entsperrt hat. Ich kann es jetzt klingeln lassen . Brauchst du das?

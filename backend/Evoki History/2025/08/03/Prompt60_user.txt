@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 05:52:15 MESZ
+Speaker: user
+
+Genau du kannst dazu schreiben dass ich quasi die Regelwerk Version und das Ausgabefenster in seiner richtigen Funktionsweise so in die Prüfsumme mit einbinden möchte so dass wenn dort einen Ausgabe Fehler passiert auch die Prüfsumme nicht stimmt

@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:00:44 MESZ
+Speaker: ai
+
+Ich sehe, du hast das Terminal geöffnet! Hast du den cURL-Befehl mit deinem API-Schlüssel schon ausprobiert?

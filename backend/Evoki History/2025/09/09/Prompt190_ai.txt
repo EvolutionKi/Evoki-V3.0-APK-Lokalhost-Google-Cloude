@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:20:02 MESZ
+Speaker: ai
+
+Der gesamte Chatverlauf ist hier zwar nicht gespeichert, aber man kann sehen, welche Antworten die KI auf bestimmte Fragen gibt. Zum Beispiel antwortet sie bei "Wie wird das Wetter morgen?" mit "Ich kann das Wetter leider nicht abrufen...". Hast du noch weitere Fragen zum Code?

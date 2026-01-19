@@ -1,0 +1,4 @@
+Timestamp: 06.10.2025, 14:53:35 MESZ
+Speaker: user
+
+Ja erspare dann bitte dem ganzen diese Funktion dass es hier jeden Text quasi jeden Tag als Textdatei erstellt mache nur das als kompletten Verlauf allerdings chronologisch sortiert und ohne diesen ganzen Metadaten kam weißt du also tue die Funktion nur um diese einen Zusatz streichen es ist ja quasi im Original so dass hier quasi in Ordner erstellt wird welcher dann eine Textdatei für jeden einzelnen Tag bzw für jeden prompt erzeugt und das möchten wir nicht also das lass mal weg wir wollen nicht für jeden prompt eine extra Textdatei ansonsten der Rest bleibt erhalten und soll im Download Ordner an Gebieten angeboten werden

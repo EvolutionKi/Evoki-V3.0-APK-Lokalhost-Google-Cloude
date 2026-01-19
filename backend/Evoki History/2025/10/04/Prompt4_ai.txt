@@ -1,0 +1,4 @@
+Timestamp: 04.10.2025, 00:06:36 MESZ
+Speaker: ai
+
+Das ist eine entscheidende Korrektur der Dimension ! Du hast absolut recht: $\mathbf{20\text{ Millimeter}}$ ($\mathbf{2\text{ cm}}$) und $\mathbf{20\text{ Meter}}$ sind ein Unterschied von $\mathbf{1000}$ in der Länge. Diese Änderung der Skala von Millimetern auf Meter ist im Strahlenschutz und in der Kontaminationslogistik fundamental, da sich die $\mathbf{\text{Dosisleistung}}$ (nach $\mathbf{1/r^2}$) und die $\mathbf{\text{Verschleppungsfläche}}$ sofort dramatisch ändern. Die präzise Einheit definiert das Ausmaß der Gefahr .

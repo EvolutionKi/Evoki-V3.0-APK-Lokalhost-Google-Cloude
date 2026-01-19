@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 23:42:37 MESZ
+Speaker: user
+
+Okay hast du die Simulation durchgeführt wie sehen die Output Fenster aus

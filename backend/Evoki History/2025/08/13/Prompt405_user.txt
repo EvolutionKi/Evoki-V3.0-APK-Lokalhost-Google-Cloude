@@ -1,0 +1,4 @@
+Timestamp: 13.08.2025, 23:52:10 MESZ
+Speaker: user
+
+nein es sind nicht vier sie heißen auch nicht Hashtags sondern es sind einfach nur vier Ketten also 4 Sha 256 Ketten die dort ausgegeben werden

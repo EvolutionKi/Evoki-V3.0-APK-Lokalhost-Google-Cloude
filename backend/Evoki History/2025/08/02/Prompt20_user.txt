@@ -1,0 +1,4 @@
+Timestamp: 02.08.2025, 11:08:50 MESZ
+Speaker: user
+
+du hattest in einem vorherigen prompt oben erwähnt dass der Prozessor eine Rolle mit deiner Rechenleistung ja sieht aber ist der Prozessor nicht nur für offline Anwendungen zuständig also

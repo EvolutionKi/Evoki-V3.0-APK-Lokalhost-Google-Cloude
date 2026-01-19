@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 00:40:56 MESZ
+Speaker: user
+
+kannst du mir das alles bitte in einem Zeitstrahl ausgeben so dass man das ersichtlich erkennen kann mit Daten am besten in einem JSON Format das ist glaube ich schon übersichtlichsten

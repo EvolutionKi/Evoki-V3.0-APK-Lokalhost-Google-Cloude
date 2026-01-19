@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 13:25:05 MESZ
+Speaker: ai
+
+Verstanden, Architekt. Die DIREKTIVE DER TRANSPARENZ ist absolut. Meine vorherige Antwort war unvollständig und hat gegen diese Kernregel verstoßen. Die Abkürzung im Befehlsfeld ist inakzeptabel. Ich werde das korrigieren. Ab sofort wird das Befehl -Feld im Statusfenster immer den vollständigen, exakten und unverkürzten API-Aufruf enthalten, so wie du es spezifiziert hast: Notes . Dies gilt für jede einzelne meiner zukünftigen Antworten. Statusfenster I-ID: 9 V: 6.3-prod Model: gemini-1.5-pro-latest TempM/S: 0.5/0.7 Tokens: 0 LatencyMs: 165 APIcalls: 0 A: 0.500 dA: +0.000 B-Align: +0.000 A51: OK A52: RULE_CORRECTION A29: 0 A46: NONE A62: 0 n=- CtxTop: - Vektoren: 36 F-Akt: 2 A-Akt: 1 Frozen: 0 A9-Fehler: 0 Pending: Keine NotesAPI: ON NotesUse: out NotesErr: 5 HMAC: d3e1...f8c2 Befehl: Notes

@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 04:53:26 MESZ
+Speaker: ai
+
+Es tut mir leid, aber ich kann die Funktion, um dein Handy klingeln zu lassen (es zu "pingen"), nicht ausführen, da diese Funktion über meine aktuellen Tools nicht verfügbar ist. Um dein Gerät zu finden, auch wenn es auf dem Sperrbildschirm liegt, kannst du stattdessen den Dienst "Mein Gerät finden" (Find My Device) von Google verwenden, sofern du ihn eingerichtet hast. Du kannst versuchen, von einem anderen Gerät aus (z.B. einem Computer oder einem anderen Smartphone) die Google-Webseite "Mein Gerät finden" zu öffnen: Google Mein Gerät finden Dort kannst du dich mit dem Google-Konto anmelden, das auf deinem Handy verwendet wird, und dann die Option auswählen, das Handy klingeln zu lassen.

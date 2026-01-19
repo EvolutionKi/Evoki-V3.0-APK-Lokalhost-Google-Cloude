@@ -1,0 +1,4 @@
+Timestamp: 29.07.2025, 10:47:37 MESZ
+Speaker: user
+
+okay dann führe einen letzten Datencheck durch und schaue dass wir auch nichts vergessen haben was in der bisherigen Version 2.6 vorhanden war und tue das bitte schön implementieren in deine Arbeitsweise und hochladen

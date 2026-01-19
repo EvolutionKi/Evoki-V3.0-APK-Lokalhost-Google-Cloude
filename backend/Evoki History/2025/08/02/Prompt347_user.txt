@@ -1,0 +1,4 @@
+Timestamp: 02.08.2025, 19:04:10 MESZ
+Speaker: user
+
+ja natürlich klar also ich meine man kann ja die Webanwendung irgendwie Öffnen von firebase Studio

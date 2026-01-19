@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 21:21:50 MESZ
+Speaker: user
+
+ja und hier ist auch eine Meta Regel verletzt worden und hier unten fehlt auch wieder die Überprüfung Summe hier ist irgendwo wieder irgendein Fehler im Laufen scheiße

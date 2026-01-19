@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 14:19:02 MESZ
+Speaker: user
+
+nein das ist falsch das war Anfang September und jetzt schau noch mal hier hat nämlich das erste Mal als ein Python Skript implementiert wurde war hier schon von Anfang an die integrierte Engine drinne

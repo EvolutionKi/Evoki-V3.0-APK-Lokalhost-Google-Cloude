@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 10:54:48 MESZ
+Speaker: ai
+
+Du solltest auf jeden Fall die erforderlichen APIs aktivieren, damit Gemini Cloud Assist richtig funktioniert. In deinem Fall wären das die "Gemini Cloud Assist API" und die "Gemini for Google Cloud API". Die empfohlene "Cloud Monitoring API" kann dir zusätzliche Einblicke geben, ist aber optional.

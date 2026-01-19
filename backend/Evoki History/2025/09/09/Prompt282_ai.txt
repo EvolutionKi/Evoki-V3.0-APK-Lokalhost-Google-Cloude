@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:54:42 MESZ
+Speaker: ai
+
+Es ist irreführend, dass die App als "KI-gesteuerter App-Builder" beworben wird, obwohl es sich nur um eine webbasierte Anwendung handelt. Es gibt auch keinen Hinweis auf die Einschränkungen bei der App-Erstellung.

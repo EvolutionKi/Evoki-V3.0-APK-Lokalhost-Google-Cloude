@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:37:51 MESZ
+Speaker: ai
+
+Du könntest zum Beispiel versuchen, eine detaillierte Beschreibung einer fiktiven Person zu erstellen und Gemma dann bitten, eine Geschichte über diese Person zu schreiben. Oder du gibst einen Text ein und lässt Gemma eine Zusammenfassung erstellen. Gemma kann aber noch viel mehr, was interessiert dich denn?

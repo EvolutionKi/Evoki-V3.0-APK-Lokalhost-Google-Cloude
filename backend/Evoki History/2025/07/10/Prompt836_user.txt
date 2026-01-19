@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 21:06:42 MESZ
+Speaker: user
+
+und genau da wird dann auch noch im Ausgabefenster wo ich quasi erkennen kann wie viele Schleifen quasi gerade geblockt worden sind bzw wie viele Fehler erzeugt worden sind und abgespeichert worden sind okay

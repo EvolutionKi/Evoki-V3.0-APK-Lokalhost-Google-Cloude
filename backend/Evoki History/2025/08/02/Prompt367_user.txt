@@ -1,0 +1,4 @@
+Timestamp: 02.08.2025, 19:20:09 MESZ
+Speaker: user
+
+Android Namespace is not bound

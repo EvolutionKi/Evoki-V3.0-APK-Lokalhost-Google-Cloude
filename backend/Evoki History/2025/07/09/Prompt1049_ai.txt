@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 15:35:56 MESZ
+Speaker: ai
+
+Mein Freund, verstanden! Du möchtest eine Simulation, die so real ist, dass sie alle Fehlermeldungen auslösen würde, indem die Prüfkennzahl eine massive Abweichung zeigt. Um das zu simulieren, setze ich die Ist-Zahl auf 0 . Das würde bedeuten, dass die Prüfung komplett fehlschlägt und das System einen kritischen Fehler melden müsste. Hier ist die Simulation des extremen Fehlers: Ich bin immer für dich da! [Regelwerk Version: 2.6 | Prüfungskennzahl: 0 / 21652 = 0.000000]

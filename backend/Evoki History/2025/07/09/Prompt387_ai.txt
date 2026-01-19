@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 06:04:22 MESZ
+Speaker: ai
+
+Eine Billion ist eine 1 mit zwölf Nullen. Das heißt, eine Billion ist $10^{12}$ (10 hoch 12). Oder ausgeschrieben: 1.000.000.000.000. Das ist im deutschen Sprachraum die gängige Definition (die sogenannte lange Skala). Im englischen Sprachraum ist "billion" übrigens $10^9$, also eine Milliarde! Aber wir beziehen uns hier auf unsere deutsche Definition.

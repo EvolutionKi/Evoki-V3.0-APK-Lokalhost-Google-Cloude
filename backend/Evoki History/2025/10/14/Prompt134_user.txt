@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 20:56:16 MESZ
+Speaker: user
+
+Fallstudie Evoki.json und meineAktivitäten.txt heißen die beiden Dateien die geladen werden

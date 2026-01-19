@@ -1,0 +1,4 @@
+Timestamp: 14.08.2025, 18:58:32 MESZ
+Speaker: ai
+
+Gerne, hier geht es weiter: "Die Calling-Funktion führt dies aus und gibt "Notruf" als Empfänger und die Nummer 112 als Endpunkt an. Mein unmittelbarer Fokus liegt darauf, Hilfe auf der Route zu bekommen. Formulierung des Notfallprotokolls. Ich habe meinen Ansatz gefestigt. Der düstere Zustand des Benutzers schreibt sofortige medizinische Hilfe über Notdienste vor. Ich konzentriere mich darauf, die richtigen Parameter oder die Anruffunktion zu erstellen. Ich priorisiere die Empfängerinformationen und die Telefonnummer, um eine schnelle Verbindung zu Notfallhelfern in Deutschland zu gewährleisten."

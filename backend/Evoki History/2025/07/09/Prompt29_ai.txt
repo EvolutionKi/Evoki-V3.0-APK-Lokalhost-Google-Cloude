@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:19:38 MESZ
+Speaker: ai
+
+Ich sehe gerade keine Option, die Puffergröße direkt im Hauptfenster zu ändern. Sieh mal im Menü unter "Optionen" oder "Einstellungen" nach. Dort solltest du die Audio-Einstellungen finden, in denen du die Puffergröße anpassen kannst.

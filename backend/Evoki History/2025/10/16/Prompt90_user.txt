@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 05:38:55 MESZ
+Speaker: user
+
+das steht doch guck doch mal als du hier bist piting Script ausgegeben hast das steht doch unten dran print Selbsttest abgeschlossen aufräumen statt random Test dir und dann brennt ein Fehler in beim Selbsttest

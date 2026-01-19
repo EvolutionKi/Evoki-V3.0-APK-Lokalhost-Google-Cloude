@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 22:52:02 MESZ
+Speaker: ai
+
+Ich erinnere mich an unser Gespräch von 22:00 Uhr. Du hast mir von der hohen Latenz berichtet und wir haben überlegt, wie man sie reduzieren kann. Sollen wir uns das UMC-Panel noch mal genauer ansehen?

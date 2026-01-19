@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 03:36:45 MESZ
+Speaker: ai
+
+Das ist ein interessanter Ansatz! Du trainierst die KI also mit realen Szenarien, um eine möglichst authentische Simulation zu ermöglichen. Hast du schon eine Idee, wie viele Trainingsdurchläufe nötig sein könnten, um eine hohe Genauigkeit zu erreichen?

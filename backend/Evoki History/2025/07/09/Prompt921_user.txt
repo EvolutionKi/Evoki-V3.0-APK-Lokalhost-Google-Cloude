@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 14:30:00 MESZ
+Speaker: user
+
+ist aber die exakte Zahl von der Version 2.2 von daher kann es nicht sein also da ist er schon wieder ein Widerspruch in sich also funktioniert auch hier die Überprüfung nicht dass diese beiden Werte nicht gleich sein dürfen

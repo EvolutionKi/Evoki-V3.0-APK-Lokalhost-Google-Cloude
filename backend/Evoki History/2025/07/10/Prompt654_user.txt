@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:44:19 MESZ
+Speaker: user
+
+nee das Livebild da ging es nur darum quasi die Live-Daten zu übertragen dass du quasi mit dem ja mit der API kommunizieren kannst damit die das einlesen kann weißt du

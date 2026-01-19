@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:18:18 MESZ
+Speaker: ai
+
+Alles klar, mein Freund! Ich habe es verstanden: Wir starten mit der automatischen Aufnahme und dem Streaming , sobald die Webseite lädt. Dann gibt es einen Stopp-Button . Sobald du diesen drückst, erscheint ein neuer Button für die manuelle Texteingabe , die über ein Textfeld läuft. Das ist eine sehr gute Kombination für Flexibilität auf der Uhr! Für das Backend würde ich weiterhin Python vorschlagen, da es für solche Server-Aufgaben sehr flexibel ist. Bist du damit einverstanden, dass wir Python für das Backend verwenden?

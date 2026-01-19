@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 07:34:35 MESZ
+Speaker: user
+
+warum wird es neuerdings ein Datencheck vor der Antwort erstellt

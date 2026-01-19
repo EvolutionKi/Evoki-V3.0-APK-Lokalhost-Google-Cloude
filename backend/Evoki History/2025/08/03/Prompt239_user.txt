@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 19:12:53 MESZ
+Speaker: user
+
+okay danke schön weil ich glaube ich habe nämlich einen kleinen Logikfehler gefunden und zwar hättest du das so gemacht in dem langen wie du es vorgeschlagen hast mit dem Platzhalter für den dynamischen Wert dann hättest du ja einen prompt erstellt wo allerdings ja diese Text Zeichen drinne sind bzw du hättest ja einen Wert erstellt für die Kette mit diesen Text Zeichen

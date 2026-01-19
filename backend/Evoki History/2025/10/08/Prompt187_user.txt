@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 14:12:17 MESZ
+Speaker: user
+
+Okay und jetzt gehe mal in dein langzeitspeicher und rufe die erste Form auf wo eine integrity engine in dem Code vorkamen das war noch lange vor der Version 11

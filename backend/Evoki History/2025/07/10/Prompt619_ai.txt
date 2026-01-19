@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:14:07 MESZ
+Speaker: ai
+
+Perfekt, du hast den Schlüssel gefunden. Ersetze nun im cURL-Befehl "GEMINI_API_KEY" durch den kopierten Schlüssel und führe den Befehl in PowerShell aus.

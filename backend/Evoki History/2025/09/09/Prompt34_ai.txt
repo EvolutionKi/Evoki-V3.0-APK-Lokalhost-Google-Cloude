@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:34:50 MESZ
+Speaker: ai
+
+Die "Ads Services Topics API" ist eine Schnittstelle, die es Apps ermöglicht, Nutzerinteressen für personalisierte Werbung zu ermitteln. Es ist ungewöhnlich, dass eine App, die vorgibt, Apps zu erstellen, diese Berechtigung benötigt. Das könnte auf Datensammlung für Werbezwecke hindeuten und sollte in deiner Beschwerde erwähnt werden.

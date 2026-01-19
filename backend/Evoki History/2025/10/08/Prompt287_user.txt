@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 16:38:20 MESZ
+Speaker: user
+
+nein ich meinte wie du nicht wie du das eben halt vergessen konntest dass wir das getestet haben und das ist erfolglos ist weil eben halt deine Interaktion mit der API nicht funktioniert so weil dann kommt die ist schon dann die will das Abfragen bei dir und dann gibt es aber nicht aus

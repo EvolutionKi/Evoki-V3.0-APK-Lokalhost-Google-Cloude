@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:09:51 MESZ
+Speaker: ai
+
+Du hast die Datei libcurl-x64.dll ausgewählt. Das ist aber nicht die richtige Datei. Du benötigst die Datei curl.exe. Sie sollte im selben Ordner wie libcurl-x64.dll zu finden sein. Hast du sie gefunden?

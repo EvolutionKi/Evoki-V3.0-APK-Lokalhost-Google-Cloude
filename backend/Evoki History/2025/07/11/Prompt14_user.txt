@@ -1,0 +1,4 @@
+Timestamp: 11.07.2025, 01:36:39 MESZ
+Speaker: user
+
+Nein ich meine du sollst überprüfen ob die quasi neue richtige Ketten Verknüpfung nach dem SHA256 Hasch umgesetzt wird
