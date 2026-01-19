@@ -2,7 +2,7 @@
 description: Projekt Workflow Neue Spezifikation zu docs/specifications/v3.0/ hinzufügen
 ---
 
-# Neue Spezifikation erstellen
+# Neue Spezifikation erstellen erstelle einen plan wie man das gerippe das skelett mit leben füllt damit der Tempel onlinen gehen kann mit den Kompletten Metriken, mit der Richtigen History datenbank von Evoki mitden Richtigen engines....
 
 1. Erstelle Dokument in `docs/specifications/v3.0/SPEC_NAME.md`
 2. Füge Quellenverzeichnis am Ende hinzu mit Tabelle:
