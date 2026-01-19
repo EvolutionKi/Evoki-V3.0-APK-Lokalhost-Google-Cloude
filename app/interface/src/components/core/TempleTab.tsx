@@ -16,7 +16,7 @@
  */
 import { useState, useRef } from 'react';
 import { consumeSSEStream } from '../../utils/sse-parser';
-import SettingsPanel from './SettingsPanel';
+// import SettingsPanel from './SettingsPanel'; // TEMPORARILY DISABLED
 
 interface Message {
     role: 'user' | 'evoki' | 'system';
@@ -39,7 +39,7 @@ export default function TempleTab() {
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState('');
     const [metrics, setMetrics] = useState<Metrics | null>(null);
-    const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+    // const [isSettingsOpen, setIsSettingsOpen] = useState(false); // TEMPORARILY DISABLED
 
     const abortControllerRef = useRef<AbortController | null>(null);
 
