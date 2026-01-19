@@ -1,19 +1,19 @@
-:root {
-  background-color: #050505;
-  color: #ffffff;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations from V2.0 */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-body {
-  margin: 0;
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-}
-
-.app-container {
-  width: 100%;
-  max-width: 1200px;
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
 }

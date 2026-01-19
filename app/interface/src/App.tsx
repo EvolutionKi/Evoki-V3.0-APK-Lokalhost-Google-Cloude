@@ -1,71 +1,82 @@
+/**
+ * Evoki V3.0 - Main App Component
+ * ORIGINAL V2.0 NAVY DESIGN!
+ */
 import { useState } from 'react';
+import { Tab } from './types';
+import Tabs from './components/Tabs';
 import TempleTab from './components/core/TempleTab';
-import MetricsDashboard from './components/core/MetricsDashboard';
-import DeepEarthTab from './components/core/DeepEarthTab';
-import './App.css';
+import {
+  MetricsTab,
+  TrialogTab,
+  AnalysisTab,
+  RuleSearchTab,
+  APITab,
+  VoiceSettingsTab,
+  DeepStorageTab,
+  PipelineLogTab,
+  EngineConsoleTab,
+  ErrorLogTab,
+  SettingsTab,
+  AboutTab
+} from './components/TabPanels';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('temple');
+  const [activeTab, setActiveTab] = useState<Tab>(Tab.Temple);
 
-  const LAYERS = [
-    "01_surface", "02_shallow", "03_sediment", "04_bedrock",
-    "05_fault", "06_mantle", "07_magma", "08_trench",
-    "09_pressure", "10_crystal", "11_glacier", "12_abyss"
-  ];
-
-  const renderContent = () => {
-    if (activeTab === 'temple') return <TempleTab />;
-    if (activeTab === 'metrics') return <MetricsDashboard />;
-    if (LAYERS.includes(activeTab)) return <DeepEarthTab activeLayer={activeTab} />;
-    return <div>Select a module</div>;
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case Tab.Temple: return <TempleTab />;
+      case Tab.Metrics: return <MetricsTab />;
+      case Tab.Trialog: return <TrialogTab />;
+      case Tab.Analysis: return <AnalysisTab />;
+      case Tab.RuleSearch: return <RuleSearchTab />;
+      case Tab.API: return <APITab />;
+      case Tab.VoiceSettings: return <VoiceSettingsTab />;
+      case Tab.DeepStorage: return <DeepStorageTab />;
+      case Tab.PipelineLog: return <PipelineLogTab />;
+      case Tab.EngineConsole: return <EngineConsoleTab />;
+      case Tab.ErrorLog: return <ErrorLogTab />;
+      case Tab.Settings: return <SettingsTab />;
+      case Tab.About: return <AboutTab />;
+      default: return <TempleTab />;
+    }
   };
 
   return (
-    <div style={{ display: 'flex', height: '100vh', width: '100vw', background: '#000', color: '#fff' }}>
-      {/* Sidebar */}
-      <div style={{ width: '250px', borderRight: '1px solid #333', display: 'flex', flexDirection: 'column', background: '#0a0a0a' }}>
-        <div style={{ padding: '20px', fontSize: '1.2rem', fontWeight: 'bold', borderBottom: '1px solid #333', letterSpacing: '2px' }}>
-          EVOKI V3.0
+    <div className="flex flex-col h-screen bg-navy-900 text-white">
+      {/* Header - V2.0 ORIGINAL Navy Style */}
+      <header className="flex-shrink-0 bg-navy-900 border-b border-navy-700 px-4 md:px-6 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <h1 className="text-xl md:text-2xl font-bold text-cyan-400">EVOKI</h1>
+          <span className="hidden md:inline text-sm text-gray-400">V3.0 DeepEarth</span>
         </div>
 
-        <div style={{ flex: 1, overflowY: 'auto' }}>
-          <button
-            onClick={() => setActiveTab('temple')}
-            style={{ width: '100%', padding: '15px', textAlign: 'left', background: activeTab === 'temple' ? '#222' : 'transparent', border: 'none', color: '#fff', cursor: 'pointer', borderLeft: activeTab === 'temple' ? '3px solid #0cf' : '3px solid transparent' }}
-          >
-            🏛️ TEMPLE
-          </button>
-
-          <button
-            onClick={() => setActiveTab('metrics')}
-            style={{ width: '100%', padding: '15px', textAlign: 'left', background: activeTab === 'metrics' ? '#222' : 'transparent', border: 'none', color: '#fff', cursor: 'pointer', borderLeft: activeTab === 'metrics' ? '3px solid #0cf' : '3px solid transparent' }}
-          >
-            📊 METRICS (150+)
-          </button>
-
-          <div style={{ padding: '10px', fontSize: '10px', color: '#666', marginTop: '10px' }}>DEEP EARTH LAYERS</div>
-
-          {LAYERS.map(layer => (
-            <button
-              key={layer}
-              onClick={() => setActiveTab(layer)}
-              style={{ width: '100%', padding: '10px 15px', textAlign: 'left', background: activeTab === layer ? '#1a1a1a' : 'transparent', border: 'none', color: '#aaa', cursor: 'pointer', fontSize: '13px', borderLeft: activeTab === layer ? '3px solid #f0f' : '3px solid transparent' }}
-            >
-              {layer.toUpperCase()}
-            </button>
-          ))}
+        {/* Status Badge */}
+        <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2 bg-navy-800/50 border border-green-500/30 px-3 py-1 rounded-full">
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <span className="text-xs text-green-400">Backend Online</span>
+          </div>
+          <span className="text-xs text-gray-500">Phase 0-3 Complete</span>
         </div>
+      </header>
 
-        <div style={{ padding: '10px', borderTop: '1px solid #333', fontSize: '10px', color: '#444' }}>
-          Running on Localhost<br />
-          Protocol V5.0 Enforced
+      {/* Tabs Navigation */}
+      <Tabs activeTab={activeTab} onTabChange={setActiveTab} />
+
+      {/* Content Area */}
+      <main className="flex-1 overflow-y-auto bg-navy-900">
+        {renderTabContent()}
+      </main>
+
+      {/* Footer */}
+      <footer className="flex-shrink-0 bg-navy-900 border-t border-navy-700 px-4 md:px-6 py-2">
+        <div className="flex items-center justify-between text-xs text-gray-500">
+          <span>Evoki V3.0.0-alpha | Skeleton-First Protocol</span>
+          <span>Built with React + FastAPI</span>
         </div>
-      </div>
-
-      {/* Main Content */}
-      <div style={{ flex: 1, overflow: 'hidden' }}>
-        {renderContent()}
-      </div>
+      </footer>
     </div>
   );
 }

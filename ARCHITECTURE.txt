@@ -1,6 +1,6 @@
 EVOKI V3.0 - Architecture Map (Auto-Generated)
 ==============================================
-Generated: 2026-01-19 11:09
+Generated: 2026-01-19 14:16
 Strategy: Strict Separation (App vs Tooling)
 Status: LIVE REFLECTION
 
@@ -96,20 +96,25 @@ ROOT/
 │     │  │  │  ├─ RulePanel.tsx
 │     │  │  │  ├─ TrialogPanel.tsx
 │     │  │  │  └─ VoiceSettingsPanel.tsx
-│     │  │  └─ README.md
+│     │  │  ├─ README.md
+│     │  │  ├─ TabPanels.tsx
+│     │  │  └─ Tabs.tsx
 │     │  ├─ utils
 │     │  │  └─ sse-parser.ts
 │     │  ├─ App.css
 │     │  ├─ App.tsx
 │     │  ├─ index.css
 │     │  ├─ main.tsx
-│     │  └─ README.md
+│     │  ├─ README.md
+│     │  └─ types.ts
 │     ├─ .gitignore
 │     ├─ eslint.config.js
 │     ├─ index.html
 │     ├─ package-lock.json
 │     ├─ package.json
+│     ├─ postcss.config.js
 │     ├─ README.md
+│     ├─ tailwind.config.js
 │     ├─ tsconfig.app.json
 │     ├─ tsconfig.json
 │     ├─ tsconfig.node.json
@@ -120,7 +125,10 @@ ROOT/
 │  │  └─ temple.py
 │  ├─ core
 │  │  ├─ __init__.py
-│  │  └─ faiss_query.py
+│  │  ├─ enforcement_gates.py
+│  │  ├─ faiss_query.py
+│  │  ├─ llm_router.py
+│  │  └─ metrics_processor.py
 │  ├─ simulation
 │  │  ├─ __init__.py
 │  │  └─ dummy_events.py
@@ -128,6 +136,8 @@ ROOT/
 │  │  ├─ __init__.py
 │  │  ├─ create_21_databases.py
 │  │  └─ db_schema.sql
+│  ├─ .env
+│  ├─ env_template.txt
 │  ├─ main.py
 │  └─ requirements.txt
 ├─ docs  # [KNOWLEDGE] Documentation
@@ -162,9 +172,13 @@ ROOT/
 │  │     ├─ migration_plan.md
 │  │     ├─ PHASE_0_COMPLETION_REPORT.md
 │  │     ├─ PHASE_1_COMPLETION_REPORT.md
+│  │     ├─ PHASE_2_COMPLETION_REPORT.md
+│  │     ├─ PHASE_3_COMPLETION_REPORT.md
 │  │     ├─ PROZESS_DIAGRAMM_ASCII.md
+│  │     ├─ SESSION_STATUS_20260119.md
 │  │     ├─ SOURCES_MASTER_INDEX.md
 │  │     ├─ SUMMARY.md
+│  │     ├─ SYSTEM_CHECK_PHASE01_REPORT.md
 │  │     ├─ task.md
 │  │     ├─ TEMPLE_MVP_PLAN.md
 │  │     ├─ TEMPLE_SKELETON_FIRST_MASTERPLAN.md

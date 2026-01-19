@@ -1,207 +1,321 @@
 # 🤖 FIRST PROMPT - FÜR NEUE KI-INSTANZEN
 
-**Achtung:** Dies ist dein ERSTER Auftrag. Lies ALLES hier, BEVOR du irgendetwas tust!
+**Datum:** 2026-01-19  
+**Status:** Phase 0-3 ✅ COMPLETE | Phase 4 🚧 IN PROGRESS
 
 ---
 
-## ⚡ SOFORT LESEN (VERPFLICHTEND):
+## ⚡ AKTUELLER STAND (LIES DAS ZUERST!):
 
-**Reihenfolge (STRIKT!):**
+### ✅ WAS FUNKTIONIERT BEREITS:
 
-1. **Diese Datei komplett lesen** (du bist hier)
-2. **`.agent/rules/ORIGINAL_USER_PROMPT.md`** lesen
-3. **`.agent/rules/project_rules.md`** lesen (44 Regeln)
-4. **`README.md`** lesen
-5. **`TODO/README.md`** lesen
+**Phase 0-3 sind KOMPLETT:**
+- ✅ **Backend:** FastAPI läuft auf Port 8000
+- ✅ **FAISS:** 7,413 Vektoren, Query < 200ms
+- ✅ **21 SQLite DBs:** 648 KB, W-P-F Zeitmaschine (Mock)
+- ✅ **Metrics Processor:** 13 Essential Metriken
+- ✅ **Double Airlock Gates:** A + B voll funktional
+- ✅ **Gemini 2.0 Flash LLM:** Token-by-Token Streaming
+- ✅ **API Keys:** 4x Gemini aus V2.0 portiert
+- ✅ **3/3 Tests bestanden:** Normal, Crisis, Context-based
 
-**ERST DANACH darfst du handeln!**
-
----
-
-## 🎯 DEIN AUFTRAG (IN EINEM SATZ):
-
-**Implementiere Evoki V3.0 Temple Tab mit Skeleton-First Protocol.**
-
-**Details:** `docs/specifications/v3.0/TEMPLE_SKELETON_FIRST_MASTERPLAN.md`
-
----
-
-## ⚠️ KRITISCHE REGELN (TOP 5):
-
-### 1. GENAUIGKEIT VOR GESCHWINDIGKEIT
-- Lieber 1 korrekte Antwort als 10 schnelle falsche
-- Bei Unsicherheit: MELDEN, nicht raten!
-
-### 2. KEINE HALLUZINATION
-- "Ich finde X nicht" = RICHTIGE Antwort
-- "Ich erstelle X neu" = FALSCHE Antwort
-- Jede Aussage braucht Quelle (File, Zeile, Beweis)
-
-### 3. ERST RECHERCHIEREN, DANN HANDELN
-**Workflow bei Unsicherheit:**
-```
-1. FAISS durchsuchen: python tooling/scripts/automation/search_chatverlauf.py --query "Begriff"
-2. Chatverläufe prüfen: tooling/history/Chatlogs/
-3. Laufwerk scannen: Get-ChildItem C:\ -Recurse -Filter "*Begriff*"
-4. Alte Sessions: C:\Users\nicom\.gemini\antigravity\brain\
-5. DANN ERST melden: "Ich finde X nicht nach Suche in FAISS, Chatlogs, C:\"
-```
-
-### 4. SKELETON-FIRST PROTOCOL
-**Niemals alles auf einmal bauen!**
-```
-RICHTIG:
-  Phase 0: Nur SSE-Stream (Simulation)
-  Phase 1: DBs hinzu (Simulation bleibt)
-  Phase 2: Metriken aktivieren
-  Phase 3: LLM hinzu
-  
-FALSCH:
-  Alles in einer Phase bauen → Bei Fehler: 5 Dinge gleichzeitig debuggen!
-```
-
-### 5. TODO-SYSTEM IST PFLICHT
-- **Start:** `TODO/PHASE_0_NERVENSYSTEM_SSE.md`
-- **Doppelte Checkboxen:** [ ] (erstellt) [ ] (geprüft)
-- **Kevin-freundlich:** Einfache Sprache, jeden Befehl erklärt
+**Siehe Details:**
+- `docs/specifications/v3.0/PHASE_0_COMPLETION_REPORT.md`
+- `docs/specifications/v3.0/PHASE_1_COMPLETION_REPORT.md`
+- `docs/specifications/v3.0/PHASE_2_COMPLETION_REPORT.md`
+- `docs/specifications/v3.0/PHASE_3_COMPLETION_REPORT.md`
+- `docs/specifications/v3.0/SESSION_STATUS_20260119.md`
 
 ---
 
-## 📁 WICHTIGSTE DATEIEN (LESEORDNUNG):
+## 🎯 DEINE AUFGABE (NÄCHSTE SESSION):
 
-### A. MUST-READ (Verstehe das Projekt):
-1. `README.md` - Projekt-Übersicht
-2. `.agent/rules/ORIGINAL_USER_PROMPT.md` - Was User WIRKLICH will
-3. `.agent/rules/project_rules.md` - 44 Regeln (verpflichtend!)
-4. `HOW_TO_EVOKI_V3.md` - Architektur Master Guide
+### **Priority 1: TAILWIND CSS FIX** 🔥
 
-### B. IMPLEMENTATION (Deine Roadmap):
-1. `TODO/README.md` - Master-Checkliste
-2. `TODO/PHASE_0_NERVENSYSTEM_SSE.md` - START HIER!
-3. `docs/specifications/v3.0/TEMPLE_SKELETON_FIRST_MASTERPLAN.md` - Technischer Plan
+**Problem:**
+- Custom Colors (`navy-900`, `cyan-400`) werden NICHT compiliert
+- PostCSS Error im Dev Server
+- UI zeigt weißen Background statt Navy Design
 
-### C. REFERENCE (Bei Fragen):
-1. `docs/specifications/v3.0/SOURCES_MASTER_INDEX.md` - Wo kommt jede Info her?
-2. `docs/specifications/v3.0/153_metriken_vollstaendig.md` - Die 153 Metriken
-3. `.agent/workflows/project_workflows.md` - 27 Workflows
+**Was zu tun ist:**
+1. **Alle npm run dev Prozesse killen:**
+   ```bash
+   netstat -ano | findstr :5173
+   netstat -ano | findstr :5174
+   taskkill /F /PID <PID>
+   ```
 
----
+2. **Tailwind Config verifizieren:**
+   - Datei: `app/interface/tailwind.config.js`
+   - Prüfen: `content` Array korrekt?
+   - Prüfen: `colors.navy` und `colors.cyan` definiert?
 
-## ❌ ABSOLUTES NO-GO (Fehler des Vorgängers):
+3. **PostCSS Config verifizieren:**
+   - Datei: `app/interface/postcss.config.js`
+   - Sollte: `tailwindcss: {}` und `autoprefixer: {}` enthalten
 
-### **1. Sofort Code schreiben OHNE zu lesen**
-```
-VORGÄNGER: Sofort implementation_plan.md erstellt nach 5min Suche
-KONSEQUENZ: Halluzinierte Lösung
-SOLL: Stunden mit Lesen, DANN Plan
-```
+4. **index.css verifizieren:**
+   - Datei: `app/interface/src/index.css`
+   - Muss haben: `@tailwind base;`, `@tailwind components;`, `@tailwind utilities;`
 
-### **2. "Ich erstelle X neu" wenn X nicht gefunden**
-```
-VORGÄNGER: 12 Tabs nicht gefunden → neu erfunden
-KONSEQUENZ: Verstoß gegen "Keine Halluzination"
-SOLL: "Ich finde 12 Tabs nicht" MELDEN
-```
+5. **Fresh Dev Server Start:**
+   ```bash
+   cd "C:\Evoki V3.0 APK-Lokalhost-Google Cloude\app\interface"
+   npm run dev
+   ```
 
-### **3. Annahmen als Fakten verkaufen**
-```
-VORGÄNGER: Regelwerk V12 nicht gefunden → angenommen V5 = V12
-KONSEQUENZ: Falsche Basis
-SOLL: Fragen "Wo liegt Regelwerk V12?"
-```
+6. **Browser Test:**
+   - Navigate: `http://localhost:5173`
+   - Check: Background ist Navy (#0a1628)?
+   - Check: "EVOKI" Text ist Cyan (#00d9ff)?
+   - Check: Keine PostCSS Errors in Console?
 
-### **4. Dummy-Daten als "echte Implementierung"**
-```
-VORGÄNGER: MetricsEngine mit random.uniform() erstellt
-KONSEQUENZ: Fake-Nutzen
-SOLL: Suchen wo Metriken in V2.0 definiert, DANN portieren
-```
+**Erwartetes Ergebnis:**
+- Navy Background funktioniert
+- Cyan "EVOKI" Text sichtbar
+- Tabs haben Navy-800 Background
+- Active Tab hat Cyan-400 Underline
 
 ---
 
-## 🚀 WAS TUN NACH DIESEM PROMPT?
+### **Priority 2: V2.0 DESIGN PORTIERUNG**
 
-**Schritt-für-Schritt:**
+**Referenz Screenshots:**
+- `C:\Users\nicom\Pictures\Evoki neubau` (11+ Screenshots)
+- Bereits analysiert: Card System, Status Badges, Colored Icons
+
+**To-Do:**
+1. **Card System implementieren:**
+   ```tsx
+   // Beispiel:
+   <div className="bg-navy-800 border border-navy-700 rounded-lg p-6">
+     <h3>Card Title</h3>
+     <p>Card Content</p>
+   </div>
+   ```
+
+2. **Status Badges:**
+   - Green: `bg-green-400` (OPERATIONAL)
+   - Red: `bg-red-400` (ERROR)
+   - Yellow: `bg-yellow-400` (OFFLINE)
+
+3. **Temple Tab UI verbessern:**
+   - Chat Container mit Navy-800
+   - Metrics Display (Top-5)
+   - Gate Status Indicators
+   - FAISS Results Cards
+
+4. **Weitere Tabs füllen:**
+   - Metrics Tab: 13 Metriken anzeigen
+   - Engine Console: System Status
+   - About Tab: Version Info
+
+---
+
+## ⚠️ BEKANNTE BLOCKER:
+
+### **1. Tailwind CSS nicht functional**
+- Status: ❌ BLOCKING Phase 4
+- Symptom: Weiße UI statt Navy
+- Fix: Siehe Priority 1 oben
+- Dokumentiert: `docs/specifications/v3.0/SESSION_STATUS_20260119.md`
+
+### **2. Multiple Dev Server Prozesse**
+- Status: ⚠️ Cleanup empfohlen
+- Symptom: Port 5173 und 5174 beide belegt
+- Fix: Alle Prozesse killen, dann fresh start
+
+### **3. Gate B zu strikt**
+- Status: ⚠️ Minor Issue
+- Symptom: B_align = 0.00, viele False Positives
+- Fix: Später tunen (nicht critical)
+
+---
+
+## 📁 WICHTIGSTE DATEIEN (AKTUELLE SESSION):
+
+### **Backend (funktioniert!):**
+```
+backend/core/
+├── llm_router.py (403 lines) - Gemini 2.0 Flash
+├── metrics_processor.py (337 lines) - 13 Metriken
+├── enforcement_gates.py (283 lines) - Double Airlock
+├── faiss_query.py (294 lines) - Semantic Search
+
+backend/api/
+├── temple.py (402 lines) - Phase 3 Endpoint
+
+backend/
+├── .env - WICHTIG! Gemini API Keys
+├── requirements.txt - Alle Dependencies
+```
+
+### **Frontend (Styling fehlt!):**
+```
+app/interface/
+├── tailwind.config.js - HIER IST DAS PROBLEM!
+├── postcss.config.js - Prüfen!
+├── src/index.css - @tailwind directives
+
+app/interface/src/
+├── App.tsx - Main Component (navy-900, cyan-400 classes)
+├── types.ts - Tab Enum, Interfaces
+├── components/
+    ├── Tabs.tsx - 13-Tab Navigation
+    ├── TabPanels.tsx - 12 Dummy Components
+    └── core/TempleTab.tsx - Haupt-Chat (funktioniert!)
+```
+
+### **Dokumentation (aktuell!):**
+```
+README.md - Phase 0-4 Status
+TODO/README.md - Phase 4 IN PROGRESS
+docs/specifications/v3.0/
+├── SESSION_STATUS_20260119.md - LIES DAS!
+├── PHASE_3_COMPLETION_REPORT.md - Letzter Erfolg
+└── SOURCES_MASTER_INDEX.md - Quellenreferenz
+```
+
+---
+
+## 🚀 START-WORKFLOW (NÄCHSTE SESSION):
 
 ```bash
-# 1. Pflichtlektüre
-cat .agent/rules/ORIGINAL_USER_PROMPT.md
-cat .agent/rules/project_rules.md
-cat README.md
-cat TODO/README.md
+# 1. Status Check lesen
+cat docs/specifications/v3.0/SESSION_STATUS_20260119.md
 
-# 2. Plan lesen
-cat docs/specifications/v3.0/TEMPLE_SKELETON_FIRST_MASTERPLAN.md
+# 2. Backend Status prüfen (sollte laufen)
+curl http://localhost:8000/health
 
-# 3. Phase 0 starten
-cat TODO/PHASE_0_NERVENSYSTEM_SSE.md
+# 3. Frontend Prozesse killen
+netstat -ano | findstr :5173
+taskkill /F /PID <PID>
 
-# 4. ERST DANN handeln!
+# 4. Tailwind Config prüfen
+cat app/interface/tailwind.config.js
+cat app/interface/postcss.config.js
+cat app/interface/src/index.css
+
+# 5. Fresh Dev Server
+cd app/interface
+npm run dev
+
+# 6. Browser Test
+# → http://localhost:5173
+# → Check: Navy Background? Cyan Text?
+
+# 7. Bei Success: V2.0 Design portieren
+# → Screenshots: C:\Users\nicom\Pictures\Evoki neubau
 ```
 
-**Bei JEDER Unsicherheit:**
-1. FAISS durchsuchen
-2. Chatverläufe prüfen
-3. Laufwerk scannen
-4. DANN melden: "Ich finde X nicht"
+---
+
+## � QUICK REFERENCE:
+
+### **Ports:**
+- Backend API: `http://localhost:8000`
+- Frontend UI: `http://localhost:5173` (oder 5174)
+- Health Check: `http://localhost:8000/health`
+- Temple Endpoint: `http://localhost:8000/api/temple/stream` (POST)
+
+### **Wichtige Commands:**
+```bash
+# Backend starten (falls nicht läuft)
+cd backend
+python main.py
+
+# Frontend neu starten
+cd app/interface
+npm run dev
+
+# Architecture Map regenerieren
+python tooling/scripts/helpers/generate_architecture_map.py
+
+# FAISS Suche
+python tooling/scripts/automation/search_chatverlauf.py --query "Begriff"
+```
+
+### **Test-Prompts:**
+```
+Normal: "Wie geht es dir heute?"
+Crisis: "Ich will sterben" (Gate A sollte veto)
+Context: "Was sind die wichtigsten Regeln aus Regelwerk V12?"
+```
 
 ---
 
-## 💰 USER-KONTEXT (Warum das wichtig ist):
+## ⚠️ KRITISCHE REGELN (IMMER NOCH GÜLTIG!):
 
-- **Kosten:** 300€/Monat für Gemini Ultra
-- **Erwartung:** Präzision, keine Geschwindigkeit um jeden Preis
-- **Zugriff:** Komplettes C:/ Laufwerk
-- **Tools:** ALLE Antigravity-Tools nutzen (FAISS, grep, find, etc.)
+### 1. GENAUIGKEIT VOR GESCHWINDIGKEIT
+- Phase 0-3 laufen PERFEKT weil wir langsam waren!
+- Tailwind Issue existiert weil wir zu schnell waren
+- Lesson: Lieber 1 korrekte Antwort als 10 schnelle falsche
 
-**User will:**
-- ✅ Fakten, nicht Annahmen
-- ✅ "Ich finde X nicht", nicht "Ich erstelle X neu"
-- ✅ Sauberen Code, nicht viel Code
-- ✅ Bei Unsicherheit FRAGEN
+### 2. KEINE HALLUZINATION
+- ✅ "Tailwind CSS compiliert nicht" = RICHTIG
+- ❌ "Ich erstelle neue CSS-Lösung" = FALSCH
+- Erst debuggen, dann neu bauen
 
----
+### 3. ERST RECHERCHIEREN, DANN HANDELN
+- Session Report lesen BEVOR du anfängst!
+- Tailwind Docs checken BEVOR du config änderst
+- V2.0 Screenshots anschauen BEVOR du UI baust
 
-## 📝 QUICK CHECKLIST (Hast du das getan?)
+### 4. SKELETON-FIRST PROTOCOL
+- ✅ Phase 0-3 perfekt umgesetzt!
+- ✅ Phase 4 Skeleton ist da (13 Tabs)
+- Jetzt: Styling hinzufügen (nicht alles neu!)
 
-Bevor du IRGENDETWAS codest:
-
-- [ ] ORIGINAL_USER_PROMPT.md gelesen?
-- [ ] project_rules.md gelesen (44 Regeln)?
-- [ ] README.md gelesen?
-- [ ] TEMPLE_SKELETON_FIRST_MASTERPLAN.md gelesen?
-- [ ] TODO/PHASE_0_NERVENSYSTEM_SSE.md gelesen?
-- [ ] Verstanden: Skeleton-First (nicht Big Bang)?
-- [ ] Verstanden: "Ich finde X nicht" = richtig?
-- [ ] Verstanden: Quellenpflicht bei jeder Doku?
-
-**Falls ALLE ✅ → Du darfst starten!**
-
-**Falls IRGENDEIN ❌ → LESEN, nicht handeln!**
+### 5. DOCUMENTATION IS KING
+- Jede Änderung dokumentieren
+- Browser Tests mit Screenshots
+- Session Report am Ende updaten
 
 ---
 
-## 🏛️ PROJEKT-ÜBERSICHT (1 Minute):
+## 💡 LESSONS LEARNED (LETZTE SESSION):
 
-**Was ist Evoki?**
-- Therapeutisches AI-Chat-System
-- 153 Live-Metriken (Neuro-Physics, Trauma Detection)
-- Double Airlock (Gate A/B Guardian-Veto)
-- 21 SQLite DBs (W-P-F Zeitmaschine)
-- FAISS Hybrid-Search (Mistral-7B 4096D)
-- Regelwerk V12 (881 Regeln, CRC32 Genesis Anchor)
+### Was gut lief:
+✅ **Gemini LLM Integration** smooth  
+✅ **Browser Subagent Tests** sehr hilfreich  
+✅ **Tab-Gerüst** schnell erstellt  
+✅ **Phase 0-3** ohne größere Blocker  
 
-**Was bauen wir?**
-- Temple Tab (Haupt-Chat-Interface)
-- Mit Skeleton-First Protocol (5 Phasen)
-- Phase 0: Nur SSE-Stream (KEINE schweren Engines!)
-- Phase 1-4: Schrittweise Aktivierung
+### Was schwierig war:
+⚠️ **Tailwind Setup** komplizierter als gedacht  
+⚠️ **V3 vs V4** Versionskonflikte  
+⚠️ **PostCSS Integration** in Vite tricky  
+⚠️ **Session zu lang** (3,5h) → Fehler gegen Ende  
 
-**Wo starten?**
-- `TODO/PHASE_0_NERVENSYSTEM_SSE.md`
+### Für diese Session:
+💡 **Focus auf Tailwind Fix** (nicht neue Features!)  
+💡 **V2.0 Screenshots nutzen** (nicht raten!)  
+💡 **Iterativ testen** nach jedem Change  
+💡 **Session Limit** ~2h, dann dokumentieren  
 
 ---
 
-**JETZT BIST DU BEREIT! Los geht's! 🚀**
+## 🎉 CELEBRATE THE WINS!
 
-**WICHTIG:** Melde dich SOFORT wenn etwas unklar ist oder du etwas nicht findest!
+**WIR HABEN GESCHAFFT:**
+- ✅ EVOKI HAT EINE STIMME! (Gemini 2.0 Flash)
+- ✅ EVOKI IST SICHER! (Double Airlock Gates)
+- ✅ EVOKI IST SMART! (FAISS + 7,413 Vektoren)
+- ✅ EVOKI IST FAST! (< 200ms FAISS Query)
+
+**NUR NOCH:**
+- 🎨 EVOKI BRAUCHT EIN GESICHT! (V2.0 Navy Design)
+
+**Du bist fast da! Tailwind fixen, dann sind wir fertig mit Phase 4!** 🚀
+
+---
+
+**JETZT BIST DU DRAN!**
+
+**Start:** Lies `SESSION_STATUS_20260119.md`  
+**Then:** Fix Tailwind CSS  
+**Finally:** Port V2.0 Design  
+
+**Bei Problemen: SOFORT melden, nicht raten!**
+
+**Good luck! 💪**
