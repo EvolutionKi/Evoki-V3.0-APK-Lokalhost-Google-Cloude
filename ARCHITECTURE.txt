@@ -1,17 +1,22 @@
 EVOKI V3.0 - Architecture Map (Auto-Generated)
 ==============================================
-Generated: 2026-01-19 08:41
+Generated: 2026-01-19 09:25
 Strategy: Strict Separation (App vs Tooling)
 Status: LIVE REFLECTION
 
 ROOT/
 ├─ .agent
 │  ├─ rules
-│  │  └─ datamanagement.md
+│  │  ├─ datamanagement.md
+│  │  ├─ ORIGINAL_USER_PROMPT.md
+│  │  ├─ project_rules.md
+│  │  └─ startpromt.md
 │  └─ workflows
+│     ├─ 1start.md
 │     ├─ evoki_repair.md
 │     ├─ evoki_verify.md
 │     ├─ planen.md
+│     ├─ project_workflows.md
 │     ├─ quiz.md
 │     └─ startup.md
 ├─ .github
@@ -140,6 +145,7 @@ ROOT/
 │  │     ├─ SOURCES_MASTER_INDEX.md
 │  │     ├─ SUMMARY.md
 │  │     ├─ task.md
+│  │     ├─ TEMPLE_MVP_PLAN.md
 │  │     ├─ ULTIMATE_ARCHITECTURE.md
 │  │     ├─ ULTIMATE_MASTER_PLAN_V8.md
 │  │     ├─ uploaded_image_0_1768804144371.png
@@ -163,6 +169,13 @@ ROOT/
 │  ├─ synapse-nexus-kernel-2.0.0.vsix
 │  ├─ tsconfig.json
 │  └─ WHY_IN_ROOT.md
+├─ TODO
+│  ├─ MASTER_PLAN.md
+│  ├─ PHASE_1_BACKEND_FOUNDATION.md
+│  ├─ PHASE_2_21DB_SETUP.md
+│  ├─ PHASE_3_TEMPLE_ENDPOINT.md
+│  ├─ PHASE_4_FRONTEND_INTEGRATION.md
+│  └─ README.md
 ├─ tooling  # [AUTOMATION] Logic & Dev Tools
 │  ├─ config
 │  │  ├─ mcp.json
