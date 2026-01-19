@@ -10,9 +10,18 @@
 - Verwendet in: `regelwerk_v12.json`, `memory_anchor.json`
 
 **V3.0:**
-- Genesis Anchor: **SHA256** statt CRC32
-- Grund: Höhere Kollisionssicherheit, Standardisierung
-- Berechnung über: Vollständiges Regelwerk V12 (JSON serialisiert, sortiert)
+- Genesis Anchor: **SHA256** als Primär-Integritätsanker
+- CRC32: Optional als Kurz-ID/Legacy (nicht für Manipulationserkennung!)
+- Grund: Höhere Kollisionssicherheit, Kryptografische Stärke
+
+## Modell-Klarstellung
+
+**KEIN BERT in V3.0!**
+
+- ❌ **NICHT:** german-sentiment-bert
+- ✅ **Embeddings:** MiniLM-L6-v2 (384D) für Retrieval/Similarity
+- ✅ **Reasoning:** Ministral 7B für Inferenz/Klassifikation
+- ✅ **Affekt:** Primär lexikalisch, optional Ministral-7B als Fallback
 
 ## Implementation
 
@@ -21,9 +30,27 @@
 import hashlib
 import json
 
-def calculate_genesis_anchor_sha256(regelwerk: dict) -> str:
+def canonical_bytes(obj: dict) -> bytes:
     """
-    Berechnet Genesis Anchor als SHA256 (V3.0).
+    Kanonische JSON-Serialisierung für Genesis Anchor.
+    
+    WICHTIG: Konsistenz garantiert durch:
+    - sort_keys=True
+    - separators=(",", ":") - keine Whitespace-Varianz
+    - ensure_ascii=False - konsistente Unicode-Behandlung
+    """
+    s = json.dumps(
+        obj,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":")  # Keine Spaces!
+    )
+    return s.encode("utf-8")
+
+
+def genesis_sha256(rulebook: dict) -> str:
+    """
+    Berechnet Genesis Anchor als SHA256 (V3.0 Primär).
     
     Args:
         regelwerk: Regelwerk V12 als Dict

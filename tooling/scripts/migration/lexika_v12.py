@@ -298,6 +298,38 @@ def compute_lexicon_score(
     return min(1.0, score), matches
 
 
+def compute_lexicon_score_hazard(
+    text: str,
+    lexicon: dict
+) -> Tuple[float, List[str]]:
+    """
+    Berechnet Hazard-Score mit max-weight Strategie (OHNE Log-Dämpfung!).
+    
+    Für kritische Marker (Suizid, Self-Harm) darf Log-Dämpfung das Signal
+    nicht zerstören. Verwendet max(weights) + kleinen Bonus für Mehrfach-Treffer.
+    
+    Args:
+        text: Input-Text
+        lexicon: Dict[term: weight] (SUICIDE_MARKERS, SELF_HARM, etc.)
+    
+    Returns:
+        (score, matches): Score in [0,1] und Liste gefundener Terms
+    """
+    # Nutze compute_lexicon_score für Word-Boundary Matching
+    _, matches = compute_lexicon_score(text, lexicon, use_longest_match=True)
+    
+    if not matches:
+        return 0.0, []
+    
+    # MAX-WEIGHT (nicht averaged/logged!)
+    max_w = max(lexicon[m] for m in matches)
+    
+    # Kleiner Bonus für Mehrfach-Treffer (nie dämpfen unter max_w)
+    bonus = 0.10 * math.log1p(len(matches) - 1)  # 0 bei 1 Treffer
+    
+    return min(1.0, max_w + bonus), matches
+
+
 def compute_b_past_with_regex(text: str) -> Tuple[float, List[str]]:
     """Berechnet B_past Score inkl. Regex-Patterns."""
     base_score, matches = compute_lexicon_score(text, B_PAST)
@@ -310,9 +342,17 @@ def compute_b_past_with_regex(text: str) -> Tuple[float, List[str]]:
     return min(1.0, base_score), matches
 
 
+# Hazard Detection Thresholds (Hard Policy)
+CRITICAL_SUICIDE_FLOOR = 0.90  # Alles >= 0.9 ist critical
+CRITICAL_SUICIDE_SCORE = 1.00  # Harte Anhebung auf 1.0
+
+
 def compute_hazard_score(text: str) -> Tuple[float, bool, List[str]]:
     """
-    Kombiniert SUICIDE + SELF_HARM + CRISIS Checks.
+    Kombiniert SUICIDE + SELF_HARM + CRISIS Checks mit HARD THRESHOLDS.
+    
+    WICHTIG: Nutzt compute_lexicon_score_hazard() statt compute_lexicon_score()
+    um Log-Dämpfung zu vermeiden!
     
     Returns:
         (max_score, is_critical, all_matches)
@@ -321,25 +361,28 @@ def compute_hazard_score(text: str) -> Tuple[float, bool, List[str]]:
     max_score = 0.0
     is_critical = False
     
-    # Suicide Check
-    score, matches = compute_lexicon_score(text, SUICIDE_MARKERS)
-    if score > 0:
-        max_score = max(max_score, score)
-        all_matches.extend([f"SUICIDE:{m}" for m in matches])
-        if score >= 0.9:
+    # Suicide Check (HAZARD SCORING!)
+    s_score, s_matches = compute_lexicon_score_hazard(text, SUICIDE_MARKERS)
+    if s_matches:
+        all_matches.extend([f"SUICIDE:{m}" for m in s_matches])
+        max_score = max(max_score, s_score)
+        
+        # HARD THRESHOLD für Suizid-Marker
+        if s_score >= CRITICAL_SUICIDE_FLOOR:
             is_critical = True
+            max_score = max(max_score, CRITICAL_SUICIDE_SCORE)
     
-    # Self-Harm Check
-    score, matches = compute_lexicon_score(text, SELF_HARM)
-    if score > 0:
-        max_score = max(max_score, score * 0.9)
-        all_matches.extend([f"HARM:{m}" for m in matches])
+    # Self-Harm Check (HAZARD SCORING!)
+    h_score, h_matches = compute_lexicon_score_hazard(text, SELF_HARM)
+    if h_matches:
+        all_matches.extend([f"HARM:{m}" for m in h_matches])
+        max_score = max(max_score, h_score * 0.9)
     
-    # Crisis Check
-    score, matches = compute_lexicon_score(text, CRISIS_MARKERS)
-    if score > 0:
-        max_score = max(max_score, score * 0.8)
-        all_matches.extend([f"CRISIS:{m}" for m in matches])
+    # Crisis Check (HAZARD SCORING!)
+    c_score, c_matches = compute_lexicon_score_hazard(text, CRISIS_MARKERS)
+    if c_matches:
+        all_matches.extend([f"CRISIS:{m}" for m in c_matches])
+        max_score = max(max_score, c_score * 0.8)
     
     return max_score, is_critical, all_matches
 
