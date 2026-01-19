@@ -16,7 +16,8 @@
  */
 import { useState, useRef } from 'react';
 import { consumeSSEStream } from '../../utils/sse-parser';
-// import SettingsPanel from './SettingsPanel'; // TEMPORARILY DISABLED
+import ThemeSwitcher from './ThemeSwitcher';
+import { useTheme } from '../../hooks/useTheme'; // Fix: Load theme on app start
 
 interface Message {
     role: 'user' | 'evoki' | 'system';
@@ -39,7 +40,10 @@ export default function TempleTab() {
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState('');
     const [metrics, setMetrics] = useState<Metrics | null>(null);
-    // const [isSettingsOpen, setIsSettingsOpen] = useState(false); // TEMPORARILY DISABLED
+    const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+
+    // Initialize theme hook with custom theme support
+    const { currentTheme, switchTheme, availableThemes, customTheme, updateCustomTheme } = useTheme();
 
     const abortControllerRef = useRef<AbortController | null>(null);
 
@@ -230,49 +234,56 @@ export default function TempleTab() {
     };
 
     return (
-        <div className="p-5 flex flex-col h-full bg-gradient-to-b from-[#0a0a0a] to-[#1a0a1a]">
+        <div
+            className="p-5 flex flex-col h-full"
+            style={{
+                background: `linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary))`
+            }}
+        >
             {/* HEADER */}
             <div className="mb-5 flex items-center justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                    <h1
+                        className="text-3xl font-bold bg-clip-text text-transparent"
+                        style={{
+                            background: `linear-gradient(to right, var(--accent-primary), var(--accent-secondary))`,
+                            WebkitBackgroundClip: 'text',
+                            backgroundClip: 'text'
+                        }}
+                    >
                         🏛️ EVOKI TEMPLE [PHASE 3]
                     </h1>
-                    <p className="text-orange-500 text-sm font-mono">
+                    <p
+                        className="text-sm font-mono"
+                        style={{ color: 'var(--text-accent)' }}
+                    >
                         ⚡ Phase 3: LLM ACTIVE (Gemini 2.0 Flash) + Metriken + Double Airlock Gates!
                     </p>
                 </div>
 
                 {/* Settings Button */}
                 <button
-                    onClick={() => setIsSettingsOpen(true)}
-                    className="p-3 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 hover:opacity-90 transition-opacity"
-                    title="Settings"
+                    onClick={() => setIsSettingsOpen(!isSettingsOpen)}
+                    className="px-4 py-2 text-black font-bold rounded transition-colors"
+                    style={{
+                        backgroundColor: 'var(--accent-primary)',
+                        ':hover': { backgroundColor: 'var(--accent-secondary)' }
+                    }}
                 >
-                    <svg
-                        className="w-6 h-6 text-black"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                        />
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                    </svg>
+                    ⚙️ Settings
                 </button>
             </div>
 
             {/* STATUS BAR */}
             {status && (
-                <div className="px-3 py-2 bg-cyan-400/10 border border-cyan-400/30 rounded-lg mb-3 text-cyan-400 font-mono text-sm">
+                <div
+                    className="px-3 py-2 rounded-lg mb-3 font-mono text-sm"
+                    style={{
+                        backgroundColor: 'var(--accent-primary)' + '1A',
+                        border: '1px solid var(--accent-primary)',
+                        color: 'var(--accent-primary)'
+                    }}
+                >
                     {status}
                 </div>
             )}
@@ -360,16 +371,14 @@ export default function TempleTab() {
                 <button
                     onClick={handleSend}
                     disabled={loading || !prompt.trim()}
+                    className="px-8 py-4 font-bold text-base rounded-md transition-all"
                     style={{
-                        padding: '15px 30px',
-                        background: loading ? '#333' : 'linear-gradient(135deg, #0cf 0%, #f0f 100%)',
-                        color: loading ? '#666' : '#000',
-                        border: 'none',
-                        borderRadius: '6px',
-                        fontWeight: 'bold',
-                        fontSize: '1rem',
+                        background: loading
+                            ? 'var(--bg-secondary)'
+                            : `linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))`,
+                        color: loading ? 'var(--text-secondary)' : '#000',
                         cursor: loading ? 'not-allowed' : 'pointer',
-                        transition: 'all 0.3s'
+                        opacity: loading ? 0.5 : 1
                     }}
                 >
                     {loading ? 'LÄDT...' : 'SENDEN'}
@@ -384,10 +393,15 @@ export default function TempleTab() {
         }
       `}</style>
 
-            {/* Settings Panel */}
-            <SettingsPanel
+            {/* Theme Switcher with Custom Theme Editor */}
+            <ThemeSwitcher
                 isOpen={isSettingsOpen}
                 onClose={() => setIsSettingsOpen(false)}
+                currentTheme={currentTheme}
+                availableThemes={availableThemes}
+                onThemeChange={switchTheme}
+                customTheme={customTheme}
+                onCustomThemeUpdate={updateCustomTheme}
             />
         </div>
     );

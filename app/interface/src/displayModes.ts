@@ -1,79 +1,92 @@
-export type DisplayMode = 'mobile' | 'tablet' | 'desktop';
+// Display Modes - Step 1.1 & 1.2: Config with 3 Responsive Modes
 
-export interface DisplaySettings {
-    mode: DisplayMode;
+export interface DisplayMode {
+    name: string;
     fontSize: {
-        base: string;
-        sm: string;
-        lg: string;
-        xl: string;
+        base: string;      // Body text
+        heading: string;   // H1, H2, etc.
+        small: string;     // Small text, captions
     };
     spacing: {
-        xs: string;
-        sm: string;
-        md: string;
-        lg: string;
-        xl: string;
+        sm: string;        // Small gaps
+        md: string;        // Medium padding
+        lg: string;        // Large spacing
     };
-    maxWidth: string;
-    compactMode: boolean;
+    container: {
+        maxWidth: string;  // Max container width
+    };
+    iconSize: {
+        sm: string;        // Small icons
+        md: string;        // Medium icons
+        lg: string;        // Large icons
+    };
 }
 
-export const DISPLAY_MODES: Record<DisplayMode, DisplaySettings> = {
+// Step 1.2: 3 Display Modes
+export const DISPLAY_MODES: Record<string, DisplayMode> = {
     mobile: {
-        mode: 'mobile',
+        name: 'Mobile 📱',
         fontSize: {
             base: '14px',
-            sm: '12px',
-            lg: '16px',
-            xl: '20px',
+            heading: '20px',
+            small: '12px',
         },
         spacing: {
-            xs: '0.25rem',
-            sm: '0.5rem',
-            md: '0.75rem',
-            lg: '1rem',
-            xl: '1.5rem',
+            sm: '8px',
+            md: '12px',
+            lg: '16px',
         },
-        maxWidth: '100%',
-        compactMode: true,
+        container: {
+            maxWidth: '100%',
+        },
+        iconSize: {
+            sm: '16px',
+            md: '20px',
+            lg: '24px',
+        },
     },
     tablet: {
-        mode: 'tablet',
-        fontSize: {
-            base: '15px',
-            sm: '13px',
-            lg: '17px',
-            xl: '22px',
-        },
-        spacing: {
-            xs: '0.375rem',
-            sm: '0.75rem',
-            md: '1rem',
-            lg: '1.5rem',
-            xl: '2rem',
-        },
-        maxWidth: '1024px',
-        compactMode: false,
-    },
-    desktop: {
-        mode: 'desktop',
+        name: 'Tablet 📱💻',
         fontSize: {
             base: '16px',
-            sm: '14px',
-            lg: '18px',
-            xl: '24px',
+            heading: '24px',
+            small: '14px',
         },
         spacing: {
-            xs: '0.5rem',
-            sm: '1rem',
-            md: '1.25rem',
-            lg: '2rem',
-            xl: '3rem',
+            sm: '12px',
+            md: '16px',
+            lg: '24px',
         },
-        maxWidth: '1440px',
-        compactMode: false,
+        container: {
+            maxWidth: '768px',
+        },
+        iconSize: {
+            sm: '20px',
+            md: '24px',
+            lg: '32px',
+        },
+    },
+    desktop: {
+        name: 'Desktop 💻',
+        fontSize: {
+            base: '18px',
+            heading: '28px',
+            small: '16px',
+        },
+        spacing: {
+            sm: '16px',
+            md: '20px',
+            lg: '32px',
+        },
+        container: {
+            maxWidth: '1200px',
+        },
+        iconSize: {
+            sm: '24px',
+            md: '28px',
+            lg: '36px',
+        },
     },
 };
 
-export const DEFAULT_DISPLAY_MODE: DisplayMode = 'desktop';
+export const DEFAULT_DISPLAY_MODE = 'desktop';

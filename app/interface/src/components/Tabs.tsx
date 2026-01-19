@@ -26,18 +26,23 @@ const TABS_CONFIG = [
 
 export default function Tabs({ activeTab, onTabChange }: TabsProps) {
     return (
-        <nav className="flex-shrink-0 bg-navy-800 border-b border-navy-700">
+        <nav
+            className="flex-shrink-0"
+            style={{
+                backgroundColor: 'var(--bg-secondary)',
+                borderBottom: '1px solid var(--border-primary)'
+            }}
+        >
             <div className="flex space-x-1 px-3 overflow-x-auto">
                 {TABS_CONFIG.map(({ id, label, icon }) => (
                     <button
                         key={id}
                         onClick={() => onTabChange(id)}
-                        className={`flex-shrink-0 flex items-center gap-2 px-3 py-2 text-xs font-medium transition-colors duration-200 border-b-2
-                            ${activeTab === id
-                                ? 'border-cyan-400 text-cyan-400'
-                                : 'border-transparent text-gray-400 hover:text-white hover:border-gray-500'
-                            }
-                        `}
+                        className="flex-shrink-0 flex items-center gap-2 px-3 py-2 text-xs font-medium transition-colors duration-200 border-b-2"
+                        style={{
+                            borderColor: activeTab === id ? 'var(--accent-primary)' : 'transparent',
+                            color: activeTab === id ? 'var(--accent-primary)' : 'var(--text-secondary)'
+                        }}
                     >
                         <span>{icon}</span>
                         <span className="hidden lg:inline whitespace-nowrap">{label}</span>

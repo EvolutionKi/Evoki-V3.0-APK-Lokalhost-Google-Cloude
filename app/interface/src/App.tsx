@@ -44,21 +44,46 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-navy-900 text-white">
-      {/* Header - V2.0 ORIGINAL Navy Style */}
-      <header className="flex-shrink-0 bg-navy-900 border-b border-navy-700 px-4 md:px-6 py-3 flex items-center justify-between">
+    <div
+      className="flex flex-col h-screen text-white"
+      style={{ backgroundColor: 'var(--bg-primary)' }}
+    >
+      {/* Header - Theme Aware */}
+      <header
+        className="flex-shrink-0 px-4 md:px-6 py-3 flex items-center justify-between"
+        style={{
+          backgroundColor: 'var(--bg-primary)',
+          borderBottom: '1px solid var(--border-primary)'
+        }}
+      >
         <div className="flex items-center gap-4">
-          <h1 className="text-xl md:text-2xl font-bold text-cyan-400">EVOKI</h1>
-          <span className="hidden md:inline text-sm text-gray-400">V3.0 DeepEarth</span>
+          <h1
+            className="text-xl md:text-2xl font-bold"
+            style={{ color: 'var(--accent-primary)' }}
+          >
+            EVOKI
+          </h1>
+          <span
+            className="hidden md:inline text-sm"
+            style={{ color: 'var(--text-secondary)' }}
+          >
+            V3.0 DeepEarth
+          </span>
         </div>
 
         {/* Status Badge */}
         <div className="flex items-center gap-3">
-          <div className="hidden md:flex items-center gap-2 bg-navy-800/50 border border-green-500/30 px-3 py-1 rounded-full">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span className="text-xs text-green-400">Backend Online</span>
+          <div
+            className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full"
+            style={{
+              backgroundColor: 'var(--bg-secondary)',
+              border: '1px solid var(--status-success)'
+            }}
+          >
+            <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: 'var(--status-success)' }}></div>
+            <span className="text-xs" style={{ color: 'var(--status-success)' }}>Backend Online</span>
           </div>
-          <span className="text-xs text-gray-500">Phase 0-3 Complete</span>
+          <span className="text-xs" style={{ color: 'var(--text-secondary)' }}>Phase 0-3 Complete</span>
         </div>
       </header>
 
@@ -66,13 +91,22 @@ function App() {
       <Tabs activeTab={activeTab} onTabChange={setActiveTab} />
 
       {/* Content Area */}
-      <main className="flex-1 overflow-y-auto bg-navy-900">
+      <main
+        className="flex-1 overflow-y-auto"
+        style={{ backgroundColor: 'var(--bg-primary)' }}
+      >
         {renderTabContent()}
       </main>
 
       {/* Footer */}
-      <footer className="flex-shrink-0 bg-navy-900 border-t border-navy-700 px-4 md:px-6 py-2">
-        <div className="flex items-center justify-between text-xs text-gray-500">
+      <footer
+        className="flex-shrink-0 px-4 md:px-6 py-2"
+        style={{
+          backgroundColor: 'var(--bg-primary)',
+          borderTop: '1px solid var(--border-primary)'
+        }}
+      >
+        <div className="flex items-center justify-between text-xs" style={{ color: 'var(--text-secondary)' }}>
           <span>Evoki V3.0.0-alpha | Skeleton-First Protocol</span>
           <span>Built with React + FastAPI</span>
         </div>
