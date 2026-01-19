@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Theme } from '../themes';
+import { Theme } from '../../themes';
 
 interface CustomThemeEditorProps {
     customTheme: Theme;
