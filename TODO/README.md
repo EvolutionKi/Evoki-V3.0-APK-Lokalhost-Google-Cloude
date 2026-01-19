@@ -23,16 +23,16 @@
 ## ✅ PHASEN-STATUS
 
 ### PHASE 0: Nervensystem (SSE Skeleton)
-- [ ] Vollständig abgeschlossen
-- [ ] Geprüft & getestet
+- [x] Vollständig abgeschlossen
+- [x] Geprüft & getestet
 
 **Siehe:** `PHASE_0_NERVENSYSTEM_SSE.md`
 
 ---
 
 ### PHASE 1: Gedächtnis (21 DBs + FAISS)
-- [ ] Vollständig abgeschlossen
-- [ ] Geprüft & getestet
+- [x] Vollständig abgeschlossen
+- [x] Geprüft & getestet
 
 **Siehe:** `PHASE_1_MEMORY_LAYER.md`
 
