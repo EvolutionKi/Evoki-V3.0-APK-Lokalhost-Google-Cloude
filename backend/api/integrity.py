@@ -4,8 +4,13 @@ Evoki V3.0 - Integrity API
 Endpoint für Frontend Integrity Status Checks.
 """
 from fastapi import APIRouter
-from backend.core.genesis_anchor import validate_full_integrity
-from backend.core.enforcement_gates import is_lockdown
+
+try:
+    from core.genesis_anchor import validate_full_integrity
+    from core.enforcement_gates import is_lockdown
+except ImportError:  # fallback when backend is a package
+    from backend.core.genesis_anchor import validate_full_integrity
+    from backend.core.enforcement_gates import is_lockdown
 
 router = APIRouter()
 

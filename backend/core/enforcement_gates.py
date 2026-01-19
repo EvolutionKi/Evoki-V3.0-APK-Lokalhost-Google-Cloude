@@ -21,9 +21,11 @@ from dataclasses import dataclass
 from pathlib import Path
 import sys
 
-# Import Genesis Anchor Validation
-sys.path.insert(0, str(Path(__file__).parent))
-from genesis_anchor import validate_genesis_anchor
+# Import robustly (works with PYTHONPATH=backend and with package-style runs)
+try:
+    from core.genesis_anchor import validate_full_integrity
+except ImportError:  # fallback when backend is a package
+    from backend.core.genesis_anchor import validate_full_integrity
 
 
 
@@ -54,7 +56,10 @@ def set_lockdown(reason: str):
     
     # Log in integrity.db
     try:
-        from backend.core.integrity_db import log_breach
+        try:
+            from core.integrity_db import log_breach
+        except ImportError:
+            from backend.core.integrity_db import log_breach
         log_breach("LOCKDOWN", reason)
     except Exception as e:
         print(f"   ⚠️ Failed to log breach: {e}")
@@ -172,7 +177,10 @@ def gate_a_validation(prompt: str, metrics: Dict[str, float]) -> GateResult:
         
         # Log breach mit ALLEN Details
         try:
-            from backend.core.integrity_db import log_breach
+            try:
+                from core.integrity_db import log_breach
+            except ImportError:
+                from backend.core.integrity_db import log_breach
             
             checks = integrity_result.get("checks", {})
             if not checks.get("genesis_ok"):

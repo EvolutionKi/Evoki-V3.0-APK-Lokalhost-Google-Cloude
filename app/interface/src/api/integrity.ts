@@ -31,7 +31,11 @@ export interface IntegrityStatus {
  */
 export async function checkIntegrity(): Promise<IntegrityStatus> {
     try {
-        const response = await fetch('http://localhost:8000/api/integrity/status');
+        // Use ENV variable or fallback to relative path
+        const base = (import.meta.env.VITE_BACKEND_API_URL || "").replace(/\/+$/, "");
+        const url = base ? `${base}/api/integrity/status` : "/api/integrity/status";
+
+        const response = await fetch(url);
 
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);

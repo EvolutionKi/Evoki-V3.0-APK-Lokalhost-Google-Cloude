@@ -34,7 +34,7 @@ def original_regelwerk():
 @pytest.fixture
 def temp_regelwerk_path(tmp_path):
     """Erstellt temporäre Kopie von regelwerk_v12.json."""
-    original_path = Path(__file__).parent.parent / "backend" / "core" / "regelwerk_v12.json"
+    original_path = Path(__file__).parent.parent / "core" / "regelwerk_v12.json"
     temp_path = tmp_path / "regelwerk_v12.json"
     shutil.copy(original_path, temp_path)
     return temp_path
@@ -227,7 +227,7 @@ def test_gate_a_blocks_tampered_regelwerk(temp_regelwerk_path):
     regelwerk['data']['monolith_text'] = regelwerk['data']['monolith_text'] + " TAMPERED"
     
     # Mock validate_full_integrity zu tampered result
-    def mock_validate():
+    def mock_validate(*args, **kwargs):
         return validate_full_integrity(regelwerk=regelwerk, strict=True)
     
     from core import enforcement_gates
