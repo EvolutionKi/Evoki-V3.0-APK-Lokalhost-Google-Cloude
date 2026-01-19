@@ -51,6 +51,13 @@ def set_lockdown(reason: str):
     print(f"\n⚠️ INTEGRITY LOCKDOWN ACTIVATED!")
     print(f"   Reason: {reason}")
     print(f"   All interactions blocked.\n")
+    
+    # Log in integrity.db
+    try:
+        from backend.core.integrity_db import log_breach
+        log_breach("LOCKDOWN", reason)
+    except Exception as e:
+        print(f"   ⚠️ Failed to log breach: {e}")
 
 
 def is_lockdown() -> tuple:
