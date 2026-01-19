@@ -5,10 +5,24 @@
  */
 
 export interface IntegrityStatus {
-    status: 'unverified' | 'verified' | 'lockdown';
-    genesis_sha256?: string;
-    registry_sha256?: string;
-    combined_sha256?: string;
+    verified: boolean;
+    lockdown: boolean;
+    mode: 'prod' | 'dev';
+    expected?: {
+        genesis_sha256?: string;
+        registry_sha256?: string;
+        combined_sha256?: string;
+    };
+    calculated?: {
+        genesis_sha256?: string;
+        registry_sha256?: string;
+        combined_sha256?: string;
+    };
+    checks?: {
+        genesis_ok?: boolean;
+        registry_ok?: boolean | null;
+        combined_ok?: boolean | null;
+    };
     error?: string;
 }
 
@@ -17,26 +31,31 @@ export interface IntegrityStatus {
  */
 export async function checkIntegrity(): Promise<IntegrityStatus> {
     try {
-        // TODO: Backend Endpoint /api/integrity/check implementieren
-        // Für jetzt: Mock-Implementation die immer verified zurückgibt
+        const response = await fetch('http://localhost:8000/api/integrity/status');
 
-        // In V3.0 Final: Echter Backend Call
-        // const response = await fetch('http://localhost:8000/api/integrity/check');
-        // const data = await response.json();
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
 
-        // Mock: Immer verified (wird später durch echten Call ersetzt)
+        const data = await response.json();
+
         return {
-            status: 'verified',
-            genesis_sha256: 'cdd461f4ec4f92ec40b5e368c5a863bc1ee4dd12258555affb39b8617194d745',
-            registry_sha256: '1ed728db77e346be7ec10b8d48a624400aca2685d0d19660359619e7bc51f83b',
-            combined_sha256: 'fbd35ad1fe8f4b8d1c0f43ff7e8fc6aec91e4c4d6f1a2e6b8d5c3a9f7e4b1c2d'
+            verified: data.verified ?? false,
+            lockdown: data.lockdown ?? true,
+            mode: data.mode ?? 'dev',
+            expected: data.expected,
+            calculated: data.calculated,
+            checks: data.checks,
+            error: data.error
         };
 
     } catch (error) {
         console.error('Integrity Check Failed:', error);
         return {
-            status: 'unverified',
-            error: error instanceof Error ? error.message : 'Unknown error'
+            verified: false,
+            lockdown: true,
+            mode: 'dev',
+            error: error instanceof Error ? error.message : 'Connection to backend failed'
         };
     }
 }

@@ -193,6 +193,146 @@ def validate_genesis_anchor(
     }
 
 
+def validate_full_integrity(
+    regelwerk: Optional[dict] = None,
+    strict: bool = True
+) -> dict:
+    """
+    FULL Integrity Validation (V3.0 Production).
+    
+    Prüft ALLE drei Anchors:
+    1. Genesis SHA256 (Regelwerk ohne meta.integrity)
+    2. Registry SHA256 (Lexika + Metriken + Config)
+    3. Combined SHA256 (Canonical JSON: genesis + registry)
+    
+    Expected Values Hierarchie (Production-ready):
+    - Priority 1: ENV Variables (EVOKI_EXPECTED_GENESIS_SHA256, etc.)
+    - Priority 2: regelwerk_v12.json meta.integrity (Dev Fallback)
+    
+    Args:
+        regelwerk: Optional Regelwerk-Dict
+        strict: Bei True alle 3 müssen matchen
+    
+    Returns:
+        {
+            "verified": bool,
+            "lockdown": bool,
+            "mode": "prod|dev",
+            "expected": {...},
+            "calculated": {...},
+            "checks": {
+                "genesis_ok": bool,
+                "registry_ok": bool,
+                "combined_ok": bool
+            },
+            "error": Optional[str]
+        }
+    """
+    import os
+    
+    # Load Regelwerk
+    if regelwerk is None:
+        try:
+            regelwerk = load_regelwerk()
+        except Exception as e:
+            return {
+                "verified": False,
+                "lockdown": True,
+                "error": f"Regelwerk Load Error: {str(e)}"
+            }
+    
+    # Expected Hashes (ENV > meta.integrity)
+    integrity_meta = regelwerk.get("meta", {}).get("integrity", {})
+    
+    # Check ENV for Production mode
+    env_genesis = os.getenv("EVOKI_EXPECTED_GENESIS_SHA256")
+    env_registry = os.getenv("EVOKI_EXPECTED_REGISTRY_SHA256")
+    env_combined = os.getenv("EVOKI_EXPECTED_COMBINED_SHA256")
+    
+    mode = "prod" if env_genesis else "dev"
+    
+    expected_genesis = env_genesis or integrity_meta.get("genesis_sha256")
+    expected_registry = env_registry or integrity_meta.get("registry_sha256")
+    expected_combined = env_combined or integrity_meta.get("combined_sha256")
+    
+    if not expected_genesis:
+        return {
+            "verified": False,
+            "lockdown": True,
+            "mode": mode,
+            "error": "Expected genesis_sha256 nicht gefunden (weder ENV noch meta.integrity)!"
+        }
+    
+    # Calculate Actual Hashes
+    calc_genesis = genesis_sha256(regelwerk)
+    
+    # Registry SHA256
+    try:
+        import sys
+        sys.path.insert(0, str(Path(__file__).parent))
+        from lexika_registry import get_registry_anchor
+        calc_registry = get_registry_anchor()
+    except Exception as e:
+        return {
+            "verified": False,
+            "lockdown": True,
+            "mode": mode,
+            "error": f"Registry Calculation Error: {str(e)}"
+        }
+    
+    # Combined SHA256 (Canonical Algorithm)
+    combined_input = {
+        "genesis_sha256": calc_genesis,
+        "registry_sha256": calc_registry
+    }
+    combined_bytes = json.dumps(
+        combined_input,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":")
+    ).encode("utf-8")
+    calc_combined = hashlib.sha256(combined_bytes).hexdigest()
+    
+    # Verify All Three
+    genesis_ok = (calc_genesis == expected_genesis)
+    registry_ok = (calc_registry == expected_registry) if expected_registry else None
+    combined_ok = (calc_combined == expected_combined) if expected_combined else None
+    
+    # Build error list
+    errors = []
+    if not genesis_ok:
+        errors.append(f"Genesis Breach: {calc_genesis[:16]}... != {expected_genesis[:16]}...")
+    if registry_ok is False:
+        errors.append(f"Registry Breach: {calc_registry[:16]}... != {expected_registry[:16]}...")
+    if combined_ok is False:
+        errors.append(f"Combined Breach: {calc_combined[:16]}... != {expected_combined[:16]}...")
+    
+    # Determine verdict
+    all_verified = genesis_ok and (registry_ok is not False) and (combined_ok is not False)
+    
+    return {
+        "verified": all_verified,
+        "lockdown": not all_verified,
+        "mode": mode,
+        "expected": {
+            "genesis_sha256": expected_genesis,
+            "registry_sha256": expected_registry,
+            "combined_sha256": expected_combined
+        },
+        "calculated": {
+            "genesis_sha256": calc_genesis,
+            "registry_sha256": calc_registry,
+            "combined_sha256": calc_combined
+        },
+        "checks": {
+            "genesis_ok": genesis_ok,
+            "registry_ok": registry_ok,
+            "combined_ok": combined_ok
+        },
+        "error": "; ".join(errors) if errors else None
+    }
+
+
 # =============================================================================
 # GATE A51 INTEGRATION
 # =============================================================================

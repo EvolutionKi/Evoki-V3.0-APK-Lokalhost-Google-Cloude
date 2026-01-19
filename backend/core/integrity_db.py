@@ -67,12 +67,12 @@ def log_breach(
     details: Optional[Dict] = None
 ):
     """
-    Loggt Integrity Breach in DB.
+    Loggt Integrity Breach in DB (V3.0 Full).
     
     Args:
-        event_type: "LOCKDOWN", "GENESIS_BREACH", "REGISTRY_BREACH", etc.
+        event_type: "LOCKDOWN", "GENESIS_BREACH", "REGISTRY_BREACH", "COMBINED_BREACH", etc.
         error_message: Fehlermeldung
-        integrity_result: Optional dict von validate_genesis_anchor()
+        integrity_result: Optional dict von validate_full_integrity()
         details: Optional zusätzliche Details
     """
     ensure_db_exists()
@@ -86,12 +86,13 @@ def log_breach(
     severity_map = {
         "LOCKDOWN": "CRITICAL",
         "GENESIS_BREACH": "CRITICAL",
-        "REGISTRY_BREACH": "HIGH",
+        "REGISTRY_BREACH": "CRITICAL",
+        "COMBINED_BREACH": "CRITICAL",
         "VALIDATION_SUCCESS": "INFO"
     }
     severity = severity_map.get(event_type, "MEDIUM")
     
-    # Extrahiere Daten aus integrity_result
+    # Extrahiere Daten aus integrity_result (V3.0 Full)
     genesis_sha256 = None
     registry_sha256 = None
     combined_sha256 = None
@@ -99,9 +100,21 @@ def log_breach(
     calculated_registry = None
     
     if integrity_result:
-        genesis_sha256 = integrity_result.get("expected_genesis")
-        calculated_genesis = integrity_result.get("calculated_genesis")
-        # registry/combined falls später implementiert
+        # V3.0 Full Integrity Result
+        if "expected" in integrity_result:
+            genesis_sha256 = integrity_result["expected"].get("genesis_sha256")
+            registry_sha256 = integrity_result["expected"].get("registry_sha256")
+            combined_sha256 = integrity_result["expected"].get("combined_sha256")
+        
+        if "calculated" in integrity_result:
+            calculated_genesis = integrity_result["calculated"].get("genesis_sha256")
+            calculated_registry = integrity_result["calculated"].get("registry_sha256")
+            # combined ist auch in calculated, aber wir loggen nur expected/calc pairs
+        
+        # Legacy V2.0 Format (fallback)
+        if not genesis_sha256:
+            genesis_sha256 = integrity_result.get("expected_genesis")
+            calculated_genesis = integrity_result.get("calculated_genesis")
     
     cursor.execute("""
         INSERT INTO integrity_events (

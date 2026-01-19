@@ -7,45 +7,58 @@ import { useEffect, useState } from 'react';
 import { checkIntegrity, IntegrityStatus } from '../api/integrity';
 
 interface IntegrityGuardProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export function IntegrityGuard({ children }: IntegrityGuardProps) {
-    const [status, setStatus] = useState<IntegrityStatus>({
-        status: 'unverified'
+  const [status, setStatus] = useState<IntegrityStatus>({
+    verified: false,
+    lockdown: false,
+    mode: 'dev'
+  });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Initial Check
+    checkIntegrity().then(result => {
+      setStatus(result);
+      setLoading(false);
     });
 
-    useEffect(() => {
-        // Initial Check
-        checkIntegrity().then(setStatus);
+    // Re-check every 30 seconds
+    const interval = setInterval(() => {
+      checkIntegrity().then(setStatus);
+    }, 30000);
 
-        // Re-check every 30 seconds
-        const interval = setInterval(() => {
-            checkIntegrity().then(setStatus);
-        }, 30000);
+    return () => clearInterval(interval);
+  }, []);
 
-        return () => clearInterval(interval);
-    }, []);
+  // Lockdown Screen
+  if (status.lockdown) {
+    return (
+      <div className="integrity-lockdown">
+        <div className="lockdown-container">
+          <h1>⚠️ Integrity Lockdown</h1>
+          <p className="error-message">{status.error}</p>
+          <p className="explanation">
+            Das System wurde aus Sicherheitsgründen gesperrt.
+            <br />
+            Bitte kontaktiere den Administrator.
+          </p>
+          <div className="technical-details">
+            <h3>Technische Details:</h3>
+            <p>Mode: {status.mode}</p>
+            {status.checks && (
+              <div>
+                <p>Genesis: {status.checks.genesis_ok ? '✅' : '❌'}</p>
+                <p>Registry: {status.checks.registry_ok === null ? '⚪' : status.checks.registry_ok ? '✅' : '❌'}</p>
+                <p>Combined: {status.checks.combined_ok === null ? '⚪' : status.checks.combined_ok ? '✅' : '❌'}</p>
+              </div>
+            )}
+          </div>
+        </div>
 
-    // Lockdown Screen
-    if (status.status === 'lockdown') {
-        return (
-            <div className="integrity-lockdown">
-                <div className="lockdown-container">
-                    <h1>⚠️ Integrity Lockdown</h1>
-                    <p className="error-message">{status.error}</p>
-                    <p className="explanation">
-                        Das System wurde aus Sicherheitsgründen gesperrt.
-                        <br />
-                        Bitte kontaktiere den Administrator.
-                    </p>
-                    <div className="technical-details">
-                        <h3>Technische Details:</h3>
-                        <pre>{JSON.stringify(status, null, 2)}</pre>
-                    </div>
-                </div>
-
-                <style>{`
+        <style>{`
           .integrity-lockdown {
             position: fixed;
             inset: 0;
@@ -100,24 +113,25 @@ export function IntegrityGuard({ children }: IntegrityGuardProps) {
             margin-bottom: 0.5rem;
           }
 
-          .technical-details pre {
+          .technical-details p {
             color: #00ff88;
             font-size: 0.85rem;
-            overflow-x: auto;
+            margin: 0.25rem 0;
           }
         `}</style>
-            </div>
-        );
-    }
+      </div>
+    );
+  }
 
-    // Loading Screen
-    if (status.status === 'unverified') {
-        return (
-            <div className="integrity-loading">
-                <div className="loading-spinner"></div>
-                <p>Verifying integrity...</p>
+  // Loading Screen
+  if (loading || !status.verified) {
+    return (
+      <div className="integrity-loading">
+        <div className="loading-spinner"></div>
+        <p>Verifying integrity...</p>
+        {status.error && <p className="error-hint">Error: {status.error}</p>}
 
-                <style>{`
+        <style>{`
           .integrity-loading {
             position: fixed;
             inset: 0;
@@ -139,14 +153,19 @@ export function IntegrityGuard({ children }: IntegrityGuardProps) {
             animation: spin 1s linear infinite;
           }
 
+          .error-hint {
+            color: #ffaaaa;
+            font-size: 0.9rem;
+          }
+
           @keyframes spin {
             to { transform: rotate(360deg); }
           }
         `}</style>
-            </div>
-        );
-    }
+      </div>
+    );
+  }
 
-    // Verified → Allow access
-    return <>{children}</>;
+  // Verified → Allow access
+  return <>{children}</>;
 }

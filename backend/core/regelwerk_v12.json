@@ -10,7 +10,7 @@
       },
       "genesis_sha256": "cdd461f4ec4f92ec40b5e368c5a863bc1ee4dd12258555affb39b8617194d745",
       "registry_sha256": "1ed728db77e346be7ec10b8d48a624400aca2685d0d19660359619e7bc51f83b",
-      "combined_sha256": "fbd35ad1fe8f4b8d1c0f43ff7e8fc6aec91e4c4d6f1a2e6b8d5c3a9f7e4b1c2d",
+      "combined_sha256": "9395b22204cb97d1bf7b256c475b99851bd357e4ae3570b27ce78e989b2b79e5",
       "hash_spec": "SHA256(canonical_json, utf-8, sorted_keys, separators, WITHOUT meta.integrity)"
     }
   },

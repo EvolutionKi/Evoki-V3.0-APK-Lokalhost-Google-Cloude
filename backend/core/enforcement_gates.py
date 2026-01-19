@@ -134,11 +134,11 @@ class GateResult:
 
 def gate_a_validation(prompt: str, metrics: Dict[str, float]) -> GateResult:
     """
-    GATE A: Pre-Prompt Validation (V3.0)
+    GATE A: Pre-Prompt Validation (V3.0 Full Integrity).
     
     Checks BEFORE sending prompt to LLM:
     0. INTEGRITY LOCKDOWN: System gesperrt?
-    1. A51: Genesis Anchor (SHA256)
+    1. A51: FULL Integrity (Genesis + Registry + Combined SHA256)
     2. A7.5/A29: Guardian-Veto (T_panic > 0.8 or F_risk > 0.6)
     3. A39: Krisenprompt-Erkennung
     
@@ -162,16 +162,32 @@ def gate_a_validation(prompt: str, metrics: Dict[str, float]) -> GateResult:
             rule_violations=["A51"]
         )
     
-    # Check 1: A51 Genesis Anchor (V3.0)
-    integrity_result = validate_genesis_anchor(strict=True)
-    if not integrity_result["valid"]:
+    # Check 1: A51 FULL Integrity (V3.0 Production)
+    integrity_result = validate_full_integrity(strict=True)
+    
+    if not integrity_result["verified"]:
         # LOCKDOWN auslösen!
-        set_lockdown(integrity_result["error"])
+        error_msg = integrity_result.get("error", "Unknown integrity breach")
+        set_lockdown(error_msg)
+        
+        # Log breach mit ALLEN Details
+        try:
+            from backend.core.integrity_db import log_breach
+            
+            checks = integrity_result.get("checks", {})
+            if not checks.get("genesis_ok"):
+                log_breach("GENESIS_BREACH", error_msg, integrity_result)
+            if checks.get("registry_ok") is False:
+                log_breach("REGISTRY_BREACH", error_msg, integrity_result)
+            if checks.get("combined_ok") is False:
+                log_breach("COMBINED_BREACH", error_msg, integrity_result)
+        except Exception as e:
+            print(f"⚠️ Failed to log breach: {e}")
         
         return GateResult(
             passed=False,
             gate="A",
-            veto_reasons=[integrity_result["error"]],
+            veto_reasons=[error_msg],
             rule_violations=["A51"]
         )
     

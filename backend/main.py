@@ -9,6 +9,7 @@ Phase 1+: Datenbanken, FAISS, Metriken, LLM kommen schrittweise hinzu
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api.temple import router as temple_router
+from api.integrity import router as integrity_router
 import uvicorn
 
 
@@ -32,6 +33,9 @@ app.add_middleware(
 
 # Temple Tab API
 app.include_router(temple_router, prefix="/api/temple", tags=["temple"])
+
+# Integrity API
+app.include_router(integrity_router, prefix="/api/integrity", tags=["integrity"])
 
 
 @app.get("/")
