@@ -766,6 +766,11 @@ def compute_m72_ev_valence(text: str) -> float:
     return round(clamp(0.5 + 0.15 * pos - 0.15 * neg), 4)
 
 
+def compute_m71_ev_resonance(A: float, PCI: float, soul_integrity: float) -> float:
+    """m71_ev_resonance: Evolution Resonance (harmony measure)"""
+    return round(clamp((A + PCI + soul_integrity) / 3.0), 4)
+
+
 def compute_m73_ev_readiness(t_integ: float, A: float) -> float:
     """m73_ev_readiness: Bereitschaft = T_integ × A"""
     return round(t_integ * A, 4)
@@ -1484,7 +1489,7 @@ class MetricsCalculator:
         m["m45_trust_score"] = compute_m45_trust_score(m["m38_soul_integrity"])
         
         # EVOLUTION
-        m["m71_ev_resonance"] = compute_m71_ev_resonance(m["m38_soul_integrity"])
+        m["m71_ev_resonance"] = compute_m71_ev_resonance(phase12["m1_A"], phase12["m2_PCI"], m["m38_soul_integrity"])
         m["m74_valence"] = compute_m74_valence(phase12["m1_A"])
         m["m100_causal"] = compute_m100_causal(phase12["m2_PCI"])
         
