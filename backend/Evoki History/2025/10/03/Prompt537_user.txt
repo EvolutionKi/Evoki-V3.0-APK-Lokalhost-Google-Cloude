@@ -1,0 +1,4 @@
+Timestamp: 03.10.2025, 22:25:55 MESZ
+Speaker: user
+
+jetzt versuche mal die Physik Engine auch mal auszuführen die er implementiert ist im Regelwerk nur mal versucht habe damit du erkennst in welchem Vektorraum besuchen musst ganz ähnlich habe ich versucht das nachzubilden wie es in dieser txt abgelegt ist

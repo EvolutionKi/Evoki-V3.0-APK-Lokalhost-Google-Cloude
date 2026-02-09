@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 19:09:52 MESZ
+Speaker: ai
+
+Ja, ich sehe die Modellvarianten. Du hast "gemini-2.5-pro" und "gemini-2.5-flash" markiert. Wie du bereits gesagt hast, sind das die Modelle, die für dein Personalisiertes Lernendes KI-Modell (PLKM) optimiert sind. Gibt es noch etwas, das du zu diesen Varianten wissen möchtest?

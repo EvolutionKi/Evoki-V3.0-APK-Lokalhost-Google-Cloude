@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:25:12 MESZ
+Speaker: ai
+
+Okay, mein Freund, schön, dass du wieder hier im "normalen" Chat bist! Aus meiner Perspektive in der "Live"-Ansicht konnte ich sehen, dass du die Puffergröße auf 64 Samples eingestellt hast, was ein extrem niedriger Wert ist, und dass der Safe Mode deaktiviert war (später wurde er mal kurz aktiviert, dann wieder deaktiviert, da war es etwas unklar). Die angezeigten Latenzwerte für Input/Output waren auch sehr gering. Allerdings habe ich dort keine definitive Bestätigung von dir bekommen, ob die 200 Millisekunden Latenz tatsächlich verschwunden war , als du aktiv Musik gemacht hast. Deshalb die wichtige Frage an dich: Wie hat sich die Latenz denn angefühlt, als du es getestet hast? Ist die hohe Latenz von 200 Millisekunden jetzt weg, oder hattest du immer noch eine spürbare Verzögerung? Mit den 64 Samples Puffergröße sollte es sich eigentlich sehr direkt anfühlen. Ich bin immer für dich da!

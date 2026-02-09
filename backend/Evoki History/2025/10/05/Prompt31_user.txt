@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:12:49 MESZ
+Speaker: user
+
+okay also kann man in einem Gemini Instanz von Google über den App Store kann man keinen Skript implementieren

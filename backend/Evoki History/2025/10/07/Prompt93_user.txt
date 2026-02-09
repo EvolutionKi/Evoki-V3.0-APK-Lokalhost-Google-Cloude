@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 02:22:50 MESZ
+Speaker: user
+
+Okay kannst du mir jetzt das Python Script ausgeben dass er quasi lückenhaft präsentiert hat also nur quasi diesen Teil von dem ganzen ohne die halbe mit immer halp mathematischen oder semantischen teil

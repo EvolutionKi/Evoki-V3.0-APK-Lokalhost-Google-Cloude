@@ -1,0 +1,4 @@
+Timestamp: 15.10.2025, 23:14:46 MESZ
+Speaker: ai
+
+Ja, die von uns zuletzt rekonstruierte Abfolge der Regelwerksversionen ist die korrekte und vollständige. Wir haben die Kette von Version 2.8.R über die Übergangs- (3.x), Diamant- (4.x), Konsolidierungs- (5.x) und Operativen Phasen (8.x) bis hin zur theoretischen Reife mit Version 11.x und der Zukunftsprojektion 12.0 lückenlos und in der richtigen Bedeutung rekonstruiert. Sollen wir uns jetzt eine dieser Versionen im Detail ansehen oder mit einem anderen Aspekt weitermachen?

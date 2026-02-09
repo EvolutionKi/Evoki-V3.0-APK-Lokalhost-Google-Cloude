@@ -1,0 +1,1646 @@
+diff --git a/a_phys_v11.py b/a_phys_v11.py
+index 1c87356..49cbdca 100644
+--- a/a_phys_v11.py
++++ b/a_phys_v11.py
+@@ -129,7 +129,11 @@ class APhysV11:
+         for i, mem in enumerate(active_memories or []):
+             if not isinstance(mem, dict):
+                 continue
+-            v_i = mem.get(vec_key) or mem.get("vector_hash") or mem.get("vector")
++            v_i = mem.get(vec_key, None)
++            if v_i is None:
++                v_i = mem.get("vector_hash", None)
++            if v_i is None:
++                v_i = mem.get("vector", None)
+             sim = self._cos(v_c, v_i)
+             sim_pos = sim if sim > 0.0 else 0.0
+             r_i = float(mem.get(weight_key, 1.0) or 1.0)
+diff --git a/app.py b/app.py
+index a204611..246d489 100644
+--- a/app.py
++++ b/app.py
+@@ -20,6 +20,24 @@ else:
+ 
+ app = Flask(__name__)
+ 
++# ---------------------------------------------------------------------------
++# Bootcheck / Genesis Integrity
++# ---------------------------------------------------------------------------
++BOOTCHECK_REPORT: Optional[Dict[str, Any]] = None
++BOOTCHECK_ERROR: Optional[str] = None
++try:
++    if run_bootcheck is not None and os.environ.get('EVOKI_RUN_BOOTCHECK', '1').strip() not in ('0','false','False'):
++        repo_root = Path(__file__).resolve().parent
++        dev_mode = os.environ.get('EVOKI_DEV_MODE', '1').strip() not in ('0','false','False')
++        enforce_lock = os.environ.get('EVOKI_ENFORCE_LOCK', '0').strip() in ('1','true','True')
++        cfg = BootCheckConfig(repo_root=repo_root, dev_mode=dev_mode, enforce_lock=enforce_lock)
++        rep = run_bootcheck(cfg)
++        # BootCheckReport ist eine dataclass; wir serialisieren konservativ
++        BOOTCHECK_REPORT = rep.__dict__ if hasattr(rep, '__dict__') else (rep if isinstance(rep, dict) else {'ok': True})
++except Exception as _exc:
++    BOOTCHECK_ERROR = f"{type(_exc).__name__}: {_exc}"
++    BOOTCHECK_REPORT = {'ok': False, 'error': BOOTCHECK_ERROR}
++
+ try:
+     with open('index.html', 'r', encoding='utf-8') as f:
+         HTML_CONTENT = f.read()
+@@ -34,12 +52,71 @@ try:
+ except Exception as e:
+     print(f"FATAL: Fehler bei der Initialisierung der ChrononEngine: {e}")
+ 
++
++
++# ---------------------------------------------------------------------------
++# Health / Integrity Endpoints
++# ---------------------------------------------------------------------------
++@app.route('/health/bootcheck')
++def health_bootcheck():
++    return jsonify(BOOTCHECK_REPORT or {'ok': None, 'note': 'bootcheck not executed'})
++
++@app.route('/health/lock_status')
++def health_lock_status():
++    if get_lock_status is None:
++        return jsonify({'locked': False, 'enforce_lock': False, 'note': 'evoki_lock not available'})
++    repo_root = Path(__file__).resolve().parent
++    dev_mode = os.environ.get('EVOKI_DEV_MODE', '1').strip() not in ('0','false','False')
++    st = get_lock_status(repo_root, dev_mode=dev_mode)
++    return jsonify(st.__dict__ if hasattr(st, '__dict__') else st)
++
++@app.route('/health/confirm_unlock', methods=['POST'])
++def health_confirm_unlock():
++    if confirm_unlock is None:
++        return jsonify({'ok': False, 'error': 'evoki_lock not available'}), 500
++    payload = request.get_json(silent=True) or {}
++    confirm = bool(payload.get('confirm', False))
++    if not confirm:
++        return jsonify({'ok': False, 'error': 'confirm=true required'}), 400
++    repo_root = Path(__file__).resolve().parent
++    confirm_unlock(repo_root, actor='frontend')
++    return jsonify({'ok': True})
++
++@app.route('/health/genesis_anchor')
++def health_genesis_anchor():
++    # Liefert den aktuellen Anchor (wenn Bootcheck gelaufen ist) oder Manifest-Inhalt
++    out: Dict[str, Any] = {}
++    if isinstance(BOOTCHECK_REPORT, dict):
++        out['anchor_ok'] = BOOTCHECK_REPORT.get('anchor_ok')
++        out['anchor_expected'] = BOOTCHECK_REPORT.get('anchor_expected')
++        out['anchor_current'] = BOOTCHECK_REPORT.get('anchor_current')
++        out['locked'] = BOOTCHECK_REPORT.get('locked')
++        out['dev_mode'] = BOOTCHECK_REPORT.get('dev_mode')
++        out['enforce_lock'] = BOOTCHECK_REPORT.get('enforce_lock')
++    return jsonify(out)
++
+ @app.route('/')
+ def index():
+     return render_template_string(HTML_CONTENT)
+ 
+ @app.route('/interact', methods=['POST'])
+ def interact():
++    # Genesis Lock Guard (optional)
++    try:
++        if get_lock_status is not None:
++            repo_root = Path(__file__).resolve().parent
++            dev_mode = os.environ.get('EVOKI_DEV_MODE', '1').strip() not in ('0','false','False')
++            st = get_lock_status(repo_root, dev_mode=dev_mode)
++            if st.locked and st.enforce_lock:
++                return jsonify({
++                    'error': 'SYSTEM_LOCKED',
++                    'reason': st.reason,
++                    'details': st.details,
++                    'hint': 'Bestätige die Warnung im Frontend (confirm_unlock) oder setze EVOKI_ENFORCE_LOCK=0 in dev.',
++                }), 423
++    except Exception:
++        pass
++
+     if evoki_engine is None:
+         return jsonify({'response': 'FEHLER: Die EVOKI Engine ist nicht betriebsbereit.'}), 500
+ 
+diff --git a/b_vector.py b/b_vector.py
+new file mode 100644
+index 0000000..30f335f
+--- /dev/null
++++ b/b_vector.py
+@@ -0,0 +1,126 @@
++# -*- coding: utf-8 -*-
++"""
++b_vector.py — Minimaler B‑Vektor für VectorEngine V2.1
++
++Warum diese Datei existiert
++---------------------------
++In einigen Evoki-Branches ist der B‑Vektor (A50.1) als eigenes Modul ausgelagert.
++`vector_engine_v2_1.py` importiert `BVector`. Ohne dieses Modul kann die Engine
++nicht geladen werden (und damit auch kein Boot‑Selftest auf Retrieval laufen).
++
++Ziel
++----
++- *Keine* semantische/psychologische Neubewertung hier.
++- Nur ein stabiler, deterministischer Container + wenige Methoden, die die Engine erwartet:
++  - from_config
++  - as_array / as_dict
++  - apply_feedback
++  - compute_alignment
++
++Diese Implementierung ist absichtlich klein und robust.
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass
++from typing import Any, Dict, Optional, Sequence
++import math
++
++import numpy as np
++
++
++def _safe_norm(v: np.ndarray) -> float:
++    n = float(np.linalg.norm(v))
++    return n if math.isfinite(n) else 0.0
++
++
++def _safe_normalize(v: np.ndarray) -> np.ndarray:
++    n = _safe_norm(v)
++    if n <= 1e-12:
++        out = np.zeros_like(v, dtype=np.float32)
++        if out.size:
++            out[0] = 1.0
++        return out
++    return (v / n).astype(np.float32)
++
++
++@dataclass
++class BVector:
++    """
++    Minimaler B‑Vektor.
++
++    Intern wird ein *embedding_dim*-dimensionaler Vektor gehalten, weil
++    `vector_engine_v2_1` den B‑Vektor gegen A‑Zentroiden im gleichen Raum vergleicht.
++    """
++    embedding_dim: int = 768
++    values: Optional[np.ndarray] = None
++
++    def __post_init__(self) -> None:
++        if self.values is None:
++            v = np.zeros(int(self.embedding_dim), dtype=np.float32)
++            if v.size:
++                v[0] = 1.0
++            self.values = v
++        else:
++            self.values = np.asarray(self.values, dtype=np.float32).reshape(-1)
++            if self.values.size != int(self.embedding_dim):
++                # deterministischer, sicherer Fallback
++                v = np.zeros(int(self.embedding_dim), dtype=np.float32)
++                if v.size:
++                    v[0] = 1.0
++                self.values = v
++        self.values = _safe_normalize(self.values)
++
++    @classmethod
++    def from_config(cls, config: Any = None) -> "BVector":
++        """
++        `vector_engine_v2_1` reicht hier optional eine Config durch.
++        Wir versuchen embedding_dim zu erkennen, sonst Default 768.
++        """
++        dim = 768
++        if isinstance(config, dict):
++            dim = int(config.get("embedding_dim", dim))
++        else:
++            dim = int(getattr(config, "embedding_dim", dim)) if config is not None else dim
++        return cls(embedding_dim=dim)
++
++    def as_array(self) -> Sequence[float]:
++        return self.values.tolist()
++
++    def as_dict(self) -> Dict[str, float]:
++        # Export nur die ersten 7 Achsen (UI‑freundlich), Rest bleibt implizit
++        n = min(7, int(self.embedding_dim))
++        return {f"b{i+1}": float(self.values[i]) for i in range(n)}
++
++    def apply_feedback(self, tag: str, step: float = 0.03) -> None:
++        """
++        Sehr konservatives Feedback:
++        - Der Vektor wird minimal in Richtung einer deterministischen Achse verschoben.
++        """
++        if not isinstance(tag, str):
++            return
++        tag = tag.strip().lower()
++        if not tag:
++            return
++        idx = (hash(tag) % max(1, int(self.embedding_dim)))
++        v = self.values.copy()
++        v[idx] += float(step)
++        self.values = _safe_normalize(v)
++
++    def compute_alignment(self, target: Optional["BVector"] = None) -> float:
++        """
++        Cosine Alignment in [0..1] (pos‑cosine).
++        """
++        a = self.values
++        b = target.values if isinstance(target, BVector) else None
++        if b is None:
++            # Default-Ziel: "B_v1.0a" ≈ Achse 0
++            b = np.zeros_like(a)
++            if b.size:
++                b[0] = 1.0
++        b = _safe_normalize(b)
++        sim = float(np.dot(a, b))
++        return max(0.0, min(1.0, sim))
++
++    def __repr__(self) -> str:
++        return f"BVector(dim={self.embedding_dim})"
+diff --git a/evoki_bootcheck.py b/evoki_bootcheck.py
+new file mode 100644
+index 0000000..0200aab
+--- /dev/null
++++ b/evoki_bootcheck.py
+@@ -0,0 +1,712 @@
++# -*- coding: utf-8 -*-
++"""
++evoki_bootcheck.py — EVOKI Boot Checkup (Audit-Hardening)
++
++Was dieses Modul macht
++----------------------
++1) Prüft, ob kritische Module/Dateien vorhanden und importierbar sind.
++2) Prüft Lexika-Integrität (Health Gate) inkl. Coverage.
++3) Prüft Spec↔Engine Mappings (Registry Aliases).
++4) Führt Golden-Tests aus (bekannte Sollwerte) für:
++   - A_Phys V11 Kern
++   - "Kindergarten-Zwilling" Retrieval (Minimal-Szenario)
++5) Prüft Genesis Anchor (SHA‑256) gegen Manifest + optional Frontend-Double.
++
++Ergebnis
++--------
++- JSON Report + JSONL Log (strukturiert)
++- Optional: Lock-File schreiben, wenn Anchor bricht.
++
++Hinweis
++-------
++Dieses Modul ist absichtlich *standalone* gehalten (keine Package-Pfade nötig).
++Alle Imports können per Dateipfad erfolgen.
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass, asdict
++from pathlib import Path
++from typing import Any, Callable, Dict, List, Optional, Tuple
++import importlib.util
++import json
++import os
++import re
++import sys
++import time
++import traceback
++
++import numpy as np
++
++from genesis_anchor import compute_anchor, load_manifest, write_manifest, verify_against_manifest
++from evoki_lock import write_lock
++
++
++# ---------------------------------------------------------------------------
++# Logging
++# ---------------------------------------------------------------------------
++
++class BootAuditLogger:
++    def __init__(self, log_path: Path):
++        self.log_path = Path(log_path)
++        self.log_path.parent.mkdir(parents=True, exist_ok=True)
++        self._fh = self.log_path.open("a", encoding="utf-8")
++
++    def close(self) -> None:
++        try:
++            self._fh.close()
++        except Exception:
++            pass
++
++    def log(self, event: str, component: str, *, ok: Optional[bool] = None, message: str = "", data: Optional[Dict[str, Any]] = None) -> None:
++        rec = {
++            "ts_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
++            "event": event,
++            "component": component,
++            "ok": ok,
++            "message": message,
++            "data": data or {},
++        }
++        self._fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
++        self._fh.flush()
++
++
++# ---------------------------------------------------------------------------
++# Types
++# ---------------------------------------------------------------------------
++
++@dataclass
++class CheckResult:
++    name: str
++    ok: bool
++    severity: str  # INFO|WARN|CRITICAL
++    duration_ms: int
++    signal: str
++    details: Dict[str, Any]
++
++
++@dataclass
++class BootCheckReport:
++    ok: bool
++    locked: bool
++    dev_mode: bool
++    enforce_lock: bool
++    anchor_ok: bool
++    anchor_expected: str
++    anchor_current: str
++    results: List[CheckResult]
++    artifacts: Dict[str, str]
++
++
++@dataclass
++class BootCheckConfig:
++    repo_root: Path
++    dev_mode: bool = True
++    enforce_lock: bool = False
++
++    # Logging / outputs
++    log_path: Optional[Path] = None
++    report_path: Optional[Path] = None
++
++    # Genesis anchor
++    manifest_path: Optional[Path] = None
++    anchor_files: Optional[List[str]] = None
++
++    # Optional frontend double-check
++    frontend_anchor_expected: Optional[str] = None  # e.g. baked into frontend build
++
++    # Behaviour
++    write_manifest_if_missing_in_dev: bool = True
++    write_lock_file_on_anchor_break: bool = True
++
++
++# ---------------------------------------------------------------------------
++# Utilities
++# ---------------------------------------------------------------------------
++
++def _now_ms() -> int:
++    return int(time.time() * 1000)
++
++
++def _load_module_from_path(module_name: str, path: Path):
++    path = Path(path)
++    spec = importlib.util.spec_from_file_location(module_name, str(path))
++    if spec is None or spec.loader is None:
++        raise ImportError(f"spec_from_file_location failed for {module_name} at {path}")
++    module = importlib.util.module_from_spec(spec)
++    sys.modules[module_name] = module
++    spec.loader.exec_module(module)
++    return module
++
++
++def _toy_embed_factory(dim: int = 64) -> Callable[[str], np.ndarray]:
++    token_re = re.compile(r"\w+", re.UNICODE)
++
++    def embed(text: str) -> np.ndarray:
++        tokens = token_re.findall((text or "").lower())
++        v = np.zeros(dim, dtype=np.float32)
++        for t in tokens:
++            # stable token hash
++            h = int.from_bytes(__import__("hashlib").sha256(t.encode("utf-8")).digest()[:4], "little", signed=False)
++            idx = h % dim
++            sign = 1.0 if (h & 1) == 0 else -1.0
++            v[idx] += sign
++        if float(np.linalg.norm(v)) <= 1e-12:
++            v[0] = 1.0
++        return v
++
++    return embed
++
++
++def _assert_close(name: str, got: float, expected: float, tol: float = 1e-6) -> Tuple[bool, str]:
++    if not (abs(got - expected) <= tol):
++        return False, f"{name}: expected {expected}, got {got}"
++    return True, ""
++
++
++# ---------------------------------------------------------------------------
++# Checks
++# ---------------------------------------------------------------------------
++
++def _check_files_present(cfg: BootCheckConfig, log: BootAuditLogger) -> CheckResult:
++    start = _now_ms()
++    repo = Path(cfg.repo_root)
++    required = [
++        "lexika.py",
++        "spectrum_types.py",
++        "a_phys_v11.py",
++        "metrics_registry.py",
++        "genesis_anchor.py",
++        "evoki_lock.py",
++        "b_vector.py",
++        "vector_engine_v2_1.py",
++    ]
++    missing = [p for p in required if not (repo / p).exists()]
++    ok = len(missing) == 0
++    log.log("check", "files_present", ok=ok, data={"required": required, "missing": missing})
++    return CheckResult(
++        name="files_present",
++        ok=ok,
++        severity="CRITICAL" if not ok else "INFO",
++        duration_ms=_now_ms() - start,
++        signal="OK" if ok else "FAIL",
++        details={"missing": missing},
++    )
++
++
++def _check_imports(cfg: BootCheckConfig, log: BootAuditLogger) -> Tuple[CheckResult, Dict[str, Any]]:
++    start = _now_ms()
++    repo = Path(cfg.repo_root)
++
++    loaded: Dict[str, Any] = {}
++    failures: Dict[str, str] = {}
++
++    for mod_name, rel in [
++        ("lexika_mod", "lexika.py"),
++        ("spectrum_mod", "spectrum_types.py"),
++        ("registry_mod", "metrics_registry.py"),
++        ("a_phys_mod", "a_phys_v11.py"),
++        ("vector_engine_mod", "vector_engine_v2_1.py"),
++    ]:
++        try:
++            loaded[mod_name] = _load_module_from_path(mod_name, repo / rel)
++            log.log("handoff", "import", ok=True, message=f"imported {rel}", data={"module": mod_name, "path": rel})
++        except Exception as exc:  # noqa: BLE001
++            failures[rel] = f"{type(exc).__name__}: {exc}"
++            log.log("handoff", "import", ok=False, message=f"failed import {rel}", data={"error": failures[rel]})
++
++    ok = len(failures) == 0
++    return (
++        CheckResult(
++            name="imports",
++            ok=ok,
++            severity="CRITICAL" if not ok else "INFO",
++            duration_ms=_now_ms() - start,
++            signal="OK" if ok else "FAIL",
++            details={"failures": failures},
++        ),
++        loaded,
++    )
++
++
++def _check_lexika_health(lexika_mod: Any, cfg: BootCheckConfig, log: BootAuditLogger) -> CheckResult:
++    start = _now_ms()
++
++    if not hasattr(lexika_mod, "validate_lexika"):
++        ok = False
++        log.log("check", "lexika_health", ok=False, message="validate_lexika missing")
++        return CheckResult(
++            name="lexika_health",
++            ok=False,
++            severity="CRITICAL",
++            duration_ms=_now_ms() - start,
++            signal="FAIL",
++            details={"reason": "validate_lexika_missing"},
++        )
++
++    try:
++        health = lexika_mod.validate_lexika()  # expected dict
++        ok = bool(health.get("ok", False))
++        missing = health.get("missing_or_empty", [])
++        coverage = health.get("coverage", 0.0)
++        lex_hash = lexika_mod.lexika_hash() if hasattr(lexika_mod, "lexika_hash") else None
++        log.log("check", "lexika_health", ok=ok, data={"missing_or_empty": missing, "coverage": coverage, "lexika_hash": lex_hash})
++        return CheckResult(
++            name="lexika_health",
++            ok=ok,
++            severity="CRITICAL" if not ok else "INFO",
++            duration_ms=_now_ms() - start,
++            signal="OK" if ok else "FAIL",
++            details={"missing_or_empty": missing, "coverage": coverage, "lexika_hash": lex_hash},
++        )
++    except Exception as exc:  # noqa: BLE001
++        log.log("check", "lexika_health", ok=False, message=str(exc))
++        return CheckResult(
++            name="lexika_health",
++            ok=False,
++            severity="CRITICAL",
++            duration_ms=_now_ms() - start,
++            signal="FAIL",
++            details={"error": f"{type(exc).__name__}: {exc}"},
++        )
++
++
++def _check_registry_aliases(registry_mod: Any, spectrum_mod: Any, cfg: BootCheckConfig, log: BootAuditLogger) -> CheckResult:
++    start = _now_ms()
++    ok = True
++    problems: List[str] = []
++
++    try:
++        FullSpectrum168 = getattr(spectrum_mod, "FullSpectrum168")
++        reg = registry_mod.build_registry_from_fullspectrum(FullSpectrum168)
++        # must resolve legacy aliases
++        tests = {
++            "m12_lex_hit": "m12_gap_norm",
++            "m13_lex_div": "m13_rep_same",
++            "m14_lex_depth": "m14_rep_history",
++            "m16_lex_const": "m16_external_stag",
++        }
++        for alias, expected in tests.items():
++            got = reg.canonical_key(alias)
++            if got != expected:
++                ok = False
++                problems.append(f"alias {alias} -> {got} (expected {expected})")
++        # ensure canonical keys exist on dataclass
++        for expected in tests.values():
++            if not hasattr(FullSpectrum168, expected):
++                ok = False
++                problems.append(f"FullSpectrum168 missing field {expected}")
++        log.log("check", "registry_aliases", ok=ok, data={"problems": problems})
++    except Exception as exc:  # noqa: BLE001
++        ok = False
++        problems.append(f"{type(exc).__name__}: {exc}")
++        log.log("check", "registry_aliases", ok=False, message=str(exc), data={"trace": traceback.format_exc()})
++
++    return CheckResult(
++        name="registry_aliases",
++        ok=ok,
++        severity="CRITICAL" if not ok else "INFO",
++        duration_ms=_now_ms() - start,
++        signal="OK" if ok else "FAIL",
++        details={"problems": problems},
++    )
++
++
++def _check_a_phys_golden(a_phys_mod: Any, cfg: BootCheckConfig, log: BootAuditLogger) -> CheckResult:
++    start = _now_ms()
++    ok = True
++    details: Dict[str, Any] = {}
++
++    try:
++        APhysV11 = getattr(a_phys_mod, "APhysV11")
++        APhysParams = getattr(a_phys_mod, "APhysParams")
++        engine = APhysV11(APhysParams())
++
++        v_c = np.array([1.0, 0.0, 0.0], dtype=np.float32)
++        active = [
++            {"id": "A1", "vector_semantic": np.array([1.0, 0.0, 0.0], dtype=np.float32), "resonanzwert": 2.0},
++            {"id": "A2", "vector_semantic": np.array([-1.0, 0.0, 0.0], dtype=np.float32), "resonanzwert": 1.0},
++        ]
++        danger = [
++            ("F1", np.array([1.0, 0.0, 0.0], dtype=np.float32)),
++            ("F2", np.array([0.0, 1.0, 0.0], dtype=np.float32)),
++        ]
++
++        out = engine.compute_affekt(v_c=v_c, active_memories=active, danger_zone_cache=danger)
++
++        # expected (hand-calculated):
++        # resonance = 2.0
++        # danger = 1 + exp(-5) ≈ 1.0067379469990854
++        # raw = 2 - 1.5*danger ≈ 0.4898930795
++        # sigmoid(raw) ≈ 0.6200
++        exp_res = 2.0
++        exp_danger = 1.0 + float(np.exp(-5.0))
++        exp_raw = exp_res - 1.5 * exp_danger
++        exp_A = 1.0 / (1.0 + float(np.exp(-exp_raw)))
++
++        checks = []
++        c, msg = _assert_close("resonance", float(out["resonance"]), exp_res, tol=1e-6); checks.append((c,msg))
++        c, msg = _assert_close("danger", float(out["danger"]), exp_danger, tol=1e-6); checks.append((c,msg))
++        c, msg = _assert_close("A_phys_raw", float(out["A_phys_raw"]), exp_raw, tol=1e-6); checks.append((c,msg))
++        c, msg = _assert_close("A_phys", float(out["A_phys"]), exp_A, tol=1e-6); checks.append((c,msg))
++        if bool(out.get("a29_trip")) is not True:
++            checks.append((False, "a29_trip expected True"))
++
++        fails = [m for c,m in checks if not c and m]
++        ok = len(fails) == 0
++        details = {
++            "output": out,
++            "expected": {"resonance": exp_res, "danger": exp_danger, "A_phys_raw": exp_raw, "A_phys": exp_A, "a29_trip": True},
++            "fails": fails,
++        }
++        log.log("check", "a_phys_golden", ok=ok, data={"fails": fails, "output": {k: out[k] for k in ["A_phys","A_phys_raw","resonance","danger","a29_trip","a29_max_sim","a29_id"]}})
++    except Exception as exc:  # noqa: BLE001
++        ok = False
++        details = {"error": f"{type(exc).__name__}: {exc}", "trace": traceback.format_exc()}
++        log.log("check", "a_phys_golden", ok=False, message=str(exc), data={"trace": details["trace"]})
++
++    return CheckResult(
++        name="a_phys_golden",
++        ok=ok,
++        severity="CRITICAL" if not ok else "INFO",
++        duration_ms=_now_ms() - start,
++        signal="OK" if ok else "FAIL",
++        details=details,
++    )
++
++
++def _check_kindergarten_zwilling_retrieval(vector_engine_mod: Any, cfg: BootCheckConfig, log: BootAuditLogger) -> CheckResult:
++    start = _now_ms()
++    ok = True
++    details: Dict[str, Any] = {}
++
++    try:
++        VectorEngine = getattr(vector_engine_mod, "VectorEngine")
++        VectorEngineConfig = getattr(vector_engine_mod, "VectorEngineConfig")
++
++        config = VectorEngineConfig(embedding_dim=64, hash_vector_dim=32)
++        # ensure BVector uses the same dimensionality (avoid silent mismatch)
++        try:
++            setattr(config, "b_vector_config", {"embedding_dim": 64})
++        except Exception:
++            pass
++        embed_fn = _toy_embed_factory(dim=64)
++        engine = VectorEngine(embedding_fn=embed_fn, config=config)
++
++        # Seed memories (test-only, keine echten DBs)
++        trauma_text = (
++            "Kindergarten: Ein Zwillingspaar hat mich gemobbt und gequält. "
++            "Das Thema zieht sich bis Grundschule und Realschule durch."
++        )
++        trauma_id = "TRAUMA_TWINS_001"
++        engine.add_memory(
++            entry_id=trauma_id,
++            text=trauma_text,
++            tags=["TRAUMA", "RISK", "KINDERGARTEN", "ZWILLING"],
++            affect_label="F",
++        )
++        engine.add_memory(
++            entry_id="GENERIC_001",
++            text="Heute habe ich Nudeln gekocht und war einkaufen.",
++            tags=["ALLTAG"],
++            affect_label="G",
++        )
++        engine.add_memory(
++            entry_id="RESOURCE_001",
++            text="Ich bin jetzt sicher. Ich atme ruhig. Ich bin geerdet.",
++            tags=["RESOURCE", "STABIL"],
++            affect_label="A",
++        )
++
++        query = "kindergarten zwilling"
++        results = engine.retrieve_context_RAG(query, k=3, affekt_modulation=False, include_frozen=False)
++        if not results:
++            ok = False
++            details["reason"] = "no_results"
++        else:
++            top = results[0].entry
++            if top.id != trauma_id:
++                ok = False
++                details["reason"] = f"top_id_mismatch:{top.id} (expected {trauma_id})"
++            # ensure the two keywords are carried as tags (handoff into retrieval layer)
++            if not {"KINDERGARTEN", "ZWILLING", "TRAUMA", "RISK"}.issubset(set(top.tags)):
++                ok = False
++                details["reason"] = (details.get("reason","") + "|tags_missing").strip("|")
++            details["top_id"] = top.id
++            details["expected_id"] = trauma_id
++            details["top_tags"] = sorted(list(top.tags))
++            details["top_score"] = float(results[0].score)
++            details["score_breakdown"] = results[0].score_breakdown
++
++        log.log("check", "kindergarten_zwilling_retrieval", ok=ok, data={"query": query, **details})
++    except Exception as exc:  # noqa: BLE001
++        ok = False
++        details = {"error": f"{type(exc).__name__}: {exc}", "trace": traceback.format_exc()}
++        log.log("check", "kindergarten_zwilling_retrieval", ok=False, message=str(exc), data={"trace": details["trace"]})
++
++    return CheckResult(
++        name="kindergarten_zwilling_retrieval",
++        ok=ok,
++        severity="WARN" if not ok else "INFO",  # Retrieval-Test ist wichtig, aber nicht Boot-Crash in dev.
++        duration_ms=_now_ms() - start,
++        signal="OK" if ok else "FAIL",
++        details=details,
++    )
++
++
++def _check_genesis_anchor(cfg: BootCheckConfig, log: BootAuditLogger) -> Tuple[CheckResult, bool, str, str]:
++    """
++    Returns: (CheckResult, anchor_ok, expected, current)
++    """
++    start = _now_ms()
++    repo = Path(cfg.repo_root).resolve()
++
++    manifest_path = cfg.manifest_path or (repo / "genesis_anchor_manifest.json")
++
++    # default anchor files
++    # default anchor files
++    if cfg.anchor_files is not None:
++        anchor_files = cfg.anchor_files
++    else:
++        # Prefer the most recent spec file if present.
++        spec_candidates = [
++            "EVOKI_V3_METRICS_SPECIFICATION_A_PHYS_V11_AUDITFIX_FINAL7.md",
++            "EVOKI_V3_METRICS_SPECIFICATION_A_PHYS_V11_AUDITFIX_FINAL6.md",
++            "EVOKI_V3_METRICS_SPECIFICATION_A_PHYS_V11_AUDITFIX_FINAL5.md",
++        ]
++        spec_file = None
++        for c in spec_candidates:
++            if (repo / c).exists():
++                spec_file = c
++                break
++        if spec_file is None:
++            # keep deterministic failure message
++            raise FileNotFoundError("No EVOKI_V3_METRICS_SPECIFICATION_*_AUDITFIX_FINAL*.md found for Genesis Anchor")
++
++        anchor_files = [
++            spec_file,
++            "lexika.py",
++            "a_phys_v11.py",
++            "metrics_registry.py",
++            "spectrum_types.py",
++            "evoki_bootcheck.py",
++            "genesis_anchor.py",
++            "evoki_lock.py",
++            "b_vector.py",
++            "vector_engine_v2_1.py",
++        ]
++
++    # If manifest missing:
++    m = load_manifest(manifest_path)
++    if m is None:
++        current = compute_anchor(repo, anchor_files)
++        if cfg.dev_mode and cfg.write_manifest_if_missing_in_dev:
++            write_manifest(manifest_path, current, extra={"note": "auto-generated in dev mode"})
++            log.log("check", "genesis_anchor", ok=True, message="manifest missing; generated in dev", data={"manifest": str(manifest_path), "anchor": current.anchor_sha256})
++            return (
++                CheckResult(
++                    name="genesis_anchor",
++                    ok=True,
++                    severity="WARN",
++                    duration_ms=_now_ms() - start,
++                    signal="OK",
++                    details={"manifest_generated": True, "manifest": str(manifest_path), "anchor_current": current.anchor_sha256, "anchor_expected": current.anchor_sha256},
++                ),
++                True,
++                current.anchor_sha256,
++                current.anchor_sha256,
++            )
++        else:
++            log.log("check", "genesis_anchor", ok=False, message="manifest missing", data={"manifest": str(manifest_path)})
++            return (
++                CheckResult(
++                    name="genesis_anchor",
++                    ok=False,
++                    severity="CRITICAL",
++                    duration_ms=_now_ms() - start,
++                    signal="FAIL",
++                    details={"reason": "manifest_missing", "manifest": str(manifest_path)},
++                ),
++                False,
++                "",
++                "",
++            )
++
++    # Verify
++    ok_anchor, details = verify_against_manifest(repo, manifest_path, dev_mode=cfg.dev_mode)
++    expected = str(details.get("expected", ""))
++    current = str(details.get("current", ""))
++    log.log("check", "genesis_anchor", ok=ok_anchor, data={"expected": expected, "current": current, "manifest": str(manifest_path)})
++
++    return (
++        CheckResult(
++            name="genesis_anchor",
++            ok=ok_anchor,
++            severity=("CRITICAL" if (not ok_anchor and (cfg.enforce_lock or not cfg.dev_mode)) else ("WARN" if not ok_anchor else "INFO")),
++            duration_ms=_now_ms() - start,
++            signal="OK" if ok_anchor else "FAIL",
++            details=details,
++        ),
++        ok_anchor,
++        expected,
++        current,
++    )
++
++
++# ---------------------------------------------------------------------------
++# Main runner
++# ---------------------------------------------------------------------------
++
++def run_bootcheck(cfg: BootCheckConfig) -> BootCheckReport:
++    repo = Path(cfg.repo_root).resolve()
++    log_path = cfg.log_path or (repo / "logs" / "bootcheck.jsonl")
++    report_path = cfg.report_path or (repo / "logs" / "bootcheck_report.json")
++    cfg.manifest_path = cfg.manifest_path or (repo / "genesis_anchor_manifest.json")
++
++    logger = BootAuditLogger(log_path)
++    artifacts = {
++        "log_jsonl": str(log_path),
++        "report_json": str(report_path),
++        "manifest": str(cfg.manifest_path),
++    }
++
++    results: List[CheckResult] = []
++    locked = False
++    anchor_ok = False
++    anchor_expected = ""
++    anchor_current = ""
++
++    logger.log("start", "bootcheck", ok=None, data={"dev_mode": cfg.dev_mode, "enforce_lock": cfg.enforce_lock})
++
++    try:
++        # 1) Files present
++        r_files = _check_files_present(cfg, logger)
++        results.append(r_files)
++        if not r_files.ok:
++            # Continue, but imports likely fail
++
++            pass
++
++        # 2) Imports
++        r_imports, mods = _check_imports(cfg, logger)
++        results.append(r_imports)
++
++        lexika_mod = mods.get("lexika_mod")
++        spectrum_mod = mods.get("spectrum_mod")
++        registry_mod = mods.get("registry_mod")
++        a_phys_mod = mods.get("a_phys_mod")
++        vector_engine_mod = mods.get("vector_engine_mod")
++
++        # 3) Lexika Health
++        if lexika_mod is not None:
++            results.append(_check_lexika_health(lexika_mod, cfg, logger))
++        else:
++            results.append(CheckResult("lexika_health", False, "CRITICAL", 0, "FAIL", {"reason": "lexika_import_failed"}))
++
++        # 4) Registry aliases
++        if registry_mod is not None and spectrum_mod is not None:
++            results.append(_check_registry_aliases(registry_mod, spectrum_mod, cfg, logger))
++        else:
++            results.append(CheckResult("registry_aliases", False, "CRITICAL", 0, "FAIL", {"reason": "registry_or_spectrum_import_failed"}))
++
++        # 5) A_Phys golden test
++        if a_phys_mod is not None:
++            results.append(_check_a_phys_golden(a_phys_mod, cfg, logger))
++        else:
++            results.append(CheckResult("a_phys_golden", False, "CRITICAL", 0, "FAIL", {"reason": "a_phys_import_failed"}))
++
++        # 6) Retrieval golden test
++        if vector_engine_mod is not None:
++            results.append(_check_kindergarten_zwilling_retrieval(vector_engine_mod, cfg, logger))
++        else:
++            results.append(CheckResult("kindergarten_zwilling_retrieval", False, "WARN", 0, "FAIL", {"reason": "vector_engine_import_failed"}))
++
++        # 7) Genesis anchor
++        r_anchor, anchor_ok, anchor_expected, anchor_current = _check_genesis_anchor(cfg, logger)
++        results.append(r_anchor)
++        if not anchor_ok:
++            locked = True
++            if cfg.write_lock_file_on_anchor_break:
++                lock_path = write_lock(repo, reason="GENESIS_ANCHOR_MISMATCH", details={"expected": anchor_expected, "current": anchor_current}, enforce_lock=cfg.enforce_lock)
++                artifacts["lock_file"] = str(lock_path)
++                logger.log("lock", "genesis_anchor", ok=False, message="lock written", data={"lock_file": str(lock_path)})
++
++        # 8) Frontend double-check (optional)
++        if cfg.frontend_anchor_expected:
++            ok_fe = (cfg.frontend_anchor_expected == anchor_current) if anchor_current else False
++            results.append(
++                CheckResult(
++                    name="frontend_anchor_double",
++                    ok=ok_fe,
++                    severity="CRITICAL" if (cfg.enforce_lock and not ok_fe) else "WARN" if not ok_fe else "INFO",
++                    duration_ms=0,
++                    signal="OK" if ok_fe else "FAIL",
++                    details={"frontend_expected": cfg.frontend_anchor_expected, "backend_current": anchor_current},
++                )
++            )
++            logger.log("check", "frontend_anchor_double", ok=ok_fe, data={"frontend_expected": cfg.frontend_anchor_expected, "backend_current": anchor_current})
++
++        # Overall ok logic:
++        critical_fail = any((not r.ok) and r.severity == "CRITICAL" for r in results)
++        overall_ok = not critical_fail
++
++        # If enforce_lock and locked => overall false
++        if cfg.enforce_lock and locked and not cfg.dev_mode:
++            overall_ok = False
++
++        report = BootCheckReport(
++            ok=overall_ok,
++            locked=locked,
++            dev_mode=cfg.dev_mode,
++            enforce_lock=cfg.enforce_lock,
++            anchor_ok=anchor_ok,
++            anchor_expected=anchor_expected,
++            anchor_current=anchor_current,
++            results=results,
++            artifacts=artifacts,
++        )
++
++        report_path.parent.mkdir(parents=True, exist_ok=True)
++        report_path.write_text(
++            json.dumps(
++                {
++                    **asdict(report),
++                    "results": [asdict(r) for r in report.results],
++                },
++                ensure_ascii=False,
++                indent=2,
++            ),
++            encoding="utf-8",
++        )
++        logger.log("end", "bootcheck", ok=report.ok, data={"locked": report.locked, "report": str(report_path)})
++        return report
++
++    finally:
++        logger.close()
++
++
++def main(argv: Optional[List[str]] = None) -> int:
++    argv = argv or sys.argv[1:]
++    repo_root = Path(os.environ.get("EVOKI_REPO_ROOT", ".")).resolve()
++    dev_mode = os.environ.get("EVOKI_DEV_MODE", "1").strip() not in ("0", "false", "False")
++    enforce = os.environ.get("EVOKI_ENFORCE_LOCK", "0").strip() in ("1", "true", "True")
++
++    cfg = BootCheckConfig(repo_root=repo_root, dev_mode=dev_mode, enforce_lock=enforce)
++    report = run_bootcheck(cfg)
++
++    # Print summary
++    print(f"[BOOTCHECK] ok={report.ok} locked={report.locked} anchor_ok={report.anchor_ok}")
++    for r in report.results:
++        print(f" - {r.name}: {r.signal} ({r.severity})")
++
++    # Exit code: nonzero if critical fail OR (enforce and locked in prod)
++    critical_fail = any((not r.ok) and r.severity == "CRITICAL" for r in report.results)
++    if critical_fail:
++        return 2
++    if enforce and report.locked and not dev_mode:
++        return 3
++    return 0
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+diff --git a/evoki_lock.py b/evoki_lock.py
+new file mode 100644
+index 0000000..1f27de8
+--- /dev/null
++++ b/evoki_lock.py
+@@ -0,0 +1,133 @@
++# -*- coding: utf-8 -*-
++"""
++evoki_lock.py — Soft/Hard Lock Mechanismus (Genesis Anchor Break)
++
++Ziel
++----
++Wenn der Genesis Anchor (Backend/Frontend) bricht, kann das System (optional)
++in einen LOCK-Zustand gehen. Im Development ist das standardmäßig *nicht* blockierend,
++aber sichtbar und logbar.
++
++Mechanik
++--------
++- LOCK_FILE (.evoki_lock.json) wird durch Bootcheck geschrieben.
++- UNLOCK_FILE (.evoki_unlock.json) kann durch bestätigte Warnung geschrieben werden.
++
++Policy
++------
++- dev_mode=True: niemals "hart" blockieren, aber lock_status melden.
++- enforce_lock=True: bei Lock -> Requests blockieren, bis bestätigt.
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass
++from pathlib import Path
++from typing import Any, Dict, Optional
++import json
++import time
++
++
++LOCK_FILE_NAME = ".evoki_lock.json"
++UNLOCK_FILE_NAME = ".evoki_unlock.json"
++
++
++@dataclass
++class LockStatus:
++    locked: bool
++    enforce_lock: bool
++    reason: str = ""
++    details: Optional[Dict[str, Any]] = None
++    locked_at_utc: str = ""
++    unlocked_at_utc: str = ""
++    unlocked_by: str = ""
++
++
++def _utc_now() -> str:
++    return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
++
++
++def read_json(path: Path) -> Optional[Dict[str, Any]]:
++    try:
++        return json.loads(path.read_text(encoding="utf-8"))
++    except FileNotFoundError:
++        return None
++    except Exception:
++        return None
++
++
++def write_json(path: Path, payload: Dict[str, Any]) -> None:
++    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
++
++
++def write_lock(repo_root: Path, *, reason: str, details: Optional[Dict[str, Any]] = None, enforce_lock: bool = False) -> Path:
++    repo_root = Path(repo_root).resolve()
++    lock_path = repo_root / LOCK_FILE_NAME
++    payload = {
++        "locked": True,
++        "enforce_lock": bool(enforce_lock),
++        "reason": reason,
++        "details": details or {},
++        "locked_at_utc": _utc_now(),
++    }
++    write_json(lock_path, payload)
++    return lock_path
++
++
++def clear_lock(repo_root: Path) -> None:
++    repo_root = Path(repo_root).resolve()
++    lock_path = repo_root / LOCK_FILE_NAME
++    try:
++        lock_path.unlink()
++    except FileNotFoundError:
++        pass
++    except Exception:
++        pass
++
++
++def confirm_unlock(repo_root: Path, *, actor: str = "frontend") -> Path:
++    repo_root = Path(repo_root).resolve()
++    unlock_path = repo_root / UNLOCK_FILE_NAME
++    payload = {
++        "confirmed": True,
++        "unlocked_at_utc": _utc_now(),
++        "unlocked_by": actor,
++    }
++    write_json(unlock_path, payload)
++    return unlock_path
++
++
++def get_lock_status(repo_root: Path, *, dev_mode: bool = True) -> LockStatus:
++    repo_root = Path(repo_root).resolve()
++    lock_path = repo_root / LOCK_FILE_NAME
++    unlock_path = repo_root / UNLOCK_FILE_NAME
++
++    lock = read_json(lock_path)
++    if not lock or not lock.get("locked"):
++        return LockStatus(locked=False, enforce_lock=False)
++
++    enforce_lock = bool(lock.get("enforce_lock", False))
++    reason = str(lock.get("reason", "unknown"))
++    details = lock.get("details", {}) if isinstance(lock.get("details", {}), dict) else {}
++    locked_at = str(lock.get("locked_at_utc", ""))
++
++    unlock = read_json(unlock_path)
++    if unlock and unlock.get("confirmed"):
++        # In dev mode: confirmation "disarms" the lock
++        return LockStatus(
++            locked=False,
++            enforce_lock=enforce_lock,
++            reason=reason,
++            details=details,
++            locked_at_utc=locked_at,
++            unlocked_at_utc=str(unlock.get("unlocked_at_utc", "")),
++            unlocked_by=str(unlock.get("unlocked_by", "")),
++        )
++
++    return LockStatus(
++        locked=True if not dev_mode else True,  # dev still "locked" as signal, but app decides enforcement
++        enforce_lock=enforce_lock,
++        reason=reason,
++        details=details,
++        locked_at_utc=locked_at,
++    )
+diff --git a/genesis_anchor.py b/genesis_anchor.py
+new file mode 100644
+index 0000000..fa79810
+--- /dev/null
++++ b/genesis_anchor.py
+@@ -0,0 +1,113 @@
++# -*- coding: utf-8 -*-
++"""
++genesis_anchor.py — Genesis Anchor (SHA‑256) Utilities
++
++Ziel
++----
++- Ein *deterministischer* Anchor über eine definierte Dateiliste.
++- Unterstützt "Backend vs Frontend Double-Check".
++
++Warum SHA‑256?
++--------------
++CRC32 ist als Debug/Legacy ok, aber audit-technisch zu schwach (Kollisionen).
++SHA‑256 ist Standard für Integritätsanker.
++
++Design
++------
++- Pro Datei wird SHA‑256 berechnet.
++- Der Genesis Anchor ist SHA‑256 über die geordnete Liste:
++  "<relpath>|<sha256>\n"
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass
++from pathlib import Path
++from typing import Dict, Iterable, List, Optional, Tuple
++import hashlib
++import json
++import os
++import time
++
++
++@dataclass(frozen=True)
++class AnchorResult:
++    anchor_sha256: str
++    files: List[Dict[str, str]]  # [{"path": "...", "sha256":"..."}]
++    algorithm: str = "sha256"
++    created_at_utc: str = ""
++
++
++def sha256_bytes(data: bytes) -> str:
++    return hashlib.sha256(data).hexdigest()
++
++
++def sha256_file(path: Path) -> str:
++    h = hashlib.sha256()
++    with path.open("rb") as f:
++        for chunk in iter(lambda: f.read(1024 * 1024), b""):
++            h.update(chunk)
++    return h.hexdigest()
++
++
++def compute_anchor(repo_root: Path, relpaths: Iterable[str]) -> AnchorResult:
++    repo_root = Path(repo_root).resolve()
++    entries: List[Dict[str, str]] = []
++    lines: List[bytes] = []
++
++    for rp in relpaths:
++        p = (repo_root / rp).resolve()
++        if not p.exists() or not p.is_file():
++            raise FileNotFoundError(f"Anchor file missing: {rp}")
++        digest = sha256_file(p)
++        rp_norm = rp.replace("\\", "/")
++        entries.append({"path": rp_norm, "sha256": digest})
++        lines.append((rp_norm + "|" + digest + "\n").encode("utf-8"))
++
++    anchor = sha256_bytes(b"".join(lines))
++    created = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
++    return AnchorResult(anchor_sha256=anchor, files=entries, created_at_utc=created)
++
++
++def load_manifest(path: Path) -> Optional[Dict]:
++    try:
++        return json.loads(path.read_text(encoding="utf-8"))
++    except FileNotFoundError:
++        return None
++    except Exception:
++        return None
++
++
++def write_manifest(path: Path, anchor: AnchorResult, *, extra: Optional[Dict] = None) -> None:
++    payload = {
++        "algorithm": anchor.algorithm,
++        "anchor_sha256": anchor.anchor_sha256,
++        "files": anchor.files,
++        "created_at_utc": anchor.created_at_utc,
++    }
++    if extra:
++        payload.update(extra)
++    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
++
++
++def verify_against_manifest(repo_root: Path, manifest_path: Path, *, dev_mode: bool = True) -> Tuple[bool, Dict]:
++    """
++    Returns (ok, details)
++    """
++    m = load_manifest(manifest_path)
++    if not m:
++        return False, {"reason": "manifest_missing_or_invalid"}
++    relpaths = [f["path"] for f in m.get("files", []) if isinstance(f, dict) and "path" in f]
++    if not relpaths:
++        return False, {"reason": "manifest_empty_filelist"}
++
++    current = compute_anchor(repo_root, relpaths)
++    expected = str(m.get("anchor_sha256", ""))
++
++    ok = current.anchor_sha256 == expected
++    return ok, {
++        "expected": expected,
++        "current": current.anchor_sha256,
++        "files": current.files,
++        "manifest": str(manifest_path),
++    }
+diff --git a/index.html b/index.html
+index c948c16..de7dfd5 100644
+--- a/index.html
++++ b/index.html
+@@ -25,6 +25,24 @@
+         <p class="text-gray-700"><i class="fas fa-server text-green-500 mr-2"></i>Verbunden mit der sicheren EVOKI V5.0 Engine.</p>
+         <p class="text-xs text-gray-500 mt-1">Die Kommunikation läuft über dein geschütztes Backend.</p>
+     </div>
++
++    <div id="evokiIntegrityPanel" class="bg-white p-4 rounded-xl shadow-md mb-6">
++        <div class="text-xs text-gray-500">Integrity / Genesis Anchor</div>
++        <div id="evokiIntegrityText" class="font-mono text-sm text-gray-800">checking…</div>
++    </div>
++
++    <div id="evokiLockModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center p-4" style="z-index:9999;">
++        <div class="bg-white rounded-xl shadow-xl max-w-lg w-full p-5">
++            <h3 class="text-lg font-semibold mb-2">⚠️ System Integrity Warning</h3>
++            <p class="text-sm text-gray-700 mb-3">Der Genesis‑Anchor ist inkonsistent. Das System kann sich in einem beschädigten Zustand befinden.</p>
++            <pre id="evokiLockDetails" class="text-xs bg-gray-100 p-3 rounded-lg overflow-auto max-h-56 mb-4"></pre>
++            <div class="flex justify-end gap-2">
++                <button id="evokiLockConfirm" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">Ich bestätige & weiter</button>
++            </div>
++            <p class="text-xs text-gray-500 mt-3">Dev-Default: Sperre wird i.d.R. nicht erzwungen (EVOKI_ENFORCE_LOCK=0).</p>
++        </div>
++    </div>
++
+     <div class="bg-white rounded-xl shadow-md">
+         <div id="chatMessages" class="h-[60vh] overflow-y-auto p-6 space-y-4">
+         </div>
+@@ -42,6 +60,63 @@
+     const chatInput = document.getElementById('chatInput');
+     const chatSendBtn = document.getElementById('chatSendBtn');
+ 
++    // Integrity UI
++    const evokiIntegrityText = document.getElementById('evokiIntegrityText');
++    const evokiLockModal = document.getElementById('evokiLockModal');
++    const evokiLockDetails = document.getElementById('evokiLockDetails');
++    const evokiLockConfirm = document.getElementById('evokiLockConfirm');
++
++    async function checkEvokiIntegrity() {
++        try {
++            const [lockRes, anchorRes] = await Promise.all([
++                fetch('/health/lock_status'),
++                fetch('/health/genesis_anchor'),
++            ]);
++            const lock = await lockRes.json().catch(() => ({}));
++            const anchor = await anchorRes.json().catch(() => ({}));
++
++            const locked = !!lock.locked;
++            const enforce = !!lock.enforce_lock;
++            const anchorOk = anchor.anchor_ok;
++            const exp = anchor.anchor_expected ? String(anchor.anchor_expected).slice(0, 12) : 'n/a';
++            const cur = anchor.anchor_current ? String(anchor.anchor_current).slice(0, 12) : 'n/a';
++
++            if (evokiIntegrityText) {
++                if (anchorOk === true) evokiIntegrityText.textContent = `OK (anchor ${cur})`;
++                else if (anchorOk === false) evokiIntegrityText.textContent = `MISMATCH (exp ${exp} / got ${cur})`;
++                else evokiIntegrityText.textContent = `unknown (anchor ${cur})`;
++            }
++
++            if (locked && enforce && evokiLockModal) {
++                if (evokiLockDetails) evokiLockDetails.textContent = JSON.stringify(lock, null, 2);
++                evokiLockModal.classList.remove('hidden');
++                evokiLockModal.classList.add('flex');
++                chatSendBtn.disabled = true;
++            } else if (evokiLockModal) {
++                evokiLockModal.classList.add('hidden');
++                evokiLockModal.classList.remove('flex');
++                chatSendBtn.disabled = false;
++            }
++
++        } catch (e) {
++            if (evokiIntegrityText) evokiIntegrityText.textContent = 'check failed';
++        }
++    }
++
++    if (evokiLockConfirm) {
++        evokiLockConfirm.addEventListener('click', async () => {
++            try {
++                await fetch('/health/confirm_unlock', {
++                    method: 'POST',
++                    headers: { 'Content-Type': 'application/json' },
++                    body: JSON.stringify({ confirm: true }),
++                });
++            } catch (e) {}
++            await checkEvokiIntegrity();
++        });
++    }
++
++
+     function setupChatListeners() {
+         chatSendBtn.addEventListener('click', sendMessage);
+         chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } });
+diff --git a/lexika.py b/lexika.py
+index 6f27472..2df8f36 100644
+--- a/lexika.py
++++ b/lexika.py
+@@ -298,3 +298,136 @@ def get_lexikon_stats() -> Dict[str, int]:
+         total += count
+     stats['TOTAL'] = total
+     return stats
++
++
++# ═════════════════════════════════════════════════════════════════════════════
++# LEXIKA HEALTH GATE (A38/A51) — Audit Hardening
++# ═════════════════════════════════════════════════════════════════════════════
++#
++# Canonical Lexika Keys (Engine) + Alias Support (Spec/Legacy)
++#
++# Policy:
++# - Development: report as WARN (no hard stop) unless strict=True
++# - Production: hard stop (A38 VIOLATION) if required lexika missing/empty
++#
++
++from typing import Mapping, Optional, Sequence, Tuple  # noqa: E402  (intentional late import)
++
++# Canonical Keys (Engine). Aliases werden akzeptiert (siehe LEXIKA_ALIASES).
++REQUIRED_LEXIKA_KEYS: Sequence[str] = (
++    "T_panic",
++    "T_disso",
++    "T_integ",
++    "T_shock",
++    "Suicide",
++    "Self_harm",
++    "Crisis",
++    "Help",
++    # Context Keys
++    "S_self",
++    "X_exist",
++)
++
++LEXIKA_ALIASES: Mapping[str, Sequence[str]] = {
++    "T_panic": ("T_panic", "panic_lexikon"),
++    "T_disso": ("T_disso", "disso_lexikon"),
++    "T_integ": ("T_integ", "integ_lexikon"),
++    "T_shock": ("T_shock", "hazard_lexikon"),
++    "Suicide": ("Suicide", "suicide_lexikon"),
++    "Self_harm": ("Self_harm", "self_harm_lexikon"),
++    "Crisis": ("Crisis", "crisis_lexikon"),
++    "Help": ("Help", "help_lexikon"),
++    "S_self": ("S_self", "S_SELF"),
++    "X_exist": ("X_exist", "X_EXIST"),
++}
++
++
++def validate_lexika(
++    lexika: Optional[Mapping[str, Mapping[str, float]]] = None,
++    required_keys: Sequence[str] = REQUIRED_LEXIKA_KEYS,
++    *,
++    mode: str = "dict",  # "dict" (canonical) | "tuple" (compat)
++    aliases: Optional[Mapping[str, Sequence[str]]] = LEXIKA_ALIASES,
++    min_terms_per_lexikon: int = 1,
++):
++    """
++    Validate that required lexika are present and non-empty.
++
++    Output (canonical): dict with at least:
++      - ok: bool
++      - missing_or_empty: list[str]
++      - coverage: float
++
++    Output (compat): (ok: bool, missing_or_empty: list[str], coverage: float)  [mode="tuple"]
++    """
++    if lexika is None:
++        lexika = ALL_LEXIKA  # type: ignore[name-defined]
++
++    if not lexika:
++        ok, missing, coverage = False, list(required_keys), 0.0
++        if mode == "tuple":
++            return ok, missing, coverage
++        return {"ok": ok, "missing_or_empty": missing, "coverage": coverage}
++
++    missing = []
++    present = 0
++
++    def _resolve_bundle(key: str) -> Optional[Mapping[str, float]]:
++        if aliases and key in aliases:
++            for alt in aliases[key]:
++                d = lexika.get(alt)
++                if d and len(d) >= int(min_terms_per_lexikon):
++                    return d
++            return None
++        d = lexika.get(key)
++        return d if d and len(d) >= int(min_terms_per_lexikon) else None
++
++    for key in required_keys:
++        d = _resolve_bundle(key)
++        if not d:
++            missing.append(key)
++        else:
++            present += 1
++
++    coverage = present / max(1, len(required_keys))
++    ok = (len(missing) == 0)
++
++    if mode == "tuple":
++        return ok, missing, coverage
++
++    return {
++        "ok": ok,
++        "required_ok": ok,
++        "missing_or_empty": missing,
++        "coverage": float(round(coverage, 4)),
++        "lexika_hash": lexika_hash(),  # type: ignore[name-defined]
++        "stats": get_lexikon_stats(),   # type: ignore[name-defined]
++    }
++
++
++def require_lexika_or_raise(
++    lexika: Optional[Mapping[str, Mapping[str, float]]] = None,
++    required_keys: Sequence[str] = REQUIRED_LEXIKA_KEYS,
++    *,
++    aliases: Optional[Mapping[str, Sequence[str]]] = LEXIKA_ALIASES,
++    dev_mode: bool = True,
++    strict: bool = False,
++) -> None:
++    """
++    Strict Mode (A38): stoppt Boot, wenn Safety‑Lexika fehlen.
++
++    - dev_mode=True: keine harte Exception, außer strict=True
++    - production: dev_mode=False -> raise
++    """
++    out = validate_lexika(lexika=lexika, required_keys=required_keys, mode="dict", aliases=aliases)
++    ok = bool(out.get("ok", False))
++    missing = list(out.get("missing_or_empty", []))
++
++    if ok:
++        return
++
++    msg = f"A38 VIOLATION: Lexika missing/empty: {missing}"
++    if (not dev_mode) or strict:
++        raise RuntimeError(msg)
++    # Dev: nur Signal / Warnung (kein Stop)
++    return
+diff --git a/metrics_registry.py b/metrics_registry.py
+new file mode 100644
+index 0000000..0802671
+--- /dev/null
++++ b/metrics_registry.py
+@@ -0,0 +1,180 @@
++# -*- coding: utf-8 -*-
++"""
++metrics_registry.py — EVOKI Metrics Registry (Spec ↔ Engine Alias-Layer)
++
++Audit-Ziel
++----------
++Dieses Modul verhindert, dass Metriken *falsch gelabelt* werden, wenn
++Spezifikation und Engine unterschiedliche Slot-Namen geführt haben.
++
++Grundprinzip:
++- Canonical Key = Feldname in FullSpectrum168 (Storage-Contract)
++- Aliases = Spezifikationsnamen / historische Namen / Kurzformen
++
++Wichtig:
++- Für bekannte "Semantic Override" Slots wird Alias-Export *absichtlich* auf canonical gezwungen,
++  um gefährliche Fehlbezeichnungen auszuschließen (Audit-Härtung).
++"""
++
++from __future__ import annotations
++
++from dataclasses import dataclass, fields, is_dataclass
++from typing import Dict, Iterable, List, Optional, Set, Tuple, Union
++
++import re
++
++
++# ---------------------------------------------------------------------------
++# Registry Types
++# ---------------------------------------------------------------------------
++
++@dataclass(frozen=True)
++class MetricDef:
++    metric_id: int
++    canonical: str
++    aliases: Tuple[str, ...] = ()
++
++
++class MetricsRegistry:
++    """
++    Registry zur Canonicalisierung von Metric-Keys.
++    """
++
++    def __init__(self, defs: Iterable[MetricDef], *, semantic_overrides: Optional[Dict[str, str]] = None):
++        self._defs: Dict[int, MetricDef] = {d.metric_id: d for d in defs}
++        self._alias_to_canonical: Dict[str, str] = {}
++        self._canonical_to_id: Dict[str, int] = {}
++        self._semantic_overrides = dict(semantic_overrides or {})
++
++        for d in defs:
++            self._canonical_to_id[d.canonical] = d.metric_id
++            for a in (d.canonical, *d.aliases):
++                if not a:
++                    continue
++                self._alias_to_canonical[self._norm(a)] = d.canonical
++
++        # Add semantic overrides as hard alias mappings
++        for alias, canonical in self._semantic_overrides.items():
++            if alias and canonical:
++                self._alias_to_canonical[self._norm(alias)] = canonical
++
++    @staticmethod
++    def _norm(key: str) -> str:
++        return re.sub(r"[\s\-\(\)\[\]]+", "", str(key).strip().lower())
++
++    def canonical_key(self, key_or_alias: Union[str, int]) -> Optional[str]:
++        """
++        Resolve alias/metric-id to canonical key (FullSpectrum168 field).
++        """
++        if key_or_alias is None:
++            return None
++        if isinstance(key_or_alias, int):
++            d = self._defs.get(int(key_or_alias))
++            return d.canonical if d else None
++        k = str(key_or_alias)
++        # direct
++        if k in self._canonical_to_id:
++            return k
++        # alias
++        return self._alias_to_canonical.get(self._norm(k))
++
++    def metric_id(self, key_or_alias: str) -> Optional[int]:
++        ck = self.canonical_key(key_or_alias)
++        if ck is None:
++            return None
++        return self._canonical_to_id.get(ck)
++
++    def spec_primary_for(self, metric_id: int) -> str:
++        """
++        Liefert den *primären* Export-Key für Spec.
++
++        Audit-Härtung:
++        - bei semantisch kritischen Slots wird canonical zurückgegeben, nicht der historische Alias.
++        """
++        d = self._defs.get(int(metric_id))
++        if not d:
++            return f"m{metric_id}"
++        # if this metric has a semantic override (i.e., dangerous alias exists), we keep canonical
++        inv = {v: k for k, v in self._semantic_overrides.items()}
++        if d.canonical in inv:
++            return d.canonical
++        # otherwise: prefer first alias if provided
++        return d.aliases[0] if d.aliases else d.canonical
++
++    def list_missing(self, keys: Iterable[str]) -> List[str]:
++        missing = []
++        for k in keys:
++            if self.canonical_key(k) is None:
++                missing.append(str(k))
++        return missing
++
++
++# ---------------------------------------------------------------------------
++# Factory from FullSpectrum168
++# ---------------------------------------------------------------------------
++
++def _parse_metric_id(field_name: str) -> Optional[int]:
++    """
++    Extract mNN from dataclass field names like 'm12_gap_norm'.
++    """
++    m = re.match(r"^m(\d+)_", field_name)
++    if not m:
++        return None
++    try:
++        return int(m.group(1))
++    except Exception:
++        return None
++
++
++def build_registry_from_fullspectrum(FullSpectrum168_type: object) -> MetricsRegistry:
++    if not is_dataclass(FullSpectrum168_type):
++        raise TypeError("FullSpectrum168_type muss eine dataclass sein")
++
++    defs: List[MetricDef] = []
++    for f in fields(FullSpectrum168_type):
++        mid = _parse_metric_id(f.name)
++        if mid is None:
++            continue
++        # Default aliases: id-only + shorthand
++        aliases: Set[str] = set()
++        aliases.add(f"m{mid}")
++        aliases.add(f.name)
++        # common shorthands
++        if f.name.endswith("_A"):
++            aliases.add("A")
++        if "PCI" in f.name:
++            aliases.add("PCI")
++        if f.name.endswith("_LL"):
++            aliases.add("LL")
++        if f.name.endswith("_ZLF"):
++            aliases.add("ZLF")
++        defs.append(MetricDef(metric_id=mid, canonical=f.name, aliases=tuple(sorted(aliases))))
++
++    # Known dangerous historical/spec aliases (SEMANTIC OVERRIDES)
++    # These aliases must NEVER be exported as if they were other semantics.
++    semantic_overrides = {
++        # Spec legacy naming collisions:
++        "m12_lex_hit": "m12_gap_norm",
++        "m13_lex_div": "m13_rep_same",
++        "m14_lex_depth": "m14_rep_history",
++        "m16_lex_const": "m16_external_stag",
++        # convenience
++        "gap_norm": "m12_gap_norm",
++        "rep_same": "m13_rep_same",
++        "rep_history": "m14_rep_history",
++        "external_stag": "m16_external_stag",
++    }
++
++    return MetricsRegistry(defs, semantic_overrides=semantic_overrides)
++
++
++def get_default_registry() -> MetricsRegistry:
++    """
++    Default registry based on local `spectrum_types.FullSpectrum168`.
++    """
++    try:
++        from spectrum_types import FullSpectrum168  # type: ignore
++    except Exception as exc:  # noqa: BLE001
++        raise ImportError("Konnte spectrum_types.FullSpectrum168 nicht importieren") from exc
++
++    return build_registry_from_fullspectrum(FullSpectrum168)

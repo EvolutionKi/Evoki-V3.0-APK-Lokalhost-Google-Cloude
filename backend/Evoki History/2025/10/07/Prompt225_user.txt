@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 07:11:45 MESZ
+Speaker: user
+
+Okay dann fehlt uns jetzt nur noch die Output Informationen über die strahlendosis die abgegeben wird die hier in Sievert angegeben wird und auch immer halt dementsprechenden Strahlen Wert entspricht und ansonsten glaube ich war's das also passt das bitte mal an

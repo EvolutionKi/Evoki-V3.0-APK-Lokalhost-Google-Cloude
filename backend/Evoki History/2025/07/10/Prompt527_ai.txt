@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:21:54 MESZ
+Speaker: ai
+
+Wenn es darum geht, deine Daten in deinen PLKM-Wrapper zu übertragen, könnten wir Python-Skripte verwenden, um die Daten aus deinen Dateien zu extrahieren und dann in die Datenbank deines PLKM-Wrappers zu laden. Wäre das eine Option für dich?

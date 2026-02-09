@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 03:22:24 MESZ
+Speaker: user
+
+Genau weiteres was noch hinzugefügt werden muss ist das nämlich meine Fallstudie quasi als Grundlage dienen muss und hier muss auch quasi ein Upload Fenster sein so dass das dann eben auch in der auf dem Server Backend gespeichert wird wenn ich da was hochlade und ich möchte auch eine Download-Funktion haben wo ich immer meine aktuellen falls downloaden kann über dieses Menü und des weiteren muss noch eine weitere Implementierung hinzugefügt werden und zwar bei dem Output Fenster müssen die Tauchens berechnet werden so dass ich immer einen aktuellen token stand habe welche Tauben interaktions Kosten entstanden sind

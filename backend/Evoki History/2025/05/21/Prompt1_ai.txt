@@ -1,0 +1,4 @@
+Timestamp: 21.05.2025, 19:46:32 MESZ
+Speaker: ai
+
+It sounds like you're trying to activate Google Assistant ! To do that, you typically just need to say " Hey Google " or " Ok Google ." If you're saying it and it's not responding, here are a few things to check: Is your device listening? Make sure your phone, smart speaker, or other device is turned on and not in silent mode. Is your voice clear? Try speaking a bit louder and clearer. Are your settings correct? On most Android devices, you can go to your Google app settings and look for "Voice Match" or "Assistant settings" to make sure "Hey Google" detection is enabled. Is there something specific you're trying to do with Google Assistant?

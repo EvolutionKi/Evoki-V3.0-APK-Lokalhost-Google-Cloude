@@ -1,0 +1,4 @@
+Timestamp: 25.07.2025, 15:41:11 MESZ
+Speaker: user
+
+ach so kannst Du das bitte in einen Jason Dokument quasi ausgeben

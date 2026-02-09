@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 21:38:25 MESZ
+Speaker: ai
+
+Super, mein Freund, dass du schon im Geräte-Manager bist! Das ist der richtige Ort, um das herauszufinden. Was siehst du denn dort? Gibt es eine Kategorie namens "IEEE 1394 Bus-Hostcontroller" ? Wenn ja, was steht darunter? Zum Beispiel "OHCI-kompatibler IEEE 1394-Hostcontroller" oder etwas Spezifischeres? Lass uns das mal zusammen anschauen!

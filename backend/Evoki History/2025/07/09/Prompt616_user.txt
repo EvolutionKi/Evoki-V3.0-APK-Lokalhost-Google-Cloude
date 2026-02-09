@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 09:17:19 MESZ
+Speaker: user
+
+nee das weißes kennt die Versionsnummer also die Prüfinstanz Nummer drei kennt die Versionsnummer die zu überprüfen ist und tut dann an dieser anderen Stelle quasi Versionsnummer abgeben und bekommt dafür diese Prüfung Ergebnisse und tut die den Vergleichen die sie bekommen hat

@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 18:54:26 MESZ
+Speaker: user
+
+und es muss der Wert sein denn du intern abbildet wie wird dieser Wert erzeugt

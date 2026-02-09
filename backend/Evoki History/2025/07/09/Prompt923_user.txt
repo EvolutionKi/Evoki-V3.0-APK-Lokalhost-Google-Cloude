@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 14:31:32 MESZ
+Speaker: user
+
+mir schon die Version Überwachung und da tun wir jetzt einfach A17 eine Kopie davon implementieren A17 lass mir trotzdem mit drinne zur Sicherheit als doppelte Redundanz dass ich das von beiden Seiten kontrolliert aber ja da ist offensichtlich versagt muss jedes Versagen hier auch wieder erwähnt werden also

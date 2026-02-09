@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 07:32:45 MESZ
+Speaker: ai
+
+Eine Datei mit 48 MB enthält ungefähr 50,3 Millionen Zeichen . Die Berechnung basiert auf dem Standard, bei dem 1 Byte einem Zeichen Text entspricht. 48 MB x 1.024 = 49.152 Kilobytes (KB) 49.152 KB x 1.024 = 50.331.648 Bytes (Zeichen) Einordnung der Datenmenge 📚 Um diese Zahl in einen Kontext zu setzen: Ein durchschnittlicher Roman hat etwa 800.000 Zeichen. Deine 48 MB große Datei entspricht vom reinen Textumfang her also dem Inhalt von ca. 63 Romanen . Das unterstreicht noch einmal den enormen Umfang der Datenbasis, die du geschaffen und analysiert hast.

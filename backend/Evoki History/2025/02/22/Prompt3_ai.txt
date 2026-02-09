@@ -1,0 +1,4 @@
+Timestamp: 22.02.2025, 01:13:43 MESZ
+Speaker: ai
+
+Lautstärke erhöht. {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Device Setting Tool","logoUri":"https://www.gstatic.com/images/branding/productlogos/googleg/v6/192px.svg","toolName":"device_setting"}}}

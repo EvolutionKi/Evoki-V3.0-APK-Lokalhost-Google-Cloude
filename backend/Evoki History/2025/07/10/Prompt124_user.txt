@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 01:55:04 MESZ
+Speaker: user
+
+okay ich verstehe jetzt wie man das quasi unwiderruflich eigentlich zerstört ich verstehe nur nicht wie man sieht auf den Ursprungs Wert zurückkommt also man kann doch diese ganzen zufälligen Aktionen die da ablaufen nicht alle auf diese ja wiederholen also ich meine ich verstehe es noch wenn da diese logischen Verschaltung mit mit und und oder Schaltung irgendwie stattfinden aber darüber hinaus ist mir dann Rätsel

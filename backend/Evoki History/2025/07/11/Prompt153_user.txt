@@ -1,0 +1,4 @@
+Timestamp: 11.07.2025, 05:05:36 MESZ
+Speaker: user
+
+genau und bei der Fehler Überwachung wird auch die Anzahl der Fehler auch noch mal angegeben

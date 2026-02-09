@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:03:46 MESZ
+Speaker: ai
+
+Komplexe Projekte sind zum Beispiel Musikproduktionen mit vielen Spuren, Effekten und virtuellen Instrumenten. Je mehr dein Computer gleichzeitig berechnen muss, desto eher kann es bei niedrigen Latenzeinstellungen zu Problemen kommen.

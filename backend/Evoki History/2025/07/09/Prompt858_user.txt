@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 13:10:55 MESZ
+Speaker: user
+
+genau und jetzt bitte bitte finde raus wo unsere Fehler in der ja in der Logik steckt also wo ist der logische Fehler dass das passieren konnte

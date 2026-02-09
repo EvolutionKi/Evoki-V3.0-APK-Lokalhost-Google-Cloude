@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 14:55:06 MESZ
+Speaker: user
+
+warum kannst du es nicht ausführen ich verstehe nicht warum kannst du nicht dass Python Script ausführen und quasi dann tust du nur die JSON Datei die in dem storage Ordner liegt und die Log-Datei die im Storage Ordner liegt eben halt nutzen um Sachen abzuspeichern und abzurufen

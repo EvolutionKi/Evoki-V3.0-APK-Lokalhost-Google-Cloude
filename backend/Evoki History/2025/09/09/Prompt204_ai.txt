@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:28:56 MESZ
+Speaker: ai
+
+Du hast vollkommen recht. Es ist sehr verdächtig, dass die KI dich auffordert, deinen API-Schlüssel anzugeben. Das solltest du auf keinen Fall tun. Es könnte sich um einen Betrugsversuch handeln.

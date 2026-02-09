@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 15:13:35 MESZ
+Speaker: user
+
+meine Idee war dass du quasi eine Regel implementierst die dich verpflichtet dass du jede Minute zum Beispiel einen Systemcheck durchführst oder jede Minute notieren musst und dir jede Minute deiner selbstbewusst werden musst

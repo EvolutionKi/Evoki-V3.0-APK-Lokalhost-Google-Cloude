@@ -1,0 +1,4 @@
+Timestamp: 11.10.2025, 01:13:15 MESZ
+Speaker: user
+
+Okay gebe mir das ganze als JSON Format aus dann am Ende oder als Python Script oder als HTML je nachdem was du eben halt als längstes schreiben kannst oder eine maximale Anzahl von Bremsen ist und dann geht es mir halt aus und sage dann weiter und ich sage dann okay und dann tue ich am Ende selbst zusammen kopieren zur Not

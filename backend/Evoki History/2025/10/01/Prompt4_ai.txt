@@ -1,0 +1,4 @@
+Timestamp: 01.10.2025, 11:54:42 MESZ
+Speaker: ai
+
+Gerne, hier ist eine HTML-Datei, die eine Vorschau deines SVG-Diagramms anzeigt. Ich habe deinen SVG-Code in eine einfache HTML-Seite eingebettet und etwas Styling hinzugefügt, damit es zentriert und ansprechend aussieht. Du kannst diese Datei öffnen, um die Grafik in deinem Browser zu sehen.

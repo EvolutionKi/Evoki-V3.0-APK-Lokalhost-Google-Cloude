@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 11:50:30 MESZ
+Speaker: user
+
+aber wenn ich jetzt eben halt diese 16360 den ist und den Sollwert halt quasi irgendwo manipulieren festsetzt dann habe ich ja auch wieder ein Problem weißt du wie wird das kontrolliert

@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 20:23:34 MESZ
+Speaker: user
+
+es könnte ja auch ein komprimierter wert sein welchen man allerdings dann mit einem Faktor irgendwie wieder umrechnen kann und auf die Mikrosiemens zu kommen

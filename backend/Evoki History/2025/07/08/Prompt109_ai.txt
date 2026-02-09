@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 22:58:01 MESZ
+Speaker: ai
+
+Du möchtest also die Latenzzeit und die Einstellungen an deinem Computer und dem UMC-Terminal optimieren. Hast du bereits bestimmte Software oder Anwendungen im Blick, bei denen die Latenz ein Problem darstellt?

@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 03:44:15 MESZ
+Speaker: user
+
+genau und das soll nur dann quasi unterschiedlich ausgegeben werden wenn er sich tatsächlich auch auf unterschiedliche Fehler beruft kann ja auch sein dass du verschiedene Validierung Stränge verschiedene Fehler feststellen dann so natürlich auch der die unterschiedlichen Fehler quasi aufgelistet werden

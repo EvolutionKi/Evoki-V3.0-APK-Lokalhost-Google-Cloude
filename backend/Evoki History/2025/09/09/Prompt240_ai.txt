@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:39:51 MESZ
+Speaker: ai
+
+Verstanden. Die App nutzt Emojis als einfache Grafiken, um Speicherplatz zu sparen. Außerdem gibt es eine Funktion für sichere Eingabefelder. Und es gibt eine Sicherheits-Boilerplate, die vor doppelten Klicks schützt.

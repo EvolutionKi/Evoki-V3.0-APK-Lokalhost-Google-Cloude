@@ -1,0 +1,4 @@
+Timestamp: 11.09.2025, 03:09:34 MESZ
+Speaker: user
+
+Falls die Anwendung dadurch einen Vorteil im Bezug auf die v10.0 bieten würde bitte ich um implirung in den Bestehenden Code und um Überprüfung der Funktion.

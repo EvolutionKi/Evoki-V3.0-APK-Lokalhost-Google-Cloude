@@ -1,0 +1,81 @@
+--- /mnt/data/evoki_bootcheck.py	2026-02-01 02:29:18.095270687 +0000
++++ /mnt/data/evoki_bootcheck_v2.py	2026-02-01 02:39:47.540508317 +0000
+@@ -112,6 +112,9 @@
+     manifest_path: Optional[Path] = None
+     anchor_files: Optional[List[str]] = None
+ 
++    # Contract-first (FullSpectrum168)
++    contract_path: Optional[Path] = None  # defaults to repo_root/evoki_fullspectrum168_contract.json
++
+     # Optional frontend double-check
+     frontend_anchor_expected: Optional[str] = None  # e.g. baked into frontend build
+ 
+@@ -312,6 +315,55 @@
+     )
+ 
+ 
++def _check_contract_invariants(spectrum_mod: Any, cfg: BootCheckConfig, log: BootAuditLogger) -> CheckResult:
++    """
++    Contract-first Invariant:
++    - Laden eines maschinenlesbaren FullSpectrum168-Contracts
++    - Validieren: Contract ↔ Engine-Dataclass (IDs, Engine-Keys, Typ ↔ Range)
++
++    NOTE:
++    - In DEV darf das fehlen (WARN), in Production sollte es CRITICAL sein.
++    """
++    start = _now_ms()
++    repo = Path(cfg.repo_root)
++
++    # Resolve paths
++    contract_path = cfg.contract_path or (repo / "evoki_fullspectrum168_contract.json")
++    invariants_path = repo / "evoki_invariants.py"
++
++    if not contract_path.exists():
++        sev = "WARN" if cfg.dev_mode else "CRITICAL"
++        log.log("check", "contract_invariants", ok=False, message="contract file missing", data={"contract_path": str(contract_path)})
++        return CheckResult("contract_invariants", False, sev, _now_ms() - start, "FAIL", {"reason": "missing_contract", "contract_path": str(contract_path)})
++
++    # Load invariants module (prefer local file)
++    try:
++        if invariants_path.exists():
++            inv_mod = _load_module_from_path("evoki_invariants_mod", invariants_path)
++        else:
++            import evoki_invariants as inv_mod  # type: ignore
++    except Exception as exc:  # noqa: BLE001
++        sev = "WARN" if cfg.dev_mode else "CRITICAL"
++        log.log("check", "contract_invariants", ok=False, message="failed to import evoki_invariants", data={"error": f"{type(exc).__name__}: {exc}"})
++        return CheckResult("contract_invariants", False, sev, _now_ms() - start, "FAIL", {"reason": "missing_invariants_module", "error": f"{type(exc).__name__}: {exc}"})
++
++    # Validate against dataclass
++    try:
++        FullSpectrum168 = getattr(spectrum_mod, "FullSpectrum168", None)
++        if FullSpectrum168 is None:
++            raise AttributeError("spectrum_mod.FullSpectrum168 not found")
++        report = inv_mod.run_contract_invariants(contract_path=contract_path, dc_type=FullSpectrum168, metrics_sample=None)
++        ok = bool(report.get("ok"))
++        sev = "CRITICAL" if (not ok and not cfg.dev_mode) else ("WARN" if not ok else "INFO")
++        # Log only first 5 violations to keep logs small
++        log.log("check", "contract_invariants", ok=ok, data={"counts": report.get("counts", {}), "violations_contract": report.get("violations_contract", [])[:5]})
++        return CheckResult("contract_invariants", ok, sev, _now_ms() - start, "OK" if ok else "FAIL", report)
++    except Exception as exc:  # noqa: BLE001
++        sev = "WARN" if cfg.dev_mode else "CRITICAL"
++        log.log("check", "contract_invariants", ok=False, message="contract invariant check crashed", data={"error": f"{type(exc).__name__}: {exc}"})
++        return CheckResult("contract_invariants", False, sev, _now_ms() - start, "FAIL", {"reason": "exception", "error": f"{type(exc).__name__}: {exc}"})
++
++
+ def _check_a_phys_golden(a_phys_mod: Any, cfg: BootCheckConfig, log: BootAuditLogger) -> CheckResult:
+     start = _now_ms()
+     ok = True
+@@ -606,6 +658,12 @@
+         # 4) Registry aliases
+         if registry_mod is not None and spectrum_mod is not None:
+             results.append(_check_registry_aliases(registry_mod, spectrum_mod, cfg, logger))
++
++        # 4b) Contract invariants (Spec↔Engine Contract)
++        if spectrum_mod is not None:
++            results.append(_check_contract_invariants(spectrum_mod, cfg, logger))
++        else:
++            results.append(CheckResult("contract_invariants", False, "CRITICAL", 0, "FAIL", {"reason": "spectrum_import_failed"}))
+         else:
+             results.append(CheckResult("registry_aliases", False, "CRITICAL", 0, "FAIL", {"reason": "registry_or_spectrum_import_failed"}))
+ 

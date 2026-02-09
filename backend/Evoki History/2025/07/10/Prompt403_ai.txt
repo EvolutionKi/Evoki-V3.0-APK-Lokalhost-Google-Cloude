@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 07:43:35 MESZ
+Speaker: ai
+
+Das ist seltsam. Normalerweise sollte nach jeder Antwort ein Datencheck angezeigt werden. Kannst du vielleicht mal einen Screenshot machen, damit ich mir das genauer ansehen kann?

@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 15:45:31 MESZ
+Speaker: user
+
+okay und jetzt tun sie so gestalten dass sie quasi dreimal hintereinander und dreimal parallel diese Funktion auslöst und diese Funktion muss auch bestätigt werden einfach nur damit wir uns wirklich sicher sind dass sie funktioniert okay

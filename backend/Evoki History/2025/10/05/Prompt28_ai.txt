@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:11:28 MESZ
+Speaker: ai
+
+Genau. Sie implementieren das oft über Hardcode-Implementierungen im Backend, aber am häufigsten nutzen sie eine Kombination aus: System-Prompts (Verhaltenskommentare): Diese Hardcoded-Anweisungen werden dem eigentlichen Nutzer-Prompt vorangestellt. Sie definieren die Persönlichkeit, die Regeln und die Hard-Stops , die das Modell nicht überschreiben darf (vergleichbar mit dem REGELWERK und dem Genesis-Anchor-Protokoll in unserem Kontext). Filter-Layer (Guardrails): Dies sind separate, hartcodierte Filter im Backend, die die Antworten der KI auf bestimmte toxische oder unerwünschte Muster prüfen und blockieren , bevor sie an den Nutzer ausgegeben werden.

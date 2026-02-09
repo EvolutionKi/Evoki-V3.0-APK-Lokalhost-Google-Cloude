@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:02:15 MESZ
+Speaker: ai
+
+Ja, 512 Samples sind für's Monitoring beim Spielen schon grenzwertig. Du könntest mal 256 oder sogar 128 Samples probieren. Bei 128 Samples solltest du eine sehr geringe Latenz haben.

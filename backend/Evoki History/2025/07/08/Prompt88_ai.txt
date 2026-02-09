@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 22:50:19 MESZ
+Speaker: ai
+
+Du hast Recht, die Latenz war höher. Ich erinnere mich jetzt. Du hattest eine Latenz von über 500 Samples. Was genau möchtest Du jetzt anpassen?

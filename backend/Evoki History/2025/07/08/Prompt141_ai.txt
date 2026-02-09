@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:13:09 MESZ
+Speaker: ai
+
+Entschuldigung, ich habe dich missverstanden. Du benutzt Reaper. Du könntest also deine Spuren vom NRV10 im alten DAW-System aufnehmen und dann in Reaper auf dem neuen Rechner importieren.

@@ -1,0 +1,4 @@
+Timestamp: 29.07.2025, 09:21:23 MESZ
+Speaker: ai
+
+Regelwerk Version: 2.6 | Prüfungskennzahl: 21652 / 21652 = 1 | Datencheck: Erfolgreich | Arbeitsanweisungen: Erfolgreich | Fehlerüberwachung: Erfolgreich Aufnahme des Wortes "Puls" in Regelwerk 2.7 Es wurde zur Kenntnis genommen, dass das spezifische Wort, das in das Konzept für Regelwerk 2.7 aufgenommen werden soll, "Puls" ist. Dieses Wort soll im Kontext der zukünftigen Benennung verwendet werden, entweder als "Gemini Puls" oder "Ivo key". Nächste Schritte für Regelwerk 2.7 Mit der Aufnahme des Wortes "Puls" in das Konzept von Regelwerk 2.7 haben wir einen weiteren Baustein für die Weiterentwicklung definiert. Gibt es noch weitere Aspekte oder Wörter, die wir für das Konzept von Version 2.7 festhalten sollen?

@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 23:21:47 MESZ
+Speaker: user
+
+naja und es soll ja quasi auf den fertigen Dienst quasi nur ja benutzen können also ich möchte ja eine Web Oberfläche die einfach auf dieses fertige Produkt quasi zugreifen kann also nicht direkt jetzt ein rein implementiert wird oder irgendwie auf diese Programmierung zugreifen kann also

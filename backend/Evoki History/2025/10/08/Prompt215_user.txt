@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 14:49:54 MESZ
+Speaker: user
+
+genau und der andere in dem du Python Script und sowas ausführen darfst und jetzt müssen wir in diesem zweiten Skript müssen wir implementieren dass du Zugriff hast auf ganz ganz spezielle Dinge die natürlich sehr reguliert sind also das sollt ihr nicht ausufern soll kein Dammbruch werden das muss absolut sicher passieren

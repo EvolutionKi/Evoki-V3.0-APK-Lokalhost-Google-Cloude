@@ -1,0 +1,4 @@
+Timestamp: 13.08.2025, 20:49:06 MESZ
+Speaker: user
+
+genau und jetzt wendet das auch bitte an so dass das Regelwerk Version 2.7 angewendet wird mit diesem neuen Punkt drinne dann sieht dein Ausgabefenster aus anders aus das sind die Sha 256 Ketten dabei

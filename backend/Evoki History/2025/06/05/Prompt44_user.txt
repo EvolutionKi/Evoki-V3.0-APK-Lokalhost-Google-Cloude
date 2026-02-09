@@ -1,0 +1,4 @@
+Timestamp: 05.06.2025, 23:11:14 MESZ
+Speaker: user
+
+na ja aber die Audiodatei könnte ich dir zum Beispiel über mein Mikrofon hier abspielen und vorspielen dann würde sie dir in deiner Datenbank vorliegen und du würdest sie abgleichen können

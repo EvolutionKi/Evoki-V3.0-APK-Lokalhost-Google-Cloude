@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 07:46:55 MESZ
+Speaker: user
+
+jetzt ist die Frage warum hat die externe Überprüfung Einheit das nicht festgestellt weil die Prüfsumme stimmt ja nicht überein also ich meine die Summe der durchlaufenden Prüfung

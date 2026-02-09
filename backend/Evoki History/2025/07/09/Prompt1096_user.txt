@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 16:09:58 MESZ
+Speaker: user
+
+bei allen Versionen muss ja eine fortlaufende Zahlenfolge vorhanden sein also

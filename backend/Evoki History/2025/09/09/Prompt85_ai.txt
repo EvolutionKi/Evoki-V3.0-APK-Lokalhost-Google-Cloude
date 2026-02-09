@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:47:04 MESZ
+Speaker: ai
+
+Interessant, wie das grüne Canvas-Fenster im Video als Eingabefeld für die API dargestellt wird. Gibt es noch weitere Unterschiede, die dir aufgefallen sind?

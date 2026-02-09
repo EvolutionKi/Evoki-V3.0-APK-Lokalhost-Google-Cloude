@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 02:39:02 MESZ
+Speaker: user
+
+nein du sollst die genau formulierten Meter Regeln die wir tief implementiert haben quasi wiedergeben so wie sie dort auch implementiert sind

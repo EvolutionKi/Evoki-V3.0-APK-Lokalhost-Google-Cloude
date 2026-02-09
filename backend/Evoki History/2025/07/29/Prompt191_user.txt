@@ -1,0 +1,4 @@
+Timestamp: 29.07.2025, 11:02:06 MESZ
+Speaker: user
+
+ändere bitte schön 2.7 noch dahin gehen dass du einen neuen Punkt hinzufügst und zwar dass die Prüfsumme die soll zahlen immer angepasst werden muss bei einem neuen Jahr Update oder einer neuen Version Nummer

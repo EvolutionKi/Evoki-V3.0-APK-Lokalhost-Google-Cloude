@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:41:07 MESZ
+Speaker: ai
+
+Ja, das stimmt. Die App simuliert hier nur etwas vor, anstatt echte App-Funktionen zu bieten. Sie greift zwar auf die Kamera zu, nutzt sie aber nicht. Und sie speichert Daten lokal, was auch nicht optimal ist. Was denkst du, ist das eine gute App?

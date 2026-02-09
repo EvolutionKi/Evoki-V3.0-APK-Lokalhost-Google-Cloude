@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 20:00:58 MESZ
+Speaker: user
+
+okay dann überprüf bitte dort noch mal ob dort alles was wir damals festgehalten haben auch noch so im implementiert und wo die Programmierung noch stimmt

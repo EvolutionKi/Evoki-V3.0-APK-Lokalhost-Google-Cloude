@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 15:41:14 MESZ
+Speaker: user
+
+wir tun das noch nicht in 2.8 verwenden das soll erstmal nur ein Konzept sein und ich glaube das tue ich erstmal extra außerhalb davon ja abspeichern dafür gibt es ein separates Regelwerk das ist dient er meiner persönlichen und deiner Entwicklung als explizit dem Projekt

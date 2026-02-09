@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:01:15 MESZ
+Speaker: ai
+
+In diesem Fall ist eine höhere Puffergröße durchaus sinnvoll, um die Stabilität zu gewährleisten. Da keine Echtzeit-Effekte benötigt werden, spielt die Latenz keine so große Rolle. Du kannst also einen höheren Wert wählen, um sicherzustellen, dass die Aufnahme fehlerfrei ist.

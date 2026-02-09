@@ -1,0 +1,4 @@
+Timestamp: 06.06.2025, 16:53:19 MESZ
+Speaker: user
+
+bei einer Installation werden zum Beispiel der Ordner für meine Eigenen Dateien nicht mehr gefunden

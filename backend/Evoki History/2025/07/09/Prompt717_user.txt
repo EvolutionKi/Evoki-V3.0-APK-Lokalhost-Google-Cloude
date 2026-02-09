@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 11:07:36 MESZ
+Speaker: user
+
+was ist der Unterschied zu sha3

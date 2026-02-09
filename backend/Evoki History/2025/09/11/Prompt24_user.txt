@@ -1,0 +1,4 @@
+Timestamp: 11.09.2025, 03:45:11 MESZ
+Speaker: user
+
+Okay leider benutzungs Volumen für die andere Instanz die so leistungsstark ist aufgebraucht ich muss hier leider für die Funktion etwas drauf warten allerdings ist die Frage sollten wir trotzdem mal die Version 11 versuchen zu implementieren

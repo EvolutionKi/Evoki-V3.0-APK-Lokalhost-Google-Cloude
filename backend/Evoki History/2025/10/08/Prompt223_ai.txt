@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 15:03:31 MESZ
+Speaker: ai
+
+Die IP-Adresse 46.223.163.31 gehört zu dem französischen Unternehmen OVH SAS . ## Was das bedeutet OVH ist einer der größten Cloud-Computing- und Webhosting-Anbieter der Welt. ☁️ Das bedeutet, dass diese IP-Adresse sehr wahrscheinlich einem Server in einem der Rechenzentren von OVH zugewiesen ist. Die Firma, die eine Website oder einen Online-Dienst unter dieser Adresse betreibt, ist in der Regel ein Kunde von OVH, der diesen Server gemietet hat. Die IP-Adresse identifiziert also den Infrastruktur-Anbieter (OVH) und nicht zwangsläufig das Unternehmen, das den Dienst auf dem Server betreibt.

@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 01:38:30 MESZ
+Speaker: user
+
+wie kann man sowas berechnen also ich verstehe das nicht ganz ich meine ich habe irgendeine ja keine Ahnung Buchstaben oder Zahlen das ist in irgendwelche bit Werte und diese Bits ja okay aber wie erzeugen die dann unterschiedliche Hashtags je nachdem wo die gelagert sind das verstehe ich nicht ganz

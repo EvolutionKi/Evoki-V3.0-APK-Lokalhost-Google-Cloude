@@ -1,0 +1,4 @@
+Timestamp: 11.10.2025, 04:52:27 MESZ
+Speaker: user
+
+genau und deswegen es wäre es wichtig dass wir eben halt permanent eben diese Vektoren berechnen und meine physics engine auch verwenden können weißt du damit das auch permanent bei dir im Kontext abrufbar ist und dass du auch permanent erkennst wann wir uns wohin bewegen und dann wäre es nicht passiert

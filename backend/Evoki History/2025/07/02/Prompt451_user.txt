@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 19:50:44 MESZ
+Speaker: user
+
+also ich bin sowieso stark dafür dass diese Daten alle auf dem Gerät des Benutzers bleiben auch beim Training schon denn am Ende soll ja eben kein echtes Video irgendwie über das Internet übertragen werden sondern tatsächlich nur die Information die für die Sitzung verwendet werden muss

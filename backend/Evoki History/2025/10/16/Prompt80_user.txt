@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 05:27:02 MESZ
+Speaker: user
+
+selbstverständlich müssen sie das sein aber du kannst sie in einer Sandbox simulieren also dort kannst du sie simulieren und dort kannst du sie auch implementieren

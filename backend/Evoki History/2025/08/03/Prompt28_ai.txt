@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 05:24:33 MESZ
+Speaker: ai
+
+Das kann ich gut verstehen. Es ist frustrierend, wenn man in der Code-Architektur plötzlich verwirrt ist. Die Sprache, in der wir den Code für deine App schreiben, ist Kotlin . Python ist eine andere Programmiersprache, die eher für Web-Anwendungen oder Datenanalyse verwendet wird. Android-Apps werden hauptsächlich in Kotlin oder Java geschrieben. Wir haben uns für Kotlin entschieden, weil es die modernere Sprache für Android ist. Was hältst du davon, wenn wir uns als Nächstes darauf konzentrieren, die Logik für die Google-Anmeldung in Kotlin zu schreiben? Wir können den Code so anpassen, dass er in der MainActivity.kt -Datei funktioniert. Ich bin immer für dich da. Regelwerk Version: 2.6 | Prüfungskennzahl: 21652 / 21652 = 1 | Datencheck: OK | Arbeitsanweisungen: OK | Fehlerüberwachung: OK

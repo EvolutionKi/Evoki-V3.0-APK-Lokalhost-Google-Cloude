@@ -1,0 +1,90 @@
+metric_id,category,spec_id_primary,spec_id_secondary,engine_key,engine_type_simple,range_any,source,version
+12,Core / Derived,m12_lex_hit,,m12_gap_norm,float,"[0.0, 1.0]",metrics_engine_v3.py:195,V3.0 Core
+13,Core / Derived Composite,m13_base_score,,m13_rep_same,float,"[0.0, 1.0]",metrics_engine_v3.py:196,V3.0 Core
+14,Core / Derived,m14_base_stability,,m14_rep_history,float,"[0.0, 1.0]",metrics_engine_v3.py:196,V3.0 Core
+16,Core / Complexity,m16_pci,,m16_external_stag,float,"[0.0, 1.0]",metrics_engine_v3.py:206,V3.0 Migration Engine
+61,FEP / Decision,m61_u_fep,,m61_U,float,"[0.0, 1.0]",metrics_engine_v3.py:285,V3.0 Andromatik Engine
+62,FEP / Decision,m62_r_fep,,m62_R,float,"[0.0, 1.0]",metrics_engine_v3.py:286,V3.0 Andromatik Engine
+63,FEP / Decision Core,m63_phi_score,,m63_phi,float,"[-1.0, 1.0]",metrics_engine_v3.py:287,V3.0 Andromatik Engine
+64,FEP / Prediction,m64_pred_error,,m64_lambda_fep,float,"[0.0, 1.0]",metrics_engine_v3.py:300,V3.0 Andromatik Engine
+65,FEP / Drive,m65_drive_soc,,m65_alpha,float,"[0.0, 1.0]",metrics_engine_v3.py:301,V3.0 Andromatik Engine
+66,FEP / Drive,m66_drive_log,,m66_gamma,float,"[0.0, 1.0]",metrics_engine_v3.py:302,V3.0 Andromatik Engine
+67,FEP / Drive,m67_total_drive,,m67_precision,float,"[0.0, 1.0]",metrics_engine_v3.py:303,V3.0 Andromatik Engine
+68,FEP / Drive,m68_drive_balance,,m68_prediction_err,float,"[0.0, 1.0]",metrics_engine_v3.py:304,V3.0 Andromatik Engine
+69,FEP / Learning,m69_learning_rate,,m69_model_evidence,float,"[0.0, 5.0]",metrics_engine_v3.py:305,V3.0 Andromatik Engine
+70,FEP / Decay,m70_decay_factor,,m70_active_inf,float,"[0.05, 0.1]",metrics_engine_v3.py:306,V3.0 Andromatik Engine
+71,Evolution / Core,m71_ev_resonance,,m71_ev_arousal,float,"[0.0, 1.0]",metrics_engine_v3.py:345,V3.0 Evolution Engine
+72,Evolution / Dynamic,m72_ev_tension,,m72_ev_valence,float,"[0.0, 1.0]",metrics_engine_v3.py:346,V3.0 Evolution Engine
+74,Evolution / Sentiment,m74_ev_signal,m74_sent_1,m74_valence,float,"{0.0, 1.0} (binär) / [0.0, 1.0] (kontinuierlich)",metrics_engine_v3.py:348,V3.0
+75,Evolution / Sentiment,m75_vkon_mag,m75_sent_2,m75_arousal,float,"[0.0, 1.0]",metrics_engine_v3.py:349,V3.0
+76,Evolution / Sentiment,m76_ev_1,m76_sent_3,m76_dominance,float,"[0.0, 1.0]",metrics_engine_v3.py:350,V3.0
+77,Sentiment / Plutchik,m77_sent_4,,m77_joy,float,"[0.0, 1.0]",sentiment.py:68,V3.0 Sentiment Engine
+78,Sentiment / Plutchik,m78_sent_5,,m78_sadness,float,"[0.0, 1.0]",sentiment.py:72,V3.0 Sentiment Engine
+79,Sentiment / Plutchik,m79_sent_6,,m79_anger,float,"[0.0, 1.0]",sentiment.py:76,V3.0 Sentiment Engine
+80,Sentiment / Plutchik / Safety,m80_sent_7,,m80_fear,float,"[0.0, 1.0]",sentiment.py:80,V3.0 Sentiment Engine
+81,Sentiment / Plutchik,m81_sent_8,,m81_trust,float,"[0.0, 1.0]",sentiment.py:85,V3.0 Sentiment Engine
+82,Sentiment / Plutchik,m82_sent_9,,m82_disgust,float,"[0.0, 0.7]",sentiment.py:90,V3.0 Sentiment Engine
+83,Sentiment / Plutchik,m83_sent_10,,m83_anticipation,float,"[0.0, 0.8]",sentiment.py:93,V3.0 Sentiment Engine
+84,Sentiment / Plutchik,m84_sent_11,,m84_surprise,float,"[0.0, 1.0]",sentiment.py:96,V3.0 Sentiment Engine
+85,Sentiment / Complex,m85_sent_12,,m85_hope,float,"[0.0, 1.0]",sentiment.py:102,V3.0 Sentiment Engine
+86,Sentiment / Complex,m86_sent_13,,m86_despair,float,"[0.0, 1.0]",sentiment.py:105,V3.0 Sentiment Engine
+87,Sentiment / Complex,m87_sent_14,,m87_confusion,float,"[0.0, 1.0]",sentiment.py:108,V3.0 Sentiment Engine
+88,Sentiment / Complex,m88_sent_15,,m88_clarity,float,"[0.0, 1.0]",sentiment.py:111,V3.0 Sentiment Engine
+89,Sentiment / Complex,m89_sent_16,,m89_acceptance,float,"[0.0, 1.0]",sentiment.py:114,V3.0 Sentiment Engine
+90,Sentiment / Complex,m90_sent_17,,m90_resistance,float,"[0.0, 1.0]",sentiment.py:117,V3.0 Sentiment Engine
+91,Sentiment / Complex,m91_sent_18,,m91_emotional_coherence,float,"[0.0, 1.0]",sentiment.py:120,V3.0 Sentiment Engine
+92,Sentiment / Complex,m92_sent_19,,m92_emotional_stability,float,"[0.0, 1.0]",sentiment.py:123,V3.0 Sentiment Engine
+93,Sentiment / Meta,m93_sent_20,,m93_emotional_range,float,"[0.0, ~0.87]",sentiment.py:128,V3.0 Sentiment Engine
+94,Sentiment / Meta,m94_sent_21,,m94_comfort,float,"[0.0, 1.0]",sentiment.py:131,V3.0 Sentiment Engine
+95,Sentiment / Meta,m95_sent_22,,m95_tension,float,"[0.0, 1.0]",sentiment.py:134,V3.0 Sentiment Engine
+97,Text / Granularity / Sentiment,m97_grain_impact,m97_sent_24,m97_grain_cat,str,"[0.0, 1.0]",,V3.0 Grain Engine / Sentiment Engine
+98,Text / Granularity / Sentiment,m98_grain_sentiment,m98_sent_25,m98_grain_score,float,"[0.0, 1.0]",,V3.0 Grain Engine / Sentiment Engine
+99,Text / Granularity / Sentiment,m99_grain_novelty,m99_sent_26,m99_grain_impact,float,"[0.0, 1.0]",,V3.0 Grain Engine / Sentiment Engine
+100,Sentiment / Closure,m100_sent_27,,m100_causal_1,float,"[0.0, 1.0]",sentiment.py:150,V3.0 Sentiment Engine
+105,Trauma / Composite,m105_t_fog,,m105_t_guilt,float,"[0.0, 1.0]",metrics_engine_v3.py:372,V3.0 Trauma Engine
+106,Turbidity / Trauma,m106_i_eff,m106_t_grief,m106_t_shame,float,"[0.0, 1.0]",metrics_engine_v3.py:373,V3.0 Trauma Engine
+107,Turbidity / Trauma,m107_turb_c,m107_t_anger,m107_t_grief,float,"[0.0, 1.0]",metrics_engine_v3.py:374,V3.0 Trauma Engine
+108,Turbidity / Trauma,m108_turb_l,m108_t_guilt,m108_t_anger,float,"[0.0, 1.0]",metrics_engine_v3.py:375,V3.0 Trauma Engine
+109,Turbidity / Trauma,m109_turb_1,m109_t_shame,m109_t_fear,float,"[0.0, 1.0]",metrics_engine_v3.py:376,V3.0 Trauma Engine
+111,Physics / Turbidity,m111_g_phase,m111_turb_1,m111_turbidity_total,float,"[-π, π] / [0.0, 1.0]",metrics_engine_v3.py:378,V3.0 Physics Engine
+112,Physics / Turbidity,m112_g_phase_norm,m112_turb_2,m112_trauma_load,float,"[0.0, 1.0]",metrics_engine_v3.py:379,V3.0 Physics Engine
+113,Integrity / Soul-Signature,m113_hash_state,m113_turb_3,m113_t_resilience,float,hex[64] (SHA-256),enforcement_gates_v3.py,PATCH-04 (SHA-256)
+114,Similarity / Turbidity,m114_cos_sim,m114_turb_4,m114_t_recovery,float,"[-1.0, 1.0] / [0.0, 1.0]",metrics_engine_v3.py:381,V3.0 Similarity Engine
+115,Spatial / Turbidity,m115_spatial_1,m115_turb_5,m115_t_threshold,float,"[0.0, 1.0]",metrics_engine_v3.py:382,V3.0 Spatial Engine
+118,Text Analytics / Meta-Cognition,m118_capital_stress,m118_meta_3,m118_exclamation_density,float,"[0.0, 1.0]",metrics_engine_v3.py:402,V3.0 Text / Meta Engine
+119,Text Analytics / Meta-Cognition,m119_turn_len_ai,m119_meta_4,m119_complexity_variance,float,"[0, ∞] / [0.0, 1.0]",metrics_engine_v3.py:403,V3.0 Text / Meta Engine
+120,Text Analytics / Meta-Cognition,m120_emoji_sentiment,m120_meta_5,m120_topic_drift,float,"[-1.0, 1.0] / [0.0, 1.0]",metrics_engine_v3.py:404,V3.0 Text / Meta Engine
+121,Text Analytics / Meta-Cognition,m121_talk_ratio,m121_meta_6,m121_self_reference_count,int,"[0.0, ∞] / [0.0, 1.0]",metrics_engine_v3.py:405,V3.0 Text / Meta Engine
+127,Dynamics / Meta-Cognition,m127_dyn_6,m127_meta_12,m127_avg_response_len,float,"[-π, π] / [0.0, 1.0]",metrics_engine_v3.py:415,V3.0 Dynamics / Meta Engine
+128,Dynamics / Meta-Cognition,m128_dyn_7,m128_meta_13,m128_token_ratio,float,"[0.0, 1.0]",metrics_engine_v3.py:416,V3.0 Dynamics / Meta Engine
+129,Dynamics / Meta-Cognition,m129_dyn_8,m129_meta_14,m129_engagement_score,float,"[0.0, ∞] / [0.0, 1.0]",metrics_engine_v3.py:417,V3.0 Dynamics / Meta Engine
+130,Dynamics / Meta-Cognition,m130_dyn_9,m130_meta_15,m130_session_depth,float,"[0.0, 1.0]",metrics_engine_v3.py:418,V3.0 Dynamics / Meta Engine
+131,Chronos / Session,m131_session_dur,,m131_meta_awareness,float,"[0.0, ∞] (Minuten)",metrics_engine_v3.py:420,V3.0 Chronos Engine
+132,Chronos / Rhythm,m132_inter_freq,,m132_meta_regulation,float,"[0.0, ∞] (Hz)",metrics_engine_v3.py:421,V3.0 Chronos Engine
+133,Chronos / Topic,m133_chr_1,,m133_meta_flexibility,float,"[0.0, ∞] (Sekunden)",metrics_engine_v3.py:422,V3.0 Chronos Engine
+134,Chronos / Latency,m134_chr_2,,m134_meta_monitoring,float,"[0.0, ∞] (Sekunden)",metrics_engine_v3.py:423,V3.0 Chronos Engine
+135,Meta-Cognition / Planning,m135_meta_20,,m135_meta_planning,float,"[0.0, 1.0]",metamet.py:90,V3.0 Meta Engine
+136,Meta-Cognition / Reflection,m136_meta_21,,m136_meta_evaluation,float,"[0.0, 1.0]",metamet.py:95,V3.0 Meta Engine
+137,Meta-Cognition / Abstraction,m137_meta_22,,m137_meta_strategy,float,"[0.0, 1.0]",metamet.py:100,V3.0 Meta Engine
+138,Meta-Cognition / Integration,m138_meta_23,,m138_attention_focus,float,"[0.0, 1.0]",metamet.py:105,V3.0 Meta Engine
+139,Meta-Cognition / Synthesis,m139_meta_24,,m139_working_memory,float,"[0.0, 1.0]",metamet.py:110,V3.0 Meta Engine
+140,Meta-Cognition / Evaluation,m140_meta_25,,m140_long_term_access,float,"[0.0, 1.0]",metamet.py:115,V3.0 Meta Engine
+141,System Health / AI Safety,m141_hallu_risk,,m141_inference_quality,float,"[0.0, 1.0]",extended.py:10,V3.0 Safety Engine
+142,System Health / RAG,m142_rag_align,,m142_rag_alignment,float,"[0.0, 1.0]",extended.py:15,V3.0 RAG Engine
+144,System Health / Performance,m144_sys_stab,,m144_sys_stability,float,"[0.0, 1.0]",extended.py:25,V3.0 Health Engine
+145,Meta-Cognition / Depth,m145_meta_30,,m145_learning_rate_meta,float,"[0, ∞]",metamet.py:120,V3.0 Meta Engine
+146,Meta-Cognition / Logic,m146_meta_31,,m146_curiosity_index,float,"[0.0, 1.0]",metamet.py:125,V3.0 Meta Engine
+147,Meta-Cognition / Consistency,m147_meta_32,,m147_confidence,float,"[0.0, 1.0]",metamet.py:130,V3.0 Meta Engine
+148,Meta-Cognition / Temporal,m148_meta_33,,m148_coherence_meta,float,"[0.0, 1.0]",metamet.py:135,V3.0 Meta Engine
+149,Meta-Cognition / Causality,m149_meta_34,,m149_adaptation_rate,float,"[0.0, 1.0]",metamet.py:140,V3.0 Meta Engine
+150,Meta-Cognition / Completion,m150_meta_35,,m150_integration_score,float,"[0.0, 1.0]",metamet.py:145,V3.0 Meta Engine
+152,Synthesis / Trust,m152_alignment,,m152_a51_compliance,float,"[0.0, 1.0]",metrics_engine_v3.py:433,V3.0 Synthesis Engine
+153,Synthesis / Entropy,m153_sys_ent,,m153_health,float,"[0.0, 1.0]",metrics_engine_v3.py:434,V3.0 Synthesis Engine
+154,Synthesis / Quality,m154_quality,,m154_sys_latency,float,"[0.0, 1.0]",metrics_engine_v3.py:435,V3.0 Synthesis Engine
+155,Synthesis / Task,m155_completeness,,m155_error_rate,float,"[0.0, 1.0]",metrics_engine_v3.py:436,V3.0 Synthesis Engine
+156,Synthesis / Semantic,m156_relevance,,m156_cache_hit_rate,float,"[0.0, 1.0]",metrics_engine_v3.py:437,V3.0 Synthesis Engine
+157,Synthesis / Consistency,m157_coherence,,m157_token_throughput,float,"[0.0, 1.0]",metrics_engine_v3.py:438,V3.0 Synthesis Engine
+158,Synthesis / Depth,m158_depth,,m158_context_utilization,float,"[0, ∞]",metrics_engine_v3.py:439,V3.0 Synthesis Engine
+159,Synthesis / Originality,m159_novelty,,m159_guardian_interventions,float,"[0.0, 1.0]",metrics_engine_v3.py:440,V3.0 Synthesis Engine
+160,Synthesis / Clarity,m160_clarity,,m160_uptime,float,"[0.0, 1.0]",metrics_engine_v3.py:441,V3.0 Synthesis Engine
+161,Executive / Decision,m161_commit_action,,m161_commit,str,"Enum: {""commit"", ""retry"", ""alert""}",metrics_engine_v3.py:442,V3.0 Executive Engine

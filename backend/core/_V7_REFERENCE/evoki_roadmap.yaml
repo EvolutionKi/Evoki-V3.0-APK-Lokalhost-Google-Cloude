@@ -1,0 +1,40 @@
+# EVOKI Roadmap (maschinenlesbar) — V1
+version: 1
+generated_at: "2026-02-01T03:19:59.203174+00:00"
+tracks:
+  - id: T0
+    title: "Apply Hardening Blob + Verify Bootcheck"
+    priority: P0
+    depends_on: []
+    outputs: ["bootcheck_report.json", "genesis_anchor_manifest.json"]
+    validation: ["python evoki_bootcheck.py exit_code==0 (dev)"]
+  - id: T1
+    title: "Contract-first: FullSpectrum168 registry sync"
+    priority: P0
+    depends_on: [T0]
+    outputs: ["evoki_fullspectrum168_contract.json", "metrics_registry.py"]
+    validation: ["evoki_invariants.py contract_invariants OK"]
+  - id: T2
+    title: "History ingestion pipeline (file->db)"
+    priority: P0
+    depends_on: [T1]
+    outputs: ["evoki_history.sqlite", "turns table filled", "import_log.jsonl"]
+    validation: ["row_count == file_count", "sample prompts parsed"]
+  - id: T3
+    title: "Batch embeddings + vector index"
+    priority: P1
+    depends_on: [T2]
+    outputs: ["embeddings table filled", "faiss index", "retrieval smoke test"]
+    validation: ["kindergarten zwilling test passes"]
+  - id: T4
+    title: "Metrics backfill for history (FullSpectrum168)"
+    priority: P1
+    depends_on: [T2]
+    outputs: ["metrics table filled"]
+    validation: ["ranges valid", "NaN/Inf rate < 0.1%"]
+  - id: T5
+    title: "UI integration: auto-store current prompts"
+    priority: P1
+    depends_on: [T0, T4]
+    outputs: ["UI shows integrity status", "prompt stored on send"]
+    validation: ["turn inserted within 250ms of send"]

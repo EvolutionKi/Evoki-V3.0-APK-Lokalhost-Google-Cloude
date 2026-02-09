@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 03:50:14 MESZ
+Speaker: user
+
+nein dann möchte ich dass diese Output mir quasi ja gesendet wird und ich sehe was wäre quasi ohne die Anwendung der Meta Regel quasi als Ergebnis zu sehen gewesen und gleichzeitig soll allerdings ja die Post Output Validierung Einheit natürlich das ganze wieder an die erste Meter Regel senden und danach noch mal natürlich schauen dass es auch angewendet worden ist und mir dann das Ergebnis präsentieren

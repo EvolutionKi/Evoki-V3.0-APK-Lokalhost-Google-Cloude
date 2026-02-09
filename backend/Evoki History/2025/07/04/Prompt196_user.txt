@@ -1,0 +1,4 @@
+Timestamp: 04.07.2025, 03:41:36 MESZ
+Speaker: user
+
+ja ich weiß nicht wie sich das ändern soll denn das kurzsichtige Druck Verhalten in der oberen Schicht wie du es genannt hast das gehört hast du einen Blick Verhalten das hält ja diese obere Schicht auch in einer Schleife gefangen und die untere Schleife wird sich nicht ändern also

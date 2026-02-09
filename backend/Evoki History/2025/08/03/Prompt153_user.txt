@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 16:23:09 MESZ
+Speaker: user
+
+diese ROC erstellt eine eigene Sha 256 Prüfkatalog mit dem aktuellen Regelwerk und tut das mit dem Ausgabefenster verknüpfen so dass die Satzzeichen im Ausgabefenster exakt die ist dieser Zahl entsprechen müssen

@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:22:54 MESZ
+Speaker: ai
+
+Ich sehe, dass "ASIO Status" auf "inaktiv" steht. Das bedeutet, dass der ASIO-Treiber momentan nicht verwendet wird. Das könnte die hohe Latenz erklären. Klicke mal auf "ASIO Configuration", um das Treiberfenster zu öffnen. Dort sollten wir die Puffergröße direkt einstellen können.

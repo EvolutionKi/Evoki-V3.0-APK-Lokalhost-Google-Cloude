@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 18:04:02 MESZ
+Speaker: user
+
+du sollst dann bitte auch noch bei Vergleich nicht nur okay hinten dran schreiben sondern bitte schreib noch hinten dran ob Du festgestellt hast ob dieser dynamisch oder statisch ist also das ist auch eben dann ein Wert der sich verändern kann bei Fehlern

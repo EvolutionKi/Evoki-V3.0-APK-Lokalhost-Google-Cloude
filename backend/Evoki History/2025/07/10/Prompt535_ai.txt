@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:32:39 MESZ
+Speaker: ai
+
+Ich sehe, du hast dir den Bereich "Kontext-Caching" angesehen. Das ist interessant, da es uns helfen könnte, die Effizienz unseres PLKM-Wrappers zu verbessern. Ich sehe hier die Optionen "Implizites Caching", "Explizites Caching" und "Cache auflisten". Was genau möchtest du wissen?

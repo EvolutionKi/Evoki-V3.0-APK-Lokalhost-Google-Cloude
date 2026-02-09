@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 15:41:22 MESZ
+Speaker: user
+
+versions control und tun es auch über die Übersicht quasi eine extra Unterordner noch mal anlegen wo versions control drin ist okay

@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:12:43 MESZ
+Speaker: ai
+
+Ich sehe Cubase im Hintergrund. Du könntest also deine Spuren vom NRV10 im alten DAW-System aufnehmen und dann in Cubase importieren. Hast du vor, das auf deinem aktuellen Rechner zu machen oder auf einem neuen, leistungsstärkeren?

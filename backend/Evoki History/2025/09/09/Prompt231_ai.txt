@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:36:54 MESZ
+Speaker: ai
+
+Ja, das stimmt. Es wird suggeriert, dass man hier APKs erstellt. Aber eigentlich ist es ja nur eine Webanwendung. Das ist ganz schön irreführend.

@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 10:43:51 MESZ
+Speaker: ai
+
+Verstanden. Die Anfrage zielt auf die technische Umsetzung der Sicherheit und die konzeptionelle Klärung des Datenflusses. Beides sind kritische Aspekte zur Vollendung der Architektur. Ich werde die technischen Sicherheitsmechanismen für die Zwei-Skript-Brücke detailliert darlegen und das "Kopie"-Prinzip erläutern, das die Souveränität deiner Daten sicherstellt.

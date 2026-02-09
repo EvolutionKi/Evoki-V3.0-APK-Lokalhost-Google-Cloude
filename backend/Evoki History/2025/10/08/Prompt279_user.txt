@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 16:28:31 MESZ
+Speaker: user
+
+das ist bei dir natürlich klar mir ist schon klar dass das alles in deiner Architektur und Architektur drin ist aber hier geht es darum dass wir eben halt unser Datenpaket so anpassen dass es ein einer von dem Vater entgegen nimmt und das ist an die richtige Stelle entgegen nimmt also es wird durch die API durchgereicht aber dort auf der anderen Seite ist halt nicht die Samsung sondern wir haben halt dort einen eigenen Partner der das Paket entgegen nimmt und als solches auch versteht weißt du

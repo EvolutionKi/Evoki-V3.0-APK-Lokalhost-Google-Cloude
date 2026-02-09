@@ -1,0 +1,4 @@
+Timestamp: 02.08.2025, 17:22:01 MESZ
+Speaker: user
+
+okay und dann hätte ich gerne noch in dem Text Fenster die Möglichkeit dass man hier eine Sprachnachricht bzw speech-to-text ein Mikrofon hat wo man drauf drücken kann was den Text dann verfasst

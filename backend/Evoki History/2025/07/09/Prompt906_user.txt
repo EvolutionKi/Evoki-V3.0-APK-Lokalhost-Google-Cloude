@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 14:04:00 MESZ
+Speaker: user
+
+ja und wir machen einen Fehler Erkennungssystem noch dazu und zwar wenn zwei aufeinanderfolgende Versionen da sind die keine Änderung dieser prüf Kennzahl zur Folge haben dann ist ein Fehler hochwahrscheinlich

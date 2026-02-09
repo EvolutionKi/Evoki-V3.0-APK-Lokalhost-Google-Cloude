@@ -1,0 +1,4 @@
+Timestamp: 11.09.2025, 02:42:31 MESZ
+Speaker: user
+
+Wie definieren wir diese Funktion? Durch deinen Prompt gerade?

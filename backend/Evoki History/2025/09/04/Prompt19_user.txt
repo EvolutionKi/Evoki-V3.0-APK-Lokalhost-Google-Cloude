@@ -1,0 +1,4 @@
+Timestamp: 04.09.2025, 21:10:01 MESZ
+Speaker: user
+
+a sensitive query.

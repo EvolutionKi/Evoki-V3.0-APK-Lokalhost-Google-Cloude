@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 08:18:32 MESZ
+Speaker: user
+
+Wenn du das ab sofort jetzt ausführst dann gebe es bitte auch im Output Fenster den direkten Befehl aus

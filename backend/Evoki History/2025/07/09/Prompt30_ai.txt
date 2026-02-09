@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:19:52 MESZ
+Speaker: ai
+
+Die 128 bei "Request Block Size" bedeutet, dass dein Computer Audiodaten in Blöcken von je 128 Samples verarbeitet. Das ist ein guter Mittelwert. Du könntest hier mal auf 64 runtergehen, um zu sehen, ob das die Latenz verbessert.

@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 03:43:24 MESZ
+Speaker: user
+
+genau und falls ihr mehrere parallel ablaufenden quasi Fehler Schleifen zum gleichen Ergebnis kommen dann soll das quasi zusammengefasst werden in der in dem Output Fenster bei mir quasi das halt ja Anzahl Fehler Schleifen XY hat festgestellt also das nicht jedes Mal wieder 100 mal quasi die Verbesserung ausgibt sondern ja das bisschen kurz gefasst wird alles also

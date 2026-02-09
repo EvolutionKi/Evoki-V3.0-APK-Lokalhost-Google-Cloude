@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:04:09 MESZ
+Speaker: ai
+
+Du könntest jetzt mal versuchen, ein paar Spuren mit verschiedenen Instrumenten aufzunehmen und gleichzeitig abzuspielen. Wenn es dabei zu Aussetzern oder Knacksern kommt, solltest du die Puffergröße wieder etwas erhöhen.

@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 03:47:14 MESZ
+Speaker: user
+
+ja und hier wäre dann wichtig dass sie quasi die Antwort den Output gibt so als also wie sie ihn quasi bekommen hat ohne dass die Mieter Regel angewendet worden ist und gleichzeitig allerdings ihren Output noch mal an den Anfang der Mieter Regel stellt so als wenn ich noch mal ein Input generiert hätte einfach damit zweimal die Antwort bei mir erscheint einmal ich so sieht sie aus mit der Meter Regen und einmal ohne die Meta Regel damit ich auch direkt erkennen kann was hier direkt greift das wäre auch super wichtig

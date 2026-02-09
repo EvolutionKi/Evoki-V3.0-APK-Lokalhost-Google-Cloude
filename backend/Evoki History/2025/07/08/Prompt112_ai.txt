@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 22:58:52 MESZ
+Speaker: ai
+
+Du solltest im "BEHRINGER UMC Control Panel" die Puffergröße anpassen. Dort gibt es einen Schieberegler oder ein Dropdown-Menü, wo du die Größe direkt einstellen kannst. Fang mal mit einem niedrigeren Wert an, zum Beispiel 128 Samples, und schau, ob die Latenz besser wird.

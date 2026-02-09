@@ -1,0 +1,4 @@
+Timestamp: 04.10.2025, 00:42:03 MESZ
+Speaker: user
+
+Das war noch kompliziert das war nicht besser nur Effekt Messung meine ich beim Null Effekt dürftest du nicht wirklich irgendwie in 0,1 haben sondern der Null Effekt musste wirklich kleiner 0,1 Impulse pro Sekunde sein weil wer das größer gewesen bei einer Freigabe Messung von 60 Sekunden Messzeit auf dem Gegenstand bei weiß nicht 3 4 Impulsen während dieser Messzeit hätte der schon den Freigabe Wert überschritten aufgrund des möglichen Vektors der halt im FML so liegt dass da ja eigentlich keine Alpha Aktivität sein dürfte bzw so gering dass wenn du da ein bisschen was misst das sofort total überbewertet weil er dann sowieso schon also verstehst du

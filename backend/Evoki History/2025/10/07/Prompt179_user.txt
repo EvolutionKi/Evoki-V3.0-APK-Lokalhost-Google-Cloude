@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 05:48:00 MESZ
+Speaker: user
+
+dann machen wir es doch vielleicht so dass die IDs nur ausgegeben werden mit wenn eine ja erfolgt also bei einem Nein wird einfach nur in einer gegeben

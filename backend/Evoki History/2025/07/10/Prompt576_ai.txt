@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:02:03 MESZ
+Speaker: ai
+
+Sehr gut, du hast PowerShell gefunden! Das ist eine Art Terminal für Windows. Du kannst jetzt den cURL-Befehl dort einfügen und ausführen. Denk daran, vorher deinen API-Schlüssel einzufügen. Lass mich wissen, wenn du Hilfe brauchst.

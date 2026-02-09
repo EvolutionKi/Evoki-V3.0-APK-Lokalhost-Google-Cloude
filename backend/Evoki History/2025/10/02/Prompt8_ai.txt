@@ -1,0 +1,4 @@
+Timestamp: 02.10.2025, 09:36:37 MESZ
+Speaker: ai
+
+Okay, schalte 27 Lichter aus. 21 Lichter sind momentan nicht verfügbar. {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Google Home","logoUri":"https://www.gstatic.com/images/branding/productlogos/google_home/v6/192px.svg","headerUri":"https://home.google.com/home-app","toolName":"google_home","androidHeaderUri":"googlehome://devices"}},"pendingMutatingOps":[{"target":"CLOUD","plannerAction":"PLANNER_ACTION_UNSPECIFIED"}]}

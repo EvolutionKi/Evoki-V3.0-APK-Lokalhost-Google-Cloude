@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:32:06 MESZ
+Speaker: user
+
+Ja, ich meine, es kann schon ebenso Webanwendungen quasi generieren. Also es tut halt ja in einem geschlossenen Webfenster was öffnen, aber das ist keine App, also

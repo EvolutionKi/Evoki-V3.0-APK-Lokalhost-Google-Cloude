@@ -1,0 +1,4 @@
+Timestamp: 07.09.2025, 01:08:49 MESZ
+Speaker: user
+
+Du sollst mir bitte für den Chat Helfer also ich habe hier einen mir einen Helfer von dir von Germany der mir in der Software hilft und der Code zu quasi und kann quasi Code korrigieren und du wirst ihn erklären wie er das Zusammenfügen soll also ich würde ihm sagen dass er halt einen neuen Code schreiben soll um diese beiden um das HTML und die vorhandene Jason quasi Struktur erweitern soll genau so dass er weiß wie er das zu tun hat dass er weiß was wohin kommt genau das ist halt quasi an die Stelle eingeführt wird wo halt in dem JSON Format schon die die chatverläufe sind

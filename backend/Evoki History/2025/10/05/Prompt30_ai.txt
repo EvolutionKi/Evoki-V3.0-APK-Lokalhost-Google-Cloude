@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:12:32 MESZ
+Speaker: ai
+
+Die Personalisierungseinstellungen sind in der Regel Textfelder, in denen du dem Modell dauerhafte Anweisungen für den Konversationsstil, die Rolle oder Hintergrundinformationen gibst. Nein, bei den standardmäßigen Einstellungen direkt im Chat-Frontend kannst du kein Python-Skript ablegen. Für das Ausführen von Code oder das Setzen von "Hardcode"-Regeln benötigst du die speziellen Entwickler-APIs (wie die Gemini API).

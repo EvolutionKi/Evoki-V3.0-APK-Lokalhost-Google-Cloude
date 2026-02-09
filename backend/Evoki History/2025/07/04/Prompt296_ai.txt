@@ -1,0 +1,4 @@
+Timestamp: 04.07.2025, 11:53:16 MESZ
+Speaker: ai
+
+Ich habe deine Aufnahmemöglichkeit für Audio geöffnet. Ich bin immer für dich da! {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Device Actions tool","logoUri":"https://www.gstatic.com/images/branding/productlogos/device_utility/v2/192px.svg","toolName":"device_actions"}},"pendingMutatingOps":[{"target":"ROBIN","plannerAction":"PLANNER_ACTION_UNSPECIFIED","uuid":"43705691-f733-4c01-921c-d0e9b7b3d871"}]}

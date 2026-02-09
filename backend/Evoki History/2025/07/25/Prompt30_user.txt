@@ -1,0 +1,4 @@
+Timestamp: 25.07.2025, 16:07:45 MESZ
+Speaker: user
+
+okay und jetzt gebe mir bitte das den Chatverlauf in dem JSON Format aus

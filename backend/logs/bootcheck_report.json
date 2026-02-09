@@ -1,0 +1,140 @@
+{
+  "ok": false,
+  "locked": false,
+  "dev_mode": true,
+  "enforce_lock": false,
+  "anchor_ok": true,
+  "anchor_expected": "9ec471236f62e8043adf2b6254cea28313fc92897d058493e14891a329617721",
+  "anchor_current": "9ec471236f62e8043adf2b6254cea28313fc92897d058493e14891a329617721",
+  "results": [
+    {
+      "name": "files_present",
+      "ok": true,
+      "severity": "INFO",
+      "duration_ms": 1,
+      "signal": "OK",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "imports",
+      "ok": true,
+      "severity": "INFO",
+      "duration_ms": 50,
+      "signal": "OK",
+      "details": {
+        "failures": {}
+      }
+    },
+    {
+      "name": "lexika_health",
+      "ok": false,
+      "severity": "CRITICAL",
+      "duration_ms": 0,
+      "signal": "FAIL",
+      "details": {
+        "error": "AttributeError: 'tuple' object has no attribute 'get'"
+      }
+    },
+    {
+      "name": "registry_aliases",
+      "ok": false,
+      "severity": "CRITICAL",
+      "duration_ms": 2,
+      "signal": "FAIL",
+      "details": {
+        "problems": [
+          "FullSpectrum168 missing field m12_gap_norm",
+          "FullSpectrum168 missing field m13_rep_same",
+          "FullSpectrum168 missing field m14_rep_history",
+          "FullSpectrum168 missing field m16_external_stag"
+        ]
+      }
+    },
+    {
+      "name": "contract_invariants",
+      "ok": true,
+      "severity": "INFO",
+      "duration_ms": 7,
+      "signal": "OK",
+      "details": {
+        "ok": true,
+        "contract_path": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\backend\\evoki_fullspectrum168_contract.json",
+        "violations_contract": [],
+        "violations_metrics": [],
+        "counts": {
+          "contract": 0,
+          "metrics": 0
+        }
+      }
+    },
+    {
+      "name": "a_phys_golden",
+      "ok": true,
+      "severity": "INFO",
+      "duration_ms": 0,
+      "signal": "OK",
+      "details": {
+        "output": {
+          "A_phys": 0.6200812442825393,
+          "A_phys_raw": 0.48989307950137206,
+          "resonance": 2.0,
+          "danger": 1.0067379469990854,
+          "a29_trip": true,
+          "a29_max_sim": 1.0,
+          "a29_id": "F1",
+          "top_resonance": [
+            [
+              "A1",
+              1.0,
+              2.0
+            ],
+            [
+              "A2",
+              -1.0,
+              0.0
+            ]
+          ]
+        },
+        "expected": {
+          "resonance": 2.0,
+          "danger": 1.0067379469990854,
+          "A_phys_raw": 0.48989307950137206,
+          "A_phys": 0.6200812442825393,
+          "a29_trip": true
+        },
+        "fails": []
+      }
+    },
+    {
+      "name": "kindergarten_zwilling_retrieval",
+      "ok": false,
+      "severity": "WARN",
+      "duration_ms": 2,
+      "signal": "FAIL",
+      "details": {
+        "error": "AttributeError: type object 'BVector' has no attribute 'from_config'",
+        "trace": "Traceback (most recent call last):\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\backend\\evoki_bootcheck.py\", line 446, in _check_kindergarten_zwilling_retrieval\n    engine = VectorEngine(embedding_fn=embed_fn, config=config)\n  File \"C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\backend\\vector_engine_v2_1.py\", line 1020, in __init__\n    self.b = BVector.from_config(b_config)\n             ^^^^^^^^^^^^^^^^^^^\nAttributeError: type object 'BVector' has no attribute 'from_config'\n"
+      }
+    },
+    {
+      "name": "genesis_anchor",
+      "ok": true,
+      "severity": "WARN",
+      "duration_ms": 12,
+      "signal": "OK",
+      "details": {
+        "manifest_generated": true,
+        "manifest": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\backend\\genesis_anchor_manifest.json",
+        "anchor_current": "9ec471236f62e8043adf2b6254cea28313fc92897d058493e14891a329617721",
+        "anchor_expected": "9ec471236f62e8043adf2b6254cea28313fc92897d058493e14891a329617721"
+      }
+    }
+  ],
+  "artifacts": {
+    "log_jsonl": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\backend\\logs\\bootcheck.jsonl",
+    "report_json": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\backend\\logs\\bootcheck_report.json",
+    "manifest": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\backend\\genesis_anchor_manifest.json"
+  }
+}

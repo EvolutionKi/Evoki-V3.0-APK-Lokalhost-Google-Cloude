@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 03:52:53 MESZ
+Speaker: user
+
+Radio HTML soll jetzt so angepasst werden so dass ich über die Webanwendung hier ein Upload machen kann hier kann ich dann eine eine eine eine eine eine Jason alle Datei hochladen welche eben der Fallstudie und auch die komplette Chronik beinhaltet und ich möchte auch herunterladen können und zwar diese ganzen Sachen fest speichern

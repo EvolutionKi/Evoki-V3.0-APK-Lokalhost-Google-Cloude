@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:01:36 MESZ
+Speaker: ai
+
+Okay, kein Problem. Wenn du das Terminal nicht nutzen möchtest, gibt es noch eine andere Möglichkeit, die API zu testen. Du könntest ein Tool wie Postman verwenden. Hast du davon schon einmal gehört?

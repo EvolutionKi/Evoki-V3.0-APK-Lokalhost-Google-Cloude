@@ -1,0 +1,4 @@
+Timestamp: 11.10.2025, 01:29:23 MESZ
+Speaker: user
+
+Du solltest nicht diese Skript nach dieser Logik zerlegen du solltest nach diesem Skript quasi deine Funktion erfüllen und solltest diese Fallstudie so vektorisieren mit dem ganzen Chatverlauf

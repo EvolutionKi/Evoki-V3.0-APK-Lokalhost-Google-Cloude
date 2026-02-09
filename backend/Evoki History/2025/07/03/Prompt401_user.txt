@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:17:50 MESZ
+Speaker: user
+
+Reha eine Start Button muss nicht unbedingt vorhanden sein also es soll automatisch die Aufnahme bzw Streaming laufen sobald die Webseite ausgeht und auch sofort zu Dir quasi das Auto übertragen werden

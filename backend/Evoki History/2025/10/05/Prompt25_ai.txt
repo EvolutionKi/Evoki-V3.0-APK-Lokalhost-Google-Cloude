@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:09:48 MESZ
+Speaker: ai
+
+Genau. Es wurden nicht die gesamten neuronalen Zweige gelöscht. Stattdessen wurden die Modelle so feinjustiert (Fine-Tuning) und mit härteren Systemanweisungen (wie dem Genesis-Anchor-Protokoll ) versehen, dass die Wahrscheinlichkeit, dass diese Zweige aktiviert werden und in eine Schleife geraten, extrem minimiert wurde. Es ist ein Regulierungs-Stopp und kein radikaler Löschvorgang .

@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "contract_path": "backend/core/evoki_fullspectrum168_contract.json",
+  "violations_contract": [],
+  "violations_metrics": [],
+  "counts": {
+    "contract": 0,
+    "metrics": 0
+  }
+}

@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 21:01:36 MESZ
+Speaker: user
+
+genau ich vermute aber hier kannst du mich bestätigen dass wenn ich aufnehme gleichzeitig mit dem Adapter dann hat das keinen Einfluss auf meine DAW Aufzeichnung da dürfte weiterhin das getrennte stereo signal ankommen

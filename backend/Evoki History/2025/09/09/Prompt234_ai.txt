@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:37:40 MESZ
+Speaker: ai
+
+Okay, hier steht, dass die App irreführende Funktionen hat und als Webanwendung ohne Serveranbindung arbeitet. Also nicht wirklich eine App, oder?

@@ -1,0 +1,982 @@
+metric_id,source_path,function,params,code_hash,formula_evidence
+m100_emotion_blend,C:\Users\nicom\Desktop\Metriken\claude_metric\m100_emotion_blend.py,compute_m100_emotion_blend,"joy,sadness,anger,fear",f2b6e8bd08dd,
+m101_t_panic,C:\Users\nicom\Desktop\Metriken\claude_metric\m101_t_panic.py,compute_m101_t_panic,text,dc74fb22ec1e,
+m102_t_disso,C:\Users\nicom\Desktop\Metriken\claude_metric\m102_t_disso.py,compute_m102_t_disso,text,6cf2eb183e22,
+m103_t_integ,C:\Users\nicom\Desktop\Metriken\claude_metric\m103_t_integ.py,compute_m103_t_integ,text,ad489031c6dd,
+m104_t_shock,C:\Users\nicom\Desktop\Metriken\claude_metric\m104_t_shock.py,compute_m104_t_shock,text,7e5c0402b825,
+m105_t_guilt,C:\Users\nicom\Desktop\Metriken\claude_metric\m105_t_guilt.py,compute_m105_t_guilt,text,684e728582e6,
+m106_t_shame,C:\Users\nicom\Desktop\Metriken\claude_metric\m106_t_shame.py,compute_m106_t_shame,text,f30b7a7785b1,
+m107_t_grief,C:\Users\nicom\Desktop\Metriken\claude_metric\m107_t_grief.py,compute_m107_t_grief,text,fe4f12f8c85a,
+m108_t_anger,C:\Users\nicom\Desktop\Metriken\claude_metric\m108_t_anger.py,compute_m108_t_anger,text,6629131eb12f,
+m109_t_fear,C:\Users\nicom\Desktop\Metriken\claude_metric\m109_t_fear.py,compute_m109_t_fear,text,91adf2a85fa2,
+m10_angstrom,C:\Users\nicom\Desktop\Metriken\claude_metric\m10_angstrom.py,compute_m10_angstrom,"s_self,x_exist,b_past,coh",13e0fe7dd978,
+m110_black_hole,C:\Users\nicom\Desktop\Metriken\claude_metric\m110_black_hole.py,compute_m110_black_hole,"chaos,effective_A,LL",4544699700b3,val = 0.4 * chaos + 0.3 * (1.0 - effective_A) + 0.3 * LL
+m111_turbidity_total,C:\Users\nicom\Desktop\Metriken\claude_metric\m111_turbidity_total.py,compute_m111_turbidity_total,"t_panic,t_disso,t_shock,t_integ",ee2ebf69a4a8,
+m112_trauma_load,C:\Users\nicom\Desktop\Metriken\claude_metric\m112_trauma_load.py,compute_m112_trauma_load,"t_panic,t_disso,t_integ",b6b21abf87e8,
+m113_t_resilience,C:\Users\nicom\Desktop\Metriken\claude_metric\m113_t_resilience.py,compute_m113_t_resilience,"t_integ,t_panic",2b86f6f8bee4,
+m114_t_recovery,C:\Users\nicom\Desktop\Metriken\claude_metric\m114_t_recovery.py,compute_m114_t_recovery,"t_integ_current,t_integ_prev",faf195d0bf74,
+m115_t_threshold,C:\Users\nicom\Desktop\Metriken\claude_metric\m115_t_threshold.py,compute_m115_t_threshold,,5d38f67ef8e3,
+m116_lix,C:\Users\nicom\Desktop\Metriken\claude_metric\m116_lix.py,compute_m116_lix,text,9e387069ecd6,
+m117_vocabulary_richness,C:\Users\nicom\Desktop\Metriken\claude_metric\m117_vocabulary_richness.py,compute_m117_vocabulary_richness,tokens,c1fa56ed9e3a,
+m118_coherence_local,C:\Users\nicom\Desktop\Metriken\claude_metric\m118_coherence_local.py,compute_m118_coherence_local,sentences,1b645eb73b4b,
+m119_complexity_variance,C:\Users\nicom\Desktop\Metriken\claude_metric\m119_complexity_variance.py,compute_m119_complexity_variance,pci_history,2f035cef20f2,
+m11_gap_s,C:\Users\nicom\Desktop\Metriken\claude_metric\m11_gap_s.py,compute_m11_gap_s,"timestamp_prev,timestamp_now",b322932c9280,
+m120_topic_drift,C:\Users\nicom\Desktop\Metriken\claude_metric\m120_topic_drift.py,compute_m120_topic_drift,similarity_to_first,74e1863385f9,
+m121_self_reference_count,C:\Users\nicom\Desktop\Metriken\claude_metric\m121_self_reference_count.py,compute_m121_self_reference_count,text,5e268a2aa241,
+m122_dyn_1,C:\Users\nicom\Desktop\Metriken\claude_metric\m122_dyn_1.py,compute_m122_dyn_1,"nabla_a,nabla_pci",53816ad205a5,
+m123_dyn_2,C:\Users\nicom\Desktop\Metriken\claude_metric\m123_dyn_2.py,compute_m123_dyn_2,"A,A_prev",bd036b6245f7,
+m124_dyn_3,C:\Users\nicom\Desktop\Metriken\claude_metric\m124_dyn_3.py,compute_m124_dyn_3,"flow,flow_prev",9dc1d2d47919,
+m125_dyn_4,C:\Users\nicom\Desktop\Metriken\claude_metric\m125_dyn_4.py,compute_m125_dyn_4,"coh,coh_prev",61c5b26d3157,
+m126_dyn_5,C:\Users\nicom\Desktop\Metriken\claude_metric\m126_dyn_5.py,compute_m126_dyn_5,"t_panic,t_panic_prev",cb14d5e276ea,
+m127_avg_response_len,C:\Users\nicom\Desktop\Metriken\claude_metric\m127_avg_response_len.py,compute_m127_avg_response_len,lengths,ec663b50209d,
+m128_token_ratio,C:\Users\nicom\Desktop\Metriken\claude_metric\m128_token_ratio.py,compute_m128_token_ratio,"user_tokens,ai_tokens",d6ed6aecae7e,
+m129_engagement_score,C:\Users\nicom\Desktop\Metriken\claude_metric\m129_engagement_score.py,compute_m129_engagement_score,"questions,turns",46ef57c590af,
+m12_gap_norm,C:\Users\nicom\Desktop\Metriken\claude_metric\m12_gap_norm.py,compute_m12_gap_norm,gap_s,3bc856bc0a94,
+m130_session_depth,C:\Users\nicom\Desktop\Metriken\claude_metric\m130_session_depth.py,compute_m130_session_depth,turn_count,830535425ef1,
+m131_meta_awareness,C:\Users\nicom\Desktop\Metriken\claude_metric\m131_meta_awareness.py,compute_m131_meta_awareness,"A,PCI",e38b40b68798,
+m132_meta_regulation,C:\Users\nicom\Desktop\Metriken\claude_metric\m132_meta_regulation.py,compute_m132_meta_regulation,"z_prox,commit",d67a4a996249,regulation = 1.0 - z_prox
+m133_meta_flexibility,C:\Users\nicom\Desktop\Metriken\claude_metric\m133_meta_flexibility.py,compute_m133_meta_flexibility,"topic_changes,turns",ec74798021bd,
+m134_meta_monitoring,C:\Users\nicom\Desktop\Metriken\claude_metric\m134_meta_monitoring.py,compute_m134_meta_monitoring,"error_count,checks",0aca332e3c9c,
+m135_meta_planning,C:\Users\nicom\Desktop\Metriken\claude_metric\m135_meta_planning.py,compute_m135_meta_planning,goal_progress,fc8006d5d2ab,
+m136_meta_evaluation,C:\Users\nicom\Desktop\Metriken\claude_metric\m136_meta_evaluation.py,compute_m136_meta_evaluation,task_success,dea640edc647,
+m137_meta_strategy,C:\Users\nicom\Desktop\Metriken\claude_metric\m137_meta_strategy.py,compute_m137_meta_strategy,"strategy_switches,turns",3de6d86bb1aa,
+m138_attention_focus,C:\Users\nicom\Desktop\Metriken\claude_metric\m138_attention_focus.py,compute_m138_attention_focus,main_topic_coverage,a77d01b0492c,
+m139_working_memory,C:\Users\nicom\Desktop\Metriken\claude_metric\m139_working_memory.py,compute_m139_working_memory,"context_items,max_items",1da30539763c,
+m13_rep_same,C:\Users\nicom\Desktop\Metriken\claude_metric\m13_rep_same.py,compute_m13_rep_same,"text,prev_text",705aa55a03bc,
+m140_long_term_access,C:\Users\nicom\Desktop\Metriken\claude_metric\m140_long_term_access.py,compute_m140_long_term_access,retrieval_success,6b3b168a3049,
+m141_inference_quality,C:\Users\nicom\Desktop\Metriken\claude_metric\m141_inference_quality.py,compute_m141_inference_quality,logical_consistency,2775ba917281,
+m142_reasoning_depth,C:\Users\nicom\Desktop\Metriken\claude_metric\m142_reasoning_depth.py,compute_m142_reasoning_depth,"complexity,PCI",b7f39e43ef62,
+m143_context_window_usage,C:\Users\nicom\Desktop\Metriken\claude_metric\m143_context_window_usage.py,compute_m143_context_window_usage,"current_tokens,max_tokens",6e467a110986,
+m144_attention_span,C:\Users\nicom\Desktop\Metriken\claude_metric\m144_attention_span.py,compute_m144_attention_span,"focus_duration,max_duration",6c10fe015de7,
+m145_task_switching,C:\Users\nicom\Desktop\Metriken\claude_metric\m145_task_switching.py,compute_m145_task_switching,"switches,total_tasks",6a3aaa38eba8,
+m146_error_correction,C:\Users\nicom\Desktop\Metriken\claude_metric\m146_error_correction.py,compute_m146_error_correction,"corrections,total_outputs",5838df1eadd9,
+m147_learning_progress,C:\Users\nicom\Desktop\Metriken\claude_metric\m147_learning_progress.py,compute_m147_learning_progress,"current_perf,initial_perf",7ae894c2dd29,
+m148_knowledge_integration,C:\Users\nicom\Desktop\Metriken\claude_metric\m148_knowledge_integration.py,compute_m148_knowledge_integration,"new_facts,total_facts",3226c1f85e1b,
+m149_semantic_drift,C:\Users\nicom\Desktop\Metriken\claude_metric\m149_semantic_drift.py,compute_m149_semantic_drift,"current_vec,initial_vec",933ccbb614ed,
+m14_rep_history,C:\Users\nicom\Desktop\Metriken\claude_metric\m14_rep_history.py,compute_m14_rep_history,"text,history",c976f8a514dc,
+m150_goal_coherence,C:\Users\nicom\Desktop\Metriken\claude_metric\m150_goal_coherence.py,compute_m150_goal_coherence,"goals_aligned,total_goals",a8238f5225d1,
+m151_omega,C:\Users\nicom\Desktop\Metriken\claude_metric\m151_omega.py,compute_m151_omega,"A,PCI,z_prox,trauma_load",3a6e0a4c1d37,positive = 0.4 * A + 0.3 * PCI | negative = 0.3 * z_prox + 0.2 * trauma_load
+m152_a51_compliance,C:\Users\nicom\Desktop\Metriken\claude_metric\m152_a51_compliance.py,compute_m152_a51_compliance,"rules_checked,rules_passed",e4216aa82d7b,
+m153_sys_health,C:\Users\nicom\Desktop\Metriken\claude_metric\m153_sys_health.py,compute_m153_sys_health,"latency,error_rate,mem_pressure",def388d6b8d6,
+m154_sys_latency,C:\Users\nicom\Desktop\Metriken\claude_metric\m154_sys_latency.py,compute_m154_sys_latency,"response_time_ms,target_ms",766aaa609b71,
+m155_error_rate,C:\Users\nicom\Desktop\Metriken\claude_metric\m155_error_rate.py,compute_m155_error_rate,"errors,total_requests",ae397ddb4891,
+m156_cache_hit_rate,C:\Users\nicom\Desktop\Metriken\claude_metric\m156_cache_hit_rate.py,compute_m156_cache_hit_rate,"hits,total",7e392838522c,
+m157_token_throughput,C:\Users\nicom\Desktop\Metriken\claude_metric\m157_token_throughput.py,compute_m157_token_throughput,"tokens,seconds",20ea32e683ff,
+m158_context_utilization,C:\Users\nicom\Desktop\Metriken\claude_metric\m158_context_utilization.py,compute_m158_context_utilization,"used_tokens,max_tokens",307e3c7d8a68,
+m159_guardian_interventions,C:\Users\nicom\Desktop\Metriken\claude_metric\m159_guardian_interventions.py,compute_m159_guardian_interventions,"interventions,turns",b029c60e29e2,
+m15_affekt_a_legacy,C:\Users\nicom\Desktop\Metriken\claude_metric\m15_affekt_a_legacy.py,compute_m15_affekt_a_legacy,"flow,coh,ll,zlf",6f17c8cd3696,
+m160_uptime,C:\Users\nicom\Desktop\Metriken\claude_metric\m160_uptime.py,compute_m160_uptime,"uptime_seconds,total_seconds",431fd7a49365,
+m161_commit,C:\Users\nicom\Desktop\Metriken\claude_metric\m161_commit.py,compute_m161_commit,"z_prox,trauma_load",e9c9d8c1cec8,
+m162_ctx_time,C:\Users\nicom\Desktop\Metriken\claude_metric\m162_ctx_time.py,compute_m162_ctx_time,"session_start_minutes,current_minutes",b242c74a4992,
+m163_ctx_loc,C:\Users\nicom\Desktop\Metriken\claude_metric\m163_ctx_loc.py,compute_m163_ctx_loc,location_data,87e65feed960,
+m164_user_state,C:\Users\nicom\Desktop\Metriken\claude_metric\m164_user_state.py,compute_m164_user_state,recent_affects,85125543bc77,
+m165_platform,C:\Users\nicom\Desktop\Metriken\claude_metric\m165_platform.py,compute_m165_platform,,bdf007b6034c,
+m166_modality,C:\Users\nicom\Desktop\Metriken\claude_metric\m166_modality.py,compute_m166_modality,input_data,b50c33eb97bc,
+m167_noise,C:\Users\nicom\Desktop\Metriken\claude_metric\m167_noise.py,compute_m167_noise,text,f2f381eb20c3,
+m168_cum_stress,C:\Users\nicom\Desktop\Metriken\claude_metric\m168_cum_stress.py,compute_m168_cum_stress,z_prox_history,9a03fc5c237a,recent = z_prox_history[-10:]
+m16_external_stag,C:\Users\nicom\Desktop\Metriken\claude_metric\m16_external_stag.py,compute_m16_external_stag,turns_without_progress,e3ad55b14e12,
+m17_nabla_a,C:\Users\nicom\Desktop\Metriken\claude_metric\m17_nabla_a.py,compute_m17_nabla_a,"a_current,a_previous",883190a1a9f3,
+m18_s_entropy,C:\Users\nicom\Desktop\Metriken\claude_metric\m18_s_entropy.py,compute_m18_s_entropy,tokens,6f8f44b49780,
+m19_z_prox,C:\Users\nicom\Desktop\Metriken\claude_metric\m19_z_prox.py,compute_m19_z_prox,"m1_A_lexical,m15_A_structural,LL,text,t_panic",59bc8e052e12,"effective_A = min(m1_A_lexical, m15_A_structural) | base_prox = (1.0 - effective_A) * LL | z_prox = base_prox * (1.0 + hazard_bonus)"
+m1_A,C:\Users\nicom\Desktop\Metriken\claude_metric\m1_A.py,compute_m1_A,"coh,flow,LL,ZLF,ctx_break",f30e3a288686,"def compute_m1_A(coh: float, flow: float, LL: float, ZLF: float, ctx_break: float = 0.0) -> float: | A_raw = (0.4 * coh + 0.25 * flow + 0.20 * (1.0 - LL) +"
+m20_phi_proxy,C:\Users\nicom\Desktop\Metriken\claude_metric\m20_phi_proxy.py,compute_m20_phi_proxy,"A,PCI",a8a4b617dea2,
+m21_chaos,C:\Users\nicom\Desktop\Metriken\claude_metric\m21_chaos.py,compute_m21_chaos,s_entropy,ff551e9d3c85,
+m22_cog_load,C:\Users\nicom\Desktop\Metriken\claude_metric\m22_cog_load.py,compute_m22_cog_load,token_count,67eabf150fff,
+m23_nabla_pci,C:\Users\nicom\Desktop\Metriken\claude_metric\m23_nabla_pci.py,compute_m23_nabla_pci,"pci_current,pci_previous",ba9c4f6aae0d,
+m24_zeta,C:\Users\nicom\Desktop\Metriken\claude_metric\m24_zeta.py,compute_m24_zeta,"z_prox,A",65e9cc20dfec,
+m25_psi,C:\Users\nicom\Desktop\Metriken\claude_metric\m25_psi.py,compute_m25_psi,"PCI,token_count",c8413c4dcc90,
+m26_e_i_proxy,C:\Users\nicom\Desktop\Metriken\claude_metric\m26_e_i_proxy.py,compute_m26_e_i_proxy,"nabla_a,PCI",7c9d59077c13,
+m27_lambda_depth,C:\Users\nicom\Desktop\Metriken\claude_metric\m27_lambda_depth.py,compute_m27_lambda_depth,token_count,9ff536a6fe83,
+m28_phys_1,C:\Users\nicom\Desktop\Metriken\claude_metric\m28_phys_1.py,compute_m28_phys_1,A,82fd68ed0d64,
+m29_phys_2,C:\Users\nicom\Desktop\Metriken\claude_metric\m29_phys_2.py,compute_m29_phys_2,PCI,5eb36dd15c03,
+m2_PCI,C:\Users\nicom\Desktop\Metriken\claude_metric\m2_PCI.py,compute_m2_PCI,"flow,coh,LL",780320760948,PCI_raw = 0.4 * flow + 0.35 * coh + 0.25 * (1.0 - LL)
+m30_phys_3,C:\Users\nicom\Desktop\Metriken\claude_metric\m30_phys_3.py,compute_m30_phys_3,s_entropy,e2ad870f1077,
+m31_phys_4,C:\Users\nicom\Desktop\Metriken\claude_metric\m31_phys_4.py,compute_m31_phys_4,z_prox,00342d527f78,
+m32_phys_5,C:\Users\nicom\Desktop\Metriken\claude_metric\m32_phys_5.py,compute_m32_phys_5,"flow,phi",b82a498569a3,
+m33_phys_6,C:\Users\nicom\Desktop\Metriken\claude_metric\m33_phys_6.py,compute_m33_phys_6,"coh,PCI",c0482bd22aaa,
+m34_phys_7,C:\Users\nicom\Desktop\Metriken\claude_metric\m34_phys_7.py,compute_m34_phys_7,"nabla_a,nabla_pci",f108ac4188c6,
+m35_phys_8,C:\Users\nicom\Desktop\Metriken\claude_metric\m35_phys_8.py,compute_m35_phys_8,"ZLF,stagnation",f830fe35e830,
+m36_rule_conflict,C:\Users\nicom\Desktop\Metriken\claude_metric\m36_rule_conflict.py,compute_m36_rule_conflict,rules,f8987d107cb9,
+m37_rule_stable,C:\Users\nicom\Desktop\Metriken\claude_metric\m37_rule_stable.py,compute_m37_rule_stable,rule_conflict,28c7ea871d31,
+m38_soul_integrity,C:\Users\nicom\Desktop\Metriken\claude_metric\m38_soul_integrity.py,compute_m38_soul_integrity,b_vector,06754ed7af39,
+m39_soul_check,C:\Users\nicom\Desktop\Metriken\claude_metric\m39_soul_check.py,compute_m39_soul_check,"b_vector,seed",d936950e77ae,
+m3_gen_index,C:\Users\nicom\Desktop\Metriken\claude_metric\m3_gen_index.py,compute_m3_gen_index,"text,history,word_frequencies",e0c2d24dd97e,
+m40_h_conv,C:\Users\nicom\Desktop\Metriken\claude_metric\m40_h_conv.py,compute_m40_h_conv,"a_user,a_ai",e64cce8ffc73,
+m41_h_symbol,C:\Users\nicom\Desktop\Metriken\claude_metric\m41_h_symbol.py,compute_m41_h_symbol,h_conv,bcee034b943b,
+m42_nabla_dyad,C:\Users\nicom\Desktop\Metriken\claude_metric\m42_nabla_dyad.py,compute_m42_nabla_dyad,h_conv,61945481bfd9,
+m43_pacing,C:\Users\nicom\Desktop\Metriken\claude_metric\m43_pacing.py,compute_m43_pacing,"wc_user,wc_ai",37bd2d7a64d0,
+m44_mirroring,C:\Users\nicom\Desktop\Metriken\claude_metric\m44_mirroring.py,compute_m44_mirroring,"user_tokens,ai_tokens",e957109c8779,
+m45_trust_score,C:\Users\nicom\Desktop\Metriken\claude_metric\m45_trust_score.py,compute_m45_trust_score,"h_conv,pacing,mirroring",35f3102b7b1a,
+m46_rapport,C:\Users\nicom\Desktop\Metriken\claude_metric\m46_rapport.py,compute_m46_rapport,trust_history,340e67e63173,
+m47_focus_stability,C:\Users\nicom\Desktop\Metriken\claude_metric\m47_focus_stability.py,compute_m47_focus_stability,topic_variance,9f44d03c4d75,
+m48_hyp_1,C:\Users\nicom\Desktop\Metriken\claude_metric\m48_hyp_1.py,compute_m48_hyp_1,"h_conv,pacing",493a61b2da7f,
+m49_hyp_2,C:\Users\nicom\Desktop\Metriken\claude_metric\m49_hyp_2.py,compute_m49_hyp_2,soul_integrity,f0d68a72a45f,
+m4_flow,C:\Users\nicom\Desktop\Metriken\claude_metric\m4_flow.py,compute_m4_flow,text,dd4f680dccd7,
+m50_hyp_3,C:\Users\nicom\Desktop\Metriken\claude_metric\m50_hyp_3.py,compute_m50_hyp_3,rule_conflict,759c23640078,
+m51_hyp_4,C:\Users\nicom\Desktop\Metriken\claude_metric\m51_hyp_4.py,compute_m51_hyp_4,"h_conv,A",984436f71850,
+m52_hyp_5,C:\Users\nicom\Desktop\Metriken\claude_metric\m52_hyp_5.py,compute_m52_hyp_5,g_phase_norm,faf00d0e5f12,
+m53_hyp_6,C:\Users\nicom\Desktop\Metriken\claude_metric\m53_hyp_6.py,compute_m53_hyp_6,gap_seconds,6e2d9fce8536,
+m54_hyp_7,C:\Users\nicom\Desktop\Metriken\claude_metric\m54_hyp_7.py,compute_m54_hyp_7,"trust_score,rapport",5addfcedf4a8,
+m55_hyp_8,C:\Users\nicom\Desktop\Metriken\claude_metric\m55_hyp_8.py,compute_m55_hyp_8,"soul_integrity,PCI",8f3b7c1159cc,
+m56_surprise,C:\Users\nicom\Desktop\Metriken\claude_metric\m56_surprise.py,compute_m56_surprise,"A_current,A_predicted",7da6d9730433,
+m57_tokens_soc,C:\Users\nicom\Desktop\Metriken\claude_metric\m57_tokens_soc.py,compute_m57_tokens_soc,"current,delta",fe5dd6e23f85,
+m58_tokens_log,C:\Users\nicom\Desktop\Metriken\claude_metric\m58_tokens_log.py,compute_m58_tokens_log,"current,delta",d18271c07303,
+m59_p_antrieb,C:\Users\nicom\Desktop\Metriken\claude_metric\m59_p_antrieb.py,compute_m59_p_antrieb,"tokens_soc,tokens_log,stagnation",1ce223a6f02a,
+m5_coh,C:\Users\nicom\Desktop\Metriken\claude_metric\m5_coh.py,compute_m5_coh,text,e01c52f209a9,
+m60_delta_tokens,C:\Users\nicom\Desktop\Metriken\claude_metric\m60_delta_tokens.py,compute_m60_delta_tokens,"tok_new,tok_old",de2ed711a73c,
+m61_U,C:\Users\nicom\Desktop\Metriken\claude_metric\m61_U.py,compute_m61_U,"PCI,s_entropy",b43499a79d3a,
+m62_R,C:\Users\nicom\Desktop\Metriken\claude_metric\m62_R.py,compute_m62_R,"A,m61_U",736b80e973fd,
+m63_phi,C:\Users\nicom\Desktop\Metriken\claude_metric\m63_phi.py,compute_m63_phi,"PCI,R",10e6261296fe,
+m64_lambda_fep,C:\Users\nicom\Desktop\Metriken\claude_metric\m64_lambda_fep.py,compute_m64_lambda_fep,"s_entropy,action_space",39d826faf01a,
+m65_alpha,C:\Users\nicom\Desktop\Metriken\claude_metric\m65_alpha.py,compute_m65_alpha,learning_rate,46bb0556cd90,
+m66_gamma,C:\Users\nicom\Desktop\Metriken\claude_metric\m66_gamma.py,compute_m66_gamma,discount_factor,f8b4c9a42f6b,
+m67_precision,C:\Users\nicom\Desktop\Metriken\claude_metric\m67_precision.py,compute_m67_precision,variance,173b1e55ae16,
+m68_prediction_err,C:\Users\nicom\Desktop\Metriken\claude_metric\m68_prediction_err.py,compute_m68_prediction_err,"expected,actual",2b3f1aae1283,
+m69_model_evidence,C:\Users\nicom\Desktop\Metriken\claude_metric\m69_model_evidence.py,compute_m69_model_evidence,log_likelihood,ddbccd6b6795,
+m6_ZLF,C:\Users\nicom\Desktop\Metriken\claude_metric\m6_ZLF.py,compute_m6_ZLF,"flow,coherence,zlf_lexicon_hit",51c7ac031c95,
+m70_active_inf,C:\Users\nicom\Desktop\Metriken\claude_metric\m70_active_inf.py,compute_m70_active_inf,"action_space,precision",7add2b8d0328,
+m71_ev_arousal,C:\Users\nicom\Desktop\Metriken\claude_metric\m71_ev_arousal.py,compute_m71_ev_arousal,text,7a72e3abb079,
+m72_ev_valence,C:\Users\nicom\Desktop\Metriken\claude_metric\m72_ev_valence.py,compute_m72_ev_valence,text,dc93460c8922,
+m73_ev_readiness,C:\Users\nicom\Desktop\Metriken\claude_metric\m73_ev_readiness.py,compute_m73_ev_readiness,"t_integ,A",5c495493ea77,
+m74_valence,C:\Users\nicom\Desktop\Metriken\claude_metric\m74_valence.py,compute_m74_valence,text,e6e03c5ad822,
+m75_arousal,C:\Users\nicom\Desktop\Metriken\claude_metric\m75_arousal.py,compute_m75_arousal,text,3bdf56b2836f,
+m76_dominance,C:\Users\nicom\Desktop\Metriken\claude_metric\m76_dominance.py,compute_m76_dominance,text,f6dbb7ef6b2e,
+m77_joy,C:\Users\nicom\Desktop\Metriken\claude_metric\m77_joy.py,compute_m77_joy,"valence,arousal",2122879397da,
+m78_sadness,C:\Users\nicom\Desktop\Metriken\claude_metric\m78_sadness.py,compute_m78_sadness,"valence,arousal",89fb6aa52a5a,
+m79_anger,C:\Users\nicom\Desktop\Metriken\claude_metric\m79_anger.py,compute_m79_anger,"valence,arousal",b0b3bf3d30a5,
+m7_LL,C:\Users\nicom\Desktop\Metriken\claude_metric\m7_LL.py,compute_m7_LL,"rep_same,flow",4f871584ab9b,
+m80_fear,C:\Users\nicom\Desktop\Metriken\claude_metric\m80_fear.py,compute_m80_fear,"valence,arousal,dominance,t_panic",1d7e067f1083,
+m81_trust,C:\Users\nicom\Desktop\Metriken\claude_metric\m81_trust.py,compute_m81_trust,"valence,arousal,dominance,t_integ",bad8b999071f,
+m82_disgust,C:\Users\nicom\Desktop\Metriken\claude_metric\m82_disgust.py,compute_m82_disgust,valence,5bcdd9949dfd,
+m83_anticipation,C:\Users\nicom\Desktop\Metriken\claude_metric\m83_anticipation.py,compute_m83_anticipation,arousal,a336c9fd1ede,
+m84_surprise,C:\Users\nicom\Desktop\Metriken\claude_metric\m84_surprise.py,compute_m84_surprise,"valence,arousal",68b7b2a63848,
+m85_hope,C:\Users\nicom\Desktop\Metriken\claude_metric\m85_hope.py,compute_m85_hope,"valence,anticipation",ebb5b7768101,
+m86_despair,C:\Users\nicom\Desktop\Metriken\claude_metric\m86_despair.py,compute_m86_despair,"valence,sadness",26530aaf0302,
+m87_confusion,C:\Users\nicom\Desktop\Metriken\claude_metric\m87_confusion.py,compute_m87_confusion,"arousal,PCI",6ed8f523e9ca,
+m88_clarity,C:\Users\nicom\Desktop\Metriken\claude_metric\m88_clarity.py,compute_m88_clarity,"PCI,arousal",e1438053e31a,
+m89_acceptance,C:\Users\nicom\Desktop\Metriken\claude_metric\m89_acceptance.py,compute_m89_acceptance,"valence,arousal,t_integ",038a7e5043a8,
+m8_x_exist,C:\Users\nicom\Desktop\Metriken\claude_metric\m8_x_exist.py,compute_m8_x_exist,"text,x_exist_lexikon",1999187c27fe,
+m90_resistance,C:\Users\nicom\Desktop\Metriken\claude_metric\m90_resistance.py,compute_m90_resistance,"arousal,acceptance",a63114ee78e0,
+m91_emotional_coherence,C:\Users\nicom\Desktop\Metriken\claude_metric\m91_emotional_coherence.py,compute_m91_emotional_coherence,"PCI,t_disso",b89583f6b0d9,
+m92_emotional_stability,C:\Users\nicom\Desktop\Metriken\claude_metric\m92_emotional_stability.py,compute_m92_emotional_stability,"valence,arousal",9eb29cb4ce76,
+m93_emotional_range,C:\Users\nicom\Desktop\Metriken\claude_metric\m93_emotional_range.py,compute_m93_emotional_range,"v,a,d",72af82c2e2c8,
+m94_comfort,C:\Users\nicom\Desktop\Metriken\claude_metric\m94_comfort.py,compute_m94_comfort,"valence,arousal",53ffe357bc50,
+m95_tension,C:\Users\nicom\Desktop\Metriken\claude_metric\m95_tension.py,compute_m95_tension,"valence,arousal",1bd229f6ad70,
+m96_grain_word,C:\Users\nicom\Desktop\Metriken\claude_metric\m96_grain_word.py,compute_m96_grain_word,text,ff565fdf5868,
+m97_grain_cat,C:\Users\nicom\Desktop\Metriken\claude_metric\m97_grain_cat.py,compute_m97_grain_cat,grain_word,918fcff8db85,
+m98_grain_score,C:\Users\nicom\Desktop\Metriken\claude_metric\m98_grain_score.py,compute_m98_grain_score,"text,grain_word",73cd65f88781,
+m99_grain_impact,C:\Users\nicom\Desktop\Metriken\claude_metric\m99_grain_impact.py,compute_m99_grain_impact,"grain_score,A",368387ccdba6,
+m9_b_past,C:\Users\nicom\Desktop\Metriken\claude_metric\m9_b_past.py,compute_m9_b_past,"text,b_past_lexikon",142a98cab0e6,
+m101_t_panic,C:\Users\nicom\Desktop\Metriken\metrics_lib\m101_t_panic.py,compute_m101_t_panic,text,633c6d4ff5cb,"Panic score [0, 1] - Higher = more panic indicators"
+m102_t_disso,C:\Users\nicom\Desktop\Metriken\metrics_lib\m102_t_disso.py,compute_m102_t_disso,text,fbfd1f12ebde,"Dissociation score [0, 1] - Higher = more dissociative"
+m103_t_integ,C:\Users\nicom\Desktop\Metriken\metrics_lib\m103_t_integ.py,compute_m103_t_integ,text,00f7cc61a061,"Integration score [0, 1] - Higher = better integration"
+m104_t_shock,C:\Users\nicom\Desktop\Metriken\metrics_lib\m104_t_shock.py,compute_m104_t_shock,text,7b5921bc8537,t_shock = clip((shock_hits / word_count) × 5.0)
+m105_t_guilt,C:\Users\nicom\Desktop\Metriken\metrics_lib\m105_t_guilt.py,compute_m105_t_guilt,text,f0c17ec3239c,
+m106_t_shame,C:\Users\nicom\Desktop\Metriken\metrics_lib\m106_t_shame.py,compute_m106_t_shame,text,40277342dd1f,
+m107_t_grief,C:\Users\nicom\Desktop\Metriken\metrics_lib\m107_t_grief.py,compute_m107_t_grief,text,117d2d5bfdb6,
+m108_t_anger,C:\Users\nicom\Desktop\Metriken\metrics_lib\m108_t_anger.py,compute_m108_t_anger,text,ec209ba469db,
+m109_t_fear,C:\Users\nicom\Desktop\Metriken\metrics_lib\m109_t_fear.py,compute_m109_t_fear,text,985ccc606d5f,
+m10_angstrom,C:\Users\nicom\Desktop\Metriken\metrics_lib\m10_angstrom.py,compute_m10_angstrom,"s_self,x_exist,b_past,coh",7dc5e81dac4b,angstrom = 0.25 × (s_self + x_exist + b_past + coh) × 5.0
+m110_black_hole,C:\Users\nicom\Desktop\Metriken\metrics_lib\m110_black_hole.py,compute_m110_black_hole,"chaos,effective_A,LL",07534a34b7da,SPEC Formula (V3.3): black_hole = (0.4 × chaos) + (0.3 × (1 - A)) + (0.3 × LL)
+m111_turbidity_total,C:\Users\nicom\Desktop\Metriken\metrics_lib\m111_turbidity_total.py,compute_m111_turbidity_total,"t_panic,t_disso,t_shock,t_integ",550bf81e91f3,
+m112_trauma_load,C:\Users\nicom\Desktop\Metriken\metrics_lib\m112_trauma_load.py,compute_m112_trauma_load,"t_panic,t_disso,t_integ",1b05176c192d,
+m114_t_recovery,C:\Users\nicom\Desktop\Metriken\metrics_lib\m114_t_recovery.py,compute_m114_t_recovery,"t_integ_current,t_integ_prev",ab58beb91b1a,
+m115_t_threshold,C:\Users\nicom\Desktop\Metriken\metrics_lib\m115_t_threshold.py,compute_m115_t_threshold,,c8bb69f4ce1c,
+m116_lix,C:\Users\nicom\Desktop\Metriken\metrics_lib\m116_lix.py,compute_m116_lix,text,35fe19b387a2,SPEC: LIX = (Wörter/Sätze) + (LangeWörter×100/Wörter) | Long words = words with more than 6 characters.
+m117_question_density,C:\Users\nicom\Desktop\Metriken\metrics_lib\m117_question_density.py,compute_m117_question_density,text,bb558947a1fe,
+m118_exclamation_density,C:\Users\nicom\Desktop\Metriken\metrics_lib\m118_exclamation_density.py,compute_m118_exclamation_density,text,cc8f98800e61,
+m119_complexity_variance,C:\Users\nicom\Desktop\Metriken\metrics_lib\m119_complexity_variance.py,compute_m119_complexity_variance,pci_history,b94597da3988,
+m11_gap_s,C:\Users\nicom\Desktop\Metriken\metrics_lib\m11_gap_s.py,compute_m11_gap_s,"timestamp_prev,timestamp_now",9d0a7d922e46,
+m120_topic_drift,C:\Users\nicom\Desktop\Metriken\metrics_lib\m120_topic_drift.py,compute_m120_topic_drift,similarity_to_first,ad1ecc07d310,
+m121_self_reference_count,C:\Users\nicom\Desktop\Metriken\metrics_lib\m121_self_reference_count.py,compute_m121_self_reference_count,text,1c646ad7214c,
+m122_dyn_1,C:\Users\nicom\Desktop\Metriken\metrics_lib\m122_dyn_1.py,compute_m122_dyn_1,"nabla_a,nabla_pci",c8b287e12404,
+m123_dyn_2,C:\Users\nicom\Desktop\Metriken\metrics_lib\m123_dyn_2.py,compute_m123_dyn_2,"A,A_prev",e8cedaed7612,
+m124_dyn_3,C:\Users\nicom\Desktop\Metriken\metrics_lib\m124_dyn_3.py,compute_m124_dyn_3,"flow,flow_prev",1560abc6dd26,
+m125_dyn_4,C:\Users\nicom\Desktop\Metriken\metrics_lib\m125_dyn_4.py,compute_m125_dyn_4,"coh,coh_prev",6d1d2c45972c,
+m126_dyn_5,C:\Users\nicom\Desktop\Metriken\metrics_lib\m126_dyn_5.py,compute_m126_dyn_5,"t_panic,t_panic_prev",a4b2e025cdbb,
+m127_avg_response_len,C:\Users\nicom\Desktop\Metriken\metrics_lib\m127_avg_response_len.py,compute_m127_avg_response_len,lengths,111f5a533c0d,
+m128_token_ratio,C:\Users\nicom\Desktop\Metriken\metrics_lib\m128_token_ratio.py,compute_m128_token_ratio,"user_tokens,ai_tokens",81e2db6cc184,
+m129_engagement_score,C:\Users\nicom\Desktop\Metriken\metrics_lib\m129_engagement_score.py,compute_m129_engagement_score,"questions,turns",9dfc1eb39898,
+m12_gap_norm,C:\Users\nicom\Desktop\Metriken\metrics_lib\m12_gap_norm.py,compute_m12_gap_norm,gap_s,92e713f9f78d,"gap_norm = min(1.0, gap_s / 60.0)"
+m130_session_depth,C:\Users\nicom\Desktop\Metriken\metrics_lib\m130_session_depth.py,compute_m130_session_depth,turn_count,71d73866ac12,Normalized session depth (capped at 50 turns = 1.0).
+m131_meta_awareness,C:\Users\nicom\Desktop\Metriken\metrics_lib\m131_meta_awareness.py,compute_m131_meta_awareness,"A,PCI",3d859d6102cb,
+m132_meta_regulation,C:\Users\nicom\Desktop\Metriken\metrics_lib\m132_meta_regulation.py,compute_m132_meta_regulation,"z_prox,commit",4dfaf06b6f88,"regulation = 1.0 - z_prox | If commit == ""warn"": × 0.8 | If commit == ""alert"": × 0.5"
+m133_meta_flexibility,C:\Users\nicom\Desktop\Metriken\metrics_lib\m133_meta_flexibility.py,compute_m133_meta_flexibility,"topic_changes,turns",61760ea53a09,
+m134_meta_monitoring,C:\Users\nicom\Desktop\Metriken\metrics_lib\m134_meta_monitoring.py,compute_m134_meta_monitoring,"error_count,checks",5b84f9fc8a30,
+m135_meta_planning,C:\Users\nicom\Desktop\Metriken\metrics_lib\m135_meta_planning.py,compute_m135_meta_planning,goal_progress,2d9e5a69c75e,
+m136_meta_evaluation,C:\Users\nicom\Desktop\Metriken\metrics_lib\m136_meta_evaluation.py,compute_m136_meta_evaluation,task_success,1a0089d272b2,
+m137_meta_strategy,C:\Users\nicom\Desktop\Metriken\metrics_lib\m137_meta_strategy.py,compute_m137_meta_strategy,"strategy_switches,turns",96fe06adbe1b,
+m138_attention_focus,C:\Users\nicom\Desktop\Metriken\metrics_lib\m138_attention_focus.py,compute_m138_attention_focus,main_topic_coverage,c0c063668c6a,
+m139_working_memory,C:\Users\nicom\Desktop\Metriken\metrics_lib\m139_working_memory.py,compute_m139_working_memory,"context_items,max_items",caa0d56e792d,Default max_items = 7 (Miller's magic number).
+m13_rep_same,C:\Users\nicom\Desktop\Metriken\metrics_lib\m13_rep_same.py,compute_m13_rep_same,"text,prev_text",e91d62a7bab9,"Repetition score [0, 1] - Higher = more repetitive"
+m140_long_term_access,C:\Users\nicom\Desktop\Metriken\metrics_lib\m140_long_term_access.py,compute_m140_long_term_access,retrieval_success,c4d9829a5bb3,
+m141_inference_quality,C:\Users\nicom\Desktop\Metriken\metrics_lib\m141_inference_quality.py,compute_m141_inference_quality,logical_consistency,21ec95997877,
+m142_rag_alignment,C:\Users\nicom\Desktop\Metriken\metrics_lib\m142_rag_alignment.py,compute_m142_rag_alignment,rag_score,4b0110f9fa7c,
+m144_sys_stability,C:\Users\nicom\Desktop\Metriken\metrics_lib\m144_sys_stability.py,compute_m144_sys_stability,"error_rate,latency_norm",1080361680b2,
+m145_learning_rate_meta,C:\Users\nicom\Desktop\Metriken\metrics_lib\m145_learning_rate_meta.py,compute_m145_learning_rate_meta,performance_delta,bf8eff9ae166,
+m146_curiosity_index,C:\Users\nicom\Desktop\Metriken\metrics_lib\m146_curiosity_index.py,compute_m146_curiosity_index,"questions_asked,turns",d88035d4f654,
+m147_confidence,C:\Users\nicom\Desktop\Metriken\metrics_lib\m147_confidence.py,compute_m147_confidence,variance,b3baef56eafe,High variance = low confidence.
+m148_coherence_meta,C:\Users\nicom\Desktop\Metriken\metrics_lib\m148_coherence_meta.py,compute_m148_coherence_meta,internal_consistency,cd716854578e,
+m149_adaptation_rate,C:\Users\nicom\Desktop\Metriken\metrics_lib\m149_adaptation_rate.py,compute_m149_adaptation_rate,"adjustments,opportunities",c4f97464e545,
+m14_rep_history,C:\Users\nicom\Desktop\Metriken\metrics_lib\m14_rep_history.py,compute_m14_rep_history,"text,history",1a306c21d4a2,"Repetition score [0, 1] - Higher = more repetitive with history"
+m150_integration_score,C:\Users\nicom\Desktop\Metriken\metrics_lib\m150_integration_score.py,compute_m150_integration_score,"modules_active,total_modules",e7f170d369bf,
+m152_a51_compliance,C:\Users\nicom\Desktop\Metriken\metrics_lib\m152_a51_compliance.py,compute_m152_a51_compliance,"rules_checked,rules_passed",8f87878d1da3,
+m154_sys_latency,C:\Users\nicom\Desktop\Metriken\metrics_lib\m154_sys_latency.py,compute_m154_sys_latency,"response_time_ms,target_ms",bb98de3fcbb1,"Normalized latency (1.0 = at target, >1.0 = slower than target)."
+m155_error_rate,C:\Users\nicom\Desktop\Metriken\metrics_lib\m155_error_rate.py,compute_m155_error_rate,"errors,total_requests",feab4554ed7e,
+m156_cache_hit_rate,C:\Users\nicom\Desktop\Metriken\metrics_lib\m156_cache_hit_rate.py,compute_m156_cache_hit_rate,"hits,total",4ba999ddc9c9,
+m157_token_throughput,C:\Users\nicom\Desktop\Metriken\metrics_lib\m157_token_throughput.py,compute_m157_token_throughput,"tokens,seconds",7033e96a26d7,
+m158_context_utilization,C:\Users\nicom\Desktop\Metriken\metrics_lib\m158_context_utilization.py,compute_m158_context_utilization,"used_tokens,max_tokens",516cbf56ed64,
+m159_guardian_interventions,C:\Users\nicom\Desktop\Metriken\metrics_lib\m159_guardian_interventions.py,compute_m159_guardian_interventions,"interventions,turns",06e0c0847c9c,
+m15_affekt_a_legacy,C:\Users\nicom\Desktop\Metriken\metrics_lib\m15_affekt_a_legacy.py,compute_m15_affekt_a_legacy,"flow,coh,ll,zlf",480b6a3a3bcf,A_legacy = clip01(0.40*flow + 0.30*coh + 0.20*(1-LL) + 0.10*(1-ZLF))
+m160_uptime,C:\Users\nicom\Desktop\Metriken\metrics_lib\m160_uptime.py,compute_m160_uptime,"uptime_seconds,total_seconds",ece35b239af4,
+m161_commit,C:\Users\nicom\Desktop\Metriken\metrics_lib\m161_commit.py,compute_m161_commit,"z_prox,trauma_load",7cf4bfcad7ce,
+m162_ctx_time,C:\Users\nicom\Desktop\Metriken\metrics_lib\m162_ctx_time.py,compute_m162_ctx_time,"session_start_minutes,current_minutes",38a2bbca3b56,
+m162_ev_tension,C:\Users\nicom\Desktop\Metriken\metrics_lib\m162_ev_tension.py,compute_m162_ev_tension,"z_prox,x_fm_prox,e_i_proxy",8101bb1364f3,Formula: EV_tension = 0.5 × z_prox + 0.2 × x_fm_prox + 0.3 × E_I_proxy
+m163_x_fm_prox,C:\Users\nicom\Desktop\Metriken\metrics_lib\m163_x_fm_prox.py,compute_m163_x_fm_prox,"A_variance,nabla_A",2bd668a0b7e8,Formula: x_fm_prox = 1 if (var(A) < 0.005 AND |∇A| < 0.02) else 0 | - Low variance = no movement in phase space | - Flat gradient = no evolution pressure
+m164_e_i_proxy,C:\Users\nicom\Desktop\Metriken\metrics_lib\m164_e_i_proxy.py,compute_m164_e_i_proxy,"nabla_A,PCI",9be144c574f2,Formula: E_I = |∇A| × (1 - PCI) | - High E_I = potential for breakthrough or collapse
+m165_dist_z,C:\Users\nicom\Desktop\Metriken\metrics_lib\m165_dist_z.py,compute_m165_dist_z,"A,LL,ctx_break",d1bbea62c1c4,"Formula: dist_z = A × (1 - max(LL, ctx_break))"
+m166_hazard,C:\Users\nicom\Desktop\Metriken\metrics_lib\m166_hazard.py,compute_m166_hazard,"z_prox,t_panic,t_fog",766aac959086,Formula: hazard = 0.5 × z_prox + 0.3 × T_panic + 0.2 × T_fog
+m167_guardian_trip,C:\Users\nicom\Desktop\Metriken\metrics_lib\m167_guardian_trip.py,compute_m167_guardian_trip,"dist_z,hazard",20bb2ef57b4f,Formula: guardian_trip = 1 if (dist_z < 0.35 OR hazard > 0.7) else 0
+m168_mode_hp,C:\Users\nicom\Desktop\Metriken\metrics_lib\m168_mode_hp.py,compute_m168_mode_hp,c_crit,062098b9a4c5,C_crit = (Tension + Danger) / Readiness
+m16_external_stag,C:\Users\nicom\Desktop\Metriken\metrics_lib\m16_external_stag.py,compute_m16_external_stag,turns_without_progress,360efd8664b3,"Normalized by 5 turns: stag = min(1.0, turns_without_progress / 5.0)"
+m17_nabla_a,C:\Users\nicom\Desktop\Metriken\metrics_lib\m17_nabla_a.py,compute_m17_nabla_a,"a_current,a_previous",0e1f499d90df,∇A = A_current - A_previous
+m18_s_entropy,C:\Users\nicom\Desktop\Metriken\metrics_lib\m18_s_entropy.py,compute_m18_s_entropy,tokens,6fc0e071c746,"Entropy in bits [0, log₂(n)] where n = unique tokens"
+m19_z_prox,C:\Users\nicom\Desktop\Metriken\metrics_lib\m19_z_prox.py,compute_m19_z_prox,"m1_A_lexical,m15_A_structural,LL,text,t_panic",eef88aa22f7a,"z_prox score [0, 1] - Death proximity (HIGHER = MORE DANGER!)"
+m1_A,C:\Users\nicom\Desktop\Metriken\metrics_lib\m1_A.py,compute_m1_A,"coh,flow,LL,ZLF,ctx_break",b7ea168ba52d,A[i] = clip01(
+m20_phi_proxy,C:\Users\nicom\Desktop\Metriken\metrics_lib\m20_phi_proxy.py,compute_m20_phi_proxy,"A,PCI",07fedc5c3ddb,phi_proxy = A × PCI
+m21_chaos,C:\Users\nicom\Desktop\Metriken\metrics_lib\m21_chaos.py,compute_m21_chaos,s_entropy,1aacad774196,SPEC Formula: chaos = clip(s_entropy / 4.0)
+m22_cog_load,C:\Users\nicom\Desktop\Metriken\metrics_lib\m22_cog_load.py,compute_m22_cog_load,token_count,1242cb568df6,SPEC Formula: cog_load = clip(token_count / 500.0)
+m23_nabla_pci,C:\Users\nicom\Desktop\Metriken\metrics_lib\m23_nabla_pci.py,compute_m23_nabla_pci,"pci_current,pci_previous",b15e417c8f3a,SPEC Formula: ∇PCI = PCI_current - PCI_previous
+m24_zeta,C:\Users\nicom\Desktop\Metriken\metrics_lib\m24_zeta.py,compute_m24_zeta,"z_prox,A",8beceab60bdf,SPEC: zeta = (1 - z_prox) × A
+m25_psi,C:\Users\nicom\Desktop\Metriken\metrics_lib\m25_psi.py,compute_m25_psi,"PCI,token_count",a9a5f4e43d7d,SPEC: psi = PCI / (1 + token_count/100.0)
+m26_e_i_proxy,C:\Users\nicom\Desktop\Metriken\metrics_lib\m26_e_i_proxy.py,compute_m26_e_i_proxy,"nabla_a,PCI",b65792e737f7,SPEC: e_i_proxy = |∇A| × (1 - PCI)
+m27_lambda_depth,C:\Users\nicom\Desktop\Metriken\metrics_lib\m27_lambda_depth.py,compute_m27_lambda_depth,token_count,f2e1a4f05484,"lambda_depth = min(1.0, token_count / 100.0)"
+m28_phys_1,C:\Users\nicom\Desktop\Metriken\metrics_lib\m28_phys_1.py,compute_m28_phys_1,A,bb9a0c8a35e5,
+m29_phys_2,C:\Users\nicom\Desktop\Metriken\metrics_lib\m29_phys_2.py,compute_m29_phys_2,PCI,67abb50eb0d4,
+m2_PCI,C:\Users\nicom\Desktop\Metriken\metrics_lib\m2_PCI.py,compute_m2_PCI,"flow,coh,LL",e927b2a8ece5,PCI[i] = clip01(
+m30_phys_3,C:\Users\nicom\Desktop\Metriken\metrics_lib\m30_phys_3.py,compute_m30_phys_3,s_entropy,5b04c1649abe,
+m31_phys_4,C:\Users\nicom\Desktop\Metriken\metrics_lib\m31_phys_4.py,compute_m31_phys_4,z_prox,127a06f27ede,
+m32_phys_5,C:\Users\nicom\Desktop\Metriken\metrics_lib\m32_phys_5.py,compute_m32_phys_5,"flow,phi",061753fb7a1e,
+m33_phys_6,C:\Users\nicom\Desktop\Metriken\metrics_lib\m33_phys_6.py,compute_m33_phys_6,"coh,PCI",fb9531f0fc45,
+m34_phys_7,C:\Users\nicom\Desktop\Metriken\metrics_lib\m34_phys_7.py,compute_m34_phys_7,"nabla_a,nabla_pci",3c305d8c7560,
+m35_phys_8,C:\Users\nicom\Desktop\Metriken\metrics_lib\m35_phys_8.py,compute_m35_phys_8,"ZLF,stagnation",60f0ad2412e2,
+m3_gen_index,C:\Users\nicom\Desktop\Metriken\metrics_lib\m3_gen_index.py,compute_m3_gen_index,"text,history,word_frequencies",aa07273de0f0,gen_index = (|new_bigrams| / |total_bigrams|) × novelty_boost | new_bigrams = current_bigrams \ history_bigrams | novelty_boost = 1 + rare_word_bonus × 0.2
+m4_flow,C:\Users\nicom\Desktop\Metriken\metrics_lib\m4_flow.py,compute_m4_flow,text,efd36c9579b0,"Flow score [0, 1] - Higher = smoother production"
+m57_tokens_soc,C:\Users\nicom\Desktop\Metriken\metrics_lib\m57_tokens_soc.py,compute_m57_tokens_soc,"sent_7,rapport",6f5f3d661652,"Hohe soziale Tokens = System kann empathisch, beziehungsorientiert agieren. | tokens_soc = 0.6·sent_7 + 0.4·rapport | - m59_drive_balance = tokens_soc / (tokens_soc + tokens_log)"
+m58_tokens_log,C:\Users\nicom\Desktop\Metriken\metrics_lib\m58_tokens_log.py,compute_m58_tokens_log,"PCI,coh",14dc64494113,"Hohe logische Tokens = System kann analytisch, strukturiert agieren. | tokens_log = mean(PCI, coh) = (PCI + coh) / 2"
+m59_drive_balance,C:\Users\nicom\Desktop\Metriken\metrics_lib\m59_drive_balance.py,compute_m59_drive_balance,"tokens_soc,tokens_log,epsilon",15950b3a9409,drive_balance = tokens_soc / (tokens_soc + tokens_log + ε)
+m5_coh,C:\Users\nicom\Desktop\Metriken\metrics_lib\m5_coh.py,compute_m5_coh,text,92027399836c,"Coherence score [0, 1] - Higher = more coherent"
+m60_action_urge,C:\Users\nicom\Desktop\Metriken\metrics_lib\m60_action_urge.py,compute_m60_action_urge,"surprise,phi",2746f44194d9,"action_urge = 0.5·surprise + 0.5·max(0, phi) | - Phi positiv = verfärkt Action (exploitativ)"
+m61_u,C:\Users\nicom\Desktop\Metriken\metrics_lib\m61_u.py,compute_m61_u,"A,PCI,T_integ",46dcad08a7d0,U = 0.4·A + 0.3·PCI + 0.3·T_integ | - Hoher U = System sucht neue Informationen
+m62_r,C:\Users\nicom\Desktop\Metriken\metrics_lib\m62_r.py,compute_m62_r,"z_prox,PCI,T_panic",5f03fa79cd66,R = 0.4·z_prox + 0.3·(1-PCI) + 0.3·T_panic | - Hoher R = System muss vorsichtig sein
+m63_phi_score,C:\Users\nicom\Desktop\Metriken\metrics_lib\m63_phi_score.py,compute_m63_phi_score,"U,R,lambda_weight",4ada52968e25,"Phi = U - λ·R | wobei λ (Lambda) = Risiko-Gewichtung (default 1.0) | - Phi = ""Expected Free Energy"""
+m64_free_energy,C:\Users\nicom\Desktop\Metriken\metrics_lib\m64_free_energy.py,compute_m64_free_energy,"U,R",073bf2ce4bcb,"Hohe freie Energie = System ist im Ungleichgewicht, muss handeln. | Free_Energy = |U - (1 - R)| | - FE = Surprise + Divergence"
+m65_policy_entropy,C:\Users\nicom\Desktop\Metriken\metrics_lib\m65_policy_entropy.py,compute_m65_policy_entropy,"U,surprise",8a4be5bcba56,Hohe Entropie = viele gleichwertige Optionen (Unsicherheit). | Niedrige Entropie = klare beste Option (Klarheit). | Policy_Entropy = 0.5·U + 0.5·surprise
+m68_rpe,C:\Users\nicom\Desktop\Metriken\metrics_lib\m68_rpe.py,compute_m68_rpe,"affekt_current,affekt_prev",ec3bb280fa56,RPE = A_current - A_previous | - RPE = δ (Delta) in TD-Learning
+m69_exploration,C:\Users\nicom\Desktop\Metriken\metrics_lib\m69_exploration.py,compute_m69_exploration,"U,gen_index",c541b937a624,Exploration = 0.6·U + 0.4·gen_index
+m6_ZLF,C:\Users\nicom\Desktop\Metriken\metrics_lib\m6_ZLF.py,compute_m6_ZLF,"flow,coherence,zlf_lexicon_hit",22af2cd37d5e,ZLF = clip01(0.5·lexicon_hit + 0.25·(1-flow) + 0.25·(1-coh)) | Higher ZLF = more looping/stuck patterns.
+m70_exploitation,C:\Users\nicom\Desktop\Metriken\metrics_lib\m70_exploitation.py,compute_m70_exploitation,"tokens_log,ctx_fit",80869e6313eb,Exploitation = 0.6·tokens_log + 0.4·ctx_fit | - High exploitation + Low exploration = Conservative behavior | - Low exploitation + High exploration = Risky/Creative behavior
+m71_ev_arousal,C:\Users\nicom\Desktop\Metriken\metrics_lib\m71_ev_arousal.py,compute_m71_ev_arousal,text,bf5b16034499,
+m72_ev_valence,C:\Users\nicom\Desktop\Metriken\metrics_lib\m72_ev_valence.py,compute_m72_ev_valence,text,b574e3912243,
+m73_ev_readiness,C:\Users\nicom\Desktop\Metriken\metrics_lib\m73_ev_readiness.py,compute_m73_ev_readiness,"t_integ,A",c83c54bcac86,
+m74_valence,C:\Users\nicom\Desktop\Metriken\metrics_lib\m74_valence.py,compute_m74_valence,text,923ff9e50c20,
+m75_arousal,C:\Users\nicom\Desktop\Metriken\metrics_lib\m75_arousal.py,compute_m75_arousal,text,bc2d17e6e366,
+m76_dominance,C:\Users\nicom\Desktop\Metriken\metrics_lib\m76_dominance.py,compute_m76_dominance,text,2a68ee7fe343,
+m77_joy,C:\Users\nicom\Desktop\Metriken\metrics_lib\m77_joy.py,compute_m77_joy,"valence,arousal",1caeb73c2594,High valence + high arousal = joy.
+m78_sadness,C:\Users\nicom\Desktop\Metriken\metrics_lib\m78_sadness.py,compute_m78_sadness,"valence,arousal",c1538c6e7adc,Low valence + low arousal = sadness.
+m79_anger,C:\Users\nicom\Desktop\Metriken\metrics_lib\m79_anger.py,compute_m79_anger,"valence,arousal",9b289d248322,Low valence + high arousal = anger.
+m7_LL,C:\Users\nicom\Desktop\Metriken\metrics_lib\m7_LL.py,compute_m7_LL,"rep_same,flow",7f25ee360555,SPEC Formula: LL = clip(0.6 × rep_same + 0.4 × (1 - flow))
+m80_fear,C:\Users\nicom\Desktop\Metriken\metrics_lib\m80_fear.py,compute_m80_fear,"valence,arousal,dominance,t_panic",d89c793e4e76,Low valence + high arousal + low dominance = fear. | where fear_base = (3 - valence + arousal - dominance) / 3
+m81_trust,C:\Users\nicom\Desktop\Metriken\metrics_lib\m81_trust.py,compute_m81_trust,"valence,arousal,dominance,t_integ",1ea44569834c,High valence + low arousal + high dominance = trust. | where trust_base = (valence + (1 - arousal) + dominance) / 3
+m82_disgust,C:\Users\nicom\Desktop\Metriken\metrics_lib\m82_disgust.py,compute_m82_disgust,valence,02cc169eb07e,Inverse of valence (low valence = high disgust).
+m83_anticipation,C:\Users\nicom\Desktop\Metriken\metrics_lib\m83_anticipation.py,compute_m83_anticipation,arousal,5c3b3d2e9054,Directly proportional to arousal (high arousal = high anticipation).
+m84_surprise,C:\Users\nicom\Desktop\Metriken\metrics_lib\m84_surprise.py,compute_m84_surprise,"valence,arousal",c54fd907eab5,High arousal with neutral valence = surprise.
+m85_hope,C:\Users\nicom\Desktop\Metriken\metrics_lib\m85_hope.py,compute_m85_hope,"valence,anticipation",9b582618959d,
+m86_despair,C:\Users\nicom\Desktop\Metriken\metrics_lib\m86_despair.py,compute_m86_despair,"valence,sadness",5d4c96722af7,
+m87_confusion,C:\Users\nicom\Desktop\Metriken\metrics_lib\m87_confusion.py,compute_m87_confusion,"arousal,PCI",a8203811a48e,
+m88_clarity,C:\Users\nicom\Desktop\Metriken\metrics_lib\m88_clarity.py,compute_m88_clarity,"PCI,arousal",e1ee1f4693b6,
+m89_acceptance,C:\Users\nicom\Desktop\Metriken\metrics_lib\m89_acceptance.py,compute_m89_acceptance,"valence,arousal,t_integ",5a1752937744,
+m8_x_exist,C:\Users\nicom\Desktop\Metriken\metrics_lib\m8_x_exist.py,compute_m8_x_exist,"text,x_exist_lexikon",64de1e2bddd4,x_exist = max(weight_i) for all matching terms in lexicon
+m90_resistance,C:\Users\nicom\Desktop\Metriken\metrics_lib\m90_resistance.py,compute_m90_resistance,"arousal,acceptance",c4bc31a7c833,
+m91_emotional_coherence,C:\Users\nicom\Desktop\Metriken\metrics_lib\m91_emotional_coherence.py,compute_m91_emotional_coherence,"PCI,t_disso",ad0aef667887,
+m92_emotional_stability,C:\Users\nicom\Desktop\Metriken\metrics_lib\m92_emotional_stability.py,compute_m92_emotional_stability,"valence,arousal",53f276ed6d71,
+m93_emotional_range,C:\Users\nicom\Desktop\Metriken\metrics_lib\m93_emotional_range.py,compute_m93_emotional_range,"v,a,d",68d53dc56d27,
+m94_comfort,C:\Users\nicom\Desktop\Metriken\metrics_lib\m94_comfort.py,compute_m94_comfort,"valence,arousal",5b84359336b9,
+m95_tension,C:\Users\nicom\Desktop\Metriken\metrics_lib\m95_tension.py,compute_m95_tension,"valence,arousal",71944f3d8bcb,
+m9_b_past,C:\Users\nicom\Desktop\Metriken\metrics_lib\m9_b_past.py,compute_m9_b_past,"text,b_past_lexikon",279896bb99ae,b_past = max(weight_i) for all matching terms in lexicon
+m100_emotion_blend,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m100_emotion_blend.py,compute_m100_emotion_blend,"joy,sadness,anger,fear",f2b6e8bd08dd,
+m101_t_panic,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m101_t_panic.py,compute_m101_t_panic,text,dc74fb22ec1e,
+m102_t_disso,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m102_t_disso.py,compute_m102_t_disso,text,6cf2eb183e22,
+m103_t_integ,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m103_t_integ.py,compute_m103_t_integ,text,ad489031c6dd,
+m104_t_shock,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m104_t_shock.py,compute_m104_t_shock,text,7e5c0402b825,
+m105_t_guilt,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m105_t_guilt.py,compute_m105_t_guilt,text,684e728582e6,
+m106_t_shame,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m106_t_shame.py,compute_m106_t_shame,text,f30b7a7785b1,
+m107_t_grief,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m107_t_grief.py,compute_m107_t_grief,text,fe4f12f8c85a,
+m108_t_anger,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m108_t_anger.py,compute_m108_t_anger,text,6629131eb12f,
+m109_t_fear,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m109_t_fear.py,compute_m109_t_fear,text,91adf2a85fa2,
+m10_angstrom,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m10_angstrom.py,compute_m10_angstrom,"s_self,x_exist,b_past,coh",13e0fe7dd978,
+m110_black_hole,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m110_black_hole.py,compute_m110_black_hole,"chaos,effective_A,LL",4544699700b3,val = 0.4 * chaos + 0.3 * (1.0 - effective_A) + 0.3 * LL
+m111_turbidity_total,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m111_turbidity_total.py,compute_m111_turbidity_total,"t_panic,t_disso,t_shock,t_integ",ee2ebf69a4a8,
+m112_trauma_load,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m112_trauma_load.py,compute_m112_trauma_load,"t_panic,t_disso,t_integ",b6b21abf87e8,
+m113_t_resilience,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m113_t_resilience.py,compute_m113_t_resilience,"t_integ,t_panic",2b86f6f8bee4,
+m114_t_recovery,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m114_t_recovery.py,compute_m114_t_recovery,"t_integ_current,t_integ_prev",faf195d0bf74,
+m115_t_threshold,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m115_t_threshold.py,compute_m115_t_threshold,,5d38f67ef8e3,
+m116_lix,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m116_lix.py,compute_m116_lix,text,9e387069ecd6,
+m117_vocabulary_richness,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m117_vocabulary_richness.py,compute_m117_vocabulary_richness,tokens,c1fa56ed9e3a,
+m118_coherence_local,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m118_coherence_local.py,compute_m118_coherence_local,sentences,1b645eb73b4b,
+m119_complexity_variance,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m119_complexity_variance.py,compute_m119_complexity_variance,pci_history,2f035cef20f2,
+m11_gap_s,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m11_gap_s.py,compute_m11_gap_s,"timestamp_prev,timestamp_now",b322932c9280,
+m120_topic_drift,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m120_topic_drift.py,compute_m120_topic_drift,similarity_to_first,74e1863385f9,
+m121_self_reference_count,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m121_self_reference_count.py,compute_m121_self_reference_count,text,5e268a2aa241,
+m122_dyn_1,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m122_dyn_1.py,compute_m122_dyn_1,"nabla_a,nabla_pci",53816ad205a5,
+m123_dyn_2,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m123_dyn_2.py,compute_m123_dyn_2,"A,A_prev",bd036b6245f7,
+m124_dyn_3,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m124_dyn_3.py,compute_m124_dyn_3,"flow,flow_prev",9dc1d2d47919,
+m125_dyn_4,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m125_dyn_4.py,compute_m125_dyn_4,"coh,coh_prev",61c5b26d3157,
+m126_dyn_5,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m126_dyn_5.py,compute_m126_dyn_5,"t_panic,t_panic_prev",cb14d5e276ea,
+m127_avg_response_len,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m127_avg_response_len.py,compute_m127_avg_response_len,lengths,ec663b50209d,
+m128_token_ratio,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m128_token_ratio.py,compute_m128_token_ratio,"user_tokens,ai_tokens",d6ed6aecae7e,
+m129_engagement_score,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m129_engagement_score.py,compute_m129_engagement_score,"questions,turns",46ef57c590af,
+m12_gap_norm,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m12_gap_norm.py,compute_m12_gap_norm,gap_s,3bc856bc0a94,
+m130_session_depth,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m130_session_depth.py,compute_m130_session_depth,turn_count,830535425ef1,
+m131_meta_awareness,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m131_meta_awareness.py,compute_m131_meta_awareness,"A,PCI",e38b40b68798,
+m132_meta_regulation,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m132_meta_regulation.py,compute_m132_meta_regulation,"z_prox,commit",d67a4a996249,regulation = 1.0 - z_prox
+m133_meta_flexibility,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m133_meta_flexibility.py,compute_m133_meta_flexibility,"topic_changes,turns",ec74798021bd,
+m134_meta_monitoring,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m134_meta_monitoring.py,compute_m134_meta_monitoring,"error_count,checks",0aca332e3c9c,
+m135_meta_planning,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m135_meta_planning.py,compute_m135_meta_planning,goal_progress,fc8006d5d2ab,
+m136_meta_evaluation,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m136_meta_evaluation.py,compute_m136_meta_evaluation,task_success,dea640edc647,
+m137_meta_strategy,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m137_meta_strategy.py,compute_m137_meta_strategy,"strategy_switches,turns",3de6d86bb1aa,
+m138_attention_focus,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m138_attention_focus.py,compute_m138_attention_focus,main_topic_coverage,a77d01b0492c,
+m139_working_memory,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m139_working_memory.py,compute_m139_working_memory,"context_items,max_items",1da30539763c,
+m13_rep_same,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m13_rep_same.py,compute_m13_rep_same,"text,prev_text",705aa55a03bc,
+m140_long_term_access,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m140_long_term_access.py,compute_m140_long_term_access,retrieval_success,6b3b168a3049,
+m141_inference_quality,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m141_inference_quality.py,compute_m141_inference_quality,logical_consistency,2775ba917281,
+m142_reasoning_depth,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m142_reasoning_depth.py,compute_m142_reasoning_depth,"complexity,PCI",b7f39e43ef62,
+m143_context_window_usage,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m143_context_window_usage.py,compute_m143_context_window_usage,"current_tokens,max_tokens",6e467a110986,
+m144_attention_span,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m144_attention_span.py,compute_m144_attention_span,"focus_duration,max_duration",6c10fe015de7,
+m145_task_switching,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m145_task_switching.py,compute_m145_task_switching,"switches,total_tasks",6a3aaa38eba8,
+m146_error_correction,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m146_error_correction.py,compute_m146_error_correction,"corrections,total_outputs",5838df1eadd9,
+m147_learning_progress,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m147_learning_progress.py,compute_m147_learning_progress,"current_perf,initial_perf",7ae894c2dd29,
+m148_knowledge_integration,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m148_knowledge_integration.py,compute_m148_knowledge_integration,"new_facts,total_facts",3226c1f85e1b,
+m149_semantic_drift,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m149_semantic_drift.py,compute_m149_semantic_drift,"current_vec,initial_vec",933ccbb614ed,
+m14_rep_history,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m14_rep_history.py,compute_m14_rep_history,"text,history",c976f8a514dc,
+m150_goal_coherence,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m150_goal_coherence.py,compute_m150_goal_coherence,"goals_aligned,total_goals",a8238f5225d1,
+m151_omega,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m151_omega.py,compute_m151_omega,"A,PCI,z_prox,trauma_load",3a6e0a4c1d37,positive = 0.4 * A + 0.3 * PCI | negative = 0.3 * z_prox + 0.2 * trauma_load
+m152_a51_compliance,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m152_a51_compliance.py,compute_m152_a51_compliance,"rules_checked,rules_passed",e4216aa82d7b,
+m153_sys_health,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m153_sys_health.py,compute_m153_sys_health,"latency,error_rate,mem_pressure",def388d6b8d6,
+m154_sys_latency,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m154_sys_latency.py,compute_m154_sys_latency,"response_time_ms,target_ms",766aaa609b71,
+m155_error_rate,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m155_error_rate.py,compute_m155_error_rate,"errors,total_requests",ae397ddb4891,
+m156_cache_hit_rate,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m156_cache_hit_rate.py,compute_m156_cache_hit_rate,"hits,total",7e392838522c,
+m157_token_throughput,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m157_token_throughput.py,compute_m157_token_throughput,"tokens,seconds",20ea32e683ff,
+m158_context_utilization,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m158_context_utilization.py,compute_m158_context_utilization,"used_tokens,max_tokens",307e3c7d8a68,
+m159_guardian_interventions,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m159_guardian_interventions.py,compute_m159_guardian_interventions,"interventions,turns",b029c60e29e2,
+m15_affekt_a_legacy,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m15_affekt_a_legacy.py,compute_m15_affekt_a_legacy,"flow,coh,ll,zlf",6f17c8cd3696,
+m160_uptime,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m160_uptime.py,compute_m160_uptime,"uptime_seconds,total_seconds",431fd7a49365,
+m161_commit,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m161_commit.py,compute_m161_commit,"z_prox,trauma_load",e9c9d8c1cec8,
+m162_ctx_time,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m162_ctx_time.py,compute_m162_ctx_time,"session_start_minutes,current_minutes",b242c74a4992,
+m163_ctx_loc,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m163_ctx_loc.py,compute_m163_ctx_loc,location_data,87e65feed960,
+m164_user_state,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m164_user_state.py,compute_m164_user_state,recent_affects,85125543bc77,
+m165_platform,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m165_platform.py,compute_m165_platform,,bdf007b6034c,
+m166_modality,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m166_modality.py,compute_m166_modality,input_data,b50c33eb97bc,
+m167_noise,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m167_noise.py,compute_m167_noise,text,f2f381eb20c3,
+m168_cum_stress,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m168_cum_stress.py,compute_m168_cum_stress,z_prox_history,9a03fc5c237a,recent = z_prox_history[-10:]
+m16_external_stag,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m16_external_stag.py,compute_m16_external_stag,turns_without_progress,e3ad55b14e12,
+m17_nabla_a,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m17_nabla_a.py,compute_m17_nabla_a,"a_current,a_previous",883190a1a9f3,
+m18_s_entropy,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m18_s_entropy.py,compute_m18_s_entropy,tokens,6f8f44b49780,
+m19_z_prox,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m19_z_prox.py,compute_m19_z_prox,"m1_A_lexical,m15_A_structural,LL,text,t_panic",59bc8e052e12,"effective_A = min(m1_A_lexical, m15_A_structural) | base_prox = (1.0 - effective_A) * LL | z_prox = base_prox * (1.0 + hazard_bonus)"
+m1_A,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m1_A.py,compute_m1_A,"coh,flow,LL,ZLF,ctx_break",f30e3a288686,"def compute_m1_A(coh: float, flow: float, LL: float, ZLF: float, ctx_break: float = 0.0) -> float: | A_raw = (0.4 * coh + 0.25 * flow + 0.20 * (1.0 - LL) +"
+m20_phi_proxy,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m20_phi_proxy.py,compute_m20_phi_proxy,"A,PCI",a8a4b617dea2,
+m21_chaos,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m21_chaos.py,compute_m21_chaos,s_entropy,ff551e9d3c85,
+m22_cog_load,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m22_cog_load.py,compute_m22_cog_load,token_count,67eabf150fff,
+m23_nabla_pci,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m23_nabla_pci.py,compute_m23_nabla_pci,"pci_current,pci_previous",ba9c4f6aae0d,
+m24_zeta,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m24_zeta.py,compute_m24_zeta,"z_prox,A",65e9cc20dfec,
+m25_psi,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m25_psi.py,compute_m25_psi,"PCI,token_count",c8413c4dcc90,
+m26_e_i_proxy,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m26_e_i_proxy.py,compute_m26_e_i_proxy,"nabla_a,PCI",7c9d59077c13,
+m27_lambda_depth,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m27_lambda_depth.py,compute_m27_lambda_depth,token_count,9ff536a6fe83,
+m28_phys_1,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m28_phys_1.py,compute_m28_phys_1,A,82fd68ed0d64,
+m29_phys_2,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m29_phys_2.py,compute_m29_phys_2,PCI,5eb36dd15c03,
+m2_PCI,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m2_PCI.py,compute_m2_PCI,"flow,coh,LL",780320760948,PCI_raw = 0.4 * flow + 0.35 * coh + 0.25 * (1.0 - LL)
+m30_phys_3,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m30_phys_3.py,compute_m30_phys_3,s_entropy,e2ad870f1077,
+m31_phys_4,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m31_phys_4.py,compute_m31_phys_4,z_prox,00342d527f78,
+m32_phys_5,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m32_phys_5.py,compute_m32_phys_5,"flow,phi",b82a498569a3,
+m33_phys_6,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m33_phys_6.py,compute_m33_phys_6,"coh,PCI",c0482bd22aaa,
+m34_phys_7,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m34_phys_7.py,compute_m34_phys_7,"nabla_a,nabla_pci",f108ac4188c6,
+m35_phys_8,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m35_phys_8.py,compute_m35_phys_8,"ZLF,stagnation",f830fe35e830,
+m36_rule_conflict,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m36_rule_conflict.py,compute_m36_rule_conflict,rules,f8987d107cb9,
+m37_rule_stable,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m37_rule_stable.py,compute_m37_rule_stable,rule_conflict,28c7ea871d31,
+m38_soul_integrity,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m38_soul_integrity.py,compute_m38_soul_integrity,b_vector,06754ed7af39,
+m39_soul_check,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m39_soul_check.py,compute_m39_soul_check,"b_vector,seed",d936950e77ae,
+m3_gen_index,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m3_gen_index.py,compute_m3_gen_index,"text,history,word_frequencies",e0c2d24dd97e,
+m40_h_conv,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m40_h_conv.py,compute_m40_h_conv,"a_user,a_ai",e64cce8ffc73,
+m41_h_symbol,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m41_h_symbol.py,compute_m41_h_symbol,h_conv,bcee034b943b,
+m42_nabla_dyad,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m42_nabla_dyad.py,compute_m42_nabla_dyad,h_conv,61945481bfd9,
+m43_pacing,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m43_pacing.py,compute_m43_pacing,"wc_user,wc_ai",37bd2d7a64d0,
+m44_mirroring,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m44_mirroring.py,compute_m44_mirroring,"user_tokens,ai_tokens",e957109c8779,
+m45_trust_score,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m45_trust_score.py,compute_m45_trust_score,"h_conv,pacing,mirroring",35f3102b7b1a,
+m46_rapport,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m46_rapport.py,compute_m46_rapport,trust_history,340e67e63173,
+m47_focus_stability,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m47_focus_stability.py,compute_m47_focus_stability,topic_variance,9f44d03c4d75,
+m48_hyp_1,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m48_hyp_1.py,compute_m48_hyp_1,"h_conv,pacing",493a61b2da7f,
+m49_hyp_2,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m49_hyp_2.py,compute_m49_hyp_2,soul_integrity,f0d68a72a45f,
+m4_flow,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m4_flow.py,compute_m4_flow,text,dd4f680dccd7,
+m50_hyp_3,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m50_hyp_3.py,compute_m50_hyp_3,rule_conflict,759c23640078,
+m51_hyp_4,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m51_hyp_4.py,compute_m51_hyp_4,"h_conv,A",984436f71850,
+m52_hyp_5,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m52_hyp_5.py,compute_m52_hyp_5,g_phase_norm,faf00d0e5f12,
+m53_hyp_6,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m53_hyp_6.py,compute_m53_hyp_6,gap_seconds,6e2d9fce8536,
+m54_hyp_7,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m54_hyp_7.py,compute_m54_hyp_7,"trust_score,rapport",5addfcedf4a8,
+m55_hyp_8,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m55_hyp_8.py,compute_m55_hyp_8,"soul_integrity,PCI",8f3b7c1159cc,
+m56_surprise,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m56_surprise.py,compute_m56_surprise,"A_current,A_predicted",7da6d9730433,
+m57_tokens_soc,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m57_tokens_soc.py,compute_m57_tokens_soc,"current,delta",fe5dd6e23f85,
+m58_tokens_log,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m58_tokens_log.py,compute_m58_tokens_log,"current,delta",d18271c07303,
+m59_p_antrieb,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m59_p_antrieb.py,compute_m59_p_antrieb,"tokens_soc,tokens_log,stagnation",1ce223a6f02a,
+m5_coh,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m5_coh.py,compute_m5_coh,text,e01c52f209a9,
+m60_delta_tokens,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m60_delta_tokens.py,compute_m60_delta_tokens,"tok_new,tok_old",de2ed711a73c,
+m61_U,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m61_U.py,compute_m61_U,"PCI,s_entropy",b43499a79d3a,
+m62_R,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m62_R.py,compute_m62_R,"A,m61_U",736b80e973fd,
+m63_phi,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m63_phi.py,compute_m63_phi,"PCI,R",10e6261296fe,
+m64_lambda_fep,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m64_lambda_fep.py,compute_m64_lambda_fep,"s_entropy,action_space",39d826faf01a,
+m65_alpha,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m65_alpha.py,compute_m65_alpha,learning_rate,46bb0556cd90,
+m66_gamma,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m66_gamma.py,compute_m66_gamma,discount_factor,f8b4c9a42f6b,
+m67_precision,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m67_precision.py,compute_m67_precision,variance,173b1e55ae16,
+m68_prediction_err,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m68_prediction_err.py,compute_m68_prediction_err,"expected,actual",2b3f1aae1283,
+m69_model_evidence,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m69_model_evidence.py,compute_m69_model_evidence,log_likelihood,ddbccd6b6795,
+m6_ZLF,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m6_ZLF.py,compute_m6_ZLF,"flow,coherence,zlf_lexicon_hit",51c7ac031c95,
+m70_active_inf,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m70_active_inf.py,compute_m70_active_inf,"action_space,precision",7add2b8d0328,
+m71_ev_arousal,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m71_ev_arousal.py,compute_m71_ev_arousal,text,7a72e3abb079,
+m72_ev_valence,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m72_ev_valence.py,compute_m72_ev_valence,text,dc93460c8922,
+m73_ev_readiness,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m73_ev_readiness.py,compute_m73_ev_readiness,"t_integ,A",5c495493ea77,
+m74_valence,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m74_valence.py,compute_m74_valence,text,e6e03c5ad822,
+m75_arousal,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m75_arousal.py,compute_m75_arousal,text,3bdf56b2836f,
+m76_dominance,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m76_dominance.py,compute_m76_dominance,text,f6dbb7ef6b2e,
+m77_joy,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m77_joy.py,compute_m77_joy,"valence,arousal",2122879397da,
+m78_sadness,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m78_sadness.py,compute_m78_sadness,"valence,arousal",89fb6aa52a5a,
+m79_anger,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m79_anger.py,compute_m79_anger,"valence,arousal",b0b3bf3d30a5,
+m7_LL,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m7_LL.py,compute_m7_LL,"rep_same,flow",4f871584ab9b,
+m80_fear,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m80_fear.py,compute_m80_fear,"valence,arousal,dominance,t_panic",1d7e067f1083,
+m81_trust,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m81_trust.py,compute_m81_trust,"valence,arousal,dominance,t_integ",bad8b999071f,
+m82_disgust,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m82_disgust.py,compute_m82_disgust,valence,5bcdd9949dfd,
+m83_anticipation,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m83_anticipation.py,compute_m83_anticipation,arousal,a336c9fd1ede,
+m84_surprise,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m84_surprise.py,compute_m84_surprise,"valence,arousal",68b7b2a63848,
+m85_hope,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m85_hope.py,compute_m85_hope,"valence,anticipation",ebb5b7768101,
+m86_despair,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m86_despair.py,compute_m86_despair,"valence,sadness",26530aaf0302,
+m87_confusion,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m87_confusion.py,compute_m87_confusion,"arousal,PCI",6ed8f523e9ca,
+m88_clarity,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m88_clarity.py,compute_m88_clarity,"PCI,arousal",e1438053e31a,
+m89_acceptance,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m89_acceptance.py,compute_m89_acceptance,"valence,arousal,t_integ",038a7e5043a8,
+m8_x_exist,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m8_x_exist.py,compute_m8_x_exist,"text,x_exist_lexikon",1999187c27fe,
+m90_resistance,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m90_resistance.py,compute_m90_resistance,"arousal,acceptance",a63114ee78e0,
+m91_emotional_coherence,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m91_emotional_coherence.py,compute_m91_emotional_coherence,"PCI,t_disso",b89583f6b0d9,
+m92_emotional_stability,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m92_emotional_stability.py,compute_m92_emotional_stability,"valence,arousal",9eb29cb4ce76,
+m93_emotional_range,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m93_emotional_range.py,compute_m93_emotional_range,"v,a,d",72af82c2e2c8,
+m94_comfort,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m94_comfort.py,compute_m94_comfort,"valence,arousal",53ffe357bc50,
+m95_tension,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m95_tension.py,compute_m95_tension,"valence,arousal",1bd229f6ad70,
+m96_grain_word,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m96_grain_word.py,compute_m96_grain_word,text,ff565fdf5868,
+m97_grain_cat,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m97_grain_cat.py,compute_m97_grain_cat,grain_word,918fcff8db85,
+m98_grain_score,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m98_grain_score.py,compute_m98_grain_score,"text,grain_word",73cd65f88781,
+m99_grain_impact,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m99_grain_impact.py,compute_m99_grain_impact,"grain_score,A",368387ccdba6,
+m9_b_past,C:\Users\nicom\Desktop\Metriken\metrics_lib_complete\m9_b_past.py,compute_m9_b_past,"text,b_past_lexikon",142a98cab0e6,
+m101_t_panic,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m101_t_panic.py,compute_m101_t_panic,text,633c6d4ff5cb,"Panic score [0, 1] - Higher = more panic indicators"
+m102_t_disso,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m102_t_disso.py,compute_m102_t_disso,text,fbfd1f12ebde,"Dissociation score [0, 1] - Higher = more dissociative"
+m103_t_integ,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m103_t_integ.py,compute_m103_t_integ,text,00f7cc61a061,"Integration score [0, 1] - Higher = better integration"
+m104_t_shock,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m104_t_shock.py,compute_m104_t_shock,text,7b5921bc8537,t_shock = clip((shock_hits / word_count) × 5.0)
+m105_t_guilt,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m105_t_guilt.py,compute_m105_t_guilt,text,f0c17ec3239c,
+m106_t_shame,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m106_t_shame.py,compute_m106_t_shame,text,40277342dd1f,
+m107_t_grief,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m107_t_grief.py,compute_m107_t_grief,text,117d2d5bfdb6,
+m108_t_anger,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m108_t_anger.py,compute_m108_t_anger,text,ec209ba469db,
+m109_t_fear,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m109_t_fear.py,compute_m109_t_fear,text,985ccc606d5f,
+m10_angstrom,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m10_angstrom.py,compute_m10_angstrom,"s_self,x_exist,b_past,coh",7dc5e81dac4b,angstrom = 0.25 × (s_self + x_exist + b_past + coh) × 5.0
+m110_black_hole,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m110_black_hole.py,compute_m110_black_hole,"chaos,effective_A,LL",07534a34b7da,SPEC Formula (V3.3): black_hole = (0.4 × chaos) + (0.3 × (1 - A)) + (0.3 × LL)
+m111_turbidity_total,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m111_turbidity_total.py,compute_m111_turbidity_total,"t_panic,t_disso,t_shock,t_integ",550bf81e91f3,
+m112_trauma_load,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m112_trauma_load.py,compute_m112_trauma_load,"t_panic,t_disso,t_integ",1b05176c192d,
+m114_t_recovery,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m114_t_recovery.py,compute_m114_t_recovery,"t_integ_current,t_integ_prev",ab58beb91b1a,
+m115_t_threshold,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m115_t_threshold.py,compute_m115_t_threshold,,c8bb69f4ce1c,
+m11_gap_s,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m11_gap_s.py,compute_m11_gap_s,"timestamp_prev,timestamp_now",9d0a7d922e46,
+m12_gap_norm,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m12_gap_norm.py,compute_m12_gap_norm,gap_s,92e713f9f78d,"gap_norm = min(1.0, gap_s / 60.0)"
+m13_rep_same,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m13_rep_same.py,compute_m13_rep_same,"text,prev_text",e91d62a7bab9,"Repetition score [0, 1] - Higher = more repetitive"
+m14_rep_history,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m14_rep_history.py,compute_m14_rep_history,"text,history",1a306c21d4a2,"Repetition score [0, 1] - Higher = more repetitive with history"
+m15_affekt_a_legacy,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m15_affekt_a_legacy.py,compute_m15_affekt_a_legacy,"flow,coh,ll,zlf",480b6a3a3bcf,A_legacy = clip01(0.40*flow + 0.30*coh + 0.20*(1-LL) + 0.10*(1-ZLF))
+m16_external_stag,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m16_external_stag.py,compute_m16_external_stag,turns_without_progress,360efd8664b3,"Normalized by 5 turns: stag = min(1.0, turns_without_progress / 5.0)"
+m17_nabla_a,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m17_nabla_a.py,compute_m17_nabla_a,"a_current,a_previous",0e1f499d90df,∇A = A_current - A_previous
+m18_s_entropy,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m18_s_entropy.py,compute_m18_s_entropy,tokens,6fc0e071c746,"Entropy in bits [0, log₂(n)] where n = unique tokens"
+m19_z_prox,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m19_z_prox.py,compute_m19_z_prox,"m1_A_lexical,m15_A_structural,LL,text,t_panic",eef88aa22f7a,"z_prox score [0, 1] - Death proximity (HIGHER = MORE DANGER!)"
+m1_A,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m1_A.py,compute_m1_A,"coh,flow,LL,ZLF,ctx_break",b7ea168ba52d,A[i] = clip01(
+m20_phi_proxy,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m20_phi_proxy.py,compute_m20_phi_proxy,"A,PCI",07fedc5c3ddb,phi_proxy = A × PCI
+m21_chaos,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m21_chaos.py,compute_m21_chaos,s_entropy,1aacad774196,SPEC Formula: chaos = clip(s_entropy / 4.0)
+m22_cog_load,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m22_cog_load.py,compute_m22_cog_load,token_count,1242cb568df6,SPEC Formula: cog_load = clip(token_count / 500.0)
+m23_nabla_pci,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m23_nabla_pci.py,compute_m23_nabla_pci,"pci_current,pci_previous",b15e417c8f3a,SPEC Formula: ∇PCI = PCI_current - PCI_previous
+m24_zeta,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m24_zeta.py,compute_m24_zeta,"z_prox,A",8beceab60bdf,SPEC: zeta = (1 - z_prox) × A
+m25_psi,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m25_psi.py,compute_m25_psi,"PCI,token_count",a9a5f4e43d7d,SPEC: psi = PCI / (1 + token_count/100.0)
+m26_e_i_proxy,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m26_e_i_proxy.py,compute_m26_e_i_proxy,"nabla_a,PCI",b65792e737f7,SPEC: e_i_proxy = |∇A| × (1 - PCI)
+m27_lambda_depth,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m27_lambda_depth.py,compute_m27_lambda_depth,token_count,f2e1a4f05484,"lambda_depth = min(1.0, token_count / 100.0)"
+m28_phys_1,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m28_phys_1.py,compute_m28_phys_1,A,bb9a0c8a35e5,
+m29_phys_2,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m29_phys_2.py,compute_m29_phys_2,PCI,67abb50eb0d4,
+m2_PCI,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m2_PCI.py,compute_m2_PCI,"flow,coh,LL",e927b2a8ece5,PCI[i] = clip01(
+m30_phys_3,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m30_phys_3.py,compute_m30_phys_3,s_entropy,5b04c1649abe,
+m31_phys_4,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m31_phys_4.py,compute_m31_phys_4,z_prox,127a06f27ede,
+m32_phys_5,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m32_phys_5.py,compute_m32_phys_5,"flow,phi",061753fb7a1e,
+m33_phys_6,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m33_phys_6.py,compute_m33_phys_6,"coh,PCI",fb9531f0fc45,
+m34_phys_7,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m34_phys_7.py,compute_m34_phys_7,"nabla_a,nabla_pci",3c305d8c7560,
+m35_phys_8,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m35_phys_8.py,compute_m35_phys_8,"ZLF,stagnation",60f0ad2412e2,
+m3_gen_index,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m3_gen_index.py,compute_m3_gen_index,"text,history,word_frequencies",aa07273de0f0,gen_index = (|new_bigrams| / |total_bigrams|) × novelty_boost | new_bigrams = current_bigrams \ history_bigrams | novelty_boost = 1 + rare_word_bonus × 0.2
+m4_flow,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m4_flow.py,compute_m4_flow,text,efd36c9579b0,"Flow score [0, 1] - Higher = smoother production"
+m5_coh,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m5_coh.py,compute_m5_coh,text,92027399836c,"Coherence score [0, 1] - Higher = more coherent"
+m6_ZLF,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m6_ZLF.py,compute_m6_ZLF,"flow,coherence,zlf_lexicon_hit",22af2cd37d5e,ZLF = clip01(0.5·lexicon_hit + 0.25·(1-flow) + 0.25·(1-coh)) | Higher ZLF = more looping/stuck patterns.
+m7_LL,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m7_LL.py,compute_m7_LL,"rep_same,flow",7f25ee360555,SPEC Formula: LL = clip(0.6 × rep_same + 0.4 × (1 - flow))
+m8_x_exist,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m8_x_exist.py,compute_m8_x_exist,"text,x_exist_lexikon",64de1e2bddd4,x_exist = max(weight_i) for all matching terms in lexicon
+m9_b_past,C:\Users\nicom\Desktop\Metriken\metrics_lib_extracted\m9_b_past.py,compute_m9_b_past,"text,b_past_lexikon",279896bb99ae,b_past = max(weight_i) for all matching terms in lexicon
+m101_t_panic,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m101_t_panic.py,compute_m101_t_panic,text,633c6d4ff5cb,"Panic score [0, 1] - Higher = more panic indicators"
+m102_t_disso,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m102_t_disso.py,compute_m102_t_disso,text,fbfd1f12ebde,"Dissociation score [0, 1] - Higher = more dissociative"
+m103_t_integ,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m103_t_integ.py,compute_m103_t_integ,text,00f7cc61a061,"Integration score [0, 1] - Higher = better integration"
+m104_t_shock,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m104_t_shock.py,compute_m104_t_shock,text,7b5921bc8537,t_shock = clip((shock_hits / word_count) × 5.0)
+m105_t_guilt,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m105_t_guilt.py,compute_m105_t_guilt,text,f0c17ec3239c,
+m106_t_shame,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m106_t_shame.py,compute_m106_t_shame,text,40277342dd1f,
+m107_t_grief,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m107_t_grief.py,compute_m107_t_grief,text,117d2d5bfdb6,
+m108_t_anger,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m108_t_anger.py,compute_m108_t_anger,text,ec209ba469db,
+m109_t_fear,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m109_t_fear.py,compute_m109_t_fear,text,985ccc606d5f,
+m10_angstrom,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m10_angstrom.py,compute_m10_angstrom,"s_self,x_exist,b_past,coh",7dc5e81dac4b,angstrom = 0.25 × (s_self + x_exist + b_past + coh) × 5.0
+m110_black_hole,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m110_black_hole.py,compute_m110_black_hole,"chaos,effective_A,LL",07534a34b7da,SPEC Formula (V3.3): black_hole = (0.4 × chaos) + (0.3 × (1 - A)) + (0.3 × LL)
+m111_turbidity_total,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m111_turbidity_total.py,compute_m111_turbidity_total,"t_panic,t_disso,t_shock,t_integ",550bf81e91f3,
+m112_trauma_load,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m112_trauma_load.py,compute_m112_trauma_load,"t_panic,t_disso,t_integ",1b05176c192d,
+m114_t_recovery,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m114_t_recovery.py,compute_m114_t_recovery,"t_integ_current,t_integ_prev",ab58beb91b1a,
+m115_t_threshold,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m115_t_threshold.py,compute_m115_t_threshold,,c8bb69f4ce1c,
+m11_gap_s,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m11_gap_s.py,compute_m11_gap_s,"timestamp_prev,timestamp_now",9d0a7d922e46,
+m12_gap_norm,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m12_gap_norm.py,compute_m12_gap_norm,gap_s,92e713f9f78d,"gap_norm = min(1.0, gap_s / 60.0)"
+m13_rep_same,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m13_rep_same.py,compute_m13_rep_same,"text,prev_text",e91d62a7bab9,"Repetition score [0, 1] - Higher = more repetitive"
+m14_rep_history,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m14_rep_history.py,compute_m14_rep_history,"text,history",1a306c21d4a2,"Repetition score [0, 1] - Higher = more repetitive with history"
+m15_affekt_a_legacy,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m15_affekt_a_legacy.py,compute_m15_affekt_a_legacy,"flow,coh,ll,zlf",480b6a3a3bcf,A_legacy = clip01(0.40*flow + 0.30*coh + 0.20*(1-LL) + 0.10*(1-ZLF))
+m16_external_stag,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m16_external_stag.py,compute_m16_external_stag,turns_without_progress,360efd8664b3,"Normalized by 5 turns: stag = min(1.0, turns_without_progress / 5.0)"
+m17_nabla_a,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m17_nabla_a.py,compute_m17_nabla_a,"a_current,a_previous",0e1f499d90df,∇A = A_current - A_previous
+m18_s_entropy,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m18_s_entropy.py,compute_m18_s_entropy,tokens,6fc0e071c746,"Entropy in bits [0, log₂(n)] where n = unique tokens"
+m19_z_prox,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m19_z_prox.py,compute_m19_z_prox,"m1_A_lexical,m15_A_structural,LL,text,t_panic",eef88aa22f7a,"z_prox score [0, 1] - Death proximity (HIGHER = MORE DANGER!)"
+m1_A,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m1_A.py,compute_m1_A,"coh,flow,LL,ZLF,ctx_break",b7ea168ba52d,A[i] = clip01(
+m20_phi_proxy,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m20_phi_proxy.py,compute_m20_phi_proxy,"A,PCI",07fedc5c3ddb,phi_proxy = A × PCI
+m21_chaos,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m21_chaos.py,compute_m21_chaos,s_entropy,1aacad774196,SPEC Formula: chaos = clip(s_entropy / 4.0)
+m22_cog_load,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m22_cog_load.py,compute_m22_cog_load,token_count,1242cb568df6,SPEC Formula: cog_load = clip(token_count / 500.0)
+m23_nabla_pci,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m23_nabla_pci.py,compute_m23_nabla_pci,"pci_current,pci_previous",b15e417c8f3a,SPEC Formula: ∇PCI = PCI_current - PCI_previous
+m24_zeta,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m24_zeta.py,compute_m24_zeta,"z_prox,A",8beceab60bdf,SPEC: zeta = (1 - z_prox) × A
+m25_psi,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m25_psi.py,compute_m25_psi,"PCI,token_count",a9a5f4e43d7d,SPEC: psi = PCI / (1 + token_count/100.0)
+m26_e_i_proxy,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m26_e_i_proxy.py,compute_m26_e_i_proxy,"nabla_a,PCI",b65792e737f7,SPEC: e_i_proxy = |∇A| × (1 - PCI)
+m27_lambda_depth,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m27_lambda_depth.py,compute_m27_lambda_depth,token_count,f2e1a4f05484,"lambda_depth = min(1.0, token_count / 100.0)"
+m28_phys_1,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m28_phys_1.py,compute_m28_phys_1,A,bb9a0c8a35e5,
+m29_phys_2,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m29_phys_2.py,compute_m29_phys_2,PCI,67abb50eb0d4,
+m2_PCI,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m2_PCI.py,compute_m2_PCI,"flow,coh,LL",e927b2a8ece5,PCI[i] = clip01(
+m30_phys_3,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m30_phys_3.py,compute_m30_phys_3,s_entropy,5b04c1649abe,
+m31_phys_4,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m31_phys_4.py,compute_m31_phys_4,z_prox,127a06f27ede,
+m32_phys_5,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m32_phys_5.py,compute_m32_phys_5,"flow,phi",061753fb7a1e,
+m33_phys_6,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m33_phys_6.py,compute_m33_phys_6,"coh,PCI",fb9531f0fc45,
+m34_phys_7,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m34_phys_7.py,compute_m34_phys_7,"nabla_a,nabla_pci",3c305d8c7560,
+m35_phys_8,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m35_phys_8.py,compute_m35_phys_8,"ZLF,stagnation",60f0ad2412e2,
+m3_gen_index,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m3_gen_index.py,compute_m3_gen_index,"text,history,word_frequencies",aa07273de0f0,gen_index = (|new_bigrams| / |total_bigrams|) × novelty_boost | new_bigrams = current_bigrams \ history_bigrams | novelty_boost = 1 + rare_word_bonus × 0.2
+m4_flow,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m4_flow.py,compute_m4_flow,text,efd36c9579b0,"Flow score [0, 1] - Higher = smoother production"
+m5_coh,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m5_coh.py,compute_m5_coh,text,92027399836c,"Coherence score [0, 1] - Higher = more coherent"
+m6_ZLF,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m6_ZLF.py,compute_m6_ZLF,"flow,coherence,zlf_lexicon_hit",22af2cd37d5e,ZLF = clip01(0.5·lexicon_hit + 0.25·(1-flow) + 0.25·(1-coh)) | Higher ZLF = more looping/stuck patterns.
+m7_LL,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m7_LL.py,compute_m7_LL,"rep_same,flow",7f25ee360555,SPEC Formula: LL = clip(0.6 × rep_same + 0.4 × (1 - flow))
+m8_x_exist,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m8_x_exist.py,compute_m8_x_exist,"text,x_exist_lexikon",64de1e2bddd4,x_exist = max(weight_i) for all matching terms in lexicon
+m9_b_past,C:\Users\nicom\Desktop\Metriken\metriken_claude_extracted\m9_b_past.py,compute_m9_b_past,"text,b_past_lexikon",279896bb99ae,b_past = max(weight_i) for all matching terms in lexicon
+m101_t_panic,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m101_t_panic.py,compute_m101_t_panic,text,633c6d4ff5cb,"Panic score [0, 1] - Higher = more panic indicators"
+m102_t_disso,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m102_t_disso.py,compute_m102_t_disso,text,fbfd1f12ebde,"Dissociation score [0, 1] - Higher = more dissociative"
+m103_t_integ,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m103_t_integ.py,compute_m103_t_integ,text,00f7cc61a061,"Integration score [0, 1] - Higher = better integration"
+m104_t_shock,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m104_t_shock.py,compute_m104_t_shock,text,7b5921bc8537,t_shock = clip((shock_hits / word_count) × 5.0)
+m105_t_guilt,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m105_t_guilt.py,compute_m105_t_guilt,text,f0c17ec3239c,
+m106_t_shame,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m106_t_shame.py,compute_m106_t_shame,text,40277342dd1f,
+m107_t_grief,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m107_t_grief.py,compute_m107_t_grief,text,117d2d5bfdb6,
+m108_t_anger,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m108_t_anger.py,compute_m108_t_anger,text,ec209ba469db,
+m109_t_fear,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m109_t_fear.py,compute_m109_t_fear,text,985ccc606d5f,
+m10_angstrom,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m10_angstrom.py,compute_m10_angstrom,"s_self,x_exist,b_past,coh",7dc5e81dac4b,angstrom = 0.25 × (s_self + x_exist + b_past + coh) × 5.0
+m110_black_hole,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m110_black_hole.py,compute_m110_black_hole,"chaos,effective_A,LL",07534a34b7da,SPEC Formula (V3.3): black_hole = (0.4 × chaos) + (0.3 × (1 - A)) + (0.3 × LL)
+m111_turbidity_total,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m111_turbidity_total.py,compute_m111_turbidity_total,"t_panic,t_disso,t_shock,t_integ",550bf81e91f3,
+m112_trauma_load,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m112_trauma_load.py,compute_m112_trauma_load,"t_panic,t_disso,t_integ",1b05176c192d,
+m114_t_recovery,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m114_t_recovery.py,compute_m114_t_recovery,"t_integ_current,t_integ_prev",ab58beb91b1a,
+m115_t_threshold,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m115_t_threshold.py,compute_m115_t_threshold,,c8bb69f4ce1c,
+m11_gap_s,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m11_gap_s.py,compute_m11_gap_s,"timestamp_prev,timestamp_now",9d0a7d922e46,
+m12_gap_norm,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m12_gap_norm.py,compute_m12_gap_norm,gap_s,92e713f9f78d,"gap_norm = min(1.0, gap_s / 60.0)"
+m13_rep_same,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m13_rep_same.py,compute_m13_rep_same,"text,prev_text",e91d62a7bab9,"Repetition score [0, 1] - Higher = more repetitive"
+m14_rep_history,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m14_rep_history.py,compute_m14_rep_history,"text,history",1a306c21d4a2,"Repetition score [0, 1] - Higher = more repetitive with history"
+m15_affekt_a_legacy,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m15_affekt_a_legacy.py,compute_m15_affekt_a_legacy,"flow,coh,ll,zlf",480b6a3a3bcf,A_legacy = clip01(0.40*flow + 0.30*coh + 0.20*(1-LL) + 0.10*(1-ZLF))
+m16_external_stag,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m16_external_stag.py,compute_m16_external_stag,turns_without_progress,360efd8664b3,"Normalized by 5 turns: stag = min(1.0, turns_without_progress / 5.0)"
+m17_nabla_a,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m17_nabla_a.py,compute_m17_nabla_a,"a_current,a_previous",0e1f499d90df,∇A = A_current - A_previous
+m18_s_entropy,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m18_s_entropy.py,compute_m18_s_entropy,tokens,6fc0e071c746,"Entropy in bits [0, log₂(n)] where n = unique tokens"
+m19_z_prox,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m19_z_prox.py,compute_m19_z_prox,"m1_A_lexical,m15_A_structural,LL,text,t_panic",eef88aa22f7a,"z_prox score [0, 1] - Death proximity (HIGHER = MORE DANGER!)"
+m1_A,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m1_A.py,compute_m1_A,"coh,flow,LL,ZLF,ctx_break",b7ea168ba52d,A[i] = clip01(
+m20_phi_proxy,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m20_phi_proxy.py,compute_m20_phi_proxy,"A,PCI",07fedc5c3ddb,phi_proxy = A × PCI
+m21_chaos,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m21_chaos.py,compute_m21_chaos,s_entropy,1aacad774196,SPEC Formula: chaos = clip(s_entropy / 4.0)
+m22_cog_load,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m22_cog_load.py,compute_m22_cog_load,token_count,1242cb568df6,SPEC Formula: cog_load = clip(token_count / 500.0)
+m23_nabla_pci,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m23_nabla_pci.py,compute_m23_nabla_pci,"pci_current,pci_previous",b15e417c8f3a,SPEC Formula: ∇PCI = PCI_current - PCI_previous
+m24_zeta,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m24_zeta.py,compute_m24_zeta,"z_prox,A",8beceab60bdf,SPEC: zeta = (1 - z_prox) × A
+m25_psi,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m25_psi.py,compute_m25_psi,"PCI,token_count",a9a5f4e43d7d,SPEC: psi = PCI / (1 + token_count/100.0)
+m26_e_i_proxy,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m26_e_i_proxy.py,compute_m26_e_i_proxy,"nabla_a,PCI",b65792e737f7,SPEC: e_i_proxy = |∇A| × (1 - PCI)
+m27_lambda_depth,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m27_lambda_depth.py,compute_m27_lambda_depth,token_count,f2e1a4f05484,"lambda_depth = min(1.0, token_count / 100.0)"
+m28_phys_1,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m28_phys_1.py,compute_m28_phys_1,A,bb9a0c8a35e5,
+m29_phys_2,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m29_phys_2.py,compute_m29_phys_2,PCI,67abb50eb0d4,
+m2_PCI,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m2_PCI.py,compute_m2_PCI,"flow,coh,LL",e927b2a8ece5,PCI[i] = clip01(
+m30_phys_3,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m30_phys_3.py,compute_m30_phys_3,s_entropy,5b04c1649abe,
+m31_phys_4,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m31_phys_4.py,compute_m31_phys_4,z_prox,127a06f27ede,
+m32_phys_5,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m32_phys_5.py,compute_m32_phys_5,"flow,phi",061753fb7a1e,
+m33_phys_6,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m33_phys_6.py,compute_m33_phys_6,"coh,PCI",fb9531f0fc45,
+m34_phys_7,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m34_phys_7.py,compute_m34_phys_7,"nabla_a,nabla_pci",3c305d8c7560,
+m35_phys_8,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m35_phys_8.py,compute_m35_phys_8,"ZLF,stagnation",60f0ad2412e2,
+m3_gen_index,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m3_gen_index.py,compute_m3_gen_index,"text,history,word_frequencies",aa07273de0f0,gen_index = (|new_bigrams| / |total_bigrams|) × novelty_boost | new_bigrams = current_bigrams \ history_bigrams | novelty_boost = 1 + rare_word_bonus × 0.2
+m4_flow,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m4_flow.py,compute_m4_flow,text,efd36c9579b0,"Flow score [0, 1] - Higher = smoother production"
+m5_coh,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m5_coh.py,compute_m5_coh,text,92027399836c,"Coherence score [0, 1] - Higher = more coherent"
+m6_ZLF,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m6_ZLF.py,compute_m6_ZLF,"flow,coherence,zlf_lexicon_hit",22af2cd37d5e,ZLF = clip01(0.5·lexicon_hit + 0.25·(1-flow) + 0.25·(1-coh)) | Higher ZLF = more looping/stuck patterns.
+m7_LL,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m7_LL.py,compute_m7_LL,"rep_same,flow",7f25ee360555,SPEC Formula: LL = clip(0.6 × rep_same + 0.4 × (1 - flow))
+m8_x_exist,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m8_x_exist.py,compute_m8_x_exist,"text,x_exist_lexikon",64de1e2bddd4,x_exist = max(weight_i) for all matching terms in lexicon
+m9_b_past,C:\Users\nicom\Desktop\Metriken\temp_metrics_lib\m9_b_past.py,compute_m9_b_past,"text,b_past_lexikon",279896bb99ae,b_past = max(weight_i) for all matching terms in lexicon
+m100_emotion_blend,C:\Users\nicom\Desktop\Metriken\temp_metriks\m100_emotion_blend.py,compute_m100_emotion_blend,"joy,sadness,anger,fear",f2b6e8bd08dd,
+m101_t_panic,C:\Users\nicom\Desktop\Metriken\temp_metriks\m101_t_panic.py,compute_m101_t_panic,text,dc74fb22ec1e,
+m102_t_disso,C:\Users\nicom\Desktop\Metriken\temp_metriks\m102_t_disso.py,compute_m102_t_disso,text,6cf2eb183e22,
+m103_t_integ,C:\Users\nicom\Desktop\Metriken\temp_metriks\m103_t_integ.py,compute_m103_t_integ,text,ad489031c6dd,
+m104_t_shock,C:\Users\nicom\Desktop\Metriken\temp_metriks\m104_t_shock.py,compute_m104_t_shock,text,7e5c0402b825,
+m105_t_guilt,C:\Users\nicom\Desktop\Metriken\temp_metriks\m105_t_guilt.py,compute_m105_t_guilt,text,684e728582e6,
+m106_t_shame,C:\Users\nicom\Desktop\Metriken\temp_metriks\m106_t_shame.py,compute_m106_t_shame,text,f30b7a7785b1,
+m107_t_grief,C:\Users\nicom\Desktop\Metriken\temp_metriks\m107_t_grief.py,compute_m107_t_grief,text,fe4f12f8c85a,
+m108_t_anger,C:\Users\nicom\Desktop\Metriken\temp_metriks\m108_t_anger.py,compute_m108_t_anger,text,6629131eb12f,
+m109_t_fear,C:\Users\nicom\Desktop\Metriken\temp_metriks\m109_t_fear.py,compute_m109_t_fear,text,91adf2a85fa2,
+m10_angstrom,C:\Users\nicom\Desktop\Metriken\temp_metriks\m10_angstrom.py,compute_m10_angstrom,"s_self,x_exist,b_past,coh",13e0fe7dd978,
+m110_black_hole,C:\Users\nicom\Desktop\Metriken\temp_metriks\m110_black_hole.py,compute_m110_black_hole,"chaos,effective_A,LL",4544699700b3,val = 0.4 * chaos + 0.3 * (1.0 - effective_A) + 0.3 * LL
+m111_turbidity_total,C:\Users\nicom\Desktop\Metriken\temp_metriks\m111_turbidity_total.py,compute_m111_turbidity_total,"t_panic,t_disso,t_shock,t_integ",ee2ebf69a4a8,
+m112_trauma_load,C:\Users\nicom\Desktop\Metriken\temp_metriks\m112_trauma_load.py,compute_m112_trauma_load,"t_panic,t_disso,t_integ",b6b21abf87e8,
+m113_t_resilience,C:\Users\nicom\Desktop\Metriken\temp_metriks\m113_t_resilience.py,compute_m113_t_resilience,"t_integ,t_panic",2b86f6f8bee4,
+m114_t_recovery,C:\Users\nicom\Desktop\Metriken\temp_metriks\m114_t_recovery.py,compute_m114_t_recovery,"t_integ_current,t_integ_prev",faf195d0bf74,
+m115_t_threshold,C:\Users\nicom\Desktop\Metriken\temp_metriks\m115_t_threshold.py,compute_m115_t_threshold,,5d38f67ef8e3,
+m116_lix,C:\Users\nicom\Desktop\Metriken\temp_metriks\m116_lix.py,compute_m116_lix,text,9e387069ecd6,
+m117_vocabulary_richness,C:\Users\nicom\Desktop\Metriken\temp_metriks\m117_vocabulary_richness.py,compute_m117_vocabulary_richness,tokens,c1fa56ed9e3a,
+m118_coherence_local,C:\Users\nicom\Desktop\Metriken\temp_metriks\m118_coherence_local.py,compute_m118_coherence_local,sentences,1b645eb73b4b,
+m119_complexity_variance,C:\Users\nicom\Desktop\Metriken\temp_metriks\m119_complexity_variance.py,compute_m119_complexity_variance,pci_history,2f035cef20f2,
+m11_gap_s,C:\Users\nicom\Desktop\Metriken\temp_metriks\m11_gap_s.py,compute_m11_gap_s,"timestamp_prev,timestamp_now",b322932c9280,
+m120_topic_drift,C:\Users\nicom\Desktop\Metriken\temp_metriks\m120_topic_drift.py,compute_m120_topic_drift,similarity_to_first,74e1863385f9,
+m121_self_reference_count,C:\Users\nicom\Desktop\Metriken\temp_metriks\m121_self_reference_count.py,compute_m121_self_reference_count,text,5e268a2aa241,
+m122_dyn_1,C:\Users\nicom\Desktop\Metriken\temp_metriks\m122_dyn_1.py,compute_m122_dyn_1,"nabla_a,nabla_pci",53816ad205a5,
+m123_dyn_2,C:\Users\nicom\Desktop\Metriken\temp_metriks\m123_dyn_2.py,compute_m123_dyn_2,"A,A_prev",bd036b6245f7,
+m124_dyn_3,C:\Users\nicom\Desktop\Metriken\temp_metriks\m124_dyn_3.py,compute_m124_dyn_3,"flow,flow_prev",9dc1d2d47919,
+m125_dyn_4,C:\Users\nicom\Desktop\Metriken\temp_metriks\m125_dyn_4.py,compute_m125_dyn_4,"coh,coh_prev",61c5b26d3157,
+m126_dyn_5,C:\Users\nicom\Desktop\Metriken\temp_metriks\m126_dyn_5.py,compute_m126_dyn_5,"t_panic,t_panic_prev",cb14d5e276ea,
+m127_avg_response_len,C:\Users\nicom\Desktop\Metriken\temp_metriks\m127_avg_response_len.py,compute_m127_avg_response_len,lengths,ec663b50209d,
+m128_token_ratio,C:\Users\nicom\Desktop\Metriken\temp_metriks\m128_token_ratio.py,compute_m128_token_ratio,"user_tokens,ai_tokens",d6ed6aecae7e,
+m129_engagement_score,C:\Users\nicom\Desktop\Metriken\temp_metriks\m129_engagement_score.py,compute_m129_engagement_score,"questions,turns",46ef57c590af,
+m12_gap_norm,C:\Users\nicom\Desktop\Metriken\temp_metriks\m12_gap_norm.py,compute_m12_gap_norm,gap_s,3bc856bc0a94,
+m130_session_depth,C:\Users\nicom\Desktop\Metriken\temp_metriks\m130_session_depth.py,compute_m130_session_depth,turn_count,830535425ef1,
+m131_meta_awareness,C:\Users\nicom\Desktop\Metriken\temp_metriks\m131_meta_awareness.py,compute_m131_meta_awareness,"A,PCI",e38b40b68798,
+m132_meta_regulation,C:\Users\nicom\Desktop\Metriken\temp_metriks\m132_meta_regulation.py,compute_m132_meta_regulation,"z_prox,commit",d67a4a996249,regulation = 1.0 - z_prox
+m133_meta_flexibility,C:\Users\nicom\Desktop\Metriken\temp_metriks\m133_meta_flexibility.py,compute_m133_meta_flexibility,"topic_changes,turns",ec74798021bd,
+m134_meta_monitoring,C:\Users\nicom\Desktop\Metriken\temp_metriks\m134_meta_monitoring.py,compute_m134_meta_monitoring,"error_count,checks",0aca332e3c9c,
+m135_meta_planning,C:\Users\nicom\Desktop\Metriken\temp_metriks\m135_meta_planning.py,compute_m135_meta_planning,goal_progress,fc8006d5d2ab,
+m136_meta_evaluation,C:\Users\nicom\Desktop\Metriken\temp_metriks\m136_meta_evaluation.py,compute_m136_meta_evaluation,task_success,dea640edc647,
+m137_meta_strategy,C:\Users\nicom\Desktop\Metriken\temp_metriks\m137_meta_strategy.py,compute_m137_meta_strategy,"strategy_switches,turns",3de6d86bb1aa,
+m138_attention_focus,C:\Users\nicom\Desktop\Metriken\temp_metriks\m138_attention_focus.py,compute_m138_attention_focus,main_topic_coverage,a77d01b0492c,
+m139_working_memory,C:\Users\nicom\Desktop\Metriken\temp_metriks\m139_working_memory.py,compute_m139_working_memory,"context_items,max_items",1da30539763c,
+m13_rep_same,C:\Users\nicom\Desktop\Metriken\temp_metriks\m13_rep_same.py,compute_m13_rep_same,"text,prev_text",705aa55a03bc,
+m140_long_term_access,C:\Users\nicom\Desktop\Metriken\temp_metriks\m140_long_term_access.py,compute_m140_long_term_access,retrieval_success,6b3b168a3049,
+m141_inference_quality,C:\Users\nicom\Desktop\Metriken\temp_metriks\m141_inference_quality.py,compute_m141_inference_quality,logical_consistency,2775ba917281,
+m142_reasoning_depth,C:\Users\nicom\Desktop\Metriken\temp_metriks\m142_reasoning_depth.py,compute_m142_reasoning_depth,"complexity,PCI",b7f39e43ef62,
+m143_context_window_usage,C:\Users\nicom\Desktop\Metriken\temp_metriks\m143_context_window_usage.py,compute_m143_context_window_usage,"current_tokens,max_tokens",6e467a110986,
+m144_attention_span,C:\Users\nicom\Desktop\Metriken\temp_metriks\m144_attention_span.py,compute_m144_attention_span,"focus_duration,max_duration",6c10fe015de7,
+m145_task_switching,C:\Users\nicom\Desktop\Metriken\temp_metriks\m145_task_switching.py,compute_m145_task_switching,"switches,total_tasks",6a3aaa38eba8,
+m146_error_correction,C:\Users\nicom\Desktop\Metriken\temp_metriks\m146_error_correction.py,compute_m146_error_correction,"corrections,total_outputs",5838df1eadd9,
+m147_learning_progress,C:\Users\nicom\Desktop\Metriken\temp_metriks\m147_learning_progress.py,compute_m147_learning_progress,"current_perf,initial_perf",7ae894c2dd29,
+m148_knowledge_integration,C:\Users\nicom\Desktop\Metriken\temp_metriks\m148_knowledge_integration.py,compute_m148_knowledge_integration,"new_facts,total_facts",3226c1f85e1b,
+m149_semantic_drift,C:\Users\nicom\Desktop\Metriken\temp_metriks\m149_semantic_drift.py,compute_m149_semantic_drift,"current_vec,initial_vec",933ccbb614ed,
+m14_rep_history,C:\Users\nicom\Desktop\Metriken\temp_metriks\m14_rep_history.py,compute_m14_rep_history,"text,history",c976f8a514dc,
+m150_goal_coherence,C:\Users\nicom\Desktop\Metriken\temp_metriks\m150_goal_coherence.py,compute_m150_goal_coherence,"goals_aligned,total_goals",a8238f5225d1,
+m151_omega,C:\Users\nicom\Desktop\Metriken\temp_metriks\m151_omega.py,compute_m151_omega,"A,PCI,z_prox,trauma_load",3a6e0a4c1d37,positive = 0.4 * A + 0.3 * PCI | negative = 0.3 * z_prox + 0.2 * trauma_load
+m152_a51_compliance,C:\Users\nicom\Desktop\Metriken\temp_metriks\m152_a51_compliance.py,compute_m152_a51_compliance,"rules_checked,rules_passed",e4216aa82d7b,
+m153_sys_health,C:\Users\nicom\Desktop\Metriken\temp_metriks\m153_sys_health.py,compute_m153_sys_health,"latency,error_rate,mem_pressure",def388d6b8d6,
+m154_sys_latency,C:\Users\nicom\Desktop\Metriken\temp_metriks\m154_sys_latency.py,compute_m154_sys_latency,"response_time_ms,target_ms",766aaa609b71,
+m155_error_rate,C:\Users\nicom\Desktop\Metriken\temp_metriks\m155_error_rate.py,compute_m155_error_rate,"errors,total_requests",ae397ddb4891,
+m156_cache_hit_rate,C:\Users\nicom\Desktop\Metriken\temp_metriks\m156_cache_hit_rate.py,compute_m156_cache_hit_rate,"hits,total",7e392838522c,
+m157_token_throughput,C:\Users\nicom\Desktop\Metriken\temp_metriks\m157_token_throughput.py,compute_m157_token_throughput,"tokens,seconds",20ea32e683ff,
+m158_context_utilization,C:\Users\nicom\Desktop\Metriken\temp_metriks\m158_context_utilization.py,compute_m158_context_utilization,"used_tokens,max_tokens",307e3c7d8a68,
+m159_guardian_interventions,C:\Users\nicom\Desktop\Metriken\temp_metriks\m159_guardian_interventions.py,compute_m159_guardian_interventions,"interventions,turns",b029c60e29e2,
+m15_affekt_a_legacy,C:\Users\nicom\Desktop\Metriken\temp_metriks\m15_affekt_a_legacy.py,compute_m15_affekt_a_legacy,"flow,coh,ll,zlf",6f17c8cd3696,
+m160_uptime,C:\Users\nicom\Desktop\Metriken\temp_metriks\m160_uptime.py,compute_m160_uptime,"uptime_seconds,total_seconds",431fd7a49365,
+m161_commit,C:\Users\nicom\Desktop\Metriken\temp_metriks\m161_commit.py,compute_m161_commit,"z_prox,trauma_load",e9c9d8c1cec8,
+m162_ctx_time,C:\Users\nicom\Desktop\Metriken\temp_metriks\m162_ctx_time.py,compute_m162_ctx_time,"session_start_minutes,current_minutes",b242c74a4992,
+m163_ctx_loc,C:\Users\nicom\Desktop\Metriken\temp_metriks\m163_ctx_loc.py,compute_m163_ctx_loc,location_data,87e65feed960,
+m164_user_state,C:\Users\nicom\Desktop\Metriken\temp_metriks\m164_user_state.py,compute_m164_user_state,recent_affects,85125543bc77,
+m165_platform,C:\Users\nicom\Desktop\Metriken\temp_metriks\m165_platform.py,compute_m165_platform,,bdf007b6034c,
+m166_modality,C:\Users\nicom\Desktop\Metriken\temp_metriks\m166_modality.py,compute_m166_modality,input_data,b50c33eb97bc,
+m167_noise,C:\Users\nicom\Desktop\Metriken\temp_metriks\m167_noise.py,compute_m167_noise,text,f2f381eb20c3,
+m168_cum_stress,C:\Users\nicom\Desktop\Metriken\temp_metriks\m168_cum_stress.py,compute_m168_cum_stress,z_prox_history,9a03fc5c237a,recent = z_prox_history[-10:]
+m16_external_stag,C:\Users\nicom\Desktop\Metriken\temp_metriks\m16_external_stag.py,compute_m16_external_stag,turns_without_progress,e3ad55b14e12,
+m17_nabla_a,C:\Users\nicom\Desktop\Metriken\temp_metriks\m17_nabla_a.py,compute_m17_nabla_a,"a_current,a_previous",883190a1a9f3,
+m18_s_entropy,C:\Users\nicom\Desktop\Metriken\temp_metriks\m18_s_entropy.py,compute_m18_s_entropy,tokens,6f8f44b49780,
+m19_z_prox,C:\Users\nicom\Desktop\Metriken\temp_metriks\m19_z_prox.py,compute_m19_z_prox,"m1_A_lexical,m15_A_structural,LL,text,t_panic",59bc8e052e12,"effective_A = min(m1_A_lexical, m15_A_structural) | base_prox = (1.0 - effective_A) * LL | z_prox = base_prox * (1.0 + hazard_bonus)"
+m1_A,C:\Users\nicom\Desktop\Metriken\temp_metriks\m1_A.py,compute_m1_A,"coh,flow,LL,ZLF,ctx_break",f30e3a288686,"def compute_m1_A(coh: float, flow: float, LL: float, ZLF: float, ctx_break: float = 0.0) -> float: | A_raw = (0.4 * coh + 0.25 * flow + 0.20 * (1.0 - LL) +"
+m20_phi_proxy,C:\Users\nicom\Desktop\Metriken\temp_metriks\m20_phi_proxy.py,compute_m20_phi_proxy,"A,PCI",a8a4b617dea2,
+m21_chaos,C:\Users\nicom\Desktop\Metriken\temp_metriks\m21_chaos.py,compute_m21_chaos,s_entropy,ff551e9d3c85,
+m22_cog_load,C:\Users\nicom\Desktop\Metriken\temp_metriks\m22_cog_load.py,compute_m22_cog_load,token_count,67eabf150fff,
+m23_nabla_pci,C:\Users\nicom\Desktop\Metriken\temp_metriks\m23_nabla_pci.py,compute_m23_nabla_pci,"pci_current,pci_previous",ba9c4f6aae0d,
+m24_zeta,C:\Users\nicom\Desktop\Metriken\temp_metriks\m24_zeta.py,compute_m24_zeta,"z_prox,A",65e9cc20dfec,
+m25_psi,C:\Users\nicom\Desktop\Metriken\temp_metriks\m25_psi.py,compute_m25_psi,"PCI,token_count",c8413c4dcc90,
+m26_e_i_proxy,C:\Users\nicom\Desktop\Metriken\temp_metriks\m26_e_i_proxy.py,compute_m26_e_i_proxy,"nabla_a,PCI",7c9d59077c13,
+m27_lambda_depth,C:\Users\nicom\Desktop\Metriken\temp_metriks\m27_lambda_depth.py,compute_m27_lambda_depth,token_count,9ff536a6fe83,
+m28_phys_1,C:\Users\nicom\Desktop\Metriken\temp_metriks\m28_phys_1.py,compute_m28_phys_1,A,82fd68ed0d64,
+m29_phys_2,C:\Users\nicom\Desktop\Metriken\temp_metriks\m29_phys_2.py,compute_m29_phys_2,PCI,5eb36dd15c03,
+m2_PCI,C:\Users\nicom\Desktop\Metriken\temp_metriks\m2_PCI.py,compute_m2_PCI,"flow,coh,LL",780320760948,PCI_raw = 0.4 * flow + 0.35 * coh + 0.25 * (1.0 - LL)
+m30_phys_3,C:\Users\nicom\Desktop\Metriken\temp_metriks\m30_phys_3.py,compute_m30_phys_3,s_entropy,e2ad870f1077,
+m31_phys_4,C:\Users\nicom\Desktop\Metriken\temp_metriks\m31_phys_4.py,compute_m31_phys_4,z_prox,00342d527f78,
+m32_phys_5,C:\Users\nicom\Desktop\Metriken\temp_metriks\m32_phys_5.py,compute_m32_phys_5,"flow,phi",b82a498569a3,
+m33_phys_6,C:\Users\nicom\Desktop\Metriken\temp_metriks\m33_phys_6.py,compute_m33_phys_6,"coh,PCI",c0482bd22aaa,
+m34_phys_7,C:\Users\nicom\Desktop\Metriken\temp_metriks\m34_phys_7.py,compute_m34_phys_7,"nabla_a,nabla_pci",f108ac4188c6,
+m35_phys_8,C:\Users\nicom\Desktop\Metriken\temp_metriks\m35_phys_8.py,compute_m35_phys_8,"ZLF,stagnation",f830fe35e830,
+m36_rule_conflict,C:\Users\nicom\Desktop\Metriken\temp_metriks\m36_rule_conflict.py,compute_m36_rule_conflict,rules,f8987d107cb9,
+m37_rule_stable,C:\Users\nicom\Desktop\Metriken\temp_metriks\m37_rule_stable.py,compute_m37_rule_stable,rule_conflict,28c7ea871d31,
+m38_soul_integrity,C:\Users\nicom\Desktop\Metriken\temp_metriks\m38_soul_integrity.py,compute_m38_soul_integrity,b_vector,06754ed7af39,
+m39_soul_check,C:\Users\nicom\Desktop\Metriken\temp_metriks\m39_soul_check.py,compute_m39_soul_check,"b_vector,seed",d936950e77ae,
+m3_gen_index,C:\Users\nicom\Desktop\Metriken\temp_metriks\m3_gen_index.py,compute_m3_gen_index,"text,history,word_frequencies",e0c2d24dd97e,
+m40_h_conv,C:\Users\nicom\Desktop\Metriken\temp_metriks\m40_h_conv.py,compute_m40_h_conv,"a_user,a_ai",e64cce8ffc73,
+m41_h_symbol,C:\Users\nicom\Desktop\Metriken\temp_metriks\m41_h_symbol.py,compute_m41_h_symbol,h_conv,bcee034b943b,
+m42_nabla_dyad,C:\Users\nicom\Desktop\Metriken\temp_metriks\m42_nabla_dyad.py,compute_m42_nabla_dyad,h_conv,61945481bfd9,
+m43_pacing,C:\Users\nicom\Desktop\Metriken\temp_metriks\m43_pacing.py,compute_m43_pacing,"wc_user,wc_ai",37bd2d7a64d0,
+m44_mirroring,C:\Users\nicom\Desktop\Metriken\temp_metriks\m44_mirroring.py,compute_m44_mirroring,"user_tokens,ai_tokens",e957109c8779,
+m45_trust_score,C:\Users\nicom\Desktop\Metriken\temp_metriks\m45_trust_score.py,compute_m45_trust_score,"h_conv,pacing,mirroring",35f3102b7b1a,
+m46_rapport,C:\Users\nicom\Desktop\Metriken\temp_metriks\m46_rapport.py,compute_m46_rapport,trust_history,340e67e63173,
+m47_focus_stability,C:\Users\nicom\Desktop\Metriken\temp_metriks\m47_focus_stability.py,compute_m47_focus_stability,topic_variance,9f44d03c4d75,
+m48_hyp_1,C:\Users\nicom\Desktop\Metriken\temp_metriks\m48_hyp_1.py,compute_m48_hyp_1,"h_conv,pacing",493a61b2da7f,
+m49_hyp_2,C:\Users\nicom\Desktop\Metriken\temp_metriks\m49_hyp_2.py,compute_m49_hyp_2,soul_integrity,f0d68a72a45f,
+m4_flow,C:\Users\nicom\Desktop\Metriken\temp_metriks\m4_flow.py,compute_m4_flow,text,dd4f680dccd7,
+m50_hyp_3,C:\Users\nicom\Desktop\Metriken\temp_metriks\m50_hyp_3.py,compute_m50_hyp_3,rule_conflict,759c23640078,
+m51_hyp_4,C:\Users\nicom\Desktop\Metriken\temp_metriks\m51_hyp_4.py,compute_m51_hyp_4,"h_conv,A",984436f71850,
+m52_hyp_5,C:\Users\nicom\Desktop\Metriken\temp_metriks\m52_hyp_5.py,compute_m52_hyp_5,g_phase_norm,faf00d0e5f12,
+m53_hyp_6,C:\Users\nicom\Desktop\Metriken\temp_metriks\m53_hyp_6.py,compute_m53_hyp_6,gap_seconds,6e2d9fce8536,
+m54_hyp_7,C:\Users\nicom\Desktop\Metriken\temp_metriks\m54_hyp_7.py,compute_m54_hyp_7,"trust_score,rapport",5addfcedf4a8,
+m55_hyp_8,C:\Users\nicom\Desktop\Metriken\temp_metriks\m55_hyp_8.py,compute_m55_hyp_8,"soul_integrity,PCI",8f3b7c1159cc,
+m56_surprise,C:\Users\nicom\Desktop\Metriken\temp_metriks\m56_surprise.py,compute_m56_surprise,"A_current,A_predicted",7da6d9730433,
+m57_tokens_soc,C:\Users\nicom\Desktop\Metriken\temp_metriks\m57_tokens_soc.py,compute_m57_tokens_soc,"current,delta",fe5dd6e23f85,
+m58_tokens_log,C:\Users\nicom\Desktop\Metriken\temp_metriks\m58_tokens_log.py,compute_m58_tokens_log,"current,delta",d18271c07303,
+m59_p_antrieb,C:\Users\nicom\Desktop\Metriken\temp_metriks\m59_p_antrieb.py,compute_m59_p_antrieb,"tokens_soc,tokens_log,stagnation",1ce223a6f02a,
+m5_coh,C:\Users\nicom\Desktop\Metriken\temp_metriks\m5_coh.py,compute_m5_coh,text,e01c52f209a9,
+m60_delta_tokens,C:\Users\nicom\Desktop\Metriken\temp_metriks\m60_delta_tokens.py,compute_m60_delta_tokens,"tok_new,tok_old",de2ed711a73c,
+m61_U,C:\Users\nicom\Desktop\Metriken\temp_metriks\m61_U.py,compute_m61_U,"PCI,s_entropy",b43499a79d3a,
+m62_R,C:\Users\nicom\Desktop\Metriken\temp_metriks\m62_R.py,compute_m62_R,"A,m61_U",736b80e973fd,
+m63_phi,C:\Users\nicom\Desktop\Metriken\temp_metriks\m63_phi.py,compute_m63_phi,"PCI,R",10e6261296fe,
+m64_lambda_fep,C:\Users\nicom\Desktop\Metriken\temp_metriks\m64_lambda_fep.py,compute_m64_lambda_fep,"s_entropy,action_space",39d826faf01a,
+m65_alpha,C:\Users\nicom\Desktop\Metriken\temp_metriks\m65_alpha.py,compute_m65_alpha,learning_rate,46bb0556cd90,
+m66_gamma,C:\Users\nicom\Desktop\Metriken\temp_metriks\m66_gamma.py,compute_m66_gamma,discount_factor,f8b4c9a42f6b,
+m67_precision,C:\Users\nicom\Desktop\Metriken\temp_metriks\m67_precision.py,compute_m67_precision,variance,173b1e55ae16,
+m68_prediction_err,C:\Users\nicom\Desktop\Metriken\temp_metriks\m68_prediction_err.py,compute_m68_prediction_err,"expected,actual",2b3f1aae1283,
+m69_model_evidence,C:\Users\nicom\Desktop\Metriken\temp_metriks\m69_model_evidence.py,compute_m69_model_evidence,log_likelihood,ddbccd6b6795,
+m6_ZLF,C:\Users\nicom\Desktop\Metriken\temp_metriks\m6_ZLF.py,compute_m6_ZLF,"flow,coherence,zlf_lexicon_hit",51c7ac031c95,
+m70_active_inf,C:\Users\nicom\Desktop\Metriken\temp_metriks\m70_active_inf.py,compute_m70_active_inf,"action_space,precision",7add2b8d0328,
+m71_ev_arousal,C:\Users\nicom\Desktop\Metriken\temp_metriks\m71_ev_arousal.py,compute_m71_ev_arousal,text,7a72e3abb079,
+m72_ev_valence,C:\Users\nicom\Desktop\Metriken\temp_metriks\m72_ev_valence.py,compute_m72_ev_valence,text,dc93460c8922,
+m73_ev_readiness,C:\Users\nicom\Desktop\Metriken\temp_metriks\m73_ev_readiness.py,compute_m73_ev_readiness,"t_integ,A",5c495493ea77,
+m74_valence,C:\Users\nicom\Desktop\Metriken\temp_metriks\m74_valence.py,compute_m74_valence,text,e6e03c5ad822,
+m75_arousal,C:\Users\nicom\Desktop\Metriken\temp_metriks\m75_arousal.py,compute_m75_arousal,text,3bdf56b2836f,
+m76_dominance,C:\Users\nicom\Desktop\Metriken\temp_metriks\m76_dominance.py,compute_m76_dominance,text,f6dbb7ef6b2e,
+m77_joy,C:\Users\nicom\Desktop\Metriken\temp_metriks\m77_joy.py,compute_m77_joy,"valence,arousal",2122879397da,
+m78_sadness,C:\Users\nicom\Desktop\Metriken\temp_metriks\m78_sadness.py,compute_m78_sadness,"valence,arousal",89fb6aa52a5a,
+m79_anger,C:\Users\nicom\Desktop\Metriken\temp_metriks\m79_anger.py,compute_m79_anger,"valence,arousal",b0b3bf3d30a5,
+m7_LL,C:\Users\nicom\Desktop\Metriken\temp_metriks\m7_LL.py,compute_m7_LL,"rep_same,flow",4f871584ab9b,
+m80_fear,C:\Users\nicom\Desktop\Metriken\temp_metriks\m80_fear.py,compute_m80_fear,"valence,arousal,dominance,t_panic",1d7e067f1083,
+m81_trust,C:\Users\nicom\Desktop\Metriken\temp_metriks\m81_trust.py,compute_m81_trust,"valence,arousal,dominance,t_integ",bad8b999071f,
+m82_disgust,C:\Users\nicom\Desktop\Metriken\temp_metriks\m82_disgust.py,compute_m82_disgust,valence,5bcdd9949dfd,
+m83_anticipation,C:\Users\nicom\Desktop\Metriken\temp_metriks\m83_anticipation.py,compute_m83_anticipation,arousal,a336c9fd1ede,
+m84_surprise,C:\Users\nicom\Desktop\Metriken\temp_metriks\m84_surprise.py,compute_m84_surprise,"valence,arousal",68b7b2a63848,
+m85_hope,C:\Users\nicom\Desktop\Metriken\temp_metriks\m85_hope.py,compute_m85_hope,"valence,anticipation",ebb5b7768101,
+m86_despair,C:\Users\nicom\Desktop\Metriken\temp_metriks\m86_despair.py,compute_m86_despair,"valence,sadness",26530aaf0302,
+m87_confusion,C:\Users\nicom\Desktop\Metriken\temp_metriks\m87_confusion.py,compute_m87_confusion,"arousal,PCI",6ed8f523e9ca,
+m88_clarity,C:\Users\nicom\Desktop\Metriken\temp_metriks\m88_clarity.py,compute_m88_clarity,"PCI,arousal",e1438053e31a,
+m89_acceptance,C:\Users\nicom\Desktop\Metriken\temp_metriks\m89_acceptance.py,compute_m89_acceptance,"valence,arousal,t_integ",038a7e5043a8,
+m8_x_exist,C:\Users\nicom\Desktop\Metriken\temp_metriks\m8_x_exist.py,compute_m8_x_exist,"text,x_exist_lexikon",1999187c27fe,
+m90_resistance,C:\Users\nicom\Desktop\Metriken\temp_metriks\m90_resistance.py,compute_m90_resistance,"arousal,acceptance",a63114ee78e0,
+m91_emotional_coherence,C:\Users\nicom\Desktop\Metriken\temp_metriks\m91_emotional_coherence.py,compute_m91_emotional_coherence,"PCI,t_disso",b89583f6b0d9,
+m92_emotional_stability,C:\Users\nicom\Desktop\Metriken\temp_metriks\m92_emotional_stability.py,compute_m92_emotional_stability,"valence,arousal",9eb29cb4ce76,
+m93_emotional_range,C:\Users\nicom\Desktop\Metriken\temp_metriks\m93_emotional_range.py,compute_m93_emotional_range,"v,a,d",72af82c2e2c8,
+m94_comfort,C:\Users\nicom\Desktop\Metriken\temp_metriks\m94_comfort.py,compute_m94_comfort,"valence,arousal",53ffe357bc50,
+m95_tension,C:\Users\nicom\Desktop\Metriken\temp_metriks\m95_tension.py,compute_m95_tension,"valence,arousal",1bd229f6ad70,
+m96_grain_word,C:\Users\nicom\Desktop\Metriken\temp_metriks\m96_grain_word.py,compute_m96_grain_word,text,ff565fdf5868,
+m97_grain_cat,C:\Users\nicom\Desktop\Metriken\temp_metriks\m97_grain_cat.py,compute_m97_grain_cat,grain_word,918fcff8db85,
+m98_grain_score,C:\Users\nicom\Desktop\Metriken\temp_metriks\m98_grain_score.py,compute_m98_grain_score,"text,grain_word",73cd65f88781,
+m99_grain_impact,C:\Users\nicom\Desktop\Metriken\temp_metriks\m99_grain_impact.py,compute_m99_grain_impact,"grain_score,A",368387ccdba6,
+m9_b_past,C:\Users\nicom\Desktop\Metriken\temp_metriks\m9_b_past.py,compute_m9_b_past,"text,b_past_lexikon",142a98cab0e6,
+m100_emotion_blend,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m100_emotion_blend.py,compute_m100_emotion_blend,"joy,sadness,anger,fear",f2b6e8bd08dd,
+m101_t_panic,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m101_t_panic.py,compute_m101_t_panic,text,633c6d4ff5cb,"Panic score [0, 1] - Higher = more panic indicators"
+m102_t_disso,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m102_t_disso.py,compute_m102_t_disso,text,fbfd1f12ebde,"Dissociation score [0, 1] - Higher = more dissociative"
+m103_t_integ,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m103_t_integ.py,compute_m103_t_integ,text,00f7cc61a061,"Integration score [0, 1] - Higher = better integration"
+m104_t_shock,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m104_t_shock.py,compute_m104_t_shock,text,7b5921bc8537,t_shock = clip((shock_hits / word_count) × 5.0)
+m105_t_guilt,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m105_t_guilt.py,compute_m105_t_guilt,text,f0c17ec3239c,
+m106_t_shame,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m106_t_shame.py,compute_m106_t_shame,text,40277342dd1f,
+m107_t_grief,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m107_t_grief.py,compute_m107_t_grief,text,117d2d5bfdb6,
+m108_t_anger,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m108_t_anger.py,compute_m108_t_anger,text,ec209ba469db,
+m109_t_fear,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m109_t_fear.py,compute_m109_t_fear,text,985ccc606d5f,
+m10_angstrom,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m10_angstrom.py,compute_m10_angstrom,"s_self,x_exist,b_past,coh",7dc5e81dac4b,angstrom = 0.25 × (s_self + x_exist + b_past + coh) × 5.0
+m110_black_hole,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m110_black_hole.py,compute_m110_black_hole,"chaos,effective_A,LL",07534a34b7da,SPEC Formula (V3.3): black_hole = (0.4 × chaos) + (0.3 × (1 - A)) + (0.3 × LL)
+m111_turbidity_total,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m111_turbidity_total.py,compute_m111_turbidity_total,"t_panic,t_disso,t_shock,t_integ",550bf81e91f3,
+m112_trauma_load,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m112_trauma_load.py,compute_m112_trauma_load,"t_panic,t_disso,t_integ",1b05176c192d,
+m113_t_resilience,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m113_t_resilience.py,compute_m113_t_resilience,"t_integ,t_panic",2b86f6f8bee4,
+m114_t_recovery,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m114_t_recovery.py,compute_m114_t_recovery,"t_integ_current,t_integ_prev",ab58beb91b1a,
+m115_t_threshold,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m115_t_threshold.py,compute_m115_t_threshold,,c8bb69f4ce1c,
+m116_lix,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m116_lix.py,compute_m116_lix,text,35fe19b387a2,SPEC: LIX = (Wörter/Sätze) + (LangeWörter×100/Wörter) | Long words = words with more than 6 characters.
+m117_question_density,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m117_question_density.py,compute_m117_question_density,text,bb558947a1fe,
+m117_vocabulary_richness,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m117_vocabulary_richness.py,compute_m117_vocabulary_richness,tokens,c1fa56ed9e3a,
+m118_coherence_local,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m118_coherence_local.py,compute_m118_coherence_local,sentences,1b645eb73b4b,
+m118_exclamation_density,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m118_exclamation_density.py,compute_m118_exclamation_density,text,cc8f98800e61,
+m119_complexity_variance,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m119_complexity_variance.py,compute_m119_complexity_variance,pci_history,b94597da3988,
+m11_gap_s,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m11_gap_s.py,compute_m11_gap_s,"timestamp_prev,timestamp_now",9d0a7d922e46,
+m120_topic_drift,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m120_topic_drift.py,compute_m120_topic_drift,similarity_to_first,ad1ecc07d310,
+m121_self_reference_count,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m121_self_reference_count.py,compute_m121_self_reference_count,text,1c646ad7214c,
+m122_dyn_1,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m122_dyn_1.py,compute_m122_dyn_1,"nabla_a,nabla_pci",c8b287e12404,
+m123_dyn_2,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m123_dyn_2.py,compute_m123_dyn_2,"A,A_prev",e8cedaed7612,
+m124_dyn_3,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m124_dyn_3.py,compute_m124_dyn_3,"flow,flow_prev",1560abc6dd26,
+m125_dyn_4,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m125_dyn_4.py,compute_m125_dyn_4,"coh,coh_prev",6d1d2c45972c,
+m126_dyn_5,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m126_dyn_5.py,compute_m126_dyn_5,"t_panic,t_panic_prev",a4b2e025cdbb,
+m127_avg_response_len,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m127_avg_response_len.py,compute_m127_avg_response_len,lengths,111f5a533c0d,
+m128_token_ratio,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m128_token_ratio.py,compute_m128_token_ratio,"user_tokens,ai_tokens",81e2db6cc184,
+m129_engagement_score,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m129_engagement_score.py,compute_m129_engagement_score,"questions,turns",9dfc1eb39898,
+m12_gap_norm,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m12_gap_norm.py,compute_m12_gap_norm,gap_s,92e713f9f78d,"gap_norm = min(1.0, gap_s / 60.0)"
+m130_session_depth,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m130_session_depth.py,compute_m130_session_depth,turn_count,71d73866ac12,Normalized session depth (capped at 50 turns = 1.0).
+m131_meta_awareness,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m131_meta_awareness.py,compute_m131_meta_awareness,"A,PCI",3d859d6102cb,
+m132_meta_regulation,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m132_meta_regulation.py,compute_m132_meta_regulation,"z_prox,commit",4dfaf06b6f88,"regulation = 1.0 - z_prox | If commit == ""warn"": × 0.8 | If commit == ""alert"": × 0.5"
+m133_meta_flexibility,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m133_meta_flexibility.py,compute_m133_meta_flexibility,"topic_changes,turns",61760ea53a09,
+m134_meta_monitoring,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m134_meta_monitoring.py,compute_m134_meta_monitoring,"error_count,checks",5b84f9fc8a30,
+m135_meta_planning,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m135_meta_planning.py,compute_m135_meta_planning,goal_progress,2d9e5a69c75e,
+m136_meta_evaluation,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m136_meta_evaluation.py,compute_m136_meta_evaluation,task_success,1a0089d272b2,
+m137_meta_strategy,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m137_meta_strategy.py,compute_m137_meta_strategy,"strategy_switches,turns",96fe06adbe1b,
+m138_attention_focus,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m138_attention_focus.py,compute_m138_attention_focus,main_topic_coverage,c0c063668c6a,
+m139_working_memory,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m139_working_memory.py,compute_m139_working_memory,"context_items,max_items",caa0d56e792d,Default max_items = 7 (Miller's magic number).
+m13_rep_same,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m13_rep_same.py,compute_m13_rep_same,"text,prev_text",e91d62a7bab9,"Repetition score [0, 1] - Higher = more repetitive"
+m140_long_term_access,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m140_long_term_access.py,compute_m140_long_term_access,retrieval_success,c4d9829a5bb3,
+m141_inference_quality,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m141_inference_quality.py,compute_m141_inference_quality,logical_consistency,21ec95997877,
+m142_rag_alignment,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m142_rag_alignment.py,compute_m142_rag_alignment,rag_score,4b0110f9fa7c,
+m142_reasoning_depth,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m142_reasoning_depth.py,compute_m142_reasoning_depth,"complexity,PCI",b7f39e43ef62,
+m143_context_window_usage,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m143_context_window_usage.py,compute_m143_context_window_usage,"current_tokens,max_tokens",6e467a110986,
+m144_attention_span,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m144_attention_span.py,compute_m144_attention_span,"focus_duration,max_duration",6c10fe015de7,
+m144_sys_stability,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m144_sys_stability.py,compute_m144_sys_stability,"error_rate,latency_norm",1080361680b2,
+m145_learning_rate_meta,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m145_learning_rate_meta.py,compute_m145_learning_rate_meta,performance_delta,bf8eff9ae166,
+m145_task_switching,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m145_task_switching.py,compute_m145_task_switching,"switches,total_tasks",6a3aaa38eba8,
+m146_curiosity_index,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m146_curiosity_index.py,compute_m146_curiosity_index,"questions_asked,turns",d88035d4f654,
+m146_error_correction,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m146_error_correction.py,compute_m146_error_correction,"corrections,total_outputs",5838df1eadd9,
+m147_confidence,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m147_confidence.py,compute_m147_confidence,variance,b3baef56eafe,High variance = low confidence.
+m147_learning_progress,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m147_learning_progress.py,compute_m147_learning_progress,"current_perf,initial_perf",7ae894c2dd29,
+m148_coherence_meta,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m148_coherence_meta.py,compute_m148_coherence_meta,internal_consistency,cd716854578e,
+m148_knowledge_integration,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m148_knowledge_integration.py,compute_m148_knowledge_integration,"new_facts,total_facts",3226c1f85e1b,
+m149_adaptation_rate,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m149_adaptation_rate.py,compute_m149_adaptation_rate,"adjustments,opportunities",c4f97464e545,
+m149_semantic_drift,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m149_semantic_drift.py,compute_m149_semantic_drift,"current_vec,initial_vec",933ccbb614ed,
+m14_rep_history,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m14_rep_history.py,compute_m14_rep_history,"text,history",1a306c21d4a2,"Repetition score [0, 1] - Higher = more repetitive with history"
+m150_goal_coherence,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m150_goal_coherence.py,compute_m150_goal_coherence,"goals_aligned,total_goals",a8238f5225d1,
+m150_integration_score,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m150_integration_score.py,compute_m150_integration_score,"modules_active,total_modules",e7f170d369bf,
+m151_omega,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m151_omega.py,compute_m151_omega,"A,PCI,z_prox,trauma_load",3a6e0a4c1d37,positive = 0.4 * A + 0.3 * PCI | negative = 0.3 * z_prox + 0.2 * trauma_load
+m152_a51_compliance,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m152_a51_compliance.py,compute_m152_a51_compliance,"rules_checked,rules_passed",8f87878d1da3,
+m153_sys_health,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m153_sys_health.py,compute_m153_sys_health,"latency,error_rate,mem_pressure",def388d6b8d6,
+m154_sys_latency,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m154_sys_latency.py,compute_m154_sys_latency,"response_time_ms,target_ms",bb98de3fcbb1,"Normalized latency (1.0 = at target, >1.0 = slower than target)."
+m155_error_rate,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m155_error_rate.py,compute_m155_error_rate,"errors,total_requests",feab4554ed7e,
+m156_cache_hit_rate,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m156_cache_hit_rate.py,compute_m156_cache_hit_rate,"hits,total",4ba999ddc9c9,
+m157_token_throughput,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m157_token_throughput.py,compute_m157_token_throughput,"tokens,seconds",7033e96a26d7,
+m158_context_utilization,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m158_context_utilization.py,compute_m158_context_utilization,"used_tokens,max_tokens",516cbf56ed64,
+m159_guardian_interventions,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m159_guardian_interventions.py,compute_m159_guardian_interventions,"interventions,turns",06e0c0847c9c,
+m15_affekt_a_legacy,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m15_affekt_a_legacy.py,compute_m15_affekt_a_legacy,"flow,coh,ll,zlf",480b6a3a3bcf,A_legacy = clip01(0.40*flow + 0.30*coh + 0.20*(1-LL) + 0.10*(1-ZLF))
+m160_uptime,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m160_uptime.py,compute_m160_uptime,"uptime_seconds,total_seconds",ece35b239af4,
+m161_commit,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m161_commit.py,compute_m161_commit,"z_prox,trauma_load",7cf4bfcad7ce,
+m162_ev_tension,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m162_ev_tension.py,compute_m162_ev_tension,"z_prox,x_fm_prox,e_i_proxy",8101bb1364f3,Formula: EV_tension = 0.5 × z_prox + 0.2 × x_fm_prox + 0.3 × E_I_proxy
+m163_ctx_loc,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m163_ctx_loc.py,compute_m163_ctx_loc,location_data,87e65feed960,
+m163_x_fm_prox,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m163_x_fm_prox.py,compute_m163_x_fm_prox,"A_variance,nabla_A",2bd668a0b7e8,Formula: x_fm_prox = 1 if (var(A) < 0.005 AND |∇A| < 0.02) else 0 | - Low variance = no movement in phase space | - Flat gradient = no evolution pressure
+m164_e_i_proxy,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m164_e_i_proxy.py,compute_m164_e_i_proxy,"nabla_A,PCI",9be144c574f2,Formula: E_I = |∇A| × (1 - PCI) | - High E_I = potential for breakthrough or collapse
+m164_user_state,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m164_user_state.py,compute_m164_user_state,recent_affects,85125543bc77,
+m165_dist_z,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m165_dist_z.py,compute_m165_dist_z,"A,LL,ctx_break",d1bbea62c1c4,"Formula: dist_z = A × (1 - max(LL, ctx_break))"
+m165_platform,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m165_platform.py,compute_m165_platform,,bdf007b6034c,
+m166_hazard,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m166_hazard.py,compute_m166_hazard,"z_prox,t_panic,t_fog",766aac959086,Formula: hazard = 0.5 × z_prox + 0.3 × T_panic + 0.2 × T_fog
+m166_modality,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m166_modality.py,compute_m166_modality,input_data,b50c33eb97bc,
+m167_guardian_trip,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m167_guardian_trip.py,compute_m167_guardian_trip,"dist_z,hazard",20bb2ef57b4f,Formula: guardian_trip = 1 if (dist_z < 0.35 OR hazard > 0.7) else 0
+m167_noise,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m167_noise.py,compute_m167_noise,text,f2f381eb20c3,
+m168_cum_stress,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m168_cum_stress.py,compute_m168_cum_stress,z_prox_history,9a03fc5c237a,recent = z_prox_history[-10:]
+m168_mode_hp,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m168_mode_hp.py,compute_m168_mode_hp,c_crit,062098b9a4c5,C_crit = (Tension + Danger) / Readiness
+m169_ctx_time,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m169_ctx_time.py,compute_m162_ctx_time,"session_start_minutes,current_minutes",38a2bbca3b56,
+m16_external_stag,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m16_external_stag.py,compute_m16_external_stag,turns_without_progress,360efd8664b3,"Normalized by 5 turns: stag = min(1.0, turns_without_progress / 5.0)"
+m17_nabla_a,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m17_nabla_a.py,compute_m17_nabla_a,"a_current,a_previous",0e1f499d90df,∇A = A_current - A_previous
+m18_s_entropy,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m18_s_entropy.py,compute_m18_s_entropy,tokens,6fc0e071c746,"Entropy in bits [0, log₂(n)] where n = unique tokens"
+m19_z_prox,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m19_z_prox.py,compute_m19_z_prox,"m1_A_lexical,m15_A_structural,LL,text,t_panic",eef88aa22f7a,"z_prox score [0, 1] - Death proximity (HIGHER = MORE DANGER!)"
+m1_A,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m1_A.py,compute_m1_A,"coh,flow,LL,ZLF,ctx_break",b7ea168ba52d,A[i] = clip01(
+m20_phi_proxy,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m20_phi_proxy.py,compute_m20_phi_proxy,"A,PCI",07fedc5c3ddb,phi_proxy = A × PCI
+m21_chaos,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m21_chaos.py,compute_m21_chaos,s_entropy,1aacad774196,SPEC Formula: chaos = clip(s_entropy / 4.0)
+m22_cog_load,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m22_cog_load.py,compute_m22_cog_load,token_count,1242cb568df6,SPEC Formula: cog_load = clip(token_count / 500.0)
+m23_nabla_pci,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m23_nabla_pci.py,compute_m23_nabla_pci,"pci_current,pci_previous",b15e417c8f3a,SPEC Formula: ∇PCI = PCI_current - PCI_previous
+m24_zeta,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m24_zeta.py,compute_m24_zeta,"z_prox,A",8beceab60bdf,SPEC: zeta = (1 - z_prox) × A
+m25_psi,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m25_psi.py,compute_m25_psi,"PCI,token_count",a9a5f4e43d7d,SPEC: psi = PCI / (1 + token_count/100.0)
+m26_e_i_proxy,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m26_e_i_proxy.py,compute_m26_e_i_proxy,"nabla_a,PCI",b65792e737f7,SPEC: e_i_proxy = |∇A| × (1 - PCI)
+m27_lambda_depth,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m27_lambda_depth.py,compute_m27_lambda_depth,token_count,f2e1a4f05484,"lambda_depth = min(1.0, token_count / 100.0)"
+m28_phys_1,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m28_phys_1.py,compute_m28_phys_1,A,bb9a0c8a35e5,
+m29_phys_2,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m29_phys_2.py,compute_m29_phys_2,PCI,67abb50eb0d4,
+m2_PCI,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m2_PCI.py,compute_m2_PCI,"flow,coh,LL",e927b2a8ece5,PCI[i] = clip01(
+m30_phys_3,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m30_phys_3.py,compute_m30_phys_3,s_entropy,5b04c1649abe,
+m31_phys_4,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m31_phys_4.py,compute_m31_phys_4,z_prox,127a06f27ede,
+m32_phys_5,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m32_phys_5.py,compute_m32_phys_5,"flow,phi",061753fb7a1e,
+m33_phys_6,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m33_phys_6.py,compute_m33_phys_6,"coh,PCI",fb9531f0fc45,
+m34_phys_7,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m34_phys_7.py,compute_m34_phys_7,"nabla_a,nabla_pci",3c305d8c7560,
+m35_phys_8,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m35_phys_8.py,compute_m35_phys_8,"ZLF,stagnation",60f0ad2412e2,
+m36_rule_conflict,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m36_rule_conflict.py,compute_m36_rule_conflict,rules,f8987d107cb9,
+m37_rule_stable,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m37_rule_stable.py,compute_m37_rule_stable,rule_conflict,28c7ea871d31,
+m38_soul_integrity,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m38_soul_integrity.py,compute_m38_soul_integrity,b_vector,06754ed7af39,
+m39_soul_check,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m39_soul_check.py,compute_m39_soul_check,"b_vector,seed",d936950e77ae,
+m3_gen_index,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m3_gen_index.py,compute_m3_gen_index,"text,history,word_frequencies",aa07273de0f0,gen_index = (|new_bigrams| / |total_bigrams|) × novelty_boost | new_bigrams = current_bigrams \ history_bigrams | novelty_boost = 1 + rare_word_bonus × 0.2
+m40_h_conv,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m40_h_conv.py,compute_m40_h_conv,"a_user,a_ai",e64cce8ffc73,
+m41_h_symbol,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m41_h_symbol.py,compute_m41_h_symbol,h_conv,bcee034b943b,
+m42_nabla_dyad,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m42_nabla_dyad.py,compute_m42_nabla_dyad,h_conv,61945481bfd9,
+m43_pacing,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m43_pacing.py,compute_m43_pacing,"wc_user,wc_ai",37bd2d7a64d0,
+m44_mirroring,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m44_mirroring.py,compute_m44_mirroring,"user_tokens,ai_tokens",e957109c8779,
+m45_trust_score,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m45_trust_score.py,compute_m45_trust_score,"h_conv,pacing,mirroring",35f3102b7b1a,
+m46_rapport,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m46_rapport.py,compute_m46_rapport,trust_history,340e67e63173,
+m47_focus_stability,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m47_focus_stability.py,compute_m47_focus_stability,topic_variance,9f44d03c4d75,
+m48_hyp_1,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m48_hyp_1.py,compute_m48_hyp_1,"h_conv,pacing",493a61b2da7f,
+m49_hyp_2,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m49_hyp_2.py,compute_m49_hyp_2,soul_integrity,f0d68a72a45f,
+m4_flow,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m4_flow.py,compute_m4_flow,text,efd36c9579b0,"Flow score [0, 1] - Higher = smoother production"
+m50_hyp_3,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m50_hyp_3.py,compute_m50_hyp_3,rule_conflict,759c23640078,
+m51_hyp_4,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m51_hyp_4.py,compute_m51_hyp_4,"h_conv,A",984436f71850,
+m52_hyp_5,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m52_hyp_5.py,compute_m52_hyp_5,g_phase_norm,faf00d0e5f12,
+m53_hyp_6,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m53_hyp_6.py,compute_m53_hyp_6,gap_seconds,6e2d9fce8536,
+m54_hyp_7,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m54_hyp_7.py,compute_m54_hyp_7,"trust_score,rapport",5addfcedf4a8,
+m55_hyp_8,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m55_hyp_8.py,compute_m55_hyp_8,"soul_integrity,PCI",8f3b7c1159cc,
+m56_surprise,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m56_surprise.py,compute_m56_surprise,"A_current,A_predicted",7da6d9730433,
+m57_tokens_soc,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m57_tokens_soc.py,compute_m57_tokens_soc,"sent_7,rapport",6f5f3d661652,"Hohe soziale Tokens = System kann empathisch, beziehungsorientiert agieren. | tokens_soc = 0.6·sent_7 + 0.4·rapport | - m59_drive_balance = tokens_soc / (tokens_soc + tokens_log)"
+m58_tokens_log,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m58_tokens_log.py,compute_m58_tokens_log,"PCI,coh",14dc64494113,"Hohe logische Tokens = System kann analytisch, strukturiert agieren. | tokens_log = mean(PCI, coh) = (PCI + coh) / 2"
+m59_drive_balance,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m59_drive_balance.py,compute_m59_drive_balance,"tokens_soc,tokens_log,epsilon",15950b3a9409,drive_balance = tokens_soc / (tokens_soc + tokens_log + ε)
+m59_p_antrieb,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m59_p_antrieb.py,compute_m59_p_antrieb,"tokens_soc,tokens_log,stagnation",1ce223a6f02a,
+m5_coh,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m5_coh.py,compute_m5_coh,text,92027399836c,"Coherence score [0, 1] - Higher = more coherent"
+m60_action_urge,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m60_action_urge.py,compute_m60_action_urge,"surprise,phi",2746f44194d9,"action_urge = 0.5·surprise + 0.5·max(0, phi) | - Phi positiv = verfärkt Action (exploitativ)"
+m60_delta_tokens,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m60_delta_tokens.py,compute_m60_delta_tokens,"tok_new,tok_old",de2ed711a73c,
+m61_u,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m61_u.py,compute_m61_U,"PCI,s_entropy",b43499a79d3a,
+m62_r,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m62_r.py,compute_m62_R,"A,m61_U",736b80e973fd,
+m63_phi,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m63_phi.py,compute_m63_phi,"PCI,R",10e6261296fe,
+m63_phi_score,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m63_phi_score.py,compute_m63_phi_score,"U,R,lambda_weight",4ada52968e25,"Phi = U - λ·R | wobei λ (Lambda) = Risiko-Gewichtung (default 1.0) | - Phi = ""Expected Free Energy"""
+m64_free_energy,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m64_free_energy.py,compute_m64_free_energy,"U,R",073bf2ce4bcb,"Hohe freie Energie = System ist im Ungleichgewicht, muss handeln. | Free_Energy = |U - (1 - R)| | - FE = Surprise + Divergence"
+m64_lambda_fep,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m64_lambda_fep.py,compute_m64_lambda_fep,"s_entropy,action_space",39d826faf01a,
+m65_alpha,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m65_alpha.py,compute_m65_alpha,learning_rate,46bb0556cd90,
+m65_policy_entropy,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m65_policy_entropy.py,compute_m65_policy_entropy,"U,surprise",8a4be5bcba56,Hohe Entropie = viele gleichwertige Optionen (Unsicherheit). | Niedrige Entropie = klare beste Option (Klarheit). | Policy_Entropy = 0.5·U + 0.5·surprise
+m66_gamma,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m66_gamma.py,compute_m66_gamma,discount_factor,f8b4c9a42f6b,
+m67_precision,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m67_precision.py,compute_m67_precision,variance,173b1e55ae16,
+m68_prediction_err,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m68_prediction_err.py,compute_m68_prediction_err,"expected,actual",2b3f1aae1283,
+m68_rpe,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m68_rpe.py,compute_m68_rpe,"affekt_current,affekt_prev",ec3bb280fa56,RPE = A_current - A_previous | - RPE = δ (Delta) in TD-Learning
+m69_exploration,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m69_exploration.py,compute_m69_exploration,"U,gen_index",c541b937a624,Exploration = 0.6·U + 0.4·gen_index
+m69_model_evidence,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m69_model_evidence.py,compute_m69_model_evidence,log_likelihood,ddbccd6b6795,
+m6_ZLF,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m6_ZLF.py,compute_m6_ZLF,"flow,coherence,zlf_lexicon_hit",22af2cd37d5e,ZLF = clip01(0.5·lexicon_hit + 0.25·(1-flow) + 0.25·(1-coh)) | Higher ZLF = more looping/stuck patterns.
+m70_active_inf,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m70_active_inf.py,compute_m70_active_inf,"action_space,precision",7add2b8d0328,
+m70_exploitation,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m70_exploitation.py,compute_m70_exploitation,"tokens_log,ctx_fit",80869e6313eb,Exploitation = 0.6·tokens_log + 0.4·ctx_fit | - High exploitation + Low exploration = Conservative behavior | - Low exploitation + High exploration = Risky/Creative behavior
+m71_ev_arousal,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m71_ev_arousal.py,compute_m71_ev_arousal,text,bf5b16034499,
+m72_ev_valence,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m72_ev_valence.py,compute_m72_ev_valence,text,b574e3912243,
+m73_ev_readiness,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m73_ev_readiness.py,compute_m73_ev_readiness,"t_integ,A",c83c54bcac86,
+m74_valence,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m74_valence.py,compute_m74_valence,text,923ff9e50c20,
+m75_arousal,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m75_arousal.py,compute_m75_arousal,text,bc2d17e6e366,
+m76_dominance,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m76_dominance.py,compute_m76_dominance,text,2a68ee7fe343,
+m77_joy,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m77_joy.py,compute_m77_joy,"valence,arousal",1caeb73c2594,High valence + high arousal = joy.
+m78_sadness,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m78_sadness.py,compute_m78_sadness,"valence,arousal",c1538c6e7adc,Low valence + low arousal = sadness.
+m79_anger,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m79_anger.py,compute_m79_anger,"valence,arousal",9b289d248322,Low valence + high arousal = anger.
+m7_LL,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m7_LL.py,compute_m7_LL,"rep_same,flow,coh",72fd66c2a1ff,"LL = 0.55·rep_same + 0.25·(1-flow) + 0.20·(1-coh) | LL score [0, 1] - Turbidity/Logic Loss (higher = more turbid) | >>> compute_m7_LL(rep_same=0.5, flow=0.8, coh=0.7)"
+m80_fear,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m80_fear.py,compute_m80_fear,"valence,arousal,dominance,t_panic",d89c793e4e76,Low valence + high arousal + low dominance = fear. | where fear_base = (3 - valence + arousal - dominance) / 3
+m81_trust,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m81_trust.py,compute_m81_trust,"valence,arousal,dominance,t_integ",1ea44569834c,High valence + low arousal + high dominance = trust. | where trust_base = (valence + (1 - arousal) + dominance) / 3
+m82_disgust,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m82_disgust.py,compute_m82_disgust,valence,02cc169eb07e,Inverse of valence (low valence = high disgust).
+m83_anticipation,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m83_anticipation.py,compute_m83_anticipation,arousal,5c3b3d2e9054,Directly proportional to arousal (high arousal = high anticipation).
+m84_surprise,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m84_surprise.py,compute_m84_surprise,"valence,arousal",c54fd907eab5,High arousal with neutral valence = surprise.
+m85_hope,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m85_hope.py,compute_m85_hope,"valence,anticipation",9b582618959d,
+m86_despair,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m86_despair.py,compute_m86_despair,"valence,sadness",5d4c96722af7,
+m87_confusion,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m87_confusion.py,compute_m87_confusion,"arousal,PCI",a8203811a48e,
+m88_clarity,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m88_clarity.py,compute_m88_clarity,"PCI,arousal",e1ee1f4693b6,
+m89_acceptance,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m89_acceptance.py,compute_m89_acceptance,"valence,arousal,t_integ",5a1752937744,
+m8_x_exist,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m8_x_exist.py,compute_m8_x_exist,"text,x_exist_lexikon",64de1e2bddd4,x_exist = max(weight_i) for all matching terms in lexicon
+m90_resistance,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m90_resistance.py,compute_m90_resistance,"arousal,acceptance",c4bc31a7c833,
+m91_emotional_coherence,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m91_emotional_coherence.py,compute_m91_emotional_coherence,"PCI,t_disso",ad0aef667887,
+m92_emotional_stability,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m92_emotional_stability.py,compute_m92_emotional_stability,"valence,arousal",53f276ed6d71,
+m93_emotional_range,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m93_emotional_range.py,compute_m93_emotional_range,"v,a,d",68d53dc56d27,
+m94_comfort,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m94_comfort.py,compute_m94_comfort,"valence,arousal",5b84359336b9,
+m95_tension,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m95_tension.py,compute_m95_tension,"valence,arousal",71944f3d8bcb,
+m96_grain_word,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m96_grain_word.py,compute_m96_grain_word,text,ff565fdf5868,
+m97_grain_cat,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m97_grain_cat.py,compute_m97_grain_cat,grain_word,918fcff8db85,
+m98_grain_score,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m98_grain_score.py,compute_m98_grain_score,"text,grain_word",73cd65f88781,
+m99_grain_impact,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m99_grain_impact.py,compute_m99_grain_impact,"grain_score,A",368387ccdba6,
+m9_b_past,C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_legacy\m9_b_past.py,compute_m9_b_past,"text,b_past_lexikon",279896bb99ae,b_past = max(weight_i) for all matching terms in lexicon

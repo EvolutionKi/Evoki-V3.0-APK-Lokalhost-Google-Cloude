@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:55:49 MESZ
+Speaker: ai
+
+Du hast Python erfolgreich gestartet! Das schwarze Fenster ist die Python-Konsole. Hier kannst du Python-Code eingeben und ausführen. Du kannst zum Beispiel "print('Hallo Welt')" eintippen und Enter drücken, um "Hallo Welt" auf dem Bildschirm anzuzeigen. Wenn du Python-Dateien (mit der Endung .py) öffnen möchtest, musst du das über die Konsole oder eine Entwicklungsumgebung (IDE) machen.

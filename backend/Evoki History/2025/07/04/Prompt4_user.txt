@@ -1,0 +1,4 @@
+Timestamp: 04.07.2025, 00:03:59 MESZ
+Speaker: user
+
+naja man könnte ja eigentlich dann diese Webadresse quasi so programmieren dass halt meine App direkt auf diese Webseite zugreift und das Audio quasi direkt bekommt was von meiner Uhr gesendet wird

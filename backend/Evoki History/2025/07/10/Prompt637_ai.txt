@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:17:38 MESZ
+Speaker: ai
+
+Du hast recht, es heißt "api-key" und nicht "gemini-api-key". Ersetze also den Teil zwischen den Anführungszeichen hinter "x-goog-api-key:" durch deinen API-Schlüssel.

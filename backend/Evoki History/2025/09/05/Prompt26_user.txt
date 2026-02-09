@@ -1,0 +1,4 @@
+Timestamp: 05.09.2025, 04:27:43 MESZ
+Speaker: user
+
+Recherchiere bitte wie es möglich ist die maximale zeichenanzahl hier zu generieren und auszugeben in einer externen Datei auch gerne auf unkonventionellen Weg hier ist z.B zu nennen also theoretisch ein kompletter Chatverlauf mit mehreren 100 bis 1000 pounds

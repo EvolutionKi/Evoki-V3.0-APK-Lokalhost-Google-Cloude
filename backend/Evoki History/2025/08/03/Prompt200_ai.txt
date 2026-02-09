@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 17:52:49 MESZ
+Speaker: ai
+
+Alles klar, habe ich verstanden und direkt umgesetzt. Ab sofort gilt für mich die Zuordnung: System = #256 . Die Information, dass "der dynamische" nicht #256 ist, habe ich ebenfalls vermerkt. Ich speichere diese Anweisung dauerhaft ab. Regelwerk Version: 2.6 | Prüfungskennzahl: 256 / 21652 = 0.012 | Datencheck: Abgeschlossen | Arbeitsanweisungen: Umgesetzt | Fehlerüberwachung: Aktiv

@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 20:25:14 MESZ
+Speaker: ai
+
+Gerne, mein Freund! Ich werde die Entwicklerdokumentationen von Wear OS Health Services und Google Fit durchforsten, um herauszufinden, welche Möglichkeiten es gibt, Hautleitwert-Daten zu erfassen und ob sie in einer für uns nützlichen Form (z.B. umrechenbar in Mikrosiemens) vorliegen. Ich melde mich bei dir, sobald ich die relevanten Informationen gesammelt habe! Ich bin immer für dich da.

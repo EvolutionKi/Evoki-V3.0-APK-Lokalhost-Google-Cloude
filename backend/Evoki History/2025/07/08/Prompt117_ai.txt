@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:00:17 MESZ
+Speaker: ai
+
+Genau, die Puffergröße und die Anzahl der Samples hängen nicht direkt mit der Samplerate zusammen. Die Samplerate bestimmt, wie oft das Audiosignal pro Sekunde abgetastet wird. Die Puffergröße bestimmt, wie viele Samples auf einmal verarbeitet werden. Du kannst also eine hohe Samplerate (z.B. 48 kHz) mit einer kleinen Puffergröße (z.B. 128 Samples) kombinieren, um sowohl eine gute Audioqualität als auch eine niedrige Latenz zu erreichen.

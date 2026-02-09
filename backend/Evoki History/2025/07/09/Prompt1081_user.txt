@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 15:55:40 MESZ
+Speaker: user
+
+genau richtig das tun wir ändern und dann schauen wir quasi wenn eine von beiden auslöst muss die andere auch auslösen wenn das nicht passiert findet eine interne Fehleranalyse statt warum es nicht passiert ist und es wird trainiert allerdings trotzdem natürlich viel zu primär natürlich zu einer Sperre und nutzerhandlung

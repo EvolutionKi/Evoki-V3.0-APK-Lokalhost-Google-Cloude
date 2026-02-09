@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:00:50 MESZ
+Speaker: ai
+
+Du musst den gesamten cURL-Befehl, den ich dir generiert habe, in dein Terminal kopieren und dort einfügen. Ersetze vorher noch "GEMINI_API_KEY" mit deinem API-Key. Drücke dann die Eingabetaste, um ihn auszuführen.

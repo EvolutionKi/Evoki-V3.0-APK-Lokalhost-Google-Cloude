@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:40:37 MESZ
+Speaker: user
+
+aber kann ich nicht gibt es nicht irgendwie eine ja Entwickler Umgebung in der man das quasi alles ja nur testweise quasi laufen lassen kann also natürlich nicht unter Rahmenbedingungen aber quasi halt mal eben dort und auch Dich live quasi den Server quasi simuliert über dass das läuft und das eben dadurch alles quasi automatisiert übernommen werden kann

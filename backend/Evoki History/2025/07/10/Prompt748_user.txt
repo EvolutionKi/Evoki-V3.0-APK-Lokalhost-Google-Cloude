@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 19:15:22 MESZ
+Speaker: user
+
+könnte man auch irgendwie ein Eingabefenster extra machen programmieren oder so

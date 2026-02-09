@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 15:36:31 MESZ
+Speaker: user
+
+genau aber naja wir haben es ich weiß nicht was da jetzt als erstes genau alles geschrieben worden ist weil vielleicht kannst du den Chat jetzt auch genau noch mal ein bisschen hinten lesen also diese ja ein bisschen kompliziert die Kommunikation da bin ich lieber zu dir gewechselt also ich habe den Schlüssel jetzt implementiert und das funktioniert soweit sind wir

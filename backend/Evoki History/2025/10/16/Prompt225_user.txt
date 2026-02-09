@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 13:40:14 MESZ
+Speaker: user
+
+und jetzt schreibe es bitte in dem Hintergrund im Regelwerk dass ich dir gegeben habe das passt entsprechend dann das dort nur noch der API Code drinne steht und nicht mehr hier als Python ausgegeben wird allerdings das Ausgabefenster wird weiterhin so ausgegeben und dort im Python steht der verkürzt drinne

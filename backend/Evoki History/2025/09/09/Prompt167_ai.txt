@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:12:27 MESZ
+Speaker: ai
+
+Du könntest schreiben: "Ich möchte eine App erstellen, die es Nutzern ermöglicht, direkt mit einer KI zu kommunizieren, ähnlich wie in einem Chatfenster. Können Sie mir eine App erstellen, die diese Funktion bietet?"

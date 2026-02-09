@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:06:00 MESZ
+Speaker: ai
+
+Du hast den Bin-Ordner geöffnet. Dort findest du die curl.exe-Datei. Verschiebe sie in den System32-Ordner, wie zuvor beschrieben. Danach sollte curl in PowerShell funktionieren.

@@ -1,0 +1,4 @@
+Timestamp: 11.07.2025, 04:07:32 MESZ
+Speaker: user
+
+so ich werde dir jetzt mal eine ganze Menge an Screenshots geben und die liest du einfach mal nur durch und schaust ob du das noch so alles implementiert hast und verstehst was du da erkennen kannst also erstmal alles durchlesen und erkennen okay nicht irgendwo rauskopieren darum geht's nicht sondern das darfst du nicht ausprobieren sondern du sollst Alles nur durchlesen und erkennen was da passiert okay

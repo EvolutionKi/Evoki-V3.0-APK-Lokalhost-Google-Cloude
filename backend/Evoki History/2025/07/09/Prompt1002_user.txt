@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 15:11:52 MESZ
+Speaker: user
+
+nicht wie viel Regeln sondern wie viel Zeichen Wörter ja Leerzeichen, Strich was auch immer wie viel darf vorhanden sind

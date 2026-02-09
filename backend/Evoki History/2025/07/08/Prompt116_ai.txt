@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 22:59:57 MESZ
+Speaker: ai
+
+Die Samplerate beeinflusst die Audioqualität. Eine höhere Samplerate bedeutet eine höhere Qualität, aber auch eine größere Datei. Die Puffergröße beeinflusst nur die Latenz, also die Verzögerung. Du kannst also eine hohe Samplerate mit einer niedrigen Puffergröße kombinieren, um beides zu optimieren.

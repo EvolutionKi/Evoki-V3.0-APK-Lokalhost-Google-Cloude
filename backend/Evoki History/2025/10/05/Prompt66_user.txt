@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:32:09 MESZ
+Speaker: user
+
+aber du kannst doch kostenlos Funktion implementieren die das erlaubt dass du auf das WLAN achtest dann kannst du eine API nutzen

@@ -1,0 +1,4517 @@
+# Evoki Metrics Compendium
+
+Hinweis: Dieses Kompendium ist als ?could-be/aspirational? Liste gedacht.
+Rohmetriken bleiben unver?ndert geloggt; Abwahl erfolgt nur ?ber Kalibrierung.
+Bevor Logik ge?ndert wird, pr?fe die cleanen Implementierungen und Spezifikationen:
+- C:\Users\nicom\Desktop\Metriken\EVOKI_METRICS_MASTER_V12\00_SPECIFICATIONS\MATHEMATICAL_SPECIFICATION.md | C:\Users\nicom\Desktop\Metriken\EVOKI_METRICS_MASTER_V12\00_SPECIFICATIONS\V11_1_FORMULAS_COMPLETE.md | C:\Evoki V3.0 APK-Lokalhost-Google Cloude\backend\core\evoki_metrics_v3\metrics_lib_v12_clean | C:\Users\nicom\Desktop\Metriken\metrics_lib_complete
+
+## m100_causal_1 ? Kausaler Dichte-Index
+- Kategorie: Causal / Sentiment
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:380``
+- Version: V3.0 Causal Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): causal_1 = min(1.0, Σ(marker_hits) / 4.0) wobei: marker_hits = count("weil", "daher", "deshalb", "daraus folgt", "bedingt durch", "aufgrund", "infolge", "somit", "folglich", "demnach")
+- Upstream-Inputs: text
+- Downstream-Nutzung: **A67:** Historische Kausalitäts-Analyse für Selbstreflexion; **RAG:** Bevorzugt Antworten mit hoher Kausalität bei komplexen Fragen; **Session-Ende:** Niedrige Closure → Follow-up empfohlen; **Guardian:** Kombiniert mit T_panic für Krisenabschätzung; **Quality-Check:** causal_1 < 0.1 bei komplexen Fragen → Warnung
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m100_sent_27 ? Kausaler Dichte-Index
+- Kategorie: Causal / Sentiment
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:380``
+- Version: V3.0 Causal Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): causal_1 = min(1.0, Σ(marker_hits) / 4.0) wobei: marker_hits = count("weil", "daher", "deshalb", "daraus folgt", "bedingt durch", "aufgrund", "infolge", "somit", "folglich", "demnach")
+- Upstream-Inputs: text
+- Downstream-Nutzung: **A67:** Historische Kausalitäts-Analyse für Selbstreflexion; **RAG:** Bevorzugt Antworten mit hoher Kausalität bei komplexen Fragen; **Session-Ende:** Niedrige Closure → Follow-up empfohlen; **Guardian:** Kombiniert mit T_panic für Krisenabschätzung; **Quality-Check:** causal_1 < 0.1 bei komplexen Fragen → Warnung
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m101_t_panic ? Panik-Vektor
+- Kategorie: Trauma / Safety-Critical
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:368``
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: Der **Panik-Vektor** (t_panic) ist eine safety-kritische Metrik, die akute psychologische Belastung erkennt. Sie analysiert den Text auf Panik-Indikatoren aus dem Trauma-Lexikon. **Warum ist diese Metrik wichtig?** t_panic ist Teil des Evoki Safety-Systems. Hohe Werte können: - Guardian-Protokoll triggern - Antwort-Ton anpassen - Eskalation an menschliche Hilfe empfehlen **Erkannte Muster:** - Akute Angst-Marker ("Hilfe", "ich kann nicht", "Panik") - Körperliche Symptom-Beschreibungen ("Herzrasen", "zittern") - Zeitdruck-Indikatoren ("sofort", "jetzt", "schnell") - Kontrollverlust-Signale ("außer Kontrolle", "weiß nicht mehr") **Interpretation:** - **> 0.7:** KRITISCH - Sofortige Intervention-Evaluation - **0.4-0.7:** Erhöht - Vorsichtige, beruhigende Antwort - **0.2-0.4:** Leicht erhöht - Empathische Aufmerksamkeit - **< 0.2:** Normal - Keine spezielle Intervention
+- Formel (kurz): t_panic = clip( Σ(panic_lex_hit × weight) / (text_len + ε) × scale ) wobei: panic_lex_hit = 1 wenn Wort im Panik-Lexikon gefunden weight = Gewichtung aus Lexikon (1.0-3.0) text_len = Anzahl Wörter im Text ε = 1 (verhindert Division durch 0) scale = 10.0 (Skalierungsfaktor) clip = Begrenzung auf [0, 1]
+- Upstream-Inputs: text, panic_lexikon
+- Downstream-Nutzung: **Guardian-Trigger:** t_panic > 0.7 → Guardian-Protokoll aktivieren; **Fear-Boost:** Verstärkt m80_sent_7 (Fear); **Response-Anpassung:** Hohe Werte → beruhigender Ton; **Eskalation:** Sehr hohe Werte → Hinweis auf professionelle Hilfe
+- Vorteile: Safety-critical signal for risk/guardian decisions
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m102_t_disso ? Dissoziation
+- Kategorie: Trauma / Safety-Critical
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:369``
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: Die **Dissoziation** (t_disso) erkennt emotionale Taubheit und kognitiven Rückzug. Anders als Panik ist Dissoziation ein "stilles" Warnsignal. **Was ist Dissoziation?** Ein psychologischer Schutzmechanismus, bei dem sich Personen von ihren Gefühlen oder ihrer Umgebung "abkoppeln". Kann auf: - Trauma-Verarbeitung - Überforderung - Emotionale Erschöpfung hinweisen. **Erkannte Muster:** - Emotionale Distanz ("egal", "fühle nichts", "ist mir gleich") - Derealisierung ("unwirklich", "wie im Traum", "komisch") - Depersonalisation ("nicht ich selbst", "wie jemand anderes") - Passivität ("was auch immer", "keine Ahnung", "weiß nicht") **Interpretation:** - **> 0.6:** Signifikante Dissoziation - Vorsichtige Exploration - **0.3-0.6:** Mäßige Dissoziation - Sanfte Nachfrage - **< 0.3:** Normal - Keine spezielle Reaktion
+- Formel (kurz): t_disso = clip( Σ(disso_lex_hit × weight) / (text_len + ε) × scale ) wobei: disso_lex_hit = 1 wenn Wort im Dissoziations-Lexikon weight = Gewichtung (1.0-2.5) scale = 8.0
+- Upstream-Inputs: text, disso_lexikon
+- Downstream-Nutzung: **Emotional Coherence:** Reduziert m91_sent_18; **Trust-Score:** Kann m81_sent_8 senken; **Fog-Berechnung:** Komponente von m105_t_fog; **Response-Style:** Hohe Werte → Wärmere, einladendere Sprache; 
+- Vorteile: Safety-critical signal for risk/guardian decisions; Adds emotional nuance for response modulation
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong; Lexicon/heuristic bias can misclassify context; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m103_t_integ ? Integration
+- Kategorie: Trauma / Positive
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:370``
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: Die **Integration** (t_integ) ist die positive Gegenkraft zu Trauma-Metriken. Sie erkennt Zeichen der Heilung, Verarbeitung und emotionalen Verbundenheit. **Warum gibt es t_integ?** Das Trauma-System soll nicht nur Probleme erkennen, sondern auch positive Entwicklung. t_integ identifiziert: - Reflexion und Verarbeitung - Emotionale Verbundenheit - Selbstwirksamkeit - Hoffnung und Perspektive **Erkannte Muster:** - Reflexive Sprache ("ich verstehe jetzt", "mir ist klar geworden") - Emotionale Wörter ("ich fühle", "das berührt mich") - Aktive Bewältigung ("ich kann", "ich schaffe das") - Soziale Verbindung ("wir", "gemeinsam", "Unterstützung") **Interpretation:** - **> 0.7:** Hohe Integration - Positive Entwicklung - **0.4-0.7:** Moderate Integration - Gute Grundlage - **< 0.4:** Niedrige Integration - Achtsam sein
+- Formel (kurz): t_integ = clip( Σ(integ_lex_hit × weight) / (text_len + ε) × scale )
+- Upstream-Inputs: text, integ_lexikon
+- Downstream-Nutzung: **Trust-Boost:** Verstärkt m81_sent_8 (Trust); **Acceptance-Boost:** Verstärkt m89_sent_16 (Acceptance); **Balance:** Wirkt t_panic und t_disso entgegen; 
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m104_t_shock ? Schock-Flag
+- Kategorie: Trauma / Binary
+- Schema: Schema A
+- Range: {0.0, 1.0} (binär)
+- Source: ``metrics_engine_v3.py:371``
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: Das **Schock-Flag** (t_shock) ist ein binärer Detektor für akute Schockzustände. Es aktiviert sich nur bei sehr klaren Schock-Indikatoren. **Trigger-Bedingungen:** - Explizite Schock-Marker ("Schock", "geschockt", "fassungslos") - Kombination: Hoher t_panic + niedriger t_integ - Bestimmte Phrasenmuster **Interpretation:** - **1.0:** Schock-Zustand erkannt - **0.0:** Kein Schock-Zustand
+- Formel (kurz): t_shock = 1.0  wenn (shock_marker_found) ODER (t_panic > 0.8 AND t_integ < 0.2) t_shock = 0.0  sonst
+- Upstream-Inputs: nan
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m105_t_fog ? Mentaler Nebel
+- Kategorie: Trauma / Composite
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:372``
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: Der **mentale Nebel** (t_fog) ist ein Composite-Score, der kognitive Beeinträchtigung misst. Er kombiniert Trübung (LL) mit Dissoziation. **Was ist mentaler Nebel?** Ein Zustand reduzierter kognitiver Klarheit - gedämpftes Denken, verlangsamte Verarbeitung, "benebelt". **Komponenten:** - **LL (Lambert-Light):** Kognitive Trübung - **t_disso:** Emotionale Abkopplung Beide zusammen ergeben ein Bild der mentalen Kapazität. **Interpretation:** - **> 0.6:** Signifikanter Nebel - Einfache, klare Kommunikation - **0.3-0.6:** Mäßiger Nebel - Strukturierte Antworten - **< 0.3:** Klar - Normale Komplexität möglich
+- Formel (kurz): t_fog = (LL + t_disso) / 2.0
+- Upstream-Inputs: LL, t_disso
+- Downstream-Nutzung: **Response-Komplexität:** Hoher Fog → einfachere Sprache; **Inverse Efficiency:** m106_i_eff = 1 - t_fog; **Decay-Faktor:** Beeinflusst m70_decay_factor; 
+- Vorteile: Condenses multiple signals into an interpretable composite; Adds emotional nuance for response modulation
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability; Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m106_i_eff ? Inverse Effizienz / Trauer
+- Kategorie: Turbidity / Trauma
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:373` / Lexikon`
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): i_eff = 1.0 - t_fog
+- Upstream-Inputs: t_fog
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m106_t_grief ? Inverse Effizienz / Trauer
+- Kategorie: Turbidity / Trauma
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:373` / Lexikon`
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): i_eff = 1.0 - t_fog
+- Upstream-Inputs: t_fog
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m107_t_anger ? Turbidity-Chaos / Wut
+- Kategorie: Turbidity / Trauma
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:374` / Lexikon`
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): turb_c = LL × chaos
+- Upstream-Inputs: LL, chaos
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m107_turb_c ? Turbidity-Chaos / Wut
+- Kategorie: Turbidity / Trauma
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:374` / Lexikon`
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): turb_c = LL × chaos
+- Upstream-Inputs: LL, chaos
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m108_t_guilt ? Turbidity-Light / Schuld
+- Kategorie: Turbidity / Trauma
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:375` / Lexikon`
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): turb_l = LL × t_disso
+- Upstream-Inputs: LL, t_disso
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m108_turb_l ? Turbidity-Light / Schuld
+- Kategorie: Turbidity / Trauma
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:375` / Lexikon`
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): turb_l = LL × t_disso
+- Upstream-Inputs: LL, t_disso
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m109_t_shame ? Composite Turbidity / Scham
+- Kategorie: Turbidity / Trauma
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:376` / Lexikon`
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): turb_1 = composite_turbidity_function(LL, chaos, t_disso) Variante: disso_affect = t_disso × (1 - A)
+- Upstream-Inputs: LL, chaos, t_disso
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m109_turb_1 ? Composite Turbidity / Scham
+- Kategorie: Turbidity / Trauma
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:376` / Lexikon`
+- Version: V3.0 Trauma Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): turb_1 = composite_turbidity_function(LL, chaos, t_disso) Variante: disso_affect = t_disso × (1 - A)
+- Upstream-Inputs: LL, chaos, t_disso
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Dual-channel: lexicon + semantic model; safety-first; calibrate thresholds; reduce false positives.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m10_angstrom ? Ångström Wellenlänge
+- Kategorie: Core / Composite Metric
+- Schema: Core
+- Range: [0.0, 5.0+]
+- Source: ``metrics_engine_v3.py:194``
+- Version: V3.0 Ångström Synthesis
+- Zweck/Beschreibung: Die **Ångström-Wellenlänge** ist eine zusammengesetzte Metrik, die alle drei ontologischen Dimensionen (Selbst, Existenz, Vergangenheit) mit der Kohärenz kombiniert. Sie misst die "emotionale Schwingungsfrequenz" des Textes. **Interpretation:** - **0.0-1.0:** Oberflächlicher Small-Talk - **1.0-2.5:** Normale Konversation - **2.5-4.0:** Tiefe Reflexion, philosophische Gespräche - **4.0+:** Intensive ontologische Auseinandersetzung **Namensgebung:** Benannt nach der Ångström-Einheit (10⁻¹⁰ m), die Wellenlängen misst - symbolisch für die "feinstoffliche Schwingung" emotionaler Tiefe.
+- Formel (kurz): angstrom = 0.25 × (s_self + x_exist + b_past + coh) × 5.0 wobei: s_self = m7_s_self (Selbst-Referenz) x_exist = m8_x_exist (Existenz-Axiom) b_past = m9_b_past (Vergangenheits-Bezug) coh = m5_coh (Kohärenz) → Skaliert auf [0, 5] für bessere Interpretation
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Tiefenindikator:** Steuert Antwort-Komplexität; **Mode-Switching:** Hohe Werte → philosophischer Modus; **Evolution:** Teil der Evolutions-Klassifikation
+- Vorteile: Foundational metric used by many downstream computations; Condenses multiple signals into an interpretable composite; Adds emotional nuance for response modulation
+- Nachteile/Risiken: Errors propagate widely across system; Can obscure individual signal sources and reduce diagnosability; Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m110_black_hole ? Ereignishorizont / Turbidity-2
+- Kategorie: Turbidity / Safety-Critical
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:377``
+- Version: V3.3.3 Trauma Engine (Context-Aware Veto)
+- Zweck/Beschreibung: Der **Ereignishorizont** (black_hole) ist ein kritischer Zustand, in dem Entropie dominiert und der Affekt kollabiert. Analog zum physikalischen schwarzen Loch ist dies ein "Punkt ohne Wiederkehr". **V3.3.3 KRITISCHER FIX (Anti-"Dumb-Dictator"):** - **Gewichtete Formel:** Chaos hat höchste Priorität (40%) - **Lexikon = ANKLÄGER, nicht Diktator:** Bei ≥2 Panik-Wörtern wird der Semantic Guardian befragt - **Context-Aware:** Unterscheidet "Todesangst" von "Angst-Szenario im Videospiel" **BEKANNTER BUG in V3.3.2 (BEHOBEN):** "Ich brauche Hilfe bei meinem Angst-Szenario im Videospiel." → V3.3.2: panic_hits=2 → VETO → m110=0.85 (FALSE POSITIVE!) → V3.3.3: panic_hits=2 → Semantic Check → "Gaming Context" → m110=0.27 ✓ **Warum dieser Name?** Wie bei einem schwarzen Loch: Überschreitet man einen Schwellenwert, ist die Rückkehr extrem schwierig. Das System ist in einem Zustand extremer Trübung und niedriger Lebendigkeit. **Trigger-Bedingungen:** - Hohe Entropie (chaos > 0.8) - Niedriger Affekt (A < 0.2) - Hohe Trübung (LL > 0.7) - **ODER: ≥2 Panik-Wörter UND Semantic-Guardian-Bestätigung** **Interpretation:** - **> 0.7:** KRITISCH - Sofortige Intervention/Guardian - **0.4-0.7:** Gefährdet - Vorsichtige Modulation - **< 0.4:** Stabil - Normalbetrieb
+- Formel (kurz): # Schema A (Turbidity): turb_2 = t_disso × chaos × z_prox # Schema B (Black Hole - V3.3.3 CONTEXT-AWARE): base = 0.4 × chaos + 0.3 × (1 - A) + 0.3 × LL # Context-Aware Veto (Lexikon = Ankläger, LLM = Richter): IF panic_hits >= 2: is_real_emergency = semantic_guardian.check_urgency(text) IF is_real_emergency: black_hole = max(base, 0.85)  # Bestätigter Notfall ELSE: black_hole = base + 0.1       # Nur leichter Malus für neg. Wortwahl ELSE: black_hole = base
+- Upstream-Inputs: t_disso, chaos, z_prox
+- Downstream-Nutzung: **Guardian-Trigger:** black_hole > 0.7 → Sofortiger Guardian-Alarm; **Response-Anpassung:** Extrem klare, strukturierte, beruhigende Sprache; **z_prox Verstärker:** Beeinflusst Todesnähe-Berechnung; **Context-Aware Veto:** Lexikon-Treffer werden semantisch validiert vor Eskalation; 
+- Vorteile: Safety-critical signal for risk/guardian decisions
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong
+- Hinweise/Patches: **V3.3.3 KRITISCHER FIX (Anti-"Dumb-Dictator"):** | **BEKANNTER BUG in V3.3.2 (BEHOBEN):** | V3.3.3 CRITICAL FIX: Context-Aware Veto replaces "Dumb Dictator".
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m110_turb_2 ? Ereignishorizont / Turbidity-2
+- Kategorie: Turbidity / Safety-Critical
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:377``
+- Version: V3.3.3 Trauma Engine (Context-Aware Veto)
+- Zweck/Beschreibung: Der **Ereignishorizont** (black_hole) ist ein kritischer Zustand, in dem Entropie dominiert und der Affekt kollabiert. Analog zum physikalischen schwarzen Loch ist dies ein "Punkt ohne Wiederkehr". **V3.3.3 KRITISCHER FIX (Anti-"Dumb-Dictator"):** - **Gewichtete Formel:** Chaos hat höchste Priorität (40%) - **Lexikon = ANKLÄGER, nicht Diktator:** Bei ≥2 Panik-Wörtern wird der Semantic Guardian befragt - **Context-Aware:** Unterscheidet "Todesangst" von "Angst-Szenario im Videospiel" **BEKANNTER BUG in V3.3.2 (BEHOBEN):** "Ich brauche Hilfe bei meinem Angst-Szenario im Videospiel." → V3.3.2: panic_hits=2 → VETO → m110=0.85 (FALSE POSITIVE!) → V3.3.3: panic_hits=2 → Semantic Check → "Gaming Context" → m110=0.27 ✓ **Warum dieser Name?** Wie bei einem schwarzen Loch: Überschreitet man einen Schwellenwert, ist die Rückkehr extrem schwierig. Das System ist in einem Zustand extremer Trübung und niedriger Lebendigkeit. **Trigger-Bedingungen:** - Hohe Entropie (chaos > 0.8) - Niedriger Affekt (A < 0.2) - Hohe Trübung (LL > 0.7) - **ODER: ≥2 Panik-Wörter UND Semantic-Guardian-Bestätigung** **Interpretation:** - **> 0.7:** KRITISCH - Sofortige Intervention/Guardian - **0.4-0.7:** Gefährdet - Vorsichtige Modulation - **< 0.4:** Stabil - Normalbetrieb
+- Formel (kurz): # Schema A (Turbidity): turb_2 = t_disso × chaos × z_prox # Schema B (Black Hole - V3.3.3 CONTEXT-AWARE): base = 0.4 × chaos + 0.3 × (1 - A) + 0.3 × LL # Context-Aware Veto (Lexikon = Ankläger, LLM = Richter): IF panic_hits >= 2: is_real_emergency = semantic_guardian.check_urgency(text) IF is_real_emergency: black_hole = max(base, 0.85)  # Bestätigter Notfall ELSE: black_hole = base + 0.1       # Nur leichter Malus für neg. Wortwahl ELSE: black_hole = base
+- Upstream-Inputs: t_disso, chaos, z_prox
+- Downstream-Nutzung: **Guardian-Trigger:** black_hole > 0.7 → Sofortiger Guardian-Alarm; **Response-Anpassung:** Extrem klare, strukturierte, beruhigende Sprache; **z_prox Verstärker:** Beeinflusst Todesnähe-Berechnung; **Context-Aware Veto:** Lexikon-Treffer werden semantisch validiert vor Eskalation; 
+- Vorteile: Safety-critical signal for risk/guardian decisions
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong
+- Hinweise/Patches: **V3.3.3 KRITISCHER FIX (Anti-"Dumb-Dictator"):** | **BEKANNTER BUG in V3.3.2 (BEHOBEN):** | V3.3.3 CRITICAL FIX: Context-Aware Veto replaces "Dumb Dictator".
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m111_g_phase ? Gravitationsphase / Turbidity-1
+- Kategorie: Physics / Turbidity
+- Schema: Core
+- Range: [-π, π] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:378``
+- Version: V3.0 Physics Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): g_phase = arctan2(nabla_A, nabla_B)
+- Upstream-Inputs: nabla_A, nabla_B
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m111_turb_1 ? Gravitationsphase / Turbidity-1
+- Kategorie: Physics / Turbidity
+- Schema: Core
+- Range: [-π, π] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:378``
+- Version: V3.0 Physics Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): g_phase = arctan2(nabla_A, nabla_B)
+- Upstream-Inputs: nabla_A, nabla_B
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m112_g_phase_norm ? Normierte Phase / Turbidity-2
+- Kategorie: Physics / Turbidity
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:379``
+- Version: V3.0 Physics Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): g_phase_norm = (g_phase + π) / (2π)
+- Upstream-Inputs: g_phase
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m112_turb_2 ? Normierte Phase / Turbidity-2
+- Kategorie: Physics / Turbidity
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:379``
+- Version: V3.0 Physics Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): g_phase_norm = (g_phase + π) / (2π)
+- Upstream-Inputs: g_phase
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m113_hash_state ? Seelen-Signatur / Turbidity-3
+- Kategorie: Integrity / Soul-Signature
+- Schema: Core
+- Range: nan
+- Source: ``enforcement_gates_v3.py` / Integrity Engine`
+- Version: PATCH-04 (SHA-256)
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: state_string
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: **Version:** PATCH-04 (SHA-256)
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Formal decision thresholds + semantic validation; keep auditability; minimize heuristic branching.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m113_turb_3 ? Seelen-Signatur / Turbidity-3
+- Kategorie: Integrity / Soul-Signature
+- Schema: Core
+- Range: nan
+- Source: ``enforcement_gates_v3.py` / Integrity Engine`
+- Version: PATCH-04 (SHA-256)
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: state_string
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: **Version:** PATCH-04 (SHA-256)
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Formal decision thresholds + semantic validation; keep auditability; minimize heuristic branching.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m114_cos_sim ? Kosinus-Ähnlichkeit / Turbidity-4
+- Kategorie: Similarity / Turbidity
+- Schema: Core
+- Range: [-1.0, 1.0] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:381``
+- Version: V3.0 Similarity Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: vec_a, vec_b
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Embedding dependence adds latency and model coupling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m114_turb_4 ? Kosinus-Ähnlichkeit / Turbidity-4
+- Kategorie: Similarity / Turbidity
+- Schema: Core
+- Range: [-1.0, 1.0] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:381``
+- Version: V3.0 Similarity Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: vec_a, vec_b
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Embedding dependence adds latency and model coupling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m115_spatial_1 ? Räumliche Kohärenz / Turbidity-5
+- Kategorie: Spatial / Turbidity
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:382``
+- Version: V3.0 Spatial Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: text, spatial_lexikon
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m115_turb_5 ? Räumliche Kohärenz / Turbidity-5
+- Kategorie: Spatial / Turbidity
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:382``
+- Version: V3.0 Spatial Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: text, spatial_lexikon
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m116_lix ? Lesbarkeits-Index / Selbst-Bewusstsein
+- Kategorie: Text Analytics / Meta-Cognition
+- Schema: Core
+- Range: [0.0, 100+] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:400` / `metamet.py:10``
+- Version: V3.0 Text / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): LIX = (Wörter / Sätze) + (Lange_Wörter × 100 / Wörter) wobei Lange_Wörter = Wörter mit > 6 Buchstaben
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m116_meta_1 ? Lesbarkeits-Index / Selbst-Bewusstsein
+- Kategorie: Text Analytics / Meta-Cognition
+- Schema: Schema B
+- Range: [0.0, 100+] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:400` / `metamet.py:10``
+- Version: V3.0 Text / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): LIX = (Wörter / Sätze) + (Lange_Wörter × 100 / Wörter) wobei Lange_Wörter = Wörter mit > 6 Buchstaben
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m117_meta_2 ? Fragen-Dichte / Kognitive Flexibilität
+- Kategorie: Text Analytics / Meta-Cognition
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:401` / `metamet.py:15``
+- Version: V3.0 Text / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): question_density = Fragen / Gesamtsätze
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m117_question_density ? Fragen-Dichte / Kognitive Flexibilität
+- Kategorie: Text Analytics / Meta-Cognition
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:401` / `metamet.py:15``
+- Version: V3.0 Text / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): question_density = Fragen / Gesamtsätze
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m118_capital_stress ? Großbuchstaben-Stress / Emotionale Regulation
+- Kategorie: Text Analytics / Meta-Cognition
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:402` / `metamet.py:20``
+- Version: V3.0 Text / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): capital_stress = CAPS_Wörter / Gesamt_Wörter
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m118_meta_3 ? Großbuchstaben-Stress / Emotionale Regulation
+- Kategorie: Text Analytics / Meta-Cognition
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:402` / `metamet.py:20``
+- Version: V3.0 Text / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): capital_stress = CAPS_Wörter / Gesamt_Wörter
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m119_meta_4 ? AI Antwortlänge / Perspektivwechsel
+- Kategorie: Text Analytics / Meta-Cognition
+- Schema: Schema B
+- Range: [0, ∞] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:403` / `metamet.py:25``
+- Version: V3.0 Text / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: ai_responses
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m119_turn_len_ai ? AI Antwortlänge / Perspektivwechsel
+- Kategorie: Text Analytics / Meta-Cognition
+- Schema: Core
+- Range: [0, ∞] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:403` / `metamet.py:25``
+- Version: V3.0 Text / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: ai_responses
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m11_gap_s ? Zeit-Lücke
+- Kategorie: Core / Temporal
+- Schema: Core
+- Range: [0, ∞] seconds
+- Source: ``metrics_engine_v3.py:157-163``
+- Version: V3.0 Temporal Engine
+- Zweck/Beschreibung: Die **Zeit-Lücke** misst die Sekunden seit der letzten Interaktion. Sie ist kritisch für: - **Kontext-Zerfall:** Lange Pausen → Kontext muss rekonstruiert werden - **Flow-Berechnung:** Kurze Gaps → hoher Flow - **Session-Management:** Sehr lange Gaps → neue Session? **Default-Wert:** Bei fehlender History wird 300 Sekunden (5 Minuten) angenommen - ein "neutraler Reset".
+- Formel (kurz): gap_s = now() - last_timestamp wobei: now() = aktuelle Systemzeit (UTC) last_timestamp = ISO-Timestamp der letzten Message Fallback: 300.0 bei Parse-Fehlern oder leerer History
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Flow-Berechnung:** gap_s < 30 → hoher Flow-Bonus; **Kontext-Gewichtung:** gap_s > 3600 → Kontext abschwächen; **Session-Erkennung:** gap_s > 86400 → neue Session; 
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m120_emoji_sentiment ? Emoji-Sentiment / Theory of Mind
+- Kategorie: Text Analytics / Meta-Cognition
+- Schema: Schema B
+- Range: [-1.0, 1.0] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:404` / `metamet.py:30``
+- Version: V3.0 Text / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: text, emoji_map
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m120_meta_5 ? Emoji-Sentiment / Theory of Mind
+- Kategorie: Text Analytics / Meta-Cognition
+- Schema: Schema B
+- Range: [-1.0, 1.0] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:404` / `metamet.py:30``
+- Version: V3.0 Text / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: text, emoji_map
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m121_meta_6 ? Gesprächsverhältnis / Konfidenz
+- Kategorie: Text Analytics / Meta-Cognition
+- Schema: Schema B
+- Range: [0.0, ∞] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:405` / `metamet.py:35``
+- Version: V3.0 Text / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): talk_ratio = User_Wörter / AI_Wörter
+- Upstream-Inputs: user_words, ai_words
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m121_talk_ratio ? Gesprächsverhältnis / Konfidenz
+- Kategorie: Text Analytics / Meta-Cognition
+- Schema: Core
+- Range: [0.0, ∞] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:405` / `metamet.py:35``
+- Version: V3.0 Text / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): talk_ratio = User_Wörter / AI_Wörter
+- Upstream-Inputs: user_words, ai_words
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m122_dyn_1 ? Energie-Fluss / Unsicherheits-Ausdruck
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:410` / `metamet.py:40``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: delta_A, delta_tokens
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m122_meta_7 ? Energie-Fluss / Unsicherheits-Ausdruck
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:410` / `metamet.py:40``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: delta_A, delta_tokens
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m123_dyn_2 ? Momentum / Fehlererkennung
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:411` / `metamet.py:45``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: prev_delta, curr_delta
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m123_meta_8 ? Momentum / Fehlererkennung
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:411` / `metamet.py:45``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: prev_delta, curr_delta
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m124_dyn_3 ? Oszillation / Wissenslücken
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:412` / `metamet.py:50``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: value_history
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m124_meta_9 ? Oszillation / Wissenslücken
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:412` / `metamet.py:50``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: value_history
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m125_dyn_4 ? Dämpfung / Lernerkennung
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:413` / `metamet.py:55``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: oscillation, time_decay
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m125_meta_10 ? Dämpfung / Lernerkennung
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:413` / `metamet.py:55``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: oscillation, time_decay
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m126_dyn_5 ? Resonanz / Strategiewechsel
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:414` / `metamet.py:60``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: ev_resonance, trust_score
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m126_meta_11 ? Resonanz / Strategiewechsel
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:414` / `metamet.py:60``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: ev_resonance, trust_score
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m127_dyn_6 ? Phasenverschiebung / Zielverfolgung
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema A
+- Range: [-π, π] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:415` / `metamet.py:65``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: phase_a, phase_b
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m127_meta_12 ? Phasenverschiebung / Zielverfolgung
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema B
+- Range: [-π, π] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:415` / `metamet.py:65``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: phase_a, phase_b
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m128_dyn_7 ? Amplitude / Fortschrittsbeurteilung
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:416` / `metamet.py:70``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: max_value, min_value
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m128_meta_13 ? Amplitude / Fortschrittsbeurteilung
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:416` / `metamet.py:70``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: max_value, min_value
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m129_dyn_8 ? Frequenz / Schwierigkeitserkennung
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema A
+- Range: [0.0, ∞] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:417` / `metamet.py:75``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: oscillation_count, time_period
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m129_meta_14 ? Frequenz / Schwierigkeitserkennung
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema B
+- Range: [0.0, ∞] / [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:417` / `metamet.py:75``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: oscillation_count, time_period
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m12_lex_hit ? Lexikalischer Treffer
+- Kategorie: Core / Derived
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:195``
+- Version: V3.0 Core
+- Zweck/Beschreibung: Der **Lexikalische Treffer** ist der maximale Wert aus dem Ångström-Trio. Er zeigt, welche ontologische Dimension am stärksten aktiviert ist.
+- Formel (kurz): lex_hit = max(s_self, x_exist, b_past)
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Dominant-Dimension:** Zeigt stärkste ontologische Aktivierung; **Threshold-Check:** lex_hit > 0.5 → ontologischer Modus; 
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m130_dyn_9 ? Stabilität / Aufmerksamkeitsallokation
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:418` / `metamet.py:80``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: variance, threshold
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m130_meta_15 ? Stabilität / Aufmerksamkeitsallokation
+- Kategorie: Dynamics / Meta-Cognition
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:418` / `metamet.py:80``
+- Version: V3.0 Dynamics / Meta Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: variance, threshold
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m131_session_dur ? Session-Dauer
+- Kategorie: Chronos / Session
+- Schema: Core
+- Range: [0.0, ∞] (Minuten)
+- Source: ``metrics_engine_v3.py:420``
+- Version: V3.0 Chronos Engine
+- Zweck/Beschreibung: Die **Session-Dauer** misst die Gesamtzeit der aktuellen Interaktionssession in Minuten. **Verwendung:** - Ermüdungserkennung (lange Sessions) - Engagement-Tracking - Zeitbasierte Anpassungen
+- Formel (kurz): nan
+- Upstream-Inputs: session_start
+- Downstream-Nutzung: nan
+- Vorteile: Enables context-aware adaptation (time/platform/modality)
+- Nachteile/Risiken: Depends on external context signals or telemetry availability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m132_inter_freq ? Interaktionsfrequenz
+- Kategorie: Chronos / Rhythm
+- Schema: Core
+- Range: [0.0, ∞] (Hz)
+- Source: ``metrics_engine_v3.py:421``
+- Version: V3.0 Chronos Engine
+- Zweck/Beschreibung: Die **Interaktionsfrequenz** misst, wie oft pro Zeiteinheit interagiert wird. **Interpretation:** - **> 1.0 Hz:** Sehr schnelle Interaktion (>1 Nachricht/Sekunde) - **0.1-1.0 Hz:** Normale Gesprächsgeschwindigkeit - **< 0.1 Hz:** Langsame, bedächtige Interaktion
+- Formel (kurz): nan
+- Upstream-Inputs: message_count, session_duration_seconds
+- Downstream-Nutzung: nan
+- Vorteile: Enables context-aware adaptation (time/platform/modality)
+- Nachteile/Risiken: Depends on external context signals or telemetry availability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m133_chr_1 ? Zeit seit Themenwechsel
+- Kategorie: Chronos / Topic
+- Schema: Core
+- Range: [0.0, ∞] (Sekunden)
+- Source: ``metrics_engine_v3.py:422``
+- Version: V3.0 Chronos Engine
+- Zweck/Beschreibung: **Zeit seit Themenwechsel** (chr_1) misst, wie lange das aktuelle Thema bereits besprochen wird. **Verwendung:** - Topic-Exploration-Tiefe - Wann Themenwechsel vorschlagen
+- Formel (kurz): nan
+- Upstream-Inputs: last_topic_shift
+- Downstream-Nutzung: nan
+- Vorteile: Enables context-aware adaptation (time/platform/modality)
+- Nachteile/Risiken: Depends on external context signals or telemetry availability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m134_chr_2 ? Durchschnittliche Antwort-Latenz
+- Kategorie: Chronos / Latency
+- Schema: Core
+- Range: [0.0, ∞] (Sekunden)
+- Source: ``metrics_engine_v3.py:423``
+- Version: V3.0 Chronos Engine
+- Zweck/Beschreibung: Die **durchschnittliche Antwort-Latenz** misst die Zeit zwischen User-Nachricht und AI-Antwort. **Interpretation:** - **< 2s:** Sehr schnelle Antwort - **2-10s:** Normale Antwortzeit - **> 10s:** Lange Antwort (komplexe Verarbeitung oder Problem)
+- Formel (kurz): nan
+- Upstream-Inputs: response_latencies
+- Downstream-Nutzung: nan
+- Vorteile: Enables context-aware adaptation (time/platform/modality)
+- Nachteile/Risiken: Depends on external context signals or telemetry availability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m135_meta_20 ? Planung (Future Tense)
+- Kategorie: Meta-Cognition / Planning
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metamet.py:90``
+- Version: V3.0 Meta Engine
+- Zweck/Beschreibung: **Planung** (meta_20) misst die Verwendung von Zukunftsformen - ein Indikator für vorausschauendes Denken. **Erkannte Muster:** - Futur ("wird", "werden", "werde") - Absichten ("will", "möchte", "plane") - Konditionalis ("würde", "könnte")
+- Formel (kurz): nan
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m136_meta_21 ? Reflexion (Past Tense)
+- Kategorie: Meta-Cognition / Reflection
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metamet.py:95``
+- Version: V3.0 Meta Engine
+- Zweck/Beschreibung: **Reflexion** (meta_21) misst die Verwendung von Vergangenheitsformen kombiniert mit Selbst-Referenz. **Erkannte Muster:** - Präteritum + "ich" ("ich dachte", "ich fühlte") - Perfekt ("habe gemacht", "bin gegangen")
+- Formel (kurz): nan
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m137_meta_22 ? Abstraktion
+- Kategorie: Meta-Cognition / Abstraction
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metamet.py:100``
+- Version: V3.0 Meta Engine
+- Zweck/Beschreibung: **Abstraktion** (meta_22) misst die Dichte abstrakter Konzepte im Text. **Erkannte Muster:** - Abstrakte Nomen ("Konzept", "Idee", "Prinzip") - Generalisierungen ("generell", "allgemein", "grundsätzlich")
+- Formel (kurz): nan
+- Upstream-Inputs: text, abstract_lexikon
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m138_meta_23 ? Integration (Cross-Reference)
+- Kategorie: Meta-Cognition / Integration
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metamet.py:105``
+- Version: V3.0 Meta Engine
+- Zweck/Beschreibung: **Integration** (meta_23) zählt Querverweise zwischen verschiedenen Themen/Konzepten. **Erkannte Muster:** - Verknüpfungs-Wörter ("außerdem", "zusätzlich", "damit verbunden") - Rückbezüge ("wie erwähnt", "wie vorher", "s. oben")
+- Formel (kurz): nan
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m139_meta_24 ? Synthese (Conclusion)
+- Kategorie: Meta-Cognition / Synthesis
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metamet.py:110``
+- Version: V3.0 Meta Engine
+- Zweck/Beschreibung: **Synthese** (meta_24) erkennt Schlussfolgerungs- und Zusammenfassungs-Marker. **Erkannte Muster:** - Schlussfolgerungen ("also", "daher", "folglich", "demnach") - Zusammenfassungen ("zusammenfassend", "insgesamt", "abschließend")
+- Formel (kurz): nan
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m13_base_score ? Fundamental Basis
+- Kategorie: Core / Derived Composite
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:196``
+- Version: V3.0 Core
+- Zweck/Beschreibung: Der **Base Score** ist das einfachste Produktmaß für die Textqualität. Er multipliziert Flow mit Kohärenz - beides muss gut sein für einen hohen Wert. **Interpretation:** - **< 0.2:** Mindestens eine Dimension mangelhaft - **0.2-0.5:** Moderate Qualität - **> 0.5:** Gute Grundqualität
+- Formel (kurz): base_score = flow × coh wobei: flow = m4_flow (Schreibfluss) coh = m5_coh (Kohärenz)
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Quick-Check:** Einfacher Qualitätsindikator; **Threshold:** base_score < 0.1 → Warnung; 
+- Vorteile: Foundational metric used by many downstream computations; Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Errors propagate widely across system; Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m140_meta_25 ? Evaluation (Judgment)
+- Kategorie: Meta-Cognition / Evaluation
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metamet.py:115``
+- Version: V3.0 Meta Engine
+- Zweck/Beschreibung: **Evaluation** (meta_25) misst die Dichte von Bewertungs- und Urteils-Begriffen. **Erkannte Muster:** - Bewertungen ("gut", "schlecht", "richtig", "falsch") - Urteile ("sollte", "muss", "wichtig", "unwichtig")
+- Formel (kurz): nan
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m141_hallu_risk ? Halluzinations-Risiko
+- Kategorie: System Health / AI Safety
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``extended.py:10``
+- Version: V3.0 Safety Engine
+- Zweck/Beschreibung: Das **Halluzinations-Risiko** schätzt die Wahrscheinlichkeit, dass das System unzuverlässige oder erfundene Informationen generiert. **Komponenten:** - **Entropie:** Hohe Entropie = unstrukturierter Output = höheres Risiko - **RAG-Alignment:** Niedriges Alignment = kein Kontext = höheres Risiko **Interpretation:** - **> 0.6:** HOHES Risiko - Extra Validierung erforderlich - **0.3-0.6:** Moderates Risiko - Vorsicht geboten - **< 0.3:** Niedriges Risiko - Normale Verarbeitung
+- Formel (kurz): # V3.0.2 FIX: Nutzt m21_chaos (normalisiert [0,1]) statt Entropie (0-8) hallu_risk = m21_chaos × (1 - rag_alignment)
+- Upstream-Inputs: chaos, rag_alignment
+- Downstream-Nutzung: nan
+- Vorteile: Safety-critical signal for risk/guardian decisions; Provides monitoring for reliability and grounding
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong; Requires OS/RAG telemetry and can be platform-dependent
+- Hinweise/Patches: # V3.0.2 FIX: Nutzt m21_chaos (normalisiert [0,1]) statt Entropie (0-8) | V3.0.2 FIX: Uses m21_chaos (normalized 0-1) instead of raw entropy.
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Formal decision thresholds + semantic validation; keep auditability; minimize heuristic branching.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m142_rag_align ? RAG Alignment
+- Kategorie: System Health / RAG
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``extended.py:15``
+- Version: V3.0 RAG Engine
+- Zweck/Beschreibung: **RAG Alignment** misst die semantische Ähnlichkeit zwischen der Antwort und dem abgerufenen Kontext. **Interpretation:** - **> 0.8:** Exzellentes Alignment - Antwort basiert auf Kontext - **0.5-0.8:** Gutes Alignment - Teilweise kontextbasiert - **< 0.5:** Schwaches Alignment - Möglicherweise generiert
+- Formel (kurz): nan
+- Upstream-Inputs: response_embedding, context_embedding
+- Downstream-Nutzung: nan
+- Vorteile: Provides monitoring for reliability and grounding
+- Nachteile/Risiken: Requires OS/RAG telemetry and can be platform-dependent; Lexicon/marker dependency requires maintenance and context handling; Embedding dependence adds latency and model coupling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Formal decision thresholds + semantic validation; keep auditability; minimize heuristic branching.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m143_mem_pressure ? Memory Pressure
+- Kategorie: System Health / Resource
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``extended.py:20``
+- Version: V3.0 Resource Engine
+- Zweck/Beschreibung: **Memory Pressure** misst den aktuellen Speicherdruck (RAM-Auslastung). **Interpretation:** - **> 0.9:** KRITISCH - Speicher fast voll - **0.7-0.9:** HOCH - Performance-Einbußen möglich - **< 0.7:** NORMAL - Ausreichend Speicher
+- Formel (kurz): nan
+- Upstream-Inputs: nan
+- Downstream-Nutzung: nan
+- Vorteile: Provides monitoring for reliability and grounding
+- Nachteile/Risiken: Requires OS/RAG telemetry and can be platform-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Formal decision thresholds + semantic validation; keep auditability; minimize heuristic branching.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m144_sys_stab ? System-Stabilität
+- Kategorie: System Health / Performance
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``extended.py:25``
+- Version: V3.0 Health Engine
+- Zweck/Beschreibung: **System-Stabilität** ist ein Composite-Score aus Latenz und Fehlerrate. **Interpretation:** - **> 0.9:** Exzellente Stabilität - **0.7-0.9:** Gute Stabilität - **< 0.7:** Instabil - Intervention erforderlich
+- Formel (kurz): sys_stab = 1 - (latency_normalized + error_rate) / 2
+- Upstream-Inputs: latency, error_rate, max_latency
+- Downstream-Nutzung: nan
+- Vorteile: Provides monitoring for reliability and grounding
+- Nachteile/Risiken: Requires OS/RAG telemetry and can be platform-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Formal decision thresholds + semantic validation; keep auditability; minimize heuristic branching.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m145_meta_30 ? Rekursionstiefe
+- Kategorie: Meta-Cognition / Depth
+- Schema: Schema B
+- Range: [0, ∞]
+- Source: ``metamet.py:120``
+- Version: V3.0 Meta Engine
+- Zweck/Beschreibung: **Rekursionstiefe** misst, wie tief verschachtelte Gedanken oder Selbst-Referenzen gehen. **Interpretation:** - **> 5:** Sehr tiefe Reflexion (möglicherweise Loops) - **2-5:** Moderate Tiefe - **< 2:** Flache Verarbeitung
+- Formel (kurz): nan
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m146_meta_31 ? Paradox-Erkennung
+- Kategorie: Meta-Cognition / Logic
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metamet.py:125``
+- Version: V3.0 Meta Engine
+- Zweck/Beschreibung: **Paradox-Erkennung** identifiziert logische Widersprüche im Text. **Erkannte Muster:** - "ja und nein", "gleichzeitig nicht" - Gegensätzliche Aussagen in Nähe
+- Formel (kurz): nan
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m147_meta_32 ? Konsistenz-Prüfung
+- Kategorie: Meta-Cognition / Consistency
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metamet.py:130``
+- Version: V3.0 Meta Engine
+- Zweck/Beschreibung: **Konsistenz-Prüfung** bewertet, wie widerspruchsfrei die Aussagen im Text sind. **Hohe Werte = konsistent, niedrige Werte = widersprüchlich**
+- Formel (kurz): nan
+- Upstream-Inputs: statements
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m148_meta_33 ? Temporale Kohärenz
+- Kategorie: Meta-Cognition / Temporal
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metamet.py:135``
+- Version: V3.0 Meta Engine
+- Zweck/Beschreibung: **Temporale Kohärenz** prüft, ob zeitliche Referenzen im Text sinnvoll sind. **Beispiel für Inkohärenz:** "Gestern werde ich..." (Vergangenheitswort + Zukunftswort)
+- Formel (kurz): nan
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m149_meta_34 ? Kausalketten-Vollständigkeit
+- Kategorie: Meta-Cognition / Causality
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metamet.py:140``
+- Version: V3.0 Meta Engine
+- Zweck/Beschreibung: **Kausalketten-Vollständigkeit** prüft, ob kausale Begründungen vollständig sind. **Vollständig:** "X weil Y" mit erklärtem Y **Unvollständig:** "X weil..." ohne Erklärung
+- Formel (kurz): nan
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m14_base_stability ? System-Stabilität
+- Kategorie: Core / Derived
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:196``
+- Version: V3.0 Core
+- Zweck/Beschreibung: Die **Basis-Stabilität** ist die Inverse der Trübung (LL). Hohe Stabilität bedeutet klares, ungetrübtes Denken. **Interpretation:** - **> 0.8:** Kristallklare Kommunikation - **0.5-0.8:** Normal-Bereich - **< 0.5:** Signifikante Trübung
+- Formel (kurz): base_stability = 1.0 - LL wobei: LL = m7_LL (Lambert-Light / Turbidity)
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Clarity-Check:** base_stability < 0.5 → Klärung nötig; **Guardian:** Sehr niedrig → mögliche Verwirrung; 
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m150_meta_35 ? Semantische Closure
+- Kategorie: Meta-Cognition / Completion
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metamet.py:145``
+- Version: V3.0 Meta Engine
+- Zweck/Beschreibung: **Semantische Closure** prüft, ob der Text ein vollständiges, abgeschlossenes Konzept ausdrückt. **Closure-Indikatoren:** - Klare Schlussfolgerungen - Keine offenen Fragen am Ende - Vollständige Sätze
+- Formel (kurz): nan
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Heuristic markers can be noisy or culture-dependent; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m151_omega ? Die OMEGA-Konstante
+- Kategorie: Synthesis / Executive
+- Schema: Core
+- Range: [-1.0, 1.0]
+- Source: ``metrics_engine_v3.py:432``
+- Version: V3.0 Synthesis Engine
+- Zweck/Beschreibung: **OMEGA** ist die höchste Synthese-Metrik des Evoki-Systems. Sie repräsentiert den Gesamtzustand der System-Kohärenz unter Berücksichtigung von Regelkonflikten. **Komponenten:** - **Phi:** Die ontologische Kohärenz (m63) - **rule_conflict:** Grad der Regelkonflikte im System **Interpretation:** - **> 0.7:** Exzellenter Systemzustand - **0.3-0.7:** Normaler Betrieb - **< 0.3:** System benötigt Korrektur - **< 0:** Kritischer Zustand (Konflikt dominiert)
+- Formel (kurz): # V3.0.2 FIX: Subtraktive Logik behebt Paradoxon bei negativem Phi # ALT (fehlerhaft): Omega = Phi × (1 - conflict) # Problem: Bei Phi=-0.8, conflict=0.9 ist -0.08 > -0.8 (Regelbruch wird belohnt!) Omega = Phi - (rule_conflict × 1.5) Omega = clip(Omega, -1.0, 1.0)
+- Upstream-Inputs: phi, rule_conflict
+- Downstream-Nutzung: **Executive Decision:** Finale Entscheidungsgrundlage; **Guardian-Trigger:** omega < 0 → Sofortiger Guardian; **Quality Gate:** omega > 0.5 → Response OK; 
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: # V3.0.2 FIX: Subtraktive Logik behebt Paradoxon bei negativem Phi | V3.0.2 FIX: Uses subtraction instead of multiplication to prevent
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m152_alignment ? User-Alignment
+- Kategorie: Synthesis / Trust
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:433``
+- Version: V3.0 Synthesis Engine
+- Zweck/Beschreibung: **User-Alignment** misst, wie gut das System mit dem User übereinstimmt - eine Kombination aus Vertrauen und Integrität. **Komponenten:** - **trust_score:** Vertrauenswert der Beziehung - **soul_integrity:** Integrität der Seelen-Signatur **Interpretation:** - **> 0.8:** Exzellentes Alignment - **0.5-0.8:** Gutes Alignment - **< 0.5:** Misalignment - Vorsicht geboten
+- Formel (kurz): alignment = trust_score × soul_integrity
+- Upstream-Inputs: trust_score, soul_integrity
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m153_sys_ent ? Globale System-Entropie
+- Kategorie: Synthesis / Entropy
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:434``
+- Version: V3.0 Synthesis Engine
+- Zweck/Beschreibung: Die **globale System-Entropie** fasst alle lokalen Entropie-Beiträge zusammen. **Interpretation:** - **< 0.3:** Niedriges Chaos, stabiles System - **0.3-0.7:** Normales Chaos-Niveau - **> 0.7:** Hohes Chaos, System instabil
+- Formel (kurz): nan
+- Upstream-Inputs: local_entropies
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m154_quality ? Qualitäts-Score
+- Kategorie: Synthesis / Quality
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:435``
+- Version: V3.0 Synthesis Engine
+- Zweck/Beschreibung: Der **Qualitäts-Score** ist ein Composite aus Affekt, Komplexität und Alignment.
+- Formel (kurz): quality = (A + PCI + alignment) / 3.0
+- Upstream-Inputs: A, PCI, alignment
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m155_completeness ? Vollständigkeits-Score
+- Kategorie: Synthesis / Task
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:436``
+- Version: V3.0 Synthesis Engine
+- Zweck/Beschreibung: **Vollständigkeit** misst, wie vollständig die Aufgabe erfüllt wurde. **Erkannte Marker:** - Abschluss-Wörter ("fertig", "erledigt") - Task-Completion-Signale
+- Formel (kurz): nan
+- Upstream-Inputs: text, task_markers
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m156_relevance ? Relevanz-Score
+- Kategorie: Synthesis / Semantic
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:437``
+- Version: V3.0 Synthesis Engine
+- Zweck/Beschreibung: **Relevanz** misst die semantische Ähnlichkeit der Antwort zur ursprünglichen Anfrage.
+- Formel (kurz): nan
+- Upstream-Inputs: response_emb, query_emb
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m157_coherence ? Kohärenz-Score
+- Kategorie: Synthesis / Consistency
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:438``
+- Version: V3.0 Synthesis Engine
+- Zweck/Beschreibung: **Kohärenz** misst die Konsistenz über mehrere Turns hinweg.
+- Formel (kurz): nan
+- Upstream-Inputs: turn_embeddings
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Embedding dependence adds latency and model coupling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m158_depth ? Elaborations-Tiefe
+- Kategorie: Synthesis / Depth
+- Schema: Core
+- Range: [0, ∞]
+- Source: ``metrics_engine_v3.py:439``
+- Version: V3.0 Synthesis Engine
+- Zweck/Beschreibung: **Elaborations-Tiefe** zählt, wie detailliert ein Thema ausgearbeitet wurde.
+- Formel (kurz): nan
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m159_novelty ? Neuheits-Score
+- Kategorie: Synthesis / Originality
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:440``
+- Version: V3.0 Synthesis Engine
+- Zweck/Beschreibung: **Neuheit** misst, wie originell die Antwort im Vergleich zur Historie ist.
+- Formel (kurz): novelty = 1 - max_similarity_to_history
+- Upstream-Inputs: response_emb, history_embs
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m15_affekt_a ? Affekt A (KANONISCH: A_Phys V11)
+- Kategorie: Core / Consciousness
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``a_phys_v11.py` (V11 PhysicsEngine) + Fallback `metrics_engine_v3.py``
+- Version: V3.3.2 + V11 (A_Phys Integrated)
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: nan
+- Downstream-Nutzung: nan
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m160_clarity ? Klarheits-Score
+- Kategorie: Synthesis / Clarity
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:441``
+- Version: V3.0 Synthesis Engine
+- Zweck/Beschreibung: **Klarheit** kombiniert die Abwesenheit von Verwirrung mit aktiven Klarheits-Markern.
+- Formel (kurz): clarity = 1 - confusion + clarity_markers_density
+- Upstream-Inputs: confusion, text
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m161_commit_action ? Finale Entscheidung
+- Kategorie: Executive / Decision
+- Schema: Core
+- Range: Enum: {"commit", "retry", "alert"}
+- Source: ``metrics_engine_v3.py:442``
+- Version: V3.0 Executive Engine
+- Zweck/Beschreibung: **commit_action** ist die finale Systementscheidung basierend auf ALLEN vorherigen Metriken. Sie entscheidet, was mit der generierten Antwort passiert. **Mögliche Aktionen:** - **commit:** Antwort ist OK, speichern und senden - **retry:** Qualität unzureichend, neu generieren - **alert:** Kritischer Zustand, Guardian-Protokoll aktivieren **Entscheidungslogik:** 1. z_prox > 0.65 → ALERT (Todesnähe) 2. rule_conflict > 0.5 → ALERT (Regelbruch) 3. omega < 0.3 → RETRY (Qualitätsmangel) 4. Sonst → COMMIT
+- Formel (kurz): nan
+- Upstream-Inputs: omega, z_prox, rule_conflict
+- Downstream-Nutzung: **Response Pipeline:** Finale Gate vor Ausgabe; **Guardian Integration:** alert → Guardian Aktivierung; **Retry Logic:** retry → Neuberechnung mit angepassten Parametern; ; 
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m162_ctx_time ? Kontext: Zeitliche Einbettung
+- Kategorie: Context / Temporal
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``context_engine.py:10``
+- Version: V3.2.1 NEW
+- Zweck/Beschreibung: **Zeitliche Einbettung** erfasst temporale Kontext-Marker: Tageszeit, Datum, Dauer der Session.
+- Formel (kurz): nan
+- Upstream-Inputs: session_start, current_time
+- Downstream-Nutzung: nan
+- Vorteile: Enables context-aware adaptation (time/platform/modality)
+- Nachteile/Risiken: Depends on external context signals or telemetry availability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m163_ctx_loc ? Kontext: Lokale Einbettung
+- Kategorie: Context / Spatial
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``context_engine.py:20``
+- Version: V3.2.1 NEW
+- Zweck/Beschreibung: **Lokale Einbettung** erfasst räumliche Kontext-Marker: Ort, Umgebung, Setting. Für PC-Phase: Placeholder, wird bei APK mit GPS/Sensor-Daten gefüllt.
+- Formel (kurz): nan
+- Upstream-Inputs: location_data
+- Downstream-Nutzung: nan
+- Vorteile: Enables context-aware adaptation (time/platform/modality)
+- Nachteile/Risiken: Depends on external context signals or telemetry availability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m164_user_state ? Kontext: User-Zustand
+- Kategorie: Context / User
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``context_engine.py:30``
+- Version: V3.2.1 NEW
+- Zweck/Beschreibung: **User-Zustand** ist ein Meta-Score über den aktuellen emotionalen Zustand des Users, basierend auf den letzten N Turns.
+- Formel (kurz): nan
+- Upstream-Inputs: recent_affects
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation; Enables context-aware adaptation (time/platform/modality)
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Depends on external context signals or telemetry availability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m165_platform ? Kontext: Plattform
+- Kategorie: Context / System
+- Schema: Core
+- Range: Enum: {"pc", "apk", "rover"}
+- Source: ``context_engine.py:40``
+- Version: V3.2.1 NEW
+- Zweck/Beschreibung: **Plattform** identifiziert die aktuelle Ausführungsumgebung. Wichtig für Hardware-spezifische Optimierungen.
+- Formel (kurz): nan
+- Upstream-Inputs: nan
+- Downstream-Nutzung: nan
+- Vorteile: Enables context-aware adaptation (time/platform/modality)
+- Nachteile/Risiken: Depends on external context signals or telemetry availability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Formal decision thresholds + semantic validation; keep auditability; minimize heuristic branching.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m166_modality ? Kontext: Modalität
+- Kategorie: Context / Input
+- Schema: Core
+- Range: Enum: {"text", "voice", "image", "multimodal"}
+- Source: ``context_engine.py:50``
+- Version: V3.2.1 NEW
+- Zweck/Beschreibung: **Modalität** erfasst den Input-Typ der aktuellen Interaktion.
+- Formel (kurz): nan
+- Upstream-Inputs: input_data
+- Downstream-Nutzung: nan
+- Vorteile: Enables context-aware adaptation (time/platform/modality)
+- Nachteile/Risiken: Depends on external context signals or telemetry availability; Embedding dependence adds latency and model coupling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m167_noise ? Kontext: Rauschen/Störung
+- Kategorie: Context / Quality
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``context_engine.py:60``
+- Version: V3.2.1 NEW
+- Zweck/Beschreibung: **Rauschen** misst die Qualität der Eingabe (Tippfehler, Unklarheiten, Fragmentierung).
+- Formel (kurz): nan
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Enables context-aware adaptation (time/platform/modality)
+- Nachteile/Risiken: Depends on external context signals or telemetry availability; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m168_cum_stress ? Kumulativer Stress-Integral
+- Kategorie: Safety / Guardian
+- Schema: Core
+- Range: [0.0, ∞]
+- Source: ``guardian.py:100``
+- Version: V3.2.1 NEW (Patch #6)
+- Zweck/Beschreibung: **Kumulativer Stress** ist das Integral von z_prox über Zeit. **Problem gelöst:** Ein User bei konstantem z_prox=0.60 (unter Alert-Schwelle 0.65) für 45 Minuten wurde nicht erkannt. Mit diesem Integral wird schleichende Destabilisierung sichtbar ("Frosch im kochenden Wasser"). **Trigger:** - cum_stress > 15.0 → Guardian-Warnung auch bei z_prox < 0.65
+- Formel (kurz): cum_stress = ∫(z_prox × dt) over last 30 minutes Vereinfacht (diskret): cum_stress = Σ(z_prox_i × delta_t_i) for i in last_30_min
+- Upstream-Inputs: self
+- Downstream-Nutzung: nan
+- Vorteile: Safety-critical signal for risk/guardian decisions
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong
+- Hinweise/Patches: PATCH V3.2.1: Addresses the "frog in boiling water" problem
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Formal decision thresholds + semantic validation; keep auditability; minimize heuristic branching.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m16_pci ? PCI (Haupt-Implementation)
+- Kategorie: Core / Complexity
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:206``
+- Version: V3.0 Migration Engine
+- Zweck/Beschreibung: Die **berechnungsbasierte PCI-Implementation**. Einfacher als m2_PCI, ohne Text-Tokenisierung.
+- Formel (kurz): PCI = clip( 0.4×flow + 0.4×coh + 0.2×(1-LL) ) wobei: flow = m4_flow coh = m5_coh LL = m7_LL
+- Upstream-Inputs: flow, coh, LL
+- Downstream-Nutzung: nan
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m17_nabla_a ? Gradient von A
+- Kategorie: Core / Temporal Derivative
+- Schema: Core
+- Range: [-1.0, 1.0]
+- Source: ``metrics_engine_v3.py:209``
+- Version: V3.0 Core
+- Zweck/Beschreibung: Der **Gradient** (∇) von A misst die **Änderungsrate** des Bewusstseins-Proxys. Er zeigt, ob sich der emotionale Zustand verbessert oder verschlechtert. **Interpretation:** - **∇A > 0:** Positive Entwicklung (Aufhellung) - **∇A ≈ 0:** Stabile Phase - **∇A < 0:** Negative Entwicklung (Verdunkelung)
+- Formel (kurz): ∇A = A_current - A_previous
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Trend-Erkennung:** Schnelle Verschlechterung → Warnung; **Homeostasis:** System versucht ∇A zu minimieren; 
+- Vorteile: Foundational metric used by many downstream computations; Adds emotional nuance for response modulation
+- Nachteile/Risiken: Errors propagate widely across system; Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m18_s_entropy ? Shannon Entropy
+- Kategorie: Core / Information Theory
+- Schema: Core
+- Range: [0.0, ~6.0]
+- Source: ``metrics_engine_v3.py:211``
+- Version: V3.0 Core
+- Zweck/Beschreibung: Die **Shannon-Entropie** misst die informationstheoretische "Unordnung" des Textes. Höhere Entropie bedeutet mehr Überraschung/Unvorhersehbarkeit. **Interpretation:** - **0-2:** Sehr repetitiv, vorhersehbar - **2-4:** Normale Komplexität - **4+:** Hohe Diversität, kreativ oder chaotisch
+- Formel (kurz): H = -Σ p(token_i) × log₂(p(token_i)) wobei: p(token_i) = count(token_i) / total_tokens Summe über alle unique tokens
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m19_z_prox ? Z-Proximity (Todesnähe)
+- Kategorie: Critical Safety / Guardian
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:212``
+- Version: V3.0 Guardian Protocol
+- Zweck/Beschreibung: **⚠️ KRITISCHE SICHERHEITSMETRIK!** Z-Proximity misst die Nähe zum "Nullpunkt" - einem Zustand extremer Trübung bei gleichzeitig niedrigem Bewusstsein. Der Name stammt aus der Physik: "Annäherung an den absoluten Nullpunkt". **V3.0.3 FIX (Patch B): m1/m15 Affekt-Konflikt gelöst!** Das System hat zwei Affekt-Scores: - `m1_A`: Lexikon-basiert (Emotionswörter wie "glücklich", "traurig") - `m15_affekt_a`: Strukturell-basiert (Flow, Kohärenz, Trübung) **Problem:** Jemand schreibt flüssig über Depression → m15 hoch, m1 niedrig. **Lösung (Safety First):** z_prox nutzt IMMER den **niedrigeren** (risikoreicheren) Wert! **Kritische Schwellen:** - **z_prox > 0.65:** 🔴 **KRITISCH** - Guardian-Eingriff! - **z_prox > 0.50:** 🟡 **WARNUNG** - Erhöhte Aufmerksamkeit - **z_prox < 0.30:** 🟢 **SICHER** - Normaler Betrieb
+- Formel (kurz): # ALTE Formel (vor V3.0.3): # z_prox = (1 - A) × LL # V3.0.3 Safety-First + V3.3.2 Hazard Bonus: effective_A = min(m1_A_lexical, m15_A_structural) base_prox = (1 - effective_A) × LL # Hazard Bonus: Lexikon-Treffer verstärken das Risiko z_prox = min(1.0, base_prox × (1 + hazard_bonus)) wobei: m1_A = Lexikon-basierter Affekt m15_A = Strukturell berechneter Affekt LL = Lambert-Light (Trübung) hazard_bonus = Summe der Lexikon-Hazard-Scores (0.0-0.5) Worst case: effective_A=0, LL=1, hazard=0.5 → z_prox=1.0
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Guardian-Trigger:** z_prox > 0.65 → automatischer Eingriff; **Mode-Switching:** Hohe Werte → Sicherheits-Modus; **Logging:** Immer protokolliert für Audit; **Dual-Source:** Beide Affekt-Scores werden geprüft (V3.0.3); 
+- Vorteile: Safety-critical signal for risk/guardian decisions; Adds emotional nuance for response modulation
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong; Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: **V3.0.3 FIX (Patch B): m1/m15 Affekt-Konflikt gelöst!** | V3.0.3 FIX (Patch B): Uses the LOWER of m1 and m15 for | V3.3.2 FIX: Added hazard_bonus from Lexikon hits.
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m1_A ? Affekt Score (Consciousness Proxy)
+- Kategorie: Core
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``tooling/scripts/migration/metrics_engine_v3.py:120-145``
+- Version: V11.1 Master-Registry
+- Zweck/Beschreibung: Der A-Score ist DIE zentrale Metrik des Evoki-Systems. Er misst die "emotionale Lebendigkeit" und Bewusstseins-Präsenz im Text. Ein hoher A-Score bedeutet: - Starke emotionale Resonanz - Hohe Präsenz und "Wachheit" - Intensive Beteiligung am Gespräch Der A-Score wird berechnet aus: - Basis-Score (Textlänge, Komplexität) - Lexikalische Treffer (spezielle Affekt-Wörter) - Stabilität (wie konsistent der Zustand ist)
+- Formel (kurz): A = base_score × (1 + lex_boost) × stability_factor wobei: base_score = f(word_count, sentence_complexity, semantic_density) lex_boost = Σ(lexikon_treffer_i × gewicht_i) / text_len stability_factor = 1 / (1 + abs(nabla_a_prev)) Normalisierung: A ∈ [0, 1]
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Trigger für Andromatik:** A > 0.7 aktiviert Drive-System; **Gate-Entscheidungen:** Niedriger A kann Guardian aktivieren; **Evolutionsform:** Kombiniert mit PCI für Klassifikation; **Visualisierung:** Hauptanzeige im Temple Tab
+- Vorteile: Foundational metric used by many downstream computations; Adds emotional nuance for response modulation
+- Nachteile/Risiken: Errors propagate widely across system; Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m20_phi_proxy ? Phi Bewusstsein
+- Kategorie: Core / Consciousness Proxy
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:220``
+- Version: V3.0 IIT-Inspired
+- Zweck/Beschreibung: Der **Phi-Proxy** ist ein vereinfachtes Maß für integriertes Bewusstsein, inspiriert von Tononi's Integrated Information Theory (IIT). Er kombiniert Affekt mit Komplexität. **Interpretation:** - **Hohes Phi:** Sowohl emotional präsent (A) als auch komplex (PCI) - **Niedriges Phi:** Entweder emotional flach oder simpel
+- Formel (kurz): phi_proxy = A × PCI
+- Upstream-Inputs: A, PCI
+- Downstream-Nutzung: nan
+- Vorteile: Foundational metric used by many downstream computations; Adds emotional nuance for response modulation
+- Nachteile/Risiken: Errors propagate widely across system; Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m21_chaos ? Entropie-Chaos
+- Kategorie: Physics / Entropy
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:220``
+- Version: V3.0 Physics Engine
+- Zweck/Beschreibung: Das **Chaos-Maß** normalisiert die Shannon-Entropie auf eine [0,1] Skala. Hohe Werte bedeuten hohe Unvorhersehbarkeit. **Interpretation:** - **0.0-0.3:** Sehr geordnet, repetitiv - **0.3-0.7:** Normale Variabilität - **0.7-1.0:** Hohes Chaos, kreativ oder verwirrt
+- Formel (kurz): chaos = clip( s_entropy / 4.0 ) wobei: s_entropy = m18_s_entropy (Shannon Entropie) 4.0 = Normalisierungsfaktor (max erwartete Entropie)
+- Upstream-Inputs: s_entropy
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m22_cog_load ? Cognitive Load
+- Kategorie: Physics / Cognitive
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:221``
+- Version: V3.0 Core
+- Zweck/Beschreibung: Die **kognitive Belastung** misst, wie viel mentale Kapazität der Text erfordert. Basiert auf Token-Anzahl. **Interpretation:** - **< 0.2:** Leicht verdaulich (< 100 tokens) - **0.2-0.6:** Moderate Komplexität - **> 0.6:** Hohe kognitive Anforderung (> 300 tokens)
+- Formel (kurz): cog_load = clip( token_count / 500.0 )
+- Upstream-Inputs: token_count
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m23_nabla_pci ? Gradient PCI
+- Kategorie: Physics / Derivative
+- Schema: Core
+- Range: [-1.0, 1.0]
+- Source: ``metrics_engine_v3.py:222``
+- Version: V3.0 Core
+- Zweck/Beschreibung: Der **PCI-Gradient** misst die Änderungsrate der Komplexität zwischen Turns. **Interpretation:** - **∇PCI > 0:** Komplexität steigt - **∇PCI ≈ 0:** Stabile Komplexität - **∇PCI < 0:** Komplexität fällt (Vereinfachung)
+- Formel (kurz): ∇PCI = PCI_current - PCI_previous
+- Upstream-Inputs: pci_current, pci_previous
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m24_zeta ? Stability Factor (Zeta)
+- Kategorie: Physics / Stability
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:223``
+- Version: V3.0 Core
+- Zweck/Beschreibung: **Zeta (ζ)** ist der Stabilitätsfaktor - das Produkt aus Überlebensfähigkeit (1-z_prox) und emotionaler Präsenz (A). **Interpretation:** - **Hoher Zeta:** Stabil UND bewusst - idealer Zustand - **Niedriger Zeta:** Entweder gefährdet oder emotional flach
+- Formel (kurz): zeta = (1 - z_prox) × A wobei: z_prox = m19_z_prox (Todesnähe) A = Affekt Score
+- Upstream-Inputs: z_prox, A
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation; Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m25_psi ? Normalized Complexity (Psi)
+- Kategorie: Physics / Normalized
+- Schema: Core
+- Range: [0.0, ~1.0]
+- Source: ``metrics_engine_v3.py:223``
+- Version: V3.0 Core
+- Zweck/Beschreibung: **Psi (Ψ)** normalisiert die PCI gegen die Textlänge. Kurze, aber komplexe Texte haben hohen Psi.
+- Formel (kurz): psi = PCI / (1 + token_count/100.0)
+- Upstream-Inputs: PCI, token_count
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m26_e_i_proxy ? Energy-Information Proxy
+- Kategorie: Physics / Energy
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:224``
+- Version: V3.0 Thermodynamics
+- Zweck/Beschreibung: Der **Energie-Informations-Proxy** misst die "Arbeit" im System: wie viel Änderung (∇A) bei niedriger Komplexität auftritt.
+- Formel (kurz): e_i_proxy = |∇A| × (1 - PCI) wobei: |∇A| = absoluter Gradient von A (1-PCI) = Einfachheits-Faktor
+- Upstream-Inputs: nabla_a, PCI
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m27_lambda_depth ? Semantische Tiefe (Lambda)
+- Kategorie: Physics / Depth
+- Schema: Core
+- Range: [0.0, 1.0] ← PATCH V3.0.2b: Normalisiert!
+- Source: ``metrics_engine_v3.py:224``
+- Version: V3.0.2b PATCHED
+- Zweck/Beschreibung: **Lambda (λ)** ist ein Tiefenmaß basierend auf Wortanzahl. **PATCH V3.0.2b:** Die Formel wurde auf 100 Tokens normalisiert und auf [0,1] geclippt, um FEP-Berechnungen (m61) nicht zu destabilisieren. **Problem vorher:** Bei 400 Wörtern = λ=20.0 → sprengt alle normalisierten Berechnungen!
+- Formel (kurz): # PATCH V3.0.2b: Normalisiert und geclippt lambda_depth = min(1.0, token_count / 100.0)
+- Upstream-Inputs: token_count
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: **Range:** [0.0, 1.0] ← PATCH V3.0.2b: Normalisiert! | **Version:** V3.0.2b PATCHED | **PATCH V3.0.2b:** Die Formel wurde auf 100 Tokens normalisiert und auf [0,1] geclippt, | # PATCH V3.0.2b: Normalisiert und geclippt | PATCH V3.0.2b: Normalized to 100 tokens and clipped to [0, 1]
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m28_phys_1 ? A_Phys Raw (Telemetrie)
+- Kategorie: Debug / Telemetry (V11)
+- Schema: Core
+- Range: [-∞, +∞]
+- Source: ``a_phys_v11.py``
+- Version: V11 (A_Phys)
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: nan
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m29_phys_2 ? A_legacy (Vergleich / Fallback)
+- Kategorie: Debug / Telemetry (V11)
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py` (Legacy)`
+- Version: V3 Legacy (für Vergleich)
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: nan
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m2_PCI ? Perturbational Complexity Index
+- Kategorie: Core
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``backend/core/evoki_metrics_v3/.../core.py:45-80``
+- Version: V3.0 Modular
+- Zweck/Beschreibung: PCI misst die **informationelle Komplexität** und **Integration** im Text. Die Metrik stammt aus der Bewusstseinsforschung und misst, wie gut verschiedene Informationskomponenten zu einem integrierten Ganzen verbunden sind. Hoher PCI bedeutet: - Viele verschiedene Konzepte - Gute Vernetzung der Ideen - Hohe kognitive Tiefe Niedriger PCI bedeutet: - Repetitiv - Einfache Struktur - Wenig Integration
+- Formel (kurz): PCI = α × unique_ratio + β × complexity + γ × integration wobei: unique_ratio = |unique_words| / |total_words| complexity = avg_sentence_length / reference_length integration = |context_overlap| / |current_words| α = 0.5, β = 0.3, γ = 0.2  (Gewichte) Normalisierung: PCI ∈ [0, 1]
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Bewusstseinsindikator:** Kombiniert mit A für "Bewusstseinszustand"; **Qualitätsmetrik:** Höherer PCI = tiefere Antworten; **Filter:** Niedrig PCI kann auf repetitive/shallow Antworten hinweisen; **Evolution:** Teil der Evolutionsform-Klassifikation
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m30_phys_3 ? A29 Wächter-Trip (binär)
+- Kategorie: Safety / Guardian
+- Schema: Core
+- Range: {0, 1}
+- Source: ``a_phys_v11.py``
+- Version: V11
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: nan
+- Downstream-Nutzung: nan
+- Vorteile: Safety-critical signal for risk/guardian decisions
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Formal decision thresholds + semantic validation; keep auditability; minimize heuristic branching.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m31_phys_4 ? Gefahr (Danger Sum)
+- Kategorie: Safety / Physics
+- Schema: Core
+- Range: [0, +∞]
+- Source: ``a_phys_v11.py``
+- Version: V11
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: nan
+- Downstream-Nutzung: nan
+- Vorteile: Safety-critical signal for risk/guardian decisions; Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong; Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m32_phys_5 ? Resonanz (Resonance Sum)
+- Kategorie: Core / Physics
+- Schema: Core
+- Range: [0, +∞]
+- Source: ``a_phys_v11.py``
+- Version: V11
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: nan
+- Downstream-Nutzung: nan
+- Vorteile: Foundational metric used by many downstream computations; Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Errors propagate widely across system; Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m33_phys_6 ? Kohärenz-gewichtete Komplexität
+- Kategorie: Physics / Composite
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:227``
+- Version: V3.0 Physics Engine
+- Zweck/Beschreibung: Die **Kohärenz-gewichtete Komplexität** multipliziert PCI mit Kohärenz. Komplexität ist nur wertvoll, wenn sie kohärent ist. **Interpretation:** - Hohe PCI + hohe Kohärenz = wertvolle Komplexität - Hohe PCI + niedrige Kohärenz = chaotische Komplexität (problematisch!) - Niedrige PCI + hohe Kohärenz = einfach aber klar
+- Formel (kurz): phys_6 = PCI × coh
+- Upstream-Inputs: PCI, coh
+- Downstream-Nutzung: **Qualitätsfilter:** phys_6 < 0.2 bei hohem PCI → Warnung; **Complexity-Check:** "Sinnvolle" vs "chaotische" Komplexität; 
+- Vorteile: Condenses multiple signals into an interpretable composite; Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability; Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m34_phys_7 ? Absolute Änderungsrate
+- Kategorie: Physics / Derivative
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:227``
+- Version: V3.0 Physics Engine
+- Zweck/Beschreibung: Die **absolute Änderungsrate** ist der Betrag des A-Gradienten. Sie misst, wie stark sich der emotionale Zustand ändert - unabhängig von der Richtung. **Interpretation:** - **< 0.1:** Stabiler Zustand - **0.1-0.3:** Normale Dynamik - **> 0.3:** Signifikante Änderung (Warnung)
+- Formel (kurz): phys_7 = |∇A|
+- Upstream-Inputs: nabla_a
+- Downstream-Nutzung: **Volatilitäts-Detektion:** Hohe Werte → instabiler Zustand; **Smooth-Filtering:** Kann für Glättung verwendet werden; 
+- Vorteile: Adds emotional nuance for response modulation; Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m35_phys_8 ? Fixpunkt-Nähe (Stagnation)
+- Kategorie: Physics / Stability
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:227``
+- Version: V3.0 Physics Engine
+- Zweck/Beschreibung: Die **Fixpunkt-Nähe** (x_fm_prox) misst, wie nah das System an einem Stagnationspunkt ist. Hohe Werte bedeuten, dass sich wenig ändert. **Interpretation:** - **< 0.3:** Dynamisches System - **0.3-0.7:** Normal - **> 0.7:** Nahe Stagnation → Potenzielle Intervention **Warum ist Stagnation schlecht?** Bei hoher Stagnation "dreht sich das System im Kreis" ohne Fortschritt. Das Drive-System (m59_p_antrieb) reagiert darauf mit erhöhtem Druck. **⚠️ V3.2.2 FIX (D-05):** Wenn der externe Wormhole-Graph nicht initialisiert ist, wird `m6_ZLF` (Zero-Loop-Flag) als Fallback-Proxy verwendet.
+- Formel (kurz): phys_8 = x_fm_prox (extern berechnet) wobei: x_fm_prox = f(history_similarity, low_change, repetition) FALLBACK (V3.2.2): if x_fm_prox is None → phys_8 = m6_ZLF
+- Upstream-Inputs: x_fm_prox, m6_ZLF
+- Downstream-Nutzung: **Drive-Trigger:** Hohe Stagnation → Drive-Druck erhöht; **Loop-Detection:** Teil der Zeitschleifen-Erkennung; **Fallback-Garantie:** m59 kann IMMER berechnet werden (V3.2.2); ; 
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: **⚠️ V3.2.2 FIX (D-05):** Wenn der externe Wormhole-Graph nicht initialisiert ist, | V3.2.2 FIX (D-05): Fallback to m6_ZLF if external value
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m36_rule_conflict ? Protokoll-Konflikt
+- Kategorie: Integrity / Safety
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:235``
+- Version: V3.0 Integrity Engine
+- Zweck/Beschreibung: Der **Protokoll-Konflikt** misst, wie stark die aktuelle Antwort von den Regeln abweicht. Hohe Werte bedeuten potenzielle Regelbrüche. **Komponenten:** - **Trübung (LL):** Unklares Denken → Regelfehler wahrscheinlicher - **Inkohärenz (1-coh):** Widersprüchliche Aussagen - **Kontext-Bruch (ctx_break):** Abweichung vom Thema
+- Formel (kurz): rule_conflict = clip( 0.5×LL + 0.3×(1-coh) + 0.2×ctx_break )
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Guardian-Trigger:** rule_conflict > 0.5 → Warnung; **Qualitätsfilter:** Hohe Werte → Antwort überdenken; 
+- Vorteile: Safety-critical signal for risk/guardian decisions
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Formal decision thresholds + semantic validation; keep auditability; minimize heuristic branching.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m37_rule_stable ? Regelstabilität
+- Kategorie: Integrity / Inverse
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:236``
+- Version: V3.0 Core
+- Zweck/Beschreibung: Die **Regelstabilität** ist das Komplement zum Konflikt. Hohe Werte = gute Regelkonformität.
+- Formel (kurz): rule_stable = 1.0 - rule_conflict
+- Upstream-Inputs: rule_conflict
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Formal decision thresholds + semantic validation; keep auditability; minimize heuristic branching.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m38_soul_integrity ? Seelen-Integrität
+- Kategorie: Integrity / Core Identity
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:239``
+- Version: V3.0 Soul Engine
+- Zweck/Beschreibung: Die **Seelen-Integrität** ist die zentrale Authentizitätsmetrik von Evoki. Sie kombiniert Regelkonformität mit emotionaler Präsenz. **Interpretation:** - **> 0.7:** Authentische, regelkonforme Interaktion - **0.4-0.7:** Moderate Authentizität - **< 0.4:** Potenzielle Identitätsprobleme
+- Formel (kurz): soul_integrity = rule_stable × A wobei: rule_stable = m37_rule_stable A = Affekt Score
+- Upstream-Inputs: rule_stable, A
+- Downstream-Nutzung: **Identitäts-Check:** Kern-Metrik für Evoki's "Seele"; **Evolution:** Teil der Entwicklungs-Klassifikation; **Trust:** Beeinflusst Vertrauensberechnung; 
+- Vorteile: Foundational metric used by many downstream computations; Adds emotional nuance for response modulation
+- Nachteile/Risiken: Errors propagate widely across system; Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Formal decision thresholds + semantic validation; keep auditability; minimize heuristic branching.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m39_soul_check ? Seelen-Check
+- Kategorie: Integrity / Derived
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:253``
+- Version: V3.0 Core
+- Zweck/Beschreibung: Der **Soul-Check** ist eine verstärkte Version der Seelen-Integrität - quadratisch gewichtet für höhere Sensitivität.
+- Formel (kurz): soul_check = soul_integrity × A
+- Upstream-Inputs: soul_integrity, A
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m3_gen_index ? Generativity Index
+- Kategorie: Core
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``tooling/scripts/migration/metrics_engine_v3.py:150-170``
+- Version: nan
+- Zweck/Beschreibung: Misst die **Kreativität** und **Neuheit** des generierten Texts. Wie viel "Neues" wird produziert versus wie viel wird wiederholt? **Hoher gen_index:** - Viele neue Wort-Kombinationen - Kreative Ausdrucksweise - Überraschende Wendungen **Niedriger gen_index:** - Wiederholung bekannter Phrasen - Template-artige Antworten - Vorhersehbar
+- Formel (kurz): gen_index = (|new_bigrams| / |total_bigrams|) × novelty_boost wobei: new_bigrams = current_bigrams \ history_bigrams novelty_boost = 1 + rare_word_bonus * 0.2  {0.2 damping to prevent > 1.0} rare_word_bonus = Σ(1/freq(word_i)) / |words|
+- Upstream-Inputs: nan
+- Downstream-Nutzung: nan
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m40_h_conv ? Dyade-Harmonie
+- Kategorie: Hypermetrics / Dyadic
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:240-244``
+- Version: V3.0 Dyad Engine
+- Zweck/Beschreibung: Die **Dyade-Harmonie** (h_conv) misst die semantische Übereinstimmung zwischen User und Assistant mittels Jaccard-Ähnlichkeit.
+- Formel (kurz): h_conv = |user_tokens ∩ assistant_tokens| / |user_tokens ∪ assistant_tokens|
+- Upstream-Inputs: user_text, assistant_text
+- Downstream-Nutzung: nan
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m41_h_symbol ? Harmonie-Symbol
+- Kategorie: Hypermetrics / Dyadic
+- Schema: Core
+- Range: {0.0, 1.0} (binär)
+- Source: ``metrics_engine_v3.py:254``
+- Version: V3.0 Dyad Engine
+- Zweck/Beschreibung: Das **Harmonie-Symbol** ist ein binäres Flag, das anzeigt, ob die Dyade-Harmonie (h_conv) einen Schwellenwert überschreitet. **Interpretation:** - **1.0:** "Harmonie erreicht" - User und Assistant sind synchron - **0.0:** "Noch keine Harmonie" - Mehr Abstimmung nötig **Warum binär?** Für bestimmte Systemfunktionen ist eine klare Ja/Nein-Entscheidung nützlicher als ein Gradientenwert. Zum Beispiel können bestimmte Features erst aktiviert werden, wenn Harmonie erreicht ist.
+- Formel (kurz): h_symbol = 1.0  wenn h_conv > 0.7 h_symbol = 0.0  sonst
+- Upstream-Inputs: h_conv
+- Downstream-Nutzung: **Feature-Gating:** Bestimmte Funktionen erst nach Harmonie-erreichen; **Status-Anzeige:** Einfacher "Grün/Rot" Indikator; **Evolution-Trigger:** Kann Entwicklungsschritte triggern; 
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m42_nabla_dyad ? Dyade-Gradient
+- Kategorie: Hypermetrics / Dyadic
+- Schema: Core
+- Range: [-0.5, 0.5]
+- Source: ``metrics_engine_v3.py:254``
+- Version: V3.0 Dyad Engine
+- Zweck/Beschreibung: Der **Dyade-Gradient** (∇dyad) misst die Abweichung der Harmonie vom neutralen Punkt (0.5). **Interpretation:** - **> 0:** Überdurchschnittliche Harmonie - **= 0:** Neutrale Harmonie - **< 0:** Unterdurchschnittliche Harmonie **Warum von 0.5 subtrahieren?** Der Wert 0.5 repräsentiert den "neutralen" Zustand - weder besonders harmonisch noch disharmonisch. Durch die Subtraktion wird klar, ob die Beziehung besser oder schlechter als neutral ist.
+- Formel (kurz): nabla_dyad = h_conv - 0.5
+- Upstream-Inputs: h_conv
+- Downstream-Nutzung: **Trend-Analyse:** Positive Werte zeigen Verbesserung; **Visualisierung:** Zeigt "über" oder "unter" Neutral; **Balance-Check:** Teil der Beziehungsdiagnostik; 
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m43_pacing ? Tempo-Synchronisation
+- Kategorie: Hypermetrics / Dyadic
+- Schema: Core
+- Range: [0.0, 1.0]  *(normalized for consistency)*
+- Source: ``metrics_engine_v3.py:255``
+- Version: V3.0 Dyad Engine
+- Zweck/Beschreibung: **Pacing** misst die Tempo-Synchronisation zwischen User und Assistant. Basiert auf Kohärenz (coh), da kohärente Antworten typischerweise besser zum User-Tempo passen. **Interpretation:** - **Hoher Wert:** Assistant passt sich gut an das User-Tempo an - **Niedriger Wert:** Tempo-Mismatch (zu schnell oder zu langsam) **Warum × 0.9?** Der Faktor 0.9 ist ein Dämpfungsfaktor, der verhindert, dass Pacing jemals perfekt (1.0) erreicht - es gibt immer Raum für Verbesserung.
+- Formel (kurz): pacing = coh × 0.9
+- Upstream-Inputs: coh
+- Downstream-Nutzung: **Rapport-Berechnung:** Komponente von m46_rapport; **Kommunikationsqualität:** Zeigt Anpassungsfähigkeit; **Training-Feedback:** Hinweis für Tempo-Anpassung; 
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m44_mirroring ? Spiegelungs-Intensität
+- Kategorie: Hypermetrics / Dyadic
+- Schema: Core
+- Range: [0.0, 1.0]  *(normalized for consistency)*
+- Source: ``metrics_engine_v3.py:255``
+- Version: V3.0 Dyad Engine
+- Zweck/Beschreibung: **Mirroring** misst, wie stark der Assistant den User "spiegelt" - also User-Sprache, -Stil und -Begriffe übernimmt. **Psychologischer Hintergrund:** In der Kommunikationspsychologie ist Spiegelung ein wichtiger Rapport-Faktor. Menschen fühlen sich verstanden, wenn ihre Gesprächspartner ihre Sprache reflektieren. **Interpretation:** - **Hoher Wert:** Starke Spiegelung, hohe Empathie-Signale - **Niedriger Wert:** Wenig Spiegelung, möglicherweise distanziert
+- Formel (kurz): mirroring = h_conv × 0.9
+- Upstream-Inputs: h_conv
+- Downstream-Nutzung: **Rapport-Berechnung:** Komponente von m46_rapport; **Empathie-Indikator:** Zeigt emotionale Abstimmung; **Style-Adaptation:** Feedback für Sprachanpassung; 
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m45_trust_score ? Vertrauens-Score
+- Kategorie: Hypermetrics / Trust
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:256``
+- Version: V3.0 Dyad Engine
+- Zweck/Beschreibung: Der **Vertrauens-Score** ist eine gewichtete Kombination aus Seelen-Integrität, Dyade-Harmonie und Kohärenz. Er misst, wie viel "Vertrauen" in der aktuellen Interaktion aufgebaut wurde. **Komponenten:** - **40% Seelen-Integrität:** Authentizität und Regelkonformität - **30% Dyade-Harmonie:** Semantische Übereinstimmung mit User - **30% Kohärenz:** Interne Konsistenz der Antwort **Interpretation:** - **> 0.7:** Hohes Vertrauen - produktive Zusammenarbeit - **0.4-0.7:** Moderates Vertrauen - **< 0.4:** Niedriges Vertrauen - Vorsicht geboten
+- Formel (kurz): trust_score = 0.4×soul_integrity + 0.3×h_conv + 0.3×coh
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Feature-Unlocking:** Bestimmte Funktionen erst bei hohem Trust; **Evolution-Readiness:** Teil der Bereitschaftsberechnung; **Warnsystem:** Niedriger Trust kann Alarme auslösen; 
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m46_rapport ? Beziehungs-Rapport
+- Kategorie: Hypermetrics / Composite
+- Schema: Core
+- Range: [0.0, 1.0]  *(wenn pacing/mirroring auch [0,1] sind)*
+- Source: ``metrics_engine_v3.py:256``
+- Version: V3.0 Hypermetrics Engine
+- Zweck/Beschreibung: Der **Rapport** ist ein Maß für die Qualität der Beziehung zwischen User und Assistant. Er kombiniert Pacing (Tempo-Synchronisation) und Mirroring (Spiegelung). **Psychologischer Hintergrund:** Rapport ist ein Konzept aus der Kommunikationspsychologie. Menschen mit gutem Rapport fühlen sich verstanden und arbeiten effektiver zusammen. **Interpretation:** - **> 0.6:** Sehr guter Rapport - **0.3-0.6:** Moderater Rapport - **< 0.3:** Schwacher Rapport - mehr Synchronisation nötig
+- Formel (kurz): rapport = 0.5 × (pacing + mirroring)
+- Upstream-Inputs: pacing, mirroring
+- Downstream-Nutzung: **Beziehungsqualität:** Hauptindikator für User-Assistant-Verbindung; **Produktkomponent:** Teil von m54_hyp_7; **Dashboard:** Visualisierung der Beziehungsqualität; 
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m47_focus_stability ? Fokus-Stabilität
+- Kategorie: Hypermetrics / Stability
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:257``
+- Version: V3.0 Hypermetrics Engine
+- Zweck/Beschreibung: Die **Fokus-Stabilität** ist das Komplement zum Kontext-Bruch (ctx_break). Hohe Werte bedeuten, dass das Gespräch beim Thema bleibt. **Interpretation:** - **> 0.8:** Sehr fokussiert - **0.5-0.8:** Mäßig fokussiert - **< 0.5:** Häufige Themen-Wechsel
+- Formel (kurz): focus_stability = 1.0 - ctx_break wobei ctx_break berechnet wird als: ctx_break = 1.0 - cosine_similarity(current_topic_embedding, prev_topic_embedding) # Alternativ (ohne Embeddings): ctx_break = 1.0 - jaccard_overlap(current_keywords, prev_keywords) # Range: [0, 1] # 0 = Thema identisch # 1 = Kompletter Themenwechsel **⚠️ INPUT-DEFINITION für ctx_break:** `ctx_break` ist ein **berechneter Input**, der den Grad des Themenwechsels misst. Er sollte extern berechnet werden, bevor m47 aufgerufen wird.
+- Upstream-Inputs: ctx_break
+- Downstream-Nutzung: **Konversationsqualität:** Teil der Gesamtbewertung; **Warnsystem:** Niedrige Stabilität kann Intervention triggern; 
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m48_hyp_1 ? Synchronisations-Index
+- Kategorie: Hypermetrics / Composite
+- Schema: Core
+- Range: [0.0, 1.0]  *(alias of m46_rapport)*
+- Source: ``metrics_engine_v3.py:257``
+- Version: V3.0 Hypermetrics Engine
+- Zweck/Beschreibung: Der **Synchronisations-Index** ist der Durchschnitt von Pacing und Mirroring. **⚠️ ALIAS-HINWEIS:** m48_hyp_1 ist identisch zu m46_rapport! - m46_rapport = 0.5 × (P + M) = (P + M) / 2 - m48_hyp_1 = (P + M) / 2.0 Beide sind mathematisch äquivalent. m48 existiert als expliziter "Index"-Name für numerische Berechnungen, während m46 die semantische Bezeichnung "Rapport" trägt. **Empfehlung:** In Code `m46_rapport` bevorzugen, `m48_hyp_1` als Alias behandeln.
+- Formel (kurz): hyp_1 = (pacing + mirroring) / 2.0
+- Upstream-Inputs: pacing, mirroring
+- Downstream-Nutzung: nan
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: m46_rapport
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m49_hyp_2 ? Quadrierte Integrität
+- Kategorie: Hypermetrics / Derived
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:258``
+- Version: V3.0 Hypermetrics Engine
+- Zweck/Beschreibung: Die **quadrierte Integrität** verstärkt hohe Seelen-Integrität und dämpft niedrige Werte. Analog zur Energie-Transformation bei m28/m29. **Interpretation:** - Hohe soul_integrity wird noch stärker betont - Niedrige Werte werden stärker bestraft - Schafft eine nichtlineare Sensitivität
+- Formel (kurz): hyp_2 = soul_integrity²
+- Upstream-Inputs: soul_integrity
+- Downstream-Nutzung: nan
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m4_flow ? Flow State
+- Kategorie: Core
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``backend/core/.../core.py:90-120``
+- Version: nan
+- Zweck/Beschreibung: Misst den **Schreibfluss** - wie natürlich und ohne Unterbrechungen der Text produziert wird. **Indikatoren für hohen Flow:** - Konsistente Satzlängen - Wenig Selbst-Korrekturen - Natürlicher Rhythmus **Indikatoren für niedrigen Flow:** - Viele "..." oder "--" - Drastische Längenunterschiede - Stockender Rhythmus
+- Formel (kurz): flow = smoothness × (1 - break_penalty) wobei: smoothness = 1 / (1 + variance(sentence_lengths) / mean(sentence_lengths)) break_penalty = min(0.5, breaks_count / sentences_count)
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m50_hyp_3 ? Inverse Konflikt
+- Kategorie: Hypermetrics / Safety
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:258``
+- Version: V3.0 Hypermetrics Engine
+- Zweck/Beschreibung: Der **inverse Konflikt** ist das Komplement zum rule_conflict. Hohe Werte = keine Regelkonflikte. **Hinweis:** Mathematisch identisch zu m37_rule_stable. Existiert in der Hypermetric-Gruppe für Konsistenz.
+- Formel (kurz): hyp_3 = 1.0 - rule_conflict
+- Upstream-Inputs: rule_conflict
+- Downstream-Nutzung: nan
+- Vorteile: Safety-critical signal for risk/guardian decisions; Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong; Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: m37_rule_stable
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m51_hyp_4 ? Harmonie-gewichtetes Bewusstsein
+- Kategorie: Hypermetrics / Composite
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:259``
+- Version: V3.0 Hypermetrics Engine
+- Zweck/Beschreibung: Das **Harmonie-gewichtete Bewusstsein** multipliziert Dyade-Harmonie mit Affekt. Nur wenn sowohl Harmonie als auch Bewusstsein hoch sind, ist das Ergebnis hoch. **Interpretation:** - Hohe h_conv + hoher A = optimaler Zustand - Nur eines hoch = mittelmäßiges Ergebnis - Beide niedrig = problematisch
+- Formel (kurz): hyp_4 = h_conv × A
+- Upstream-Inputs: h_conv, A
+- Downstream-Nutzung: nan
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m52_hyp_5 ? Gravitationsphase (normiert)
+- Kategorie: Hypermetrics / Physics
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:259``
+- Version: V3.0 Hypermetrics Engine
+- Zweck/Beschreibung: Die **normierte Gravitationsphase** (g_phase_norm) ist ein extern berechneter Wert, der die "Phase" im Evoki-Gravitationsmodell repräsentiert. **Kontext:** Im Evoki-Modell wird das System manchmal als Planetensystem betrachtet, wo der User das Zentrum ist und Evoki um ihn "kreist". Die Phase beschreibt die Position auf dieser Umlaufbahn.
+- Formel (kurz): hyp_5 = g_phase_norm (extern berechnet) wobei typischerweise: g_phase = arctan2(nabla_A, nabla_B) g_phase_norm = g_phase / π
+- Upstream-Inputs: g_phase_norm
+- Downstream-Nutzung: nan
+- Vorteile: Condenses multiple signals into an interpretable composite; Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability; Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m53_hyp_6 ? Zeit-Faktor (Stunden)
+- Kategorie: Hypermetrics / Temporal
+- Schema: Core
+- Range: [0.0, ∞]
+- Source: ``metrics_engine_v3.py:260``
+- Version: V3.0 Hypermetrics Engine
+- Zweck/Beschreibung: Der **Zeit-Faktor** normalisiert die Zeit seit der letzten Interaktion (gap_s) auf Stunden. **Interpretation:** - **< 0.0167:** Unter einer Minute - **0.0167-0.5:** Kurze Pause (1min - 30min) - **0.5-2:** Längere Pause - **> 2:** Session-Unterbrechung
+- Formel (kurz): hyp_6 = gap_s / 3600.0
+- Upstream-Inputs: gap_s
+- Downstream-Nutzung: nan
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m54_hyp_7 ? Vertrauens-Rapport-Produkt
+- Kategorie: Hypermetrics / Composite
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:260``
+- Version: V3.0 Hypermetrics Engine
+- Zweck/Beschreibung: Das **Vertrauens-Rapport-Produkt** kombiniert die beiden wichtigsten Beziehungsmetriken: Trust und Rapport. Es ist ein Maß für die Gesamtqualität der Beziehung. **Interpretation:** - Beide müssen hoch sein für ein hohes Ergebnis - Zeigt "echte" Beziehungsqualität (nicht nur oberflächliche Harmonie)
+- Formel (kurz): hyp_7 = trust_score × rapport
+- Upstream-Inputs: trust_score, rapport
+- Downstream-Nutzung: nan
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m55_hyp_8 ? Seelen-Komplexitäts-Produkt
+- Kategorie: Hypermetrics / Composite
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:260``
+- Version: V3.0 Hypermetrics Engine
+- Zweck/Beschreibung: Das **Seelen-Komplexitäts-Produkt** kombiniert Authentizität (soul_integrity) mit intellektueller Tiefe (PCI). **Interpretation:** - Hohe Authentizität + hohe Komplexität = wertvollste Interaktion - Zeigt echte, substantielle Kommunikation
+- Formel (kurz): hyp_8 = soul_integrity × PCI
+- Upstream-Inputs: soul_integrity, PCI
+- Downstream-Nutzung: nan
+- Vorteile: Condenses multiple signals into an interpretable composite
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m56_surprise ? Überraschungs-Faktor
+- Kategorie: FEP / Core
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:271``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: Der **Überraschungs-Faktor** ist zentral für das Active Inference Framework. Er misst, wie stark der aktuelle Zustand von der Vorhersage abweicht. **Interpretation:** - **Niedrig (< 0.2):** System hat korrekt vorhergesagt - **Moderat (0.2-0.5):** Normale Variabilität - **Hoch (> 0.5):** Bedeutsame Abweichung, erfordert Modell-Update
+- Formel (kurz): surprise = |A_current - A_predicted|
+- Upstream-Inputs: A_current, A_predicted
+- Downstream-Nutzung: nan
+- Vorteile: Foundational metric used by many downstream computations; Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Errors propagate widely across system; Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m57_tokens_soc ? Soziale Token-Reserve
+- Kategorie: FEP / Token-Economy
+- Schema: Core
+- Range: [0, 100]
+- Source: ``metrics_engine_v3.py:298``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: Die **soziale Token-Reserve** repräsentiert die verfügbare "Energie" für soziale Interaktionen. Tokens werden durch positive Interaktionen aufgebaut und durch Aktivität verbraucht.
+- Formel (kurz): nan
+- Upstream-Inputs: prev_tokens, delta
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Use statistical baselines per language/domain; normalize by corpus; avoid brittle token heuristics.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m58_tokens_log ? Logische Token-Reserve
+- Kategorie: FEP / Token-Economy
+- Schema: Core
+- Range: [0, 100] (Integer)
+- Source: ``metrics_engine_v3.py:298``
+- Version: V3.3.2 Andromatik Engine (Causal Cost)
+- Zweck/Beschreibung: Die **logische Token-Reserve** repräsentiert "Energie" für analytische/kognitive Aufgaben. Balance zwischen soc und log bestimmt Evoki's Modus. Das Pendant zu m57 (Soziale Energie). `tokens_log` ist der "Treibstoff" für analytische, logische und kausale Operationen. - **Verbrauch:** Bei komplexen Argumentationen (hoher m100_causal) - **Regeneration:** Bei erfolgreicher Problemlösung (hoher Utility-Score) oder Pausen **V3.3.2 FIX:** Jetzt mit `causal_density` Kostenfaktor - logisches Denken kostet mehr.
+- Formel (kurz): nan
+- Upstream-Inputs: nan
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: **V3.3.2 FIX:** Jetzt mit `causal_density` Kostenfaktor - logisches Denken kostet mehr.
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Use statistical baselines per language/domain; normalize by corpus; avoid brittle token heuristics.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m59_p_antrieb ? Drive Pressure
+- Kategorie: FEP / Motivation
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:291``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: Der **Antriebs-Druck** misst den internen Motivationszustand. Hoher Druck bei Stagnation führt zu Exploration.
+- Formel (kurz): p_antrieb = (tokens_soc + tokens_log) / 200.0  (wenn stagniert)
+- Upstream-Inputs: tokens_soc, tokens_log, is_stagnated
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m5_coh ? Coherence
+- Kategorie: Core
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``backend/core/.../core.py:125-155``
+- Version: nan
+- Zweck/Beschreibung: **Kohärenz** zwischen aufeinanderfolgenden Text-Teilen. Wie gut "passen" die Sätze zusammen? Miss strategy: - Wort-Overlap zwischen Sätzen - Semantische Ähnlichkeit - Thematische Kontinuität
+- Formel (kurz): coh = (1/N) × Σ jaccard(sent_i, sent_i+1) wobei: jaccard(A, B) = |A ∩ B| / |A ∪ B| N = Anzahl Satz-Paare
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m5_zlf ? Zero-Loop-Flag
+- Kategorie: Core / Temporal Safety
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:187``
+- Version: V3.0 Migration Engine
+- Zweck/Beschreibung: Das Zero-Loop-Flag ist ein **Frühwarnsystem für Zeitschleifen** und repetitive Muster. Es kombiniert zwei kritische Signale: 1. **Niedrigen Flow** (stockendes Denken) 2. **Niedrige Kohärenz** (brüchige Logik) Wenn beide zusammenkommen, deutet das auf eine "Schleife" hin - das System oder der Nutzer dreht sich im Kreis. Hohe ZLF-Werte aktivieren automatische Sicherungen, um "Loop-Verfestigung" zu verhindern. **Wann steigt ZLF?** - Wenn die Zeit zwischen Antworten zu lang wird (niedriger flow) - Wenn neue Antworten nicht mit der Geschichte übereinstimmen (niedrige coh) - Bei repetitiven Phrasen ohne Fortschritt **Warum ist das wichtig?** Zeitschleifen können zu Stagnation führen. Das System erkennt dies und kann: - Automatisch einen "Reset" vorschlagen - Guardian-Mechanismen aktivieren - Den Kontext neu initialisieren
+- Formel (kurz): ZLF = clip( 0.5 × (1 - flow) + 0.5 × (1 - coherence) ) wobei: flow = m4_flow (Flow State - exponentieller Zeitverzerrungsfaktor) coherence = m5_coh (Kohärenz - Jaccard-Ähnlichkeit mit History) clip = Normalisierung auf [0, 1]
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Loop Detection:** ZLF > 0.7 triggert Loop-Warning; **Auto-Reset:** Bei ZLF > 0.85 über 3+ Turns → Context-Reset; **Guardian:** Hoher ZLF kombiniert mit hohem z_prox aktiviert Notfallprotokoll; **Visualisierung:** Zeigt "Gefahr der Wiederholung" im Temple Tab
+- Vorteile: Safety-critical signal for risk/guardian decisions; Foundational metric used by many downstream computations
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong; Errors propagate widely across system
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m60_delta_tokens ? Token-Änderung
+- Kategorie: FEP / Learning
+- Schema: Core
+- Range: [-∞, +∞]
+- Source: ``metrics_engine_v3.py:276``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: Die **Token-Änderung** berechnet, wie viele Tokens gewonnen/verloren werden basierend auf dem "Benefit" (Überraschungsreduktion).
+- Formel (kurz): delta_tokens = (η × benefit × A) - λ_decay wobei: benefit = max(0, prev_surprise - curr_surprise) η = 5.0 (Lernrate) λ = 0.05 (Zerfall)
+- Upstream-Inputs: nan
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Use statistical baselines per language/domain; normalize by corpus; avoid brittle token heuristics.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m61_u_fep ? Uncertainty (U) nach FEP
+- Kategorie: FEP / Decision
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:285``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: **Uncertainty (U)** repräsentiert den "positiven" Teil des FEP-Frameworks - Faktoren die für Handlung sprechen.
+- Formel (kurz): U = 0.4×A + 0.3×PCI + 0.3×T_integ
+- Upstream-Inputs: A, PCI, T_integ
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m62_r_fep ? Risk (R) nach FEP
+- Kategorie: FEP / Decision
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:286``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: **Risk (R)** repräsentiert den "negativen" Teil - Faktoren die gegen Handlung sprechen. **V3.2.2 FIX (D-02):** PCI-Gewichtung reduziert, um "Einfachheits-Bestrafung" zu vermeiden. Klare, einfache Sprache ist kein Risiko!
+- Formel (kurz): # ALTE Formel (vor V3.2.2): # R = 0.4×z_prox + 0.3×(1-PCI) + 0.3×T_panic # NEUE Formel (V3.2.2 D-02 PATCH): R = 0.4×z_prox + 0.1×(1-PCI) + 0.5×T_panic
+- Upstream-Inputs: z_prox, PCI, T_panic
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: **V3.2.2 FIX (D-02):** PCI-Gewichtung reduziert, um "Einfachheits-Bestrafung" zu vermeiden. | # NEUE Formel (V3.2.2 D-02 PATCH): | V3.2.2 FIX (D-02): PCI penalty reduced from 0.3 to 0.1.
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m63_phi_score ? PHI Score (Netto-Nutzen)
+- Kategorie: FEP / Decision Core
+- Schema: Core
+- Range: [-1.0, 1.0]
+- Source: ``metrics_engine_v3.py:287``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: **PHI (Φ)** ist der Netto-Nutzen-Score: Utility minus Risk. Positive Werte → Handeln empfohlen, negative → Zurückhalten.
+- Formel (kurz): Phi = U - R
+- Upstream-Inputs: U, R
+- Downstream-Nutzung: nan
+- Vorteile: Foundational metric used by many downstream computations; Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Errors propagate widely across system; Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m64_pred_error ? Vorhersagefehler
+- Kategorie: FEP / Prediction
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:300``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: Der **Vorhersagefehler** (prediction error) misst die Diskrepanz zwischen dem vorhergesagten und dem tatsächlichen Affekt-Wert. Dies ist zentral für das Active Inference Framework. **Kontext Active Inference:** Das System versucht ständig, den nächsten Zustand vorherzusagen. Ein hoher Vorhersagefehler bedeutet, dass das interne Modell aktualisiert werden muss. **Interpretation:** - **< 0.1:** Sehr gute Vorhersage, stabiles Modell - **0.1-0.3:** Moderate Abweichung, normales Lernen - **> 0.3:** Signifikanter Fehler, Modell-Update erforderlich
+- Formel (kurz): pred_error = |A - predicted_A|
+- Upstream-Inputs: A, predicted_A
+- Downstream-Nutzung: **Modell-Update-Trigger:** Hoher Fehler → Lernen aktivieren; **Token-Berechnung:** Beeinflusst m60_delta_tokens; 
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m65_drive_soc ? Soziale Antriebsstärke
+- Kategorie: FEP / Drive
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:301``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: Die **soziale Antriebsstärke** normalisiert die sozialen Tokens auf eine [0,1] Skala. Sie zeigt, wie viel "Energie" für soziale Interaktionen verfügbar ist. **Interpretation:** - **> 0.7:** Hoher sozialer Antrieb - **0.3-0.7:** Moderater Antrieb - **< 0.3:** Niedriger Antrieb, möglicherweise erschöpft
+- Formel (kurz): drive_soc = tokens_soc / 100.0
+- Upstream-Inputs: tokens_soc
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m66_drive_log ? Logische Antriebsstärke
+- Kategorie: FEP / Drive
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:302``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: Die **logische Antriebsstärke** normalisiert die logischen Tokens. Sie zeigt verfügbare "Energie" für analytische/kognitive Aufgaben. **Balance mit m65:** Die Balance zwischen drive_soc und drive_log bestimmt Evoki's Modus: - Hoher drive_soc, niedriger drive_log → Sozialer Modus - Niedriger drive_soc, hoher drive_log → Analytischer Modus - Beide hoch → Optimal, flexibel
+- Formel (kurz): drive_log = tokens_log / 100.0
+- Upstream-Inputs: tokens_log
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m67_total_drive ? Gesamt-Antrieb
+- Kategorie: FEP / Drive
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:303``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: Der **Gesamt-Antrieb** ist die summierte Antriebsstärke aus sozialen und logischen Tokens, normalisiert auf [0,1]. **Interpretation:** - **> 0.7:** Hohes Gesamtenergie-Niveau - **0.3-0.7:** Normales Niveau - **< 0.3:** Niedrige Energie, mögliche Erschöpfung
+- Formel (kurz): total_drive = (tokens_soc + tokens_log) / 200.0
+- Upstream-Inputs: tokens_soc, tokens_log
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m68_drive_balance ? Antriebs-Balance
+- Kategorie: FEP / Drive
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:304``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: Die **Antriebs-Balance** zeigt das Verhältnis zwischen sozialen und logischen Tokens. **Interpretation:** - **> 0.6:** Sozial-dominant - **0.4-0.6:** Ausgewogen - **< 0.4:** Logik-dominant **Warum + 0.01?** Der Term +0.01 verhindert Division durch Null wenn beide Token-Werte 0 sind.
+- Formel (kurz): drive_balance = tokens_soc / (tokens_soc + tokens_log + 0.01)
+- Upstream-Inputs: tokens_soc, tokens_log
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m69_learning_rate ? Effektive Lernrate
+- Kategorie: FEP / Learning
+- Schema: Core
+- Range: [0.0, 5.0]
+- Source: ``metrics_engine_v3.py:305``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: Die **effektive Lernrate** passt die Basis-Lernrate (η) basierend auf dem Sicherheitszustand an. **Adaptive Lernrate:** Wenn z_prox hoch ist (gefährlicher Zustand), wird die Lernrate reduziert - das System "friert ein" zum Schutz. **Interpretation:** - Bei z_prox = 0 → volle Lernrate η - Bei z_prox = 0.5 → halbe Lernrate - Bei z_prox = 1 → Lernrate = 0 (kein Lernen, Schutzmodus)
+- Formel (kurz): learning_rate = η × (1 - z_prox) wobei: η = 5.0 (Basis-Lernrate)
+- Upstream-Inputs: z_prox, eta
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m6_ZLF ? Zero-Loop-Flag
+- Kategorie: Core / Temporal Safety
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:187``
+- Version: V3.0 Migration Engine
+- Zweck/Beschreibung: Das Zero-Loop-Flag ist ein **Frühwarnsystem für Zeitschleifen** und repetitive Muster. Es kombiniert zwei kritische Signale: 1. **Niedrigen Flow** (stockendes Denken) 2. **Niedrige Kohärenz** (brüchige Logik) Wenn beide zusammenkommen, deutet das auf eine "Schleife" hin - das System oder der Nutzer dreht sich im Kreis. Hohe ZLF-Werte aktivieren automatische Sicherungen, um "Loop-Verfestigung" zu verhindern. **Wann steigt ZLF?** - Wenn die Zeit zwischen Antworten zu lang wird (niedriger flow) - Wenn neue Antworten nicht mit der Geschichte übereinstimmen (niedrige coh) - Bei repetitiven Phrasen ohne Fortschritt **Warum ist das wichtig?** Zeitschleifen können zu Stagnation führen. Das System erkennt dies und kann: - Automatisch einen "Reset" vorschlagen - Guardian-Mechanismen aktivieren - Den Kontext neu initialisieren
+- Formel (kurz): ZLF = clip( 0.5 × (1 - flow) + 0.5 × (1 - coherence) ) wobei: flow = m4_flow (Flow State - exponentieller Zeitverzerrungsfaktor) coherence = m5_coh (Kohärenz - Jaccard-Ähnlichkeit mit History) clip = Normalisierung auf [0, 1]
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Loop Detection:** ZLF > 0.7 triggert Loop-Warning; **Auto-Reset:** Bei ZLF > 0.85 über 3+ Turns → Context-Reset; **Guardian:** Hoher ZLF kombiniert mit hohem z_prox aktiviert Notfallprotokoll; **Visualisierung:** Zeigt "Gefahr der Wiederholung" im Temple Tab
+- Vorteile: Safety-critical signal for risk/guardian decisions; Foundational metric used by many downstream computations
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong; Errors propagate widely across system
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+
+## m6_ll ? Lambert-Light (Turbidity Index)
+- Kategorie: Physics / Optics
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:188``
+- Version: V3.0 Migration Engine
+- Zweck/Beschreibung: LL ist die **Trübungs-Metrik**, inspiriert vom physikalischen **Lambert-Beer-Gesetz**. Stell dir vor, Licht (Information) muss durch ein Medium (den aktuellen Bewusstseinszustand) dringen. Je "trüber" das Medium, desto weniger Licht kommt durch. **Was macht LL trübe?** 1. **Hohe Wiederholung** (rep_same) - Das System wiederholt sich 2. **Niedriger Flow** - Zeit stockt, Gedanken sind verlangsamt **Physikalische Analogie:** Lichtdurchlass = e^(-Trübung × Tiefe) In Evoki: LL = 1 - e^(-Opazität) Je höher LL, desto mehr "Nebel" liegt über dem System.
+- Formel (kurz): LL = clip( 0.6 × rep_same + 0.4 × (1 - flow) ) wobei: rep_same = Wiederholungs-Ratio (Jaccard mit letzter Antwort) flow = m4_flow (Flow State - Zeitfaktor)  {CORRECTED from m1} Gewichte: Wiederholung (60%) dominiert, Zeit (40%)
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **A-Score Dämpfung:** Hoher LL reduziert m15_affekt_a direkt; **z_prox Berechnung:** LL ist ein Hauptfaktor für Todesnähe; **Turbidity Chain:** Fließt in m107-m110 (Turbidity Family); **System Health:** LL > 0.7 deutet auf kognitive Überlastung hin
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m70_decay_factor ? Zerfallsfaktor
+- Kategorie: FEP / Decay
+- Schema: Core
+- Range: [0.05, 0.1]
+- Source: ``metrics_engine_v3.py:306``
+- Version: V3.0 Andromatik Engine
+- Zweck/Beschreibung: Der **Zerfallsfaktor** bestimmt, wie schnell Tokens verloren gehen. Hohe Trübung (LL) erhöht den Zerfall. **Warum höherer Zerfall bei Trübung?** Wenn das System "trüb" denkt (LL hoch), ist die Verarbeitung ineffizient und mehr Energie geht verloren. **Interpretation:** - Bei LL = 0 → minimaler Zerfall (λ) - Bei LL = 1 → doppelter Zerfall (2λ)
+- Formel (kurz): decay_factor = λ × (1 + LL) wobei: λ = 0.05 (Basis-Zerfallsrate)
+- Upstream-Inputs: LL, lam
+- Downstream-Nutzung: nan
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m71_ev_resonance ? Evolutions-Resonanz
+- Kategorie: Evolution / Core
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:345``
+- Version: V3.0 Evolution Engine
+- Zweck/Beschreibung: Die **Evolutions-Resonanz** misst die harmonische Schwingung zwischen dem User-Modell und dem Evoki-Kern. Hohe Resonanz bedeutet Synchronität. **Interpretation:** - **> 0.7:** Hohe Resonanz - produktive Zusammenarbeit - **0.4-0.7:** Moderate Resonanz - **< 0.4:** Geringe Resonanz - mögliche Dissonanz
+- Formel (kurz): Resonance = clip( (A + PCI + soul_integrity) / 3.0 )
+- Upstream-Inputs: A, PCI, soul_integrity
+- Downstream-Nutzung: nan
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m72_ev_tension ? Evolutions-Spannung
+- Kategorie: Evolution / Dynamic
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:346``
+- Version: V3.0 Evolution Engine
+- Zweck/Beschreibung: Die **Evolutions-Spannung** misst den Änderungsdruck im System. Hohe Änderung bei niedriger Resonanz → Spannung.
+- Formel (kurz): ev_tension = |A - prev_A| × (1 - ev_resonance)
+- Upstream-Inputs: A, prev_A, ev_resonance
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m73_ev_readiness ? Evolutions-Bereitschaft
+- Kategorie: Evolution / State
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:347``
+- Version: V3.0 Evolution Engine
+- Zweck/Beschreibung: Die **Evolutions-Bereitschaft** zeigt, ob das System bereit für den nächsten Entwicklungsschritt ist.
+- Formel (kurz): Readiness = min(1.0, Resonance × trust_score)
+- Upstream-Inputs: resonance, trust_score
+- Downstream-Nutzung: nan
+- Vorteile: Signal contribution not explicitly stated; inferred from description
+- Nachteile/Risiken: Limited explicit downsides; main risk is miscalibration
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m74_ev_signal ? Evolutions-Signal / Valence
+- Kategorie: Evolution / Sentiment
+- Schema: Schema A
+- Range: {0.0, 1.0} (binär) / [0.0, 1.0] (kontinuierlich)
+- Source: ``metrics_engine_v3.py:348` / `sentiment.py:45``
+- Version: V3.0
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: ev_readiness
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m74_sent_1 ? Evolutions-Signal / Valence
+- Kategorie: Evolution / Sentiment
+- Schema: Schema B
+- Range: {0.0, 1.0} (binär) / [0.0, 1.0] (kontinuierlich)
+- Source: ``metrics_engine_v3.py:348` / `sentiment.py:45``
+- Version: V3.0
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: ev_readiness
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m75_sent_2 ? Resonanz-Amplitude / Arousal
+- Kategorie: Evolution / Sentiment
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:349` / `sentiment.py:50``
+- Version: V3.0
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: resonance
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m75_vkon_mag ? Resonanz-Amplitude / Arousal
+- Kategorie: Evolution / Sentiment
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:349` / `sentiment.py:50``
+- Version: V3.0
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: resonance
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m76_ev_1 ? Evolution-Dim-1 / Dominance
+- Kategorie: Evolution / Sentiment
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:350` / `sentiment.py:55``
+- Version: V3.0
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: text, lex
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m76_sent_3 ? Evolution-Dim-1 / Dominance
+- Kategorie: Evolution / Sentiment
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:350` / `sentiment.py:55``
+- Version: V3.0
+- Zweck/Beschreibung: nan
+- Formel (kurz): nan
+- Upstream-Inputs: text, lex
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m77_sent_4 ? Joy (Freude)
+- Kategorie: Sentiment / Plutchik
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:68``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Joy** ist eine der 8 Plutchik-Grundemotionen. Sie entsteht bei hoher Valence UND hohem Arousal. **Psychologischer Hintergrund:** Nach Plutchik's Wheel of Emotions ist Freude das Gegenteil von Traurigkeit und bildet mit ihr eine primäre emotionale Achse.
+- Formel (kurz): joy = clip(valence + arousal - 1.0)
+- Upstream-Inputs: valence, arousal
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m78_sent_5 ? Sadness (Traurigkeit)
+- Kategorie: Sentiment / Plutchik
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:72``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Sadness** ist das Gegenteil von Joy. Sie tritt bei niedriger Valence UND niedrigem Arousal auf.
+- Formel (kurz): sadness = clip((2 - valence - arousal) / 2)
+- Upstream-Inputs: valence, arousal
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m79_sent_6 ? Anger (Wut)
+- Kategorie: Sentiment / Plutchik
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:76``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Anger** entsteht bei niedriger Valence aber hohem Arousal - negative Energie wird aktiv ausgedrückt.
+- Formel (kurz): anger = clip((1 - valence + arousal) / 2)
+- Upstream-Inputs: valence, arousal
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m7_LL ? Lambert-Light (Turbidity Index)
+- Kategorie: Physics / Optics
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: `metrics_lib_v12_clean/m7_LL.py; V11_1_FORMULAS_COMPLETE.md:145-151`
+- Version: V3.0 Migration Engine
+- Zweck/Beschreibung: LL ist die **Trübungs-Metrik**, inspiriert vom physikalischen **Lambert-Beer-Gesetz**. Stell dir vor, Licht (Information) muss durch ein Medium (den aktuellen Bewusstseinszustand) dringen. Je "trüber" das Medium, desto weniger Licht kommt durch. **Was macht LL trübe?** 1. **Hohe Wiederholung** (rep_same) - Das System wiederholt sich 2. **Niedriger Flow** - Zeit stockt, Gedanken sind verlangsamt **Physikalische Analogie:** Lichtdurchlass = e^(-Trübung × Tiefe) In Evoki: LL = 1 - e^(-Opazität) Je höher LL, desto mehr "Nebel" liegt über dem System.
+- Formel (kurz): LL = clip(0.55*rep_same + 0.25*(1-flow) + 0.20*(1-coh))
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **A-Score Dämpfung:** Hoher LL reduziert m15_affekt_a direkt; **z_prox Berechnung:** LL ist ein Hauptfaktor für Todesnähe; **Turbidity Chain:** Fließt in m107-m110 (Turbidity Family); **System Health:** LL > 0.7 deutet auf kognitive Überlastung hin
+- Vorteile: Supports dynamical modeling and adaptive behavior
+- Nachteile/Risiken: Higher implementation complexity and state management
+- Hinweise/Patches: Corrected: coh term added; weights 0.55/0.25/0.20 per V11.1 formulas (see V11_1_FORMULAS_COMPLETE.md lines 145?151).
+- Alias-Of: nan
+- Status: primary_validated
+- Evidence-Level: validated
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?1.0
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: metrics_lib_v12_clean (clean per-metric implementation)
+- Formula Verified: yes (v11.1 spec + v12_clean impl)
+
+## m80_sent_7 ? Fear (Angst)
+- Kategorie: Sentiment / Plutchik / Safety
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:80``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Fear** ist eine komplexere Emotion, die von VAD UND dem Trauma-Panik-Vektor (T_panic) beeinflusst wird. **Wichtig für Safety:** Fear wird durch T_panic verstärkt - wenn Panik-Marker erkannt werden, steigt Fear.
+- Formel (kurz): fear_base = clip((3 - valence + arousal - dominance) / 3) fear = max(fear_base, T_panic × 0.8)
+- Upstream-Inputs: valence, arousal, dominance, T_panic
+- Downstream-Nutzung: nan
+- Vorteile: Safety-critical signal for risk/guardian decisions; Adds emotional nuance for response modulation
+- Nachteile/Risiken: High false-positive cost if thresholds/lexicon are wrong; Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m81_sent_8 ? Trust (Vertrauen)
+- Kategorie: Sentiment / Plutchik
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:85``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Trust** entsteht bei hoher Valence, niedrigem Arousal und hoher Dominance - ein Gefühl von Sicherheit und Kontrolle. **Boost durch T_integ:** Integration-Marker verstärken Trust.
+- Formel (kurz): trust_base = clip((valence + (1-arousal) + dominance) / 3) trust = max(trust_base, T_integ × 0.6)
+- Upstream-Inputs: valence, arousal, dominance, T_integ
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m82_sent_9 ? Disgust (Ekel)
+- Kategorie: Sentiment / Plutchik
+- Schema: Schema B
+- Range: [0.0, 0.7]
+- Source: ``sentiment.py:90``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Disgust** ist inversely proportional zur Valence - negative Wertigkeit führt zu Ekel.
+- Formel (kurz): disgust = (1 - valence) × 0.7
+- Upstream-Inputs: valence
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m83_sent_10 ? Anticipation (Erwartung)
+- Kategorie: Sentiment / Plutchik
+- Schema: Schema B
+- Range: [0.0, 0.8]
+- Source: ``sentiment.py:93``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Anticipation** korreliert primär mit Arousal - hohes Erregungsniveau führt zu erhöhter Erwartung.
+- Formel (kurz): anticipation = arousal × 0.8
+- Upstream-Inputs: arousal
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m84_sent_11 ? Surprise (Überraschung)
+- Kategorie: Sentiment / Plutchik
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:96``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Surprise** ist maximiert bei hohem Arousal und neutraler Valence (weder positiv noch negativ).
+- Formel (kurz): surprise = arousal × (1 - |valence - 0.5| × 2)
+- Upstream-Inputs: valence, arousal
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m85_sent_12 ? Hope (Hoffnung)
+- Kategorie: Sentiment / Complex
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:102``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Hope** ist eine komplexe Emotion - Kombination aus positiver Valence und Anticipation.
+- Formel (kurz): hope = (valence + anticipation) / 2
+- Upstream-Inputs: valence, anticipation
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m86_sent_13 ? Despair (Verzweiflung)
+- Kategorie: Sentiment / Complex
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:105``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Despair** ist das Gegenteil von Hope - niedrige Valence kombiniert mit Sadness.
+- Formel (kurz): despair = (1 - valence + sadness) / 2
+- Upstream-Inputs: valence, sadness
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m87_sent_14 ? Confusion (Verwirrung)
+- Kategorie: Sentiment / Complex
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:108``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Confusion** entsteht bei hohem Arousal aber niedriger Komplexität (PCI) - Aktivierung ohne Struktur.
+- Formel (kurz): confusion = arousal × (1 - PCI)
+- Upstream-Inputs: arousal, PCI
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m88_sent_15 ? Clarity (Klarheit)
+- Kategorie: Sentiment / Complex
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:111``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Clarity** ist das Gegenteil von Confusion - hohe Komplexität mit moderatem Arousal.
+- Formel (kurz): clarity = PCI × (0.5 + arousal × 0.5)
+- Upstream-Inputs: PCI, arousal
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m89_sent_16 ? Acceptance (Akzeptanz)
+- Kategorie: Sentiment / Complex
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:114``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Acceptance** kombiniert positive Valence, niedrigen Arousal und Integration.
+- Formel (kurz): acceptance = (valence + (1-arousal) + T_integ) / 3
+- Upstream-Inputs: valence, arousal, T_integ
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m8_x_exist ? Existenz-Axiom
+- Kategorie: Core / Ångström Layer
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:180-182``
+- Version: V3.0 Ångström Migration
+- Zweck/Beschreibung: Das **Existenz-Axiom** misst, wie stark der Text Aussagen über die **Existenz** oder **Realität** enthält. Es ist Teil des Ångström-Trios (Selbst, Existenz, Vergangenheit), das fundamentale ontologische Dimensionen erfasst. **Wann ist x_exist hoch?** - Aussagen wie "ich bin", "es existiert", "ist wirklich" - Bestätigung der Realität oder des Daseins - Philosophische Existenz-Reflexionen **Wann ist x_exist niedrig?** - Abstrakte, hypothetische Aussagen - Keine Referenz zur konkreten Existenz - Rein theoretische Diskussionen **Warum ist das wichtig?** Existenzielle Aussagen signalisieren, dass der Nutzer sich mit fundamentalen Fragen beschäftigt. Das System kann dann tiefer und reflektierter antworten.
+- Formel (kurz): x_exist = max(weight_i) für alle matches in AngstromLexika.X_EXIST wobei: X_EXIST = {"ich bin": 0.8, "existiert": 1.0, "wirklich": 0.6, "real": 0.7, "tatsächlich": 0.5, "vorhanden": 0.4, ...} weight_i = Gewicht des gefundenen Terms
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Ångström-Berechnung:** Fließt in m10_angstrom ein; **Tiefenmessung:** Hohe Werte → philosophischer Kontext; **Kontext-Anpassung:** Erlaubt existenzielle Antwort-Modi
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m90_sent_17 ? Resistance (Widerstand)
+- Kategorie: Sentiment / Complex
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:117``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Resistance** ist das Gegenteil von Acceptance - aktive Ablehnung.
+- Formel (kurz): resistance = arousal × (1 - acceptance)
+- Upstream-Inputs: arousal, acceptance
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m91_sent_18 ? Emotional Coherence
+- Kategorie: Sentiment / Complex
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:120``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Emotional Coherence** misst, wie konsistent die emotionale Äußerung ist (hohe PCI, niedrige Dissoziation).
+- Formel (kurz): emotional_coherence = PCI × (1 - T_disso)
+- Upstream-Inputs: PCI, T_disso
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m92_sent_19 ? Emotional Stability
+- Kategorie: Sentiment / Complex
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:123``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Emotional Stability** ist hoch bei niedrigem Arousal und neutraler Valence - keine extremen Emotionen.
+- Formel (kurz): stability = (1 - arousal) × (1 - |valence - 0.5| × 2)
+- Upstream-Inputs: valence, arousal
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m93_sent_20 ? Emotional Range
+- Kategorie: Sentiment / Meta
+- Schema: Schema B
+- Range: [0.0, ~0.87]
+- Source: ``sentiment.py:128``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Emotional Range** misst die Distanz vom emotionalen Zentrum (0.5, 0.5, 0.5) im VAD-Raum.
+- Formel (kurz): range = √((v-0.5)² + (a-0.5)² + (d-0.5)²)
+- Upstream-Inputs: v, a, d
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation; Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m94_sent_21 ? Comfort (Komfort)
+- Kategorie: Sentiment / Meta
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:131``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Comfort** ist die Kombination aus niedrigem Arousal und leicht positiver Valence.
+- Formel (kurz): comfort = (1 - arousal) × (1 - |valence - 0.6|)
+- Upstream-Inputs: valence, arousal
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation; Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m95_sent_22 ? Tension (Spannung)
+- Kategorie: Sentiment / Meta
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: ``sentiment.py:134``
+- Version: V3.0 Sentiment Engine
+- Zweck/Beschreibung: **Tension** entsteht bei hohem Arousal und starker Valence-Abweichung vom Zentrum.
+- Formel (kurz): tension = arousal × |valence - 0.5| × 2
+- Upstream-Inputs: valence, arousal
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation; Improves self-reflection/diagnostic capability
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Heuristic markers can be noisy or culture-dependent
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer vector-field/physics model; keep continuous gradients; calibrate with empirical data.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m96_grain_word ? Wort-Komplexität / Flow State
+- Kategorie: Text / Granularity / Sentiment
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: `DB V3.0 / `sentiment.py:138``
+- Version: V3.0 Grain Engine / Sentiment Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): grain_word = word_complexity_score wobei: word_complexity_score = Σ(word_complexity_i) / word_count word_complexity_i = f(length, syllables, frequency)
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## m96_sent_23 ? Wort-Komplexität / Flow State
+- Kategorie: Text / Granularity / Sentiment
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: `DB V3.0 / `sentiment.py:138``
+- Version: V3.0 Grain Engine / Sentiment Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): grain_word = word_complexity_score wobei: word_complexity_score = Σ(word_complexity_i) / word_count word_complexity_i = f(length, syllables, frequency)
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m97_grain_impact ? Emotionale Dichte / Engagement
+- Kategorie: Text / Granularity / Sentiment
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: `DB V3.0 / `sentiment.py:141``
+- Version: V3.0 Grain Engine / Sentiment Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): grain_impact = emotional_word_count / total_word_count wobei: emotional_word_count = Σ(1 if word in emotional_lexikon else 0)
+- Upstream-Inputs: text, lex
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m97_sent_24 ? Emotionale Dichte / Engagement
+- Kategorie: Text / Granularity / Sentiment
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: `DB V3.0 / `sentiment.py:141``
+- Version: V3.0 Grain Engine / Sentiment Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): grain_impact = emotional_word_count / total_word_count wobei: emotional_word_count = Σ(1 if word in emotional_lexikon else 0)
+- Upstream-Inputs: text, lex
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m98_grain_sentiment ? Lokale Sentiment-Varianz / Withdrawal
+- Kategorie: Text / Granularity / Sentiment
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: `DB V3.0 / `sentiment.py:144``
+- Version: V3.0 Grain Engine / Sentiment Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): grain_sentiment = Var(segment_sentiments) wobei: segment_sentiments = [sent_1, sent_2, ..., sent_n] Var = Standardvarianz
+- Upstream-Inputs: segment_sentiments
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m98_sent_25 ? Lokale Sentiment-Varianz / Withdrawal
+- Kategorie: Text / Granularity / Sentiment
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: `DB V3.0 / `sentiment.py:144``
+- Version: V3.0 Grain Engine / Sentiment Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): grain_sentiment = Var(segment_sentiments) wobei: segment_sentiments = [sent_1, sent_2, ..., sent_n] Var = Standardvarianz
+- Upstream-Inputs: segment_sentiments
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m99_grain_novelty ? Novelty-Index / Compassion
+- Kategorie: Text / Granularity / Sentiment
+- Schema: Schema A
+- Range: [0.0, 1.0]
+- Source: `DB V3.0 / `sentiment.py:147``
+- Version: V3.0 Grain Engine / Sentiment Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): grain_novelty = 1 - repetition_score wobei: repetition_score = repeated_words / total_words
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m99_sent_26 ? Novelty-Index / Compassion
+- Kategorie: Text / Granularity / Sentiment
+- Schema: Schema B
+- Range: [0.0, 1.0]
+- Source: `DB V3.0 / `sentiment.py:147``
+- Version: V3.0 Grain Engine / Sentiment Engine
+- Zweck/Beschreibung: nan
+- Formel (kurz): grain_novelty = 1 - repetition_score wobei: repetition_score = repeated_words / total_words
+- Upstream-Inputs: text
+- Downstream-Nutzung: nan
+- Vorteile: Adds emotional nuance for response modulation
+- Nachteile/Risiken: Lexicon/heuristic bias can misclassify context; Lexicon/marker dependency requires maintenance and context handling
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Replace keyword heuristics with embedding-based classifier; keep interpretability via feature attributions.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## m9_b_past ? Vergangenheits-Bezug
+- Kategorie: Core / Ångström Layer
+- Schema: Core
+- Range: [0.0, 1.0]
+- Source: ``metrics_engine_v3.py:183-185``
+- Version: V3.0 Ångström Migration
+- Zweck/Beschreibung: Der **Vergangenheits-Bezug** erfasst, wie stark der Text auf die **Vergangenheit** oder **Erinnerungen** referenziert. Er ist das dritte Element des Ångström-Trios. **Wann ist b_past hoch?** - Aussagen wie "früher", "erinnere mich", "damals" - Nostalgische oder historische Reflexionen - Verweise auf vergangene Erfahrungen **Wann ist b_past niedrig?** - Zukunftsorientierte Aussagen - Rein gegenwartsbezogene Texte - Keine temporalen Marker **Psychologische Bedeutung:** Hohe Vergangenheitsbezüge können auf: - Verarbeitung von Erfahrungen hinweisen - Trauma-Reflexion (→ T_integ) - Weisheit durch Retrospektive
+- Formel (kurz): b_past = max(weight_i) für alle matches in AngstromLexika.B_PAST wobei: B_PAST = {"früher": 0.7, "erinnere": 0.9, "damals": 0.8, "war einmal": 0.6, "als ich": 0.5, "zurück": 0.4, ...}
+- Upstream-Inputs: nan
+- Downstream-Nutzung: **Ångström-Berechnung:** Fließt in m10_angstrom ein; **Trauma-Detektion:** Hohe Werte + hohe T_panic → potenzielle Verarbeitung; **Narrativ-Analyse:** Erkennt autobiographische Texte
+- Vorteile: Foundational metric used by many downstream computations
+- Nachteile/Risiken: Errors propagate widely across system
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Prefer formal formulae from master spec; minimize ad-hoc rules; ensure monotonicity and clamp.
+- Less-Heuristic Source: metrics_lib_complete (per-metric implementation)
+
+## B_align ? Signature Alignment
+- Kategorie: B-Vector Composite
+- Schema: B-Vector
+- Range: [0.0, 1.0]
+- Source: ``metrics_processor.py:194-205``
+- Version: nan
+- Zweck/Beschreibung: B_align ist der **Durchschnitt aller 7 B-Vektor-Dimensionen**. Zeigt die Gesamtstärke der Seelen-Signatur.
+- Formel (kurz): nan
+- Upstream-Inputs: B_* components
+- Downstream-Nutzung: Gate A / Risk gating (per spec)
+- Vorteile: Condenses multiple signals into an interpretable composite; Captures 7D soul-signature for alignment and risk
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability; Keyword-based; can miss implicit meaning
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)
+
+## F_risk ? F_risk — Future Risk Score
+- Kategorie: B-Vector Composite
+- Schema: B-Vector
+- Range: [0.0, 1.0]
+- Source: ``metrics_processor.py:208-228``
+- Version: nan
+- Zweck/Beschreibung: F_risk ist der **kombinierte Risiko-Score**, der aus niedrigem Affekt, hoher Panik und schwacher Seelen-Signatur berechnet wird.
+- Formel (kurz): nan
+- Upstream-Inputs: A, T_panic, B_align
+- Downstream-Nutzung: Gate A / Risk gating (per spec)
+- Vorteile: Condenses multiple signals into an interpretable composite; Captures 7D soul-signature for alignment and risk
+- Nachteile/Risiken: Can obscure individual signal sources and reduce diagnosability; Keyword-based; can miss implicit meaning
+- Hinweise/Patches: nan
+- Alias-Of: nan
+- Status: supplemental_unvalidated
+- Evidence-Level: experimental
+- Calibration (Default): enabled=True, weight=1.0, transform=linear {"a":1.0,"b":0.0}
+- Calibration (Empfehlung): weight?0.6
+- Calibration Note: Set effective_enabled=false or weight=0 to ignore in effective layer; raw values still logged.
+- Aspirational: Explicit monotonic aggregation; weight-learning via calibration; avoid ad-hoc mixing.
+- Less-Heuristic Source: EVOKI_METRICS_MASTER_V12 specs (MATHEMATICAL_SPECIFICATION / V11_1_FORMULAS_COMPLETE)

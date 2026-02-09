@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 15:54:19 MESZ
+Speaker: user
+
+er funktioniert ja nicht ich habe ihn ja schon versucht auszuführen es geht ja nicht er tut es nicht machen also er funktioniert auch nicht weil es eben nicht funktioniert dann Festspeicher ist nicht so persistent du hast nicht so perfekten Zugriff auf diese Speicher Dateien das hast du einfach nicht

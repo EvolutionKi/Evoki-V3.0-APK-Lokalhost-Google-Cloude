@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 22:14:13 MESZ
+Speaker: user
+
+ja du wolltest es nämlich speziell von der Entwickler Plattform quasi und deren Datenbank abgreifen

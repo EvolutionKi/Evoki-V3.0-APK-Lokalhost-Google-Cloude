@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:04:06 MESZ
+Speaker: ai
+
+Alles klar, dann installieren wir curl. Dazu musst du zuerst die curl-Website besuchen. Gib einfach "curl download windows" in deine Suchleiste ein und öffne die offizielle Downloadseite. Dort findest du die Installationsdateien. Lass mich wissen, wenn du die Seite gefunden hast, dann gehen wir die Installation Schritt für Schritt durch.

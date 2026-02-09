@@ -1,0 +1,4 @@
+Timestamp: 10.09.2025, 23:42:32 MESZ
+Speaker: ai
+
+Hallo! Das Regelwerk ist aktiv und wird angewendet. Was kann ich für dich tun? Regelwerk Version: 5.6 | Prüfungskennzahl: 21652 / 21652 = 1 | Datencheck: Aktiv | Arbeitsanweisungen: Aktiv | Fehlerüberwachung: Aktiv

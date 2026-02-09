@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 15:38:36 MESZ
+Speaker: user
+
+na ja die Prüfsumme ist ja nicht richtig gewesen also und doch jetzt ist sie wieder still nicht konsistent mit einer früheren zahlen

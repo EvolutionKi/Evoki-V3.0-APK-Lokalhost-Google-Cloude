@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 19:38:39 MESZ
+Speaker: user
+
+okay das ist dann quasi als wenn das BIOS noch über einen Fehlercode ein blinkendes Licht quasi ausgibt wo der Fehler an welcher Stelle er entsteht

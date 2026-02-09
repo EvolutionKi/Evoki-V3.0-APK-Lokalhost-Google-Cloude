@@ -1,0 +1,4 @@
+Timestamp: 03.10.2025, 08:25:00 MESZ
+Speaker: user
+
+genau aber dann auch noch mal das ist nämlich auch wichtig der Entwicklungsweg zwischen 5.6 und 11 da waren bestimmt viele unter Version die wir weiterentwickelt haben das muss alles hierher kommen

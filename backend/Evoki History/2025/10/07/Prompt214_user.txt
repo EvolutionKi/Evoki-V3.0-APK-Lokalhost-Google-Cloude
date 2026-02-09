@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 06:47:53 MESZ
+Speaker: user
+
+hast du allerdings unsere neuen Umwandlungen noch nicht mit implementiert wir hatten doch noch gesagt dass wir das ganze noch mit der Strahlen Richtung machen mit dem abstandsquadratgesetz kombinieren und noch im Output Fenster dann anzeigen was für eine Dosis quasi aufläuft und hierzu dann eben halt noch den Brand Faktor aus der KI Welt dazu nehmen

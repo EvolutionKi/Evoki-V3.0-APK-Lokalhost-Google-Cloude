@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:42:53 MESZ
+Speaker: ai
+
+Ich sehe, dass die App die Prompts nacheinander auflistet. Interessant, dass sie am Ende eine Art Fazit zieht. Was möchtest du als Nächstes untersuchen?

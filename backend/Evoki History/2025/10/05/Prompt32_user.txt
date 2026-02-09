@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:13:11 MESZ
+Speaker: user
+
+ist die Familie API für Entwickler ist das dann eine API die aber trotzdem mit dem normalen Innenfenster reagiert

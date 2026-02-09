@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 03:41:06 MESZ
+Speaker: ai
+
+Du könntest dich für das Google for Startups Cloud Programm bewerben. Dort gibt es Unterstützung und Tools für KI-Startups. Oder du schaust dir mal Google AI Platform an, da gibt es auch viele Entwicklertools. Hast du dir diese Optionen schon mal angesehen?

@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 18:48:13 MESZ
+Speaker: user
+
+Dann schreibe mir das Python Code bitte so um dass ich es mit beiden 3 auf meinem Smartphone ausführen kann dass es mir einen Ordner erstellt wo ist das ganze dann rein schmeißt einen neuen und zwar einen Unterordner von dort wo die Daten geladen werden und die Daten die sollen quasi dann auch diese meine txt datei ist so quasi nur in die Jason Format überführt werden und hier natürlich in dieser fallstudie die ich dir überreicht habe da soll es dazu sortiert werden

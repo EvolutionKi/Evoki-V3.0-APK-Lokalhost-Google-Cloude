@@ -1,0 +1,4 @@
+Timestamp: 06.10.2025, 19:26:52 MESZ
+Speaker: ai
+
+In Ordnung, die Status-Flags geben also den Zustand des Systems wieder. Gibt es bestimmte Status-Flags, die du dir genauer ansehen möchtest?

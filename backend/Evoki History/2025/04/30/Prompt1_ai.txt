@@ -1,0 +1,4 @@
+Timestamp: 30.04.2025, 07:54:21 MESZ
+Speaker: ai
+
+Ich habe einen Wecker für 13:00 Uhr gestellt. {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Clock Tool","logoUri":"https://www.gstatic.com/images/branding/productlogos/clock/v6/192px.svg","toolName":"clock"}}}

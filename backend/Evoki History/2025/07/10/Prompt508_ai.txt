@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 11:00:07 MESZ
+Speaker: ai
+
+Ja, das ist ein wichtiger Hinweis, den du da siehst! Gemini Cloud Assist ist ein Tool, das dir hilft, Google Cloud Produkte zu verstehen. Du kannst es zum Beispiel fragen, wie du deinen Code in der Cloud speicherst. Es ist also wie ein Chatbot, der dir bei Google Cloud hilft. Du kannst es dir ja mal ansehen, aber für unser Projekt ist es nicht unbedingt notwendig.

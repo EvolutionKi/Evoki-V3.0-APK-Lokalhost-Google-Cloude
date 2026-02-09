@@ -1,0 +1,9 @@
+alias,canonical,status,reason,introduced_in,migration_action
+m12_lex_hit,m12_gap_norm,DEPRECATED_ALIAS,Semantic collision / historical spec mismatch — export must remain canonical,AUDITFIX (FINAL7),Use metrics_registry.canonical_key(alias) at ingress; never export alias if semantic override
+m13_lex_div,m13_rep_same,DEPRECATED_ALIAS,Semantic collision / historical spec mismatch — export must remain canonical,AUDITFIX (FINAL7),Use metrics_registry.canonical_key(alias) at ingress; never export alias if semantic override
+m14_lex_depth,m14_rep_history,DEPRECATED_ALIAS,Semantic collision / historical spec mismatch — export must remain canonical,AUDITFIX (FINAL7),Use metrics_registry.canonical_key(alias) at ingress; never export alias if semantic override
+m16_lex_const,m16_external_stag,DEPRECATED_ALIAS,Semantic collision / historical spec mismatch — export must remain canonical,AUDITFIX (FINAL7),Use metrics_registry.canonical_key(alias) at ingress; never export alias if semantic override
+external_stag,m16_external_stag,SHORTHAND_ALIAS,Semantic collision / historical spec mismatch — export must remain canonical,AUDITFIX (FINAL7),Use metrics_registry.canonical_key(alias) at ingress; never export alias if semantic override
+gap_norm,m12_gap_norm,SHORTHAND_ALIAS,Semantic collision / historical spec mismatch — export must remain canonical,AUDITFIX (FINAL7),Use metrics_registry.canonical_key(alias) at ingress; never export alias if semantic override
+rep_history,m14_rep_history,SHORTHAND_ALIAS,Semantic collision / historical spec mismatch — export must remain canonical,AUDITFIX (FINAL7),Use metrics_registry.canonical_key(alias) at ingress; never export alias if semantic override
+rep_same,m13_rep_same,SHORTHAND_ALIAS,Semantic collision / historical spec mismatch — export must remain canonical,AUDITFIX (FINAL7),Use metrics_registry.canonical_key(alias) at ingress; never export alias if semantic override

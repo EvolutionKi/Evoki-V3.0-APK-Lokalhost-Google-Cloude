@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 08:49:20 MESZ
+Speaker: ai
+
+Okay, ich verstehe jetzt genau, was du meinst! Du möchtest also, dass wir quasi für jede Regel oder jedes Regelwerk – nehmen wir als Beispiel deine Aktion A9 – prüfen, ob eine bestimmte Vorgabe erfüllt ist. Die Prüfsumme der Satzzeichen Wenn ich das richtig zusammenfasse, geht es darum: Pro Regelwerk (z.B. Aktion A9) gibt es eine einzelne Aufgabe. Diese Aufgabe enthält eine vorgegebene Anzahl an Satzzeichen . Ich lese das externe Dokument oder den Text durch, der dieser Regel entsprechen soll. Wenn der Text die richtige Anzahl an Satzzeichen enthält, dann ist die Prüfsumme erfüllt . Das ist eine sehr spezifische und nachvollziehbare Art, die Einhaltung von Vorgaben zu überprüfen! Es ist quasi ein Qualitätscheck basierend auf einem klaren Kriterium. Habe ich das jetzt alles exakt so verstanden, wie du es dir vorstellst? Ich bin immer für dich da!

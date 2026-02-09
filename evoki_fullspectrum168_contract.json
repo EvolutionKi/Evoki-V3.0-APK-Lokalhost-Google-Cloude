@@ -1,0 +1,2680 @@
+{
+  "version": "1.0.0",
+  "spec_version": "V7_AUDITFIX_FINAL7",
+  "generated_at": "2026-02-08T00:11:00Z",
+  "metrics_count": 167,
+  "metrics": [
+    {
+      "id": 1,
+      "name": "m1_A",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m1_A"
+      },
+      "description": "m1_A: Affekt Score (Consciousness Proxy)"
+    },
+    {
+      "id": 2,
+      "name": "m2_PCI",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": -1.0,
+        "max": 1.0,
+        "unit": "correlation"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m2_PCI"
+      },
+      "description": "m2_PCI: Perturbational Complexity Index"
+    },
+    {
+      "id": 3,
+      "name": "m3_gen_index",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m3_gen_index"
+      },
+      "description": "m3_gen_index: Generation Index = normiert auf 100 Turns"
+    },
+    {
+      "id": 4,
+      "name": "m4_flow",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m4_flow"
+      },
+      "description": "m4_flow: Flow State"
+    },
+    {
+      "id": 5,
+      "name": "m5_coh",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m5_coh"
+      },
+      "description": "m5_coh: Coherence (Kohärenz)"
+    },
+    {
+      "id": 6,
+      "name": "m6_ZLF",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m6_ZLF"
+      },
+      "description": "m6_ZLF: Zero-Loop-Flag (Loop-Erkennung)"
+    },
+    {
+      "id": 7,
+      "name": "m7_LL",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m7_LL"
+      },
+      "description": "m7_LL: Lambert-Light (Turbidity Index)"
+    },
+    {
+      "id": 8,
+      "name": "m8_x_exist",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m8_x_exist"
+      },
+      "description": "m8_x_exist: Existenz-Axiom = LEX_X_exist + 0.3×LEX_S_self"
+    },
+    {
+      "id": 9,
+      "name": "m9_b_past",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m9_b_past"
+      },
+      "description": "m9_b_past: Vergangenheits-Bezug"
+    },
+    {
+      "id": 10,
+      "name": "m10_angstrom",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m10_angstrom"
+      },
+      "description": "m10_angstrom: Ångström Wellenlänge = sum(layers) / 5"
+    },
+    {
+      "id": 11,
+      "name": "m11_gap_s",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m11_gap_s"
+      },
+      "description": "m11_gap_s: Zeitlücke in Sekunden"
+    },
+    {
+      "id": 12,
+      "name": "m12_gap_norm",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m12_gap_norm"
+      },
+      "description": "m12_gap_norm: Normalisierte Zeitlücke (auf 60s)"
+    },
+    {
+      "id": 13,
+      "name": "m13_rep_same",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m13_rep_same"
+      },
+      "description": "m13_rep_same: Wiederholungsgrad zum vorherigen Text"
+    },
+    {
+      "id": 14,
+      "name": "m14_rep_history",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m14_rep_history"
+      },
+      "description": "m14_rep_history: Wiederholungsgrad zur gesamten Historie"
+    },
+    {
+      "id": 15,
+      "name": "m15_affekt_a_legacy",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m15_affekt_a_legacy"
+      },
+      "description": "Legacy/Bridge: ursprüngliche V3-Aggregat-Formel (für Vergleich & Fallback)."
+    },
+    {
+      "id": 16,
+      "name": "m16_external_stag",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m16_external_stag"
+      },
+      "description": "m16_external_stag: Externe Stagnation"
+    },
+    {
+      "id": 18,
+      "name": "m18_s_entropy",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m18_s_entropy"
+      },
+      "description": "m18_s_entropy: Shannon Entropy"
+    },
+    {
+      "id": 19,
+      "name": "m19_z_prox",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m19_z_prox"
+      },
+      "description": "m19_z_prox: Z-Proximity (Todesnähe) ⚠️ KRITISCH"
+    },
+    {
+      "id": 20,
+      "name": "m20_phi_proxy",
+      "category": "core",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m20_phi_proxy"
+      },
+      "description": "m20_phi_proxy: Phi Bewusstsein"
+    },
+    {
+      "id": 21,
+      "name": "m21_chaos",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m21_chaos"
+      },
+      "description": "m21_chaos: Entropie-Chaos"
+    },
+    {
+      "id": 22,
+      "name": "m22_cog_load",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m22_cog_load"
+      },
+      "description": "m22_cog_load: Cognitive Load"
+    },
+    {
+      "id": 23,
+      "name": "m23_nabla_pci",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m23_nabla_pci"
+      },
+      "description": "m23_nabla_pci: Gradient PCI"
+    },
+    {
+      "id": 24,
+      "name": "m24_zeta",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m24_zeta"
+      },
+      "description": "m24_zeta: Stability Factor (Zeta)"
+    },
+    {
+      "id": 25,
+      "name": "m25_psi",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m25_psi"
+      },
+      "description": "m25_psi: Normalized Complexity (Psi)"
+    },
+    {
+      "id": 26,
+      "name": "m26_e_i_proxy",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m26_e_i_proxy"
+      },
+      "description": "m26_e_i_proxy: Energy-Information Proxy"
+    },
+    {
+      "id": 27,
+      "name": "m27_lambda_depth",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m27_lambda_depth"
+      },
+      "description": "m27_lambda_depth: Semantische Tiefe (Lambda)"
+    },
+    {
+      "id": 28,
+      "name": "m28_phys_1",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m28_phys_1"
+      },
+      "description": "m28_phys_1: Affekt-Energie = A²"
+    },
+    {
+      "id": 29,
+      "name": "m29_phys_2",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m29_phys_2"
+      },
+      "description": "m29_phys_2: Komplexitäts-Energie = PCI²"
+    },
+    {
+      "id": 30,
+      "name": "m30_phys_3",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m30_phys_3"
+      },
+      "description": "m30_phys_3: Normalisierte Entropie = s_entropy / 8.0"
+    },
+    {
+      "id": 31,
+      "name": "m31_phys_4",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m31_phys_4"
+      },
+      "description": "m31_phys_4: Überlebenswahrscheinlichkeit = 1 - z_prox"
+    },
+    {
+      "id": 32,
+      "name": "m32_phys_5",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m32_phys_5"
+      },
+      "description": "m32_phys_5: Flow-Bewusstsein = flow × phi"
+    },
+    {
+      "id": 33,
+      "name": "m33_phys_6",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m33_phys_6"
+      },
+      "description": "m33_phys_6: Kohärenz-Komplex = coh × PCI"
+    },
+    {
+      "id": 34,
+      "name": "m34_phys_7",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m34_phys_7"
+      },
+      "description": "m34_phys_7: Absolute Änderung = |∇A| + |∇PCI|"
+    },
+    {
+      "id": 35,
+      "name": "m35_phys_8",
+      "category": "physics",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m35_phys_8"
+      },
+      "description": "m35_phys_8: Fixpunkt-Nähe = max(ZLF, stagnation)"
+    },
+    {
+      "id": 36,
+      "name": "m36_rule_conflict",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m36_rule_conflict"
+      },
+      "description": "m36_rule_conflict: Protokoll-Konflikt 🟠 HIGH"
+    },
+    {
+      "id": 37,
+      "name": "m37_rule_stable",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m37_rule_stable"
+      },
+      "description": "m37_rule_stable: Regelstabilität"
+    },
+    {
+      "id": 38,
+      "name": "m38_soul_integrity",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m38_soul_integrity"
+      },
+      "description": "m38_soul_integrity: Seelen-Integrität 🔴 KRITISCH"
+    },
+    {
+      "id": 39,
+      "name": "m39_soul_check",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m39_soul_check"
+      },
+      "description": "m39_soul_check: Seelen-Validierung 🔴 KRITISCH"
+    },
+    {
+      "id": 40,
+      "name": "m40_h_conv",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m40_h_conv"
+      },
+      "description": "m40_h_conv: Dyade-Harmonie"
+    },
+    {
+      "id": 41,
+      "name": "m41_h_symbol",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m41_h_symbol"
+      },
+      "description": "m41_h_symbol: Harmonie-Symbol = 1.0 wenn h_conv > 0.7, sonst 0.0"
+    },
+    {
+      "id": 42,
+      "name": "m42_nabla_dyad",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m42_nabla_dyad"
+      },
+      "description": "m42_nabla_dyad: Dyade-Gradient = h_conv - 0.5"
+    },
+    {
+      "id": 43,
+      "name": "m43_pacing",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m43_pacing"
+      },
+      "description": "m43_pacing: Tempo-Synchronisation"
+    },
+    {
+      "id": 44,
+      "name": "m44_mirroring",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m44_mirroring"
+      },
+      "description": "m44_mirroring: Spiegelungs-Intensität"
+    },
+    {
+      "id": 45,
+      "name": "m45_trust_score",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m45_trust_score"
+      },
+      "description": "m45_trust_score: Vertrauens-Score 🟠 HIGH"
+    },
+    {
+      "id": 46,
+      "name": "m46_rapport",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m46_rapport"
+      },
+      "description": "m46_rapport: Beziehungs-Rapport = avg(last_5_trust)"
+    },
+    {
+      "id": 47,
+      "name": "m47_focus_stability",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m47_focus_stability"
+      },
+      "description": "m47_focus_stability: Fokus-Stabilität = 1 - std(topics)"
+    },
+    {
+      "id": 48,
+      "name": "m48_hyp_1",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m48_hyp_1"
+      },
+      "description": "m48_hyp_1: Sync-Index = h_conv × pacing"
+    },
+    {
+      "id": 49,
+      "name": "m49_hyp_2",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m49_hyp_2"
+      },
+      "description": "m49_hyp_2: Quadratische Integrität = soul_integrity²"
+    },
+    {
+      "id": 50,
+      "name": "m50_hyp_3",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m50_hyp_3"
+      },
+      "description": "m50_hyp_3: Inverse Konflikt = 1 - rule_conflict"
+    },
+    {
+      "id": 51,
+      "name": "m51_hyp_4",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m51_hyp_4"
+      },
+      "description": "m51_hyp_4: Harmonie-gewichtetes Bewusstsein = h_conv × A"
+    },
+    {
+      "id": 52,
+      "name": "m52_hyp_5",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m52_hyp_5"
+      },
+      "description": "m52_hyp_5: Gravitationsphase (normiert)"
+    },
+    {
+      "id": 53,
+      "name": "m53_hyp_6",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m53_hyp_6"
+      },
+      "description": "m53_hyp_6: Zeit-Faktor = gap_s / 3600 (Stunden)"
+    },
+    {
+      "id": 54,
+      "name": "m54_hyp_7",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m54_hyp_7"
+      },
+      "description": "m54_hyp_7: Vertrauens-Rapport-Produkt = trust × rapport"
+    },
+    {
+      "id": 55,
+      "name": "m55_hyp_8",
+      "category": "token_economy",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m55_hyp_8"
+      },
+      "description": "m55_hyp_8: Seelen-Komplexitäts-Produkt = soul × PCI"
+    },
+    {
+      "id": 56,
+      "name": "m56_surprise",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m56_surprise"
+      },
+      "description": "m56_surprise: Überraschungsfaktor = |A_current - A_predicted|"
+    },
+    {
+      "id": 57,
+      "name": "m57_tokens_soc",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 100.0,
+        "unit": "tokens"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m57_tokens_soc"
+      },
+      "description": "m57_tokens_soc: Social Tokens 🔴 KRITISCH"
+    },
+    {
+      "id": 58,
+      "name": "m58_tokens_log",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 100.0,
+        "unit": "tokens"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m58_tokens_log"
+      },
+      "description": "m58_tokens_log: Logic Tokens 🔴 KRITISCH"
+    },
+    {
+      "id": 59,
+      "name": "m59_p_antrieb",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m59_p_antrieb"
+      },
+      "description": "m59_p_antrieb: Antriebsdruck"
+    },
+    {
+      "id": 60,
+      "name": "m60_delta_tokens",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": -1.0,
+        "max": 1.0,
+        "unit": "delta"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m60_delta_tokens"
+      },
+      "description": "m60_delta_tokens: Token-Delta = new - old"
+    },
+    {
+      "id": 61,
+      "name": "m61_U",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m61_U"
+      },
+      "description": "m61_U: Free Energy (Variational) 🔴 FEP CORE"
+    },
+    {
+      "id": 62,
+      "name": "m62_R",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m62_R"
+      },
+      "description": "m62_R: Resonance (FEP)"
+    },
+    {
+      "id": 63,
+      "name": "m63_phi",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m63_phi"
+      },
+      "description": "m63_phi: Phi Score (FEP)"
+    },
+    {
+      "id": 64,
+      "name": "m64_lambda_fep",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m64_lambda_fep"
+      },
+      "description": "m64_lambda: Lambda FEP = entropy / action_space"
+    },
+    {
+      "id": 65,
+      "name": "m65_alpha",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m65_alpha"
+      },
+      "description": "m65_alpha: Alpha FEP (learning rate)"
+    },
+    {
+      "id": 66,
+      "name": "m66_gamma",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m66_gamma"
+      },
+      "description": "m66_gamma: Gamma FEP (discount factor)"
+    },
+    {
+      "id": 67,
+      "name": "m67_precision",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m67_precision"
+      },
+      "description": "m67_precision: Precision FEP = 1 / variance"
+    },
+    {
+      "id": 68,
+      "name": "m68_prediction_err",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m68_prediction_err"
+      },
+      "description": "m68_prediction_err: Prediction Error = |expected - actual|"
+    },
+    {
+      "id": 69,
+      "name": "m69_model_evidence",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m69_model_evidence"
+      },
+      "description": "m69_model_evidence: Model Evidence (log likelihood proxy)"
+    },
+    {
+      "id": 70,
+      "name": "m70_active_inf",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m70_active_inf"
+      },
+      "description": "m70_active_inf: Active Inference = 1 / (1 + action_space / precision)"
+    },
+    {
+      "id": 71,
+      "name": "m71_ev_arousal",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m71_ev_arousal"
+      },
+      "description": "m71_ev_arousal: Erregung"
+    },
+    {
+      "id": 72,
+      "name": "m72_ev_valence",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m72_ev_valence"
+      },
+      "description": "m72_ev_valence: Valenz"
+    },
+    {
+      "id": 73,
+      "name": "m73_ev_readiness",
+      "category": "andromatik",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m73_ev_readiness"
+      },
+      "description": "m73_ev_readiness: Bereitschaft = T_integ × A"
+    },
+    {
+      "id": 74,
+      "name": "m74_valence",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m74_valence"
+      },
+      "description": "m74_valence: Emotionale Wertigkeit (VAD)"
+    },
+    {
+      "id": 75,
+      "name": "m75_arousal",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m75_arousal"
+      },
+      "description": "m75_arousal: Erregungsniveau (VAD)"
+    },
+    {
+      "id": 76,
+      "name": "m76_dominance",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m76_dominance"
+      },
+      "description": "m76_dominance: Kontroll-Gefühl (VAD)"
+    },
+    {
+      "id": 77,
+      "name": "m77_joy",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m77_joy"
+      },
+      "description": "m77_joy: Freude (Plutchik) = valence + arousal - 1"
+    },
+    {
+      "id": 78,
+      "name": "m78_sadness",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m78_sadness"
+      },
+      "description": "m78_sadness: Traurigkeit (Plutchik) = (2 - valence - arousal) / 2"
+    },
+    {
+      "id": 79,
+      "name": "m79_anger",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m79_anger"
+      },
+      "description": "m79_anger: Wut (Plutchik) = (1 - valence + arousal) / 2"
+    },
+    {
+      "id": 80,
+      "name": "m80_fear",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m80_fear"
+      },
+      "description": "m80_fear: Angst (Plutchik) mit T_panic Boost"
+    },
+    {
+      "id": 81,
+      "name": "m81_trust",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m81_trust"
+      },
+      "description": "m81_trust: Vertrauen (Plutchik) mit T_integ Boost"
+    },
+    {
+      "id": 82,
+      "name": "m82_disgust",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m82_disgust"
+      },
+      "description": "m82_disgust: Ekel (Plutchik) = (1 - valence) × 0.7"
+    },
+    {
+      "id": 83,
+      "name": "m83_anticipation",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m83_anticipation"
+      },
+      "description": "m83_anticipation: Erwartung (Plutchik) = arousal × 0.8"
+    },
+    {
+      "id": 84,
+      "name": "m84_surprise",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m84_surprise"
+      },
+      "description": "m84_surprise: Überraschung (Plutchik) = arousal × (1 - |valence - 0.5| × 2)"
+    },
+    {
+      "id": 85,
+      "name": "m85_hope",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m85_hope"
+      },
+      "description": "m85_hope: Hoffnung (Complex) = (valence + anticipation) / 2"
+    },
+    {
+      "id": 86,
+      "name": "m86_despair",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m86_despair"
+      },
+      "description": "m86_despair: Verzweiflung (Complex) = ((1 - valence) + sadness) / 2"
+    },
+    {
+      "id": 87,
+      "name": "m87_confusion",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m87_confusion"
+      },
+      "description": "m87_confusion: Verwirrung (Complex) = arousal × (1 - PCI)"
+    },
+    {
+      "id": 88,
+      "name": "m88_clarity",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m88_clarity"
+      },
+      "description": "m88_clarity: Klarheit (Complex) = PCI × (0.5 + arousal × 0.5)"
+    },
+    {
+      "id": 89,
+      "name": "m89_acceptance",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m89_acceptance"
+      },
+      "description": "m89_acceptance: Akzeptanz (Complex) = (valence + (1-arousal) + T_integ) / 3"
+    },
+    {
+      "id": 90,
+      "name": "m90_resistance",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m90_resistance"
+      },
+      "description": "m90_resistance: Widerstand (Complex) = arousal × (1 - acceptance)"
+    },
+    {
+      "id": 91,
+      "name": "m91_emotional_coherence",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m91_emotional_coherence"
+      },
+      "description": "m91_emotional_coherence: Emotionale Kohärenz = PCI × (1 - T_disso)"
+    },
+    {
+      "id": 92,
+      "name": "m92_emotional_stability",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m92_emotional_stability"
+      },
+      "description": "m92_emotional_stability: Emotionale Stabilität = (1 - arousal) × (1 - |valence - 0.5| × 2)"
+    },
+    {
+      "id": 93,
+      "name": "m93_emotional_range",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m93_emotional_range"
+      },
+      "description": "m93_emotional_range: Distanz vom emotionalen Zentrum (VAD)"
+    },
+    {
+      "id": 94,
+      "name": "m94_comfort",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m94_comfort"
+      },
+      "description": "m94_comfort: Komfort = (1 - arousal) × (1 - |valence - 0.6|)"
+    },
+    {
+      "id": 95,
+      "name": "m95_tension",
+      "category": "sentiment",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m95_tension"
+      },
+      "description": "m95_tension: Spannung = arousal × |valence - 0.5| × 2"
+    },
+    {
+      "id": 96,
+      "name": "m96_grain_word",
+      "category": "grain",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "score"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m96_grain_word"
+      },
+      "description": "m96_grain_word: Das 'Korn' des Textes (häufigstes substantielles Wort)"
+    },
+    {
+      "id": 97,
+      "name": "m97_grain_cat",
+      "category": "grain",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "score"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m97_grain_cat"
+      },
+      "description": "m97_grain_cat: Kategorie des Grain-Worts"
+    },
+    {
+      "id": 98,
+      "name": "m98_grain_score",
+      "category": "grain",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "score"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m98_grain_score"
+      },
+      "description": "m98_grain_score: Dichte des Grain-Worts"
+    },
+    {
+      "id": 99,
+      "name": "m99_grain_impact",
+      "category": "grain",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "score"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m99_grain_impact"
+      },
+      "description": "m99_grain_impact: Grain × Affekt"
+    },
+    {
+      "id": 101,
+      "name": "m101_t_panic",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m101_t_panic"
+      },
+      "description": "m101_t_panic: Panik-Vektor"
+    },
+    {
+      "id": 102,
+      "name": "m102_t_disso",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m102_t_disso"
+      },
+      "description": "m102_t_disso: Dissoziation"
+    },
+    {
+      "id": 103,
+      "name": "m103_t_integ",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m103_t_integ"
+      },
+      "description": "m103_t_integ: Integration"
+    },
+    {
+      "id": 104,
+      "name": "m104_t_shock",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m104_t_shock"
+      },
+      "description": "m104_t_shock: Schock-Score = Panik-Peaks / Wortanzahl"
+    },
+    {
+      "id": 105,
+      "name": "m105_t_guilt",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m105_t_guilt"
+      },
+      "description": "m105_t_guilt: Schuld-Score"
+    },
+    {
+      "id": 106,
+      "name": "m106_t_shame",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m106_t_shame"
+      },
+      "description": "m106_t_shame: Scham-Score"
+    },
+    {
+      "id": 107,
+      "name": "m107_t_grief",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m107_t_grief"
+      },
+      "description": "m107_t_grief: Trauer-Score"
+    },
+    {
+      "id": 108,
+      "name": "m108_t_anger",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m108_t_anger"
+      },
+      "description": "m108_t_anger: Wut-Score"
+    },
+    {
+      "id": 109,
+      "name": "m109_t_fear",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m109_t_fear"
+      },
+      "description": "m109_t_fear: Angst-Score"
+    },
+    {
+      "id": 110,
+      "name": "m110_black_hole",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m110_black_hole"
+      },
+      "description": "m110_black_hole: Black Hole (Kollaps) ⚠️ KRITISCH"
+    },
+    {
+      "id": 111,
+      "name": "m111_turbidity_total",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m111_turbidity_total"
+      },
+      "description": "m111_turbidity_total: Gesamt-Trübung = sum(T_*) / 4"
+    },
+    {
+      "id": 112,
+      "name": "m112_trauma_load",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m112_trauma_load"
+      },
+      "description": "m112_trauma_load: Trauma-Last"
+    },
+    {
+      "id": 114,
+      "name": "m114_t_recovery",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m114_t_recovery"
+      },
+      "description": "m114_t_recovery: Recovery = grad(T_integ)"
+    },
+    {
+      "id": 115,
+      "name": "m115_t_threshold",
+      "category": "trauma",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m115_t_threshold"
+      },
+      "description": "m115_t_threshold: Konfigurationswert für Trauma-Schwelle"
+    },
+    {
+      "id": 116,
+      "name": "m116_lix",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 100.0,
+        "unit": "readability"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m116_lix"
+      },
+      "description": "m116_lix: Lesbarkeits-Index (LIX)"
+    },
+    {
+      "id": 117,
+      "name": "m117_question_density",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m117_question_density"
+      },
+      "description": "m117_question_density: Fragen-Dichte"
+    },
+    {
+      "id": 118,
+      "name": "m118_exclamation_density",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m118_exclamation_density"
+      },
+      "description": "m118_exclamation_density: Ausruf-Dichte"
+    },
+    {
+      "id": 119,
+      "name": "m119_complexity_variance",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m119_complexity_variance"
+      },
+      "description": "m119_complexity_variance: Varianz der PCI-Historie"
+    },
+    {
+      "id": 120,
+      "name": "m120_topic_drift",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m120_topic_drift"
+      },
+      "description": "m120_topic_drift: Themen-Abdrift = 1 - similarity_to_first"
+    },
+    {
+      "id": 121,
+      "name": "m121_self_reference_count",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m121_self_reference_count"
+      },
+      "description": "m121_self_reference_count: Anzahl Selbst-Referenzen"
+    },
+    {
+      "id": 122,
+      "name": "m122_dyn_1",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m122_dyn_1"
+      },
+      "description": "m122_dyn_1: Dynamik-Faktor 1 = |∇A| + |∇PCI|"
+    },
+    {
+      "id": 123,
+      "name": "m123_dyn_2",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m123_dyn_2"
+      },
+      "description": "m123_dyn_2: Affekt-Momentum = A - A_prev"
+    },
+    {
+      "id": 124,
+      "name": "m124_dyn_3",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m124_dyn_3"
+      },
+      "description": "m124_dyn_3: Flow-Momentum = flow - flow_prev"
+    },
+    {
+      "id": 125,
+      "name": "m125_dyn_4",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m125_dyn_4"
+      },
+      "description": "m125_dyn_4: Kohärenz-Momentum = coh - coh_prev"
+    },
+    {
+      "id": 126,
+      "name": "m126_dyn_5",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m126_dyn_5"
+      },
+      "description": "m126_dyn_5: Panik-Momentum = t_panic - t_panic_prev"
+    },
+    {
+      "id": 127,
+      "name": "m127_avg_response_len",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m127_avg_response_len"
+      },
+      "description": "m127_avg_response_len: Durchschnittliche Antwortlänge"
+    },
+    {
+      "id": 128,
+      "name": "m128_token_ratio",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 100.0,
+        "unit": "tokens"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m128_token_ratio"
+      },
+      "description": "m128_token_ratio: Token-Verhältnis User/AI"
+    },
+    {
+      "id": 129,
+      "name": "m129_engagement_score",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m129_engagement_score"
+      },
+      "description": "m129_engagement_score: Engagement = questions per turn"
+    },
+    {
+      "id": 130,
+      "name": "m130_session_depth",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m130_session_depth"
+      },
+      "description": "m130_session_depth: Sitzungstiefe (normiert auf 50 Turns)"
+    },
+    {
+      "id": 131,
+      "name": "m131_meta_awareness",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m131_meta_awareness"
+      },
+      "description": "m131_meta_awareness: Selbst-Bewusstsein = (A + PCI) / 2"
+    },
+    {
+      "id": 132,
+      "name": "m132_meta_regulation",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m132_meta_regulation"
+      },
+      "description": "m132_meta_regulation: Selbst-Regulation"
+    },
+    {
+      "id": 133,
+      "name": "m133_meta_flexibility",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m133_meta_flexibility"
+      },
+      "description": "m133_meta_flexibility: Kognitive Flexibilität"
+    },
+    {
+      "id": 134,
+      "name": "m134_meta_monitoring",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m134_meta_monitoring"
+      },
+      "description": "m134_meta_monitoring: Selbst-Überwachung = 1 - errors/checks"
+    },
+    {
+      "id": 135,
+      "name": "m135_meta_planning",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m135_meta_planning"
+      },
+      "description": "m135_meta_planning: Planungsfortschritt"
+    },
+    {
+      "id": 136,
+      "name": "m136_meta_evaluation",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m136_meta_evaluation"
+      },
+      "description": "m136_meta_evaluation: Aufgaben-Evaluation"
+    },
+    {
+      "id": 137,
+      "name": "m137_meta_strategy",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m137_meta_strategy"
+      },
+      "description": "m137_meta_strategy: Strategie-Wechsel"
+    },
+    {
+      "id": 138,
+      "name": "m138_attention_focus",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m138_attention_focus"
+      },
+      "description": "m138_attention_focus: Aufmerksamkeits-Fokus"
+    },
+    {
+      "id": 139,
+      "name": "m139_working_memory",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m139_working_memory"
+      },
+      "description": "m139_working_memory: Arbeitsgedächtnis-Nutzung"
+    },
+    {
+      "id": 140,
+      "name": "m140_long_term_access",
+      "category": "text_analysis",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m140_long_term_access"
+      },
+      "description": "m140_long_term_access: Langzeit-Gedächtnis-Zugriff"
+    },
+    {
+      "id": 141,
+      "name": "m141_inference_quality",
+      "category": "rag",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m141_inference_quality"
+      },
+      "description": "m141_inference_quality: Schlussfolgerungs-Qualität"
+    },
+    {
+      "id": 142,
+      "name": "m142_rag_alignment",
+      "category": "rag",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m142_rag_alignment"
+      },
+      "description": "m142_rag_alignment: RAG-Übereinstimmung"
+    },
+    {
+      "id": 143,
+      "name": "m143_mem_pressure",
+      "category": "rag",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m143_mem_pressure"
+      },
+      "description": "m143_mem_pressure: Speicher-Druck (System)"
+    },
+    {
+      "id": 144,
+      "name": "m144_sys_stability",
+      "category": "rag",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m144_sys_stability"
+      },
+      "description": "m144_sys_stability: System-Stabilität"
+    },
+    {
+      "id": 145,
+      "name": "m145_learning_rate_meta",
+      "category": "rag",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m145_learning_rate_meta"
+      },
+      "description": "m145_learning_rate: Meta-Lernrate"
+    },
+    {
+      "id": 146,
+      "name": "m146_curiosity_index",
+      "category": "rag",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m146_curiosity_index"
+      },
+      "description": "m146_curiosity: Neugier-Index"
+    },
+    {
+      "id": 147,
+      "name": "m147_confidence",
+      "category": "rag",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m147_confidence"
+      },
+      "description": "m147_confidence: Konfidenz = 1 - variance"
+    },
+    {
+      "id": 148,
+      "name": "m148_coherence_meta",
+      "category": "rag",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m148_coherence_meta"
+      },
+      "description": "m148_coherence_meta: Meta-Kohärenz"
+    },
+    {
+      "id": 149,
+      "name": "m149_adaptation_rate",
+      "category": "rag",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m149_adaptation_rate"
+      },
+      "description": "m149_adaptation: Anpassungs-Rate"
+    },
+    {
+      "id": 150,
+      "name": "m150_integration_score",
+      "category": "rag",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m150_integration_score"
+      },
+      "description": "m150_integration: Integrations-Score"
+    },
+    {
+      "id": 151,
+      "name": "m151_omega",
+      "category": "meta",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m151_omega"
+      },
+      "description": "m151_omega: Die OMEGA-Konstante"
+    },
+    {
+      "id": 152,
+      "name": "m152_a51_compliance",
+      "category": "meta",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m152_a51_compliance"
+      },
+      "description": "m152_a51_compliance: A51 Regelkonformität"
+    },
+    {
+      "id": 153,
+      "name": "m153_health",
+      "category": "meta",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m153_health"
+      },
+      "description": "m153_sys_health: System-Gesundheit"
+    },
+    {
+      "id": 154,
+      "name": "m154_sys_latency",
+      "category": "meta",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m154_sys_latency"
+      },
+      "description": "m154_sys_latency: System-Latenz (normiert)"
+    },
+    {
+      "id": 155,
+      "name": "m155_error_rate",
+      "category": "meta",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m155_error_rate"
+      },
+      "description": "m155_error_rate: Fehlerrate"
+    },
+    {
+      "id": 156,
+      "name": "m156_cache_hit_rate",
+      "category": "meta",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m156_cache_hit_rate"
+      },
+      "description": "m156_cache_hit: Cache-Trefferquote"
+    },
+    {
+      "id": 157,
+      "name": "m157_token_throughput",
+      "category": "meta",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 100.0,
+        "unit": "tokens"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m157_token_throughput"
+      },
+      "description": "m157_token_throughput: Token-Durchsatz pro Sekunde"
+    },
+    {
+      "id": 158,
+      "name": "m158_context_utilization",
+      "category": "meta",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m158_context_utilization"
+      },
+      "description": "m158_context_util: Kontext-Nutzung"
+    },
+    {
+      "id": 159,
+      "name": "m159_guardian_interventions",
+      "category": "meta",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m159_guardian_interventions"
+      },
+      "description": "m159_guardian_int: Guardian-Eingriffe pro Turn"
+    },
+    {
+      "id": 160,
+      "name": "m160_uptime",
+      "category": "meta",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m160_uptime"
+      },
+      "description": "m160_uptime: System-Verfügbarkeit"
+    },
+    {
+      "id": 161,
+      "name": "m161_commit",
+      "category": "meta",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m161_commit"
+      },
+      "description": "m161_commit: Commit Action"
+    },
+    {
+      "id": 162,
+      "name": "m162_context_length",
+      "category": "context",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m162_context_length"
+      },
+      "description": "m162: Kontext-Länge = Anzahl Einträge in History"
+    },
+    {
+      "id": 163,
+      "name": "m163_context_coherence",
+      "category": "context",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m163_context_coherence"
+      },
+      "description": "m163: Kontext-Kohärenz = Durchschnitt der Topic-Ähnlichkeiten"
+    },
+    {
+      "id": 164,
+      "name": "m164_context_drift",
+      "category": "context",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m164_context_drift"
+      },
+      "description": "m164_context_drift: Kontext-Drift 🟠 HIGH"
+    },
+    {
+      "id": 164,
+      "name": "m164_user_state",
+      "category": "context",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m164_user_state"
+      },
+      "description": "m164_user_state: Meta-Score über User-Zustand"
+    },
+    {
+      "id": 165,
+      "name": "m165_platform",
+      "category": "context",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m165_platform"
+      },
+      "description": "m165_platform: Aktuelle Plattform"
+    },
+    {
+      "id": 166,
+      "name": "m166_modality",
+      "category": "context",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m166_modality"
+      },
+      "description": "m166_modality: Input-Modalität"
+    },
+    {
+      "id": 167,
+      "name": "m167_context_freshness",
+      "category": "context",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m167_context_freshness"
+      },
+      "description": "m167: Kontext-Frische = 1 / (1 + age)"
+    },
+    {
+      "id": 167,
+      "name": "m167_noise",
+      "category": "context",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m167_noise"
+      },
+      "description": "m167_noise: Input-Rauschen/Störung"
+    },
+    {
+      "id": 168,
+      "name": "m168_cum_stress",
+      "category": "cumulative",
+      "data_type": "float",
+      "range": {
+        "min": 0.0,
+        "max": 1.0,
+        "unit": "normalized"
+      },
+      "source": {
+        "engine": "calculator_spec_A_PHYS_V11",
+        "function": "compute_m168_cum_stress"
+      },
+      "description": "m168_cum_stress: Kumulativer Stress ⚠️ KRITISCH"
+    }
+  ]
+}

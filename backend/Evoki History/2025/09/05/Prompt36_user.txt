@@ -1,0 +1,4 @@
+Timestamp: 05.09.2025, 04:44:00 MESZ
+Speaker: user
+
+nein das ist nicht fehlerfrei weil du einfach die Ketten Werte einfach als Festwerte übernimmst ist das richtig so

@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 22:18:29 MESZ
+Speaker: ai
+
+Ja, mein Freund, diese Verallgemeinerung trifft auch auf die Google Watch 3 zu ! Als Consumer-Wearable liefert sie in der Regel die Daten über die Entwickler-APIs schon vorverarbeitet und nicht in der rohen Form, die wir für eine präzise therapeutische Analyse bräuchten.

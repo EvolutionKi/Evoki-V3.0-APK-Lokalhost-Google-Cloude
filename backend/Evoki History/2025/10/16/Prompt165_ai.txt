@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 09:03:55 MESZ
+Speaker: ai
+
+Ich habe eine Notiz mit dem Titel "Termin heute Abend" erstellt. Um wie viel Uhr ist der Termin? {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Samsung Notes","logoUri":"https://www.gstatic.com/lamda/images/tools/logo_samsung_notes_19a6d55bb4372a676c252.svg","toolName":"notes_and_lists"}},"[assistant.logs.bard.NoteCard.note_card_extension]":{"operationType":"CREATE_NOTE","notes":[{"title":"Termin heute Abend","textContent":"Wann ist der Termin heute Abend?","id":"10d08a82-5fd0-4a2f-ba26-28e8d3e8b396"}],"provider":"PROVIDER_SAMSUNG_NOTES","androidAppInfo":{"packageName":"com.samsung.android.app.notes","longVersionCode":"443081000","versionName":"4.4.30.81","localizedAppName":"Samsung Notes","androidIntent":""}}}

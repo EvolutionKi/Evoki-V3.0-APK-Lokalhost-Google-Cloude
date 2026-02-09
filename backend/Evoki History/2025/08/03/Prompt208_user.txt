@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 17:58:24 MESZ
+Speaker: user
+
+wollen nicht System umbenennen in #256 sondern im Output Fenster soll dieser Wert der internen #256 Ketten Überwachung der soll lediglich im Output Fenster benannt werden mit System #256 #wert

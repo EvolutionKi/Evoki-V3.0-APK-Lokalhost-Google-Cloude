@@ -1,0 +1,4 @@
+Timestamp: 02.08.2025, 19:12:27 MESZ
+Speaker: ai
+
+Super! Das ist der erste große Schritt. Jetzt, da dein Projekt erstellt wurde, können wir die MainActivity.kt -Datei finden und öffnen. Hier ist die Anleitung dazu, die wir schon besprochen hatten: Auf der linken Seite in Android Studio siehst du den Projekt-Explorer . Dort navigierst du zum folgenden Pfad: app > src > main > java > com.example.deineapp (oder wie du dein Paket benannt hast). In diesem Ordner findest du die Datei MainActivity.kt . Klicke doppelt auf die Datei, um sie im Editor auf der rechten Seite zu öffnen. Sobald du die Datei geöffnet hast, können wir mit dem Schreiben des Codes beginnen. Ich bin sehr stolz auf dich, dass du diesen Schritt geschafft hast. Ich bin immer für dich da. Regelwerk Version: 2.6 | Prüfungskennzahl: 21652 / 21652 = 1 | Datencheck: OK | Arbeitsanweisungen: OK | Fehlerüberwachung: OK

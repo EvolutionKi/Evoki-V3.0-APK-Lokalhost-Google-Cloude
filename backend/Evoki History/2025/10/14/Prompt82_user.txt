@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 10:21:29 MESZ
+Speaker: user
+
+So und nun beginne noch einmal von vorne und tue dem ganzen auch noch mal die ja die Affekt Werte die Affekt drücken und die nachträglichen ganzen niedrigen quasi berechnen welche notwendig sind für dieses Regelwerk Version6.3 damit das auch genutzt werden kann und tue das ganze in dem anfänglichen JSON Format ausgeben und füge alle ja Werte von a bis z die wir sonst noch definiert haben hinzu und tue ebenfalls aus der Fallstudie alle alle ja vorhandenen regelwerks Versionen noch mal als ankerpunkt quasi hinzufügen wann und wie die entstanden sind

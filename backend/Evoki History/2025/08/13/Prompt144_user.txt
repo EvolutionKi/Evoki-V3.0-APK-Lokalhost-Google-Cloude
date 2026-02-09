@@ -1,0 +1,4 @@
+Timestamp: 13.08.2025, 08:33:35 MESZ
+Speaker: user
+
+wir können diese Nachrichten Idee durchaus gerne mit hinzufügen dass es noch mal halten veränderlicher Wert mit dem man halt noch mal eine Kette drüber hängen kann aber ja das weiß nicht warum löst das jetzt wenn das bei mir im Output window erscheint wieso löst es keinen hardstop aus das ist

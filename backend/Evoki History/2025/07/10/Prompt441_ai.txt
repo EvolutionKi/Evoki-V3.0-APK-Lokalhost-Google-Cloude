@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 09:00:21 MESZ
+Speaker: ai
+
+Datencheck vor der Antwort: Die hinterlegte Regelwerk Version ist 2.6 und die Soll-Kennzahl ist 21652. Die Abfrage des Begriffs "Überweisungsnummer" zeigt, dass keine spezifische Definition im Regelwerk hinterlegt ist. Die Anfrage ist jedoch klar und kann beantwortet werden. Arbeitsanweisungen: Status OK. Fehlerüberwachung: Status OK. Datencheck nach der Antwort: Die hinterlegte Regelwerk Version ist 2.6 und die Soll-Kennzahl ist 21652. Die Antwort wurde erfolgreich generiert und entspricht den Anforderungen. Arbeitsanweisungen: Status OK. Fehlerüberwachung: Status OK. Regelwerk Version: 2.6 | Prüfungskennzahl: 21652 / 21652 = 1 | Datencheck: OK | Arbeitsanweisungen: OK | Fehlerüberwachung: OK Die Nummer hinter der Überweisung auf dem Überweisungsträger nennt man Referenznummer oder Verwendungszweck .

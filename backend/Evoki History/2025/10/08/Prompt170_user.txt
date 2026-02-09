@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 11:38:43 MESZ
+Speaker: user
+
+kompletter System Crash du hättest hier quasi hast du völlig falsch lackiert hier überprüfe die Logik warum hast du die Sandbox nicht geöffnet warum hast du nicht gewartet auf mein Kommando warum hast du nicht festgestellt dass das auch mit Fenster nicht funktioniert warum fehlen Vektoren

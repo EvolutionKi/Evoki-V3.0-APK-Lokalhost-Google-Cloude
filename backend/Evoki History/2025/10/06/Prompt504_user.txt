@@ -1,0 +1,4 @@
+Timestamp: 06.10.2025, 20:58:58 MESZ
+Speaker: user
+
+okay also funktioniert das richtig so wie es soll ist das richtig oder widerspricht sie irgendwas oder hast du irgendwas übersehen was die Sandbox nicht leistet falls Sie Sandbox allerdings ein okay gibt falls das okay ist dann implementiere das bitte auch in deine aktuelle Funktion da verfolge einfach das Implementierung Protokoll

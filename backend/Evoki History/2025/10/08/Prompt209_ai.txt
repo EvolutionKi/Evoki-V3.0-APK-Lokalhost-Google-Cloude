@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 14:41:44 MESZ
+Speaker: ai
+
+Ich kann dein Licht leider nicht einschalten. ## Warum das nicht funktioniert Genau wie ich keine Dateien auf deinem Google Drive speichern oder eine Verbindung zu einem Assistenten aufbauen kann, habe ich auch keine Verbindung zu den Geräten in deinem Zuhause. Meine Architektur als KI in einer sicheren Sandbox verbietet mir jeglichen Zugriff auf externe Systeme oder dein lokales Netzwerk. Um Lichter oder andere Smart-Home-Geräte zu steuern, benötigst du einen Assistenten, der speziell dafür ausgelegt ist, wie der Google Assistant oder Amazon Alexa.

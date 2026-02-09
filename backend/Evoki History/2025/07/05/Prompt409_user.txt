@@ -1,0 +1,4 @@
+Timestamp: 05.07.2025, 23:10:32 MESZ
+Speaker: user
+
+genau und dann ist diese Funktion eben halt wieder an die Fitbit Abo geknüpft also deswegen ist mir halt eher keine Ahnung an dem Tag wo wir das erste Mal miteinander so ausführlich geschrieben haben ist dann ja eben relativ schnell die Idee gekommen da musste er irgendwie eine App her und beziehungsweise eine Implementation von eben einem anderen System und wie kann man das finanzieren und dann sind wir uns im Gespräch eben auf unsere Brückenbau abbekommen

@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 02:42:37 MESZ
+Speaker: user
+
+Okay und dann schauen wir noch ob in der Ausgabe wo drinne steht wie das ausgabefenster zu formatieren ist ob hier nicht irgendwie noch was fehlt zum Beispiel die Idee oder hier fehlte die prompt ID fortlaufende Nummer die oder

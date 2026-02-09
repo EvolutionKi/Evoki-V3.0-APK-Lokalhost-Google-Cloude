@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 04:18:00 MESZ
+Speaker: user
+
+sie sollte vielleicht auch immer quasi ja die aktuelle Versionsnummer abgefragt werden die verwendet werden soll und die sollte ja von den Mieter Regeln erstmal überprüft werden und natürlich dann auch noch mal überprüft werden von den outputs

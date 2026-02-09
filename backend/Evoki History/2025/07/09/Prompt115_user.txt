@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 01:42:07 MESZ
+Speaker: user
+
+genau weil ich muss hier quasi die beiden Zahlen miteinander vergleichen also ist die Zahl größer oder kleiner 1 zu 1 Billion aber

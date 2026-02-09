@@ -1,0 +1,43 @@
+{
+  "bundle": "evoki_lexika_v3_bundle",
+  "created_utc": "2026-02-01T04:19:44Z",
+  "files": {
+    "evoki_lexika_v3.json": {
+      "bytes": 12345,
+      "sha256": "d60206cdcbd37b02b165f09608b02826b6ee15fce85f8c722b22381932b45f2a"
+    },
+    "evoki_lexika_v3.py": {
+      "bytes": 27699,
+      "sha256": "4cd4183f34372fc8b294b2054043966843b73008ade9f85598c2616ce34120d2"
+    },
+    "evoki_lexika_v3/README.md": {
+      "bytes": 925,
+      "sha256": "70326034ab4b0a6cff4d7677f1e61e901b9b01f19f7ce1f2f45cc08d60dc7421"
+    },
+    "evoki_lexika_v3/__init__.py": {
+      "bytes": 708,
+      "sha256": "bf2936f88f669788aa286f8cd552acc7e7f091d44c9a41e51c4a55d35804e36a"
+    },
+    "evoki_lexika_v3/config.py": {
+      "bytes": 1090,
+      "sha256": "65d893b0d3d3e8ebd9027133e81224ce6ccb6ca648dddcaba30e192e0828401a"
+    },
+    "evoki_lexika_v3/drift.py": {
+      "bytes": 1686,
+      "sha256": "63899a78724802722abd75b6abd00353b6869479e0946679645e4288a88420b8"
+    },
+    "evoki_lexika_v3/engine.py": {
+      "bytes": 4884,
+      "sha256": "90a7e8b290c87361aacc398a5b4a0d740cef5666abc39acd64162f92aa1e6ff7"
+    },
+    "evoki_lexika_v3/lexika_data.py": {
+      "bytes": 11734,
+      "sha256": "117eb707af1fddbd22e2e6299577c88dd65857a14a28056c15a1fea729121bf9"
+    },
+    "evoki_lexika_v3/registry.py": {
+      "bytes": 3801,
+      "sha256": "4ca035ef38abedf5496b88835b0606c022c4bcbe061b1db18c262db439e47757"
+    }
+  },
+  "version": "3.0.0"
+}

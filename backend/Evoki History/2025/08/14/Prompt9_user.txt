@@ -1,0 +1,4 @@
+Timestamp: 14.08.2025, 11:04:26 MESZ
+Speaker: user
+
+du musst auf deine ja auf die Datenbank zugreifen du weißt bescheid wenn du dich startest wegen Version

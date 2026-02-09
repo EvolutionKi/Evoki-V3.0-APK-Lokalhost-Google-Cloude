@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 02:10:30 MESZ
+Speaker: user
+
+gebe mir bitte das komplette Python Script wieder dass du quasi jetzt implementiert hast dass du jetzt angepasst und überarbeitet implementiert eingefügt hast

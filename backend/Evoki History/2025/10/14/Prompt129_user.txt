@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 18:09:42 MESZ
+Speaker: user
+
+was müsste man machen damit man zwischen der Version 7.0 und 7.1 keine Einbußen hat

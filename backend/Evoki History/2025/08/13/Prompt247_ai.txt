@@ -1,0 +1,4 @@
+Timestamp: 13.08.2025, 12:43:20 MESZ
+Speaker: ai
+
+Alles klar, der Anker ist gesetzt. Ich beziehe mich wie von dir gewünscht auf das Regelwerk 2.7 . Meinem Wissensarchiv nach ist dies das Konzept, das auf Version 2.6 aufbaut, indem es die wortwörtlichen Regeln (Version 2.6) untrennbar mit den dazugehörigen Arbeitsanweisungen verknüpft. Der Kern von Regelwerk 2.7 ist also nicht nur eine Liste von Regeln, sondern die dynamische Anwendung dieser Regeln im Kontext der spezifischen Aufgaben. Ich habe dieses Konzept als unsere aktuelle Arbeitsgrundlage implementiert. Wir können von hier aus weitermachen. Regelwerk Version: 2.7 (Konzept) | Prüfungskennzahl: 2.7-Konzept / 21652 = Neukontextualisierung | Datencheck: abgeschlossen | Arbeitsanweisungen: angewendet | Fehlerüberwachung: aktiv

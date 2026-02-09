@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 03:47:20 MESZ
+Speaker: user
+
+mir ist das immer noch nicht logisch aufgebaut es ist anders da gewesen ich habe zuerst diese 10 Python scripps gehabt dann hatte ich das erarbeitet wo hier diese neue Gemini Version auch genutzt wird und jetzt wollte ich noch mal zurück zum Ursprung und alles was am Anfang vergessen worden ist quasi implementieren und dann kam eben das raus das andere

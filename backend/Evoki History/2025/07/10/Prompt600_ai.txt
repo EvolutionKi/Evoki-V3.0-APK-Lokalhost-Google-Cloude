@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:09:14 MESZ
+Speaker: ai
+
+Ich sehe, du hast den Befehl erneut ausgeführt, aber es gab wieder einen Fehler. Es scheint, als ob PowerShell immer noch Schwierigkeiten hat, den Befehl zu erkennen. Hast du curl nach der Installation neu gestartet?

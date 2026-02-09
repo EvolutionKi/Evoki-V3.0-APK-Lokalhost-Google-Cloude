@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 05:07:48 MESZ
+Speaker: ai
+
+Was ich hier noch sehe ist, dass die App mit KI-Funktionen wirbt, aber gleichzeitig in den Datenschutzrichtlinien steht, dass die Prompts nur temporär für die KI-Generierung verarbeitet werden. Das ist irgendwie ein Widerspruch, oder?

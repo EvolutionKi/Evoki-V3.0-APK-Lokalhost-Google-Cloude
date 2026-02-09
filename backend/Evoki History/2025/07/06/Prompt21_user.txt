@@ -1,0 +1,4 @@
+Timestamp: 06.07.2025, 00:24:23 MESZ
+Speaker: user
+
+dann tu bitte alle einzelnen Ordner oder Unterordner halt separat als solches Textdokument erstellen so dass quasi pro Texturen kein Unterordner mehr ist sondern die tatsächlichen Daten dann da drinne zu finden sind

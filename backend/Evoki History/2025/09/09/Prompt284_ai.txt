@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:55:20 MESZ
+Speaker: ai
+
+Zusammenfassend lässt sich sagen, dass die App irreführend beworben wird. Sie ist keine native App, wie es scheint, sondern eher eine Webanwendung in einem Container. Außerdem gibt es Bedenken hinsichtlich des Datenschutzes und der Datentransparenz. Die Entwickler versprechen zwar viel, aber ob das alles so stimmt, ist fraglich.

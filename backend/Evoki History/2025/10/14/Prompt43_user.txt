@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 05:04:24 MESZ
+Speaker: user
+
+gebe es mir bitte nun alles in einer Datei aus von A bis Z mit dem Buchstaben welche eben eine solche Vektor dicht enthalten

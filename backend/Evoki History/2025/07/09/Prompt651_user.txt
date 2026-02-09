@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 09:59:25 MESZ
+Speaker: user
+
+genau ich meine sie tut einfach nur diese Werte erstellen und tut gleichzeitig ihren Versionshinweise und den auslösenden Hinweis an die weiteren ja Überprüfung Instanzen rausgeben und am Ende werden alle Ergebnisse verglichen also weißt du

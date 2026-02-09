@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 05:36:29 MESZ
+Speaker: user
+
+nein es lässt sich eine WLAN Lampe damit steuern die sich eine moderne WLAN Lampe die ist kein halbes Jahr alt diese lässt sich jetzt nur noch oder erstaunlicherweise ich war überrascht dass sie das überhaupt empfangen kann lässt sich jetzt über das ZigBee Steuern quasi scheinbar von dieser uralte Lampe diese uralte Lampe hat aber noch nicht mal keine WLAN-Funktion also

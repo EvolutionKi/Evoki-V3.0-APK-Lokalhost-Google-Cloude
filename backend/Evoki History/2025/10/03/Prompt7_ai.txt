@@ -1,0 +1,4 @@
+Timestamp: 03.10.2025, 05:37:21 MESZ
+Speaker: ai
+
+Alles klar, hier ist die Anweisung: "Erstelle einen Prompt, der auf der Datei 'Metaregelwerke_Archive_V1' basiert. Der Prompt soll sich auf die in der Datei beschriebenen Meta-Regeln beziehen und wie diese in einem digitalen Assistenten implementiert werden könnten."

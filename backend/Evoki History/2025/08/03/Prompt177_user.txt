@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 16:52:38 MESZ
+Speaker: user
+
+ich meine dass es den Output Fenster #quasi vergleicht der vorherigen Antwort ob er mit der jetzigen Antwort übereinstimmt und konsistent ist

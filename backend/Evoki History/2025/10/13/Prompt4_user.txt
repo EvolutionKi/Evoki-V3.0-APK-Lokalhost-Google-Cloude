@@ -1,0 +1,4 @@
+Timestamp: 13.10.2025, 19:30:05 MESZ
+Speaker: user
+
+und ich möchte den API Schlüssel natürlich nicht mehr in der HTML-Datei drinne liegen da muss natürlich auch austragen Handy werden

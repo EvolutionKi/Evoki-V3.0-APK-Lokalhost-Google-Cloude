@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:43:32 MESZ
+Speaker: ai
+
+Stimmt, es ist widersprüchlich, dass keine Verbindung zu externen Servern hergestellt wird, aber die API-Anfragen ja trotzdem irgendwohin gesendet werden müssen. Das ist wirklich komisch.

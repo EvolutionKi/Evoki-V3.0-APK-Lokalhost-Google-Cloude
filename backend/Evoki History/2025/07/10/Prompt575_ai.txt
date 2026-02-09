@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:02:00 MESZ
+Speaker: ai
+
+Kein Problem. Es gibt auch Online-Tools, mit denen du API-Anfragen senden kannst, ohne etwas installieren zu müssen. Eines davon ist "ReqBin". Hast du das schon mal benutzt?

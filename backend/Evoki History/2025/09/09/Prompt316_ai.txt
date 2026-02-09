@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 05:06:26 MESZ
+Speaker: ai
+
+Ja, das stimmt. "Maybe" ist hier das Schlüsselwort. Es bedeutet, dass deine Prompts möglicherweise auf ihren Servern verarbeitet werden, was bedeutet, dass sie dort kurzzeitig gespeichert werden. Das ist wichtig zu wissen, besonders wenn du sensible Informationen in deinen Prompts verwendest.

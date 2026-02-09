@@ -1,0 +1,4 @@
+Timestamp: 13.08.2025, 08:51:05 MESZ
+Speaker: user
+
+warum steht der bestanden jetzt schon wieder wenn das halt eigentlich nicht bestanden hat also sehe ich das gerade falsch also eigentlich müsste doch die interne Kette ist ja immer eine andere bei jeder Ausgabe

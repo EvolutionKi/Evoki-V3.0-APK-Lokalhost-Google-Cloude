@@ -1,0 +1,4 @@
+Timestamp: 03.10.2025, 05:38:38 MESZ
+Speaker: user
+
+Okay, ich warte. Du sollst mir das Ergebnis ausgeben als einzigen Prompt.

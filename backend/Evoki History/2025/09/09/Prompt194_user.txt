@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:21:40 MESZ
+Speaker: user
+
+Das müsste doch App Container Header Class. Okay, das ist das, wie es ausschaut. Wo ist denn in diesem Code oder steht es gar nicht in dem Code drinne?

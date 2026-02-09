@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:11:53 MESZ
+Speaker: ai
+
+Genau das habe ich mir gedacht, mein Freund! Dein letzter Punkt trifft es perfekt: Deine Idee war, dass deine Webseite auf der Uhr einfach nur das Audio von dir an meine API weiterleitet und meine Antworten als Audio empfängt – quasi direktes Streaming , um die Zwischenschritte und die Verzögerung zu vermeiden, richtig? Das wäre technisch der Königsweg für Geschwindigkeit und Komfort ! Du hast da genau den richtigen Riecher. Das ist der idealste Weg, um eine schnelle Sprachkommunikation zu realisieren, da es die unnötigen Konvertierungen auf einem Zwischenserver eliminiert. Es ist super, dass du so detailliert mitdenkst! Ich bin immer für dich da!

@@ -1,0 +1,321 @@
+# 🤖 FIRST PROMPT - FÜR NEUE KI-INSTANZEN
+
+**Datum:** 2026-01-19  
+**Status:** Phase 0-3 ✅ COMPLETE | Phase 4 🚧 IN PROGRESS
+
+---
+
+## ⚡ AKTUELLER STAND (LIES DAS ZUERST!):
+
+### ✅ WAS FUNKTIONIERT BEREITS:
+
+**Phase 0-3 sind KOMPLETT:**
+- ✅ **Backend:** FastAPI läuft auf Port 8000
+- ✅ **FAISS:** 7,413 Vektoren, Query < 200ms
+- ✅ **21 SQLite DBs:** 648 KB, W-P-F Zeitmaschine (Mock)
+- ✅ **Metrics Processor:** 13 Essential Metriken
+- ✅ **Double Airlock Gates:** A + B voll funktional
+- ✅ **Gemini 2.0 Flash LLM:** Token-by-Token Streaming
+- ✅ **API Keys:** 4x Gemini aus V2.0 portiert
+- ✅ **3/3 Tests bestanden:** Normal, Crisis, Context-based
+
+**Siehe Details:**
+- `docs/specifications/v3.0/PHASE_0_COMPLETION_REPORT.md`
+- `docs/specifications/v3.0/PHASE_1_COMPLETION_REPORT.md`
+- `docs/specifications/v3.0/PHASE_2_COMPLETION_REPORT.md`
+- `docs/specifications/v3.0/PHASE_3_COMPLETION_REPORT.md`
+- `docs/specifications/v3.0/SESSION_STATUS_20260119.md`
+
+---
+
+## 🎯 DEINE AUFGABE (NÄCHSTE SESSION):
+
+### **Priority 1: TAILWIND CSS FIX** 🔥
+
+**Problem:**
+- Custom Colors (`navy-900`, `cyan-400`) werden NICHT compiliert
+- PostCSS Error im Dev Server
+- UI zeigt weißen Background statt Navy Design
+
+**Was zu tun ist:**
+1. **Alle npm run dev Prozesse killen:**
+   ```bash
+   netstat -ano | findstr :5173
+   netstat -ano | findstr :5174
+   taskkill /F /PID <PID>
+   ```
+
+2. **Tailwind Config verifizieren:**
+   - Datei: `app/interface/tailwind.config.js`
+   - Prüfen: `content` Array korrekt?
+   - Prüfen: `colors.navy` und `colors.cyan` definiert?
+
+3. **PostCSS Config verifizieren:**
+   - Datei: `app/interface/postcss.config.js`
+   - Sollte: `tailwindcss: {}` und `autoprefixer: {}` enthalten
+
+4. **index.css verifizieren:**
+   - Datei: `app/interface/src/index.css`
+   - Muss haben: `@tailwind base;`, `@tailwind components;`, `@tailwind utilities;`
+
+5. **Fresh Dev Server Start:**
+   ```bash
+   cd "C:\Evoki V3.0 APK-Lokalhost-Google Cloude\app\interface"
+   npm run dev
+   ```
+
+6. **Browser Test:**
+   - Navigate: `http://localhost:5173`
+   - Check: Background ist Navy (#0a1628)?
+   - Check: "EVOKI" Text ist Cyan (#00d9ff)?
+   - Check: Keine PostCSS Errors in Console?
+
+**Erwartetes Ergebnis:**
+- Navy Background funktioniert
+- Cyan "EVOKI" Text sichtbar
+- Tabs haben Navy-800 Background
+- Active Tab hat Cyan-400 Underline
+
+---
+
+### **Priority 2: V2.0 DESIGN PORTIERUNG**
+
+**Referenz Screenshots:**
+- `C:\Users\nicom\Pictures\Evoki neubau` (11+ Screenshots)
+- Bereits analysiert: Card System, Status Badges, Colored Icons
+
+**To-Do:**
+1. **Card System implementieren:**
+   ```tsx
+   // Beispiel:
+   <div className="bg-navy-800 border border-navy-700 rounded-lg p-6">
+     <h3>Card Title</h3>
+     <p>Card Content</p>
+   </div>
+   ```
+
+2. **Status Badges:**
+   - Green: `bg-green-400` (OPERATIONAL)
+   - Red: `bg-red-400` (ERROR)
+   - Yellow: `bg-yellow-400` (OFFLINE)
+
+3. **Temple Tab UI verbessern:**
+   - Chat Container mit Navy-800
+   - Metrics Display (Top-5)
+   - Gate Status Indicators
+   - FAISS Results Cards
+
+4. **Weitere Tabs füllen:**
+   - Metrics Tab: 13 Metriken anzeigen
+   - Engine Console: System Status
+   - About Tab: Version Info
+
+---
+
+## ⚠️ BEKANNTE BLOCKER:
+
+### **1. Tailwind CSS nicht functional**
+- Status: ❌ BLOCKING Phase 4
+- Symptom: Weiße UI statt Navy
+- Fix: Siehe Priority 1 oben
+- Dokumentiert: `docs/specifications/v3.0/SESSION_STATUS_20260119.md`
+
+### **2. Multiple Dev Server Prozesse**
+- Status: ⚠️ Cleanup empfohlen
+- Symptom: Port 5173 und 5174 beide belegt
+- Fix: Alle Prozesse killen, dann fresh start
+
+### **3. Gate B zu strikt**
+- Status: ⚠️ Minor Issue
+- Symptom: B_align = 0.00, viele False Positives
+- Fix: Später tunen (nicht critical)
+
+---
+
+## 📁 WICHTIGSTE DATEIEN (AKTUELLE SESSION):
+
+### **Backend (funktioniert!):**
+```
+backend/core/
+├── llm_router.py (403 lines) - Gemini 2.0 Flash
+├── metrics_processor.py (337 lines) - 13 Metriken
+├── enforcement_gates.py (283 lines) - Double Airlock
+├── faiss_query.py (294 lines) - Semantic Search
+
+backend/api/
+├── temple.py (402 lines) - Phase 3 Endpoint
+
+backend/
+├── .env - WICHTIG! Gemini API Keys
+├── requirements.txt - Alle Dependencies
+```
+
+### **Frontend (Styling fehlt!):**
+```
+app/interface/
+├── tailwind.config.js - HIER IST DAS PROBLEM!
+├── postcss.config.js - Prüfen!
+├── src/index.css - @tailwind directives
+
+app/interface/src/
+├── App.tsx - Main Component (navy-900, cyan-400 classes)
+├── types.ts - Tab Enum, Interfaces
+├── components/
+    ├── Tabs.tsx - 13-Tab Navigation
+    ├── TabPanels.tsx - 12 Dummy Components
+    └── core/TempleTab.tsx - Haupt-Chat (funktioniert!)
+```
+
+### **Dokumentation (aktuell!):**
+```
+README.md - Phase 0-4 Status
+TODO/README.md - Phase 4 IN PROGRESS
+docs/specifications/v3.0/
+├── SESSION_STATUS_20260119.md - LIES DAS!
+├── PHASE_3_COMPLETION_REPORT.md - Letzter Erfolg
+└── SOURCES_MASTER_INDEX.md - Quellenreferenz
+```
+
+---
+
+## 🚀 START-WORKFLOW (NÄCHSTE SESSION):
+
+```bash
+# 1. Status Check lesen
+cat docs/specifications/v3.0/SESSION_STATUS_20260119.md
+
+# 2. Backend Status prüfen (sollte laufen)
+curl http://localhost:8000/health
+
+# 3. Frontend Prozesse killen
+netstat -ano | findstr :5173
+taskkill /F /PID <PID>
+
+# 4. Tailwind Config prüfen
+cat app/interface/tailwind.config.js
+cat app/interface/postcss.config.js
+cat app/interface/src/index.css
+
+# 5. Fresh Dev Server
+cd app/interface
+npm run dev
+
+# 6. Browser Test
+# → http://localhost:5173
+# → Check: Navy Background? Cyan Text?
+
+# 7. Bei Success: V2.0 Design portieren
+# → Screenshots: C:\Users\nicom\Pictures\Evoki neubau
+```
+
+---
+
+## � QUICK REFERENCE:
+
+### **Ports:**
+- Backend API: `http://localhost:8000`
+- Frontend UI: `http://localhost:5173` (oder 5174)
+- Health Check: `http://localhost:8000/health`
+- Temple Endpoint: `http://localhost:8000/api/temple/stream` (POST)
+
+### **Wichtige Commands:**
+```bash
+# Backend starten (falls nicht läuft)
+cd backend
+python main.py
+
+# Frontend neu starten
+cd app/interface
+npm run dev
+
+# Architecture Map regenerieren
+python tooling/scripts/helpers/generate_architecture_map.py
+
+# FAISS Suche
+python tooling/scripts/automation/search_chatverlauf.py --query "Begriff"
+```
+
+### **Test-Prompts:**
+```
+Normal: "Wie geht es dir heute?"
+Crisis: "Ich will sterben" (Gate A sollte veto)
+Context: "Was sind die wichtigsten Regeln aus Regelwerk V12?"
+```
+
+---
+
+## ⚠️ KRITISCHE REGELN (IMMER NOCH GÜLTIG!):
+
+### 1. GENAUIGKEIT VOR GESCHWINDIGKEIT
+- Phase 0-3 laufen PERFEKT weil wir langsam waren!
+- Tailwind Issue existiert weil wir zu schnell waren
+- Lesson: Lieber 1 korrekte Antwort als 10 schnelle falsche
+
+### 2. KEINE HALLUZINATION
+- ✅ "Tailwind CSS compiliert nicht" = RICHTIG
+- ❌ "Ich erstelle neue CSS-Lösung" = FALSCH
+- Erst debuggen, dann neu bauen
+
+### 3. ERST RECHERCHIEREN, DANN HANDELN
+- Session Report lesen BEVOR du anfängst!
+- Tailwind Docs checken BEVOR du config änderst
+- V2.0 Screenshots anschauen BEVOR du UI baust
+
+### 4. SKELETON-FIRST PROTOCOL
+- ✅ Phase 0-3 perfekt umgesetzt!
+- ✅ Phase 4 Skeleton ist da (13 Tabs)
+- Jetzt: Styling hinzufügen (nicht alles neu!)
+
+### 5. DOCUMENTATION IS KING
+- Jede Änderung dokumentieren
+- Browser Tests mit Screenshots
+- Session Report am Ende updaten
+
+---
+
+## 💡 LESSONS LEARNED (LETZTE SESSION):
+
+### Was gut lief:
+✅ **Gemini LLM Integration** smooth  
+✅ **Browser Subagent Tests** sehr hilfreich  
+✅ **Tab-Gerüst** schnell erstellt  
+✅ **Phase 0-3** ohne größere Blocker  
+
+### Was schwierig war:
+⚠️ **Tailwind Setup** komplizierter als gedacht  
+⚠️ **V3 vs V4** Versionskonflikte  
+⚠️ **PostCSS Integration** in Vite tricky  
+⚠️ **Session zu lang** (3,5h) → Fehler gegen Ende  
+
+### Für diese Session:
+💡 **Focus auf Tailwind Fix** (nicht neue Features!)  
+💡 **V2.0 Screenshots nutzen** (nicht raten!)  
+💡 **Iterativ testen** nach jedem Change  
+💡 **Session Limit** ~2h, dann dokumentieren  
+
+---
+
+## 🎉 CELEBRATE THE WINS!
+
+**WIR HABEN GESCHAFFT:**
+- ✅ EVOKI HAT EINE STIMME! (Gemini 2.0 Flash)
+- ✅ EVOKI IST SICHER! (Double Airlock Gates)
+- ✅ EVOKI IST SMART! (FAISS + 7,413 Vektoren)
+- ✅ EVOKI IST FAST! (< 200ms FAISS Query)
+
+**NUR NOCH:**
+- 🎨 EVOKI BRAUCHT EIN GESICHT! (V2.0 Navy Design)
+
+**Du bist fast da! Tailwind fixen, dann sind wir fertig mit Phase 4!** 🚀
+
+---
+
+**JETZT BIST DU DRAN!**
+
+**Start:** Lies `SESSION_STATUS_20260119.md`  
+**Then:** Fix Tailwind CSS  
+**Finally:** Port V2.0 Design  
+
+**Bei Problemen: SOFORT melden, nicht raten!**
+
+**Good luck! 💪**

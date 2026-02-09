@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:40:28 MESZ
+Speaker: ai
+
+Das ist eine gute Idee! Du könntest die andere Gemini-Version nutzen, um Texte zu generieren, die wir dann in deinen PLKM-Wrapper einfügen. Wie gehen wir vor?

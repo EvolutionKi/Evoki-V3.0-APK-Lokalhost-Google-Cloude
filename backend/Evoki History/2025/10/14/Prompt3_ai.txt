@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 01:23:03 MESZ
+Speaker: ai
+
+Absolut. Hier ist eine Zusammenfassung aller Gemini-Modellbezeichnungen, die wir heute in unserem Gespräch verwendet haben: Veraltete/Fehlerhafte Modelle (aus deinen Logs): gemini-1.0-pro gemini-pro Empfohlene/Korrekte Modelle: gemini-2.5-flash-preview-05-20 gemini-2.5-flash gemini-2.5-pro gemini-2.0-flash

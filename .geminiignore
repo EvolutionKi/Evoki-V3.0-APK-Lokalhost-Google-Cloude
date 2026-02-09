@@ -1,0 +1,23 @@
+
+# EVOKI V3.0 - Gemini Ignore
+# Prevents context pollution by excluding massive/irrelevant files
+
+# History & Logs
+tooling/data/synapse/history/
+tooling/data/synapse/status/backups/
+tooling/data/synapse/*.log
+
+# Build Artifacts
+node_modules/
+.next/
+dist/
+build/
+.cache/
+
+# Git
+.git/
+.github/
+
+# Environment
+.env
+.env.local

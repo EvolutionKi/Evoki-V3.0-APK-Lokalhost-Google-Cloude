@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:12:32 MESZ
+Speaker: user
+
+was sind die personalisierungseinstellungen kann man hier dann an Python Script oder sowas ablegen

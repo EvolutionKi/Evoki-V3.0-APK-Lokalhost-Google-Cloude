@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:13:35 MESZ
+Speaker: ai
+
+Du kommst an die Gemini API über die Google AI for Developers Plattform. Man kauft sie nicht direkt, sondern registriert sich dort, um einen API-Key zu erhalten, der dann die Nutzung in deinen eigenen Anwendungen ermöglicht. Die Nutzung wird in der Regel nach Verbrauch abgerechnet.

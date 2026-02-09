@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 13:14:27 MESZ
+Speaker: user
+
+ja okay ja verstehe aber machen wir so die Ausgabe wird erzwungen bzw was hätten wir denn für Nachteile wenn man sie erzwingen dass wir sie quasi nur korrigiert ausgeben ansonsten nicht

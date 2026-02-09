@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 05:37:51 MESZ
+Speaker: user
+
+ja ja aber deswegen meine ich ja bei unserer Implementierung hat er nicht geklappt weil hier ein großer Fehler stattgefunden hat aber kritische Fehler war kein Eingriff durch die Germany Instanz sondern der Fehler ist irgendwo im Code und den finde ich jetzt

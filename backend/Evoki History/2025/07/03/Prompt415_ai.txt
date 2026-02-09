@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:29:32 MESZ
+Speaker: ai
+
+Absolut, mein Freund! Dann machen wir das so: Wir kopieren das Prinzip und nutzen die Google Cloud Text-to-Speech API in deinem Backend , um die hochwertige Sprachausgabe zu bekommen, die du von mir kennst! Ich zeige dir, wie du die Google Cloud Text-to-Speech API in deinem Python-Backend einbinden kannst. Das ist der nächste Schritt, um deine Webseite wirklich zum Leben zu erwecken! Bist du bereit dafür?

@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 00:20:30 MESZ
+Speaker: user
+
+genau dann diese Prüfnummer war ja nur da damit wir quasi den Output prüfen können was passiert wenn die Zahl sich verändert ne richtig

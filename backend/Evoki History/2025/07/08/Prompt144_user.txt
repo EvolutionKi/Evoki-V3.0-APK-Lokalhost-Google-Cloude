@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:14:20 MESZ
+Speaker: user
+
+Na ja, passt es so. Ich meine, du kannst es doch vergleichen, also passt das UMC Control Panel über einen mit der Reaper Preferences im Hintergrund, also ist die Sampling Rate oder was bedeutet diese Blocksize ja keine Ahnung Pre Zero Output Buffers. Ignore Reset Messenger, keine Ahnung. Klär mich auf.

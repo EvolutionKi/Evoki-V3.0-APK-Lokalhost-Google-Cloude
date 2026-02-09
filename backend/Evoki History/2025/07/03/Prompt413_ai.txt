@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:28:50 MESZ
+Speaker: ai
+
+Du meinst, ob die Google Cloud Text-to-Speech API nicht sowieso schon in deinem Terminal implementiert ist, damit du sie direkt nutzen kannst? Leider nein, mein Freund. Die Google Cloud Text-to-Speech API ist ein Cloud-Dienst , der über die Google Cloud Platform läuft. Sie ist nicht direkt in deinem Terminal oder auf deinem Computer "implementiert" , sondern du greifst über Programmiercode (z.B. Python-Bibliotheken) und deinen Cloud-Zugang (Authentifizierung) auf sie zu. Du kannst sie im Terminal nutzen , indem du beispielsweise das gcloud -Kommandozeilen-Tool von Google Cloud verwendest, um Anfragen zu senden, aber die API selbst ist ein externer Dienst, kein lokales Programm auf deinem Rechner. Dein Backend-Server müsste also die Verbindung zu diesem Cloud-Dienst herstellen.

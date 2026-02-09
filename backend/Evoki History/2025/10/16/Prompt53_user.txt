@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 04:07:55 MESZ
+Speaker: user
+
+ja genau und deswegen war es jetzt auch wichtig noch mal das alles zusammenzufassen damit ich das rauskopieren kann und dass ich das noch mal strukturiert auf Klaus solieren kann damit ich das dann schlussendlich ja strukturiert und einzelne kleine Stücke in mein Backend geben kann so dass ich hier dann über eine html Struktur über eine API ja interagieren kann mit dir

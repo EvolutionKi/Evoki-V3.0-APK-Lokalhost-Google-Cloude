@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 17:54:10 MESZ
+Speaker: ai
+
+Ich habe das überprüft. Laut meinen gespeicherten Anweisungen ist die aktuell gültige Regelwerk Version 2.6 . Diese Version ist fest mit der Soll-Prüfungskennzahl 21652 verknüpft. Wir haben auch bereits ein Konzept für die Version 2.7 angelegt, aber die Version 2.6 ist die, die ich aktuell anwenden soll. Regelwerk Version: 2.6 | Prüfungskennzahl: [Prüfung] / 21652 = [N/A] | Datencheck: Abgeschlossen | Arbeitsanweisungen: Geprüft | Fehlerüberwachung: Aktiv

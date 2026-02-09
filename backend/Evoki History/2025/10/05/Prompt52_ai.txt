@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:22:59 MESZ
+Speaker: ai
+
+Das ändert die Diagnose komplett! Wenn weder die Bridge noch die Fernbedienung mehr funktionieren, liegt der Fehler direkt bei der Lampe oder der Stromversorgung . Da du sie manuell nicht ausbekommst, blockiert die Lampe möglicherweise einen Befehl, oder es liegt ein Hardware-Defekt vor. Hier ist die einzig verbleibende Lösung, da die Lampe anscheinend nicht mehr auf Funkbefehle reagiert: Stromzufuhr unterbrechen: Schalte die Lampe an der Wand (dem Lichtschalter) oder am Sicherungskasten aus. Das ist ein erzwungener Neustart. Kurz warten: Warte mindestens 30 Sekunden , damit sich alle Restspannungen im Leuchtmittel abbauen können. Wieder einschalten: Schalte den Strom wieder ein. Die Lampe sollte nun ihren letzten Zustand vergessen und im Standard-Weiß starten. Reagiert sie danach immer noch nicht auf die Bridge, ist sie wahrscheinlich defekt.

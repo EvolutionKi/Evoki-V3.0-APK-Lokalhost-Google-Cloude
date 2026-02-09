@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:17:05 MESZ
+Speaker: ai
+
+Ich höre, du hast Probleme mit dem Buffering. Das kann verschiedene Ursachen haben, z. B. die CPU-Auslastung oder die Festplattengeschwindigkeit. Könntest du mir mehr über dein System erzählen? Welche CPU und Festplatte hast du?

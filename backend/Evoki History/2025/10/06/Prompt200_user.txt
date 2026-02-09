@@ -1,0 +1,4 @@
+Timestamp: 06.10.2025, 09:33:13 MESZ
+Speaker: user
+
+nein sollst du nicht hast du das jetzt automatisch so gemacht weil du die Logik daran erkannt hast was passieren würde wenn du das in deinen Code Gießen würdest

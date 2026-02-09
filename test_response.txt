@@ -1,0 +1,45 @@
+event: status
+data: "\ud83d\udcca Berechne Metriken..."
+
+event: metrics
+data: {"A": 0.5, "PCI": 0.5, "T_panic": 0.0, "B_align": 0.5, "F_risk": 0.0, "B_vector": {"B_life": 0.5, "B_truth": 0.5, "B_depth": 0.5, "B_init": 0.5, "B_warmth": 0.5, "B_safety": 0.5, "B_clarity": 0.5}}
+
+event: thought
+data: "Metriken: A=0.50, T_panic=0.00, F_risk=0.00"
+
+event: status
+data: "\ud83d\udd0d Gate A: Pre-Prompt Validation..."
+
+event: gate_a
+data: {"passed": true, "reasons": []}
+
+event: status
+data: "\u2705 Gate A: Offen"
+
+event: thought
+data: "Durchsuche Chatverlauf (FAISS Semantic Search)..."
+
+event: faiss_results
+data: {"count": 0, "top3": []}
+
+event: status
+data: "\ud83e\udd16 Rufe LLM auf (Gemini 2.0 Flash)..."
+
+event: thought
+data: "Context: 26 chars, Metriken, W-P-F, FAISS Top-3"
+
+event: token
+data: "[TODO: Replace with actual LLM]"
+
+event: status
+data: "\ud83d\udd0d Gate B: Post-Response Validation..."
+
+event: gate_b
+data: {"passed": true, "reasons": []}
+
+event: status
+data: "\u2705 Gate B: Offen"
+
+event: complete
+data: {"success": true, "mode": "phase3-llm-real", "metrics": {"A": 0.5, "T_panic": 0.0, "F_risk": 0.0, "B_align": 0.5}, "gates": {"gate_a": "passed", "gate_b": "passed"}, "llm": "gemini-2.0-flash"}
+

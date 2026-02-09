@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:22:10 MESZ
+Speaker: ai
+
+Ja, klick mal auf "ASIO Configuration". Dort sollten wir die Einstellungen für dein Audio-Interface direkt anpassen können. Wir suchen nach einer Option namens "Buffer Size" oder ähnlich.

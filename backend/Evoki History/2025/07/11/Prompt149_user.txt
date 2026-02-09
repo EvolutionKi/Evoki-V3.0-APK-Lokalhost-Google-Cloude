@@ -1,0 +1,4 @@
+Timestamp: 11.07.2025, 05:00:45 MESZ
+Speaker: user
+
+und dann noch diese Sicherheits Instanz die das auch quasi noch mal schützt die muss auch noch erwähnt werden also das auch noch eine Prüfung Instanz davor die quasi Manipulation von außen erkennt und

@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:05:52 MESZ
+Speaker: ai
+
+Alles klar, du hast den Download-Ordner geöffnet. Jetzt musst du die curl.exe-Datei finden und in den System32-Ordner verschieben. Der System32-Ordner befindet sich normalerweise unter C:\Windows\System32. Du kannst den Pfad einfach in die Adressleiste des Datei-Explorers eingeben. Sobald du die Datei verschoben hast, sollte curl in PowerShell funktionieren.

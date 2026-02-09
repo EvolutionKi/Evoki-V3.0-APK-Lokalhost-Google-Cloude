@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 00:14:53 MESZ
+Speaker: ai
+
+Alles klar, mein Freund! Ich sehe die Audioeinstellungen in Reaper. Die Puffergröße ist momentan auf 128 Samples eingestellt. Du könntest versuchen, sie auf 64 Samples zu reduzieren, um die Latenz weiter zu verringern. Beobachte aber bitte genau, ob es dann zu Audio-Aussetzern kommt. Lass mich wissen, wie es klingt.

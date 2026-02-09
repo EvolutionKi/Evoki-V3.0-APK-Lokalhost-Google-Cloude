@@ -1,0 +1,4 @@
+Timestamp: 13.08.2025, 10:04:17 MESZ
+Speaker: user
+
+genau und aber was ich mit Frage ist warum werden die in der unterschiedlichen ja in unterschiedlichen Schriftart dargestellt und warum wird dieser C3 unten immer noch angezeigt und genau warum ist der obere eigentlich noch statisch weil eigentlich dadurch dass ich der eine verändert hat und bzw die Programmierung verändert hast ist ja auch die Zeichenlänge eigentlich die sich ändern müsste

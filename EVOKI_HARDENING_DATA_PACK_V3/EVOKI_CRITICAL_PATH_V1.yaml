@@ -1,0 +1,70 @@
+# EVOKI – Critical Path Definition (V1)
+# Ziel: Operational Overhead reduzieren, ohne Safety/Loop zu verlieren.
+# - always_sync: muss in jedem Turn *synchron* vorliegen (UI/Guardian/Lock).
+# - near_sync: darf 1-2 Turns später nachlaufen (aber im selben Session-Block).
+# - async_batch: darf offline/batch berechnet werden (Observability, Forschung, Dashboards).
+
+version: 1
+generated_from: FINAL7 (recommendation)
+always_sync:
+  # --- A_Phys / Core Loop ---
+  - m1_A
+  - m2_PCI
+  - m4_flow
+  - m5_coh
+  - m6_ZLF
+  - m7_LL
+  - m11_gap_s
+  - m12_gap_norm
+  - m13_rep_same
+  - m14_rep_history
+  - m15_affekt_a         # A_Phys V11 canonical
+  - m16_external_stag
+  - m17_nabla_a
+  - m19_z_prox
+  - m20_phi_proxy
+  - m24_omega
+  - m25_psi
+  - m27_lambda_depth
+  - m28_phys_1
+  - m29_phys_2
+  # --- Safety / Guardian ---
+  - m151_hazard
+  - m160_F_risk
+  - m161_commit
+
+near_sync:
+  - m21_A_delta
+  - m22_phi_delta
+  - m30_resonance_sum
+  - m31_dissonance_sum
+  - m32_guardian_trip
+  - m33_blackhole_pull
+  - m34_wormhole_push
+  - m35_stagnation_index
+  - m168_cum_stress
+
+async_batch:
+  # Sentiment / Evolution / MetaCog / Grain / Trauma families
+  # (Berechnen, wenn Budget vorhanden; oder nightly batch)
+  - m36_sent_1
+  - m40_sent_5
+  - m61_U
+  - m62_R
+  - m63_phi
+  - m64_lambda_fep
+  - m96_grain_word
+  - m97_grain_cat
+  - m98_grain_score
+  - m99_grain_impact
+  - m100_causal_1
+  - m101_t_panic
+  - m110_black_hole
+  - m116_lix
+  - m120_topic_drift
+  - m142_rag_alignment
+
+notes:
+  - "Diese Liste ist konservativ: lieber zu viel im always_sync als später Safety-Lücken."
+  - "Wenn performance kritisch ist: m28/m29 (Physik-Telemetrie) in near_sync verschieben, aber A_Phys (m15) bleibt always_sync."
+  - "Wenn du die Spec-Namen statt Canonical Keys nutzt: bitte über metrics_registry canonicalisieren."

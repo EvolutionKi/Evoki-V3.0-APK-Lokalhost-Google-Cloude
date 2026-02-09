@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 11:54:48 MESZ
+Speaker: user
+
+jawohl wir machen so dass jede Änderung automatisch zu einem neuen Versionsnummer führt also wir machen so dass eine Version nicht mehr verändert werden kann wenn sie mal hochgeladen ist okay

@@ -1,0 +1,4726 @@
+{
+  "inspection_timestamp": "2026-01-19T18:29:24.184369",
+  "deep_earth_layers": {
+    "01_surface": {
+      "path": "app\\deep_earth\\layers\\01_surface\\layer.db",
+      "schema": {
+        "vectors": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "content",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "embedding",
+              "type": "BLOB",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "meta_json",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "created_at",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_vectors_created_at",
+            "sqlite_autoindex_vectors_1"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "02_shallow": {
+      "path": "app\\deep_earth\\layers\\02_shallow\\layer.db",
+      "schema": {
+        "vectors": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "content",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "embedding",
+              "type": "BLOB",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "meta_json",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "created_at",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_vectors_created_at",
+            "sqlite_autoindex_vectors_1"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "03_sediment": {
+      "path": "app\\deep_earth\\layers\\03_sediment\\layer.db",
+      "schema": {
+        "vectors": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "content",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "embedding",
+              "type": "BLOB",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "meta_json",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "created_at",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_vectors_created_at",
+            "sqlite_autoindex_vectors_1"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "04_bedrock": {
+      "path": "app\\deep_earth\\layers\\04_bedrock\\layer.db",
+      "schema": {
+        "vectors": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "content",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "embedding",
+              "type": "BLOB",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "meta_json",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "created_at",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_vectors_created_at",
+            "sqlite_autoindex_vectors_1"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "05_fault": {
+      "path": "app\\deep_earth\\layers\\05_fault\\layer.db",
+      "schema": {
+        "vectors": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "content",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "embedding",
+              "type": "BLOB",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "meta_json",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "created_at",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_vectors_created_at",
+            "sqlite_autoindex_vectors_1"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "06_mantle": {
+      "path": "app\\deep_earth\\layers\\06_mantle\\layer.db",
+      "schema": {
+        "vectors": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "content",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "embedding",
+              "type": "BLOB",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "meta_json",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "created_at",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_vectors_created_at",
+            "sqlite_autoindex_vectors_1"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "07_magma": {
+      "path": "app\\deep_earth\\layers\\07_magma\\layer.db",
+      "schema": {
+        "vectors": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "content",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "embedding",
+              "type": "BLOB",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "meta_json",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "created_at",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_vectors_created_at",
+            "sqlite_autoindex_vectors_1"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "08_trench": {
+      "path": "app\\deep_earth\\layers\\08_trench\\layer.db",
+      "schema": {
+        "vectors": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "content",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "embedding",
+              "type": "BLOB",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "meta_json",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "created_at",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_vectors_created_at",
+            "sqlite_autoindex_vectors_1"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "09_pressure": {
+      "path": "app\\deep_earth\\layers\\09_pressure\\layer.db",
+      "schema": {
+        "vectors": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "content",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "embedding",
+              "type": "BLOB",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "meta_json",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "created_at",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_vectors_created_at",
+            "sqlite_autoindex_vectors_1"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "10_crystal": {
+      "path": "app\\deep_earth\\layers\\10_crystal\\layer.db",
+      "schema": {
+        "vectors": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "content",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "embedding",
+              "type": "BLOB",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "meta_json",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "created_at",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_vectors_created_at",
+            "sqlite_autoindex_vectors_1"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "11_glacier": {
+      "path": "app\\deep_earth\\layers\\11_glacier\\layer.db",
+      "schema": {
+        "vectors": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "content",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "embedding",
+              "type": "BLOB",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "meta_json",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "created_at",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_vectors_created_at",
+            "sqlite_autoindex_vectors_1"
+          ],
+          "row_count": 0
+        }
+      }
+    },
+    "12_abyss": {
+      "path": "app\\deep_earth\\layers\\12_abyss\\layer.db",
+      "schema": {
+        "vectors": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "content",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "embedding",
+              "type": "BLOB",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "meta_json",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "created_at",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_vectors_created_at",
+            "sqlite_autoindex_vectors_1"
+          ],
+          "row_count": 0
+        }
+      }
+    }
+  },
+  "twentyone_dbs": {
+    "bvec_clarity": {
+      "path": "tooling\\data\\db\\21dbs\\bvec_clarity.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "bvec_depth": {
+      "path": "tooling\\data\\db\\21dbs\\bvec_depth.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "bvec_init": {
+      "path": "tooling\\data\\db\\21dbs\\bvec_init.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "bvec_life": {
+      "path": "tooling\\data\\db\\21dbs\\bvec_life.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "bvec_safety": {
+      "path": "tooling\\data\\db\\21dbs\\bvec_safety.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "bvec_truth": {
+      "path": "tooling\\data\\db\\21dbs\\bvec_truth.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "bvec_warmth": {
+      "path": "tooling\\data\\db\\21dbs\\bvec_warmth.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "composite": {
+      "path": "tooling\\data\\db\\21dbs\\composite.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "master_timeline": {
+      "path": "tooling\\data\\db\\21dbs\\master_timeline.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "tempel_F_p1": {
+      "path": "tooling\\data\\db\\21dbs\\tempel_F_p1.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "tempel_F_p2": {
+      "path": "tooling\\data\\db\\21dbs\\tempel_F_p2.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "tempel_F_p25": {
+      "path": "tooling\\data\\db\\21dbs\\tempel_F_p25.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "tempel_F_p5": {
+      "path": "tooling\\data\\db\\21dbs\\tempel_F_p5.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "tempel_W": {
+      "path": "tooling\\data\\db\\21dbs\\tempel_W.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "tempel_W_m1": {
+      "path": "tooling\\data\\db\\21dbs\\tempel_W_m1.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "tempel_W_m2": {
+      "path": "tooling\\data\\db\\21dbs\\tempel_W_m2.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "tempel_W_m25": {
+      "path": "tooling\\data\\db\\21dbs\\tempel_W_m25.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    },
+    "tempel_W_m5": {
+      "path": "tooling\\data\\db\\21dbs\\tempel_W_m5.db",
+      "schema": {
+        "chunks": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "id",
+              "type": "INTEGER",
+              "notnull": false,
+              "default": null,
+              "pk": true
+            },
+            {
+              "cid": 1,
+              "name": "chunk_id",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 2,
+              "name": "session_id",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 3,
+              "name": "timestamp",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 4,
+              "name": "source",
+              "type": "TEXT",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 5,
+              "name": "text",
+              "type": "TEXT",
+              "notnull": true,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 6,
+              "name": "A",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 7,
+              "name": "PCI",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 8,
+              "name": "coh",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 9,
+              "name": "T_panic",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 10,
+              "name": "T_disso",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 11,
+              "name": "T_trigger",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 12,
+              "name": "B_life",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 13,
+              "name": "B_truth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 14,
+              "name": "B_depth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 15,
+              "name": "B_init",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 16,
+              "name": "B_warmth",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 17,
+              "name": "B_safety",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 18,
+              "name": "B_clarity",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 19,
+              "name": "B_align",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 20,
+              "name": "F_risk",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 21,
+              "name": "risk_z",
+              "type": "REAL",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 22,
+              "name": "created_at",
+              "type": "DATETIME",
+              "notnull": false,
+              "default": "CURRENT_TIMESTAMP",
+              "pk": false
+            }
+          ],
+          "indices": [
+            "idx_session",
+            "idx_F_risk",
+            "idx_B_align",
+            "idx_source",
+            "idx_timestamp",
+            "sqlite_autoindex_chunks_1"
+          ],
+          "row_count": 0
+        },
+        "sqlite_sequence": {
+          "columns": [
+            {
+              "cid": 0,
+              "name": "name",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            },
+            {
+              "cid": 1,
+              "name": "seq",
+              "type": "",
+              "notnull": false,
+              "default": null,
+              "pk": false
+            }
+          ],
+          "indices": [],
+          "row_count": 0
+        }
+      }
+    }
+  },
+  "schema_comparison": {
+    "unique_schema_count": 2,
+    "schema_groups": {
+      "group_1": [
+        "01_surface",
+        "02_shallow",
+        "03_sediment",
+        "04_bedrock",
+        "05_fault",
+        "06_mantle",
+        "07_magma",
+        "08_trench",
+        "09_pressure",
+        "10_crystal",
+        "11_glacier",
+        "12_abyss"
+      ],
+      "group_2": [
+        "bvec_clarity",
+        "bvec_depth",
+        "bvec_init",
+        "bvec_life",
+        "bvec_safety",
+        "bvec_truth",
+        "bvec_warmth",
+        "composite",
+        "master_timeline",
+        "tempel_F_p1",
+        "tempel_F_p2",
+        "tempel_F_p25",
+        "tempel_F_p5",
+        "tempel_W",
+        "tempel_W_m1",
+        "tempel_W_m2",
+        "tempel_W_m25",
+        "tempel_W_m5"
+      ]
+    }
+  }
+}

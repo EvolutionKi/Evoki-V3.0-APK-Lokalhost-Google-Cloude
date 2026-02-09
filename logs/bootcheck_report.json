@@ -1,0 +1,114 @@
+{
+  "ok": false,
+  "locked": false,
+  "dev_mode": true,
+  "enforce_lock": false,
+  "anchor_ok": true,
+  "anchor_expected": "3617077bcec4b1b1317e40a4fbac48de47c3a095612449cc94012fac2ecb2ce5",
+  "anchor_current": "3617077bcec4b1b1317e40a4fbac48de47c3a095612449cc94012fac2ecb2ce5",
+  "results": [
+    {
+      "name": "files_present",
+      "ok": false,
+      "severity": "CRITICAL",
+      "duration_ms": 0,
+      "signal": "FAIL",
+      "details": {
+        "missing": [
+          "lexika.py",
+          "spectrum_types.py",
+          "a_phys_v11.py",
+          "metrics_registry.py",
+          "genesis_anchor.py",
+          "evoki_lock.py",
+          "b_vector.py",
+          "vector_engine_v2_1.py"
+        ]
+      }
+    },
+    {
+      "name": "imports",
+      "ok": false,
+      "severity": "CRITICAL",
+      "duration_ms": 1,
+      "signal": "FAIL",
+      "details": {
+        "failures": {
+          "lexika.py": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\lexika.py'",
+          "spectrum_types.py": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\spectrum_types.py'",
+          "metrics_registry.py": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\metrics_registry.py'",
+          "a_phys_v11.py": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\a_phys_v11.py'",
+          "vector_engine_v2_1.py": "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Evoki V3.0 APK-Lokalhost-Google Cloude\\\\vector_engine_v2_1.py'"
+        }
+      }
+    },
+    {
+      "name": "lexika_health",
+      "ok": false,
+      "severity": "CRITICAL",
+      "duration_ms": 0,
+      "signal": "FAIL",
+      "details": {
+        "reason": "lexika_import_failed"
+      }
+    },
+    {
+      "name": "registry_aliases",
+      "ok": false,
+      "severity": "CRITICAL",
+      "duration_ms": 0,
+      "signal": "FAIL",
+      "details": {
+        "reason": "registry_or_spectrum_import_failed"
+      }
+    },
+    {
+      "name": "contract_invariants",
+      "ok": false,
+      "severity": "CRITICAL",
+      "duration_ms": 0,
+      "signal": "FAIL",
+      "details": {
+        "reason": "spectrum_import_failed"
+      }
+    },
+    {
+      "name": "a_phys_golden",
+      "ok": false,
+      "severity": "CRITICAL",
+      "duration_ms": 0,
+      "signal": "FAIL",
+      "details": {
+        "reason": "a_phys_import_failed"
+      }
+    },
+    {
+      "name": "kindergarten_zwilling_retrieval",
+      "ok": false,
+      "severity": "WARN",
+      "duration_ms": 0,
+      "signal": "FAIL",
+      "details": {
+        "reason": "vector_engine_import_failed"
+      }
+    },
+    {
+      "name": "genesis_anchor",
+      "ok": true,
+      "severity": "WARN",
+      "duration_ms": 13,
+      "signal": "OK",
+      "details": {
+        "manifest_generated": true,
+        "manifest": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\genesis_anchor_manifest.json",
+        "anchor_current": "3617077bcec4b1b1317e40a4fbac48de47c3a095612449cc94012fac2ecb2ce5",
+        "anchor_expected": "3617077bcec4b1b1317e40a4fbac48de47c3a095612449cc94012fac2ecb2ce5"
+      }
+    }
+  ],
+  "artifacts": {
+    "log_jsonl": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\logs\\bootcheck.jsonl",
+    "report_json": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\logs\\bootcheck_report.json",
+    "manifest": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\genesis_anchor_manifest.json"
+  }
+}

@@ -1,0 +1,4 @@
+Timestamp: 09.10.2025, 00:42:07 MESZ
+Speaker: user
+
+Gebe mir den vorherigen und den folgenden prompt aus

@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 05:07:17 MESZ
+Speaker: ai
+
+Hier steht, dass die App deine Prompts möglicherweise temporär für die KI-Generierung verarbeitet. Das bedeutet, dass sie nicht dauerhaft gespeichert werden, aber eben doch kurzzeitig auf ihren Servern landen.

@@ -1,0 +1,4 @@
+Timestamp: 11.07.2025, 01:32:36 MESZ
+Speaker: user
+
+genau und das wird dann eben auch am Ende vom prompt mit ausgegeben und hier ist natürlich auch noch mal ganz klar sicherzustellen dass halt eben ja die Regelüberprüfung oder Sicherheitsüberprüfung Leistungen immer größer der Leistung sind die im Hintergrund verlaufen ansonsten ist halt sofort auch wieder ein Jahr

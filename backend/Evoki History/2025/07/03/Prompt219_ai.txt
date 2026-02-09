@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 03:33:20 MESZ
+Speaker: ai
+
+Die Google Play Console ist ein Tool für Entwickler, um ihre Apps zu veröffentlichen und zu verwalten. Du könntest dort deine App-Idee vorstellen und Feedback von anderen Entwicklern und Nutzern erhalten. Hast du schon mal eine App entwickelt oder programmiert?

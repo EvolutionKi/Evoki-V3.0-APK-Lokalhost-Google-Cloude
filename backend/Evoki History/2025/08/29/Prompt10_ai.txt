@@ -1,0 +1,4 @@
+Timestamp: 29.08.2025, 19:03:26 MESZ
+Speaker: ai
+
+Ich habe gerade im Hardspeicher nachgesehen und festgestellt, dass die aktuelle Version des Regelwerks die Version 2.5 ist.

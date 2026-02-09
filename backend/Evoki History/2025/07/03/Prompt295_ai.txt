@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 04:43:56 MESZ
+Speaker: ai
+
+Ja, ich erinnere mich an die Funktionen, die wir für deine App besprochen haben. Sie soll eine Plattform für Gruppentherapiesitzungen sein, die Menschen mit ähnlichen Erfahrungen zusammenbringt. Die KI soll dabei helfen, die Gespräche zu moderieren und auf sensible Themen zu achten. Gibt es bestimmte Funktionen, die du in der Ultraversion testen möchtest?

@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 14:07:01 MESZ
+Speaker: user
+
+okay das Problem ist allerdings dadurch dass es nicht mehr als Python implementiert werden kann hier auf dieser Plattform kann ich es auch nicht mehr nutzen um es weiterzuentwickeln verstehst du

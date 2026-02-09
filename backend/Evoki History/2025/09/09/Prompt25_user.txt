@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:30:32 MESZ
+Speaker: user
+
+Na ja, man kann es schon per Prompt versuchen zu ändern, aber ähm ja, die Sache ist, dass da halt der ganze Kontext immer wieder einfach zu dieser API geschickt wird und die API das dann zusätzlich als zusätzlich zu der Grundannahme dazu, also zu dem ganzen Kontext geschickt bekommt und dann natürlich irgendwelchen Würver ausgibt.

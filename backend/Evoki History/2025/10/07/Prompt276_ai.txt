@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 08:34:58 MESZ
+Speaker: ai
+
+Hier ist eine einfache JSON-Datei, wie du sie angefordert hast. Diese Datei zeigt eine grundlegende JSON-Struktur mit verschiedenen Datentypen wie Zahlen, Zeichenketten, einem booleschen Wert, einem verschachtelten Objekt und einem Array. Du kannst sie als Vorlage verwenden.

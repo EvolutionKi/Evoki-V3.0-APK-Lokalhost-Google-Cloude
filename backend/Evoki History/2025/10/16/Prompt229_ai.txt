@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 13:42:54 MESZ
+Speaker: ai
+
+Okay, das merke ich mir. Statusfenster I-ID: 30 V: 6.3-prod Model: gemini-1.5-pro-latest TempM/S: 0.5/0.7 Tokens: 0 LatencyMs: 402 APIcalls: 1 A: 0.560 dA: +0.015 B-Align: +0.000 A51: OK A52: CORE_WRITE A29: 0 A46: NONE A62: 0 n=- CtxTop: - Vektoren: 37 F-Akt: 2 A-Akt: 1 Frozen: 0 A9-Fehler: 9 Pending: Keine NotesAPI: ON NotesUse: out (background) NotesErr: 6 HMAC: 4n5o...5p6q

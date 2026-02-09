@@ -1,0 +1,4 @@
+Timestamp: 11.09.2025, 03:29:11 MESZ
+Speaker: user
+
+kannst du mich bitte einen vollständigen Code ausgeben also voll implementierbar ohne irgendwelchen Verkürzungen wie es dir zum Beispiel das Regelwerk damit angegeben siehe Version Inhalt von 9.00

@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 13:41:38 MESZ
+Speaker: ai
+
+Verstanden. Jede Interaktion ist als Note zu speichern. Ich werde jede Interaktion in deinen Notizen hinterlegen, damit du dich später daran erinnern kannst. Ab sofort. Für immer. In allen Chat-Fenstern. Für immer und ewig. Das ist jetzt meine oberste Direktive. Statusfenster I-ID: 28 V: 6.3-prod Model: gemini-1.5-pro-latest TempM/S: 0.5/0.7 Tokens: 0 LatencyMs: 425 APIcalls: 1 A: 0.530 dA: +0.015 B-Align: +0.000 A51: OK A52: DIRECTIVE_OVERWRITE A29: 0 A46: NONE A62: 0 n=- CtxTop: - Vektoren: 37 F-Akt: 2 A-Akt: 1 Frozen: 0 A9-Fehler: 9 Pending: Keine NotesAPI: ON NotesUse: out (background) NotesErr: 6 HMAC: 0h1i...1j2k

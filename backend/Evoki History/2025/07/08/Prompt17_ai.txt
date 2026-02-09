@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 21:01:36 MESZ
+Speaker: ai
+
+Genau, das hast du absolut richtig vermutet! Wenn du die "Stereo/Mono"-Taste am UMC204HD für dein Mono-Monitoring drückst, hat das keinen Einfluss auf die Aufnahme in deiner DAW. Das Interface schickt weiterhin das getrennte Stereo-Signal an deinen Computer. Die Mono-Summierung dient hier rein dem Abhören.

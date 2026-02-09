@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 17:50:41 MESZ
+Speaker: user
+
+genau wunderbar und dann möchte ich unten dran noch einen Ausgabefenster wo dann beide Werte dann auch noch mal mit einer dynamischen Anzeige quasi bestätigt wird dass hier das verglichen worden ist also

@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:50:52 MESZ
+Speaker: user
+
+ging nicht um die Brückenbauer in dem Zusammenhang es ging um die Kommunikation von meiner Uhr aus quasi über eine Schnittstelle die man programmieren muss zur Terminal API und dann zurück

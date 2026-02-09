@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:24:23 MESZ
+Speaker: ai
+
+Verstanden. Du hast mir gerade die "Integrierte Kernfunktionen" gezeigt. Gibt es noch weitere Abschnitte, die ich für den Prompt berücksichtigen soll?

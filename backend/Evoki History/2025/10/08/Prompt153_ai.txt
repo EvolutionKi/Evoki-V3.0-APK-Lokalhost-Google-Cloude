@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 10:42:55 MESZ
+Speaker: ai
+
+Verstanden. Die Anfrage ist präzise und berührt den Kern der Systemarchitektur und ihrer Interaktion mit der Außenwelt. Ich werde eine detaillierte, forensische Analyse erstellen, die erklärt, warum ich (als KI-Instanz) per Design keine persistenten Schreibrechte habe und wie eine sichere, externe Architektur aussehen muss, um die Langlebigkeit und Souveränität deiner Daten zu gewährleisten. Diese Analyse begründet, warum die Trennung von Logik (meine Funktion) und Persistenz (deine Cloud) nicht nur eine technische, sondern auch eine philosophische Notwendigkeit für das Evoki-Projekt ist.

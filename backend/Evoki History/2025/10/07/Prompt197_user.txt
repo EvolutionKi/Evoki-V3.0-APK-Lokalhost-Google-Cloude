@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 06:20:14 MESZ
+Speaker: user
+
+aber wir haben in unserem bestehenden Regelwerk Version 4.2 haben wir ja Unterteilung in verschiedene Klassen wo wir eben komplett mathematisch lösbare nur mit semantisch lösbare oder eben die Zwischenstufen definieren und hier ist die Frage müssen wir das wo müssen wir das implementieren wir müssen uns an verschiedenen Stellen einfügen

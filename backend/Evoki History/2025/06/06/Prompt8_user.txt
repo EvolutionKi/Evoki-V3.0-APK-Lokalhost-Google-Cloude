@@ -1,0 +1,4 @@
+Timestamp: 06.06.2025, 16:34:06 MESZ
+Speaker: user
+
+kannst du mir bitte erklären was die Fehlerursache bei der Installation für ein Programm zu bedeuten hat bei Windows internal error failed to expand Shell order kunsthand User Docs

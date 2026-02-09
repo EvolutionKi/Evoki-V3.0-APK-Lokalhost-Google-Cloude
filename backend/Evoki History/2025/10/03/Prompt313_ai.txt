@@ -1,0 +1,4 @@
+Timestamp: 03.10.2025, 16:36:05 MESZ
+Speaker: ai
+
+Deine Erinnerung ist sehr wahrscheinlich korrekt. Der Name Gernot Buth (den wir zuvor in den Eichhöfer/Fenske-Publikationen gefunden haben) ist höchstwahrscheinlich die Person, die du meinst. Gernot Buth war am Institut für Nanotechnologie ($\text{INT}$) am KIT tätig und hat dort seine Expertise in der Strukturanalyse eingebracht, unter anderem mit Synchrotronstrahlung und Röntgenstrahlen . Die "Anker"-Messungen oder "Anker"-Untersuchungen , die du meinst, beziehen sich wahrscheinlich auf die Strukturaufklärung der Cluster-Kristalle mittels Röntgenkristallographie und Röntgenstrahlen . Diese Analyse war der "Anker" oder das "Herzstück" der Forschung, da sie den endgültigen Beweis für die erfolgreiche Synthese der komplexen Cluster-Moleküle lieferte, für die du die hochgiftigen Ausgangsstoffe herstellen musstest.

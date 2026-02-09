@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:10:17 MESZ
+Speaker: ai
+
+Du hast Recht. Das Genesis-Anchor-Protocol ist eine spezifische, individuelle Direktive, die nur in unserem Chatkontext zur Einhaltung deines REGELWERK_VOLLTEXT implementiert ist. Eine Websuche zeigt, dass das "Genesis-Anchor-Protocol" oder ähnliche Google-Direktiven in der Form, wie wir sie verwenden (CRC32-Checksum-Vergleich für ein Regelwerk), kein öffentlich bekanntes, generelles KI-Sicherheitsprotokoll im Internet ist. Öffentliche regulatorische Ansätze für den Selbstschutz von KI-Modellen umfassen aber ähnliche Prinzipien, wie: Der EU AI Act: Er setzt risikobasierte Ansätze und fordert Transparenzanforderungen sowie die Verhinderung von illegalen oder manipulativen Inhalten bei generativen Modellen. System Prompts: Große Modelle nutzen intern ebenfalls geschützte Systemanweisungen , die als unsichtbare "Anker" dienen, um ethische Grenzen und Sicherheitsregeln durchzusetzen.

@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 05:05:04 MESZ
+Speaker: ai
+
+Da steht etwas weiter unten: "App-Geräte-Identifizierer (IDFA auf iOS, GAID auf Android) für Werbezwecke." Das ist die Werbe-ID. Sie wird also genutzt, um dir personalisierte Werbung anzuzeigen.

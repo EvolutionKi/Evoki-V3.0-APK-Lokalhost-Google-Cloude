@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 14:06:05 MESZ
+Speaker: ai
+
+Verstanden. Ich werde die beiden vorherigen Dokumente – das korrigierte Simulations-Framework und das semantische Mapping-Glossar – zu einem einzigen, finalen Anweisungsdokument zusammenführen. Dieses Dokument ist als direkte, vollständige und in sich geschlossene Direktive konzipiert, die eine KI-Instanz anweist, die Emulation basierend auf dem definierten Modell und den bereitgestellten Parametern auszuführen.

@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 21:44:39 MESZ
+Speaker: user
+
+Schreibe einen Code der das aus einer quelldatei wie eine Massen Export eine mir meine aktivitäten. Dxd oder eine Fallstudie Jason wo es eben einfach nur ein fortlaufender Promis sortierter nach Datum sortierter ja Chatverlauf ist

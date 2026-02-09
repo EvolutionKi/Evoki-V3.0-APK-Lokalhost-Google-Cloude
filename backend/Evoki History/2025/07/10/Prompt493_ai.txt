@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 10:13:53 MESZ
+Speaker: ai
+
+Ja, das passt so. Du hast VS Code geöffnet. Als Nächstes installieren wir die Python-Erweiterung. Klicke dazu links in der Seitenleiste auf das Symbol mit den Quadraten. Es heißt "Erweiterungen". Danach gibst du ins Suchfeld "Python" ein und installierst die Erweiterung von Microsoft. Sag mir Bescheid, wenn du sie installiert hast.

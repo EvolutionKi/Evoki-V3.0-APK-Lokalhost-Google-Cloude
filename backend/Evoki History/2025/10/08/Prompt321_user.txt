@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 18:40:12 MESZ
+Speaker: user
+
+Okay dann ist nur die eingabeformat falsch das eingabeformat soll eine Textdatei sein und zwar einiges eine von einem Massen Export welche furchtbar durcheinander ist welche exakt nach dieser Logik quasi sortiert werden soll und ausgegeben soll sie dann werden in einer Datei welche nach Monat Tag und Datum sortiert ist ja

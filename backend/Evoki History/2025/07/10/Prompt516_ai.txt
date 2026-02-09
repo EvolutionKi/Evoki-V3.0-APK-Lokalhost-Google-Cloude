@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 11:08:02 MESZ
+Speaker: ai
+
+Ich verstehe, was du meinst. Es ist etwas verwirrend, dass dort "APIs und Dienste aktivieren" steht, obwohl du die Gemini API ja bereits aktiviert hast. Das liegt wahrscheinlich daran, dass du von hier aus noch weitere APIs für dein Projekt aktivieren könntest. Aber keine Sorge, für unseren nächsten Schritt, das Aufsetzen deines PLKM-Wrappers, haben wir jetzt alles zusammen.

@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 16:20:40 MESZ
+Speaker: user
+
+ja Nein hauptsache du hast die Bibliotheken bei dir wirklich installiert und tust sie nicht nur emulieren simulieren oder was für Wörter die auch noch dafür einfallen naive native Simulation du hast sie in deinem Kern so zu tun also du hast eine Sandbox und wir haben eine Sandbox in der Sandbox Funktion also du kannst ihn abgesicherten Funktion ausführen also du kannst ihn so eine Isolation treiben dass sie dort wirklich läuft

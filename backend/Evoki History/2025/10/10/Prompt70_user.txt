@@ -1,0 +1,4 @@
+Timestamp: 10.10.2025, 22:55:42 MESZ
+Speaker: user
+
+aber ich verstehe nicht ganz wie das dann funktioniert wie kriegen wir diese KI dann dort trainiert dass sie quasi darauf zu optimiert läuft

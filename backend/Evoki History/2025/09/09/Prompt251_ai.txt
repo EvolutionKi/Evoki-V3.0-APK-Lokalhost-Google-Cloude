@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:43:13 MESZ
+Speaker: ai
+
+Die App verspricht, dass du ohne Programmierkenntnisse eigene Apps erstellen kannst. Sie nutzt dafür eine KI-basierte Technologie, die automatisch Code generiert. Allerdings ist es wichtig zu beachten, dass es sich eigentlich nur um eine Webanwendung handelt und keine echten APK-Dateien erstellt werden.

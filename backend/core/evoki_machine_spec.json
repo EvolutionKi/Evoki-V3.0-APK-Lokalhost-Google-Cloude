@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-02-01T03:19:59.202656+00:00",
+  "evoki": {
+    "spec_doc": "EVOKI_V3_METRICS_SPECIFICATION_A_PHYS_V11_AUDITFIX_FINAL7.md",
+    "metrics_total_slots": 168,
+    "core_subset": {
+      "m1_m161": true,
+      "context_safety_slots": [
+        "m162_ctx_time",
+        "m163_ctx_loc",
+        "m164_user_state",
+        "m165_platform",
+        "m166_modality",
+        "m167_noise",
+        "m168_cum_stress"
+      ]
+    },
+    "contracts": {
+      "fullspectrum168": {
+        "type": "dataclass",
+        "canonical_keys_source": "spectrum_types.FullSpectrum168",
+        "contract_file": "evoki_fullspectrum168_contract.json"
+      },
+      "registry": {
+        "module": "metrics_registry.py",
+        "canonical_export_policy": "semantic_overrides_force_canonical"
+      }
+    },
+    "integrity": {
+      "bootcheck": {
+        "module": "evoki_bootcheck.py",
+        "report": "logs/bootcheck_report.json",
+        "interface_log": "logs/bootcheck.jsonl"
+      },
+      "genesis_anchor": {
+        "module": "genesis_anchor.py",
+        "manifest": "genesis_anchor_manifest.json",
+        "lock_file": ".evoki_lock.json"
+      },
+      "lexika_health_gate": {
+        "module": "lexika.py",
+        "functions": [
+          "validate_lexika",
+          "require_lexika_or_raise"
+        ],
+        "required_keys": "REQUIRED_LEXIKA_KEYS"
+      }
+    }
+  },
+  "pipelines": {
+    "realtime_interaction": [
+      {
+        "step": "receive_user_prompt",
+        "interface": "POST /interact",
+        "outputs": [
+          "turn(user) stored"
+        ]
+      },
+      {
+        "step": "metrics_pre",
+        "module": "calculator_spec/full_calculator/metrics_processor",
+        "outputs": [
+          "FullSpectrum168(user)"
+        ]
+      },
+      {
+        "step": "retrieval",
+        "module": "vector_engine_v2_1 or vector_retrieval",
+        "outputs": [
+          "active_memories",
+          "danger_zone_cache"
+        ]
+      },
+      {
+        "step": "a_phys",
+        "module": "a_phys_v11.py",
+        "inputs": [
+          "v_c",
+          "active_memories",
+          "danger_zone_cache"
+        ],
+        "outputs": [
+          "m15_affekt_a",
+          "m30_phys_3(A29_trip)"
+        ]
+      },
+      {
+        "step": "llm_generate",
+        "inputs": [
+          "prompt",
+          "context"
+        ],
+        "outputs": [
+          "assistant_text"
+        ]
+      },
+      {
+        "step": "store_assistant_turn",
+        "outputs": [
+          "turn(assistant) stored"
+        ]
+      },
+      {
+        "step": "metrics_post",
+        "outputs": [
+          "FullSpectrum168(assistant)"
+        ]
+      },
+      {
+        "step": "index_turn",
+        "outputs": [
+          "embedding stored",
+          "vector index updated",
+          "memory tags updated"
+        ]
+      }
+    ],
+    "history_ingestion": {
+      "input_layout": {
+        "root_template": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\Evoki-V3.0-APK-Lokalhost-Google-Cloude\\backend\\Evoki History",
+        "pattern": "{YYYY}\\{MM}\\{DD}\\Prompt{N}_{role}.txt",
+        "role_values": [
+          "user",
+          "ai"
+        ],
+        "file_format": {
+          "timestamp_line": "Timestamp: DD.MM.YYYY, HH:MM:SS (MEZ|MESZ)",
+          "speaker_line": "Speaker: user|ai",
+          "body": "rest_of_file"
+        }
+      },
+      "output_db": {
+        "default": "evoki_history.sqlite",
+        "tables": [
+          "turns",
+          "sessions",
+          "metrics",
+          "embeddings",
+          "genesis_chain"
+        ]
+      }
+    }
+  },
+  "golden_tests": {
+    "a_phys_v11": {
+      "should_be_deterministic": true,
+      "inputs": {
+        "vectors": "fixed small vectors"
+      },
+      "assertions": [
+        "A_phys in [0,1]",
+        "A29_trip correct"
+      ]
+    },
+    "kindergarten_zwilling": {
+      "query": "kindergarten zwilling",
+      "expected": {
+        "tags": [
+          "TRAUMA",
+          "KINDHEIT",
+          "ZWILLING"
+        ],
+        "min_similarity": 0.6
+      }
+    }
+  },
+  "hardware": {
+    "embedding": {
+      "mode": [
+        "cpu",
+        "gpu"
+      ],
+      "recommendation": "GPU preferred for 21k+ files; batch embedding + FAISS"
+    },
+    "llm": {
+      "mode": [
+        "local_gpu",
+        "cloud_api"
+      ],
+      "note": "choose based on privacy + latency; keep embedding model stable for reproducibility"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:02:46 MESZ
+Speaker: ai
+
+Ich sehe, bei 256 Samples liegt deine Latenz bei etwa 7 Millisekunden. Das ist ein guter Wert für Echtzeit-Monitoring. Hörst du damit noch eine störende Verzögerung?

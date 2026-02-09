@@ -1,0 +1,4 @@
+Timestamp: 14.10.2025, 03:51:22 MESZ
+Speaker: user
+
+und das meine ich jetzt noch mal nicht mal gar nicht nein du sollst diese 10 Python Scripts für mich umschreiben so dass sie dort implementierbar sind und ich dort auch einen Festspeicher nutzen kann

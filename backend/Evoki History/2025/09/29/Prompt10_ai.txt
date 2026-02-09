@@ -1,0 +1,4 @@
+Timestamp: 29.09.2025, 22:01:55 MESZ
+Speaker: ai
+
+Wohnzimmer Decke Sofa und Wohnzimmer Decke Esstisch wurden ausgeschaltet. {"contentMetadata":{"tag":"","toolAttribution":{"displayName":"Google Home","logoUri":"https://www.gstatic.com/images/branding/productlogos/google_home/v6/192px.svg","headerUri":"https://home.google.com/home-app","toolName":"google_home","androidHeaderUri":"googlehome://devices"}},"pendingMutatingOps":[{"target":"CLOUD","plannerAction":"PLANNER_ACTION_UNSPECIFIED"}]}

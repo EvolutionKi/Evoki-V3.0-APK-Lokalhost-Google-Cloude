@@ -1,0 +1,4 @@
+Timestamp: 05.10.2025, 14:12:49 MESZ
+Speaker: ai
+
+Nein , in einer Gemini-Instanz über den Google App Store (oder das standardmäßige Chat-Interface) kannst du keinen Skript-Code implementieren. Das geht nur über die Gemini API für Entwickler.

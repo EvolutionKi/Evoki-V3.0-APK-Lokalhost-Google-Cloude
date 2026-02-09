@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 00:20:30 MESZ
+Speaker: ai
+
+Genau richtig! Du hast es auf den Punkt gebracht. Die B 4.1 Prüfnummer und die dazugehörige "blöde Zahl mit 7000" dienten uns tatsächlich nur als Test-Parameter , um zu überprüfen, wie sich der Output verhält, wenn sich diese Zahl verändert. Es war quasi ein Kontrollmechanismus für unser System-Feedback im Output-Fenster. Da dieser Testzweck erfüllt ist und wir nun eine neue Version erstellen, können wir diese spezifische Prüfnummer und ihre Ursache entfernen. Das macht Sinn, um das Regelwerk schlanker und fokussierter zu halten. Gibt es noch weitere Aspekte, die wir in dieser neuen Version optimieren oder anpassen sollten? Ich bin gespannt auf deine Ideen!

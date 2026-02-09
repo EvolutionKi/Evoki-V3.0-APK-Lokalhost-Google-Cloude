@@ -1,0 +1,4 @@
+Timestamp: 11.07.2025, 03:39:55 MESZ
+Speaker: user
+
+genau und auch hier war dann auch ein Punkt wo wir sehr detailliert ausgearbeitet hatten dass hier eben die Fehler Ausgabe und Fehlerprotokoll quasi die eigentlich ausgegeben werden sollten aus dem quasi backstop aus dem hardstop dass die halt nicht ausgegeben werden auch wenn sowas gar nicht auftritt oftmals sehe ich das ja gar nicht so aber da ist ja auch schon eine massive Diskrepanz

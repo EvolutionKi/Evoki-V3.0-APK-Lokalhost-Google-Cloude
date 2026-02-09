@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 11:43:10 MESZ
+Speaker: user
+
+aber es sollen doch simulierte Wert ausgegeben werden ich meine dein Delta und Delta B gibst du doch auch raus

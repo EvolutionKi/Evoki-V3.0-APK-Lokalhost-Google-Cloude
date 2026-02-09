@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 19:33:42 MESZ
+Speaker: user
+
+nein es sind beides doch es sind doch beides JSON Dateien du hast nur das Problem hier mit dem Lesen ich kann dir keine JSON Datei einfügen ich habe eine JSON Datei und die tue ich umwandeln auch nicht in irgendwas anderes dazwischen umwandeln damit du es ja lesen kannst

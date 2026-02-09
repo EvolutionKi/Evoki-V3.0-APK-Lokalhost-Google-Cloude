@@ -1,0 +1,4 @@
+Timestamp: 06.10.2025, 09:46:26 MESZ
+Speaker: user
+
+okay das heißt diese Funktion stehen dann nach der Implementierung jedem User weltweit zur Verfügung

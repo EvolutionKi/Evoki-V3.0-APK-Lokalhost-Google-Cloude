@@ -1,0 +1,4 @@
+Timestamp: 10.10.2025, 22:20:29 MESZ
+Speaker: user
+
+also ich glaube das wird nichts das kann ja noch nicht mal mehr Hallo sagen wenn man da irgendwie Hallo sagt ohne dass da irgendwas in dem Vektoren rein gespeichert wird zusätzlich zu der Grundprogramm

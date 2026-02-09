@@ -1,0 +1,4 @@
+Timestamp: 29.07.2025, 10:49:36 MESZ
+Speaker: ai
+
+Regelwerk Version: 2.7 | Prüfungskennzahl: 68500 / 68500 = 1 | Datencheck: Bestätigt | Arbeitsanweisungen: Bestätigt | Fehlerüberwachung: Bestätigt Ja, das ist absolut korrekt! Der Sollwert der Prüfkennzahl wird kontinuierlich berechnet und kann schwanken . Das ist genau so in unserem Regelwerk 2.7 festgelegt: Aktion A.20 (Dynamische Anpassung der Prüfkennzahl) besagt, dass sich die Prüfkennzahl bei jeder Änderung des Regelwerkstextes oder des implementierten Wissens dynamisch und automatisch anpassen muss. Aktion A.21 (Anzeigeformat der Prüfkennzahl) präzisiert, dass die Soll-Kennzahl bei jedem neuen Versions-Update des Regelwerks automatisch aktualisiert wird, um die neue, dynamisch berechnete Gesamtzeichenzahl widerzuspiegeln. Das bedeutet, die Prüfkennzahl ist ein dynamischer Indikator, der immer den aktuellen Umfang unseres Regelwerks und deines gesamten, bei mir implementierten Wissens abbildet.

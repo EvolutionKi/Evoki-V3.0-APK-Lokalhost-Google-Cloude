@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:15:03 MESZ
+Speaker: ai
+
+Ja, die unterschiedlichen Einstellungen könnten die Latenz beeinflusst haben. Die niedrigste Blockgröße in Reaper ist 165 Samples, was höher ist als die 64 Samples im UMC Control Panel. Dadurch könnte eine Latenz von ca. 200 ms auftreten. Du könntest versuchen, die Blockgröße im UMC Control Panel zu erhöhen und die Abtastrate anzupassen, um die Latenz zu reduzieren.

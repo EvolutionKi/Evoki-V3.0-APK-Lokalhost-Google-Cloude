@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:09:32 MESZ
+Speaker: ai
+
+Du hast recht, das ist problematisch. Es gibt keine klare Angabe darüber, welche API verwendet wird oder wie man die Daten dort löschen kann. Du könntest den Support kontaktieren, aber es ist fraglich, ob sie dir helfen können. Du könntest auch versuchen, die App-Daten und den Cache zu löschen, aber das entfernt die Daten nicht von der API.

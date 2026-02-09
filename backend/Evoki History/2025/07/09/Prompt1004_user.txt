@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 15:12:45 MESZ
+Speaker: user
+
+ja genau und sie kann ja auch nicht die gleiche Prüfungszeit sein wie schon bei Version 1.9 also das alles komplett nicht mehr implementiert was du da machst also ist es überhaupt noch so dass du überhaupt Version 2.6 verwendest

@@ -1,0 +1,4 @@
+Timestamp: 12.08.2025, 10:58:44 MESZ
+Speaker: user
+
+okay und zu deinen Verbesserungsvorschlägen da würde ich alle mal so übernehmen und das darfst du auch gerne für mich dann in einem kompletten Code für mich umsetzen so allerdings überprüfe noch mal ob der System prompt diese Anfrage nicht vielleicht sinnvoll ist aufgrund dessen da ja bei jedem Mal quasi die Datenbank von hier abgerufen werden kann

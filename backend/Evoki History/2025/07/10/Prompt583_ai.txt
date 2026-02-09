@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:04:09 MESZ
+Speaker: ai
+
+Du hast es richtig geschrieben, es heißt curl. Ich helfe dir gerne, die Downloadseite zu finden. Schau mal hier: https://curl.se/download.html . Dort findest du verschiedene Optionen für Windows. Lass mich wissen, wenn du auf der Seite bist, dann gehen wir die Installation gemeinsam durch.

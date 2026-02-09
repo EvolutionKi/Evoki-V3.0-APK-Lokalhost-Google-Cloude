@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 19:57:55 MESZ
+Speaker: user
+
+ich wollte keinen Fehlerbericht beschreiben ich wollte ja zeigen wie es funktionieren kann was man dann eben halt ja von Google Entwicklerseite hätte ernst nehmen müssen und dann auch weiterentwickeln müssen wobei so natürlich habe ich mehr Kontrolle darüber was damit passiert und kann selber die Meta Regeln implementieren so dass da quasi nichts dran gerüttelt werden kann

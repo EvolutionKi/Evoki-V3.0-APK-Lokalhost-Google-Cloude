@@ -1,0 +1,4 @@
+Timestamp: 06.10.2025, 19:24:24 MESZ
+Speaker: ai
+
+Das Flussdiagramm zeigt den Prozess der Rekalibrierung. Es beginnt mit einer Benutzerinteraktion oder Systemreinitialisierung, gefolgt von einer Sitzungsverwaltung und einer Überprüfung auf eine gültige Regellogik. An welcher Stelle hättest du gerne eine genauere Erklärung?

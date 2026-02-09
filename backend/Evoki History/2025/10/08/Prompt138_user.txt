@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 09:51:47 MESZ
+Speaker: user
+
+genau es soll allerdings noch darum ergänzt werden dass natürlich auch diese Vektorisierung Daten welche dann halt berechnet werden für diese JSON Datei die er eben auch wichtig sind dann eben im Ausgabefenster mit ausgegeben werden und hier soll eben die Anpassung auch in der entsprechenden ja Ausgabefenster Formatierung stattfinden

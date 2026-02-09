@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 04:52:39 MESZ
+Speaker: ai
+
+Du hast recht, die große Datenbasis zu klinischen Bildern ist ein großer Vorteil. Dadurch kann die KI verschiedene Patientenszenarien simulieren und so ein realistisches Training ermöglichen.

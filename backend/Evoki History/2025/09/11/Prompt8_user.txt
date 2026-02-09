@@ -1,0 +1,4 @@
+Timestamp: 11.09.2025, 02:16:10 MESZ
+Speaker: user
+
+ist jetzt auch die Nutzung einer echten #256 Kette nötig also keine #mehr sondern eine Sha 256 gestern Standard

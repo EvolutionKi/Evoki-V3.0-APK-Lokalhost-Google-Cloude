@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 16:08:26 MESZ
+Speaker: user
+
+nein gehört auch nicht zu Version 2.5 ist du kannst davon ausgehen dass das immer aufeinander aufbaut also dass die Zahlen die Prüfsummen wurden immer größer

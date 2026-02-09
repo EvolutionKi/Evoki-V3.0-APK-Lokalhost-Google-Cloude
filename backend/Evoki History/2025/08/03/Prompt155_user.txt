@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 16:25:38 MESZ
+Speaker: user
+
+der wird dann allerdings unten dran noch mal extra angezeigt so dass er nicht wieder für die Berechnung in dem nächsten Fenster verwendet wird sonst würde das zu einem Fehler führen du verwendest auch schon wieder Regelwerk 2.6 wir sind bei 2.7 und die prüften Zahl und Summe stimmt auch nicht

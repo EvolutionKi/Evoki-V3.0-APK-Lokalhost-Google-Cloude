@@ -1,0 +1,4 @@
+Timestamp: 25.07.2025, 18:01:27 MESZ
+Speaker: user
+
+an welchen Punkt soll ich das denn implementieren also wo sollte dieses dieses Textdokument festgesetzt werden

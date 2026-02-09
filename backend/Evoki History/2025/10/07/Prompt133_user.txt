@@ -1,0 +1,4 @@
+Timestamp: 07.10.2025, 03:56:25 MESZ
+Speaker: user
+
+hast du hier alle 29 ausformuliert mathematischen Dinge ein implementiert hier sollen auch semantische Sachen auch noch Beachtung finden diese müssen als Extra Wert auch noch außerhalb dann halt mit definiert werden

@@ -1,0 +1,67 @@
+{
+    "_comment": "STATUS WINDOW TEMPLATE V5.0 - Vorlage für jede AI-Antwort",
+    "_instructions": {
+        "AGENT_FILLS": "Felder, die der Agent inhaltlich befüllen MUSS",
+        "BACKEND_AUTO": "Felder mit AUTO/PLACEHOLDER - Backend setzt diese",
+        "BLOCKING": "Felder mit MUST - Fehlen führt zu Chain-Break",
+        "OPTIONAL": "Felder mit (optional) - Können leer/null sein"
+    },
+    "schema_version": "3.2",
+    "_field_schema_version": "CONSTANT - niemals ändern",
+    "window_source": "backend_generated",
+    "_field_window_source": "CONSTANT - niemals ändern",
+    "cycle_backend_controlled": true,
+    "_field_cycle_backend_controlled": "CONSTANT - niemals ändern",
+    "step_id": "AGENT_FILLS: Eindeutige ID für diesen Schritt, z.B. 'analyse_stand_0'",
+    "cycle": "1/5",
+    "_field_cycle": "AGENT_FILLS: Aktueller Cycle 1/5 bis 5/5",
+    "time_source": "metadata (STRICT_SYNC): AUTO",
+    "_field_time_source": "BACKEND_AUTO: Schreibe einfach 'metadata (STRICT_SYNC): AUTO'",
+    "prev_window_hash": "AUTO",
+    "_field_prev_window_hash": "BACKEND_AUTO: Schreibe einfach 'AUTO'",
+    "window_hash": "PLACEHOLDER_BACKEND",
+    "_field_window_hash": "BACKEND_AUTO: Schreibe einfach 'PLACEHOLDER_BACKEND'",
+    "mcp_trigger": {
+        "action": "save_to_history",
+        "target": "status_history_manager.py",
+        "enabled": true,
+        "timestamp": "AUTO"
+    },
+    "_field_mcp_trigger": "CONSTANT - nur timestamp ist AUTO",
+    "goal": "AGENT_FILLS (BLOCKING): Was ist das Ziel dieser Antwort? Ein präziser Satz.",
+    "inputs": {
+        "raw_user_request": "AGENT_FILLS (BLOCKING): Original-Prompt des Users - EXAKT kopieren",
+        "user_messages": [
+            "AGENT_FILLS (optional): Liste von User-Nachrichten zur Kontextualisierung"
+        ],
+        "context": {
+            "AGENT_FILLS": "Optional: Zusätzlicher Kontext wie watcher_status, state_vector etc."
+        }
+    },
+    "actions": [
+        "AGENT_FILLS (BLOCKING): Liste der durchgeführten Aktionen, z.B. 'list_repo_structure', 'verify_chain'"
+    ],
+    "risk": [
+        "AGENT_FILLS (optional): Array kann leer sein [], aber Feld MUSS existieren"
+    ],
+    "assumptions": [
+        "AGENT_FILLS (optional): Array kann leer sein [], aber Feld MUSS existieren"
+    ],
+    "rule_tangency": {
+        "tangency_detected": false,
+        "notes": "AGENT_FILLS (BLOCKING): Gibt es Protokoll-Berührungen? true/false + Notiz"
+    },
+    "reflection_curve": {
+        "delta": "AGENT_FILLS (BLOCKING): Was war der Ausgangszustand?",
+        "correction": "AGENT_FILLS (BLOCKING): Was wurde korrigiert?",
+        "next": "AGENT_FILLS (BLOCKING): Was ist der nächste Schritt?"
+    },
+    "output_plan": [
+        "AGENT_FILLS (BLOCKING): Was kommt als nächstes? Mindestens 1 Item"
+    ],
+    "window_type": "verification",
+    "_field_window_type": "AGENT_FILLS (BLOCKING): Enum: 'planner' | 'execution' | 'verification'",
+    "confidence": 0.85,
+    "_field_confidence": "AGENT_FILLS (BLOCKING): Float zwischen 0.0 und 1.0",
+    "critical_summary": "AGENT_FILLS (BLOCKING): Kurze Zusammenfassung des Status - Was wurde erreicht?"
+}

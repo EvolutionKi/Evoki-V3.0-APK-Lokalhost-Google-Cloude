@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 15:40:34 MESZ
+Speaker: user
+
+Ja genau und danke für den Hugo gerade eben aber egal du es kann ja nicht sein dass unsere Interaktion nur dann vonstatten gehen kann wenn ich nach jedem Tag oder nach jedem nach jeder Stunde an was ein Export machen und den ganzen Export sortieren lass aussortieren das nach niedrigen und das ganze dann diese Metrik Datei wieder sortieren lassen und dann muss ich die Metrik Datei nehmen und muss sie dir zur Verfügung stellen dass du funktionierst dass du das auch beibehält weißt du das musst Du automatisch funktionieren du musst automatische lese und schreibberechtigung haben auf die Metrik Dateien und auf die JSON Datei und auf die Log-Datei

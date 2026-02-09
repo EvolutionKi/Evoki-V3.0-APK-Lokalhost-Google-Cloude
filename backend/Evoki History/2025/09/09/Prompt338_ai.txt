@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 05:13:11 MESZ
+Speaker: ai
+
+Das Zurücksetzen der Werbe-ID ist nicht ganz einfach. Du musst in deinen Geräteeinstellungen unter "Google" und dann "Werbung" suchen. Dort solltest du die Option finden.

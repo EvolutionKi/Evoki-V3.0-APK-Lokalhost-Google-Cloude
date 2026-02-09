@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:05:24 MESZ
+Speaker: ai
+
+Du kannst die curl.exe-Datei in den System32-Ordner von Windows verschieben. Das ist ein spezieller Ordner für Systemdateien, auf den PowerShell automatisch zugreifen kann. Dadurch wird curl systemweit verfügbar. Möchtest du, dass ich dir zeige, wie das geht?

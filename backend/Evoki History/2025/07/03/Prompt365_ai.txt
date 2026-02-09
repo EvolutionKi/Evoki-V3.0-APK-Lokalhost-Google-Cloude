@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 21:39:53 MESZ
+Speaker: ai
+
+Ah, du hast völlig recht, da muss ich präziser sein! Die Wear OS App war die allgemeine App für alle Wear OS Uhren, aber für die Google Pixel Watch 3 ist die Google Pixel Watch App die spezifische, dazu gehörige App, die alle Wear OS-Funktionen für deine Uhr steuert. Es ist also die "Wear OS App" speziell für deine Pixel Watch!

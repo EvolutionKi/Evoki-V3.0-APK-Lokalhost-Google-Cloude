@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 03:55:06 MESZ
+Speaker: user
+
+Clear up cache if you save data getting cluttered.

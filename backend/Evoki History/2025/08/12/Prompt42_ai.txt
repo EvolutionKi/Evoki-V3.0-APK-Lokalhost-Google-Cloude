@@ -1,0 +1,4 @@
+Timestamp: 12.08.2025, 10:53:28 MESZ
+Speaker: ai
+
+Verstanden, das ist ein super Vorgehen. Für die Entwicklungs- und Testphase ist das absolut in Ordnung, solange du dir des Risikos bewusst bist. Perfekt, dass du den sicheren Weg über ein Backend für die finale Version schon planst. Wenn du so weit bist und dabei Hilfe brauchst, sag einfach Bescheid! Regelwerk Version: 2.7 | Prüfungskennzahl: 21652 / 21652 = 1 | Datencheck: [OK] | Arbeitsanweisungen: [OK] | Fehlerüberwachung: [OK]

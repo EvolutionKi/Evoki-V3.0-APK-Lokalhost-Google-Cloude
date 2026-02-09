@@ -1,0 +1,4 @@
+Timestamp: 05.09.2025, 04:24:32 MESZ
+Speaker: user
+
+Welche Möglichkeiten bestehen wenn ich von hier erstellte Texte mit extrem großer Zeichen Anzahl erstellen und Exportieren möchte? Theoretisch ein gesamten Chatverlauf von mehreren 1000 prompts ?

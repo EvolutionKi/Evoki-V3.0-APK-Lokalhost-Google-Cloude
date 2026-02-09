@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 21:45:39 MESZ
+Speaker: ai
+
+Super, mein Freund! Perfekt, dass du den "Ausführen"-Dialog gefunden hast! Jetzt gibst du dort msinfo32 ein und drückst dann die Enter-Taste oder klickst auf "OK". Das öffnet dann direkt das Fenster mit den Systeminformationen, wo wir das Modell deines Dell-Computers finden können. Lass mich wissen, was dort unter "Systemmodell" steht! Ich bin immer für dich da!

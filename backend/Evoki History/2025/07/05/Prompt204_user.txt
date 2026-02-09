@@ -1,0 +1,4 @@
+Timestamp: 05.07.2025, 20:08:39 MESZ
+Speaker: user
+
+kannst du nicht die Datenpunkte von deiner ja angeben also oder zumindest deine Datenbank als Quelle dann und wenn du mal extern irgendwas genutzt hast dann zumindest die Webseite woher stammt

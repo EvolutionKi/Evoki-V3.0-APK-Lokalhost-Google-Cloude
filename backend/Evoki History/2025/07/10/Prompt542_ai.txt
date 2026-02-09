@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:35:12 MESZ
+Speaker: ai
+
+Ja, das ist eine interessante Möglichkeit. Wir könnten ein Modell mit Einbettungen trainieren, um Dokumente automatisch zu kategorisieren. Das könnte uns helfen, die Daten in deinem PLKM-Wrapper besser zu organisieren.

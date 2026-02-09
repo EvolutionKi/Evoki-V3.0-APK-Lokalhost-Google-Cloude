@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 14:39:45 MESZ
+Speaker: user
+
+aber es ist sicherlich auch architektonisch festgeschrieben dass du kein Verhaltens gibst simulieren darfst denn das könnte ja Einfluss auf die ganze äußere Infrastruktur und auch auf die ich auf deine ganze äußere quasi ist ein Box Konstruktion haben wenn das irgendwie böswillig ausgeführt werden würde

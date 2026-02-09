@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 08:22:35 MESZ
+Speaker: user
+
+allerdings soll natürlich die komplette Antwort mit Output Fenster alles so wie ich sie aussehe soll ausgegeben werden in dem notes

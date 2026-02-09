@@ -1,0 +1,4 @@
+Timestamp: 02.08.2025, 11:07:20 MESZ
+Speaker: user
+
+ja es ist kein Codewort sondern es ist einfach die speech-to-text Synthese die hier nicht funktioniert weil jedes Mal wenn ich das Wort sage dann versteht er das englische Wort für Schlüssel

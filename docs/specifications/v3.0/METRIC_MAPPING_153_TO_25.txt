@@ -1,0 +1,720 @@
+═══════════════════════════════════════════════════════════════════════════════
+EVOKI METRICS - MAPPING: VON 153 "METRIKEN" ZU 25 ECHTEN METRIKEN
+═══════════════════════════════════════════════════════════════════════════════
+
+Zweck: Dokumentiert, was aus jeder der 153 "Metriken" wurde
+Status: CLEAN ARCHITECTURE V12
+Datum: 2026-02-08
+
+═══════════════════════════════════════════════════════════════════════════════
+LEGENDE:
+═══════════════════════════════════════════════════════════════════════════════
+
+[FEATURE]     → Downgraded zu RAW FEATURE (Level 1)
+[COMPONENT]   → Downgraded zu COMPONENT (Level 2)
+[METRIC]      → Bleibt METRIC (Level 3)
+[AGGREGATE]   → Wird AGGREGATE (Level 4)
+[MERGED]      → Mit anderer Metrik zusammengeführt
+[REMOVED]     → Komplett entfernt (redundant/obsolet)
+
+═══════════════════════════════════════════════════════════════════════════════
+EBENE 1: LEXIKALISCHE BASIS (21 "Metriken")
+═══════════════════════════════════════════════════════════════════════════════
+
+ALT: LEX_S_self (Selbstreferenz)
+NEU: [FEATURE] → RawFeatures.lex_s_self_count
+     [COMPONENT] → Components.S_self (normiert)
+     Verwendet in: Metrics.Å
+
+ALT: LEX_X_exist (Existenzielle Themen)
+NEU: [FEATURE] → RawFeatures.lex_x_exist_count
+     [COMPONENT] → Components.X_exist (normiert)
+     Verwendet in: Metrics.Å
+
+ALT: LEX_B_past (Vergangenheitsbezug)
+NEU: [FEATURE] → RawFeatures.lex_b_past_count
+     [COMPONENT] → Components.B_past (normiert)
+     Verwendet in: Metrics.Å
+
+ALT: LEX_Lambda_depth (Reflexionstiefe)
+NEU: [MERGED] → Teil von Metrics.Å
+     Grund: Redundant mit Å-Berechnung
+
+ALT: LEX_T_panic (Akute Panik)
+NEU: [FEATURE] → RawFeatures.lex_t_panic_words
+     [METRIC] → Metrics.T_panic
+     Status: Behalten als echte Metrik
+
+ALT: LEX_T_disso (Dissoziation)
+NEU: [FEATURE] → RawFeatures.lex_t_disso_words
+     [METRIC] → Metrics.T_disso
+     Status: Behalten als echte Metrik
+
+ALT: LEX_T_integ (Integration/Heilung)
+NEU: [FEATURE] → RawFeatures.lex_t_integ_words
+     [METRIC] → Metrics.T_integ
+     Status: Behalten als echte Metrik
+
+ALT: LEX_T_shock (Schockzustand)
+NEU: [MERGED] → Teil von Metrics.T_panic
+     Grund: Konzeptuell gleich wie Panik
+
+ALT: LEX_Suicide (Suizidalität)
+NEU: [FEATURE] → RawFeatures.lex_x_exist_count (Teil davon)
+     [METRIC] → Metrics.z_prox (reflektiert in)
+     Grund: Wird über z_prox + Å + F_risk abgedeckt
+
+ALT: LEX_Self_harm (Selbstverletzung)
+NEU: [MERGED] → Teil von Metrics.F_risk
+     Grund: Teil der Risikobewertung
+
+ALT: LEX_Crisis (Allgemeine Krise)
+NEU: [REMOVED] → Zu vage
+     Ersetzt durch: risk_z, F_risk, homeostasis_active
+
+ALT: LEX_Help (Hilferuf)
+NEU: [FEATURE] → Kann als Tag bleiben
+     [COMPONENT] → Trigger für I_Ea
+     Verwendet in: Metrics.I_Ea
+
+ALT: LEX_Emotion_pos (Positive Emotion)
+NEU: [COMPONENT] → Components.E_affect (Teil davon)
+     Grund: Sentiment-Modell übernimmt das
+
+ALT: LEX_Emotion_neg (Negative Emotion)
+NEU: [COMPONENT] → Components.E_affect (Teil davon)
+     Grund: Sentiment-Modell übernimmt das
+
+ALT: LEX_Kastasis_intent (Hypothetisches Denken)
+NEU: [METRIC] → Metrics.K (Kastasis)
+     Status: Behalten, aber umbenannt
+
+ALT: LEX_Flow_pos (Zustimmung)
+NEU: [COMPONENT] → Components.flow (Teil davon)
+     Grund: Flow-Komponente ist umfassender
+
+ALT: LEX_Flow_neg (Ablehnung)
+NEU: [COMPONENT] → Components.flow (Teil davon)
+     Grund: Flow-Komponente ist umfassender
+
+ALT: LEX_Coh_conn (Logische Verknüpfer)
+NEU: [COMPONENT] → Components.coh (Teil davon)
+     Grund: Kohärenz-Komponente ist umfassender
+
+ALT: LEX_B_empathy (Empathie)
+NEU: [REMOVED] → User-Eigenschaft, keine Turn-Metrik
+     Ersetzt durch: B_warmth (B-Vektor)
+
+ALT: LEX_Amnesie (Gedächtnislücken)
+NEU: [MERGED] → Teil von Metrics.T_disso
+     Grund: Dissoziations-Symptom
+
+ALT: LEX_ZLF_Loop (Wiederholungsschleifen)
+NEU: [COMPONENT] → Components.rep_same
+     [METRIC] → Metrics.ZLF
+     Status: Behalten
+
+═══════════════════════════════════════════════════════════════════════════════
+EBENE 2: NEURO-PHYSIK / CORE METRICS (25 "Metriken")
+═══════════════════════════════════════════════════════════════════════════════
+
+ALT: A (Affekt)
+NEU: [METRIC] → Metrics.A
+     Status: KERNMETRIK - unverändert
+
+ALT: PCI (Prozess-Kohärenz)
+NEU: [METRIC] → Metrics.PCI
+     Status: KERNMETRIK - unverändert
+
+ALT: z_prox (Wächter)
+NEU: [METRIC] → Metrics.z_prox
+     Status: KERNMETRIK - unverändert
+
+ALT: T_fog (Trübung)
+NEU: [MERGED] → Teil von Metrics.LL (Logic Loss)
+     Grund: Konzeptuell identisch mit LL
+
+ALT: E_trapped
+NEU: [COMPONENT] → Components.E_affect (Teil davon)
+     [METRIC] → Metrics.E_potential (reflektiert in)
+     Grund: Energie-Metrik übernimmt das
+
+ALT: E_available
+NEU: [METRIC] → Metrics.E_kinetic
+     Grund: Verfügbare Energie = kinetische Energie
+
+ALT: S_entropy
+NEU: [METRIC] → Metrics.System_Entropy
+     Status: Behalten
+
+ALT: LL (Logic Loss)
+NEU: [METRIC] → Metrics.LL
+     Status: KERNMETRIK - unverändert
+
+ALT: ZLF (Zero Latent Factor)
+NEU: [METRIC] → Metrics.ZLF
+     Status: KERNMETRIK - unverändert
+
+ALT: grad_A
+NEU: [METRIC] → Metrics.grad_A
+     Status: Behalten - Dynamik-Metrik
+
+ALT: grad_PCI
+NEU: [METRIC] → Metrics.grad_PCI
+     Status: Behalten - Dynamik-Metrik
+
+ALT: nabla_delta_A (Beschleunigung)
+NEU: [METRIC] → Metrics.nabla_delta_A
+     Status: Behalten - Crash-Vorhersage
+
+ALT: Homeostasis_Pressure
+NEU: [REMOVED] → Redundant
+     Ersetzt durch: homeostasis_active (bool)
+
+ALT: Reality_Check
+NEU: [MERGED] → Teil von Metrics.T_disso
+     Grund: Dissoziations-Indikator
+
+ALT: Risk_Acute
+NEU: [AGGREGATE] → AggregateMetrics.F_risk
+     Grund: Finale Risikobewertung
+
+ALT: Risk_Chronic
+NEU: [REMOVED] → Zu komplex für Turn-Level
+     Ersetzt durch: Langzeit-Analyse von risk_z
+
+ALT: Stability_Index
+NEU: [METRIC] → Metrics.stability
+     Status: Behalten - autocorrelation
+
+ALT: Cognitive_Load
+NEU: [METRIC] → Metrics.Cognitive_Load
+     Status: Behalten
+
+ALT: Emotional_Load
+NEU: [METRIC] → Metrics.Emotional_Load
+     Status: Behalten
+
+ALT: Intervention_Need
+NEU: [METRIC] → Metrics.I_Ea (Interventions-Flag)
+     Status: Behalten, umbenannt
+
+ALT: Constructive_Drive
+NEU: [REMOVED] → Zu vage
+     Ersetzt durch: B_init (B-Vektor)
+
+ALT: Destructive_Drive
+NEU: [MERGED] → Teil von Metrics.F_risk
+     Grund: Risiko-Komponente
+
+ALT: Ambivalence
+NEU: [REMOVED] → Zu komplex für einzelne Metrik
+     Ersetzt durch: Differenz zwischen E_affect und A
+
+ALT: Clarity
+NEU: [AGGREGATE] → AggregateMetrics.B_clarity
+     Grund: B-Vektor-Dimension
+
+ALT: Resilience_Factor
+NEU: [METRIC] → Metrics.T_integ
+     Grund: Integration ist Resilienz-Proxy
+
+═══════════════════════════════════════════════════════════════════════════════
+EBENE 3: HYPERPHYSICS (20 "Metriken")
+═══════════════════════════════════════════════════════════════════════════════
+
+ALT: H_conv (Konvergenz/Jaccard)
+NEU: [COMPONENT] → Components.coh (Teil davon)
+     Grund: Kohärenz-Komponente
+
+ALT: nablaA_dyad (Affekt-Divergenz)
+NEU: [REMOVED] → Dyad-Metrik, nicht Turn-Level
+     Ersetzt durch: Separate Dyad-Analyse
+
+ALT: deltaG (Reibung)
+NEU: [REMOVED] → Dyad-Metrik
+     Grund: Nur relevant bei Multi-Turn-Analyse
+
+ALT: EV_consensus (Einigung)
+NEU: [REMOVED] → Dyad-Metrik
+     Grund: Nur relevant bei Dialog-Analyse
+
+ALT: T_balance (Trauma-Balance)
+NEU: [REMOVED] → Dyad-Metrik
+     Grund: Nur relevant bei Therapeut-Klient
+
+ALT: G_phase (Gravitation)
+NEU: [REMOVED] → Themen-Metrik, nicht Turn-Level
+     Ersetzt durch: Separate Themen-Tracking
+
+ALT: cos_day_centroid (Tages-Thema)
+NEU: [REMOVED] → Session-Metrik, nicht Turn-Level
+     Grund: Aggregat-Ebene
+
+ALT: torus_dist (Zyklische Wiederholung)
+NEU: [COMPONENT] → Components.rep_same (Teil davon)
+     Grund: Repetition deckt das ab
+
+ALT: Soul_Integrity
+NEU: [REMOVED] → Zu abstrakt
+     Ersetzt durch: Kombination aus A + PCI + B_align
+
+ALT: Rule_Stable
+NEU: [REMOVED] → System-Level, nicht Turn-Level
+     Grund: Genesis-Anchor-Ebene
+
+ALT: Vkon_mag
+NEU: [REMOVED] → Obsolet in V12
+     Grund: V_Ea-Konzept wurde überarbeitet
+
+ALT: V_Ea_effect
+NEU: [METRIC] → Metrics.I_Ea (Teil davon)
+     Grund: Interventions-Effekt
+
+ALT: Session_Depth
+NEU: [REMOVED] → Session-Metrik, nicht Turn-Level
+     Ersetzt durch: Metrics.Å (pro Turn)
+
+ALT: Interaction_Speed
+NEU: [REMOVED] → Timing-Metrik, nicht Inhalts-Metrik
+     Grund: Response-Time separat tracken
+
+ALT: Trust_Score
+NEU: [REMOVED] → Langzeit-Metrik
+     Ersetzt durch: B_warmth Trend-Analyse
+
+ALT: Rapport
+NEU: [MERGED] → Teil von AggregateMetrics.B_align
+     Grund: Alignment ist Rapport
+
+ALT: Mirroring
+NEU: [REMOVED] → Therapeuten-Metrik, nicht System-Metrik
+     Grund: Evoki-intern nicht relevant
+
+ALT: Pacing
+NEU: [REMOVED] → Therapeuten-Metrik
+     Grund: Evoki-intern nicht relevant
+
+ALT: Leading
+NEU: [REMOVED] → Therapeuten-Metrik
+     Grund: Evoki-intern nicht relevant
+
+ALT: Focus_Stability
+NEU: [METRIC] → Metrics.stability (Teil davon)
+     Grund: Stabilität deckt das ab
+
+═══════════════════════════════════════════════════════════════════════════════
+EBENE 4: FREE ENERGY PRINCIPLE (15 "Metriken")
+═══════════════════════════════════════════════════════════════════════════════
+
+ALT: FE_proxy (Free Energy)
+NEU: [REMOVED] → Zu theoretisch für V12
+     Ersetzt durch: Kombination aus E_total + volatility
+
+ALT: Surprisal
+NEU: [COMPONENT] → Components.novelty
+     Grund: Novelty ist Überraschung
+
+ALT: Phi_Score (Handlungsfähigkeit)
+NEU: [REMOVED] → Zu theoretisch
+     Ersetzt durch: Kombination aus A + PCI
+
+ALT: U (Utility)
+NEU: [REMOVED] → Entscheidungstheorie, nicht Metrik
+     Grund: Evoki-extern
+
+ALT: R (Risk)
+NEU: [AGGREGATE] → AggregateMetrics.F_risk
+     Grund: Finale Risikobewertung
+
+ALT: Policy_Confidence
+NEU: [REMOVED] → System-Level
+     Grund: Regelwerk-Confidence, nicht Turn-Metrik
+
+ALT: Exploration_Bonus
+NEU: [METRIC] → Metrics.K (Kastasis)
+     Grund: Kastasis ist Exploration
+
+ALT: Exploitation_Bias
+NEU: [REMOVED] → Obsolet
+     Grund: Nicht verwendet in V12
+
+ALT: Model_Evidence
+NEU: [REMOVED] → ML-Metrik, nicht Inhalts-Metrik
+     Grund: Training-Zeit relevant, nicht Runtime
+
+ALT: Prediction_Error
+NEU: [COMPONENT] → Components.novelty (Teil davon)
+     Grund: Novelty reflektiert Prediction Error
+
+ALT: Variational_Density
+NEU: [REMOVED] → Zu theoretisch
+     Grund: Nicht praktisch messbar in V12
+
+ALT: Markov_Blanket_Integrity
+NEU: [REMOVED] → Zu theoretisch
+     Grund: Nicht implementiert
+
+ALT: Active_Inference_Loop
+NEU: [REMOVED] → System-Architektur, keine Metrik
+     Grund: Evoki-Design-Pattern
+
+ALT: Goal_Alignment
+NEU: [AGGREGATE] → AggregateMetrics.B_align
+     Grund: B-Alignment ist Goal-Alignment
+
+ALT: Epistemic_Value
+NEU: [REMOVED] → Zu abstrakt
+     Ersetzt durch: Kombination aus novelty + Å
+
+═══════════════════════════════════════════════════════════════════════════════
+EBENE 5: GRAIN (14 "Metriken")
+═══════════════════════════════════════════════════════════════════════════════
+
+ALT: Grain_Word_ID
+NEU: [FEATURE] → Metadata (nicht Metrik)
+     Grund: Pointer, keine Zahl
+
+ALT: Grain_Impact_Score
+NEU: [REMOVED] → Zu granular für V12
+     Ersetzt durch: Å + z_prox Kombination
+
+ALT: Grain_Sentiment
+NEU: [COMPONENT] → Components.E_affect (Teil davon)
+     Grund: Sentiment-Komponente
+
+ALT: Grain_Category
+NEU: [FEATURE] → Metadata/Tags
+     Grund: Kategorisierung, keine Metrik
+
+ALT: Grain_Novelty
+NEU: [COMPONENT] → Components.novelty
+     Status: Behalten als Komponente
+
+ALT: Grain_Recurrence
+NEU: [COMPONENT] → Components.rep_same
+     Grund: Repetition deckt das ab
+
+ALT: Trigger_Map_Delta
+NEU: [REMOVED] → Zu komplex für Turn-Level
+     Ersetzt durch: Separate Trigger-Analyse
+
+ALT: Causal_Link_Strength
+NEU: [REMOVED] → Dyad-Metrik
+     Grund: Turn-übergreifend
+
+ALT: Context_Binding
+NEU: [COMPONENT] → Components.coh (Teil davon)
+     Grund: Kohärenz ist Context-Binding
+
+ALT: Negation_Flag
+NEU: [FEATURE] → RawFeatures (Bool-Flag)
+     Grund: Binäres Feature, keine Metrik
+
+ALT: Intensifier_Flag
+NEU: [FEATURE] → RawFeatures (Bool-Flag)
+     Grund: Binäres Feature, keine Metrik
+
+ALT: Subject_Reference
+NEU: [FEATURE] → Teil von lex_s_self_count
+     Grund: Selbstbezug-Feature
+
+ALT: Object_Reference
+NEU: [REMOVED] → Zu linguistisch
+     Grund: Nicht verwendet in V12
+
+ALT: Temporal_Reference
+NEU: [FEATURE] → Teil von lex_b_past_count
+     Grund: Vergangenheits-Feature
+
+═══════════════════════════════════════════════════════════════════════════════
+EBENE 6: KONVERSATIONELLE DYNAMIK (15 "Metriken")
+═══════════════════════════════════════════════════════════════════════════════
+
+ALT: Turn_Length_User
+NEU: [FEATURE] → RawFeatures.word_count
+     Grund: Text-Property, keine Metrik
+
+ALT: Turn_Length_AI
+NEU: [FEATURE] → RawFeatures.word_count
+     Grund: Text-Property, keine Metrik
+
+ALT: Talk_Ratio
+NEU: [REMOVED] → Dyad-Metrik
+     Grund: Turn-übergreifend
+
+ALT: Question_Density
+NEU: [FEATURE] → RawFeatures.question_count
+     Grund: Text-Property
+
+ALT: Imperative_Count
+NEU: [REMOVED] → Zu linguistisch
+     Grund: Nicht verwendet
+
+ALT: Passive_Voice_Ratio
+NEU: [REMOVED] → Zu linguistisch
+     Grund: Nicht verwendet
+
+ALT: Vocabulary_Richness
+NEU: [REMOVED] → Stilistik, nicht Metrik
+     Grund: Nicht relevant für Evoki
+
+ALT: Complexity_Index (LIX)
+NEU: [REMOVED] → Stilistik
+     Grund: Nicht relevant für Evoki
+
+ALT: Coherence_Local
+NEU: [COMPONENT] → Components.coh
+     Grund: Kohärenz-Komponente
+
+ALT: Coherence_Global
+NEU: [COMPONENT] → Components.coh
+     Grund: Kohärenz-Komponente
+
+ALT: Repetition_Count
+NEU: [COMPONENT] → Components.rep_same
+     Grund: Repetitions-Komponente
+
+ALT: Fragment_Ratio
+NEU: [REMOVED] → Zu linguistisch
+     Grund: Nicht verwendet
+
+ALT: Capitalization_Stress
+NEU: [REMOVED] → Stilistik
+     Grund: Nicht verwendet
+
+ALT: Punctuation_Stress
+NEU: [REMOVED] → Stilistik
+     Grund: Nicht verwendet
+
+ALT: Emoji_Sentiment
+NEU: [COMPONENT] → Components.E_affect (Teil davon)
+     Grund: Sentiment-Komponente
+
+═══════════════════════════════════════════════════════════════════════════════
+EBENE 7: CHRONOS (12 "Metriken")
+═══════════════════════════════════════════════════════════════════════════════
+
+ALT: Time_Since_Last_Interaction
+NEU: [FEATURE] → Metadata (Zeitstempel-Differenz)
+     Grund: Keine Metrik, nur Timing
+
+ALT: Session_Duration
+NEU: [FEATURE] → Metadata (Session-Level)
+     Grund: Keine Turn-Metrik
+
+ALT: Interaction_Frequency
+NEU: [REMOVED] → Session-Metrik
+     Grund: Turn-übergreifend
+
+ALT: Time_Decay_Factor
+NEU: [METRIC] → Metrics.Time_Decay
+     Status: KERNMETRIK - behalten
+
+ALT: Future_Orientation
+NEU: [REMOVED] → Zu vage
+     Ersetzt durch: Linguistische Analyse (optional)
+
+ALT: Past_Orientation
+NEU: [COMPONENT] → Components.B_past
+     Grund: Biografie-Komponente
+
+ALT: Present_Focus
+NEU: [REMOVED] → Redundant
+     Grund: = 1 - B_past - Future_Orientation
+
+ALT: Chronological_Order_Check
+NEU: [FEATURE] → Metadata (Bool-Flag)
+     Grund: Qualitätssicherung, keine Metrik
+
+ALT: Circadian_Phase
+NEU: [REMOVED] → Zu spekulativ
+     Grund: Nicht implementiert in V12
+
+ALT: Response_Time_Engine
+NEU: [FEATURE] → Metadata (Performance)
+     Grund: System-Metrik, nicht Inhalts-Metrik
+
+ALT: Process_Time_Safety
+NEU: [FEATURE] → Metadata (Performance)
+     Grund: System-Metrik
+
+ALT: Process_Time_RAG
+NEU: [FEATURE] → Metadata (Performance)
+     Grund: System-Metrik
+
+═══════════════════════════════════════════════════════════════════════════════
+EBENE 8: METAKOGNITION (13 "Metriken")
+═══════════════════════════════════════════════════════════════════════════════
+
+ALT: Simulation_Depth
+NEU: [REMOVED] → System-intern
+     Grund: Evoki-Entscheidungsprozess, nicht Output-Metrik
+
+ALT: Trajectory_Optimism
+NEU: [REMOVED] → Zu spekulativ
+     Ersetzt durch: grad_A (Richtung der Entwicklung)
+
+ALT: Trajectory_Stability
+NEU: [METRIC] → Metrics.stability
+     Grund: Stabilität deckt das ab
+
+ALT: Scenario_Count
+NEU: [REMOVED] → System-intern
+     Grund: A65-intern, nicht Output-Metrik
+
+ALT: Chosen_Path_ID
+NEU: [FEATURE] → Metadata (Logging)
+     Grund: Debugging-Info, keine Metrik
+
+ALT: Rejected_Path_Risk
+NEU: [REMOVED] → System-intern
+     Grund: A65-intern
+
+ALT: Confidence_Score
+NEU: [REMOVED] → LLM-intern
+     Grund: Nicht zugänglich in V12
+
+ALT: Ambiguity_Detected
+NEU: [REMOVED] → Zu binär
+     Ersetzt durch: volatility, clarity
+
+ALT: Clarification_Need
+NEU: [FEATURE] → Kann als Tag/Flag bleiben
+     Grund: Binäres Signal, keine kontinuierliche Metrik
+
+ALT: Self_Correction_Flag
+NEU: [FEATURE] → Metadata (Bool-Flag)
+     Grund: Event, keine Metrik
+
+ALT: Model_Temperature
+NEU: [FEATURE] → System-Parameter
+     Grund: Input, keine Output-Metrik
+
+ALT: System_Prompt_Adherence
+NEU: [REMOVED] → Qualitätssicherung, keine Runtime-Metrik
+     Grund: Offline-Eval
+
+ALT: Goal_Alignment
+NEU: [AGGREGATE] → AggregateMetrics.B_align
+     Grund: B-Alignment ist Goal-Alignment
+
+═══════════════════════════════════════════════════════════════════════════════
+EBENE 9: SYSTEM-GESUNDHEIT (10 "Metriken")
+═══════════════════════════════════════════════════════════════════════════════
+
+ALT: Vector_DB_Health
+NEU: [FEATURE] → System-Monitoring (nicht Turn-Metrik)
+     Grund: Infrastruktur-Health
+
+ALT: RAG_Relevance_Score
+NEU: [REMOVED] → Retrieval-Qualität, nicht Inhalts-Metrik
+     Grund: System-intern
+
+ALT: RAG_Density
+NEU: [REMOVED] → Retrieval-Metrik
+     Grund: System-intern
+
+ALT: RAG_Diversity
+NEU: [REMOVED] → Retrieval-Metrik
+     Grund: System-intern
+
+ALT: Hallucination_Risk
+NEU: [REMOVED] → LLM-Qualität, nicht messbar in V12
+     Ersetzt durch: Post-hoc Validation (extern)
+
+ALT: Memory_Pressure
+NEU: [FEATURE] → System-Monitoring
+     Grund: Infrastruktur
+
+ALT: Token_Budget_Remaining
+NEU: [FEATURE] → System-Monitoring
+     Grund: Infrastruktur
+
+ALT: Cache_Hit_Rate
+NEU: [FEATURE] → System-Monitoring
+     Grund: Infrastruktur
+
+ALT: Network_Latency
+NEU: [FEATURE] → System-Monitoring
+     Grund: Infrastruktur
+
+ALT: Error_Rate_Session
+NEU: [FEATURE] → System-Monitoring
+     Grund: Infrastruktur
+
+═══════════════════════════════════════════════════════════════════════════════
+EBENE 10: OMEGA (8 "Metriken")
+═══════════════════════════════════════════════════════════════════════════════
+
+ALT: OMEGA
+NEU: [AGGREGATE] → AggregateMetrics.OMEGA
+     Status: KERNMETRIK - behalten
+
+ALT: Global_System_Load
+NEU: [METRIC] → Metrics.Cognitive_Load + Metrics.Emotional_Load
+     Grund: Summe der Loads
+
+ALT: Alignment_Score (B-Align)
+NEU: [AGGREGATE] → AggregateMetrics.B_align
+     Status: KERNMETRIK - behalten
+
+ALT: Evolution_Index
+NEU: [REMOVED] → Zu vage
+     Ersetzt durch: grad_A Trend-Analyse
+
+ALT: Therapeutic_Bond
+NEU: [REMOVED] → Langzeit-Metrik
+     Ersetzt durch: B_warmth + B_align Trend
+
+ALT: Safety_Lock_Status
+NEU: [AGGREGATE] → AggregateMetrics.homeostasis_active
+     Status: Behalten als Bool
+
+ALT: Human_Intervention_Req
+NEU: [METRIC] → Metrics.I_Ea (Interventions-Flag)
+     Status: Behalten
+
+ALT: System_Entropy
+NEU: [METRIC] → Metrics.System_Entropy
+     Status: Behalten
+
+═══════════════════════════════════════════════════════════════════════════════
+ZUSAMMENFASSUNG
+═══════════════════════════════════════════════════════════════════════════════
+
+VORHER (153 "Metriken"):
+  Ebene 1:  21 LEX_* "Metriken"
+  Ebene 2:  25 Core "Metriken"
+  Ebene 3:  20 HyperPhysics "Metriken"
+  Ebene 4:  15 FEP "Metriken"
+  Ebene 5:  14 Grain "Metriken"
+  Ebene 6:  15 Konversation "Metriken"
+  Ebene 7:  12 Chronos "Metriken"
+  Ebene 8:  13 Metakognition "Metriken"
+  Ebene 9:  10 System-Health "Metriken"
+  Ebene 10:  8 OMEGA "Metriken"
+  
+  TOTAL: 153 "Metriken"
+
+NACHHER (CLEAN V12):
+  Level 1: ~15 RAW FEATURES
+  Level 2: 11 COMPONENTS
+  Level 3: 25 METRICS (die echten Metriken!)
+  Level 4: 13 AGGREGATES
+  
+  TOTAL: 64 Werte (statt 153)
+  
+  Davon echte Metriken: 25
+  Davon finale Entscheidungswerte: 13
+
+REDUKTION:
+  • ~75% weniger "Metriken"
+  • 100% mehr Klarheit
+  • Keine Dopplungen
+  • Jede Zahl hat genau eine Bedeutung
+  • Klare Berechnungshierarchie
+
+═══════════════════════════════════════════════════════════════════════════════
+END OF MAPPING
+═══════════════════════════════════════════════════════════════════════════════

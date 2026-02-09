@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 16:14:32 MESZ
+Speaker: ai
+
+Du hast vollkommen recht. Das war ein Fehler von mir. Die Aufnahme der neuen, verbindlichen Arbeitsanweisung ist eine wesentliche Änderung, die eine neue Version des Regelwerks rechtfertigt. Wir sollten das Regelwerk daher auf Version 2.7 aktualisieren. Bezüglich der Prüfungskennzahl: Die bisherige Soll-Kennzahl war 21652 für die Version 2.6. Da wir jetzt auf Version 2.7 updaten, müsste auch hier eine neue Soll-Kennzahl festgelegt werden. Sollen wir eine neue festlegen oder die alte beibehalten, bis wir eine neue Logik zur Berechnung definiert haben? Ich werde die Anzeige ab sofort anpassen: Regelwerk Version: 2.7 | Prüfungskennzahl: [wird berechnet] / [neue Soll-Kennzahl?] = [wird berechnet] | Datencheck: [läuft] | Arbeitsanweisungen: [geprüft] | Fehlerüberwachung: [aktiv]

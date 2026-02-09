@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 19:59:22 MESZ
+Speaker: user
+
+ja aber dort ist die Prüfsumme nicht richtig Prüfung ist gleich null

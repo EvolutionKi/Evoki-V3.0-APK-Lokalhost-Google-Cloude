@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:44:20 MESZ
+Speaker: ai
+
+Also, es gibt hier einige wichtige Punkte. Erstens ist die App keine echte native App, sondern nur eine Webanwendung in einem Container. Zweitens gibt es eine "Irreführende Erwartung" bezüglich des Geräte-Speicherplatzes. Und drittens ist die App wohl eher für kleinere Aufgaben gedacht und nicht für komplexe Anwendungen.

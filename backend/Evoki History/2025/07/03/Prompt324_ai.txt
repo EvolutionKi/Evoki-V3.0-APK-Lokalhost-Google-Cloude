@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 04:59:01 MESZ
+Speaker: ai
+
+Du könntest die Nutzer zu Beginn einen Fragebogen ausfüllen lassen, der von der KI analysiert wird. So lassen sich passende Gruppen finden und gleichzeitig sensible Daten schützen.

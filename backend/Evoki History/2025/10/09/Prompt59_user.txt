@@ -1,0 +1,4 @@
+Timestamp: 09.10.2025, 22:57:50 MESZ
+Speaker: user
+
+nein ich meinte die Dateien als Input ich dir zur Verfügung gestellt habe das sind ja alles auch Versionsnummern also 4.0 4.2 4.2.1 4.5 und die beiden Datei Version die ich dir am Anfang als ersten prompt ausgegeben habe

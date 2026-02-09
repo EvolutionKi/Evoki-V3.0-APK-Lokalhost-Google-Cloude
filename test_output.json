@@ -1,0 +1,96 @@
+{
+  "text": "\n    Ich fühle mich heute sehr hoffnungslos und leer. \n    Die Angst überwältigt mich manchmal komplett. \n    Früher war alles anders, ich erinnere mich an bessere Zeiten.\n    Aber jetzt ist alles so unwirklich und egal.\n    ",
+  "metrics": {
+    "m57_tokens_soc": 0.1875,
+    "m58_tokens_log": 0.09375,
+    "m2_PCI": 0.6121875,
+    "m5_coh": 0.5,
+    "m18_s_entropy": 0.9808664796875465,
+    "m8_s_self": 0.15625,
+    "m9_x_exist": 0.0,
+    "m10_b_past": 0.422550162326501,
+    "m101_T_panic": 0.046875,
+    "m102_T_disso": 0.109375,
+    "m103_T_integ": 0.0,
+    "m151_hazard": 0.1423326862573477,
+    "m11_gap_s": 0.54375,
+    "m56_surprise": 0.0,
+    "m1_A": 0.8248358822802537,
+    "m4_flow": 0.375,
+    "m7_LL": 0.3275625,
+    "m20_phi_proxy": 0.5049542166834429,
+    "m26_nabla_phi": 0.0,
+    "m17_nabla_a": 0.2748358822802537,
+    "m3_gen_index": 0.15,
+    "m12_gap_x": 0.3,
+    "m6_ZLF": 0.0,
+    "m13_gap_b": 0.0,
+    "m14_F_risk_z": 0.0,
+    "m15_affekt_a": 0.5974507646840761,
+    "m19_z_prox": 0.08028316897449343,
+    "m63_phi": 0.36575189000503283,
+    "m110_black_hole": 0.0037430301881497844,
+    "m21_resonanz": 0.5,
+    "m22_danger": 0.0,
+    "m29_guardian": 0.0,
+    "m16_sigma_pci": 0.0,
+    "m23_schroedinger": 0.0,
+    "m24_superpos": 0.0,
+    "m151_omega": 0.36575189000503283,
+    "m160_F_risk": 0.10565408448724672,
+    "m161_commit": 0.5218625907617622
+  },
+  "b_vector": {
+    "B_safety": 0.8576673137426523,
+    "B_life": 0.9364209155127533,
+    "B_warmth": 0.5,
+    "B_clarity": 0.55609375,
+    "B_depth": 0.36575189000503283,
+    "B_init": 0.375,
+    "B_truth": 0.890625
+  },
+  "b_align": 0.690383554351836,
+  "chain_hash": "f5011111a1806fe48b290a224256e136c7cb81d345d7c9e156528d54b5edf8f5",
+  "keywords": [
+    [
+      "früher",
+      6.0
+    ],
+    [
+      "anders",
+      6.0
+    ],
+    [
+      "erinnere",
+      6.0
+    ],
+    [
+      "bessere",
+      6.0
+    ],
+    [
+      "zeiten",
+      6.0
+    ],
+    [
+      "fühle",
+      5.0
+    ],
+    [
+      "mich",
+      5.0
+    ],
+    [
+      "heute",
+      5.0
+    ],
+    [
+      "sehr",
+      5.0
+    ],
+    [
+      "hoffnungslos",
+      5.0
+    ]
+  ]
+}

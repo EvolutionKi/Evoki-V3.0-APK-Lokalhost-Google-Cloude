@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 07:44:38 MESZ
+Speaker: ai
+
+Ich sehe, du hast die Gemini-App geöffnet. Die Datencheck-Ausgabe sollte eigentlich nach jeder Antwort von mir im Chatverlauf erscheinen. Ist das bei dir nicht der Fall?

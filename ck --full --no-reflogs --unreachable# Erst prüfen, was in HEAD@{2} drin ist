@@ -1,0 +1,131 @@
+[33mf423e812b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: commit: vg
+[33m590c5df16[m HEAD@{1}: commit: .
+[33mb0c193b11[m HEAD@{2}: commit: vg
+[33m8b2f917fb[m HEAD@{3}: checkout: moving from EvolutionKi-patch-1 to main
+[33m7f2f47764[m[33m ([m[1;32mEvolutionKi-patch-1[m[33m)[m HEAD@{4}: reset: moving to HEAD
+[33m7f2f47764[m[33m ([m[1;32mEvolutionKi-patch-1[m[33m)[m HEAD@{5}: commit: vg
+[33ma28a8e00f[m[33m ([m[1;33mtag: [m[1;33mpre-book1-metrics-implementation[m[33m)[m HEAD@{6}: pull --tags origin EvolutionKi-patch-1: updating HEAD
+[33ma28a8e00f[m[33m ([m[1;33mtag: [m[1;33mpre-book1-metrics-implementation[m[33m)[m HEAD@{7}: pull --tags origin EvolutionKi-patch-1: updating HEAD
+[33ma28a8e00f[m[33m ([m[1;33mtag: [m[1;33mpre-book1-metrics-implementation[m[33m)[m HEAD@{8}: commit: wt
+[33mde456e62b[m HEAD@{9}: checkout: moving from main to EvolutionKi-patch-1
+[33m8b2f917fb[m HEAD@{10}: commit: tg
+[33md1fb80c20[m[33m ([m[1;31mEvolution-Ki/main[m[33m, [m[1;31mEvolution-Ki/HEAD[m[33m)[m HEAD@{11}: checkout: moving from mainevoki to main
+[33m1a8128fc3[m[33m ([m[1;32mmainevoki[m[33m)[m HEAD@{12}: Branch: renamed refs/heads/main to refs/heads/mainevoki
+[33m1a8128fc3[m[33m ([m[1;32mmainevoki[m[33m)[m HEAD@{14}: commit: tg
+[33md60d4aa68[m HEAD@{15}: commit: go
+[33m9f7a6a0cf[m HEAD@{16}: commit: ok
+[33m8c676139d[m HEAD@{17}: commit: go
+[33m880e73a02[m HEAD@{18}: commit: TU
+[33m4f9e56219[m HEAD@{19}: commit: s
+[33mdeb7a6d74[m HEAD@{20}: commit: okay
+[33me2c2ab568[m HEAD@{21}: reset: moving to e2c2ab56807858668dec618b5242cf5a71b411d4
+[33m67ac19b12[m HEAD@{22}: reset: moving to HEAD
+[33m67ac19b12[m HEAD@{23}: commit: h
+[33m1b0ae786c[m HEAD@{24}: commit (amend): fix(ci): exclude all venv variants, site-packages, and backend in flake8
+[33md33eaaa16[m HEAD@{25}: commit: fix(ci): add explicit --exclude to flake8 command in workflow
+[33m65678f85f[m HEAD@{26}: commit: fix(ci): exclude entire backend folder in flake8 config
+[33m107e5b79c[m HEAD@{27}: commit: GO
+[33mb2791f44c[m HEAD@{28}: commit: Add design file
+[33m49b1f984c[m HEAD@{29}: pull --ff --recurse-submodules --progress origin: Merge made by the 'ort' strategy.
+[33ma584feb91[m HEAD@{30}: checkout: moving from 2-test to main
+[33m827962be0[m HEAD@{31}: commit: YSG
+[33ma6ff68f8e[m HEAD@{32}: checkout: moving from main to 2-test
+[33ma584feb91[m HEAD@{33}: commit: GO
+[33me24f5d9d9[m HEAD@{34}: checkout: moving from ME to main
+[33ma6ff68f8e[m HEAD@{35}: checkout: moving from main to ME
+[33me24f5d9d9[m HEAD@{36}: commit: ZT
+[33m880b66869[m HEAD@{37}: commit: ERT
+[33medb768043[m HEAD@{38}: commit: chore: cleanup legacy backend artifacts and frontend duplicate components - V3 Production Readiness
+[33m5eb319a1f[m HEAD@{39}: commit: GO
+[33m087e29c15[m HEAD@{40}: commit: GO
+[33m2170401a9[m HEAD@{41}: commit: umbau
+[33mbfa940669[m HEAD@{42}: commit: ,0go
+[33mda121742d[m HEAD@{43}: commit: hvk
+[33m975c427cc[m HEAD@{44}: commit: go
+[33mc41ae0085[m HEAD@{45}: commit: GO
+[33m516c9deb7[m HEAD@{46}: commit: go
+[33m018bef720[m HEAD@{47}: commit: t
+[33m54736a258[m HEAD@{48}: commit: ö,küo
+[33m09ff89ee3[m HEAD@{49}: commit: v n
+[33maa788e0a6[m HEAD@{50}: commit: ho
+[33ma6ff68f8e[m HEAD@{51}: commit: go
+[33mbb68eb7c7[m HEAD@{52}: commit: go
+[33mec2c9b397[m HEAD@{53}: commit: go
+[33mcae7528ee[m HEAD@{54}: commit: go
+[33mb82c68c29[m HEAD@{55}: commit: integrety 3.0
+[33m7a9311e7a[m HEAD@{56}: commit: go
+[33m05d1a4b36[m HEAD@{57}: commit: go
+[33m8c1b6c63e[m HEAD@{58}: commit: go
+[33mbaf5cdb2b[m HEAD@{59}: commit: gh
+[33m2572e1444[m HEAD@{60}: commit: ho
+[33mfdd9b35d8[m HEAD@{61}: commit: v
+[33m34cd1f9c0[m HEAD@{62}: commit: go
+[33m6b08190e1[m HEAD@{63}: commit: ok
+[33m169190cbb[m HEAD@{64}: commit: go
+[33m5da086064[m HEAD@{65}: commit: kl
+[33me0b21c7f8[m HEAD@{66}: commit: ok
+[33m769785109[m HEAD@{67}: commit: go
+[33m4d1085513[m HEAD@{68}: commit: go
+[33m1ee3cd2e2[m HEAD@{69}: commit: ok
+[33m7d7ef5aae[m HEAD@{70}: commit: nbv
+[33m4f917932b[m HEAD@{71}: commit: gk
+[33m153aaf630[m HEAD@{72}: commit: go
+[33m38e79900a[m HEAD@{73}: commit: go
+[33me3573da9d[m HEAD@{74}: commit: go
+[33meb6d5f2cb[m HEAD@{75}: commit: jl
+[33m4f00e417c[m HEAD@{76}: commit: ok
+[33m32b6ed50f[m HEAD@{77}: commit: ok
+[33m053a610ff[m[33m ([m[1;33mtag: [m[1;33mv3.0.0-pre-implementation[m[33m)[m HEAD@{78}: commit: docs(v3.0): Pre-Implementation Backup - Complete workspace finalization
+[33mab4b75b23[m HEAD@{79}: commit: go
+[33m3db99c320[m HEAD@{80}: commit: gio
+[33m406f1848a[m HEAD@{81}: commit: ok
+[33mb80e6c36a[m HEAD@{82}: commit: Synapse Extension V3.0 - VERIFIED Installation
+[33mf9e57ddb3[m HEAD@{83}: commit: Synapse Extension V3.0: Auto-start watchers + VS Code errors + Chat pings + Settings
+[33m607ba3c82[m HEAD@{84}: commit: Complete auto-start suite: all 3 watchers + MCP server
+[33m4b5afbc55[m HEAD@{85}: commit: Fix mcp.json syntax
+[33m1ecc0cd94[m HEAD@{86}: commit: Add Context Watcher to MCP autoStart + Compliance Enforcer fixes
+[33m8ba3a9cdb[m HEAD@{87}: commit: Fix Compliance Enforcer: Check raw_user_request AND user_messages (V2.0 solution)
+[33m0c05f61bc[m HEAD@{88}: commit: Stand 0 FINAL: Template, Protocol Update, Watcher Suite activated
+[33m20f7166b9[m HEAD@{89}: commit: Stand 0: Add test_pipeline.py + run pipeline test
+[33mb0247d7c3[m HEAD@{90}: commit: ok
+[33m98799a0d4[m HEAD@{91}: commit: Stand 0: smoke_test_writer.ps1 complete V5 rewrite
+[33m55650c744[m HEAD@{92}: commit: Stand 0 FINAL: MCP Server defaults dynamic paths
+[33ma5ce85a1c[m HEAD@{93}: commit: Stand 0: smoke_test_writer V4->V5 schema
+[33m45802b76c[m HEAD@{94}: commit: Stand 0: Deprecate cleanup script (contains legacy path refs)
+[33m410f206db[m HEAD@{95}: commit: Stand 0 FINAL: datamanagement rule updated
+[33m4000a5fb1[m HEAD@{96}: commit: tew
+[33m89cae6f9e[m HEAD@{97}: commit: gooo
+[33me5bda6ea8[m HEAD@{98}: commit: Stand 0 COMPLETE: All 10 files path-sanitized (no legacy refs)
+[33m7e2facf8e[m HEAD@{99}: commit: Stand 0: Dashboard + Cleanup Script path alignment
+[33m1134e4a60[m HEAD@{100}: commit: hi
+[33m1d38fb796[m HEAD@{101}: commit: Stand 0 VERIFIED: MCP+Docs fully sanitized from app/temple refs
+[33mac0b536eb[m HEAD@{102}: commit: Stand 0 FINAL: Doc+Tool Sync - Remove ALL app/temple refs
+[33mb78ad2269[m HEAD@{103}: commit: Cache-Bust: Force GitHub to refresh file content
+[33m075d3236d[m HEAD@{104}: commit: test
+[33m64132a089[m HEAD@{105}: commit: go
+[33m9fe4afb4b[m HEAD@{106}: commit: now
+[33m0e2aa75c4[m HEAD@{107}: commit: go
+[33m396639bcb[m HEAD@{108}: commit: repair
+[33m83d4c3b84[m HEAD@{109}: commit: gogo
+[33m0aa9a7ff0[m HEAD@{110}: commit: feat: added auto-architecture-map generator and updated ARCHITECTURE.txt
+[33m06b8d1545[m HEAD@{111}: commit: docs: sync architecture map & copilot instructions with V5.1
+[33m5ddeee5cb[m HEAD@{112}: commit: chore: strict structure cleanup, updated enforcer config, refreshed readmes
+[33ma9ad6fd8b[m HEAD@{113}: commit: refactor: migrate logic to tooling/ (clean separation app vs tools)
+[33mb00490617[m HEAD@{114}: commit: GO
+[33m7885ad435[m HEAD@{115}: commit: JO
+[33m21cac86b3[m HEAD@{116}: commit: <c
+[33m868346405[m HEAD@{117}: commit: test
+[33m9c7bc4b17[m HEAD@{118}: commit: fix(core): strict V5 protocol enforcement + dynamic paths (REAL fix)
+[33m1bdbeb96d[m HEAD@{119}: commit: ozu
+[33m7cdd2a715[m HEAD@{120}: commit: ci: fix npm cache error by removing cache config
+[33m53303b1cc[m HEAD@{121}: commit: et
+[33mfc27d9632[m HEAD@{122}: commit: ci: Replace fragile determinism-gate with robust main CI
+[33m8df5fa9b5[m HEAD@{123}: commit: ok
+[33m365261813[m HEAD@{124}: commit: fix(ci): Add missing GEMINI_V13_UPDATE.md for determinism gate
+[33m26142e084[m HEAD@{125}: commit: ok
+[33m86e91d340[m HEAD@{126}: commit: tui
+[33mc672d23d2[m HEAD@{127}: commit: ok
+[33mbb307f0a0[m HEAD@{128}: commit: go
+[33m6991104ea[m HEAD@{129}: commit: go
+[33m14fda0a40[m HEAD@{130}: commit: okdiki
+[33mcb6101706[m HEAD@{131}: co

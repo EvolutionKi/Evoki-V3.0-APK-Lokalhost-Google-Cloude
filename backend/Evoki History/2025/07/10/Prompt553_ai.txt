@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:39:25 MESZ
+Speaker: ai
+
+Ich verstehe, du möchtest Gemini nutzen, um im Hintergrund Text zu generieren und diesen dann in deiner Live-Ansicht zu sehen. Das ist eine interessante Idee, um die Kommunikation zwischen Gemini und deinem PLKM-Wrapper zu verbessern.

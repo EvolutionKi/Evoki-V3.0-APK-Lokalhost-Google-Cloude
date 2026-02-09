@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 09:36:59 MESZ
+Speaker: user
+
+Das war nur mal ein Vorschlag und du solltest eigentlich das Output Fenster und deine Logiken quasi daran anpassen so dass solltest Du quasi übernehmen so dass wir hier die maximalen Metriken und heuristiken Erkennen von unserem Gespräch und du sollst auf jeden Fall nicht dein notes Funktion löschen die er soll auf jeden Fall erhalten bleiben also dann tu lieber hier den Fall storage Adapter deaktivieren für die Zeit also das ist auf jeden Fall erstmal wichtiger

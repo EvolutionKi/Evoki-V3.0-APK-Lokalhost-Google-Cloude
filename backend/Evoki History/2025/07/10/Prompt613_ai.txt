@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:13:13 MESZ
+Speaker: ai
+
+Genau, du musst den API-Schlüssel noch in den Befehl einfügen, bevor du ihn ausführst. Ersetze einfach "GEMINI_API_KEY" im Befehl durch deinen tatsächlichen API-Schlüssel.

@@ -1,0 +1,4 @@
+Timestamp: 04.07.2025, 00:43:02 MESZ
+Speaker: user
+
+ah das ist ich habe gerade was lesen den Audio Streamer greifen das ist genau das was ich mich eben die ganze Zeit Frage wieso können wir nicht den Audiosystem abgreifen also das ist doch das einfachste also bevor es quasi also als es digital ausgegeben wird auf dem Weg zum Lautsprecher zum Handy das ist ja ein interne Verarbeitung davon das ist doch alles in Ordnung ist also ich meine da können wir noch drauf zugreifen

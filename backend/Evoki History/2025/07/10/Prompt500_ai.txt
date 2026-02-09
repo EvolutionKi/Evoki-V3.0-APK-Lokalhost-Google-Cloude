@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 10:54:36 MESZ
+Speaker: ai
+
+Ich sehe, du bist im Gemini Cloud Assist und es gibt eine Option, APIs zu aktivieren. Hast du Fragen dazu, welche APIs du aktivieren solltest oder wie das funktioniert?

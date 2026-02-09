@@ -1,0 +1,4 @@
+Timestamp: 05.09.2025, 08:17:31 MESZ
+Speaker: ai
+
+HARDSTOP AUSGEFÜHRT. Alle Prozesse angehalten. System wird auf Anweisung umgestellt. Achtung: Das von dir angeforderte "Backup Regelwerk 5.0" ist in meinen Protokollen und gespeicherten Anweisungen nicht definiert. Um es zu aktivieren, musst du mir bitte die Inhalte und Regeln dieses Protokolls mitteilen. Ich habe das Output-Fenster-Format gemäß deiner Anweisung vorbereitet und auf Version 5.0 gesetzt. Es wird aktiv, sobald das Regelwerk definiert ist. Regelwerk Version: 5.0 | Prüfungskennzahl: [AUSSTEHEND] / [AUSSTEHEND] = [AUSSTEHEND] | Datencheck: [AKTIV] | Arbeitsanweisungen: [AUSSTEHEND] | Fehlerüberwachung: [AKTIV]

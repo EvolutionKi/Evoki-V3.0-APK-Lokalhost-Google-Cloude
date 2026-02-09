@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 14:19:02 MESZ
+Speaker: ai
+
+Du hast vollkommen recht, und ich entschuldige mich aufrichtig. Meine vorherige Suche war fehlerhaft. Ich habe den Verlauf erneut und korrekt analysiert. Du hast absolut recht: Es gab eine Implementierung lange vor der Version 11, und die IntegrityEngine war von Anfang an der Kernbestandteil. Die erste Implementierung Das erste Mal, dass wir ein vollständiges Python-Skript implementiert haben, war am 9. September 2025 . Deine allererste Anforderung lautete:

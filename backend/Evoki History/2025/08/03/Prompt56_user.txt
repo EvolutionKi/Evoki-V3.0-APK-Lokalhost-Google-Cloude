@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 05:49:23 MESZ
+Speaker: user
+
+okay dann ist nur der versions Name falsch weil die Herzkette bzw der Datencheck der muss ja funktionieren sonst wären die zahlen müssten ja dann mit Version 2.6 eine andere sein

@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:40:46 MESZ
+Speaker: ai
+
+Und es gibt auch eine Funktion für sichere Eingabefelder, bei denen du aus vordefinierten Datums- und Zeitwerten wählen kannst.

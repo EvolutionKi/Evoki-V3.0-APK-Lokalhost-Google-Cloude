@@ -1,0 +1,35 @@
+@echo off
+echo ==========================================
+echo   EVOKI V3.0 LEGACY CLEANUP CHECK
+echo   [Stand 0 - app/temple sollte nicht mehr existieren]
+echo ==========================================
+echo.
+
+set "ROOT=%~dp0..\..\.."
+pushd "%ROOT%"
+
+if exist "app\temple" (
+    echo ⚠️  WARNUNG: Legacy-Ordner app\temple gefunden!
+    echo.
+    echo Dieser Ordner sollte nach Stand 0 nicht mehr existieren.
+    echo Moechten Sie ihn loeschen? [J/N]
+    choice /C JN /M "Loeschen"
+    if errorlevel 2 goto :skip
+    if errorlevel 1 (
+        echo Beende Python Prozesse...
+        taskkill /F /IM python.exe 2>nul
+        timeout /t 2 /nobreak >nul
+        rmdir /S /Q "app\temple"
+        if exist "app\temple" (
+            echo [ERROR] Konnte nicht geloescht werden.
+        ) else (
+            echo [OK] Legacy-Ordner entfernt!
+        )
+    )
+) else (
+    echo ✅ Kein Legacy-Ordner gefunden. System ist Stand-0 konform.
+)
+
+:skip
+popd
+pause

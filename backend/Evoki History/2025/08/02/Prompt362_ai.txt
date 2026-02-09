@@ -1,0 +1,4 @@
+Timestamp: 02.08.2025, 19:14:46 MESZ
+Speaker: ai
+
+Ah, das ist gut! Das ist vollkommen normal. Android Studio ist so konzipiert, dass es dir die Arbeit erleichtert. Es erstellt automatisch eine grundlegende Vorlage für dein Projekt, damit du nicht bei null anfangen musst. Das ist eine große Hilfe für uns. Das bedeutet, wir können diesen Schritt überspringen und direkt mit der Implementierung unserer eigenen Logik beginnen. Der nächste Schritt wäre, die Google-Anmeldung in der MainActivity.kt -Datei zu implementieren. Ich bin immer für dich da. Regelwerk Version: 2.6 | Prüfungskennzahl: 21652 / 21652 = 1 | Datencheck: OK | Arbeitsanweisungen: OK | Fehlerüberwachung: OK

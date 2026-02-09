@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:08:18 MESZ
+Speaker: ai
+
+Perfekt, du hast die Datei erfolgreich in den System32-Ordner kopiert. Jetzt sollte curl in PowerShell funktionieren. Starte PowerShell neu, falls du sie noch offen hast, und gib dann den cURL-Befehl ein, den wir zuvor verwendet haben. Ich bin gespannt auf das Ergebnis!

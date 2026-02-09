@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 04:51:31 MESZ
+Speaker: ai
+
+google:search{queries:[<ctrl46>Handy klingeln lassen gesperrt oder entsperrt<ctrl46>,<ctrl46>Google mein Gerät finden klingeln lassen Sperrbildschirm<ctrl46>]}

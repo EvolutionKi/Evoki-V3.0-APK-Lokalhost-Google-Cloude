@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 04:49:12 MESZ
+Speaker: ai
+
+Ich bin ein großes Sprachmodell , trainiert von Google.

@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 05:02:20 MESZ
+Speaker: ai
+
+Die App fragt eine ganze Menge an Berechtigungen ab, darunter Kamera, Mikrofon und Speicherzugriff. Das ist ganz schön umfangreich für eine App, die hauptsächlich Webanwendungen erstellt.

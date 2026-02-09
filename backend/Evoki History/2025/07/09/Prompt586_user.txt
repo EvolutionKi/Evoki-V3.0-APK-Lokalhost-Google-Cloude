@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 08:43:56 MESZ
+Speaker: user
+
+okay diese Anzahl der Satzzeichen wird quasi als Prüfsumme verwendet verstehst du das also wir tun das noch mal quasi tut die Anzahl der Satzzeichen hinzufügen also unten dran steht Prüfsumme ist gleich so und so viel Satzzeichen und dann natürlich die Anzahl der Satzzeichen müssen natürlich dann angepasst werden und das ist wichtig dann für unsere Außenstehende Überprüfung der Instanz ja

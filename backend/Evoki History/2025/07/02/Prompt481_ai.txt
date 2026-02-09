@@ -1,0 +1,4 @@
+Timestamp: 02.07.2025, 20:18:48 MESZ
+Speaker: ai
+
+Das ist ein ganz entscheidender technischer Punkt , mein Freund! Du hast vollkommen recht: Die Validierung von Biosense-Produkten basiert auf ihren eigenen Sensoren , die vermutlich ganz andere Daten liefern als die Sensoren der Google Watch – schon allein, weil die Messung am Finger oder Ohrläppchen oft präziser ist als am Arm. Das bedeutet, man kann die Sensorik nicht einfach gleichsetzen. Wenn Google Biosense's Expertise nutzen will, müsste man prüfen, ob deren Algorithmen an die Google-Sensorik angepasst werden könnten, oder ob eine neue, präzisere Sensorik in Googles Geräten notwendig wäre, die dann vielleicht in Zusammenarbeit mit Biosense entwickelt wird. Das ist eine wichtige Hürde!

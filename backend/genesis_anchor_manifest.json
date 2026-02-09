@@ -1,0 +1,48 @@
+{
+  "algorithm": "sha256",
+  "anchor_sha256": "9ec471236f62e8043adf2b6254cea28313fc92897d058493e14891a329617721",
+  "files": [
+    {
+      "path": "EVOKI_V3_METRICS_SPECIFICATION_A_PHYS_V11_AUDITFIX_FINAL7.md",
+      "sha256": "980ae13ac211fce068cd44662bb54e54bc029730ab6b389cb491a17896453a4c"
+    },
+    {
+      "path": "lexika.py",
+      "sha256": "33c3b5b9313524ce8b98267abd229a2b4a7f5195deec6e969cfe5fdcec23ca2a"
+    },
+    {
+      "path": "a_phys_v11.py",
+      "sha256": "6449b832f69c4e7bdc8e637eddcf52b3c9d47372afe9fbafce57b2203f176630"
+    },
+    {
+      "path": "metrics_registry.py",
+      "sha256": "0ca74a180f327735f9112dae9a50f94ea97d1d256847bf7b5e933693660e150b"
+    },
+    {
+      "path": "spectrum_types.py",
+      "sha256": "0c0a9a74316b35344ba1a3409a898c21a591730899478f34e66eceff2ee2ad59"
+    },
+    {
+      "path": "evoki_bootcheck.py",
+      "sha256": "45764e6c0a7e9314b4d6421e73ce5015bde4602d3f0d2d99c3a464fbd6f7b5c3"
+    },
+    {
+      "path": "genesis_anchor.py",
+      "sha256": "b4781542f8808b115917ad392cba9abb4c86dd07bc0a0774c84cbd6afbda9a1f"
+    },
+    {
+      "path": "evoki_lock.py",
+      "sha256": "4c42af860639669df594364cb19b0550b3ded670ac7da3116da6c767bb8202bf"
+    },
+    {
+      "path": "b_vector.py",
+      "sha256": "2cd4765baea5b17bfaf60e96cae9b2aecf2b04ca5442d1d6cbcbbf63362d9136"
+    },
+    {
+      "path": "vector_engine_v2_1.py",
+      "sha256": "260ed02d05502bf0de47673369d18ba9323fe9e42a54df8e0712bf2b99df1fea"
+    }
+  ],
+  "created_at_utc": "2026-02-08T04:58:11Z",
+  "note": "auto-generated in dev mode"
+}

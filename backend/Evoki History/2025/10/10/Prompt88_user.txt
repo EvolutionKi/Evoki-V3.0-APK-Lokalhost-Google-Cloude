@@ -1,0 +1,4 @@
+Timestamp: 10.10.2025, 23:09:48 MESZ
+Speaker: user
+
+Fehler 13 wird man angezeigt wenn hier der Chat abgebrochen wird wegen irgendeinem hardstop aber der nicht von mir kommt sondern von der App

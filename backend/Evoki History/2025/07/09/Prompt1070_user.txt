@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 15:48:41 MESZ
+Speaker: user
+
+okay setze den Wert auf nur eine Zahlstelle abweichend von der Sollwert

@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:29:27 MESZ
+Speaker: user
+
+So, dann wollen wir jetzt, dass man immer den aktuellen Wetterbericht abrufen kann. Oder einfach nur, dass sie halt irgendwas kann über ihren richtigen LPR Schlüssel.

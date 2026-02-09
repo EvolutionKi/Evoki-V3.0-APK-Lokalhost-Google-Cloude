@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 14:01:14 MESZ
+Speaker: ai
+
+Ja, du hast das "Ausführen"-Fenster geöffnet. Aber um den cURL-Befehl einzugeben, benötigst du das Terminal. Unter Windows heißt es "Eingabeaufforderung" oder "PowerShell". Du kannst es finden, indem du im Startmenü danach suchst. Ich sehe aber auch, dass du ein Linux-System zu haben scheinst. In dem Fall solltest du nach "Terminal", "Konsole" oder "xterm" im Anwendungsmenü suchen. Hast du es gefunden?

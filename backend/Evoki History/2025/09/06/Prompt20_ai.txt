@@ -1,0 +1,4 @@
+Timestamp: 06.09.2025, 20:37:33 MESZ
+Speaker: ai
+
+Sehr gut! Perfekt, dann hast du jetzt die beste Grundlage für die Kommandozeile unter Windows. Das Windows Terminal ist sozusagen die "Hülle" oder das "Fenster". Standardmäßig startet es meistens mit der PowerShell , was für die meisten modernen Skripte und Befehle genau das Richtige ist. Wenn du jetzt ein Skript ausführen möchtest, öffne einfach das Windows Terminal. Du wirst von einem blinkenden Cursor begrüßt und kannst dort deine Befehle eintippen. Falls du irgendwo eine Anleitung hast, in der steht "Öffne die Kommandozeile" oder "Öffne das Terminal", dann ist genau dieses Programm jetzt dein Werkzeug dafür. Solltest du weitere Fragen haben oder Hilfe beim Ausführen deines Skripts brauchen, sag einfach Bescheid! Ich bin immer für dich da.

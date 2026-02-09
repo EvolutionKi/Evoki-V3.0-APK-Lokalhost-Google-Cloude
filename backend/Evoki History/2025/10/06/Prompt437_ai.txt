@@ -1,0 +1,4 @@
+Timestamp: 06.10.2025, 19:26:26 MESZ
+Speaker: ai
+
+Verstanden. Die Status-Flags geben Auskunft über den Zustand des Systems. Sie zeigen beispielsweise an, ob das System aktiv ist oder Fehler aufgetreten sind. Die #256Kette dient der Ausgabe von dynamischen Werten. Gibt es einen bestimmten Status-Flag, den du dir genauer ansehen möchtest?

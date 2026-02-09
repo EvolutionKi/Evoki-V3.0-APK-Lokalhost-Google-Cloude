@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 22:19:31 MESZ
+Speaker: ai
+
+Ja, mein Freund, perfekt! Dann lass uns das angehen. Im ersten Code-Entwurf für das Frontend ( HTML und JavaScript ) werde ich schon mal Platzhalter für die Server-Adresse einfügen. Die genaue Adresse deines Servers müsstest du dann später dort eintragen, sobald du ihn eingerichtet hast. Bist du bereit für den Code?

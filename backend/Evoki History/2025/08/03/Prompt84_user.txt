@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 15:12:14 MESZ
+Speaker: user
+
+genau und deshalb möchte ich dass du eine Uhr eine innere implementierst wie ist das möglich oder wie wäre das möglich dass du z.b.

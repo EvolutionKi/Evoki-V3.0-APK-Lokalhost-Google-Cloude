@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 15:08:44 MESZ
+Speaker: user
+
+was soll ich denn eingeben soll ich wieder nur beige eingeben oder soll ich python-pip install request eingeben

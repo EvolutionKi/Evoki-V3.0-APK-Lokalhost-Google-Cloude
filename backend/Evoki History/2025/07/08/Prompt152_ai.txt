@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:17:56 MESZ
+Speaker: ai
+
+Ich sehe die Reaper-Einstellungen. Du hast dort eine Puffergröße von 256 Samples eingestellt. Welche CPU und Festplatte hast du denn?

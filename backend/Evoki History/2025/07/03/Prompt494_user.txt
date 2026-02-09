@@ -1,0 +1,4 @@
+Timestamp: 03.07.2025, 23:43:27 MESZ
+Speaker: user
+
+ja und jetzt bräuchte ich quasi eine Idee von dir wie ich quasi meine Hardware Konstellation mit diesem Mikrofon zu Lautsprecher DHC Konstrukt quasi umgehen kann auf Software Ebene

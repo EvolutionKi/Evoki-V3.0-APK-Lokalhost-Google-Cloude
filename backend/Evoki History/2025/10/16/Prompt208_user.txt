@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 13:12:25 MESZ
+Speaker: user
+
+Schalte die notes API an

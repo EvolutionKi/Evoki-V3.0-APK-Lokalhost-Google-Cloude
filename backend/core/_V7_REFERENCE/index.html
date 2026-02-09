@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EVOKI Tempel — Integrity Status</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; }
+    #status { padding: 12px 14px; border: 1px solid #ddd; border-radius: 10px; margin-bottom: 16px; }
+    #modal { position: fixed; inset: 0; background: rgba(0,0,0,.45); display:none; align-items:center; justify-content:center; }
+    #modal .box { background: #fff; padding: 18px; border-radius: 12px; max-width: 520px; width: calc(100% - 40px); }
+    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #ccc; background: #fff; cursor:pointer; }
+    button.primary { border-color: #333; }
+    textarea { width: 100%; min-height: 100px; border-radius: 10px; border: 1px solid #ddd; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h1>EVOKI Tempel</h1>
+  <div id="status">Status wird geladen…</div>
+
+  <textarea id="prompt" placeholder="Dein Prompt…"></textarea><br/><br/>
+  <button id="send" class="primary">Senden</button>
+
+  <div id="modal">
+    <div class="box">
+      <h2>⚠️ System Integrity Warning</h2>
+      <p>Genesis‑Anker / Chain ist gebrochen oder nicht bestätigt. In Production ist das System gesperrt.</p>
+      <p><b>Hinweis:</b> In der Entwicklungsphase kann das Soft‑Lock aktiv sein (nur Warnung).</p>
+      <button id="confirm" class="primary">Warnung bestätigen & entsperren</button>
+    </div>
+  </div>
+
+<script>
+async function fetchJSON(url, opts) {
+  const res = await fetch(url, opts);
+  const data = await res.json().catch(()=> ({}));
+  return { ok: res.ok, status: res.status, data };
+}
+
+async function refreshStatus() {
+  const st = await fetchJSON('/health/lock_status');
+  const bc = await fetchJSON('/health/bootcheck');
+  const s = document.getElementById('status');
+  const locked = !!(st.data && st.data.locked);
+  const enforce = !!(st.data && st.data.enforce_lock);
+
+  s.innerHTML = `
+    <div><b>Lock:</b> ${locked ? 'LOCKED' : 'OK'} (enforce=${enforce})</div>
+    <div><b>Bootcheck:</b> ${bc.data && bc.data.ok ? 'OK' : 'FAIL'}</div>
+  `;
+
+  const modal = document.getElementById('modal');
+  const send = document.getElementById('send');
+  if (locked && enforce) {
+    modal.style.display = 'flex';
+    send.disabled = true;
+  } else {
+    modal.style.display = 'none';
+    send.disabled = false;
+  }
+}
+
+document.getElementById('confirm').addEventListener('click', async () => {
+  await fetchJSON('/health/confirm_unlock', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ note: 'frontend_confirm' })
+  });
+  await refreshStatus();
+});
+
+document.getElementById('send').addEventListener('click', async () => {
+  const text = document.getElementById('prompt').value || '';
+  const res = await fetchJSON('/interact', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ text })
+  });
+  alert(JSON.stringify(res.data, null, 2));
+});
+
+refreshStatus();
+setInterval(refreshStatus, 4000);
+</script>
+</body>
+</html>

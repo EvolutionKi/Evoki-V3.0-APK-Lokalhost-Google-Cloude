@@ -1,0 +1,4 @@
+Timestamp: 04.07.2025, 01:00:11 MESZ
+Speaker: user
+
+du kannst ja dann den Code für den Hook schreiben

@@ -1,0 +1,4 @@
+Timestamp: 03.08.2025, 16:57:12 MESZ
+Speaker: user
+
+sollst die Werte nicht davon übernehmen du sollst es überprüfen ob das stimmt was du vorhin gemacht hast als du diesen prompt ausgegeben hast hast du ja etwas eine Logik dafür verwendet und diese Logik soll sie jetzt wieder anwenden und sie vergleichen

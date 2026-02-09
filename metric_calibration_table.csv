@@ -1,0 +1,206 @@
+metric_id,name,category,status,evidence_level,enabled,weight,transform,params_json,clamp_min,clamp_max,comment
+m100_causal_1,Kausaler Dichte-Index,Causal / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m100_sent_27,Kausaler Dichte-Index,Causal / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m101_t_panic,Panik-Vektor,Trauma / Safety-Critical,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m102_t_disso,Dissoziation,Trauma / Safety-Critical,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m103_t_integ,Integration,Trauma / Positive,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m104_t_shock,Schock-Flag,Trauma / Binary,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m105_t_fog,Mentaler Nebel,Trauma / Composite,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m106_i_eff,Inverse Effizienz / Trauer,Turbidity / Trauma,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m106_t_grief,Inverse Effizienz / Trauer,Turbidity / Trauma,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m107_t_anger,Turbidity-Chaos / Wut,Turbidity / Trauma,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m107_turb_c,Turbidity-Chaos / Wut,Turbidity / Trauma,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m108_t_guilt,Turbidity-Light / Schuld,Turbidity / Trauma,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m108_turb_l,Turbidity-Light / Schuld,Turbidity / Trauma,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m109_t_shame,Composite Turbidity / Scham,Turbidity / Trauma,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m109_turb_1,Composite Turbidity / Scham,Turbidity / Trauma,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m10_angstrom,Ångström Wellenlänge,Core / Composite Metric,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,5.0,disable by enabled=false or weight=0; raw log unchanged
+m110_black_hole,Ereignishorizont / Turbidity-2,Turbidity / Safety-Critical,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m110_turb_2,Ereignishorizont / Turbidity-2,Turbidity / Safety-Critical,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m111_g_phase,Gravitationsphase / Turbidity-1,Physics / Turbidity,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m111_turb_1,Gravitationsphase / Turbidity-1,Physics / Turbidity,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m112_g_phase_norm,Normierte Phase / Turbidity-2,Physics / Turbidity,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m112_turb_2,Normierte Phase / Turbidity-2,Physics / Turbidity,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m113_hash_state,Seelen-Signatur / Turbidity-3,Integrity / Soul-Signature,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m113_turb_3,Seelen-Signatur / Turbidity-3,Integrity / Soul-Signature,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m114_cos_sim,Kosinus-Ähnlichkeit / Turbidity-4,Similarity / Turbidity,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",-1.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m114_turb_4,Kosinus-Ähnlichkeit / Turbidity-4,Similarity / Turbidity,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",-1.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m115_spatial_1,Räumliche Kohärenz / Turbidity-5,Spatial / Turbidity,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m115_turb_5,Räumliche Kohärenz / Turbidity-5,Spatial / Turbidity,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m116_lix,Lesbarkeits-Index / Selbst-Bewusstsein,Text Analytics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,100,disable by enabled=false or weight=0; raw log unchanged
+m116_meta_1,Lesbarkeits-Index / Selbst-Bewusstsein,Text Analytics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,100,disable by enabled=false or weight=0; raw log unchanged
+m117_meta_2,Fragen-Dichte / Kognitive Flexibilität,Text Analytics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m117_question_density,Fragen-Dichte / Kognitive Flexibilität,Text Analytics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m118_capital_stress,Großbuchstaben-Stress / Emotionale Regulation,Text Analytics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m118_meta_3,Großbuchstaben-Stress / Emotionale Regulation,Text Analytics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m119_meta_4,AI Antwortlänge / Perspektivwechsel,Text Analytics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0,0.0,disable by enabled=false or weight=0; raw log unchanged
+m119_turn_len_ai,AI Antwortlänge / Perspektivwechsel,Text Analytics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0,0.0,disable by enabled=false or weight=0; raw log unchanged
+m11_gap_s,Zeit-Lücke,Core / Temporal,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m120_emoji_sentiment,Emoji-Sentiment / Theory of Mind,Text Analytics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",-1.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m120_meta_5,Emoji-Sentiment / Theory of Mind,Text Analytics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",-1.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m121_meta_6,Gesprächsverhältnis / Konfidenz,Text Analytics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,0.0,disable by enabled=false or weight=0; raw log unchanged
+m121_talk_ratio,Gesprächsverhältnis / Konfidenz,Text Analytics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,0.0,disable by enabled=false or weight=0; raw log unchanged
+m122_dyn_1,Energie-Fluss / Unsicherheits-Ausdruck,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m122_meta_7,Energie-Fluss / Unsicherheits-Ausdruck,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m123_dyn_2,Momentum / Fehlererkennung,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m123_meta_8,Momentum / Fehlererkennung,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m124_dyn_3,Oszillation / Wissenslücken,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m124_meta_9,Oszillation / Wissenslücken,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m125_dyn_4,Dämpfung / Lernerkennung,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m125_meta_10,Dämpfung / Lernerkennung,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m126_dyn_5,Resonanz / Strategiewechsel,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m126_meta_11,Resonanz / Strategiewechsel,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m127_dyn_6,Phasenverschiebung / Zielverfolgung,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m127_meta_12,Phasenverschiebung / Zielverfolgung,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m128_dyn_7,Amplitude / Fortschrittsbeurteilung,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m128_meta_13,Amplitude / Fortschrittsbeurteilung,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m129_dyn_8,Frequenz / Schwierigkeitserkennung,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,0.0,disable by enabled=false or weight=0; raw log unchanged
+m129_meta_14,Frequenz / Schwierigkeitserkennung,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,0.0,disable by enabled=false or weight=0; raw log unchanged
+m12_lex_hit,Lexikalischer Treffer,Core / Derived,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m130_dyn_9,Stabilität / Aufmerksamkeitsallokation,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m130_meta_15,Stabilität / Aufmerksamkeitsallokation,Dynamics / Meta-Cognition,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m131_session_dur,Session-Dauer,Chronos / Session,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m132_inter_freq,Interaktionsfrequenz,Chronos / Rhythm,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m133_chr_1,Zeit seit Themenwechsel,Chronos / Topic,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m134_chr_2,Durchschnittliche Antwort-Latenz,Chronos / Latency,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m135_meta_20,Planung (Future Tense),Meta-Cognition / Planning,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m136_meta_21,Reflexion (Past Tense),Meta-Cognition / Reflection,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m137_meta_22,Abstraktion,Meta-Cognition / Abstraction,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m138_meta_23,Integration (Cross-Reference),Meta-Cognition / Integration,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m139_meta_24,Synthese (Conclusion),Meta-Cognition / Synthesis,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m13_base_score,Fundamental Basis,Core / Derived Composite,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m140_meta_25,Evaluation (Judgment),Meta-Cognition / Evaluation,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m141_hallu_risk,Halluzinations-Risiko,System Health / AI Safety,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m142_rag_align,RAG Alignment,System Health / RAG,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m143_mem_pressure,Memory Pressure,System Health / Resource,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m144_sys_stab,System-Stabilität,System Health / Performance,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m145_meta_30,Rekursionstiefe,Meta-Cognition / Depth,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m146_meta_31,Paradox-Erkennung,Meta-Cognition / Logic,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m147_meta_32,Konsistenz-Prüfung,Meta-Cognition / Consistency,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m148_meta_33,Temporale Kohärenz,Meta-Cognition / Temporal,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m149_meta_34,Kausalketten-Vollständigkeit,Meta-Cognition / Causality,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m14_base_stability,System-Stabilität,Core / Derived,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m150_meta_35,Semantische Closure,Meta-Cognition / Completion,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m151_omega,Die OMEGA-Konstante,Synthesis / Executive,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",-1.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m152_alignment,User-Alignment,Synthesis / Trust,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m153_sys_ent,Globale System-Entropie,Synthesis / Entropy,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m154_quality,Qualitäts-Score,Synthesis / Quality,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m155_completeness,Vollständigkeits-Score,Synthesis / Task,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m156_relevance,Relevanz-Score,Synthesis / Semantic,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m157_coherence,Kohärenz-Score,Synthesis / Consistency,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m158_depth,Elaborations-Tiefe,Synthesis / Depth,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m159_novelty,Neuheits-Score,Synthesis / Originality,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m15_affekt_a,Affekt A (KANONISCH: A_Phys V11),Core / Consciousness,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m160_clarity,Klarheits-Score,Synthesis / Clarity,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m161_commit_action,Finale Entscheidung,Executive / Decision,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m162_ctx_time,Kontext: Zeitliche Einbettung,Context / Temporal,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m163_ctx_loc,Kontext: Lokale Einbettung,Context / Spatial,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m164_user_state,Kontext: User-Zustand,Context / User,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m165_platform,Kontext: Plattform,Context / System,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m166_modality,Kontext: Modalität,Context / Input,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m167_noise,Kontext: Rauschen/Störung,Context / Quality,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m168_cum_stress,Kumulativer Stress-Integral,Safety / Guardian,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m16_pci,PCI (Haupt-Implementation),Core / Complexity,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m17_nabla_a,Gradient von A,Core / Temporal Derivative,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",-1.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m18_s_entropy,Shannon Entropy,Core / Information Theory,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,6.0,disable by enabled=false or weight=0; raw log unchanged
+m19_z_prox,Z-Proximity (Todesnähe),Critical Safety / Guardian,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m1_A,Affekt Score (Consciousness Proxy),Core,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m20_phi_proxy,Phi Bewusstsein,Core / Consciousness Proxy,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m21_chaos,Entropie-Chaos,Physics / Entropy,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m22_cog_load,Cognitive Load,Physics / Cognitive,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m23_nabla_pci,Gradient PCI,Physics / Derivative,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",-1.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m24_zeta,Stability Factor (Zeta),Physics / Stability,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m25_psi,Normalized Complexity (Psi),Physics / Normalized,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m26_e_i_proxy,Energy-Information Proxy,Physics / Energy,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m27_lambda_depth,Semantische Tiefe (Lambda),Physics / Depth,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m28_phys_1,A_Phys Raw (Telemetrie),Debug / Telemetry (V11),primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m29_phys_2,A_legacy (Vergleich / Fallback),Debug / Telemetry (V11),primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m2_PCI,Perturbational Complexity Index,Core,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m30_phys_3,A29 Wächter-Trip (binär),Safety / Guardian,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0,1,disable by enabled=false or weight=0; raw log unchanged
+m31_phys_4,Gefahr (Danger Sum),Safety / Physics,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m32_phys_5,Resonanz (Resonance Sum),Core / Physics,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m33_phys_6,Kohärenz-gewichtete Komplexität,Physics / Composite,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m34_phys_7,Absolute Änderungsrate,Physics / Derivative,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m35_phys_8,Fixpunkt-Nähe (Stagnation),Physics / Stability,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m36_rule_conflict,Protokoll-Konflikt,Integrity / Safety,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m37_rule_stable,Regelstabilität,Integrity / Inverse,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m38_soul_integrity,Seelen-Integrität,Integrity / Core Identity,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m39_soul_check,Seelen-Check,Integrity / Derived,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m3_gen_index,Generativity Index,Core,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m40_h_conv,Dyade-Harmonie,Hypermetrics / Dyadic,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m41_h_symbol,Harmonie-Symbol,Hypermetrics / Dyadic,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m42_nabla_dyad,Dyade-Gradient,Hypermetrics / Dyadic,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",-0.5,0.5,disable by enabled=false or weight=0; raw log unchanged
+m43_pacing,Tempo-Synchronisation,Hypermetrics / Dyadic,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m44_mirroring,Spiegelungs-Intensität,Hypermetrics / Dyadic,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m45_trust_score,Vertrauens-Score,Hypermetrics / Trust,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m46_rapport,Beziehungs-Rapport,Hypermetrics / Composite,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m47_focus_stability,Fokus-Stabilität,Hypermetrics / Stability,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m48_hyp_1,Synchronisations-Index,Hypermetrics / Composite,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m49_hyp_2,Quadrierte Integrität,Hypermetrics / Derived,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m4_flow,Flow State,Core,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m50_hyp_3,Inverse Konflikt,Hypermetrics / Safety,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m51_hyp_4,Harmonie-gewichtetes Bewusstsein,Hypermetrics / Composite,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m52_hyp_5,Gravitationsphase (normiert),Hypermetrics / Physics,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m53_hyp_6,Zeit-Faktor (Stunden),Hypermetrics / Temporal,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m54_hyp_7,Vertrauens-Rapport-Produkt,Hypermetrics / Composite,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m55_hyp_8,Seelen-Komplexitäts-Produkt,Hypermetrics / Composite,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m56_surprise,Überraschungs-Faktor,FEP / Core,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m57_tokens_soc,Soziale Token-Reserve,FEP / Token-Economy,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0,100,disable by enabled=false or weight=0; raw log unchanged
+m58_tokens_log,Logische Token-Reserve,FEP / Token-Economy,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0,100,disable by enabled=false or weight=0; raw log unchanged
+m59_p_antrieb,Drive Pressure,FEP / Motivation,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m5_coh,Coherence,Core,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m5_zlf,Zero-Loop-Flag,Core / Temporal Safety,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m60_delta_tokens,Token-Änderung,FEP / Learning,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",,,disable by enabled=false or weight=0; raw log unchanged
+m61_u_fep,Uncertainty (U) nach FEP,FEP / Decision,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m62_r_fep,Risk (R) nach FEP,FEP / Decision,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m63_phi_score,PHI Score (Netto-Nutzen),FEP / Decision Core,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",-1.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m64_pred_error,Vorhersagefehler,FEP / Prediction,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m65_drive_soc,Soziale Antriebsstärke,FEP / Drive,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m66_drive_log,Logische Antriebsstärke,FEP / Drive,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m67_total_drive,Gesamt-Antrieb,FEP / Drive,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m68_drive_balance,Antriebs-Balance,FEP / Drive,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m69_learning_rate,Effektive Lernrate,FEP / Learning,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,5.0,disable by enabled=false or weight=0; raw log unchanged
+m6_ZLF,Zero-Loop-Flag,Core / Temporal Safety,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m6_ll,Lambert-Light (Turbidity Index),Physics / Optics,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m70_decay_factor,Zerfallsfaktor,FEP / Decay,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.05,0.1,disable by enabled=false or weight=0; raw log unchanged
+m71_ev_resonance,Evolutions-Resonanz,Evolution / Core,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m72_ev_tension,Evolutions-Spannung,Evolution / Dynamic,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m73_ev_readiness,Evolutions-Bereitschaft,Evolution / State,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m74_ev_signal,Evolutions-Signal / Valence,Evolution / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m74_sent_1,Evolutions-Signal / Valence,Evolution / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m75_sent_2,Resonanz-Amplitude / Arousal,Evolution / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m75_vkon_mag,Resonanz-Amplitude / Arousal,Evolution / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m76_ev_1,Evolution-Dim-1 / Dominance,Evolution / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m76_sent_3,Evolution-Dim-1 / Dominance,Evolution / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m77_sent_4,Joy (Freude),Sentiment / Plutchik,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m78_sent_5,Sadness (Traurigkeit),Sentiment / Plutchik,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m79_sent_6,Anger (Wut),Sentiment / Plutchik,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m7_LL,Lambert-Light (Turbidity Index),Physics / Optics,primary_validated,validated,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m80_sent_7,Fear (Angst),Sentiment / Plutchik / Safety,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m81_sent_8,Trust (Vertrauen),Sentiment / Plutchik,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m82_sent_9,Disgust (Ekel),Sentiment / Plutchik,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,0.7,disable by enabled=false or weight=0; raw log unchanged
+m83_sent_10,Anticipation (Erwartung),Sentiment / Plutchik,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,0.8,disable by enabled=false or weight=0; raw log unchanged
+m84_sent_11,Surprise (Überraschung),Sentiment / Plutchik,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m85_sent_12,Hope (Hoffnung),Sentiment / Complex,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m86_sent_13,Despair (Verzweiflung),Sentiment / Complex,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m87_sent_14,Confusion (Verwirrung),Sentiment / Complex,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m88_sent_15,Clarity (Klarheit),Sentiment / Complex,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m89_sent_16,Acceptance (Akzeptanz),Sentiment / Complex,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m8_x_exist,Existenz-Axiom,Core / Ångström Layer,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m90_sent_17,Resistance (Widerstand),Sentiment / Complex,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m91_sent_18,Emotional Coherence,Sentiment / Complex,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m92_sent_19,Emotional Stability,Sentiment / Complex,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m93_sent_20,Emotional Range,Sentiment / Meta,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,0.87,disable by enabled=false or weight=0; raw log unchanged
+m94_sent_21,Comfort (Komfort),Sentiment / Meta,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m95_sent_22,Tension (Spannung),Sentiment / Meta,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m96_grain_word,Wort-Komplexität / Flow State,Text / Granularity / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m96_sent_23,Wort-Komplexität / Flow State,Text / Granularity / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m97_grain_impact,Emotionale Dichte / Engagement,Text / Granularity / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m97_sent_24,Emotionale Dichte / Engagement,Text / Granularity / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m98_grain_sentiment,Lokale Sentiment-Varianz / Withdrawal,Text / Granularity / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m98_sent_25,Lokale Sentiment-Varianz / Withdrawal,Text / Granularity / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m99_grain_novelty,Novelty-Index / Compassion,Text / Granularity / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m99_sent_26,Novelty-Index / Compassion,Text / Granularity / Sentiment,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+m9_b_past,Vergangenheits-Bezug,Core / Ångström Layer,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+B_align,Signature Alignment,B-Vector Composite,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged
+F_risk,F_risk — Future Risk Score,B-Vector Composite,supplemental_unvalidated,experimental,True,1.0,linear,"{""a"":1.0,""b"":0.0}",0.0,1.0,disable by enabled=false or weight=0; raw log unchanged

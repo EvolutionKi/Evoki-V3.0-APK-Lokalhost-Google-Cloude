@@ -1,0 +1,4 @@
+Timestamp: 15.10.2025, 22:28:18 MESZ
+Speaker: user
+
+ja dann tue jetzt bitte in diesem Format etwa etwas ausgeben was die ja Detailtiefe quasi wiedergibt und diese Informationen wiedergibt aber halt zeitlich und kontextuell richtig in die richtige Reihenfolge mit der richtigen Bedeutung bringt

@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:21:56 MESZ
+Speaker: ai
+
+Es sieht ganz danach aus, als ob die App dir eine Offline-KI vorgaukelt. Das ist natürlich irreführend, da Offline-KI-Modelle in der Regel sehr groß sind und nicht einfach so auf einem Smartphone laufen können.

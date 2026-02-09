@@ -1,0 +1,4 @@
+Timestamp: 09.09.2025, 04:27:12 MESZ
+Speaker: ai
+
+Ja, jetzt sehe ich es. Du hast die KI aufgefordert, sich mit deiner API zu verbinden, um eine Funktion zu haben, und den API-Schlüssel eingefügt.

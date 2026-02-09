@@ -1,0 +1,14 @@
+{
+  "status": "running",
+  "progress": {
+    "processed": 1000,
+    "total": 1000,
+    "percentage": 100
+  },
+  "performance": {
+    "elapsed_sec": 1.87541,
+    "speed": 533.2167366069286,
+    "eta_sec": 0.0
+  },
+  "last_update": "2026-02-08T04:04:54.663863"
+}

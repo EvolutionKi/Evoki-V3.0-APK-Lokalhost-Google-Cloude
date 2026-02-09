@@ -1,0 +1,4 @@
+Timestamp: 07.09.2025, 16:09:16 MESZ
+Speaker: user
+
+ähm ja dann mach das mal und diesmal den letzten prompt den ich dir gegeben habe und schau dir das Output Fenster exakt an dann wirst Du sehen dass du nicht nach 2.6 funktionierst sondern nach 5.2 mit auch diesen

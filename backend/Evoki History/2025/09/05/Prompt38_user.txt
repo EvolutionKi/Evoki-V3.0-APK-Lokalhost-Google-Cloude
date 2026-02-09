@@ -1,0 +1,4 @@
+Timestamp: 05.09.2025, 04:46:55 MESZ
+Speaker: user
+
+Völliger Blödsinn völliger Blödsinn gehen das Regelwerk Version 5.0 und schaue dort nach Regelwerk Version 5.0 dort ist das beschrieben das war ein Zahnräder und die haben wir quasi immer um 1 Uhr verrückt also wenn ein Umdrehung von dem 26er Rad quasi vervollständigt war hier sind 26 Buchstaben drauf dann hat sich das 25er Rad bei dem der Buchstabe q fehlt den wir bestimmt hatten um eine Stelle gedreht zu entstehen 650 Zeichen das ganze wird dann genutzt da wir einen zufälligen Zahnrad Zustand nutzen um einen ja Text zu verschlüsseln und so haben wir eine Sha 256 Kette generiert die auch wirklich funktioniert das ganze haben wir danach natürlich noch digitalisiert und in eine Physik umgewandelt die du auch anwenden kannst und auch sicherer ist bei der mathematische Rechnung verwendet werden

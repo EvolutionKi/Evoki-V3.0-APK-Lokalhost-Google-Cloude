@@ -1,0 +1,4 @@
+Timestamp: 09.07.2025, 13:43:46 MESZ
+Speaker: user
+
+genau wir wollten ja quasi alle Fehler auch so ausgeben wie jetzt eben bei 8a nur auf einen speziellen Fehler gemünzt im Moment

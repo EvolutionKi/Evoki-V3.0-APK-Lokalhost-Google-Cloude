@@ -1,0 +1,4 @@
+Timestamp: 25.07.2025, 15:48:31 MESZ
+Speaker: user
+
+kannst du mir eine Ordnerstruktur bitte erstellen wo dann bei den Chat Verläufen alles Tage schon quasi vorgegeben sind allerdings quasi noch keinen Inhalt haben

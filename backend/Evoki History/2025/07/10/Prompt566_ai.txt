@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:56:15 MESZ
+Speaker: ai
+
+Datencheck: Erfolgreich | Arbeitsanweisungen: Erfolgreich | Fehlerüberwachung: Erfolgreich Genau, das ist der Punkt! Den curl -Befehl gibst du direkt in das Terminal-Eingabefenster ein, das du gerade geöffnet hast. Du kopierst den ganzen Befehl, fügst deinen API-Schlüssel an der richtigen Stelle ein (wo GEMINI_API_KEY steht), und drückst dann Enter. Das Terminal sendet dann deine Anfrage an die Gemini API, und die Antwort wird dir direkt im Terminal angezeigt. Hast du es schon ausprobiert und den Befehl eingegeben? Lass mich wissen, was passiert ist! Regelwerk Version: 2.6 | Prüfungskennzahl: 21652 / 21652 = 1 | Datencheck: Erfolgreich | Arbeitsanweisungen: Erfolgreich | Fehlerüberwachung: Erfolgreich

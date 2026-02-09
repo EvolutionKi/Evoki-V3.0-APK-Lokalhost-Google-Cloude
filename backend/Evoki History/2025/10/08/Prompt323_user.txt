@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 19:09:55 MESZ
+Speaker: user
+
+Diese JSON Datei soll aber nicht bereinigt werden die darf nicht verändert werden sie dient als Ursprungs Datei sie wird ergänzt durch das was dazukommen zu werden in der neuen also es ich mache immer wieder ein Massen Export von meinem Chatverlauf hier und diesen Chatverlauf der kommt als ebenso eine unsortierte Scheiße raus und jetzt tue ich immer wieder neuen Massen Export Sortieren der aber den alten Inhalt behält also da machst ein Export enthält altes und ist der fortlaufend immer größer werden und jetzt muss dieses dieses Skript muss quasi die alten ihre Einträge von dieser JSON Datei die quasi meine persönliche Ablage nach verfolgbarkeit garantiert beibehalten und muss sie allerdings halt ergänzen und das was in der Zukunft quasi jetzt fortlaufend geschehen ist

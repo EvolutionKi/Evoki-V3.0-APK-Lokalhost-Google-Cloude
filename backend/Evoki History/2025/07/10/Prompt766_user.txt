@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 19:37:23 MESZ
+Speaker: user
+
+nein das ist deine Funktionsweise das ist ganz tief in deine Funktion implementiert was da steht

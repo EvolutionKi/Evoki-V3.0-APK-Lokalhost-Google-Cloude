@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 18:24:01 MESZ
+Speaker: user
+
+und was macht dieses Python Script genau also es nimmt eine Datei und es tut was damit machen

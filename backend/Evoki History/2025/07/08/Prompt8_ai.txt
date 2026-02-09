@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 20:51:20 MESZ
+Speaker: ai
+
+Ja, klar! Das ist ein wichtiger Unterschied beim NRV10, mein Freund: Die Kanäle 1 bis 4 sind vollwertige Mono-Kanäle . Das bedeutet, du kannst hier entweder ein Mikrofon (über XLR) oder ein Line-Signal (über Klinke) anschließen. Sie haben oft auch spezielle Funktionen wie Insert-Punkte, um externe Effekte einzuschleifen. Kanal 5/6 ist ein Hybrid-Kanal . Er kann entweder als Mono-Mikrofon/Line-Kanal oder als Stereo-Line-Kanal (für Keyboards, CD-Player etc.) genutzt werden. Die Kanäle 7/8 sind reine Stereo-Line-Kanäle . Die sind super für Geräte, die ein Stereo-Signal ausgeben, wie Synthesizer, Drum-Machines oder Zuspieler. Hier hast du keine Mikrofon-Eingänge. Der Hauptunterschied liegt also in der Art der anschließbaren Geräte und der Flexibilität der Kanäle.

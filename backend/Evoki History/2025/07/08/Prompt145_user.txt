@@ -1,0 +1,4 @@
+Timestamp: 08.07.2025, 23:15:03 MESZ
+Speaker: user
+
+Dieser 44, die hier war davor auf 48.000. könnte das das und die ja, also das hat sich unterschieden und jetzt z.B. bei Reaper sind 256 angegeben als Puffergröße offensichtlich, also Block Size und in der Puffereinstellung OMC Control, da waren die 512, kann das vielleicht zu der erhöhten Latenz geführt haben.

@@ -1,0 +1,4 @@
+Timestamp: 08.10.2025, 19:56:53 MESZ
+Speaker: user
+
+jetzt hast du allerdings einfach die Ausgangsdaten der Textdateien quasi aus dem Massen Export aus der meine Aktivitäten txt geborgen wie in deinem ursprünglichen Code gefordert sondern du hast einfach das Jason Teil kopiert

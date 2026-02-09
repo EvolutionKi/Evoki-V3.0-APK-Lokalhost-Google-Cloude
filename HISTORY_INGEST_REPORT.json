@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-02-08T00:23:22.071878",
+  "source_db": "C:\\Users\\nicom\\Documents\\evoki\\evoki_pipeline\\metric_chunks_test\\text_index.db",
+  "target_db": "C:\\Evoki V3.0 APK-Lokalhost-Google Cloude\\evoki_v3_metrics.db",
+  "samples_loaded": 983,
+  "samples_processed": 983,
+  "errors": 0,
+  "final_count": 983,
+  "success": true
+}

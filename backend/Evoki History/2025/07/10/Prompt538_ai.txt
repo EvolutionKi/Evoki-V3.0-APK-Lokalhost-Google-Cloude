@@ -1,0 +1,4 @@
+Timestamp: 10.07.2025, 13:33:53 MESZ
+Speaker: ai
+
+Beim expliziten Caching kannst du die Anfragen und Antworten manuell speichern. Das ist nützlich, wenn du beispielsweise Chatbot-Protokolle oder lange Videoanalysen speicherst. So musst du ähnliche Anfragen nicht jedes Mal neu bearbeiten.

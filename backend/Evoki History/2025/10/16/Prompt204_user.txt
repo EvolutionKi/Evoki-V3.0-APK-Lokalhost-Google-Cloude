@@ -1,0 +1,4 @@
+Timestamp: 16.10.2025, 12:37:18 MESZ
+Speaker: user
+
+und jetzt gebe mir bitte den Code aus es ist so dass er es so funktionabel ist gib mir die Schnittstelle aus was geändert werden muss dass es eben so funktioniert wie es davor funktioniert hat mit der funktionierenden API ich brauche keine simulierte Notizfunktion das ist alles Bullshit
