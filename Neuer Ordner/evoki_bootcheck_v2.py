@@ -664,8 +664,6 @@ def run_bootcheck(cfg: BootCheckConfig) -> BootCheckReport:
             results.append(_check_contract_invariants(spectrum_mod, cfg, logger))
         else:
             results.append(CheckResult("contract_invariants", False, "CRITICAL", 0, "FAIL", {"reason": "spectrum_import_failed"}))
-        else:
-            results.append(CheckResult("registry_aliases", False, "CRITICAL", 0, "FAIL", {"reason": "registry_or_spectrum_import_failed"}))
 
         # 5) A_Phys golden test
         if a_phys_mod is not None:
