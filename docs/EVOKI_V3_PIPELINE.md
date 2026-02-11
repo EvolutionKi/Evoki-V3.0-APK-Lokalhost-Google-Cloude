@@ -420,34 +420,61 @@ gradient_delta[metric] = ai_metrics[metric] - user_metrics[metric]
     direction: "increase" | "decrease" | "stable"
 ```
 
-### 5.3 21-Datenbank-Architektur (Persistence)
+### 5.3 Hybrid-Datenbank-Architektur (Persistence)
 
-Jede Interaktion wird in 21 SQLite-Datenbanken gespeichert:
+**Siehe auch:** `docs/specifications/v3.0/HYBRID_DATABASE_ARCHITECTURE.md`
+
+Die Architektur hat sich von 21 Einzel-DBs (V2.0) zu einer **5-DB Hybrid-Architektur
+(BUCH 7 + Enhancements)** weiterentwickelt:
 
 ```
-+-- 7 B-Vektor DBs (eine pro Dimension)
-|   bvec_life.db, bvec_truth.db, bvec_depth.db,
-|   bvec_init.db, bvec_warmth.db, bvec_safety.db,
-|   bvec_clarity.db
+EVOKI V3.0 HYBRID DATA LAYER (5 DBs + 4 FAISS Namespaces)
+
++-- [1] evoki_v3_core.db (SQLite) [BUCH 7]
+|       sessions, prompt_pairs, metrics_full (DUAL),
+|       session_chain (SHA-256), b_state_evolution (7D),
+|       hazard_events
 |
-+-- 5 W-Layer DBs (Vergangenheit)
-|   tempel_W.db, tempel_W_m1.db, tempel_W_m2.db,
-|   tempel_W_m25.db, tempel_W_m5.db
++-- [2] evoki_v3_graph.db (SQLite) [BUCH 7]
+|       graph_nodes, graph_edges, graph_clusters,
+|       graph_paths (precomputed navigation)
 |
-+-- 4 F-Layer DBs (Zukunft)
-|   tempel_F_p1.db, tempel_F_p2.db,
-|   tempel_F_p25.db, tempel_F_p5.db
++-- [3] evoki_v3_vectors.faiss (FAISS) [BUCH 7]
+|       NS1: atomic_pairs (384D)      - User+AI Paare
+|       NS2: context_windows (384D)   - Multi-Scale: 5/15/25/50
+|       NS3: trajectory_wpf (384D)    - W-P-F Offsets: -25..+25
+|       NS4: metrics_embeddings (322D) - 161 User + 161 AI Metriken
 |
-+-- 1 Composite DB (Zusammenfassung)
-|   composite.db
++-- [4] evoki_triggers.db (SQLite) [ENHANCEMENT]
+|       lexikon_matches, personal_trauma_markers,
+|       crisis_patterns, safety_interventions
 |
-+-- 1 Master-Timeline DB
-|   master_timeline.db
++-- [5] evoki_metapatterns.db (SQLite) [ENHANCEMENT]
+|       user_vocabulary, metaphors, themes,
+|       speech_patterns, semantic_fingerprint, ngrams
 |
-+-- FAISS Index (33.795 Chunks)
-|
-+-- Chain-Hash: SHA-256 ueber alle DB-Eintraege
++-- Chain-Hash: SHA-256 Blockchain ueber session_chain
 ```
+
+**Datenfluss bei jeder Interaktion:**
+
+```
+1. User/AI-Paar  --> prompt_pairs (core)
+2. 168 Metriken  --> metrics_full (core) mit Dual-Gradient
+3. Embeddings    --> 4 FAISS Namespaces (vectors)
+4. Graph-Update  --> nodes/edges/clusters (graph)
+5. Integritaet   --> session_chain SHA-256 (core)
+6. B-Vektor      --> b_state_evolution 7D (core)
+7. Hazard-Check  --> hazard_events (core) wenn m151 > 0.6
+8. Lexikon-Scan  --> lexikon_matches (triggers)
+9. Linguistik    --> vocabulary/ngrams (metapatterns)
+```
+
+**Legacy: 21-DB Architektur (V2.0)**
+
+Die frueheren 21 Einzel-Datenbanken (7 B-Vektor + 9 W-P-F + Composite + Timeline
++ FAISS) existieren weiterhin unter `tooling/data/db/21dbs/` fuer Rueckwaerts-
+kompatibilitaet und T4-Backfill.
 
 ---
 
@@ -483,7 +510,7 @@ Jede Interaktion wird in 21 SQLite-Datenbanken gespeichert:
 | ML/NLP | Sentence-Transformers, Torch, FAISS (CPU) |
 | Embeddings | Mistral-7B (4096D) + MiniLM (384D) |
 | LLM | Google Generative AI (Gemini 2.0), OpenAI (Fallback) |
-| Datenbank | 21x SQLite 3 |
+| Datenbank | 5-DB Hybrid: 4x SQLite + FAISS (4 Namespaces) |
 | CI/CD | GitHub Actions |
 
 ---
@@ -538,8 +565,8 @@ Jede Interaktion wird in 21 SQLite-Datenbanken gespeichert:
   |
   +-- Antwort an User (SSE Stream)
   +-- Gradient Delta (User vs AI Metriken)
-  +-- 21 DBs beschrieben (B-Vektor + W-P-F + Composite + Timeline)
-  +-- Chain-Hash SHA-256 aktualisiert
+  +-- 5-DB Hybrid (Core + Graph + FAISS + Triggers + Metapatterns)
+  +-- Chain-Hash SHA-256 Blockchain aktualisiert
 ```
 
 ---
